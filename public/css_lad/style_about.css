@@ -1,0 +1,51 @@
+body {
+        font-family: Verdana;
+        font-size: 13px;
+	}
+	.cabecalho {
+		position: fixed;
+		width: 90%;
+		left:5%;
+	    display:block;
+		top: 10px;
+        height: 90px;
+		padding-top: 1px;
+		background:khaki;
+       	text-align: center;
+	}
+	.divRow1 {
+        position: fixed;
+	    left: 5%;
+        top: 120px;
+        display:block;
+        width: 90%; 
+        height: 300px;
+        padding-bottom:10px;
+	    background: palegreen;
+        font-size: 18px;
+ 	    text-align: center;
+    }
+	.divRow2 {
+        position: fixed;
+        left: 5%;
+        top: 480px;
+        display:block;
+        width: 90%; 
+        height: 30px;
+        padding-top:15px;
+	    background: palegreen;
+        font-size: 20px;
+        text-align: center;
+	}
+    .rodape {
+        position: fixed;
+	    left: 5%;
+        top: 560px;
+        width: 90%;
+	    height: 20px;
+	    margin: 0 auto;
+       	text-align: center;
+	    border: 1px solid red;
+	    background:khaki;
+        font-size: 13px;
+    }

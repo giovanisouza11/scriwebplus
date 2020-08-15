@@ -1,0 +1,165 @@
+	body {
+        font-family: Verdana;
+        font-size: 13px;
+	}
+	.corpo {
+		width: 100%;
+		margin: 0 auto;
+		background:#FFE;
+     	text-align: center;
+	}
+	.row1 {
+		width: 520px;
+	}
+	.row2 {
+		width: 100%;
+	}
+	.cabecalho {
+		position: fixed;
+		width: 640px;
+		top: 0px;
+		height: 60px;
+		background:khaki;
+     	border: 1px solid red;
+		text-align: center;
+	}
+	.figura1 {
+        position: fixed;
+	    display:block;
+		top:60px;
+		left:165px;
+        width: 70px; 
+        height: 150px;
+        font-size: 20px;
+    }
+	.figura2 {
+        position: fixed;
+        display:block;
+        top:168px;
+		left:10px;
+		width: 529px; 
+        height: 400px;
+        font-size: 20px;
+	}
+	.figura3 {
+        position: fixed;
+        display:block;
+        top:348px;
+		left:165px;
+		width: 70px; 
+        height: 150px;
+        font-size: 20px;
+	}
+	.divColuna1 {
+        position: fixed;
+        left: 0px;
+        width: 425px; 
+        top: 65px;
+		text-align: left;
+        background:#FFF;
+     }
+	.divColuna2 {
+        position: fixed;
+        left: 425px;
+        width: 225px; 
+        top: 65px;
+		text-align: left;
+	    background:#FFE;
+        }
+    .divColuna3 {
+		position: absolute;
+        left: 651px;
+        width: 600; 
+        height: 2000;
+        text-align: left;
+		background:palegreen;
+    }
+    .divColuna4 {
+        display: none;
+		position: relative;
+		border: 1px solid #888;
+		top: 590px;
+        left: 10px;
+        width: 80px; 
+        height:40px;
+        text-align: left;
+        background:palegreen;
+    } 
+    .divColuna5 {
+		display: none;
+        position: relative;
+        left: 1220x;
+		top: 590px;
+        width: 60px; 
+        height: 60px;
+        text-align: left;
+        background:palegreen;
+    }	    
+    .rodape {
+        position: fixed;
+		top: 540px;
+        width: 640px;
+		height: 40px;
+		margin: 0 auto;
+       	text-align: center;
+		border: 1px solid red;
+		background:khaki;
+        font-size: 13px;
+    }
+	/* The Modal (background) */
+	.modal {
+		display: none; /* Hidden by default */
+		position: fixed; /* Stay in place */
+		z-index: 1; /* Sit on top */
+		margin-top:-105px;
+		margin-left:-100px;
+		left:50vw;
+		top: 50vh;
+		width: 200; /* Full width */
+		height: 210; /* Full height */
+		overflow: no; /* Enable scroll if needed */
+		background-color: rgb(0,0,0); /* Fallback color */
+		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+	/* Modal Content */
+	.modal-content {
+		position: relative;
+		background-color: ivory;
+		margin: auto;
+		padding: 0;
+		border: 1px solid #888;
+		width: 100%;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+		-webkit-animation-name: animatetop;
+		-webkit-animation-duration: 0.4s;
+		animation-name: animatetop;
+		animation-duration: 0.4s
+	}
+	/* Add Animation */
+	@-webkit-keyframes animatetop {
+		from {top:-400px; opacity:0} 
+		to {top:0; opacity:1}
+	}
+	@keyframes animatetop {
+		from {top:-400px; opacity:0}
+		to {top:0; opacity:1}
+	}
+	/* The Close Button */
+	.close {
+		color: white;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+	.close:hover,
+	.close:focus {
+		color: #000;
+		text-decoration: none;
+		cursor: pointer;
+	}
+	.modal-header {
+		padding: 2px 16px;
+		background-color: khaki;
+		color: white;
+	}
+	.modal-body {padding: 2px 16px;}

@@ -1,0 +1,43 @@
+	body {
+        font-family: Verdana;
+        font-size: 13px;
+	}
+	.corpo {
+		width: 100%;
+		margin: 0 auto;
+		background:#FFE;
+       	text-align: center;
+	}
+	.cabecalho {
+		position: fixed;
+		width: 90%;
+		top: 1 px;
+		left: 5%;
+		height: 100px;
+		background:khaki;
+       	border: 1px solid red;
+		text-align: center;
+	}
+	.divColuna1 {
+        position: fixed;
+        left: 5%;
+        width: 85%; 
+        top: 130px;
+		font-size: 15px;
+    	text-align: left;
+        text-align: center;
+		background:#FFF;
+     }
+    .rodape {
+        position: fixed;
+		top: 250px;
+        width: 90%;
+		left: 5%;
+		height: 20px;
+		margin: 0 auto;
+       	text-align: center;
+		border: 1px solid red;
+		background:khaki;
+        font-size: 13px;
+    }
+	
