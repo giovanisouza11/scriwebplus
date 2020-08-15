@@ -71,18 +71,18 @@ if (ativo) {
         res.sendFile(__dirname + '/popup.html');
     });
     server.listen(4333, function() {
- 		JanelaElectron();
-		//console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
+ 		//JanelaElectron();
+		console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
     });
-//    console.log("__________________________________________________________________");
-//    console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
-//    console.log("| Neste servidor foi gerado uma pagina HTML                       |");
-//    console.log("|                                                                 |");
-//    console.log("| Execute no Browser para criar/alterar/monitorar LADDER.         |");
-//    console.log("|    localhost:4333 ou XXX.XXX.XXX.XXX:4333                       |");
-//    console.log("| Execute no Browser para Supervisão/simular processo Industrial.|");
-//    console.log("|    localhost:4333/simulador ou XXX.XXX.XXX.XXX:4333/simulador   |");
-//    console.log("___________________________________________________________________");
+    console.log("__________________________________________________________________");
+    console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
+    console.log("| Neste servidor foi gerado uma pagina HTML                       |");
+    console.log("|                                                                 |");
+    console.log("| Execute no Browser para criar/alterar/monitorar LADDER.         |");
+    console.log("|    localhost:4333 ou XXX.XXX.XXX.XXX:4333                       |");
+    console.log("| Execute no Browser para Supervisão/simular processo Industrial.|");
+    console.log("|    localhost:4333/simulador ou XXX.XXX.XXX.XXX:4333/simulador   |");
+    console.log("___________________________________________________________________");
 
 }
 
