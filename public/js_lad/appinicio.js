@@ -1,3 +1,4 @@
+	    	
 
 function draw_inicio() {
 
