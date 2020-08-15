@@ -1,0 +1,652 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.0.5.2 (Windows)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="20200717;13455113">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 20mm }
+		P { margin-bottom: 2.12mm }
+		TD P { margin-bottom: 2.12mm }
+		H1 { margin-bottom: 2.12mm }
+		H1.western { font-family: "Arial", sans-serif; font-size: 16pt }
+		H2 { margin-bottom: 2.12mm }
+		H2.western { font-family: "Arial", sans-serif; font-size: 14pt; font-style: italic }
+		H2.cjk { font-family: "SimSun" }
+		H2.ctl { font-family: "Mangal" }
+		H3 { margin-bottom: 2.12mm }
+		H3.western { font-family: "Arial", sans-serif }
+		H3.cjk { font-family: "SimSun" }
+		H3.ctl { font-family: "Mangal" }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" DIR="LTR">
+<H1 CLASS="western">1. Do Software: 
+</H1>
+<P>O SCriWeb , Simulador Ladder Web, &eacute; um software de uso
+did&aacute;tico que permite a aprendizagem de automa&ccedil;&atilde;o
+industrial, com a simula&ccedil;&atilde;o de uso de um CLP em um
+ambiente industrial simulado.Permitindo a simula&ccedil;&atilde;o de
+uma m&aacute;quina ou processo industrial.</P>
+<P>O Supervis&otilde;rio SCriWeb deve ser utilizado em conjunto com o
+software Simulador de Ladder SCriWeb, em conjunto permitem a
+edi&ccedil;&atilde;o/monitora&ccedil;&atilde;o de software em Ladder
+e a monitora&ccedil;&atilde;o do mesmo atrav&eacute;s de uma
+interface gr&aacute;fica que representa um processo industrial.</P>
+<P><BR><BR>
+</P>
+<H1 CLASS="western">2. Da Utiliza&ccedil;&atilde;o:</H1>
+<P>O software pode ser acessado, depois de: - executar o servidor
+SCRIWEB e - configurado um CLP VIRTUAL, com ladder e executando
+comando RUN. 
+</P>
+<H2 CLASS="western">2.1 Da Simula&ccedil;&atilde;o</H2>
+<P>Para executar o programa fa&ccedil;a; - Crie um programa LADDER no
+ambiente localhost:4333; - Envie para o CLP VIRTUAL; - Coloque o CLP
+no MODO RUN; - Crie o aplicativo para simula&ccedil;&atilde;o no
+endere&ccedil;o localhost:4333/simulador, 
+</P>
+<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m27a0b782.png" NAME="graphics3" ALIGN=LEFT WIDTH=76 HEIGHT=46 BORDER=0>-
+Ou Abra um pronto .</P>
+<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m74df7c3.png" NAME="graphics4" ALIGN=LEFT WIDTH=73 HEIGHT=47 BORDER=0>-D&ecirc;
+um play no simulador.</P>
+<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_5e269ee6.png" NAME="graphics8" ALIGN=LEFT WIDTH=74 HEIGHT=45 BORDER=0>-
+Ou pare a simula&ccedil;&atilde;o</P>
+<P><BR><BR>
+</P>
+<P>Al&eacute;m deste o software tem os seguintes bot&otilde;es:</P>
+<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_1fab3de8.png" NAME="graphics5" ALIGN=LEFT WIDTH=71 HEIGHT=48 BORDER=0>-
+Configura&ccedil;&atilde;o.</P>
+<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m2a56c48a.png" NAME="graphics6" ALIGN=LEFT WIDTH=75 HEIGHT=47 BORDER=0>-
+Help</P>
+<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m2559f34f.png" NAME="graphics7" ALIGN=LEFT WIDTH=74 HEIGHT=46 BORDER=0>-
+Sobre</P>
+<P><BR><BR>
+</P>
+<H2 CLASS="western">2.2 Da Edi&ccedil;&atilde;o</H2>
+<P>Para entrar no modo edi&ccedil;&atilde;o atrav&eacute;s do bot&atilde;o
+<IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m47a44303.gif" NAME="graphics10" ALIGN=BOTTOM WIDTH=71 HEIGHT=46 BORDER=0>,
+que alterna os modo edi&ccedil;&atilde;o e simula&ccedil;&atilde;o.</P>
+<H2 CLASS="western"><BR><BR>
+</H2>
+<H2 CLASS="western">2.3 Das vari&aacute;veis:</H2>
+<P><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0mm">Veja o help do configurador LADDER em
+localhost:4333 para ver as vari&aacute;veis permitidas no CLP
+virtual. Al&eacute;m das vari&aacute;veis do simulador Ladder, foram
+incluidos novos tipos de vari&aacute;veis. As vari&aacute;veis X, Y,
+U, D, N e V. Para utilizar est&aacute; vari&aacute;vel coloque o
+apontador (X ou Y), seguido do n&uacute;mero da linha do objeto no
+arquivo de configura&ccedil;&atilde;o. Por exemplo: X10, representa a
+posicao X do objeto da linha 10; Y5, representa a posicao Y do objeto
+da linha 5. Esta posicao ser&aacute; utilizada para ativar os objetos
+dependentes de movimenta&ccedil;&atilde;o, por exemplo quando um
+objeto tocar em um fim de curso. A verifica&ccedil;&atilde;o da
+posicao ser&aacute; feita da seguinte forma: A = representa um dos
+extremos da figura movel (esquerda ou superior) B = o outro extremo
+(direita ou inferior) C = representa um dos extremos do objeto que
+ser&aacute; interferido (esquerda ou superior) D = o outro extremo
+(direita ou inferior) 
+</P>
+<P STYLE="margin-bottom: 0mm"><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m16e8504e.png" NAME="graphics2" WIDTH=258 HEIGHT=126 BORDER=0></P>
+<P STYLE="margin-bottom: 0mm">Ser&aacute; aplicado a seguinte l&oacute;gica:
+((((A &lt; D) AND (A &gt; C)) OR (( B &lt; D) AND (B &gt; C)) OR ((A
+&lt; C) AND (B &gt; D)))</P>
+<P STYLE="margin-bottom: 0mm"><BR>
+</P>
+<P STYLE="margin-bottom: 0mm">Tamb&eacute;m foram incluidas novas
+vari&aacute;veis: Set, Reset e N&atilde;o. Basta colocar as letras:
+S,R e N antes da vari&aacute;vel.A vari&aacute;vel set e reset s&oacute;
+coloca em 1 ou 0 caso esteja no local.e a vari&aacute;vel N serve
+para desligar um avan&ccedil;o.</P>
+<P STYLE="margin-bottom: 0mm">Exemplos: SX1, RY4, NQ0.0</P>
+<P STYLE="margin-bottom: 0mm">A VX Ou VY &eacute; utilizado para
+verificar a posi&ccedil;&atilde;o conforme o diagrama anterior mas
+somente se variavel da linha estiver em um. Por exemplo VX1 verifica
+se o objeto atual est&aacute; alinhado com o objeto da linha 1 se o
+tag da linha 1 estiver com valor um.</P>
+<P STYLE="margin-bottom: 0mm">U e D &eacute; utilizado com o objeto
+texto para somar ou diminiur, conforme valor do tag da linha. 
+</P>
+<P STYLE="margin-bottom: 0mm"><BR>
+</P>
+<H2 CLASS="western">2.4 Da Opera&ccedil;&atilde;o de GRAVAR e LER
+Arquivos</H2>
+<P STYLE="margin-bottom: 0mm">&Eacute; poss&iacute;vel ler arquivos
+de qualquer diret&otilde;rio do sistema operacional, mas acomselha-se
+grav&aacute;-los no diret&oacute;rio SIMULADOR do software.</P>
+<P STYLE="margin-bottom: 0mm">Como o software envia dados via WEB,
+para a seguran&ccedil;a da opera&ccedil;&atilde;o, n&atilde;o &eacute;
+permitido salvar arquivos diretamente no sistema, e quando
+solicitamos o salvamento do arquivo, na verdade o software far&aacute;
+o download do arquivo.</P>
+<P STYLE="margin-bottom: 0mm"><BR><BR>Com este bot&atilde;o 
+<IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_3f6e8018.gif" NAME="graphics20" ALIGN=BOTTOM WIDTH=71 HEIGHT=44 BORDER=0>
+&eacute; poss&iacute;vel gravar. Para completar a opera&ccedil;&atilde;o
+voc&ecirc; dever&aacute; move-lo para o diret&otilde;rio de
+utiliza&ccedil;&atilde;o, recomendamos utilizar o diret&oacute;rio
+SIMULADOR. Para ler um arquivo utiliza-se o bot&atilde;o: 
+<IMG SRC="Manual_SCriWeb_Simulador_html_m27a0b782.png" NAME="graphics9" ALIGN=MIDDLE WIDTH=76 HEIGHT=46 BORDER=0>.
+</P>
+<H2 CLASS="western">2.5 Da Simula&ccedil;&atilde;o</H2>
+<P STYLE="margin-bottom: 0mm">Ao simular o ladder os comandos LADDER
+podem aparecer em at&eacute; sete figuras diferente, com o seguinte
+significado: - Figura 1 - Padr&atilde;o - Figura 2 - desligado -
+Figura 3 - Ligado 1 - Figura 4 - Ligado 2 (Utilizado para piscar as
+figuras) - Figura 5 - Visualiza&ccedil;&atilde;o 3 - Figura 6 -
+Visualiza&ccedil;&atilde;o 4 - Figura 7 - Visualiza&ccedil;&atilde;o
+5. 
+</P>
+<P STYLE="margin-bottom: 0mm"><BR>
+</P>
+<H2 CLASS="western">2.6 Das Fun&ccedil;&otilde;es de Edi&ccedil;&atilde;o</H2>
+<P STYLE="margin-bottom: 0mm">No modo edi&ccedil;&atilde;o tem-se
+oito diferentes fun&ccedil;&otilde;es: 
+</P>
+<TABLE WIDTH=100% CELLPADDING=4 CELLSPACING=0 STYLE="page-break-after: avoid">
+	<TR VALIGN=TOP>
+		<TD WIDTH=22% STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.97mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P>Icone</P>
+		</TD>
+		<TD WIDTH=78% STYLE="border: 1px solid #000000; padding: 0.97mm">
+			<P>Func&atilde;o</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=22% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_3f6f2313.gif" NAME="graphics11" ALIGN=LEFT WIDTH=70 HEIGHT=45 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD WIDTH=78% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0.97mm">
+			<P>Troca modo edi&ccedil;&atilde;o por simula&ccedil;ao</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=22% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_a81f59.gif" NAME="graphics19" ALIGN=LEFT WIDTH=69 HEIGHT=45 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD WIDTH=78% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0.97mm">
+			<P>Permite escolher um objeto da tela.<BR>Para selecionar pressine
+			o bot&atilde;p esquerdodo mouse.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=22% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_4727075d.gif" NAME="graphics12" ALIGN=LEFT WIDTH=70 HEIGHT=45 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD WIDTH=78% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0.97mm">
+			<P>Entra com um novo objeto do tipo texto.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=22% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m681cac27.gif" NAME="graphics13" ALIGN=LEFT WIDTH=70 HEIGHT=43 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD WIDTH=78% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0.97mm">
+			<P>Entra com um novo objeto do tipo desenho</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=22% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_7d319cb4.gif" NAME="graphics14" ALIGN=LEFT WIDTH=68 HEIGHT=44 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD WIDTH=78% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0.97mm">
+			<P>Entra com um uma anima&ccedil;&atilde;o</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=22% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m21c346d4.gif" NAME="graphics15" ALIGN=LEFT WIDTH=71 HEIGHT=45 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD WIDTH=78% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0.97mm">
+			<P>Entra com um novo objeto interativo tipo bot&atilde;o</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=22% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m7f0ee680.gif" NAME="graphics16" ALIGN=LEFT WIDTH=70 HEIGHT=45 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD WIDTH=78% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0.97mm">
+			<P>Entra com um novo objeto interativo n&atilde;o visual</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=22% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m6918a71a.gif" NAME="graphics17" ALIGN=LEFT WIDTH=70 HEIGHT=46 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD WIDTH=78% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0.97mm">
+			<P>Display</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=22% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_27a7b190.gif" NAME="graphics18" ALIGN=LEFT WIDTH=70 HEIGHT=45 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD WIDTH=78% STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0.97mm">
+			<P>Bargraph, gr&aacute;fico de barras.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0mm"><BR><BR>Ao selecionar a fun&ccedil;&atilde;o
+aparece a seguinte tela: 
+</P>
+<H2 CLASS="western"><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_76662e32.png" NAME="graphics22" ALIGN=BOTTOM WIDTH=591 HEIGHT=422 BORDER=0></H2>
+<H2 CLASS="western"><BR><BR>
+</H2>
+<H1 CLASS="western">3. Do Desenvolvimento</H1>
+<P STYLE="margin-bottom: 0mm">Da organiza&ccedil;&atilde;o dos
+arquivos e diret&oacute;rios s&atilde;o relacionados no programa
+principal. Consulte o help do arquivo principal. 
+</P>
+<P STYLE="margin-bottom: 0mm"><BR>
+</P>
+<H2 CLASS="western">3.1 Do Arquivo de Simula&ccedil;&atilde;o:</H2>
+<P STYLE="margin-bottom: 0mm">O arquivo de simula&ccedil;&atilde;o &eacute;
+dividido em linhas com as seguintes colunas: Tendo as colunas as
+fun&ccedil;&otilde;es:</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0mm"> 0_id: Identificador do n&uacute;mero
+	da linha, iniciando-se em zero; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">1_tipo: Tipo de vari&aacute;vel(1:
+	Label, 2: Figuras Est&aacute;ticas, 3:Figuras Din&acirc;micas,
+	4:Figuras Interativas(Bot&otilde;es),5:Objetos N&agrave;o visuais
+	Interativos, 6=display, 7=Bargraph ...) 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">2_nome: Nome do objeto;</P>
+	<LI><P STYLE="margin-bottom: 0mm"> 3_var_1: Vari&aacute;vel
+	dependente 1; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">4_var_2: Vari&aacute;vel
+	dependente 2;</P>
+	<LI><P STYLE="margin-bottom: 0mm"> 5_pos_x_inicial: Posi&ccedil;&atilde;o
+	do objeto;</P>
+	<LI><P STYLE="margin-bottom: 0mm"> 6_dpos_x: Tamanho do objeto; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">7_pos_x_final: Posi&ccedil;&atilde;o
+	Final, caso a figura se movimente; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">8_pos_y_inicial: Posi&ccedil;&atilde;o
+	do objeto</P>
+	<LI><P STYLE="margin-bottom: 0mm"> 9_dpos_y: Tamanho; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">10_pos_y_final:Posi&ccedil;&atilde;o
+	final; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">11_inc_x1: Incremento relativo a
+	vari&aacute;vel 1 no eixo x ou se letra a cor da fonte;</P>
+	<LI><P STYLE="margin-bottom: 0mm"> 12_inc_x2: Incremento relativo a
+	vari&aacute;vel 2, se for label o tamanho da fonte;</P>
+	<LI><P STYLE="margin-bottom: 0mm"> 13_inc_y1: Incremento relativo a
+	vari&aacute;vel 1 no eixo y, se label cor 1; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">14_inc_y2: Incremento relativo a
+	vari&aacute;vel 2, se label cor 2; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">15_var1_dependente: Caso seja uma
+	figura interativa, vari&aacute;vel/propriedade de intera&ccedil;&atilde;o;
+		</P>
+	<LI><P STYLE="margin-bottom: 0mm">16_var2_dependente: Vari&aacute;vel
+	2 de intera&ccedil;&atilde;o; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">17_piscar: Habilita a troca
+	din&acirc;mica de figuras; se for display habilita a entradade
+	dados; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">18_tempo_pisca: Tempo para a troca
+	de vari&aacute;veis; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">19_figura: Nome do arquivo da
+	figura ou se label a mensagem a ser escrita;</P>
+	<LI><P STYLE="margin-bottom: 0mm"> 20_funcao: Apontador para a
+	tabela Fun&ccedil;&atilde;o a ser executa; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">21_reserva: 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">22_reserva: 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">23_reserva: 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">24_reserva: 
+	</P>
+	<UL>
+		<H2 CLASS="western"><BR>3.2 Do Arquivo de imagens:</H2>
+	</UL>
+</UL>
+<P STYLE="margin-bottom: 0mm">Todos os qrquivos devem ser do tipo
+png. As figuras que ser&atilde;o utilizadas para visualiza&ccedil;&atilde;o
+devem ter as seguintes complementos no nome
+['','_off','_on1','_on2','3','4','5'], sendo a raiz do nome mantida
+para todas as figuras e indicadas no arquivo de simula&ccedil;&atilde;o.
+Por exemplo: Para monitorar uma correia em movimento, criar as
+figuras correia_off.png, correia_on1.png e correia_on2.png e indicar
+no arquivo de simula&ccedil;&atilde;o a figura correia. Para ver uma
+figura est&aacute;tica, criar o arquivo matriz.png. 
+</P>
+<H2 CLASS="western"><BR>3.3 Das Tabelas de Simula&ccedil;&atilde;o</H2>
+<P STYLE="margin-bottom: 0mm">Para simular o processo foram criadas
+cinco tabelas especificas:</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0mm">Tabela 1: Arrays com o nome das
+	imagens (arquivos); 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">Tabela 2: Arrays com as imagens; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">Tabela 3: Arrays com as mensagens
+	(labels); 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">Tabela 4: Arrays com as
+	propriedades din&acirc;micas; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">Tabela 5: Arrays com as
+	propriedades est&aacute;ticas. 
+	</P>
+	<P STYLE="margin-bottom: 0mm"></P>
+	<P STYLE="margin-bottom: 0mm">A tabela um a tr&ecirc;s s&atilde;o
+	compostas pelos nomes, arquivos incluindos no arquivo de simula&ccedil;&atilde;o
+	e label na ordem sequ&ecirc;ncial em que aparecem. 
+	</P>
+	<P STYLE="margin-bottom: 0mm">A tabela quatro, ArraysObjStatic &eacute;
+	composta por: 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">0_nome, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">1_var_1, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">2_var_2, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">3_pos_X_nicial, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">4_dpos_x ou cor da fonte, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">5_pos_x_final ou tamanho da fonte,</P>
+	<LI><P STYLE="margin-bottom: 0mm"> 6_pos_y_nicial, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">7_dpos_y, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">8_posicao_y_final, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">9_inc_x1, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">10_inc_x2, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">11_inc_y1, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">12_inc_y2, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">13_var1_associada, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">14_var2_associada, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">15_piscar/entrada, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">16_tempo, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">17_tipo, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">18_reserva, 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">19_reserva 
+	</P>
+	<P STYLE="margin-bottom: 0mm"></P>
+	<P STYLE="margin-bottom: 0mm">A tabela cinco, ArraysObjDinamic por: 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">0_nome 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">1_Index_Figura(1:fig1, 2:fig2,
+	etc) 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">2_Timer(uso da monitoracao) 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">3_PosX 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">4_PosY 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">5_Pos_ArrayImagens ou
+	Pos_ArrayLabel 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">6_funcao 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">7_Pox_X_anterior 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">8_POs_Y_anterior 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">9_reserva 
+	</P>
+</UL>
+<H2 CLASS="western">3.4. Do tipo de objetos.</H2>
+<H2 CLASS="western"><BR><BR>
+</H2>
+<H3 CLASS="western">3.4.1 - Label</H3>
+<P STYLE="margin-bottom: 0mm">Um objeto que permite inserir
+caracteres na interface gr&aacute;fica. Para sua utiliza&ccedil;&atilde;o
+deve-se configurar:</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0mm">1_tipo: Tipo de vari&aacute;vel(1:
+	Label) 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">2_nome: Nome do objeto; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">3- tag: Nome da var&aacute;vel se
+	existir; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">5_pos_x_inicial: Posi&ccedil;&atilde;o
+	do objeto; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">6_Largura: Largura do quadro; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">8_pos_y: Posicao Y; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">9_Altura: Altura do quadro; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">11_dpos_x: Cor da fonte; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">12_pos_x_final: Tamanho da fonte; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">13_Cor1: Cor de fundo do quadro se
+	tag==1; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">14-Cor2: Cor de fundo do quadro se
+	tag==0; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">19_figura: Label (mensagem) a ser
+	escrita; 
+	</P>
+</UL>
+<H3 CLASS="western">3.4.2 - Figura Est&aacute;tica</H3>
+<P STYLE="margin-bottom: 0mm">Um objeto que permite colocar uma
+figura na tela e tamb&eacute;m permite a movimenta&ccedil;&atilde;o
+da mesma na tela. Neste caso configura-se:</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0mm">1_tipo: Tipo de vari&aacute;vel(2:
+	Figuras Est&aacute;ticas) 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">2_nome: Nome do objeto; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">5_pos_x_inicial: Posi&ccedil;&atilde;o
+	do objeto; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">6_dpos_x: Tamanho do objeto; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">7_pos_x_final: Posi&ccedil;&atilde;o
+	Final, caso a figura se movimente; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">8_pos_y_inicial: Posi&ccedil;&atilde;o
+	do objeto 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">9_dpos_y: Tamanho; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">10_pos_y_final:Posi&ccedil;&atilde;o
+	final; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">11_inc_x1: Incremento relativo a
+	vari&aacute;vel 1 no eixo x; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">12_inc_x2: Incremento relativo a
+	vari&aacute;vel 2; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">13_inc_y1: Incremento relativo a
+	vari&aacute;vel 1 no eixo y; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">14_inc_y2: Incremento relativo a
+	vari&aacute;vel 2; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">15_var1_dependente: Vari&aacute;vel
+	que ativa o incremento 1; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">16_var2_dependente: Vari&aacute;vel
+	2 que ativa o incremento 2; 
+	</P>
+	<LI><P STYLE="margin-bottom: 0mm">19_figura: Nome do arquivo da
+	figura; Neste caso basta criar uma figura sem extens&otilde;es
+	(_off, _on1, etc), por exemplo: matriz.png. Ao click em cima da
+	figura ela vai para a posi&ccedil;&atilde;o inicial indicada.A
+	posicao inicial &eacute; armazenada na posi&ccedil;&atilde;o 5 e 8
+	da tabela. 
+	</P>
+</UL>
+<H3 CLASS="western">3.4.3 - Figura Din&acirc;mica</H3>
+<P>Um objeto din&acirc;mico que permite a troca da
+imagem dependendo do valor de uma vari&aacute;vel. Para a figura
+din&acirc;mica deve-se configurar:</P>
+<LI>1_tipo: Tipo de vari&aacute;vel(3:Figuras
+Din&acirc;micas) 
+<LI>2_nome: Nome do objeto; 
+<LI>3_var_1: Vari&aacute;vel
+dependente 1; 
+<LI>4_var_2: Vari&aacute;vel dependente 2; 
+<LI>5_pos_x_inicial:
+Posi&ccedil;&atilde;o do objeto; 
+<LI>6_dpos_x: Tamanho do objeto;
+<LI>8_pos_y_inicial: Posi&ccedil;&atilde;o do objeto 
+<LI>9_dpos_y: Tamanho;
+<LI>17_piscar: Habilita a troca din&acirc;mica de figuras quando no valor
+1 criando a impress&atilde;o de movimenta&ccedil;&atilde;o da figura;
+<LI>18_tempo_pisca: Tempo para a troca entre figuras, caso 17_piscar=1 e
+valor das vari&aacute;veis 1 ou 2 com valor 1; 
+<LI>19_figura: Nome do
+arquivo da figura; A fun&ccedil;&atilde;o piscar permite a troca de
+duas figuras diferentes, quando o objeto est&aacute; ligado, dando a
+impress&atilde;o de movimenta&ccedil;&atilde;o da figura, neste caso
+deve-se criar as figuras com as extens&otilde;es: _off, _on1 e _on2.
+Por exemplo: correia_off.png, correia_on1.png e correia_on2.png.
+Quando a fun&ccedil;&atilde;o piscar est&aacute; desabilitada as
+figuras devem ter as extens&otilde;es: _off e on1. Por exemplo:
+fc1_off.png e fc1_on1.png. 
+
+<H3 CLASS="western"><BR>3.4.4 - Figura Interativa (Bot&otilde;es e
+sensores para simula&ccedil;&atilde;o)</H3>
+<P CLASS="western" STYLE="margin-bottom: 0mm">Figura interativa
+corresponde a um objeto din&acirc;mico (mostra figuras diveferentes
+dependendo de um valor de tag) com a propriedade de intera&ccedil;&atilde;o
+com o simulador retornando um valor para o CLP Virtual. O conceito de
+Figura Interativa pode-se aplicar a um BOT&Atilde;O, onde um click na
+regi&atilde;o da figura permitir&aacute; alterar o valor da vari&aacute;vel
+associada ao mesmo. No simulador este conceito tamb&eacute;m poder&aacute;
+ser aplicado aos sensores, que podem ter seus valores alterados
+conforme o movimenta&ccedil;&atilde;o de uma figura est&aacute;tica. </P>
+<IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_2889ba62.png" NAME="graphics21" ALIGN=LEFT WIDTH=595 HEIGHT=96 BORDER=0>
+
+<TABLE WIDTH=100% CELLPADDING=4 CELLSPACING=0 STYLE="page-break-after: avoid">
+	<TR>
+		<TD WIDTH=50% STYLE="border: none; padding: 0mm">
+			<P>Fim-de-curso e matriz sem intera&ccedil;&atilde;o 
+			</P>
+		</TD>
+		<TD STYLE="border: none; padding: 0mm">
+			<P>Fim-de-curso e matriz interagindo (ocupando a mesma posi&ccedil;&atilde;o
+			X) 
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western"><BR><BR>A configura&ccedil;&atilde;o da figura
+interativa precisa dos seguintes par&acirc;metros: </P>
+<LI>1_tipo: Tipo de
+vari&aacute;vel(4:Figuras Interativas) 
+<LI>2_nome: Nome do objeto;
+<LI>3_var_1: Vari&aacute;vel dependente 1; 
+<LI>5_pos_x_inicial: Posi&ccedil;&atilde;o
+do objeto; 
+<LI>6_dpos_x: Tamanho do objeto; 
+<LI>8_pos_y_inicial: Posi&ccedil;&atilde;o
+do objeto 
+<LI>9_dpos_y: Tamanho; 
+<LI>15_var1_dependente: Caso seja uma figura
+interativa, vari&aacute;vel/propriedade de intera&ccedil;&atilde;o;
+<LI>16_var2_dependente: Vari&aacute;vel 2 de intera&ccedil;&atilde;o;
+<LI>19_figura: Nome do arquivo da figura; 
+
+<H3 CLASS="western">3.4.4 - Objetos N&atilde;o Visuais Interativos</H3>
+<P CLASS="western">Igual a figura interativa,mas sem a propriedade
+gr&aacute;fica. 
+</P>
+<H3 CLASS="western">3.4.5 - Display</H3>
+<P CLASS="western">Visualiza&ccedil;&atilde;o de um valor de um
+mem&oacute;ria interna Usa-se as variav&eacute;is D (down) e U (Up)
+para mudar o valor da variavel. Para Habilitar a entrada de dados
+coloca-se a posi&ccedil;&atilde;o de 17 com o valor 1. A configura&ccedil;&atilde;o
+da display precisa dos seguintes par&acirc;metros:</P> 
+<LI>1_tipo: Tipo de
+vari&aacute;vel(6:Display) 
+<LI>2_nome: Nome do objeto; 
+<LI>3_var_1: Vari&aacute;vel
+dependente 1; 
+<LI>5_pos_x_inicial: Posi&ccedil;&atilde;o do objeto;
+<LI>6_dpos_x: Tamanho do objeto; 
+<LI>8_pos_y_inicial: Posi&ccedil;&atilde;o
+do objeto 
+<LI>9_dpos_y: Tamanho; 
+<LI>11_dpos_x: Cor da fonte; 
+<LI>12_pos_x_final:
+Tamanho da fonte; 
+<LI>15_var1_dependente: Caso seja uma figura
+interativa, vari&aacute;vel/propriedade de intera&ccedil;&atilde;o;
+<LI>16_Incrementro; 
+<LI>17-Habilita 
+<LI>18- Precis&atilde;o Conversor AD (1024,
+2048, 4096, etc) 
+
+<H3 CLASS="western">3.4.6 - Bargraph</H3>
+<P CLASS="western">Visualizac&atilde;o de uma figura 2D cujo um eixo
+&eacute; proporcional ao valor da mem&oacute;ria interna. Usa-se as
+variav&eacute;is D (down) e U (Up) para mudar o valor da variavel. A
+configura&ccedil;&atilde;o do bargraph precisa dos seguintes
+par&acirc;metros: </P>
+<LI>1_tipo: Tipo de vari&aacute;vel(7:Display)
+<LI> 2_nome:
+Nome do objeto; 
+<LI>3_var_1: Vari&aacute;vel dependente 1;
+<LI>5_pos_x_inicial: Posi&ccedil;&atilde;o do objeto; 
+<LI>6_dpos_x: Tamanho
+do objeto; 
+<LI>7_Distancia se for interativa 
+<LI>8_pos_y_inicial: Posi&ccedil;&atilde;o
+do objeto 
+<LI>9_dpos_y: Tamanho; 
+<LI>11_dpos_x: Incremento X; 
+<LI>12_cor 1 : Cor
+do bargraph; 
+<LI>14_cor 2 : Cor do bargraph; 
+<LI>15_var1_dependente: Caso
+seja uma figura interativa, vari&aacute;vel/propriedade de intera&ccedil;&atilde;o;
+<LI>16_Incrementro se necessario; 
+<LI>18- Precis&atilde;o Conversor AD (1024,
+2048, 4096, etc) 
+
+</BODY>
+</HTML>

@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.0.5.2 (Windows)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="20200526;11043301">
+	<META NAME="Originator" CONTENT="Microsoft Word 15">
+	<META NAME="ProgId" CONTENT="Word.Document">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { size: 148.01mm 210.01mm }
+		P { color: #000000 }
+		TD P { color: #000000 }
+		H1 { color: #000000 }
+		PRE { color: #000000 }
+		PRE.cjk { font-family: "NSimSun", monospace }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" TEXT="#000000" DIR="LTR">
+<P STYLE="margin-right: 10.81mm"><BR><BR>
+</P>
+<H1 STYLE="margin-right: 10.81mm"><p><FONT SIZE=4 STYLE="font-size: 16pt">1.
+Da Software:</p></H1>
+<p>        O SCriWeb , Simulador Ladder Web, &eacute; um software de uso did&aacute;tico que permite a aprendizagem de CLP e sua programa&ccedil;&atilde;o. Permitindo a programa&ccedil;&atilde;o da linguagem ladder e a simula&ccedil;&atilde;o de uma m&aacute;quina ou processo industrial.</p>
+<p><FONT SIZE=4 STYLE="font-size: 16pt"><B>2. Da Utiliza&ccedil;&atilde;o:</B></FONT></p>
+        <p>O software pode ser acessado, depois de aberto o servidor SCRIWEB, atrav&eacute;s de qualquer browser compativel com HTML 5.0 ou diretamente atraves do aplicativo execut&aacute;vel electron.</p>
+        <p>O aplicativo execut&aacute;vel apresenta uma janela com as escolhas de abertura da janela de programa&ccedil;&atilde;o &lt;LADDER&gt; e/ou a janela de simula&ccedil;&atilde;o &lt;SIMULADOR&gt;.</p>
+   <IMG SRC="Manual_SCriWeb_Ladder_arquivos/image001.png" NAME="graphics1" WIDTH=431 HEIGHT=256 BORDER=0>
+
+<p><FONT SIZE=4><B>2.1 Da Simula&ccedil;&atilde;o</B></FONT></p>
+        <p>Ap&oacute;s editar o software ladder o usu&aacute;rio poder&aacute; simular o mesmo.</p>
+        <p>Para executar a simula&ccedil;&atilde;o do programa utilize um dos tr&ecirc;s comados: RUN, RUN CICLO e RUN PASSO A PASSO.</p>
+        <p>- RUN <IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_6ec85abc.jpg" NAME="graphics2" ALIGN=BOTTOM WIDTH=46 HEIGHT=24 BORDER=0>: Executa continuamente o programa, da primeira l&oacute;gica a &uacute;ltima, reiniciando-se em seguida. Esta &eacute; forma utilizada na maioria dos CLP comerciais.</p>
+        <p>- RUN CICLO <IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_5bee7f6e.jpg" NAME="graphics3" ALIGN=BOTTOM WIDTH=51 HEIGHT=26 BORDER=0>: executa apenas um ciclo do programa, ou seja, vai da primeira a &uacute;ltima l&oacute;gica e para o programa. Para executar um novo ciclo de programa</FONT><FONT FACE="NSimSun, monospace"><SPAN LANG="zh-CN"><p><SPAN LANG="zh-CN">&#65440; </p></p><p>faz-se necess&aacute;rio pulsar novamente o bot&atilde;o RUN CICLO.</FONT>
+        <p>- RUN PASSO A PASSO <IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_b799064.jpg" NAME="graphics4" ALIGN=BOTTOM WIDTH=47 HEIGHT=27 BORDER=0>: m&eacute;todo did&aacute;tico que permite executar o programa passo a passo, a cada pulso no bot&atilde;o executa apenas uma fun&ccedil;&atilde;o do ladder (um passo), convertido para booleano. o passo que est&aacute; sendo executado pode ser visualizado no ambiente atrav&eacute;s do fundo amarelo na fun&ccedil;&atilde;o, que indica que o ladder foi executado at&eacute; o ponto indicado. Este m&eacute;todo &eacute; fundamental para que o usu&aacute;rio entenda a ordem em que os comandos s&atilde;o interpretados em um CLP.</FONT>
+
+
+<A NAME="_x0000_i1031"></A><p><FONT SIZE=4><B>2.2 Enviar programa para CLP Virtual</B></FONT><IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_684ab400.jpg" NAME="graphics5" ALIGN=BOTTOM WIDTH=54 HEIGHT=28 BORDER=0></FONT>
+        <p>Para simula&ccedil;&atilde;o do processo, antes de colocar o CLP no modo RUN &eacute; necess&aacute;rio carregar o software do ambiente de programa&ccedil;&atilde;o para o CLP Virtual.</FONT>
+        <p>Esta opera&ccedil;&atilde;o &eacute; necess&aacute;ria, para o software compilar o ladder criado, convertendo-o para a linguagem booleana e tamb&eacute;m para inicializar e carregar as vari&auml;veis.</FONT>
+
+<p><FONT SIZE=4><B>2.3 A Representa&ccedil;&atilde;o F&iacute;sica do CLP</B></p>
+        <p>No ambiente de programa&ccedil;&atilde;o temos a representa&ccedil;&atilde;o de um CLP, onde podemos alterar o valor das 6 primeiras entradas, atrav&eacute;s do bot&atilde;o do mouse.</FONT>
+        <p>Tamb&eacute;m s&atilde;o representados nesta imagem as 6 primeiras saidas, com 6 l&acirc;mpadas virtuais, e algumas mem&oacute;rias internas do CLP.</FONT>
+
+<IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_m7f815306.jpg" NAME="graphics6" ALIGN=BOTTOM WIDTH=376 HEIGHT=254 BORDER=0>
+<p><FONT SIZE=4><B>2.4 Da vari&aacute;vel TR</B></p>
+        <p>A vari&aacute;vel TR representa as ramifica?es internas do ladder, sendo utilizado para a convers&atilde;o do ladder em booleano.</FONT>
+        <p>No in&iacute;cio da varredura, todas as TR s&atilde;o desligadas, sendo ligadas a medidas que s&atilde;o interpretadas e as condi&ccedil;&otilde;es precedentes s&atilde;o verdadeiras. S&atilde;o utilizadas TR em todas as liga&ccedil;&otilde;es verticais e nas ligac&otilde;es horizontais ap&oacute;s a interpreta&ccedil;&atilde;o de um comando de entrada (NA,NF, pulso, MOV, Compara&ccedil;&atilde;o).</FONT>
+
+<p><FONT SIZE=4><B>2.5 Da Edic&atilde;o do Ladder</B></p>
+        <p>Para editar o ladder, seleciona-se a fun&ccedil;&atilde;o na barra de ferramentas e logo apos seleciona-se o local na &aacute;rea de edi&ccedil;&atilde;o do ladder.</FONT>
+        <p>Ap&oacute;s a opera&ccedil;&atilde;o de insers&atilde;o solicita-se o nome do tag e o endere&ccedil;o da vari&aacute;vel da fun&ccedil;&atilde;o. Para as fun&ccedil;&otilde;es de temporizac&atilde;o e contagem tambem s&atilde;o solicitados o limite minimo de contagem e seu tag. Para as func&otilde;es e compara&ccedil;&atilde;o tamb&eacute;m solicita-se o tipo de fun&ccedil;&atilde;o e os endere&ccedil;os 1 e 2 e respectivos tags. Ap&oacute;s a edi&ccedil;&atilde;o do ladder, pode-se compilar o software. A compila&ccedil;&atilde;o ocorre durante a opera&ccedil;&atilde;o de carga do software para o CLP VIRTUAL.</FONT></PRE>
+<TABLE WIDTH=409 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-after: avoid">
+	<TR VALIGN=TOP>
+		<TD WIDTH=82 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.97mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P ALIGN=JUSTIFY><IMG SRC="Manual_SCriWeb_Ladder_html_m30cd852c.jpg" NAME="graphics14" ALIGN=BOTTOM WIDTH=57 HEIGHT=35 BORDER=0></P>
+		</TD>
+		<TD WIDTH=309 STYLE="border: 1px solid #000000; padding: 0.97mm">
+			<PRE CLASS="western" STYLE="margin-right: 18.52mm; text-align: justify"><p>_Inserir liga&ccedil;&atilde;o horizontal</FONT></PRE>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=82 HEIGHT=51 STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P ALIGN=JUSTIFY><IMG SRC="Manual_SCriWeb_Ladder_html_10e0cff0.jpg" NAME="graphics7" ALIGN=LEFT WIDTH=61 HEIGHT=38 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD>
+			<PRE CLASS="western" STYLE="margin-right: 18.52mm; text-align: justify"><p><FONT SIZE=2>-Inserir Liga&ccedil;&atilde;o Vertical</p></PRE>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=82 STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P ALIGN=JUSTIFY><IMG SRC="Manual_SCriWeb_Ladder_arquivos/image004.png" NAME="graphics15" ALIGN=BOTTOM WIDTH=66 HEIGHT=429 BORDER=0></P>
+		</TD>
+		<TD>
+		<p>- Inserir Contato NA</p>
+<p>-Inserir Contato NF</p>
+<p>- Inserir Rele Bobina</p>
+<p>- Inserir Rele SET</p>
+<p>- Inserir Rele RERSET</p>
+<p>- Inserir TIMER. O Primeiro endere&ccedil;o T1,t1,t3,etc. O segundo endere&ccedil;o constante 10, 23, etc ou vari&aacute;vel MO, M10, etc.</p>
+<p>- Inserir Contador. O primeiro C1, C2, etc. O segundo Constante(5, 10, etc) ou vari&aacute;vel (M5, M10, etc).</p>
+<p>_ Inserir fun&ccedil;&atilde;o Gen&eacute;rica. MOV, + e -. Movimenta operando. Dois operandos de 16 bits: M0, M5, Q0, I2, etc.</p>
+   <p>Operado1 = Operando1+/- Operando2 </p>
+<p>- Rele de Pulso</p>
+<p><FONT SIZE=2>- fun&ccedil;&atilde;o de Comparac&atilde;o. Fun&ccedil;&otilde;es permitidas: =, &gt;, &lt;, &gt;= e &lt;=. Dois operandos de 16bits.</p></PRE>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=82 STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<P ALIGN=JUSTIFY><IMG SRC="Manual_SCriWeb_Ladder_arquivos/image005.png" NAME="graphics16" ALIGN=BOTTOM WIDTH=68 HEIGHT=47 BORDER=0></P>
+		</TD>
+		<TD >
+			<p>- Apagar instru&ccedil;&atilde;o</FONT></PRE>
+		</TD>
+	</TR>
+</TABLE>
+      <p>Tamb&eacute;m para editar existe um bot&atilde;o para apagar uma instru&ccedil;&atilde;o e l&oacute;gica, mover e copiar l&oacute;gicas e para inserir espa&ccedil;os entre l&oacute;gicas. No comando de l&oacute;gicas aparece uma nova tela para entrada da posi&ccedil;&atilde;o inicial, numero de linhas e posi&ccedil;&atilde;o destino.</p>
+<TABLE WIDTH=446 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-after: avoid">
+	<TR VALIGN=TOP>
+		<TD WIDTH=80 STYLE="border-top: 1px solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0.97mm; padding-bottom: 0mm; padding-left: 0.97mm; padding-right: 0mm">
+			<IMG SRC="Manual_SCriWeb_Ladder_arquivos/image006.png" NAME="graphics8" ALIGN=LEFT WIDTH=41 HEIGHT=27 BORDER=0></TD>
+		<TD WIDTH=348 STYLE="border-top: 1px solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0.97mm; padding-bottom: 0mm; padding-left: 0.97mm; padding-right: 0.97mm">
+			<PRE CLASS="western" STYLE="margin-right: 10.81mm"><p>- Inserir l&oacute;gicas a partir da l&oacute;gica inicial e n&uacute;ero de linhas.</FONT></PRE>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=80 STYLE="border-top: none; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0mm; padding-left: 0.97mm; padding-right: 0mm">
+			<IMG SRC="Manual_SCriWeb_Ladder_arquivos/botao1.jpg" NAME="graphics8" ALIGN=LEFT WIDTH=41 HEIGHT=27 BORDER=0></TD>
+		<TD WIDTH=348 STYLE="border-top: none; border-bottom: none; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0mm 0.97mm">
+			<PRE CLASS="western" STYLE="margin-right: 10.81mm"><p>- Copiar l&oacute;gicas, n?eros de linhas para l&oacute;gica destino.</FONT></PRE>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=80 STYLE="border-top: none; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0mm; padding-left: 0.97mm; padding-right: 0mm">
+			<IMG SRC="Manual_SCriWeb_Ladder_arquivos/bota2.jpg" NAME="graphics8" ALIGN=LEFT WIDTH=41 HEIGHT=27 BORDER=0></TD>
+		<TD WIDTH=348 STYLE="border-top: none; border-bottom: none; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0mm 0.97mm">
+			<PRE CLASS="western" STYLE="margin-right: 10.81mm"><p>- Mover l&oacute;gica, n?ero de linhas , para l&oacute;gica destino.</FONT></PRE>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=80 STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0mm">
+			<IMG SRC="Manual_SCriWeb_Ladder_arquivos/bota3.jpg" NAME="graphics8" ALIGN=LEFT WIDTH=41 HEIGHT=27 BORDER=0></TD>
+		<TD WIDTH=348 STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0mm; padding-bottom: 0.97mm; padding-left: 0.97mm; padding-right: 0.97mm">
+			<PRE CLASS="western" STYLE="margin-right: 10.81mm"><p>- Apagar l&oacute;gicas, a partir da l&oacute;gica inicial e n?ero de linhas.</FONT></PRE>
+		</TD>
+	</TR>
+</TABLE>
+<p><FONT SIZE=4><B>2.6 Da Operac&atilde;o de GRAVAR e LER Arquivos</B></FONT></p>
+             <p>E poss&iacute;vel ler arquivos<IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_6ae7d732.jpg" NAME="graphics11" ALIGN=BOTTOM WIDTH=50 HEIGHT=30 BORDER=0> de qualquer diret&oacute;rio do sistema operacional, mas aconselha-se grav&aacute;-los no diret?io LADDER do software.</p>
+        <p>Como o software envia dados via WEB, para a seguran&ccedil;a da operac&atilde;o, n&atilde;o &eacute; permitido salvar arquivos <IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_3abc627a.jpg" NAME="graphics12" ALIGN=BOTTOM WIDTH=50 HEIGHT=30 BORDER=0>diretamente no sistema, e quando solicitamos o salvamento do arquivo, na verdade o software far&aacute; o download do arquivo.</p>
+         <p>Para completar a opera&ccedil;&atilde;o voc&ecirc; dever&aacute; move-lo para o diret&oacute;rio de utiliza&ccedil;&atilde;o, recomendamos utilizar o diret&oacute;rio LADDER.</p>
+
+ <p><FONT SIZE=4><B>2.7 Da simula&ccedil;&atilde;o</B></FONT></p>
+        <p>Ao simular o ladder os comandos da linguagem de programa&ccedil;&atilde;o podem aparecer em CINCO CORES diferentes, com o seguinte significado:</p>
+   <IMG SRC="Manual_SCriWeb_Ladder_arquivos/image007.png" NAME="graphics13" ALIGN=BOTTOM WIDTH=494 HEIGHT=91 BORDER=0><P STYLE="margin-right: 10.81mm">
+<BR><BR>
+</P>
+<p>-
+PRETO - N&atilde;o est&aacute; deixando passar corrente VIRTUAL </p>
+</P>
+ <p>- VERDE - Liberando a corrente VIRTUAL</p>
+       <p>- VERMELHO - ERR0 - vari&aacute;vel Inexistente</p>
+       <p>- AMARELO - ERR0 - Erro n&atilde;o previsto</p>
+       <p>- FUNDO AMARELO - l&oacute;gica atual no modo passo-a-passo</p>
+
+ <p><FONT SIZE=4><B>2.8 Das Vari&aacute;veis Aceitas</B></FONT></p>
+        <p>s&atilde;o aceitas as seguintes vari&aacute;veis com os seguintes indexes:</p>
+        <p>- I : entrada</p>
+        <p>- Q : sa&iacute;das</p>
+        <p>- M : mem&oacute;rias</p>
+        <p>- C : contadores</p>
+        <p>- T : Temporizadores</p>
+        <p>- Constantes</p>
+        <p>Estas vari&aacute;veis podem ser acessadas como registradores (16 bits), como por exemplo: I0, M2, Q1</p>
+        <p>Estas vari&aacute;veis podem ser acessadas de forma bin&aacute;ria, como: I0.0, I0.10, M2.15, M2.1, Q1.3, etc.</p>
+        <p>No CLP as entradas iniciam-se em ZERO e as sa&iacute;das tamb&eacute;m.</p>
+        <p>Os contadores e temporizadores correspondem a um tipo especial, que podem indicar um 
+		registrador de 16 bits ou um endere&ccedil;o bin&aacute;rio, seu acesso sempre ser&aacute; sem a 
+		
+		utiliza&ccedil;&atilde;o do ponto. Por exemplo: C1, T2, C0, T6, etc.</p>
+
+ <p><FONT SIZE=4><B>2.9 Das Fun&ccedil;&otilde;es\Comandos Ladder Aceitas</B></FONT></p>
+        <p>s&atilde;o aceitas as seguintes fun&ccedil;&otilde;es/comando no ambiente ladder:</p>
+        <p>- Liga&ccedil;&atilde;o horizontal;</p>
+        <p>- Liga&ccedil;&atilde;o vertical;</p>
+        <p>- Contato NA;</p>
+        <p>- Contato NF;</p>
+        <p>- Rele bobina;</p>
+        <p>- Rele Set;</p>
+        <p>- Rele Reset;</p>
+        <p>- Temporizador na </p><p>energiza&ccedil;&atilde;o;</p>
+        <p>- Contador crescente;</p>
+        <p>- fun&ccedil;&atilde;o gen&eacute;rica: aceita fun&ccedil;&atilde;o MOV, </p><p>+ e -</p>
+        <p>- Contato de pulso NA;</p>
+         <p>- Fun&ccedil;&otilde;es de compara&ccedil;&atilde;o: aceita: &gt;, &lt;, =, &gt;=, &lt;= e &lt;&gt;.</p>
+
+<p><FONT SIZE=4 STYLE="font-size: 16pt"><B>3. Do Desenvolvimento</B></FONT></p>
+<p><FONT SIZE=4><B>3.1. Dos Arquivos e Diret&Oacute;Rios</B></FONT></p>
+        <p>O aplicativo &eacute; composto pela seguinte estrutura de arquivos:</p>
+        <p>- Diret&oacute;rio raiz: SCriWeb_DATA, informando a data de cria?o do arquivo no padr? ANOMESDIA</p>
+        <p>- Subdiret&oacute;rio: SCriWeb</p>
+        <p>- Subdiret&oacute;rio: LADDER</p>
+        <p>- Subdiret&oacute;rio: Simulador</p>
+        <p>- Subdiret&oacute;rio: node_modules, para as dependencias do node, este diret&oacute;rio &eacute; criado automaticamente quanto executa-se na raiz da aplica&ccedil;&atilde;o &quot;npm run install&quot;</p>
+
+<p><FONT SIZE=3><B>3.1.1 Subdiret&oacute;rio SCriWeb</B></FONT></p>
+        <p>Subdiretorio: public, para armazenamento dos script, desenhos, css da aplica&ccedil;&atilde;o e manual de opera&ccedil;&atilde;o.</p>
+        <p>Arquivo: icon4.png, &iacute;cone da aplica&ccedil;&atilde;o</p>
+        <p>Arquivo: package.json, script inicial da aplica&ccedil;&atilde;o ELECTRON</p>
+        <p>Arquivo: Scriweb.html, p&aacute;gina HTML padrao do Supervis&atilde;oio SCriWeb</p>
+        <p>Arquivo: ScriWeb.js, script da aplica&ccedil;&atilde;o NODE e ELECTRON</p>
+        <p>Arquivo: ScriWebAbout, p&aacute;gina ABOUT da aplica&ccedil;&atilde;o.</p>
+        <p>Arquivo: ScriWebHelp, p&aacute;gina de HELP</p>
+        <p>Arquivo: SCriWebConfig, p&aacute;gina para configura&ccedil;&atilde;o</p>
+        <p>Arquivo: Servidor.html, p&aacute;gina html a ser visualizada com o ELECTRON</p>
+        <p>Arquivo: SimSCriWeb.html, p&aacute;gina para montagem da aplica&ccedil;&atilde;o do simulador industrial.</p>
+        <p>Arquivo: SimConfig.html, p&aacute;gina para configura&ccedil;&atilde;o da aplica&ccedil;&atilde;o de simulador</p>
+        <p>Arquivo: SimHelp.html, p&aacute;gina de help</p>
+        <p>Arquivo: SPLASH, tela inicial SCRIWEB.</p>
+
+<p><FONT SIZE=3><B>3.1.2 Subdiret&oacute;rio LADDER:</B></FONT></p>
+        <p>Os arquivos fonte em ladder do tipo CSV para a simula&ccedil;&atilde;o ladder, com a seguinte estrutura de arquivo:</p>
+        <p>Arquivo: XXX.csv, arquivo fonte programa ladder,</p>
+
+<p><FONT SIZE=3><B>3.1.3 Subdiret&oacute;rio SIMULADOR:</B></FONT></p>
+        <p>Todos os arquivos utilizados para simular um processo industrial ou m&aacute;quina, incluindo arquivos do tipo CSV e figuras.</p>
+        <p>Os arquivos do tipo CSV podem ser:</p>
+        <p>Arquivo: XXX_funcao.csv, arquivo com script especial para algum comando do programa XXX.csv</p>
+        <p>Arquivo: XXX_dinamico.csv, arquivo com os objetos para simula&ccedil;&atilde;o do programa ladder</p>
+        <p>Arquivo: XXX.png, imagem</p>
+        <p>Este subdiret&oacute;rios deve ser subdividido para cada aplica&ccedil;&atilde;o diferente. Como exemplo:</p>
+        <p>-CorteEVinco;</p>
+        <p>-Nivel;</p>
+        <p>-Dosagem.</p>
+
+<p><FONT SIZE=3><B>3.1.4 Subdiret&oacute;rio PUBLIC:</B></FONT></p>
+        <p>Com sete subdiret&oacute;rios e arquivos do manual.</p>
+        <p>Subdiretorio: CSS_LAD, com os arquivos de configura?o,</p>
+        <p>Subdiret&oacute;rio: IMG_LAD, com as imagens da aplica?o</p>
+        <p>Subdiret&oacute;rio: JS_LAD, com os javascript da aplica?o.</p>
+        <p>Subdiret&oacute;rio: CSS_SIM, com os arquivos de configura?o da simula&ccedil;&atilde;o,</p>
+        <p>Subdiret&oacute;rio: IMG_SIM, com as imagens</p><FONT FACE="NSimSun, monospace"><SPAN LANG="zh-CN"><p><SPAN LANG="zh-CN">&#65440; </SPAN></p></p><p>da simula&ccedil;&atilde;o</p>
+        <p>Subdiret&oacute;rio: JS_SIM, com os javascript</p><FONT FACE="NSimSun, monospace"><SPAN LANG="zh-CN"><p><SPAN LANG="zh-CN">&#65440; </SPAN></p></p><p>da simula&ccedil;&atilde;o.</p>
+        <p>Subdiret&oacute;rio: ICON, com icones do aplicativo.</p>
+        Subdiret&oacute;rio: <p>Manual_SCriWeb_ladder, com as imagens do Manual</p>  
+            <p>Arquivo: Manual_SCriWeb_ladder, este arquivo.</p>
+        <p>Arquivo: Manual_SCriWeb_simulador, arquivo de help do simulador.</p>
+
+<p><FONT SIZE=3>3.1.4.1 Arquivos de Configura&ccedil;&atilde;o (CSS)</FONT></p>
+        <p>p&aacute;ginas de estilos CSS para cada p&aacute;gina da aplica&ccedil;&atilde;o ladder (CSS_LAD) e simulador (CSS_SIM):</p>
+        <p>Arquivo: style.css - p&aacute;gina principal;</p>
+        <p>Arquivo: style_about - p&aacute;gina about;</p>
+        <p>Arquivo: style_config - p&aacute;gina config;</p>
+        <p>Arquivo: style_help - p&aacute;gina de help.</p>
+        <p>Arquivo: stylesim - p&aacute;gina principal de simula&ccedil;&atilde;o.</p>
+
+<p><FONT SIZE=3>3.1.4.2 Arquivos de Imagens</FONT></p>
+        <p>Arquivos de imagens utilizados na aplica&ccedil;&atilde;o, no ladder (IMG_LAD) e no simulador (IMG_SIM).</p>
+        <p>- botoes4.png - imagens da barra de ferramenta, feito em tr&ecirc;s colunas, com imagens duplicadas: uma para cada estado;</p>
+        <p>- ladder. png - imagens para o ambiente ladder. Cada imagens &eacute; composta por um conjunto de 7 cores diferentes: Preto, Preto Bold, Verde, Vermelho,Amarelo, Preto Bold com fundo Amarelo e Verde com fundo amarelo.</p>
+        <p>- eletrico.png - imagens das chaves e l&acirc;mpadas para o CLP virtual, tamb&eacute;m com cinco cores.</p>
+        <p>- LLV.png - imagem para a liga&ccedil;&atilde;o vertical.</p>
+        <p>- botoessim.png - imagens da barra de ferramenta, feito em uma coluna, com imagens duplicadas: uma para cada estado. Para a tela de simula&ccedil;&atilde;o.</p>
+
+<p><FONT SIZE=3>3.1.4.3 Arquivos JS</FONT></p>
+        <p>Na pasta js_lad (LADDER) e js_sim (SIMULADOR):</p>
+        <p>- app_lad_config.js - aplicativo para configura&ccedil;&otilde;es</p>
+        <p>- appbotao.js - controle dos bot&atilde;os</p>
+        <p>- appcompila.js - para convers&atilde;o do ladder para booleano</p>
+        <p>- appeletrico.js - para controle do CLP, chaves e l&acirc;mpadas</p>
+        <p>- appinicio.js - Carrega as fun&ccedil;&otilde;es javascript</p>
+        <p>- appladder.js - Para o desenho do ladder (criar e desenhar)</p>
+        <p>- appsocket.js - para troca de informa&ccedil;&otilde;es com o servidor</p>
+        <p>- FileSaver.js - para gravac&atilde;o de arquivos.</p>
+        <p>- appbotaosim.js - controle dos bot&atilde;os no simulador</p>
+        <p>- appiniciosimulador.js - Inicializa&ccedil;&atilde;o tela simulador</p>
+        <p>- appsimulador.js - Para o desenho do simulador (criar e desenhar)</p>
+
+<p><FONT SIZE=4><B>3.2 Das vari&aacute;veis:</B></FONT></p>
+<p><FONT SIZE=3><B>3.2.1 Do Timer e counter</B></FONT></p>
+        <p>O array de TIMER e COUNTER tem dimens&atilde;o maior que um, comportando outros sinalizadores aderentes ao controle da fun&ccedil;&atilde;o.</p>
+        <p>O array do TIMER &eacute; dividido desta forma:</p>
+        <p>- T[0] = valor bin&aacute;rio do temporizador, confere se totalizador &eacute; maior que limite</p>
+        <p>- T[1] = valor totalizado do temporizador</p>
+        <p>- T[2] = Valor limite do temporizador.</p>
+        
+        <p>O array do COUNTER desta forma:</p>
+        <p>- C[0] = valor binario do contador, confere se totalizador for maior que limite</p>
+        <p>- C[1] = valor totalizado do contador</p>
+        <p>- C[2] = Valor limite do contador</p>
+        <p>- C[3] = Flag para verifica&ccedil;&atilde;o do pulso na entrada do contador. Tamb&eacute;m utilizado para impedir resetar o contador no mesmo ciclo, fazendo que o ciclo de limite atingindo permane&ccedil;a por no m&iacute;nimo um ciclo completo do CLP. Neste caso o flag &eacute; setado com o valor 2.</p>
+
+<p><FONT SIZE=3><B>3.2.2 Dos Arquivos Ladder</B></FONT></p>
+        <p>Arquivo Objeto: declara o arquivo em LADDER { _id, nome, var_1, tipo, var_2, ver, R-W, tag2, fun&ccedil;&atilde;o};</p>
+        <p>- lista._id = Identificador XXY, onde XX=linha e Y=coluna</p>
+        <p>- lista.nome = nome do tag</p>
+        <p>- lista.var_1 = variavel principal</p>
+        <p>- tipo = 0:desativado, 1 :NA, 2: NF, 3:Bobina, 4:Set, 5:Reset, 6:Tempo, 7:contador, 8:fun&ccedil;&atilde;o, 9:pulso, 10:comparac&atilde;o, 11: horizontal, 12: reservado,</p>
+        <p>- lista.var2 = vari&aacute;vel secundario, no timer e counter o valor de preset</p>
+        <p>- lista.ver = liga&ccedil;&atilde;o vertical, 0:false 1:true, maior que 1 igual ao n&uacute;mero do TR.</p>
+        <p>- lista.R-W = Leitura(1) ou Escrita(2)</p>
+        <p>- lista.tag2 = nome do tag da vari&aacute;vel 2</p>
+        <p>- lista.funcao = nome da funcao gen&eacute;rica</p></PRE>
+</BODY>
+</HTML>
