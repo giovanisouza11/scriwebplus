@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron scriweb.js",
+    "start": "node scriweb.js",
     "win32p": "electron-builder --windows portable:ia32",
     "win32": "electron-builder --windows :ia32",
     "win64p": "electron-builder --windows pnsisortable:x64",
