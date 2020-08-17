@@ -32,6 +32,7 @@ var atualiza_entrada = 0;
 //Iniciando servidor HTTP
 //-----------------------------------------
 if (ativo) {
+	const PORT = process.env.PORT || 5001;	
     var path = require('path');
     var express = require('express');
     var app = express();
@@ -70,7 +71,7 @@ if (ativo) {
 	app.get('/popup',function(req,res){
         res.sendFile(__dirname + '/popup.html');
     });
-    server.listen(,function() {
+    server.listen(PORT,function() {
  		//JanelaElectron();
 		console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
     });
