@@ -20,7 +20,7 @@ var ArrayLabel = [];
 var ArrayObjDinamic = [];
 var ArrayObjStatic =[];
 var simPath;
-var simPathInicial = 'http://scriweb.herokuapp.com/scriweb/simulacao/';
+var simPathInicial = '/scriweb/simulacao/';
 var FuncaoMatriz =[];
 var tempo = window.setInterval(AtualizaPorTempo, 500);
 var variavel;
