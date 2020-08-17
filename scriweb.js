@@ -70,7 +70,7 @@ if (ativo) {
 	app.get('/popup',function(req,res){
         res.sendFile(__dirname + '/popup.html');
     });
-    server.listen(4333, function() {
+    server.listen(function() {
  		//JanelaElectron();
 		console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
     });
