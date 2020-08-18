@@ -44,16 +44,18 @@ function tBotao() {
 	}
 	if (simEdicao==0 && valor_chave[2]==1){
         var inputCSV = document.createElement('input');
-	    inputCSV.type = 'file';
-		inputCSV.accept = '.CSV';
-	    inputCSV.click();
-	    inputCSV.onchange = function() {
-			var file = this.files[0];
-		    leitorDeCSV.readAsText(file);
-			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
+	 inputCSV.type = 'file';
+	 inputCSV.path = 'download';
+	inputCSV.accept = '.CSV';
+	inputCSV.click();
+	inputCSV.onchange = function() {
+	    var file = this.files[0];
+		leitorDeCSV.readAsText(file);
+		simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
 		};
-		valor_chave[4]==0;
-		valor_chave[5]==1;
+		
+	valor_chave[4]==0;
+	valor_chave[5]==1;
 	}
 	if (simEdicao==0 && valor_chave[3]==1){
 	    let texto = '0_id, 1_tipo, 2_nome, 3_var_1, 4_var_2, 5_pos_x_inicial, 6_dpos_x, 7_pos_x_final, 8_pos_y_inicial, 9_dpos_y, 10_pos_y_final, 11_inc_x1, 12_inc_x2, 13_inc_y1, 14_inc_y2, 15_var1_dependente, 16_var2_dependente, 17_piscar, 18_tempo_pisca, 19_figura, 20_funcao, 21_reserva, 22_reserva, 23_reserva, 24_reserva \n';
