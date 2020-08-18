@@ -83,12 +83,17 @@ function tBotao() {
 		comandos = 0;
 	}
 	if (simEdicao==0 && valor_chave[6]==1){
-		let a = document.createElement('a')
-		a.href = item.url
-		a.download = item.url.split('/').pop()
-		document.body.appendChild(a)
-		a.click()
-		document.body.removeChild(a)
+		let a = document.createElement('a');
+		a.href = item.url;
+		a.download = item.url.split('/').pop();
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		//var file = this.files[0];
+		//leitorDeCSV.readAsText(file);
+				
+		valor_chave[4]==0;
+		valor_chave[5]==1;
 	}
 	if (simEdicao==0 && valor_chave[1]==1){
 		valor_chave[1]=0;
