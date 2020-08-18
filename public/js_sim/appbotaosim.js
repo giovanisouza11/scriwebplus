@@ -82,6 +82,14 @@ function tBotao() {
 	if (simEdicao==0 && valor_chave[5]==1){
 		comandos = 0;
 	}
+	if (simEdicao==0 && valor_chave[6]==1){
+		let a = document.createElement('a')
+		a.href = item.url
+		a.download = item.url.split('/').pop()
+		document.body.appendChild(a)
+		a.click()
+		document.body.removeChild(a)
+	}
 	if (simEdicao==0 && valor_chave[1]==1){
 		valor_chave[1]=0;
 		comandos = 0;
