@@ -43,7 +43,11 @@ if (ativo) {
     app.use(express.static(__dirname + '/public'));
     app.use('/simulacao', express.static('/scriweb/simulacao'));
 	app.use('/ladder',express.static('/scriweb/ladder'));
-	
+    router.get('/download', function (req, res, next) {
+    	var filePath = "/scriweb/simulacao/elevador/"; //caminho do arquivo completo
+    	var fileName = "*.csv"; // O nome padrão que o browser vai usar pra fazer download
+	res.download(filePath, fileName);    
+    });
     app.get('/', function(req, res) {
         res.sendFile(__dirname + '/scriweb.html');
     });
