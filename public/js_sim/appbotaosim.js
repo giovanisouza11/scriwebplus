@@ -52,9 +52,9 @@ function tBotao() {
 		leitorDeCSV.readAsText(file);
 		simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
 		};
-		
-	valor_chave[4]==0;
-	valor_chave[5]==1;
+	comandos = 0;	
+	valor_chave[4]=0;
+	valor_chave[5]=1;
 	}
 	if (simEdicao==0 && valor_chave[3]==1){
 	    let texto = '0_id, 1_tipo, 2_nome, 3_var_1, 4_var_2, 5_pos_x_inicial, 6_dpos_x, 7_pos_x_final, 8_pos_y_inicial, 9_dpos_y, 10_pos_y_final, 11_inc_x1, 12_inc_x2, 13_inc_y1, 14_inc_y2, 15_var1_dependente, 16_var2_dependente, 17_piscar, 18_tempo_pisca, 19_figura, 20_funcao, 21_reserva, 22_reserva, 23_reserva, 24_reserva \n';
@@ -91,9 +91,9 @@ function tBotao() {
 		document.body.removeChild(a);
 		//var file = this.files[0];
 		//leitorDeCSV.readAsText(file);
-				
-		valor_chave[4]==0;
-		valor_chave[5]==1;
+		comandos=0;		
+		valor_chave[4]=0;
+		valor_chave[5]=1;
 	}
 	if (simEdicao==0 && valor_chave[1]==1){
 		valor_chave[1]=0;
