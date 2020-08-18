@@ -86,7 +86,7 @@ function tBotao() {
 		var inputCSV = document.createElement('input');
 	 	inputCSV.type = 'file';
 		inputCSV.accept = '.CSV';
-		inputCSV.path = 'public/';
+		inputCSV.path = 'simulador';
 		inputCSV.click();
 		inputCSV.onchange = function() {
 	    		var file = this.files[0];
