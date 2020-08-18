@@ -45,7 +45,6 @@ function tBotao() {
 	if (simEdicao==0 && valor_chave[2]==1){
         var inputCSV = document.createElement('input');
 	 inputCSV.type = 'file';
-	 inputCSV.path = 'download';
 	inputCSV.accept = '.CSV';
 	inputCSV.click();
 	inputCSV.onchange = function() {
