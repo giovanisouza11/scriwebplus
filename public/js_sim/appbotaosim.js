@@ -85,7 +85,7 @@ function tBotao() {
 	if (simEdicao==0 && valor_chave[6]==1){
 		var inputCSV = document.createElement('input');
 	 	inputCSV.type = 'file';
-		inputCSV.accept = 'scriweb.herokuapp.com/public/simulador/*.CSV';
+		inputCSV.accept = 'scriweb.herokuapp.com/public/simulador/Elevador/Elevador.CSV';
 		
 		inputCSV.click();
 		inputCSV.onchange = function() {
