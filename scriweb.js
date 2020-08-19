@@ -99,7 +99,7 @@ if (ativo) {
         io.emit('time', { time: new Date().toJSON() });
 	clients[socket.id]= true;
         socket.on('disconnect', function(data) {
-           clients[socket.id]= true;
+           clients[socket.id]= false;
         });
         console.log("SOCKET.ID=",socket.id);
 	socket.on('programax', function(data) {
