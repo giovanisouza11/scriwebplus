@@ -100,8 +100,9 @@ if (ativo) {
 	clients[socket.id]= true;
         socket.on('disconnect', function(data) {
            clients[socket.id]= false;
+	   console.log(" DISconnect SOCKET.ID=",socket.id);
         });
-        console.log("SOCKET.ID=",socket.id);
+        console.log(" connect SOCKET.ID=",socket.id);
 	socket.on('programax', function(data) {
             programa1 = data.split(',');
 			cria_memoria();
