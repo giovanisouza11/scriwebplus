@@ -4,7 +4,7 @@
 //--------------------------------------
 //Variaveis globais
 //--------------------------------------
-var clients={};
+var clients= new Array();
 var ativo = true;
 var M = new Array();
 var I = new Array();
