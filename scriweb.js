@@ -4,6 +4,7 @@
 //--------------------------------------
 //Variaveis globais
 //--------------------------------------
+var clients={};
 var ativo = true;
 var M = new Array();
 var I = new Array();
@@ -96,7 +97,14 @@ if (ativo) {
 if (ativo) {
     io.sockets.on('connection', function(socket) {
         //io.emit('time', { time: new Date().toJSON() });
-
+	for(var x=0; x<clients.lenght; i++)
+	{
+		if(clients == false || clients= undefined){
+			clients[x] = true;
+			break;
+			console.log("adicionado!!");
+		}
+	};
         socket.on('programax', function(data) {
             programa1 = data.split(',');
 			cria_memoria();
