@@ -96,10 +96,10 @@ if (ativo) {
 // Emitindo messagem de conexao estabelecida
 if (ativo) {
     io.sockets.on('connection', function(socket) {
-        //io.emit('time', { time: new Date().toJSON() });
+        io.emit('time', { time: new Date().toJSON() });
 	for(var x=0; x<clients.lenght; i++)
 	{
-		if(clients == false || clients= undefined){
+		if(clients == false || clients== undefined){
 			clients[x] = true;
 			break;
 			console.log("adicionado!!");
