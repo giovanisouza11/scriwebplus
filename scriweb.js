@@ -32,7 +32,7 @@ var atualiza_entrada = 0;
 //Iniciando servidor HTTP
 //-----------------------------------------
 if (ativo) {
-	const PORT = process.env.PORT || 5001;	
+	const PORT = process.env.PORT || 4333;	
     var path = require('path');
     var express = require('express');
     var app = express();
