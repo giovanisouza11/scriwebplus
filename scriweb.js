@@ -115,7 +115,7 @@ if (ativo) {
 	   for(var x=1; x<11; x++){
 		if (socket.id != clp[x]) {
 			clp[data]= socket.id;
-			console.log('Escreveu clp['+x+'] = '+socket.id);
+			console.log('Escreveu clp['+data+'] = '+socket.id);
 			break;
 		}
 	   }
@@ -125,7 +125,7 @@ if (ativo) {
 	   for(var x=1; x<11; x++){
 		if (socket.id != sup[x]){
 		   sup[data]= socket.id;
-		   console.log('Escreveu SUP['+x+'] = '+socket.id);
+		   console.log('Escreveu SUP['+data+'] = '+socket.id);
 		   break;
 	   	}
 	   }
