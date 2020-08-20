@@ -39,7 +39,61 @@ function tBotao() {
 	    valor_chave[11]=0;
 	}
 	if (valor_chave[10]==1){
-        window.open("/configsim", "Config SCriWeb", "height=320,width=500");
+        //window.open("/configsim", "Config SCriWeb", "height=320,width=500");
+		//simArvore();
+		var modal = document.getElementById("myModal");
+		var modalc = document.getElementById("myColuna");
+		var t_modal = modal.getElementsByTagName("h2");
+		t_modal[0].innerHTML = "Configuração Simulador";	
+		var modalb = document.getElementById("myBody");
+		modalb.innerHTML = "<p>Número do CLP <input type='text' id='input01' name='input1' maxlength=3 size=1 disabled /></P>";
+		modalb.innerHTML += "<p>Tamanho da Tela Largura:<input type='text' id='input2' maxlength=5 size=5/> Altura:<input type='text' id='input3' name='input3' maxlength=5 size=5 /> </p>";
+	
+		modal.style.display = "block";
+		modalc.style.display = "block";
+		// Get the <Close> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+		span.onclick = function() {
+			modal.style.display = "none";
+			modalc.style.display = "none";
+		}
+		// Get the <OK> element that closes the modal
+		var ok = document.getElementsByClassName("ok")[0];
+		ok.onclick = function() {
+			Config_Socket();
+		}
+		// Get the <Apagar> element that closes the modal
+		var apagar = document.getElementsByClassName("apagar")[0];
+		document.getElementsByClassName("apagar")[0].style.visibility = "visible";
+		apagar.onclick = function() {
+			simApagar();
+		}
+		// Get the <Novo> element that closes the modal
+		var novo = document.getElementsByClassName("novo")[0];
+		document.getElementsByClassName("novo")[0].style.visibility = "visible";
+		novo.onclick = function() {
+			simNovo(novaFuncao);
+		}
+		// Get the <Para Cima> element that closes the modal
+		var up = document.getElementsByClassName("up")[0];
+		document.getElementsByClassName("up")[0].style.visibility = "visible";
+		up.onclick = function() {
+			simUp();
+		}
+		// Get the <Para Baixo> element that closes the modal
+		var dw = document.getElementsByClassName("dw")[0];
+		document.getElementsByClassName("dw")[0].style.visibility = "visible";
+		dw.onclick = function() {
+			simDw();
+		}
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+				modalc.style.display = "none";
+			}
+		}
+
 	    valor_chave[10]=0;
 	}
 	if (simEdicao==0 && valor_chave[2]==1){
