@@ -85,7 +85,7 @@ function tBotao() {
 	if (simEdicao==0 && valor_chave[6]==1){
 		var inputCSV = document.createElement('input');
 	 	inputCSV.type = 'file';
-		inputCSV.accept = '/simulador/*';
+		inputCSV.accept = '*';
 		inputCSV.click();
 		inputCSV.onchange = function() {
 	    		var file = this.files[0];
