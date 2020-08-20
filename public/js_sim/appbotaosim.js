@@ -83,16 +83,16 @@ function tBotao() {
 		comandos = 0;
 	}
 	if (simEdicao==0 && valor_chave[6]==1){
-		var inputCSV = document.createElement('input');
-	 	inputCSV.type = 'file';
-		inputCSV.accept = 'scriweb.herokuapp.com/public/simulador/Elevador/Elevador.CSV';
-		
-		inputCSV.click();
-		inputCSV.onchange = function() {
-	    		var file = this.files[0];
+		//var inputCSV = document.createElement('input');
+	 	//inputCSV.type = 'file';
+		//inputCSV.accept = 'scriweb.herokuapp.com/public/simulador/Elevador/Elevador.CSV';
+		var file = 'https://scriweb.herokuapp.com/public/simulador/Elevador/Elevador.cvs';
+		//inputCSV.click();
+		//inputCSV.onchange = function() {
+	    	//	var file = this.files[0];
 			leitorDeCSV.readAsText(file);
-			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
-		};
+		//	simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
+		//};
 		//let a = document.createElement('a');
 		//a.href = item.url;
 		//a.download = item.url.split('/').pop();
