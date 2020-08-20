@@ -21,9 +21,11 @@ socket.on('saida', function(data) {
        Q = data.split(',');
 	//		 atualiza_simulador();
 });
-
 function Enviar(){
     socket.emit('entradax', I.join());
+}
+function Config_Socket(dado){
+    socket.emit('sup', dado);
 }
 
 function envia_entrada(data){
