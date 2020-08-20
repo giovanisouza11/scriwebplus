@@ -46,11 +46,11 @@ function tBotao() {
 		var t_modal = modal.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Configuração Simulador";	
 		var modalb = document.getElementById("myBody");
-		modalb.innerHTML = "<p>Número do CLP <input type='text' id='input01' name='input1' maxlength=3 size=1 /></P>";
+		modalb.innerHTML = "<p>Número do CLP <input type='text' id='input1' name='input1' maxlength=3 size=1 /></P>";
 		modalb.innerHTML += "<p>Tamanho da Tela Largura:<input type='text' id='input2' maxlength=5 size=5/> Altura:<input type='text' id='input3' name='input3' maxlength=5 size=5 /> </p>";
 	
 		modal.style.display = "block";
-		modalc.style.display = "block";
+		modalc.style.display = "none";
 		// Get the <Close> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
 		span.onclick = function() {
@@ -60,7 +60,7 @@ function tBotao() {
 		// Get the <OK> element that closes the modal
 		var ok = document.getElementsByClassName("ok")[0];
 		ok.onclick = function() {
-			Config_Socket( document.getElementById('input1').value);
+			Config_Socket(document.getElementById('input1').value);
 		}
 		// Get the <Apagar> element that closes the modal
 		document.getElementsByClassName("apagar")[0].style.visibility = "hidden";
