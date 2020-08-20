@@ -83,25 +83,15 @@ function tBotao() {
 		comandos = 0;
 	}
 	if (simEdicao==0 && valor_chave[6]==1){
-		//var inputCSV = document.createElement('input');
-	 	//inputCSV.type = 'file';
-		//inputCSV.accept = 'scriweb.herokuapp.com/public/simulador/Elevador/Elevador.CSV';
-		var file;
-		file.name = 'simulador/Elevador/Elevador.csv';
-		//inputCSV.click();
-		//inputCSV.onchange = function() {
-	    	//	var file = this.files[0];
-			leCSV(file);
-		//	simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
-		//};
-		//let a = document.createElement('a');
-		//a.href = item.url;
-		//a.download = item.url.split('/').pop();
-		//document.body.appendChild(a);
-		//a.click();
-		//document.body.removeChild(a);
-		//var file = this.files[0];
-		//leitorDeCSV.readAsText(file);
+		var inputCSV = document.createElement('input');
+	 	inputCSV.type = 'file';
+		inputCSV.accept = '/simulador/*';
+		inputCSV.click();
+		inputCSV.onchange = function() {
+	    		var file = this.files[0];
+			leitorDeCSV(file);
+			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
+		};
 		comandos=0;		
 		valor_chave[4]=0;
 		valor_chave[5]=1;
