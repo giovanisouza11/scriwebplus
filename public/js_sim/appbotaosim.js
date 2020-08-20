@@ -86,7 +86,7 @@ function tBotao() {
 		//var inputCSV = document.createElement('input');
 	 	//inputCSV.type = 'file';
 		//inputCSV.accept = 'scriweb.herokuapp.com/public/simulador/Elevador/Elevador.CSV';
-		var file = 'public/scriweb/simulador/Elevador/Elevador.csv';
+		var file = 'simulador/Elevador/Elevador.csv';
 		//inputCSV.click();
 		//inputCSV.onchange = function() {
 	    	//	var file = this.files[0];
