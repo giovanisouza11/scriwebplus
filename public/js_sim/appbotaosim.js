@@ -91,7 +91,7 @@ function tBotao() {
 		//inputCSV.click();
 		//inputCSV.onchange = function() {
 	    	//	var file = this.files[0];
-			pegaCSV(file);
+			leCSV(file);
 		//	simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
 		//};
 		//let a = document.createElement('a');
