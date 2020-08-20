@@ -60,7 +60,7 @@ function tBotao() {
 		// Get the <OK> element that closes the modal
 		var ok = document.getElementsByClassName("ok")[0];
 		ok.onclick = function() {
-			Config_Socket();
+			Config_Socket( document.getElementById('input1').value);
 		}
 		// Get the <Apagar> element that closes the modal
 		var apagar = document.getElementsByClassName("apagar")[0];
