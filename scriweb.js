@@ -113,18 +113,21 @@ if (ativo) {
         console.log(" connect SOCKET.ID=",socket.id);
 	socket.on('clp', function(data) {
 	   for(var x=1; x<11; x++){
-		if (socket.id != clp[x])
+		if (socket.id != clp[x]) {
 			clp[data]= socket.id;
+			console.log('Escreveu clp['+x+'] = '+socket.id);
+		}
 	   }
-	   console.log('Escreveu clp['+x+'] = '+socket.id);
+	  
 	});
    	socket.on('sup', function(data) {
 	   for(var x=1; x<11; x++){
-		if (socket.id != sup[x])
-			sup[data]= socket.id;
+		if (socket.id != sup[x]){
+		   sup[data]= socket.id;
+		   console.log('Escreveu SUP['+x+'] = '+socket.id);
+	   	}
 	   }
-           console.log('Escreveu SUP['+x+'] = '+socket.id);
-	});
+           });
 	socket.on('programax', function(data) {
            programa1 = data.split(',');
 			cria_memoria();
