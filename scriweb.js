@@ -116,6 +116,7 @@ if (ativo) {
 		if (socket.id != clp[x]) {
 			clp[data]= socket.id;
 			console.log('Escreveu clp['+x+'] = '+socket.id);
+			break;
 		}
 	   }
 	  
@@ -125,6 +126,7 @@ if (ativo) {
 		if (socket.id != sup[x]){
 		   sup[data]= socket.id;
 		   console.log('Escreveu SUP['+x+'] = '+socket.id);
+		   break;
 	   	}
 	   }
            });
