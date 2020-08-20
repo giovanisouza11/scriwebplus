@@ -99,11 +99,11 @@ if (ativo) {
         io.emit('time', { time: new Date().toJSON() });
         socket.on('disconnect', function(data) {
            for(var x=1; x<11; x++){
-		if (socket.id = clp[x]){
+		if (socket.id == clp[x]){
 			clp[x] = 0;
 			console.log('Escreveu clp['+x+'] = 0');
 		}
-		if (socket.id = sup[x]){
+		if (socket.id == sup[x]){
 			sup[x] = 0;
 			console.log('Escreveu SUP['+x+'] = 0');
 		}
