@@ -26,6 +26,9 @@ socket.on('saida', function(data) {
 	};
 });
 
+function config(dado){
+    socket.emit('clp', dado);
+}
 
 function Enviar(){
     socket.emit('programax', programa);

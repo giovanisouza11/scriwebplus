@@ -167,8 +167,35 @@ function trocar_botao() {
 	}
 	if (valor_chave[8]==1){
         //location.href='/Config';
-        window.open("Config", "SCriWeb", "height=320,width=500");
-	    valor_chave[8]=0;
+       // window.open("Config", "SCriWeb", "height=320,width=500");
+	 	var modal = document.getElementById("myModal");
+		var modalb = document.getElementById("myBody");
+		var t_modal = modal.getElementsByTagName("h2")
+		t_modal[0].innerHTML = "CONFIG";
+		modalb.innerHTML = "<p>Endereço do CLP (1 a 10): <input type=text id='input1' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>Tempo de Scan: <input type=text id='input2' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>Tempo de Atualização(Num de Scan):<input type=text id='input3' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>Número máximo de lógicas:<input type=text id='input3' maxlength=3 size=3></p>"; 
+		var btn = document.createElement('button');
+		btn.setAttribute('type','button')
+		btn.appendChild(document.createTextNode('OK'));
+		btn.onclick = function() {
+			config(document.getElementById('input1').value);
+			modal.style.display = "none";
+		};
+		modalb.appendChild(btn);
+		var span = document.getElementsByClassName("close")[0];
+		modal.style.display = "block";
+		span.onclick = function() {
+			modal.style.display = "none";
+		};
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	
+	   valor_chave[8]=0;
 	}
 	if (valor_chave[1]==1){
         var inputCSV = document.createElement('input');
