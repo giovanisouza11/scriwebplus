@@ -78,9 +78,7 @@ if (ativo) {
     });
     server.listen(PORT,function() {
  		//JanelaElectron();
-		console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
-    });
-    console.log("__________________________________________________________________");
+		  console.log("__________________________________________________________________");
     console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
     console.log("| Neste servidor foi gerado uma pagina HTML                       |");
     console.log("|                                                                 |");
@@ -90,6 +88,7 @@ if (ativo) {
     console.log("|    localhost:4333/simulador ou XXX.XXX.XXX.XXX:4333/simulador   |");
     console.log("___________________________________________________________________");
 
+  
 }
 
 // Iniciando Socket.IO
