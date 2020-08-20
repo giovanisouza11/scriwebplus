@@ -4,7 +4,8 @@
 //--------------------------------------
 //Variaveis globais
 //--------------------------------------
-var clients= new Array();
+var clp= new Array();
+var sup= new Array();
 var ativo = true;
 var M = new Array();
 var I = new Array();
@@ -96,14 +97,30 @@ if (ativo) {
 if (ativo) {
     io.sockets.on('connection', function(socket) {
         io.emit('time', { time: new Date().toJSON() });
-	clients[socket.id]= true;
         socket.on('disconnect', function(data) {
-           clients[socket.id]= false;
+           for(var x=1; x<11; x++){
+		if (socket.id = clp[x])
+			clp[x] = 0;
+		if (socket.id = sup[x])
+			sup[x] = 0;
+	   }
 	   console.log(" DISconnect SOCKET.ID=",socket.id);
         });
         console.log(" connect SOCKET.ID=",socket.id);
+	socket.on('clp', function(data) {
+	   for(var x=1; x<11; x++){
+		if (socket.id != clp[x])
+			clp[data]= socket.id;
+	   }
+        });
+   	socket.on('sup', function(data) {
+	   for(var x=1; x<11; x++){
+		if (socket.id != sup[x])
+			sup[data]= socket.id;
+	   }
+        });
 	socket.on('programax', function(data) {
-            programa1 = data.split(',');
+           programa1 = data.split(',');
 			cria_memoria();
 			atualiza_entrada = 1;
         });
