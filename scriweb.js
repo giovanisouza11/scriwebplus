@@ -87,7 +87,7 @@ if (ativo) {
     console.log("| Execute no Browser para Supervisão/simular processo Industrial.|");
     console.log("|    localhost:4333/simulador ou XXX.XXX.XXX.XXX:4333/simulador   |");
     console.log("___________________________________________________________________");
-    }
+    )};
   
 }
 
