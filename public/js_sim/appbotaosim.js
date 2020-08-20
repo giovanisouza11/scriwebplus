@@ -84,8 +84,8 @@ function tBotao() {
 	}
 	if (simEdicao==0 && valor_chave[6]==1){
 		var inputCSV = document.createElement('input');
-	 	inputCSV.type = 'download/file';
-		inputCSV.accept = '*';
+	 	inputCSV.type = 'download';
+		inputCSV.accept = '*.csv';
 		inputCSV.click();
 		inputCSV.onchange = function() {
 	    		var file = this.files[0];
