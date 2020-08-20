@@ -46,7 +46,7 @@ function tBotao() {
 		var t_modal = modal.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Configuração Simulador";	
 		var modalb = document.getElementById("myBody");
-		modalb.innerHTML = "<p>Número do CLP <input type='text' id='input01' name='input1' maxlength=3 size=1 disabled /></P>";
+		modalb.innerHTML = "<p>Número do CLP <input type='text' id='input01' name='input1' maxlength=3 size=1 /></P>";
 		modalb.innerHTML += "<p>Tamanho da Tela Largura:<input type='text' id='input2' maxlength=5 size=5/> Altura:<input type='text' id='input3' name='input3' maxlength=5 size=5 /> </p>";
 	
 		modal.style.display = "block";
@@ -63,29 +63,10 @@ function tBotao() {
 			Config_Socket( document.getElementById('input1').value);
 		}
 		// Get the <Apagar> element that closes the modal
-		var apagar = document.getElementsByClassName("apagar")[0];
-		document.getElementsByClassName("apagar")[0].style.visibility = "visible";
-		apagar.onclick = function() {
-			simApagar();
-		}
-		// Get the <Novo> element that closes the modal
-		var novo = document.getElementsByClassName("novo")[0];
-		document.getElementsByClassName("novo")[0].style.visibility = "visible";
-		novo.onclick = function() {
-			simNovo(novaFuncao);
-		}
-		// Get the <Para Cima> element that closes the modal
-		var up = document.getElementsByClassName("up")[0];
-		document.getElementsByClassName("up")[0].style.visibility = "visible";
-		up.onclick = function() {
-			simUp();
-		}
-		// Get the <Para Baixo> element that closes the modal
-		var dw = document.getElementsByClassName("dw")[0];
-		document.getElementsByClassName("dw")[0].style.visibility = "visible";
-		dw.onclick = function() {
-			simDw();
-		}
+		document.getElementsByClassName("apagar")[0].style.visibility = "hidden";
+		document.getElementsByClassName("novo")[0].style.visibility = "hidden";
+		document.getElementsByClassName("up")[0].style.visibility = "hidden";
+		document.getElementsByClassName("dw")[0].style.visibility = "hidden";
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {
 			if (event.target == modal) {
