@@ -247,27 +247,27 @@ function trocar_botao() {
 	if (valor_chave[4]==1){
 		comandos = 1;
 		run_CLP();
-		socket.emit('comandosx', 1);
+		socket.emit('comandosx', 1, num_clp);
 	}
 	if (valor_chave[5]==1){
 		run_CLP();
 		comandos = 2;
-		socket.emit('comandosx', 2);
+		socket.emit('comandosx', 2, num_clp);
 	}
 	if (valor_chave[6]==1){
 		run_CLP();
 		if (comandos == 3)
-			socket.emit('comandosx', 4);
+			socket.emit('comandosx', 4, num_clp);
 		else {
 			comandos = 3;
-			socket.emit('comandosx', 3);
+			socket.emit('comandosx', 3, num_clp);
 		}
 	}
 	if (valor_chave[7]==1){
 		comandos = 0;
 		stop_CLP();
 		monitora_ladder(larray);
-		socket.emit('comandosx', 0);
+		socket.emit('comandosx', 0, num_clp);
 	}
 }
 
