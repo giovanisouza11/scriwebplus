@@ -265,9 +265,9 @@ function AtualizaPorTempo() {
 			}
 			programa();
 		}
+		temporizadores();
 	}
-	temporizadores();
-       	segundo++;
+	segundo++;
        	if (segundo>10){
 		segundo = 0;
 		atraso++;
