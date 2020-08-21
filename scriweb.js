@@ -30,6 +30,19 @@ var comandos = 0;
 var segundo = 0;
 var atraso = 0;
 var atualiza_entrada = 0;
+
+//Variaveis para CLP SOCKET
+var MS = new Array();
+var IS = new Array();
+var RS = new Array();
+var QS = new Array();
+var TS = new Array();
+var CS = new Array();
+var comandosS = new Array();
+var programaS = new Array();
+var atualizaS = new Array();
+var PA = new Array();
+var LP = new Array();
 //-----------------------------------------
 //Iniciando servidor HTTP
 //-----------------------------------------
@@ -101,20 +114,37 @@ if (ativo) {
            for(var x=1; x<11; x++){
 		if (socket.id == clp[x]){
 			clp[x] = 0;
+			delete clp[x];
 			console.log('Escreveu clp['+x+'] = 0');
 		}
 		if (socket.id == sup[x]){
 			sup[x] = 0;
+			delete sup[x];
 			console.log('Escreveu SUP['+x+'] = 0');
 		}
 	   }
 	   console.log(" DISconnect SOCKET.ID=",socket.id);
         });
         console.log(" connect SOCKET.ID=",socket.id);
+	socket.on('connect', function(data) {
+	   for(var x=1; x<11; x++){
+		if (socket.id != clp[x]) {
+			clp[data]= socket.id;
+			PA[data]=0;
+			LP[data]=0;
+			socket.join(data);
+			console.log('Escreveu clp['+data+'] = '+socket.id);
+			break;
+		}
+	   }
+	  
+	});
 	socket.on('clp', function(data) {
 	   for(var x=1; x<11; x++){
 		if (socket.id != clp[x]) {
 			clp[data]= socket.id;
+			PA[data]=0;
+			LP[data]=0;
 			socket.join(data);
 			console.log('Escreveu clp['+data+'] = '+socket.id);
 			break;
@@ -132,42 +162,84 @@ if (ativo) {
 	   	}
 	   }
            });
-	socket.on('programax', function(data) {
-           programa1 = data.split(',');
+	socket.on('programax', function(data, data1) {
+		
+		programa1 = data.split(',');
 			cria_memoria();
-			atualiza_entrada = 1;
-        });
-        socket.on('comandosx', function(data) {
+		atualiza_entrada = 1;
+		atualiza[data1] = 1;
+		MS[data1] = M;
+		IS[data1] = I;
+		RS[data1] = R;
+		QS[data1] = Q;
+		TS[data1] = T;
+		CS[data1] = C;
+		comandosS[data1] = comando;
+		programaS[data1] = programa1;
+
+	});
+        socket.on('comandosx', function(data, data1) {
           //console.log('laalalllal');
+		comandosS[data1] = data;
 			comandos = data;
         });
-        socket.on('entradax', function(data) {
+        socket.on('entradax', function(data, data1) {
             I = data.split(',');
-			atualiza_entrada = 1;
+		atualiza[data1] = 1;
+		IS[data1] = I;
+		atualiza_entrada = 1;
         });
-        socket.on('memoriax', function(data) {
-            aux = data.split(',');
-            escreve_enderecoCT(aux[0], aux[1],1);
-			//console.log( data);
+        socket.on('memoriax', function(data, data1) {
+        	M = MS[data1];
+		I = IS[data1];
+		R = RS[data1];
+		Q = QS[data1];
+		T =TS[data1];
+		C = CS[data1];
+	
+		aux = data.split(',');
+            	escreve_enderecoCT(aux[0], aux[1],1);
+		MS[data1] = M;
+		IS[data1] = I;
+		RS[data1] = R;
+		QS[data1] = Q;
+		TS[data1] = T;
+		CS[data1] = C;
+	
+		//console.log( data);
 		});
-        socket.on('trx', function(data) {
-            R = data.split(',');
-        });
-        //socket.on('AIM', function(data) {
-    //  console.log("Servidor rodando!");
-	//		io.emit('AIMx', data);
-      //  });
+        socket.on('trx', function(data, data1) {
+            	R = RS[data1];
+		R = data.split(',');
+        	RS[data1] = R;
 	});
+        
+});
 
 //=============================================================================
 // Send current time to all connected clients
 //=============================================================================
-    var passo_atual = 0;
+    	var passo_atual = 0;
 	var localizacao_prog =0;
+	
+	
 	function AtualizaPorTempo() {
-		//console.log('áha');
+		
+	   for(var clp_num=0; clp_num<=clp.length; clp_num++){	
+		M = MS[clp_num];
+		I = IS[clp_num];
+		R = RS[clp_num];
+		Q = QS[clp_num];
+		T =TS[clp_num];
+		C = CS[clp_num];
+		programa1 = programaS[clp_num];
+		atualiza_entrada = atualiza[clp_num];
+		comandos = comandosS[clp_num];
+		passo_atual = PA[clp_num];
+		localizacao_prog = LP[clp_num];
+		   
 		if( atualiza_entrada == 1) {
-			io.emit('entrada', I.join());
+			io.to(clp_num).emit('entrada', I.join());
 			atualiza_entrada = 0;
 		}
 
@@ -176,7 +248,7 @@ if (ativo) {
 		    programa();
 			localizacao_prog = 0;
 		}
-        if (programa1.length > 0 && comandos>2){
+        	if (programa1.length > 0 && comandos>2){
 
 			if ((passo_atual >= (programa1.length-1)) || (comandos==3)) {
 				passo_atual = 0;
@@ -196,24 +268,35 @@ if (ativo) {
 			programa();
 		}
 		temporizadores();
-        segundo++;
-        if (segundo>10){
+        	segundo++;
+        	if (segundo>10){
 			segundo = 0;
 			atraso++;
 			if (atraso>1){
 				atraso = 0;
 				//io.emit('time', { time: new Date().toJSON() });
-				io.emit('memoria', M.join());
-				io.emit('tr', R.join());
-				io.emit('timer', T.join());
-				io.emit('counter', C.join());
-				io.emit('saida', Q.join());
-				io.to(2).emit('localizacao', localizacao_prog);
+				io.to(clp_num).emit('memoria', M.join());
+				io.to(clp_num).emit('tr', R.join());
+				io.to(clp_num).emit('timer', T.join());
+				io.to(clp_num).emit('counter', C.join());
+				io.to(clp_num).emit('saida', Q.join());
+				io.to(clp_num).emit('localizacao', localizacao_prog);
 			}
-        }
-        if (comandos>1)
-		    comandos=0;
-    }
+    	    }
+            if (comandos>1)
+		   comandos=0;
+	 MS[clp_num] = M;
+	 IS[clp_num] = I;
+	 RS[clp_num] = R;
+	 QS[clp_num] = Q;
+	 TS[clp_num] = T;
+	 CS[clp_num] = C;
+	 programaS[clp_num] = programa1;
+	 atualiza[clp_num] = atualiza_entrada;
+	 comandosS[clp_num] = comandos;
+	 PA[clp_num] = passo_atual;
+	 LP[clp_num] = localizacao_prog;
+   }
 //=============================================================================
 // Send current time every 0,1 secs
 //=============================================================================
