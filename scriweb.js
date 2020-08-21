@@ -115,6 +115,7 @@ if (ativo) {
 	   for(var x=1; x<11; x++){
 		if (socket.id != clp[x]) {
 			clp[data]= socket.id;
+			socket.join(data);
 			console.log('Escreveu clp['+data+'] = '+socket.id);
 			break;
 		}
@@ -125,6 +126,7 @@ if (ativo) {
 	   for(var x=1; x<11; x++){
 		if (socket.id != sup[x]){
 		   sup[data]= socket.id;
+		   socket.join(data);
 		   console.log('Escreveu SUP['+data+'] = '+socket.id);
 		   break;
 	   	}
@@ -201,12 +203,12 @@ if (ativo) {
 			if (atraso>1){
 				atraso = 0;
 				//io.emit('time', { time: new Date().toJSON() });
-				io.emit('memoria', M.join());
-				io.emit('tr', R.join());
-				io.emit('timer', T.join());
-				io.emit('counter', C.join());
-				io.emit('saida', Q.join());
-				io.emit('localizacao', localizacao_prog);
+				io.to(2).emit('memoria', M.join());
+				io.to(2).emit('tr', R.join());
+				io.to(2).emit('timer', T.join());
+				io.to(2).emit('counter', C.join());
+				io.to(2).emit('saida', Q.join());
+				io.to(2).emit('localizacao', localizacao_prog);
 			}
         }
         if (comandos>1)
