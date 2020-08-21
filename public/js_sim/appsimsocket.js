@@ -1,5 +1,6 @@
 
 var socket = io(); //('http://192.168.0.100:4333');
+var num_clp = 0;
 
 socket.on('memoria', function(data) {
 	   M = data.split(',');
@@ -22,22 +23,23 @@ socket.on('saida', function(data) {
 	//		 atualiza_simulador();
 });
 function Enviar(){
-    socket.emit('entradax', I.join());
+    socket.emit('entradax', I.join(), num_clp);
 }
 function Config_Socket(dado){
     socket.emit('sup', dado);
+    num_clp = dado;
 }
 
 function envia_entrada(data){
 	while (data.length < I.length) {
 		data[data.length] = I[data.length];
 	}
-     socket.emit('entradax', data.join());
+     socket.emit('entradax', data.join(), num_clp);
 }
 
 function envia_memoria(data){
 	//while (data.length < M.length) {
 	//	data[data.length] = M[data.length];
 	//}
-     socket.emit('memoriax', data+','+enderecoCT(data,0));
+     socket.emit('memoriax', data+','+enderecoCT(data,0), num_clp);
 }
