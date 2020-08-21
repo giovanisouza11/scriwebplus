@@ -1,5 +1,6 @@
 
 var socket = io(); //('http://192.168.0.100:4333');
+var num_clp = 0;
 socket.on('memoria', function(data) {
 	   M = data.split(',');
 });
@@ -31,16 +32,16 @@ function config(dado){
 }
 
 function Enviar(){
-    socket.emit('programax', programa);
-    socket.emit('comandosx', comando);
-    socket.emit('entradax', I.join());
+    socket.emit('programax', programa, num_clp);
+    socket.emit('comandosx', comando, num_clp);
+    socket.emit('entradax', I.join(), num_clp);
 }
 
 function envia_entrada(data){
 	while (data.length < I.length) {
 		data[data.length] = I[data.length];
 	}
-     socket.emit('entradax', data.join());
+     socket.emit('entradax', data.join(), num_clp);
 }
 
 
