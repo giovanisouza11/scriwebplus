@@ -167,7 +167,7 @@ if (ativo) {
 		programa1 = data.split(',');
 			cria_memoria();
 		atualiza_entrada = 1;
-		atualiza[data1] = 1;
+		atualizaS[data1] = 1;
 		MS[data1] = M;
 		IS[data1] = I;
 		RS[data1] = R;
@@ -185,7 +185,7 @@ if (ativo) {
         });
         socket.on('entradax', function(data, data1) {
             I = data.split(',');
-		atualiza[data1] = 1;
+		atualizaS[data1] = 1;
 		IS[data1] = I;
 		atualiza_entrada = 1;
         });
@@ -233,7 +233,7 @@ function AtualizaPorTempo() {
 	T =TS[clp_num];
 	C = CS[clp_num];
 	programa1 = programaS[clp_num];
-	atualiza_entrada = atualiza[clp_num];
+	atualiza_entrada = atualizaS[clp_num];
 	comandos = comandosS[clp_num];
 	passo_atual = PA[clp_num];
 	localizacao_prog = LP[clp_num];
@@ -289,7 +289,7 @@ function AtualizaPorTempo() {
 	TS[clp_num] = T;
 	CS[clp_num] = C;
 	programaS[clp_num] = programa1;
-	atualiza[clp_num] = atualiza_entrada;
+	atualizaS[clp_num] = atualiza_entrada;
 	comandosS[clp_num] = comandos;
 	PA[clp_num] = passo_atual;
 	LP[clp_num] = localizacao_prog;
