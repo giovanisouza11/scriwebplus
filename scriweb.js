@@ -133,7 +133,7 @@ if (ativo) {
 			PA[data]=0;
 			LP[data]=0;
 			socket.join(data);
-			console.log('Escreveu clp['+data+'] = '+socket.id);
+			//console.log('Escreveu clp['+data+'] = '+socket.id);
 			break;
 		}
 	   }
@@ -146,7 +146,7 @@ if (ativo) {
 			PA[data]=0;
 			LP[data]=0;
 			socket.join(data);
-			console.log('Escreveu clp['+data+'] = '+socket.id);
+			//console.log('Escreveu clp['+data+'] = '+socket.id);
 			break;
 		}
 	   }
@@ -157,7 +157,7 @@ if (ativo) {
 		if (socket.id != sup[x]){
 		   sup[data]= socket.id;
 		   socket.join(data);
-		   console.log('Escreveu SUP['+data+'] = '+socket.id);
+		   //console.log('Escreveu SUP['+data+'] = '+socket.id);
 		   break;
 	   	}
 	   }
@@ -174,7 +174,7 @@ if (ativo) {
 		QS[data1] = Q;
 		TS[data1] = T;
 		CS[data1] = C;
-		comandosS[data1] = comando;
+		comandosS[data1] = comandos;
 		programaS[data1] = programa1;
 
 	});
@@ -266,20 +266,21 @@ function AtualizaPorTempo() {
 			programa();
 		}
 		temporizadores();
-	}
-	segundo++;
-       	if (segundo>10){
-		segundo = 0;
-		atraso++;
-		if (atraso>1){
-			atraso = 0;
-			//io.emit('time', { time: new Date().toJSON() });
-			io.to(clp_num).emit('memoria', M.join());
-			io.to(clp_num).emit('tr', R.join());
-			io.to(clp_num).emit('timer', T.join());
-			io.to(clp_num).emit('counter', C.join());
-			io.to(clp_num).emit('saida', Q.join());
-			io.to(clp_num).emit('localizacao', localizacao_prog);
+	
+		segundo++;
+       		if (segundo>10){
+			segundo = 0;
+			atraso++;
+			if (atraso>1){
+				atraso = 0;
+				//io.emit('time', { time: new Date().toJSON() });
+				io.to(clp_num).emit('memoria', M.join());
+				io.to(clp_num).emit('tr', R.join());
+				io.to(clp_num).emit('timer', T.join());
+				io.to(clp_num).emit('counter', C.join());
+				io.to(clp_num).emit('saida', Q.join());
+				io.to(clp_num).emit('localizacao', localizacao_prog);
+			}
 		}
 	}
         if (comandos>1)
