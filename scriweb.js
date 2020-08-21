@@ -291,7 +291,7 @@ function AtualizaPorTempo() {
 	QS[clp_num] = Q.join();
 	TS[clp_num] = T.join();
 	CS[clp_num] = C.join();
-	programaS[clp_num] = programa1;
+	programaS[clp_num] = programa1.join();
 	atualizaS[clp_num] = atualiza_entrada;
 	comandosS[clp_num] = comandos;
 	PA[clp_num] = passo_atual;
