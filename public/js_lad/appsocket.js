@@ -29,6 +29,7 @@ socket.on('saida', function(data) {
 
 function config(dado){
     socket.emit('clp', dado);
+    num_clp = dado;
 }
 
 function Enviar(){
