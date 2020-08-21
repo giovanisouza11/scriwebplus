@@ -57,12 +57,12 @@ if (ativo) {
 
     app.use(express.static(__dirname + '/public'));
     app.use('/simulacao', express.static('/scriweb/simulacao'));
-	app.use('/ladder',express.static('/scriweb/ladder'));
-    router.get('/download', function (req, res, next) {
-    	var filePath = "/scriweb/simulacao/Elevador/"; //caminho do arquivo completo
-    	var fileName = "Elevador.csv"; // O nome padrão que o browser vai usar pra fazer download
-	res.download(filePath, fileName);    
-    });
+    app.use('/ladder',express.static('/scriweb/ladder'));
+    //router.get('/download', function (req, res, next) {
+    //	var filePath = "/scriweb/simulacao/Elevador/"; //caminho do arquivo completo
+    //	var fileName = "Elevador.csv"; // O nome padrão que o browser vai usar pra fazer download
+//	res.download(filePath, fileName);    
+  //  });
     app.get('/', function(req, res) {
         res.sendFile(__dirname + '/scriweb.html');
     });
@@ -123,9 +123,9 @@ if (ativo) {
 			console.log('Escreveu SUP['+x+'] = 0');
 		}
 	   }
-	   console.log(" DISconnect SOCKET.ID=",socket.id);
+	  // console.log(" DISconnect SOCKET.ID=",socket.id);
         });
-        console.log(" connect SOCKET.ID=",socket.id);
+        //console.log(" connect SOCKET.ID=",socket.id);
 	socket.on('connect', function(data) {
 	   for(var x=1; x<11; x++){
 		if (socket.id != clp[x]) {
@@ -161,7 +161,7 @@ if (ativo) {
 		   break;
 	   	}
 	   }
-           });
+        });
 	socket.on('programax', function(data, data1) {
 		
 		programa1 = data.split(',');
@@ -207,9 +207,9 @@ if (ativo) {
 		CS[data1] = C;
 	
 		//console.log( data);
-		});
+	});
         socket.on('trx', function(data, data1) {
-            	R = RS[data1];
+            	//R = RS[data1];
 		R = data.split(',');
         	RS[data1] = R;
 	});
@@ -219,84 +219,82 @@ if (ativo) {
 //=============================================================================
 // Send current time to all connected clients
 //=============================================================================
-    	var passo_atual = 0;
-	var localizacao_prog =0;
+var passo_atual = 0;
+var localizacao_prog =0;
 	
 	
-	function AtualizaPorTempo() {
+function AtualizaPorTempo() {
 		
-	   for(var clp_num=0; clp_num<=clp.length; clp_num++){	
-		M = MS[clp_num];
-		I = IS[clp_num];
-		R = RS[clp_num];
-		Q = QS[clp_num];
-		T =TS[clp_num];
-		C = CS[clp_num];
-		programa1 = programaS[clp_num];
-		atualiza_entrada = atualiza[clp_num];
-		comandos = comandosS[clp_num];
-		passo_atual = PA[clp_num];
-		localizacao_prog = LP[clp_num];
+   for(var clp_num=0; clp_num<=clp.length; clp_num++){	
+	M = MS[clp_num];
+	I = IS[clp_num];
+	R = RS[clp_num];
+	Q = QS[clp_num];
+	T =TS[clp_num];
+	C = CS[clp_num];
+	programa1 = programaS[clp_num];
+	atualiza_entrada = atualiza[clp_num];
+	comandos = comandosS[clp_num];
+	passo_atual = PA[clp_num];
+	localizacao_prog = LP[clp_num];
 		   
-		if( atualiza_entrada == 1) {
-			io.to(clp_num).emit('entrada', I.join());
-			atualiza_entrada = 0;
-		}
-
-		if (programa1.length > 0 && comandos>0 && comandos<3){
-			passo_atual = programa1.length - 1;
-		    programa();
+	if( atualiza_entrada == 1) {
+		io.to(clp_num).emit('entrada', I.join());
+		atualiza_entrada = 0;
+	}
+	if (programa1.length > 0 && comandos>0 && comandos<3){
+		passo_atual = programa1.length - 1;
+	    	programa();
+		localizacao_prog = 0;
+	}
+       	if (programa1.length > 0 && comandos>2){
+		if ((passo_atual >= (programa1.length-1)) || (comandos==3)) {
+			passo_atual = 0;
 			localizacao_prog = 0;
 		}
-        	if (programa1.length > 0 && comandos>2){
-
-			if ((passo_atual >= (programa1.length-1)) || (comandos==3)) {
-				passo_atual = 0;
-				localizacao_prog = 0;
-			}
+		localizacao_prog++;
+		passo_atual++;
+		while (programa1[passo_atual].charAt(0) =='R') {
 			localizacao_prog++;
-			passo_atual++;
-			while (programa1[passo_atual].charAt(0) =='R') {
-				localizacao_prog++;
-				passo_atual = passo_atual+2;
-				if (passo_atual >= (programa1.length-1)) {
-					passo_atual = 1;
-					localizacao_prog = 1;
-				}
+			passo_atual = passo_atual+2;
+			if (passo_atual >= (programa1.length-1)) {
+				passo_atual = 1;
+				localizacao_prog = 1;
 			}
-
-			programa();
 		}
-		temporizadores();
-        	segundo++;
-        	if (segundo>10){
-			segundo = 0;
-			atraso++;
-			if (atraso>1){
-				atraso = 0;
-				//io.emit('time', { time: new Date().toJSON() });
-				io.to(clp_num).emit('memoria', M.join());
-				io.to(clp_num).emit('tr', R.join());
-				io.to(clp_num).emit('timer', T.join());
-				io.to(clp_num).emit('counter', C.join());
-				io.to(clp_num).emit('saida', Q.join());
-				io.to(clp_num).emit('localizacao', localizacao_prog);
-			}
-    	    }
-            if (comandos>1)
-		   comandos=0;
-	 MS[clp_num] = M;
-	 IS[clp_num] = I;
-	 RS[clp_num] = R;
-	 QS[clp_num] = Q;
-	 TS[clp_num] = T;
-	 CS[clp_num] = C;
-	 programaS[clp_num] = programa1;
-	 atualiza[clp_num] = atualiza_entrada;
-	 comandosS[clp_num] = comandos;
-	 PA[clp_num] = passo_atual;
-	 LP[clp_num] = localizacao_prog;
+		programa();
+	}
+	temporizadores();
+       	segundo++;
+       	if (segundo>10){
+		segundo = 0;
+		atraso++;
+		if (atraso>1){
+			atraso = 0;
+			//io.emit('time', { time: new Date().toJSON() });
+			io.to(clp_num).emit('memoria', M.join());
+			io.to(clp_num).emit('tr', R.join());
+			io.to(clp_num).emit('timer', T.join());
+			io.to(clp_num).emit('counter', C.join());
+			io.to(clp_num).emit('saida', Q.join());
+			io.to(clp_num).emit('localizacao', localizacao_prog);
+		}
+	}
+        if (comandos>1)
+		comandos=0;
+	MS[clp_num] = M;
+	IS[clp_num] = I;
+	RS[clp_num] = R;
+	QS[clp_num] = Q;
+	TS[clp_num] = T;
+	CS[clp_num] = C;
+	programaS[clp_num] = programa1;
+	atualiza[clp_num] = atualiza_entrada;
+	comandosS[clp_num] = comandos;
+	PA[clp_num] = passo_atual;
+	LP[clp_num] = localizacao_prog;
    }
+}
 //=============================================================================
 // Send current time every 0,1 secs
 //=============================================================================
