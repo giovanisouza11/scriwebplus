@@ -242,27 +242,29 @@ function AtualizaPorTempo() {
 		io.to(clp_num).emit('entrada', I.join());
 		atualiza_entrada = 0;
 	}
-	if (programa1.length > 0 && comandos>0 && comandos<3){
-		passo_atual = programa1.length - 1;
-	    	programa();
-		localizacao_prog = 0;
-	}
-       	if (programa1.length > 0 && comandos>2){
-		if ((passo_atual >= (programa1.length-1)) || (comandos==3)) {
-			passo_atual = 0;
+	if (programa1 != undefined){ 
+		if (programa1.length > 0 && comandos>0 && comandos<3){
+			passo_atual = programa1.length - 1;
+	    		programa();
 			localizacao_prog = 0;
 		}
-		localizacao_prog++;
-		passo_atual++;
-		while (programa1[passo_atual].charAt(0) =='R') {
-			localizacao_prog++;
-			passo_atual = passo_atual+2;
-			if (passo_atual >= (programa1.length-1)) {
-				passo_atual = 1;
-				localizacao_prog = 1;
+       		if (programa1.length > 0 && comandos>2){
+			if ((passo_atual >= (programa1.length-1)) || (comandos==3)) {
+				passo_atual = 0;
+				localizacao_prog = 0;
 			}
+			localizacao_prog++;
+			passo_atual++;
+			while (programa1[passo_atual].charAt(0) =='R') {
+				localizacao_prog++;
+				passo_atual = passo_atual+2;
+				if (passo_atual >= (programa1.length-1)) {
+					passo_atual = 1;
+					localizacao_prog = 1;
+				}
+			}
+			programa();
 		}
-		programa();
 	}
 	temporizadores();
        	segundo++;
