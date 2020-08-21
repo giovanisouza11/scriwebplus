@@ -168,14 +168,14 @@ if (ativo) {
 			cria_memoria();
 		atualiza_entrada = 1;
 		atualizaS[data1] = 1;
-		MS[data1] = M;
-		IS[data1] = I;
-		RS[data1] = R;
-		QS[data1] = Q;
-		TS[data1] = T;
-		CS[data1] = C;
+		MS[data1] = M.join();
+		IS[data1] = I.join();
+		RS[data1] = R.join();
+		QS[data1] = Q.join();
+		TS[data1] = T.join();
+		CS[data1] = C.join();
 		comandosS[data1] = comandos;
-		programaS[data1] = programa1;
+		programaS[data1] = programa1.join();
 
 	});
         socket.on('comandosx', function(data, data1) {
@@ -186,32 +186,32 @@ if (ativo) {
         socket.on('entradax', function(data, data1) {
             I = data.split(',');
 		atualizaS[data1] = 1;
-		IS[data1] = I;
+		IS[data1] = I.join();
 		atualiza_entrada = 1;
         });
         socket.on('memoriax', function(data, data1) {
-        	M = MS[data1];
-		I = IS[data1];
-		R = RS[data1];
-		Q = QS[data1];
-		T =TS[data1];
-		C = CS[data1];
+        	M = MS[data1].split(`,`);
+		I = IS[data1].split(`,`);
+		R = RS[data1].split(`,`);
+		Q = QS[data1].split(`,`);
+		T =TS[data1].split(`,`);
+		C = CS[data1].split(`,`);
 	
 		aux = data.split(',');
             	escreve_enderecoCT(aux[0], aux[1],1);
-		MS[data1] = M;
-		IS[data1] = I;
-		RS[data1] = R;
-		QS[data1] = Q;
-		TS[data1] = T;
-		CS[data1] = C;
+		MS[data1] = M.join();
+		IS[data1] = I.join();
+		RS[data1] = R.join();
+		QS[data1] = Q.join();
+		TS[data1] = T.join();
+		CS[data1] = C.join();
 	
 		//console.log( data);
 	});
         socket.on('trx', function(data, data1) {
             	//R = RS[data1];
 		R = data.split(',');
-        	RS[data1] = R;
+        	RS[data1] = R.join();
 	});
         
 });
@@ -226,13 +226,13 @@ var localizacao_prog =0;
 function AtualizaPorTempo() {
 		
    for(var clp_num=0; clp_num<=clp.length; clp_num++){	
-	M = MS[clp_num];
-	I = IS[clp_num];
-	R = RS[clp_num];
-	Q = QS[clp_num];
-	T =TS[clp_num];
-	C = CS[clp_num];
-	programa1 = programaS[clp_num];
+	M = MS[clp_num].split(`,`);
+	I = IS[clp_num].split(`,`);
+	R = RS[clp_num].split(`,`);
+	Q = QS[clp_num].split(`,`);
+	T =TS[clp_num].split(`,`);
+	C = CS[clp_num].split(`,`);
+	programa1 = programaS[clp_num].split(`,`);
 	atualiza_entrada = atualizaS[clp_num];
 	comandos = comandosS[clp_num];
 	passo_atual = PA[clp_num];
@@ -285,12 +285,12 @@ function AtualizaPorTempo() {
 	}
         if (comandos>1)
 		comandos=0;
-	MS[clp_num] = M;
-	IS[clp_num] = I;
-	RS[clp_num] = R;
-	QS[clp_num] = Q;
-	TS[clp_num] = T;
-	CS[clp_num] = C;
+	MS[clp_num] = M.join();
+	IS[clp_num] = I.join();
+	RS[clp_num] = R.join();
+	QS[clp_num] = Q.join();
+	TS[clp_num] = T.join();
+	CS[clp_num] = C.join();
 	programaS[clp_num] = programa1;
 	atualizaS[clp_num] = atualiza_entrada;
 	comandosS[clp_num] = comandos;
