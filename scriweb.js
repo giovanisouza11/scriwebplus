@@ -783,7 +783,7 @@ function AtualizaPorTempo() {
     			}
 		}
 	}					
-
+}
 
   //======================================================================
   //Abre primeira janela do simulador endereco localhost:4333
