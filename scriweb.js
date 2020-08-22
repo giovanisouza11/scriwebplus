@@ -112,26 +112,28 @@ if (ativo) {
         io.emit('time', { time: new Date().toJSON() });
         socket.on('disconnect', function(data) {
            for(var x=0; x<30; x++){
-		if (socket.id == clp[x]){
-			clp[x] = 0;
-			clp.splice(x, 1);
+		if (socket.id == clp[x*3]){
+			delete clp[x*3];
+			//delete clp[x*2+1];
 			console.log('Escreveu clp['+x+'] = 0');
 		}
-		if (socket.id == sup[x]){
-			sup[x] = 0;
-			sup.splice(x, 1);;
+		if (socket.id == sup[x*3]){
+			delete sup[x*3];
+			//delete sup[x*2+1];
 			console.log('Escreveu SUP['+x+'] = 0');
 		}
-		if (clp[x]== undefined && sup[x]== undefined){
-			atualizaS.splice(x, 1);
-			MS.splice(x, 1);
-			IS.splice(x, 1);
-			RS.splice(x, 1);
-			QS.splice(x, 1);
-			TS.splice(x, 1);
-			CS.splice(x, 1);
-			comandosS.splice(x, 1);
-			programaS.splice(x, 1);
+		if (clp[x*3]== undefined && sup[x*3]== undefined){
+			atualizaS.splice(x,1);
+			MS.splice(x,1);
+			IS.splice(x,1);
+			RS.splice(x,1);
+			QS.splice(x,1);
+			TS.splice(x,1);
+			CS.splice(x,1);
+			comandosS.splice(x,1);
+			programaS.splice(x,1);
+			PA.splice(x,1);
+			LP.splice(x,1);
 			console.log('Escreveu SUP['+x+'] clp[]= 0');
 		}
 	   }
@@ -139,62 +141,74 @@ if (ativo) {
         });
         console.log(" connect SOCKET.ID=",socket.id);
 	socket.on('connect', function(data) {
-	   for(var x=0; x<30; x++){
-		if (socket.id != clp[x]) {
-			clp[data]= socket.id;
-			PA[data]=0;
-			LP[data]=0;
-			socket.join(data);
-			console.log('Escreveu clp['+data+'] = '+socket.id);
+	   for(var x=0; x<(clp.length/3); x++){
+		if (socket.id == clp[x*3+1])
 			break;
-		}
 	   }
+	   clp[x*3]= data
+	   clp[x+3+1] = socket.id;
+  	   PA[x]=0;
+	   LP[x]=0;
+           socket.join(data);
+	   console.log('Escreveu clp['+data+'] = '+socket.id);
 	  
 	});
 	socket.on('clp', function(data) {
-	   for(var x=0; x<30; x++){
-		if (socket.id != clp[x]) {
-			clp[data]= socket.id;
-			PA[data]=0;
-			LP[data]=0;
-			socket.join(data);
-			console.log('Escreveu clp['+data+'] = '+socket.id);
+	   for(var x=0; x<(clp.length/3); x++){
+		if (socket.id == clp[x*3+1])
 			break;
-		}
 	   }
+	   clp[x*3]= data
+	   clp[x+3+1] = socket.id;
+  	   PA[x]=0;
+	   LP[x]=0;
+           socket.join(data);
+	   console.log('Escreveu clp['+data+'] = '+socket.id);
 	  
 	});
    	socket.on('sup', function(data) {
-	   for(var x=0; x<30; x++){
-		if (socket.id != sup[x]){
-		   sup[data]= socket.id;
-		   socket.join(data);
-		   console.log('Escreveu SUP['+data+'] = '+socket.id);
-		   break;
-	   	}
+	   for(var x=0; x<(clp.length/3); x++){
+		if (data == clp[x*3])
+			break;
 	   }
-        });
+	   sup[x*3]= data
+	   sup[x+3+1] = socket.id;
+  	   socket.join(data);
+	   console.log('Escreveu clp['+data+'] = '+socket.id);
+	  
+	});
 	socket.on('programax', function(data) {
+		var data1 = programa1[programa1.length-1];
+		for(var x=0; x<(clp.length/3); x++){
+		  if (data1 == clp[x*3])
+			break;
+	  	}
 		programa1 = data.split(',');
 		//console.log(data);
-		var data1 = programa1[programa1.length-1];
 		cria_memoria();
 		atualiza_entrada = 1;
-		atualizaS[data1] = 1;
-		MS[data1] = M.join();
-		IS[data1] = I.join();
-		RS[data1] = R.join();
-		QS[data1] = Q.join();
-		TS[data1] = T.join();
-		CS[data1] = C.join();
-		comandosS[data1] = comandos;
-		programaS[data1] = programa1.join();
+		atualizaS[x] = 1;
+		MS[x] = M.join();
+		IS[x] = I.join();
+		RS[x] = R.join();
+		QS[x] = Q.join();
+		TS[x] = T.join();
+		CS[x] = C.join();
+		comandosS[x] = comandos;
+		programaS[x] = programa1.join();
+		PA[x]=0;
+		LP[x]=0;
 		//console.log('Escreveu pROGRAMA DO clp['+data1+'] = '+socket.id);
 			
 	});
         socket.on('comandosx', function(data) {
           //console.log('laalalllal');
-		comandosS[data[1]] = data[0];
+		for(var x=0; x<(clp.length/3); x++){
+		  if (data[1] == clp[x*3])
+			break;
+	  	}
+
+		comandosS[x] = data[0];
 		//console.log(data);
 		comandos = data[0];
         });
@@ -202,35 +216,43 @@ if (ativo) {
             	I = data.split(',');
 		//console.log(data);
 		var data1 = I[I.length-1]
+		for(var x=0; x<(clp.length/3); x++){
+		  if (data1 == clp[x*3])
+			break;
+	  	}
 		I.length = I.length-1;
-		atualizaS[data1] = 1;
-		IS[data1] = I.join();
+		atualizaS[x] = 1;
+		IS[x] = I.join();
 		atualiza_entrada = 1;
         });
         socket.on('memoriax', function(data) {
         	aux = data.split(',');
 		console.log(data);
 		var data1 = aux[2];
-		if (MS[data1] != undefined)
-			M = MS[data1].split(`,`);
-		if (IS[data1] != undefined)
-			I = IS[data1].split(`,`);
-		if (RS[data1] != undefined)
-			R = RS[data1].split(`,`);
-		if (QS[data1] != undefined)
-			Q = QS[data1].split(`,`);
-		if (TS[data1] != undefined)
-			T =TS[data1].split(`,`);
-		if (CS[data1] != undefined)
-			C = CS[data1].split(`,`);
+		for(var x=0; x<(clp.length/3); x++){
+		  if (data1 == clp[x*3])
+			break;
+	  	}
+		if (MS[x] != undefined)
+			M = MS[x].split(`,`);
+		if (IS[x] != undefined)
+			I = IS[x].split(`,`);
+		if (RS[x] != undefined)
+			R = RS[x].split(`,`);
+		if (QS[x] != undefined)
+			Q = QS[x].split(`,`);
+		if (TS[x] != undefined)
+			T =TS[x].split(`,`);
+		if (CS[x] != undefined)
+			C = CS[x].split(`,`);
 	
             	escreve_enderecoCT(aux[0], aux[1],1);
-		MS[data1] = M.join();
-		IS[data1] = I.join();
-		RS[data1] = R.join();
-		QS[data1] = Q.join();
-		TS[data1] = T.join();
-		CS[data1] = C.join();
+		MS[x] = M.join();
+		IS[x] = I.join();
+		RS[x] = R.join();
+		QS[x] = Q.join();
+		TS[x] = T.join();
+		CS[x] = C.join();
 		//console.log(MS[data1]);
 		//console.log(IS[data1]);
 		//console.log(QS[data1]);
@@ -243,7 +265,11 @@ if (ativo) {
 		//console.log(data);
 		R = data.split(',');
 		data1 = R[R.length-1]
-		RS[data1] = R.join();
+		for(var x=0; x<(clp.length/3); x++){
+		  if (data1 == clp[x*3])
+			break;
+	  	}
+		RS[x] = R.join();
 	});
         
 });
@@ -256,29 +282,30 @@ var localizacao_prog =0;
 	
 	
 function AtualizaPorTempo() {
-		
-   for(var clp_num=0; clp_num<(clp.length+1); clp_num++){	
-	if (MS[clp_num] != undefined)
-		M = MS[clp_num].split(`,`);
-	if (IS[clp_num] != undefined)
-		I = IS[clp_num].split(`,`);
-	if (RS[clp_num] != undefined)
-		R = RS[clp_num].split(`,`);
-	if (QS[clp_num] != undefined)
-		Q = QS[clp_num].split(`,`);
-	if (TS[clp_num] != undefined)
-		T =TS[clp_num].split(`,`);
-	if (CS[clp_num] != undefined)
-		C = CS[clp_num].split(`,`);
-	if (programaS[clp_num] != undefined)
-		programa1 = programaS[clp_num].split(`,`);
+   temporizadores();
+	
+   for(var clp_index=0; clp_index<clp.length; clp_index++){	
+	if (MS[clp_index] != undefined)
+		M = MS[clp_index].split(`,`);
+	if (IS[clp_index] != undefined)
+		I = IS[clp_index].split(`,`);
+	if (RS[clp_index] != undefined)
+		R = RS[clp_index].split(`,`);
+	if (QS[clp_index] != undefined)
+		Q = QS[clp_index].split(`,`);
+	if (TS[clp_index] != undefined)
+		T =TS[clp_index].split(`,`);
+	if (CS[clp_index] != undefined)
+		C = CS[clp_index].split(`,`);
+	if (programaS[clp_index] != undefined)
+		programa1 = programaS[clp_index].split(`,`);
 	else
 		programa1 = 0;
-	   console.log(clp_num+' '+programa1[0]+programa1[1]+' '+I[0]);
-	atualiza_entrada = atualizaS[clp_num];
-	comandos = comandosS[clp_num];
-	passo_atual = PA[clp_num];
-	localizacao_prog = LP[clp_num];
+	   console.log(clp_index+' '+programa1[0]+programa1[1]+' '+I[0]);
+	atualiza_entrada = atualizaS[clp_index];
+	comandos = comandosS[clp_index];
+	passo_atual = PA[clp_index];
+	localizacao_prog = LP[clp_index];
 		   
 	if( atualiza_entrada == 1) {
 		io.to(clp_num).emit('entrada', I.join());
@@ -307,8 +334,7 @@ function AtualizaPorTempo() {
 			}
 			programa();
 		}
-		temporizadores();
-	
+		
 		segundo++;
        		if (segundo>10){
 			segundo = 0;
@@ -316,35 +342,35 @@ function AtualizaPorTempo() {
 			if (atraso>1){
 				atraso = 0;
 				//io.emit('time', { time: new Date().toJSON() });
-				io.to(clp_num).emit('memoria', M.join());
-				io.to(clp_num).emit('tr', R.join());
-				io.to(clp_num).emit('timer', T.join());
-				io.to(clp_num).emit('counter', C.join());
-				io.to(clp_num).emit('saida', Q.join());
-				io.to(clp_num).emit('localizacao', localizacao_prog);
+				io.to(clp_index*3+1).emit('memoria', M.join());
+				io.to(clp_index*3+1).emit('tr', R.join());
+				io.to(clp_index*3+1).emit('timer', T.join());
+				io.to(clp_index*3+1).emit('counter', C.join());
+				io.to(clp_index*3+1).emit('saida', Q.join());
+				io.to(clp_index*3+1).emit('localizacao', localizacao_prog);
 			}
 		}
 	}
         if (comandos>1)
 		comandos=0;
 	if (M != undefined)
-		MS[clp_num] = M.join();
+		MS[clp_index] = M.join();
 	if (I != undefined)
-		IS[clp_num] = I.join();
+		IS[clp_index] = I.join();
 	if (R != undefined)
-		RS[clp_num] = R.join();
+		RS[clp_index] = R.join();
 	if (Q != undefined)
-		QS[clp_num] = Q.join();
+		QS[clp_index] = Q.join();
 	if (T != undefined)
-		TS[clp_num] = T.join();
+		TS[clp_index] = T.join();
 	if (C != undefined)
-		CS[clp_num] = C.join();
+		CS[clp_index] = C.join();
 	if (programa1 != 0)
-		programaS[clp_num] = programa1.join();
-	atualizaS[clp_num] = atualiza_entrada;
-	comandosS[clp_num] = comandos;
-	PA[clp_num] = passo_atual;
-	LP[clp_num] = localizacao_prog;
+		programaS[clp_index] = programa1.join();
+	atualizaS[clp_index] = atualiza_entrada;
+	comandosS[clp_index] = comandos;
+	PA[clp_index] = passo_atual;
+	LP[clp_index] = localizacao_prog;
    }
 }
 //=============================================================================
@@ -739,21 +765,25 @@ function AtualizaPorTempo() {
   //=======================================================================
   	function temporizadores()
   	{
-  		for (var i = 0; i<= (T.length/3); i++ ){
-			if (T[3*i + 1] > 0)
-				T[3*i+1] = T[3*i+1] + 1;
-			if (T[3*i + 1] >= T[3*i+2]){
-				T[3*i+1] = T[3*i+2];
-				T[3*i] = 1;
-			}
-			else
-				T[3*i] = 0;
+		for(var clp_index=0; clp_index<clp.length; clp_index++){	
+			if (TS[clp_index] != undefined){
+				T =TS[clp_index].split(`,`);
+		
+				for (var i = 0; i<= (T.length/3); i++ ){
+					if (T[3*i + 1] > 0)
+						T[3*i+1] = T[3*i+1] + 1;
+						if (T[3*i + 1] >= T[3*i+2]){
+							T[3*i+1] = T[3*i+2];
+							T[3*i] = 1;
+						}
+						else
+							T[3*i] = 0;
+				}	
+				TS[clp_index]= T.join();
+    			}
 		}
+	}					
 
-    }
-
-
-}
 
   //======================================================================
   //Abre primeira janela do simulador endereco localhost:4333
