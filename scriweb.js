@@ -339,7 +339,7 @@ function AtualizaPorTempo() {
 		TS[clp_num] = T.join();
 	if (C != undefined)
 		CS[clp_num] = C.join();
-	if (programa1 != undefined)
+	if (programa1 != 0)
 		programaS[clp_num] = programa1.join();
 	atualizaS[clp_num] = atualiza_entrada;
 	comandosS[clp_num] = comandos;
