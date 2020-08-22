@@ -162,9 +162,10 @@ if (ativo) {
 	   	}
 	   }
         });
-	socket.on('programax', function(data, data1) {
+	socket.on('programax', function(data) {
 		
-		programa1 = data.split(',');
+		programa1 = data[0].split(',');
+		data1 = data[1];
 		cria_memoria();
 		atualiza_entrada = 1;
 		atualizaS[data1] = 1;
