@@ -163,9 +163,8 @@ if (ativo) {
 	   }
         });
 	socket.on('programax', function(data) {
-		
-		programa1 = data[1].split(',');
-		data1 = data[0];
+		programa1 = data.split(',');
+		var data1 = programa1[programa1.length-1];
 		cria_memoria();
 		atualiza_entrada = 1;
 		atualizaS[data1] = 1;
@@ -180,19 +179,22 @@ if (ativo) {
 		console.log('Escreveu pROGRAMA DO clp['+data1+'] = '+socket.id);
 			
 	});
-        socket.on('comandosx', function(data, data1) {
+        socket.on('comandosx', function(data) {
           //console.log('laalalllal');
-		comandosS[data1] = data;
-		comandos = data;
+		comandosS[data[1]] = data[0];
+		comandos = data[0];
         });
-        socket.on('entradax', function(data, data1) {
+        socket.on('entradax', function(data) {
             	I = data.split(',');
+		var data1 = I[I.length-1]
 		atualizaS[data1] = 1;
 		IS[data1] = I.join();
 		atualiza_entrada = 1;
         });
-        socket.on('memoriax', function(data, data1) {
-        	if (MS[data1] != undefined)
+        socket.on('memoriax', function(data) {
+        	aux = data.split(',');
+		var data1 = aux[2];
+		if (MS[data1] != undefined)
 			M = MS[data1].split(`,`);
 		if (IS[data1] != undefined)
 			I = IS[data1].split(`,`);
@@ -205,7 +207,6 @@ if (ativo) {
 		if (CS[data1] != undefined)
 			C = CS[data1].split(`,`);
 	
-		aux = data.split(',');
             	escreve_enderecoCT(aux[0], aux[1],1);
 		MS[data1] = M.join();
 		IS[data1] = I.join();
@@ -216,10 +217,11 @@ if (ativo) {
 	
 		//console.log( data);
 	});
-        socket.on('trx', function(data, data1) {
+        socket.on('trx', function(data) {
             	//R = RS[data1];
 		R = data.split(',');
-        	RS[data1] = R.join();
+		data1 = R[R.length-1]
+		RS[data1] = R.join();
 	});
         
 });
