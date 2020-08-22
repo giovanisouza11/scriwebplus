@@ -239,7 +239,7 @@ function trocar_botao() {
 			texto += booleano[i]+',';
 		}
 
-        socket.emit('programax', texto); 
+        socket.emit('programax', texto+','+num_clp); 
 		valor_chave[3]=0;
 		valor_chave[7]=1;
 	}
