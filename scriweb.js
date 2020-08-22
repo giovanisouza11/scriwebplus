@@ -176,7 +176,8 @@ if (ativo) {
 		CS[data1] = C.join();
 		comandosS[data1] = comandos;
 		programaS[data1] = programa1.join();
-
+		console.log('Escreveu pROGRAMA DO clp['+data1+'] = '+socket.id);
+			
 	});
         socket.on('comandosx', function(data, data1) {
           //console.log('laalalllal');
