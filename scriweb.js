@@ -146,7 +146,7 @@ if (ativo) {
 			break;
 	   }
 	   clp[x*3]= data
-	   clp[x+3+1] = socket.id;
+	   clp[x*3+1] = socket.id;
   	   PA[x]=0;
 	   LP[x]=0;
            socket.join(data);
@@ -159,7 +159,7 @@ if (ativo) {
 			break;
 	   }
 	   clp[x*3]= data
-	   clp[x+3+1] = socket.id;
+	   clp[x*3+1] = socket.id;
   	   PA[x]=0;
 	   LP[x]=0;
            socket.join(data);
@@ -172,7 +172,7 @@ if (ativo) {
 			break;
 	   }
 	   sup[x*3]= data
-	   sup[x+3+1] = socket.id;
+	   sup[x*3+1] = socket.id;
   	   socket.join(data);
 	   console.log('Escreveu clp['+data+'] = '+socket.id);
 	  
