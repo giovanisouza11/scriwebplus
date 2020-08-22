@@ -123,9 +123,9 @@ if (ativo) {
 			console.log('Escreveu SUP['+x+'] = 0');
 		}
 	   }
-	  // console.log(" DISconnect SOCKET.ID=",socket.id);
+	   console.log(" DISconnect SOCKET.ID=",socket.id);
         });
-        //console.log(" connect SOCKET.ID=",socket.id);
+        console.log(" connect SOCKET.ID=",socket.id);
 	socket.on('connect', function(data) {
 	   for(var x=0; x<30; x++){
 		if (socket.id != clp[x]) {
@@ -133,7 +133,7 @@ if (ativo) {
 			PA[data]=0;
 			LP[data]=0;
 			socket.join(data);
-			//console.log('Escreveu clp['+data+'] = '+socket.id);
+			console.log('Escreveu clp['+data+'] = '+socket.id);
 			break;
 		}
 	   }
@@ -146,7 +146,7 @@ if (ativo) {
 			PA[data]=0;
 			LP[data]=0;
 			socket.join(data);
-			//console.log('Escreveu clp['+data+'] = '+socket.id);
+			console.log('Escreveu clp['+data+'] = '+socket.id);
 			break;
 		}
 	   }
@@ -157,7 +157,7 @@ if (ativo) {
 		if (socket.id != sup[x]){
 		   sup[data]= socket.id;
 		   socket.join(data);
-		   //console.log('Escreveu SUP['+data+'] = '+socket.id);
+		   console.log('Escreveu SUP['+data+'] = '+socket.id);
 		   break;
 	   	}
 	   }
@@ -165,7 +165,7 @@ if (ativo) {
 	socket.on('programax', function(data, data1) {
 		
 		programa1 = data.split(',');
-			cria_memoria();
+		cria_memoria();
 		atualiza_entrada = 1;
 		atualizaS[data1] = 1;
 		MS[data1] = M.join();
@@ -181,10 +181,10 @@ if (ativo) {
         socket.on('comandosx', function(data, data1) {
           //console.log('laalalllal');
 		comandosS[data1] = data;
-			comandos = data;
+		comandos = data;
         });
         socket.on('entradax', function(data, data1) {
-            I = data.split(',');
+            	I = data.split(',');
 		atualizaS[data1] = 1;
 		IS[data1] = I.join();
 		atualiza_entrada = 1;
@@ -246,8 +246,8 @@ function AtualizaPorTempo() {
 		C = CS[clp_num].split(`,`);
 	if (programaS[clp_num] != undefined)
 		programa1 = programaS[clp_num].split(`,`);
-	else
-		programa1 = 0;
+	//else
+	//	programa1 = 0;
 	atualiza_entrada = atualizaS[clp_num];
 	comandos = comandosS[clp_num];
 	passo_atual = PA[clp_num];
