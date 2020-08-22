@@ -47,7 +47,7 @@ var LP = new Array();
 //Iniciando servidor HTTP
 //-----------------------------------------
 if (ativo) {
-	const PORT = process.env.PORT || 4333;	
+    const PORT = process.env.PORT || 4333;	
     var path = require('path');
     var express = require('express');
     var app = express();
@@ -92,15 +92,15 @@ if (ativo) {
     });
     server.listen(PORT,function() {
  		//JanelaElectron();
-		  console.log("__________________________________________________________________");
-    console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
-    console.log("| Neste servidor foi gerado uma pagina HTML                       |");
-    console.log("|                                                                 |");
-    console.log("| Execute no Browser para criar/alterar/monitorar LADDER.         |");
-    console.log("|    localhost:4333 ou XXX.XXX.XXX.XXX:4333                       |");
-    console.log("| Execute no Browser para Supervisão/simular processo Industrial.|");
-    console.log("|    localhost:4333/simulador ou XXX.XXX.XXX.XXX:4333/simulador   |");
-    console.log("___________________________________________________________________");
+	console.log("__________________________________________________________________");
+    	console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
+    	console.log("| Neste servidor foi gerado uma pagina HTML                       |");
+    	console.log("|                                                                 |");
+    	console.log("| Execute no Browser para criar/alterar/monitorar LADDER.         |");
+    	console.log("|    localhost:4333 ou XXX.XXX.XXX.XXX:4333                       |");
+    	console.log("| Execute no Browser para Supervisão/simular processo Industrial.|");
+    	console.log("|    localhost:4333/simulador ou XXX.XXX.XXX.XXX:4333/simulador   |");
+    	console.log("___________________________________________________________________");
     });
   
 }
@@ -190,7 +190,7 @@ if (ativo) {
             	I = data.split(',');
 		console.log(data);
 		var data1 = I[I.length-1]
-		delete I[I.length-1];
+		I.length = I.length-1;
 		atualizaS[data1] = 1;
 		IS[data1] = I.join();
 		atualiza_entrada = 1;
