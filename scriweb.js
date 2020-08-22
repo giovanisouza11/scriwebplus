@@ -328,13 +328,20 @@ function AtualizaPorTempo() {
 	}
         if (comandos>1)
 		comandos=0;
-	MS[clp_num] = M.join();
-	IS[clp_num] = I.join();
-	RS[clp_num] = R.join();
-	QS[clp_num] = Q.join();
-	TS[clp_num] = T.join();
-	CS[clp_num] = C.join();
-	programaS[clp_num] = programa1.join();
+	if (M != undefined)
+		MS[clp_num] = M.join();
+	if (I != undefined)
+		IS[clp_num] = I.join();
+	if (R != undefined)
+		RS[clp_num] = R.join();
+	if (Q != undefined)
+		QS[clp_num] = Q.join();
+	if (T != undefined)
+		TS[clp_num] = T.join();
+	if (C != undefined)
+		CS[clp_num] = C.join();
+	if (programa1 != undefined)
+		programaS[clp_num] = programa1.join();
 	atualizaS[clp_num] = atualiza_entrada;
 	comandosS[clp_num] = comandos;
 	PA[clp_num] = passo_atual;
