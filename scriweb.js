@@ -114,26 +114,25 @@ if (ativo) {
            for(var x=0; x<30; x++){
 		if (socket.id == clp[x]){
 			clp[x] = 0;
-			delete clp[x];
+			clp.splice(x, 1);
 			console.log('Escreveu clp['+x+'] = 0');
 		}
 		if (socket.id == sup[x]){
 			sup[x] = 0;
-			delete sup[x];
+			sup.splice(x, 1);;
 			console.log('Escreveu SUP['+x+'] = 0');
 		}
 		if (clp[x]== undefined && sup[x]== undefined){
-			delete atualizaS[x];
-			delete MS[x];
-			delete IS[x];
-			delete RS[x];
-			delete QS[x];
-			delete TS[x];
-			delete CS[x];
-			delete comandosS[x];
-			delete programaS[x];
+			atualizaS.splice(x, 1);
+			MS.splice(x, 1);
+			IS.splice(x, 1);
+			RS.splice(x, 1);
+			QS.splice(x, 1);
+			TS.splice(x, 1);
+			CS.splice(x, 1);
+			comandosS.splice(x, 1);
+			programaS.splice(x, 1);
 			console.log('Escreveu SUP['+x+'] clp[]= 0');
-			
 		}
 	   }
 	   console.log(" DISconnect SOCKET.ID=",socket.id);
@@ -273,8 +272,8 @@ function AtualizaPorTempo() {
 		C = CS[clp_num].split(`,`);
 	if (programaS[clp_num] != undefined)
 		programa1 = programaS[clp_num].split(`,`);
-	//else
-	//	programa1 = 0;
+	else
+		programa1 = 0;
 	   console.log(clp_num+' '+programa1[0]+programa1[1]+' '+I[0]);
 	atualiza_entrada = atualizaS[clp_num];
 	comandos = comandosS[clp_num];
@@ -285,7 +284,7 @@ function AtualizaPorTempo() {
 		io.to(clp_num).emit('entrada', I.join());
 		atualiza_entrada = 0;
 	}
-	if (programa1 != undefined){ 
+	if (programa1 != 0){ 
 		if (programa1.length > 0 && comandos>0 && comandos<3){
 			passo_atual = programa1.length - 1;
 	    		programa();
