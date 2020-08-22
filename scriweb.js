@@ -272,10 +272,10 @@ function AtualizaPorTempo() {
 	if (CS[clp_num] != undefined)
 		C = CS[clp_num].split(`,`);
 	if (programaS[clp_num] != undefined)
-		programa1 = programaS[clp_num].split(`,`)+' '+I[0];
+		programa1 = programaS[clp_num].split(`,`);
 	//else
 	//	programa1 = 0;
-	   console.log(clp_num+' '+programa1[0]+programa1[1]);
+	   console.log(clp_num+' '+programa1[0]+programa1[1]+' '+I[0]);
 	atualiza_entrada = atualizaS[clp_num];
 	comandos = comandosS[clp_num];
 	passo_atual = PA[clp_num];
