@@ -164,8 +164,8 @@ if (ativo) {
         });
 	socket.on('programax', function(data) {
 		
-		programa1 = data[0].split(',');
-		data1 = data[1];
+		programa1 = data[1].split(',');
+		data1 = data[0];
 		cria_memoria();
 		atualiza_entrada = 1;
 		atualizaS[data1] = 1;
