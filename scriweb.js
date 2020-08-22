@@ -111,7 +111,7 @@ if (ativo) {
     io.sockets.on('connection', function(socket) {
         io.emit('time', { time: new Date().toJSON() });
         socket.on('disconnect', function(data) {
-           for(var x=1; x<11; x++){
+           for(var x=0; x<30; x++){
 		if (socket.id == clp[x]){
 			clp[x] = 0;
 			delete clp[x];
@@ -127,7 +127,7 @@ if (ativo) {
         });
         //console.log(" connect SOCKET.ID=",socket.id);
 	socket.on('connect', function(data) {
-	   for(var x=1; x<11; x++){
+	   for(var x=0; x<30; x++){
 		if (socket.id != clp[x]) {
 			clp[data]= socket.id;
 			PA[data]=0;
@@ -140,7 +140,7 @@ if (ativo) {
 	  
 	});
 	socket.on('clp', function(data) {
-	   for(var x=1; x<11; x++){
+	   for(var x=0; x<30; x++){
 		if (socket.id != clp[x]) {
 			clp[data]= socket.id;
 			PA[data]=0;
@@ -153,7 +153,7 @@ if (ativo) {
 	  
 	});
    	socket.on('sup', function(data) {
-	   for(var x=1; x<11; x++){
+	   for(var x=0; x<30; x++){
 		if (socket.id != sup[x]){
 		   sup[data]= socket.id;
 		   socket.join(data);
@@ -246,6 +246,8 @@ function AtualizaPorTempo() {
 		C = CS[clp_num].split(`,`);
 	if (programaS[clp_num] != undefined)
 		programa1 = programaS[clp_num].split(`,`);
+	else
+		programa1 = 0;
 	atualiza_entrada = atualizaS[clp_num];
 	comandos = comandosS[clp_num];
 	passo_atual = PA[clp_num];
