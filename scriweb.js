@@ -308,7 +308,7 @@ function AtualizaPorTempo() {
 	localizacao_prog = LP[clp_index];
 		   
 	if( atualiza_entrada == 1) {
-		io.to(clp_num).emit('entrada', I.join());
+		io.to(clp_index*3).emit('entrada', I.join());
 		atualiza_entrada = 0;
 	}
 	if (programa1 != 0){ 
@@ -342,12 +342,12 @@ function AtualizaPorTempo() {
 			if (atraso>1){
 				atraso = 0;
 				//io.emit('time', { time: new Date().toJSON() });
-				io.to(clp_index*3+1).emit('memoria', M.join());
-				io.to(clp_index*3+1).emit('tr', R.join());
-				io.to(clp_index*3+1).emit('timer', T.join());
-				io.to(clp_index*3+1).emit('counter', C.join());
-				io.to(clp_index*3+1).emit('saida', Q.join());
-				io.to(clp_index*3+1).emit('localizacao', localizacao_prog);
+				io.to(clp_index*3).emit('memoria', M.join());
+				io.to(clp_index*3).emit('tr', R.join());
+				io.to(clp_index*3).emit('timer', T.join());
+				io.to(clp_index*3).emit('counter', C.join());
+				io.to(clp_index*3).emit('saida', Q.join());
+				io.to(clp_index*3).emit('localizacao', localizacao_prog);
 			}
 		}
 	}
