@@ -190,6 +190,7 @@ if (ativo) {
             	I = data.split(',');
 		console.log(data);
 		var data1 = I[I.length-1]
+		delete I[I.length-1];
 		atualizaS[data1] = 1;
 		IS[data1] = I.join();
 		atualiza_entrada = 1;
