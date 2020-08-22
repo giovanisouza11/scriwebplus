@@ -190,12 +190,18 @@ if (ativo) {
 		atualiza_entrada = 1;
         });
         socket.on('memoriax', function(data, data1) {
-        	M = MS[data1].split(`,`);
-		I = IS[data1].split(`,`);
-		R = RS[data1].split(`,`);
-		Q = QS[data1].split(`,`);
-		T =TS[data1].split(`,`);
-		C = CS[data1].split(`,`);
+        	if (MS[data1] != undefined)
+			M = MS[data1].split(`,`);
+		if (IS[data1] != undefined)
+			I = IS[data1].split(`,`);
+		if (RS[data1] != undefined)
+			R = RS[data1].split(`,`);
+		if (QS[data1] != undefined)
+			Q = QS[data1].split(`,`);
+		if (TS[data1] != undefined)
+			T =TS[data1].split(`,`);
+		if (CS[data1] != undefined)
+			C = CS[data1].split(`,`);
 	
 		aux = data.split(',');
             	escreve_enderecoCT(aux[0], aux[1],1);
@@ -226,13 +232,20 @@ var localizacao_prog =0;
 function AtualizaPorTempo() {
 		
    for(var clp_num=0; clp_num<=clp.length; clp_num++){	
-	M = MS[clp_num].split(`,`);
-	I = IS[clp_num].split(`,`);
-	R = RS[clp_num].split(`,`);
-	Q = QS[clp_num].split(`,`);
-	T =TS[clp_num].split(`,`);
-	C = CS[clp_num].split(`,`);
-	programa1 = programaS[clp_num].split(`,`);
+	if (MS[clp_num] != undefined)
+		M = MS[clp_num].split(`,`);
+	if (IS[clp_num] != undefined)
+		I = IS[clp_num].split(`,`);
+	if (RS[clp_num] != undefined)
+		R = RS[clp_num].split(`,`);
+	if (QS[clp_num] != undefined)
+		Q = QS[clp_num].split(`,`);
+	if (TS[clp_num] != undefined)
+		T =TS[clp_num].split(`,`);
+	if (CS[clp_num] != undefined)
+		C = CS[clp_num].split(`,`);
+	if (programaS[clp_num] != undefined)
+		programa1 = programaS[clp_num].split(`,`);
 	atualiza_entrada = atualizaS[clp_num];
 	comandos = comandosS[clp_num];
 	passo_atual = PA[clp_num];
