@@ -240,7 +240,7 @@ var localizacao_prog =0;
 	
 function AtualizaPorTempo() {
 		
-   for(var clp_num=0; clp_num<=clp.length; clp_num++){	
+   for(var clp_num=0; clp_num<(clp.length+1); clp_num++){	
 	if (MS[clp_num] != undefined)
 		M = MS[clp_num].split(`,`);
 	if (IS[clp_num] != undefined)
