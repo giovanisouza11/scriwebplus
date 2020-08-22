@@ -33,9 +33,10 @@ function config(dado){
 }
 
 function Enviar(){
+	var data = I.join()+ ','+ num_clp;
     socket.emit('programax', programa+ ','+ num_clp);
     socket.emit('comandosx', comando+ ','+ num_clp);
-    socket.emit('entradax', I.join()+ ','+ num_clp);
+    socket.emit('entradax',data);
 }
 
 function envia_entrada(data){
