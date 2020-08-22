@@ -183,10 +183,12 @@ if (ativo) {
         socket.on('comandosx', function(data) {
           //console.log('laalalllal');
 		comandosS[data[1]] = data[0];
+		console.log(data);
 		comandos = data[0];
         });
         socket.on('entradax', function(data) {
             	I = data.split(',');
+		console.log(data);
 		var data1 = I[I.length-1]
 		atualizaS[data1] = 1;
 		IS[data1] = I.join();
@@ -194,6 +196,7 @@ if (ativo) {
         });
         socket.on('memoriax', function(data) {
         	aux = data.split(',');
+		console.log(data);
 		var data1 = aux[2];
 		if (MS[data1] != undefined)
 			M = MS[data1].split(`,`);
@@ -220,6 +223,7 @@ if (ativo) {
 	});
         socket.on('trx', function(data) {
             	//R = RS[data1];
+		console.log(data);
 		R = data.split(',');
 		data1 = R[R.length-1]
 		RS[data1] = R.join();
