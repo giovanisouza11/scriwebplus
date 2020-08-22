@@ -219,8 +219,12 @@ if (ativo) {
 		QS[data1] = Q.join();
 		TS[data1] = T.join();
 		CS[data1] = C.join();
-	
-		//console.log( data);
+		console.log(MS[data1]);
+		console.log(IS[data1]);
+		console.log(QS[data1]);
+		console.log(RS[data1]);
+		console.log(TS[data1]);
+		console.log(CS[data1]);
 	});
         socket.on('trx', function(data) {
             	//R = RS[data1];
@@ -258,6 +262,7 @@ function AtualizaPorTempo() {
 		programa1 = programaS[clp_num].split(`,`);
 	//else
 	//	programa1 = 0;
+	   console.log(programa1)
 	atualiza_entrada = atualizaS[clp_num];
 	comandos = comandosS[clp_num];
 	passo_atual = PA[clp_num];
