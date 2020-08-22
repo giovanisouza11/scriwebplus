@@ -33,16 +33,16 @@ function config(dado){
 }
 
 function Enviar(){
-    socket.emit('programax', programa, num_clp);
-    socket.emit('comandosx', comando, num_clp);
-    socket.emit('entradax', I.join(), num_clp);
+    socket.emit('programax', programa+ ','+ num_clp);
+    socket.emit('comandosx', comando+ ','+ num_clp);
+    socket.emit('entradax', I.join()+ ','+ num_clp);
 }
 
 function envia_entrada(data){
 	while (data.length < I.length) {
 		data[data.length] = I[data.length];
 	}
-     socket.emit('entradax', data.join(), num_clp);
+     socket.emit('entradax', data.join()+ ','+ num_clp);
 }
 
 
