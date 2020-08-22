@@ -122,6 +122,19 @@ if (ativo) {
 			delete sup[x];
 			console.log('Escreveu SUP['+x+'] = 0');
 		}
+		if (clp[x]== undefined && sup[x]== undefined){
+			delete atualizaS[x];
+			delete MS[x];
+			delete IS[x];
+			delete RS[x];
+			delete QS[x];
+			delete TS[x];
+			delete CS[x];
+			delete comandosS[x];
+			delete programaS[x];
+			console.log('Escreveu SUP['+x+'] clp[]= 0');
+			
+		}
 	   }
 	   console.log(" DISconnect SOCKET.ID=",socket.id);
         });
@@ -164,7 +177,7 @@ if (ativo) {
         });
 	socket.on('programax', function(data) {
 		programa1 = data.split(',');
-		console.log(data);
+		//console.log(data);
 		var data1 = programa1[programa1.length-1];
 		cria_memoria();
 		atualiza_entrada = 1;
@@ -177,18 +190,18 @@ if (ativo) {
 		CS[data1] = C.join();
 		comandosS[data1] = comandos;
 		programaS[data1] = programa1.join();
-		console.log('Escreveu pROGRAMA DO clp['+data1+'] = '+socket.id);
+		//console.log('Escreveu pROGRAMA DO clp['+data1+'] = '+socket.id);
 			
 	});
         socket.on('comandosx', function(data) {
           //console.log('laalalllal');
 		comandosS[data[1]] = data[0];
-		console.log(data);
+		//console.log(data);
 		comandos = data[0];
         });
         socket.on('entradax', function(data) {
             	I = data.split(',');
-		console.log(data);
+		//console.log(data);
 		var data1 = I[I.length-1]
 		I.length = I.length-1;
 		atualizaS[data1] = 1;
@@ -219,16 +232,16 @@ if (ativo) {
 		QS[data1] = Q.join();
 		TS[data1] = T.join();
 		CS[data1] = C.join();
-		console.log(MS[data1]);
-		console.log(IS[data1]);
-		console.log(QS[data1]);
-		console.log(RS[data1]);
-		console.log(TS[data1]);
-		console.log(CS[data1]);
+		//console.log(MS[data1]);
+		//console.log(IS[data1]);
+		//console.log(QS[data1]);
+		//console.log(RS[data1]);
+		//console.log(TS[data1]);
+		//console.log(CS[data1]);
 	});
         socket.on('trx', function(data) {
             	//R = RS[data1];
-		console.log(data);
+		//console.log(data);
 		R = data.split(',');
 		data1 = R[R.length-1]
 		RS[data1] = R.join();
@@ -259,7 +272,7 @@ function AtualizaPorTempo() {
 	if (CS[clp_num] != undefined)
 		C = CS[clp_num].split(`,`);
 	if (programaS[clp_num] != undefined)
-		programa1 = programaS[clp_num].split(`,`);
+		programa1 = programaS[clp_num].split(`,`)+' '+I[0];
 	//else
 	//	programa1 = 0;
 	   console.log(clp_num+' '+programa1[0]+programa1[1]);
