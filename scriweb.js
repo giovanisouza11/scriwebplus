@@ -114,17 +114,15 @@ if (ativo) {
            for(var x=0; x<(clp.length/2); x++){
 		if (socket.id == clp[x*2]){
 			socket.leave(clp[x*2]);
-			delete clp[x*2];
-			delete clp[x*2];
-			console.log('Escreveu clp['+x*2+'] = 0');
+			clp[x*2] = 'k';
+			console.log('Escreveu clp['+x*2+'] = K');
 		}
 		if (socket.id == sup[x*2]){
 			socket.leave(sup[x*2]);
-			delete sup[x*2];
-			delete sup[x*2];
-			console.log('Escreveu SUP['+x*2+'] = 0');
+			sup[x*2] = 'k';
+			console.log('Escreveu SUP['+x*2+'] = K');
 		}
-		if (clp[x*2]== undefined && sup[x*2]== undefined){
+		if ((clp[x*2]== 'k' && sup[x*2]== 'k') ||(clp[x*2]== undefined || sup[x*2]== undefined)){
 			atualizaS.splice(x,1);
 			MS.splice(x,1);
 			IS.splice(x,1);
