@@ -113,13 +113,13 @@ if (ativo) {
         socket.on('disconnect', function(data) {
            for(var x=0; x<30; x++){
 		if (socket.id == clp[x*2]){
+			socket.leave(clp[x*2]);
 			delete clp[x*2];
-			//delete clp[x*2+1];
 			console.log('Escreveu clp['+x*2+'] = 0');
 		}
 		if (socket.id == sup[x*2]){
+			socket.leave(sup[x*2]);
 			delete sup[x*2];
-			//delete sup[x*2+1];
 			console.log('Escreveu SUP['+x*2+'] = 0');
 		}
 		if (clp[x*2]== undefined && sup[x*2]== undefined){
@@ -143,7 +143,8 @@ if (ativo) {
         });
         console.log(" connect SOCKET.ID=",socket.id);
 	socket.on('connect', function(data) {
-	   for(var x=0; x<(clp.length/2); x++){
+	var x;
+	for(x=0; x<(clp.length/2); x++){
 		if (socket.id == clp[x*2+1])
 			break;
 	   }
@@ -156,7 +157,8 @@ if (ativo) {
 	  
 	});
 	socket.on('clp', function(data) {
-	   for(var x=0; x<(clp.length/2); x++){
+	   var x;
+	   for(x=0; x<(clp.length/2); x++){
 		if (socket.id == clp[x*2+1])
 			break;
 	   }
@@ -169,7 +171,8 @@ if (ativo) {
 	  
 	});
    	socket.on('sup', function(data) {
-	   for(var x=0; x<(clp.length/2); x++){
+	   var x;
+	   for(x=0; x<(clp.length/2); x++){
 		if (data == clp[x*2])
 			break;
 	   }
@@ -181,7 +184,8 @@ if (ativo) {
 	});
 	socket.on('programax', function(data) {
 		var data1 = programa1[programa1.length-1];
-		for(var x=0; x<(clp.length/2); x++){
+		var x;
+		for(x=0; x<(clp.length/2); x++){
 		  if (data1 == clp[x*2])
 			break;
 	  	}
@@ -205,7 +209,8 @@ if (ativo) {
 	});
         socket.on('comandosx', function(data) {
           //console.log('laalalllal');
-		for(var x=0; x<(clp.length/2); x++){
+		var x;
+		for(x=0; x<(clp.length/2); x++){
 		  if (data[1] == clp[x*2])
 			break;
 	  	}
@@ -218,7 +223,8 @@ if (ativo) {
             	I = data.split(',');
 		//console.log(data);
 		var data1 = I[I.length-1]
-		for(var x=0; x<(clp.length/2); x++){
+		var x;
+		for(x=0; x<(clp.length/2); x++){
 		  if (data1 == clp[x*2])
 			break;
 	  	}
@@ -231,7 +237,8 @@ if (ativo) {
         	aux = data.split(',');
 		console.log(data);
 		var data1 = aux[2];
-		for(var x=0; x<(clp.length/2); x++){
+		var x;
+		for(x=0; x<(clp.length/2); x++){
 		  if (data1 == clp[x*2])
 			break;
 	  	}
@@ -267,7 +274,8 @@ if (ativo) {
 		//console.log(data);
 		R = data.split(',');
 		data1 = R[R.length-1]
-		for(var x=0; x<(clp.length/2); x++){
+		var x;
+		for(x=0; x<(clp.length/2); x++){
 		  if (data1 == clp[x*2])
 			break;
 	  	}
