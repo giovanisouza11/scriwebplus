@@ -111,7 +111,7 @@ if (ativo) {
     io.sockets.on('connection', function(socket) {
         io.emit('time', { time: new Date().toJSON() });
         socket.on('disconnect', function(data) {
-           for(var x=0; x<30; x++){
+           for(var x=0; x<(clp.length/2); x++){
 		if (socket.id == clp[x*2]){
 			socket.leave(clp[x*2]);
 			delete clp[x*2];
