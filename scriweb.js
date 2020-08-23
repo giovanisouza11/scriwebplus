@@ -115,10 +115,12 @@ if (ativo) {
 		if (socket.id == clp[x*2]){
 			socket.leave(clp[x*2]);
 			delete clp[x*2];
+			delete clp[x*2];
 			console.log('Escreveu clp['+x*2+'] = 0');
 		}
 		if (socket.id == sup[x*2]){
 			socket.leave(sup[x*2]);
+			delete sup[x*2];
 			delete sup[x*2];
 			console.log('Escreveu SUP['+x*2+'] = 0');
 		}
