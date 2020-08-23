@@ -112,17 +112,17 @@ if (ativo) {
         io.emit('time', { time: new Date().toJSON() });
         socket.on('disconnect', function(data) {
            for(var x=0; x<30; x++){
-		if (socket.id == clp[x*3]){
-			delete clp[x*3];
+		if (socket.id == clp[x*2]){
+			delete clp[x*2];
 			//delete clp[x*2+1];
-			console.log('Escreveu clp['+x+'] = 0');
+			console.log('Escreveu clp['+x*2+'] = 0');
 		}
-		if (socket.id == sup[x*3]){
-			delete sup[x*3];
+		if (socket.id == sup[x*2]){
+			delete sup[x*2];
 			//delete sup[x*2+1];
-			console.log('Escreveu SUP['+x+'] = 0');
+			console.log('Escreveu SUP['+x*2+'] = 0');
 		}
-		if (clp[x*3]== undefined && sup[x*3]== undefined){
+		if (clp[x*2]== undefined && sup[x*2]== undefined){
 			atualizaS.splice(x,1);
 			MS.splice(x,1);
 			IS.splice(x,1);
@@ -134,6 +134,8 @@ if (ativo) {
 			programaS.splice(x,1);
 			PA.splice(x,1);
 			LP.splice(x,1);
+			clp.splice(x*2,2);
+			sup.splice(x*2,2);
 			console.log('Escreveu SUP['+x+'] clp[]= 0');
 		}
 	   }
@@ -141,12 +143,12 @@ if (ativo) {
         });
         console.log(" connect SOCKET.ID=",socket.id);
 	socket.on('connect', function(data) {
-	   for(var x=0; x<(clp.length/3); x++){
-		if (socket.id == clp[x*3+1])
+	   for(var x=0; x<(clp.length/2); x++){
+		if (socket.id == clp[x*2+1])
 			break;
 	   }
-	   clp[x*3]= data
-	   clp[x*3+1] = socket.id;
+	   clp[x*2]= data;
+	   clp[x*2+1] = socket.id;
   	   PA[x]=0;
 	   LP[x]=0;
            socket.join(data);
@@ -154,12 +156,12 @@ if (ativo) {
 	  
 	});
 	socket.on('clp', function(data) {
-	   for(var x=0; x<(clp.length/3); x++){
-		if (socket.id == clp[x*3+1])
+	   for(var x=0; x<(clp.length/2); x++){
+		if (socket.id == clp[x*2+1])
 			break;
 	   }
-	   clp[x*3]= data
-	   clp[x*3+1] = socket.id;
+	   clp[x*2]= data;
+	   clp[x*2+1] = socket.id;
   	   PA[x]=0;
 	   LP[x]=0;
            socket.join(data);
@@ -167,20 +169,20 @@ if (ativo) {
 	  
 	});
    	socket.on('sup', function(data) {
-	   for(var x=0; x<(clp.length/3); x++){
-		if (data == clp[x*3])
+	   for(var x=0; x<(clp.length/2); x++){
+		if (data == clp[x*2])
 			break;
 	   }
-	   sup[x*3]= data
-	   sup[x*3+1] = socket.id;
+	   sup[x*2]= data;
+	   sup[x*2+1] = socket.id;
   	   socket.join(data);
 	   console.log('Escreveu clp['+data+'] = '+socket.id);
 	  
 	});
 	socket.on('programax', function(data) {
 		var data1 = programa1[programa1.length-1];
-		for(var x=0; x<(clp.length/3); x++){
-		  if (data1 == clp[x*3])
+		for(var x=0; x<(clp.length/2); x++){
+		  if (data1 == clp[x*2])
 			break;
 	  	}
 		programa1 = data.split(',');
@@ -203,8 +205,8 @@ if (ativo) {
 	});
         socket.on('comandosx', function(data) {
           //console.log('laalalllal');
-		for(var x=0; x<(clp.length/3); x++){
-		  if (data[1] == clp[x*3])
+		for(var x=0; x<(clp.length/2); x++){
+		  if (data[1] == clp[x*2])
 			break;
 	  	}
 
@@ -216,8 +218,8 @@ if (ativo) {
             	I = data.split(',');
 		//console.log(data);
 		var data1 = I[I.length-1]
-		for(var x=0; x<(clp.length/3); x++){
-		  if (data1 == clp[x*3])
+		for(var x=0; x<(clp.length/2); x++){
+		  if (data1 == clp[x*2])
 			break;
 	  	}
 		I.length = I.length-1;
@@ -229,8 +231,8 @@ if (ativo) {
         	aux = data.split(',');
 		console.log(data);
 		var data1 = aux[2];
-		for(var x=0; x<(clp.length/3); x++){
-		  if (data1 == clp[x*3])
+		for(var x=0; x<(clp.length/2); x++){
+		  if (data1 == clp[x*2])
 			break;
 	  	}
 		if (MS[x] != undefined)
@@ -265,8 +267,8 @@ if (ativo) {
 		//console.log(data);
 		R = data.split(',');
 		data1 = R[R.length-1]
-		for(var x=0; x<(clp.length/3); x++){
-		  if (data1 == clp[x*3])
+		for(var x=0; x<(clp.length/2); x++){
+		  if (data1 == clp[x*2])
 			break;
 	  	}
 		RS[x] = R.join();
@@ -284,7 +286,7 @@ var localizacao_prog =0;
 function AtualizaPorTempo() {
    temporizadores();
 	
-   for(var clp_index=0; clp_index<clp.length; clp_index++){	
+   for(var clp_index=0; clp_index<(clp.length/2); clp_index++){	
 	if (MS[clp_index] != undefined)
 		M = MS[clp_index].split(`,`);
 	if (IS[clp_index] != undefined)
@@ -301,14 +303,14 @@ function AtualizaPorTempo() {
 		programa1 = programaS[clp_index].split(`,`);
 	else
 		programa1 = 0;
-	   console.log(clp_index+' '+programa1[0]+programa1[1]+' '+I[0]+' '+Q[0]+' '+M[0]+' '+T[0]);
+	   console.log(clp[clp_index*2]+' '+programa1[0]+programa1[1]+' '+I[0]+' '+Q[0]+' '+M[0]+' '+T[0]);
 	atualiza_entrada = atualizaS[clp_index];
 	comandos = comandosS[clp_index];
 	passo_atual = PA[clp_index];
 	localizacao_prog = LP[clp_index];
 		   
 	if( atualiza_entrada == 1) {
-		io.to(clp_index*3).emit('entrada', I.join());
+		io.to(clp[clp_index*2]).emit('entrada', I.join());
 		atualiza_entrada = 0;
 	}
 	if (programa1 != 0){ 
@@ -342,12 +344,12 @@ function AtualizaPorTempo() {
 			if (atraso>1){
 				atraso = 0;
 				//io.emit('time', { time: new Date().toJSON() });
-				io.to(clp_index*3).emit('memoria', M.join());
-				io.to(clp_index*3).emit('tr', R.join());
-				io.to(clp_index*3).emit('timer', T.join());
-				io.to(clp_index*3).emit('counter', C.join());
-				io.to(clp_index*3).emit('saida', Q.join());
-				io.to(clp_index*3).emit('localizacao', localizacao_prog);
+				io.to(clp[clp_index*2]).emit('memoria', M.join());
+				io.to(clp[clp_index*2]).emit('tr', R.join());
+				io.to(clp[clp_index*2]).emit('timer', T.join());
+				io.to(clp[clp_index*2]).emit('counter', C.join());
+				io.to(clp[clp_index*2]).emit('saida', Q.join());
+				io.to(clp[clp_index*2]).emit('localizacao', localizacao_prog);
 			}
 		}
 	}
@@ -765,7 +767,7 @@ function AtualizaPorTempo() {
   //=======================================================================
   	function temporizadores()
   	{
-		for(var clp_index=0; clp_index<clp.length; clp_index++){	
+		for(var clp_index=0; clp_index<(clp.length/2); clp_index++){	
 			if (TS[clp_index] != undefined){
 				T =TS[clp_index].split(`,`);
 		
