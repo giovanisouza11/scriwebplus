@@ -112,12 +112,12 @@ if (ativo) {
         io.emit('time', { time: new Date().toJSON() });
         socket.on('disconnect', function(data) {
            for(var x=0; x<(clp.length/2); x++){
-		if (socket.id == clp[x*2]){
+		if (socket.id == clp[x*2+1]){
 			socket.leave(clp[x*2]);
 			clp[x*2] = 'k';
 			console.log('Escreveu clp['+x*2+'] = K');
 		}
-		if (socket.id == sup[x*2]){
+		if (socket.id == sup[x*2+1]){
 			socket.leave(sup[x*2]);
 			sup[x*2] = 'k';
 			console.log('Escreveu SUP['+x*2+'] = K');
@@ -143,10 +143,12 @@ if (ativo) {
         });
         console.log(" connect SOCKET.ID=",socket.id);
 	socket.on('connect', function(data) {
-	var x;
-	for(x=0; x<(clp.length/2); x++){
-		if (socket.id == clp[x*2+1])
+	   var x;
+	   for(x=0; x<(clp.length/2); x++){
+		if (socket.id == clp[x*2+1]){
+			socket.leave(clp[x*2]);
 			break;
+	   	}
 	   }
 	   clp[x*2]= data;
 	   clp[x*2+1] = socket.id;
@@ -159,8 +161,10 @@ if (ativo) {
 	socket.on('clp', function(data) {
 	   var x;
 	   for(x=0; x<(clp.length/2); x++){
-		if (socket.id == clp[x*2+1])
+		if (socket.id == clp[x*2+1]){
+			socket.leave(clp[x*2]);
 			break;
+		}
 	   }
 	   clp[x*2]= data;
 	   clp[x*2+1] = socket.id;
@@ -173,8 +177,10 @@ if (ativo) {
    	socket.on('sup', function(data) {
 	   var x;
 	   for(x=0; x<(clp.length/2); x++){
-		if (data == clp[x*2])
+		if (data == clp[x*2]){
+			socket.leave(sup[x*2]);
 			break;
+		}
 	   }
 	   sup[x*2]= data;
 	   sup[x*2+1] = socket.id;
@@ -288,7 +294,7 @@ function verifica_clp(data1, socket){
 	var x=0;
 	while(data1 != clp[x*2]){
 			x++;
-			if (x>(clp.length/2)){
+			if (x>=(clp.length/2)){
 				clp[x*2]= data1;
 	   			clp[x*2+1] = socket.id;
   	   			PA[x]=0;
