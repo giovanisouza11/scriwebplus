@@ -148,12 +148,12 @@ if (ativo) {
 		if (socket.id == clp[x*2+1])
 			break;
 	   }
-	   clp[x*2]= data;
-	   clp[x*2+1] = socket.id;
-  	   PA[x]=0;
-	   LP[x]=0;
-           socket.join(data);
-	   console.log('Escreveu clp['+data+'] = '+socket.id);
+	   //clp[x*2]= data;
+	   //clp[x*2+1] = socket.id;
+  	   //PA[x]=0;
+	   //LP[x]=0;
+           //socket.join(data);
+	   //console.log('Escreveu clp['+data+'] = '+socket.id);
 	  
 	});
 	socket.on('clp', function(data) {
