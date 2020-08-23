@@ -184,8 +184,7 @@ if (ativo) {
 	});
 	socket.on('programax', function(data) {
 		var data1 = programa1[programa1.length-1];
-		var x=0;
-		verifica_clp();
+		var x=verifica_clp(data1);
 		//for(x=0; x<(clp.length/2); x++){
 		  //if (data1 == clp[x*2])
 		//	break;
@@ -210,10 +209,7 @@ if (ativo) {
 	});
         socket.on('comandosx', function(data) {
           //console.log('laalalllal');
-		var x;
-		
-		data1 = data[1];
-		verifica_clp();
+		var x = verifica_clp(data[1]);
 		//for(x=0; x<(clp.length/2); x++){
 		//  if (data[1] == clp[x*2])
 	//		break;
@@ -227,8 +223,7 @@ if (ativo) {
             	I = data.split(',');
 		//console.log(data);
 		var data1 = I[I.length-1]
-		var x;
-		verifica_clp();
+		var x = verifica_clp(data1);
 		//for(x=0; x<(clp.length/2); x++){
 		 // if (data1 == clp[x*2])
 	//		break;
@@ -242,8 +237,7 @@ if (ativo) {
         	aux = data.split(',');
 		console.log(data);
 		var data1 = aux[2];
-		var x;
-		verifica_clp();
+		var x =	verifica_clp(data1);
 		//for(x=0; x<(clp.length/2); x++){
 		 // if (data1 == clp[x*2])
 		//	break;
@@ -280,8 +274,7 @@ if (ativo) {
 		//console.log(data);
 		R = data.split(',');
 		data1 = R[R.length-1]
-		var x;
-		verifica_clp();
+		var x = verifica_clp(data1);
 		//for(x=0; x<(clp.length/2); x++){
 		 // if (data1 == clp[x*2])
 		//	break;
@@ -291,7 +284,8 @@ if (ativo) {
         
 });
 
-function verifica_clp(){
+function verifica_clp(data1){
+	var x=0;
 	while(data1 != clp[x*2]){
 			x++;
 			if (x>(clp.length/2)){
@@ -302,6 +296,7 @@ function verifica_clp(){
            			socket.join(data1);
 			}
 	   	}
+	return x;
 }
 //=============================================================================
 // Send current time to all connected clients
