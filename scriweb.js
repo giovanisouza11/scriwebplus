@@ -148,12 +148,12 @@ if (ativo) {
 		if (socket.id == clp[x*2+1])
 			break;
 	   }
-	   //clp[x*2]= data;
-	   //clp[x*2+1] = socket.id;
-  	   //PA[x]=0;
-	   //LP[x]=0;
-           //socket.join(data);
-	   //console.log('Escreveu clp['+data+'] = '+socket.id);
+	   clp[x*2]= data;
+	   clp[x*2+1] = socket.id;
+  	   PA[x]=0;
+	   LP[x]=0;
+           socket.join(data);
+	   console.log('Escreveu clp['+data+'] = '+socket.id);
 	  
 	});
 	socket.on('clp', function(data) {
@@ -311,7 +311,7 @@ function AtualizaPorTempo() {
 		programa1 = programaS[clp_index].split(`,`);
 	else
 		programa1 = 0;
-	   console.log(clp[clp_index*2]+' '+programa1[0]+programa1[1]+' '+I[0]+' '+Q[0]+' '+M[0]+' '+T[0]);
+	   console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+programa1[0]+programa1[1]+' '+I[0]+' '+Q[0]+' '+M[0]+' '+T[0]);
 	atualiza_entrada = atualizaS[clp_index];
 	comandos = comandosS[clp_index];
 	passo_atual = PA[clp_index];
