@@ -184,11 +184,12 @@ if (ativo) {
 	});
 	socket.on('programax', function(data) {
 		var data1 = programa1[programa1.length-1];
-		var x;
-		for(x=0; x<(clp.length/2); x++){
-		  if (data1 == clp[x*2])
-			break;
-	  	}
+		var x=0;
+		verifica_clp();
+		//for(x=0; x<(clp.length/2); x++){
+		  //if (data1 == clp[x*2])
+		//	break;
+	  	//}
 		programa1 = data.split(',');
 		//console.log(data);
 		cria_memoria();
@@ -210,10 +211,13 @@ if (ativo) {
         socket.on('comandosx', function(data) {
           //console.log('laalalllal');
 		var x;
-		for(x=0; x<(clp.length/2); x++){
-		  if (data[1] == clp[x*2])
-			break;
-	  	}
+		
+		data1 = data[1];
+		verifica_clp();
+		//for(x=0; x<(clp.length/2); x++){
+		//  if (data[1] == clp[x*2])
+	//		break;
+	  //	}
 
 		comandosS[x] = data[0];
 		//console.log(data);
@@ -224,10 +228,11 @@ if (ativo) {
 		//console.log(data);
 		var data1 = I[I.length-1]
 		var x;
-		for(x=0; x<(clp.length/2); x++){
-		  if (data1 == clp[x*2])
-			break;
-	  	}
+		verifica_clp();
+		//for(x=0; x<(clp.length/2); x++){
+		 // if (data1 == clp[x*2])
+	//		break;
+	  //	}
 		I.length = I.length-1;
 		atualizaS[x] = 1;
 		IS[x] = I.join();
@@ -238,10 +243,11 @@ if (ativo) {
 		console.log(data);
 		var data1 = aux[2];
 		var x;
-		for(x=0; x<(clp.length/2); x++){
-		  if (data1 == clp[x*2])
-			break;
-	  	}
+		verifica_clp();
+		//for(x=0; x<(clp.length/2); x++){
+		 // if (data1 == clp[x*2])
+		//	break;
+	  	//}
 		if (MS[x] != undefined)
 			M = MS[x].split(`,`);
 		if (IS[x] != undefined)
@@ -275,15 +281,28 @@ if (ativo) {
 		R = data.split(',');
 		data1 = R[R.length-1]
 		var x;
-		for(x=0; x<(clp.length/2); x++){
-		  if (data1 == clp[x*2])
-			break;
-	  	}
+		verifica_clp();
+		//for(x=0; x<(clp.length/2); x++){
+		 // if (data1 == clp[x*2])
+		//	break;
+	  	//}
 		RS[x] = R.join();
 	});
         
 });
 
+function verifica_clp(){
+	while(data1 != clp[x*2]){
+			x++;
+			if (x>(clp.length/2)){
+				clp[x*2]= data1;
+	   			clp[x*2+1] = socket.id;
+  	   			PA[x]=0;
+	   			LP[x]=0;
+           			socket.join(data1);
+			}
+	   	}
+}
 //=============================================================================
 // Send current time to all connected clients
 //=============================================================================
