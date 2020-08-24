@@ -261,10 +261,10 @@ if (ativo) {
 		while(socket.id != clp[x*2+1] && x < clp.length){
 			x++;
 		}
-		//if (x ==1 && clp[1]== undefined)
 		if (socket.id != clp[x*2+1])
 			x--;
-		
+		if (x<0)
+			x=0;
 		if (clp[x*2] != data1){
 			clp[x*2]= data1;
 	   		clp[x*2+1] = socket.id;
