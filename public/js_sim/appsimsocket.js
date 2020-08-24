@@ -22,12 +22,14 @@ socket.on('saida', function(data) {
        Q = data.split(',');
 	//		 atualiza_simulador();
 });
+socket.on('config_socket_r', function(data) {
+        num_clp = data;
+});
 function Enviar(){
     socket.emit('entradax', I.join()+ ','+  num_clp);
 }
 function Config_Socket(dado){
     socket.emit('sup', dado);
-    num_clp = dado;
 }
 
 function envia_entrada(data){
