@@ -185,12 +185,11 @@ if (ativo) {
 	   		console.log('Escreveu clp['+data+'] = '+socket.id);
 		});
 		socket.on('programax', function(data) {
+			programa1 = data.split(',');
 			var data1 = programa1[programa1.length-1];
 			var x=verifica_clp(data1, socket);
 			console.log('PROGRAMAX '+ data);
 			console.log('clp '+ clp);
-			
-			programa1 = data.split(',');
 			cria_memoria();
 			atualiza_entrada = 1;
 			atualizaS[x] = 1;
