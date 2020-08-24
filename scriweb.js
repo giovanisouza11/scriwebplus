@@ -191,6 +191,7 @@ if (ativo) {
 	socket.on('programax', function(data) {
 		var data1 = programa1[programa1.length-1];
 		var x=verifica_clp(data1, socket);
+		console.log('Escreveu PROGRAMAX x1 = '+ x);
 		programa1 = data.split(',');
 		cria_memoria();
 		atualiza_entrada = 1;
