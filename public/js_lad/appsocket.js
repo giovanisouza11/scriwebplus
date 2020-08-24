@@ -31,6 +31,9 @@ socket.on('saida', function(data) {
 function config(dado){
     	socket.emit('clp', dado);
     	num_clp = dado;
+	
+  	context.fillStyle = 'ivory';
+  	context.fillRect(86, 220, 30, 20);
     	context.font = '36pt Arial';
   	context.fillStyle = 'red';
 	context.fillText(dado, 86, 240);
