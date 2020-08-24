@@ -272,10 +272,6 @@ if (ativo) {
 	   		LP[x]=0;
            		socket.join(data1);
 		}
-		//var x=0;
-		//while (clp[x*2] != data1) {
-	//		x++;
-	//	}
 		console.log('Escreveu PROGRAMAX x3 = '+ x);
 		
 		return x;
@@ -306,7 +302,7 @@ if (ativo) {
 				programa1 = programaS[clp_index].split(`,`);
 			else
 				programa1 = 0;
-		   	//console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+programa1[0]+programa1[1]+' '+I[0]+' '+Q[0]+' '+M[0]+' '+T[0]);
+		   	console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+programa1[0]+programa1[1]+' '+I[0]+' '+Q[0]+' '+M[0]+' '+T[0]);
 			atualiza_entrada = atualizaS[clp_index];
 			comandos = comandosS[clp_index];
 			passo_atual = PA[clp_index];
@@ -346,7 +342,6 @@ if (ativo) {
 					atraso++;
 					if (atraso>1){
 						atraso = 0;
-						//io.emit('time', { time: new Date().toJSON() });
 						io.to(clp[clp_index*2]).emit('memoria', M.join());
 						io.to(clp[clp_index*2]).emit('tr', R.join());
 						io.to(clp[clp_index*2]).emit('timer', T.join());
@@ -776,7 +771,7 @@ if (ativo) {
 		
 				for (var i = 0; i<= (T.length/3); i++ ){
 					if (T[3*i + 1] > 0)
-						T[3*i+1] = T[3*i+1] + 1;
+						T[3*i+1] = parseInt(T[3*i+1]) + 1;
 						if (T[3*i + 1] >= T[3*i+2]){
 							T[3*i+1] = T[3*i+2];
 							T[3*i] = 1;
