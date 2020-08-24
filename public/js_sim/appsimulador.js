@@ -233,7 +233,7 @@ function simIhm() {
 	var linha = 70;
 	Scontext.font = '36pt Arial';
   	Scontext.fillStyle = 'red';
-	Scontext.filltext(' '+num_clp, 1150, 40);
+	Scontext.fillText(' '+num_clp, 1150, 40);
 	Scontext.lineWidth = 2;
   	Scontext.fillStyle = 'white';
   	Scontext.fillRect(780, 5, 310, 560);
