@@ -257,7 +257,7 @@ if (ativo) {
 		var x=0;
 		console.log('Escreveu PROGRAMAX x2 = '+ x);
 		
-		while(data1 != clp[x*2] && x < clp.length() ){
+		while(data1 != clp[x*2] && x < clp.length){
 			x++;
 		}
 		if (x ==1 && clp[0]== undefined)
