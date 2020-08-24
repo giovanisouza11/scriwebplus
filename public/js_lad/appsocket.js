@@ -33,7 +33,7 @@ function config(dado){
     	num_clp = dado;
     	context.font = '36pt Arial';
   	context.fillStyle = 'black';
-	context.filltext(parseStr(num_clp), 76, 227);
+	context.filltext(dado, 76, 227);
 }
 
 function Enviar(){
