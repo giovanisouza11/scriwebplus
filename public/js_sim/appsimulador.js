@@ -231,6 +231,9 @@ function simIhm() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
 	var linha = 70;
+	context.font = '36pt Arial';
+  	context.fillStyle = 'black';
+	context.filltext(num_clp, 1050, 40);
 	Scontext.lineWidth = 2;
   	Scontext.fillStyle = 'white';
   	Scontext.fillRect(780, 5, 310, 560);
