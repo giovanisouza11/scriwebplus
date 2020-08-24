@@ -255,10 +255,12 @@ if (ativo) {
 		var x = verifica_clp(data1, socket);
 		RS[x] = R.join();
 	});
-});
+   });
 
-function verifica_clp(data1, socket){
+   function verifica_clp(data1, socket){
 	var x=0;
+	console.log('Escreveu PROGRAMAX x2 = '+ x);
+		
 	while(data1 != clp[x*2]){
 		x++;
 		if (x>=(clp.length/2)){
@@ -268,75 +270,75 @@ function verifica_clp(data1, socket){
 	   		LP[x]=0;
            		socket.join(data1);
 		}
+		console.log('Escreveu PROGRAMAX x3 = '+ x);
 	}
 	return x;
-}
+  }
 //=============================================================================
 // Send current time to all connected clients
 //=============================================================================
 var passo_atual = 0;
 var localizacao_prog =0;
+		
+  function AtualizaPorTempo() {
+	temporizadores();
 	
-	
-function AtualizaPorTempo() {
-   temporizadores();
-	
-   for(var clp_index=0; clp_index<(clp.length/2); clp_index++){	
-	if (MS[clp_index] != undefined)
-		M = MS[clp_index].split(`,`);
-	if (IS[clp_index] != undefined)
-		I = IS[clp_index].split(`,`);
-	if (RS[clp_index] != undefined)
-		R = RS[clp_index].split(`,`);
-	if (QS[clp_index] != undefined)
-		Q = QS[clp_index].split(`,`);
-	if (TS[clp_index] != undefined)
-		T =TS[clp_index].split(`,`);
-	if (CS[clp_index] != undefined)
-		C = CS[clp_index].split(`,`);
-	if (programaS[clp_index] != undefined)
-		programa1 = programaS[clp_index].split(`,`);
-	else
-		programa1 = 0;
-	   console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+programa1[0]+programa1[1]+' '+I[0]+' '+Q[0]+' '+M[0]+' '+T[0]);
-	atualiza_entrada = atualizaS[clp_index];
-	comandos = comandosS[clp_index];
-	passo_atual = PA[clp_index];
-	localizacao_prog = LP[clp_index];
+   	for(var clp_index=0; clp_index<(clp.length/2); clp_index++){	
+		if (MS[clp_index] != undefined)
+			M = MS[clp_index].split(`,`);
+		if (IS[clp_index] != undefined)
+			I = IS[clp_index].split(`,`);
+		if (RS[clp_index] != undefined)
+			R = RS[clp_index].split(`,`);
+		if (QS[clp_index] != undefined)
+			Q = QS[clp_index].split(`,`);
+		if (TS[clp_index] != undefined)
+			T =TS[clp_index].split(`,`);
+		if (CS[clp_index] != undefined)
+			C = CS[clp_index].split(`,`);
+		if (programaS[clp_index] != undefined)
+			programa1 = programaS[clp_index].split(`,`);
+		else
+			programa1 = 0;
+	   	console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+programa1[0]+programa1[1]+' '+I[0]+' '+Q[0]+' '+M[0]+' '+T[0]);
+		atualiza_entrada = atualizaS[clp_index];
+		comandos = comandosS[clp_index];
+		passo_atual = PA[clp_index];
+		localizacao_prog = LP[clp_index];
 		   
-	if( atualiza_entrada == 1) {
-		io.to(clp[clp_index*2]).emit('entrada', I.join());
-		atualiza_entrada = 0;
-	}
-	if (programa1 != 0){ 
-		if (programa1.length > 0 && comandos>0 && comandos<3){
-			passo_atual = programa1.length - 1;
-	    		programa();
-			localizacao_prog = 0;
+		if( atualiza_entrada == 1) {
+			io.to(clp[clp_index*2]).emit('entrada', I.join());
+			atualiza_entrada = 0;
 		}
-       		if (programa1.length > 0 && comandos>2){
-			if ((passo_atual >= (programa1.length-1)) || (comandos==3)) {
-				passo_atual = 0;
+		if (programa1 != 0){ 
+			if (programa1.length > 0 && comandos>0 && comandos<3){
+				passo_atual = programa1.length - 1;
+	    			programa();
 				localizacao_prog = 0;
 			}
-			localizacao_prog++;
-			passo_atual++;
-			while (programa1[passo_atual].charAt(0) =='R') {
-				localizacao_prog++;
-				passo_atual = passo_atual+2;
-				if (passo_atual >= (programa1.length-1)) {
-					passo_atual = 1;
-					localizacao_prog = 1;
+       			if (programa1.length > 0 && comandos>2){
+				if ((passo_atual >= (programa1.length-1)) || (comandos==3)) {
+					passo_atual = 0;
+					localizacao_prog = 0;
 				}
+				localizacao_prog++;
+				passo_atual++;
+				while (programa1[passo_atual].charAt(0) =='R') {
+					localizacao_prog++;
+					passo_atual = passo_atual+2;
+					if (passo_atual >= (programa1.length-1)) {
+						passo_atual = 1;
+						localizacao_prog = 1;
+					}
+				}
+				programa();
 			}
-			programa();
-		}
 		
-		segundo++;
-       		if (segundo>10){
-			segundo = 0;
-			atraso++;
-			if (atraso>1){
+			segundo++;
+       			if (segundo>10){
+				segundo = 0;
+				atraso++;
+				if (atraso>1){
 				atraso = 0;
 				//io.emit('time', { time: new Date().toJSON() });
 				io.to(clp[clp_index*2]).emit('memoria', M.join());
@@ -368,8 +370,9 @@ function AtualizaPorTempo() {
 	comandosS[clp_index] = comandos;
 	PA[clp_index] = passo_atual;
 	LP[clp_index] = localizacao_prog;
-   }
-}
+  
+  }
+
 //=============================================================================
 // Send current time every 0,1 secs
 //=============================================================================
