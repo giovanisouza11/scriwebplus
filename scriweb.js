@@ -110,12 +110,12 @@ if (ativo) {
 				if (socket.id == clp[x*2+1]){
 					socket.leave(clp[x*2]);
 					clp[x*2] = 'k';
-					console.log('Escreveu clp['+x+'] = K');
+					console.log('Escreveu clp['+x*2+'] = K');
 				}
 				if (socket.id == sup[x*2+1]){
 					socket.leave(sup[x*2]);
 					sup[x*2] = 'k';
-					console.log('Escreveu SUP['+x+'] = K');
+					console.log('Escreveu SUP['+x*2+'] = K');
 				}
 				if ((clp[x*2]== 'k' && sup[x*2]== 'k') ||(clp[x*2]== undefined || sup[x*2]== undefined)){
 					atualizaS.splice(x,1);
@@ -131,7 +131,7 @@ if (ativo) {
 					LP.splice(x,1);
 					clp.splice(x*2,2);
 					sup.splice(x*2,2);
-					console.log('Escreveu SUP['+x+'] e CLP['+x+']= 0');
+					console.log('Escreveu SUP['+x*2+'] e CLP['+x*2+']= 0');
 				}
 	   		}
 	   		console.log(" DISconnect SOCKET.ID=",socket.id);
@@ -261,8 +261,10 @@ if (ativo) {
 		while(socket.id != clp[x*2+1] && x < clp.length){
 			x++;
 		}
-		if (x ==1 && clp[1]== undefined)
-			x=0;
+		//if (x ==1 && clp[1]== undefined)
+		if (socket.id != clp[x*2+1])
+			x--;
+		
 		if (clp[x*2] != data1){
 			clp[x*2]= data1;
 	   		clp[x*2+1] = socket.id;
@@ -270,10 +272,10 @@ if (ativo) {
 	   		LP[x]=0;
            		socket.join(data1);
 		}
-		var x=0;
-		while (clp[x*2] != data1) {
-			x++;
-		}
+		//var x=0;
+		//while (clp[x*2] != data1) {
+	//		x++;
+	//	}
 		console.log('Escreveu PROGRAMAX x3 = '+ x);
 		
 		return x;
