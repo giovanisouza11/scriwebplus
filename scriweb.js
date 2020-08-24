@@ -206,9 +206,10 @@ if (ativo) {
 			LP[x]=0;
 		});
         	socket.on('comandosx', function(data) {
-        		var x = verifica_clp(data[1], socket);
-			comandosS[x] = data[0];
-			comandos = data[0];
+        		var xx = data.split(',');
+			var x = verifica_clp(xx[1], socket);
+			comandosS[x] = xx[0];
+			comandos = xx[0];
         	});
         	socket.on('entradax', function(data) {
             		I = data.split(',');
