@@ -270,6 +270,10 @@ if (ativo) {
 	   		LP[x]=0;
            		socket.join(data1);
 		}
+		var x=0;
+		while (clp[x*2] != data1) {
+			x++;
+		}
 		console.log('Escreveu PROGRAMAX x3 = '+ x);
 		
 		return x;
