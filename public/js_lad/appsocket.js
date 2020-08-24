@@ -29,8 +29,11 @@ socket.on('saida', function(data) {
 });
 
 function config(dado){
-    socket.emit('clp', dado);
-    num_clp = dado;
+    	socket.emit('clp', dado);
+    	num_clp = dado;
+    	context.font = '36pt Arial';
+  	context.fillStyle = 'black';
+	context.filltext(num_clp, 40, 400);
 }
 
 function Enviar(){
