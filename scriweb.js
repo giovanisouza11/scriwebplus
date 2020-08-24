@@ -47,336 +47,334 @@ var LP = new Array();
 //Iniciando servidor HTTP
 //-----------------------------------------
 if (ativo) {
-    const PORT = process.env.PORT || 4333;	
-    var path = require('path');
-    var express = require('express');
-    var app = express();
-    var router = express.Router();
-    var server = require('http').Server(app);
-    var io = require('socket.io')(server);
+    	const PORT = process.env.PORT || 4333;	
+    	var path = require('path');
+    	var express = require('express');
+    	var app = express();
+    	var router = express.Router();
+    	var server = require('http').Server(app);
+    	var io = require('socket.io')(server);
 
-    app.use(express.static(__dirname + '/public'));
-    app.use('/simulacao', express.static('/scriweb/simulacao'));
-    app.use('/ladder',express.static('/scriweb/ladder'));
-    //router.get('/download', function (req, res, next) {
-    //	var filePath = "/scriweb/simulacao/Elevador/"; //caminho do arquivo completo
-    //	var fileName = "Elevador.csv"; // O nome padrão que o browser vai usar pra fazer download
-//	res.download(filePath, fileName);    
-  //  });
-    app.get('/', function(req, res) {
-        res.sendFile(__dirname + '/scriweb.html');
-    });
-    app.get('/config',function(req,res){
-        res.sendFile(__dirname + '/scriwebconfig.html');
-    });
-    app.get('/about',function(req,res){
-        res.sendFile(__dirname + '/scriwebabout.html');
-    });
-    app.get('/help',function(req,res){
-        res.sendFile(__dirname + '/scriwebhelp.html');
-    });
-    app.get('/simulador',function(req,res){
-        res.sendFile(__dirname + '/simscriweb.html');
-    });
-    app.get('/servidor',function(req,res){
-        res.sendFile(__dirname + '/servidor.html');
-    });
-    app.get('/configsim',function(req,res){
-        res.sendFile(__dirname + '/simconfig.html');
-    });
-    app.get('/helpsim',function(req,res){
-        res.sendFile(__dirname + '/simhelp.html');
-    });
+    	app.use(express.static(__dirname + '/public'));
+    	app.use('/simulacao', express.static('/scriweb/simulacao'));
+    	app.use('/ladder',express.static('/scriweb/ladder'));
+    	//router.get('/download', function (req, res, next) {
+    		//	var filePath = "/scriweb/simulacao/Elevador/"; //caminho do arquivo completo
+    		//	var fileName = "Elevador.csv"; // O nome padrão que o browser vai usar pra fazer download
+		//	res.download(filePath, fileName);    
+  	//  });
+    	app.get('/', function(req, res) {
+        	res.sendFile(__dirname + '/scriweb.html');
+    	});
+    	app.get('/config',function(req,res){
+        	res.sendFile(__dirname + '/scriwebconfig.html');
+    	});
+    	app.get('/about',function(req,res){
+        	res.sendFile(__dirname + '/scriwebabout.html');
+    	});
+    	app.get('/help',function(req,res){
+        	res.sendFile(__dirname + '/scriwebhelp.html');
+    	});
+    	app.get('/simulador',function(req,res){
+        	res.sendFile(__dirname + '/simscriweb.html');
+    	});
+    	app.get('/servidor',function(req,res){
+        	res.sendFile(__dirname + '/servidor.html');
+    	});
+    	app.get('/configsim',function(req,res){
+        	res.sendFile(__dirname + '/simconfig.html');
+    	});
+    	app.get('/helpsim',function(req,res){
+        	res.sendFile(__dirname + '/simhelp.html');
+    	});
 	app.get('/popup',function(req,res){
-        res.sendFile(__dirname + '/popup.html');
-    });
-    server.listen(PORT,function() {
+        	res.sendFile(__dirname + '/popup.html');
+    	});
+    	server.listen(PORT,function() {
  		//JanelaElectron();
-	console.log("__________________________________________________________________");
-    	console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
-    	console.log("| Neste servidor foi gerado uma pagina HTML                       |");
-    	console.log("|                                                                 |");
-    	console.log("| Execute no Browser para criar/alterar/monitorar LADDER.         |");
-    	console.log("|    localhost:4333 ou XXX.XXX.XXX.XXX:4333                       |");
-    	console.log("| Execute no Browser para Supervisão/simular processo Industrial.|");
-    	console.log("|    localhost:4333/simulador ou XXX.XXX.XXX.XXX:4333/simulador   |");
-    	console.log("___________________________________________________________________");
-    });
-  
+		console.log("__________________________________________________________________");
+    		console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
+    		console.log("| Neste servidor foi gerado uma pagina HTML                       |");
+    		console.log("|                                                                 |");
+    		console.log("| Execute no Browser para criar/alterar/monitorar LADDER.         |");
+    		console.log("|    localhost:4333 ou XXX.XXX.XXX.XXX:4333                       |");
+    		console.log("| Execute no Browser para Supervisão/simular processo Industrial.|");
+    		console.log("|    localhost:4333/simulador ou XXX.XXX.XXX.XXX:4333/simulador   |");
+    		console.log("___________________________________________________________________");
+    	});
 }
 
 // Iniciando Socket.IO
 // Emitindo messagem de conexao estabelecida
 if (ativo) {
-    io.sockets.on('connection', function(socket) {
-    	io.emit('time', { time: new Date().toJSON() });
+    	io.sockets.on('connection', function(socket) {
+    		io.emit('time', { time: new Date().toJSON() });
         
-	socket.on('disconnect', function(data) {
-        	for(var x=0; x<(clp.length/2); x++){
-			if (socket.id == clp[x*2+1]){
-				socket.leave(clp[x*2]);
-				clp[x*2] = 'k';
-				console.log('Escreveu clp['+x+'] = K');
-			}
-			if (socket.id == sup[x*2+1]){
-				socket.leave(sup[x*2]);
-				sup[x*2] = 'k';
-				console.log('Escreveu SUP['+x+'] = K');
-			}
-			if ((clp[x*2]== 'k' && sup[x*2]== 'k') ||(clp[x*2]== undefined || sup[x*2]== undefined)){
-				atualizaS.splice(x,1);
-				MS.splice(x,1);
-				IS.splice(x,1);
-				RS.splice(x,1);
-				QS.splice(x,1);
-				TS.splice(x,1);
-				CS.splice(x,1);
-				comandosS.splice(x,1);
-				programaS.splice(x,1);
-				PA.splice(x,1);
-				LP.splice(x,1);
-				clp.splice(x*2,2);
-				sup.splice(x*2,2);
-				console.log('Escreveu SUP['+x+'] e CLP['+x+']= 0');
-			}
-	   	}
-	   	console.log(" DISconnect SOCKET.ID=",socket.id);
-        });
-        console.log(" connect SOCKET.ID=",socket.id);
-	socket.on('connect', function(data) {
-		var x;
-		console.log('Escreveu VAR x = '+ x);
-	   	for(x=0; x<(clp.length/2); x++){
-			if (socket.id == clp[x*2+1]){
-				socket.leave(clp[x*2]);
-				break;
+		socket.on('disconnect', function(data) {
+        		for(var x=0; x<(clp.length/2); x++){
+				if (socket.id == clp[x*2+1]){
+					socket.leave(clp[x*2]);
+					clp[x*2] = 'k';
+					console.log('Escreveu clp['+x+'] = K');
+				}
+				if (socket.id == sup[x*2+1]){
+					socket.leave(sup[x*2]);
+					sup[x*2] = 'k';
+					console.log('Escreveu SUP['+x+'] = K');
+				}
+				if ((clp[x*2]== 'k' && sup[x*2]== 'k') ||(clp[x*2]== undefined || sup[x*2]== undefined)){
+					atualizaS.splice(x,1);
+					MS.splice(x,1);
+					IS.splice(x,1);
+					RS.splice(x,1);
+					QS.splice(x,1);
+					TS.splice(x,1);
+					CS.splice(x,1);
+					comandosS.splice(x,1);
+					programaS.splice(x,1);
+					PA.splice(x,1);
+					LP.splice(x,1);
+					clp.splice(x*2,2);
+					sup.splice(x*2,2);
+					console.log('Escreveu SUP['+x+'] e CLP['+x+']= 0');
+				}
 	   		}
-	   	}
-	   	clp[x*2]= data;
-	   	clp[x*2+1] = socket.id;
-  	   	PA[x]=0;
-	   	LP[x]=0;
-           	socket.join(data);
-	   	console.log('Escreveu clp['+data+'] = '+socket.id);
-	});
-	socket.on('clp', function(data) {
-	   	var x;
-	   	console.log('Escreveu VAR x = '+ x);
-		for(x=0; x<(clp.length/2); x++){
-			if (socket.id == clp[x*2+1]){
-				socket.leave(clp[x*2]);
-				console.log('Escreveu VAR x1 = '+ x);
-				break;
-			}
-	   	}
-	   	clp[x*2]= data;
-	   	clp[x*2+1] = socket.id;
-  	   	PA[x]=0;
-	   	LP[x]=0;
-           	socket.join(data);
-	   	console.log('Escreveu clp['+data+'] = '+socket.id);
-	});
-   	socket.on('sup', function(data) {
-	   	var x;
-		console.log('Escreveu VAR x = '+ x);
-	   	for(x=0; x<(clp.length/2); x++){
-			if (data == clp[x*2]){
-				socket.leave(sup[x*2]);
-				break;
-			}
-	   	}
-	   	sup[x*2]= data;
-	   	sup[x*2+1] = socket.id;
-  	   	socket.join(data);
-	   	console.log('Escreveu clp['+data+'] = '+socket.id);
-	});
-	socket.on('programax', function(data) {
-		var data1 = programa1[programa1.length-1];
-		var x=verifica_clp(data1, socket);
-		console.log('Escreveu PROGRAMAX x1 = '+ x);
-		programa1 = data.split(',');
-		cria_memoria();
-		atualiza_entrada = 1;
-		atualizaS[x] = 1;
-		MS[x] = M.join();
-		IS[x] = I.join();
-		RS[x] = R.join();
-		QS[x] = Q.join();
-		TS[x] = T.join();
-		CS[x] = C.join();
-		comandosS[x] = comandos;
-		programaS[x] = programa1.join();
-		PA[x]=0;
-		LP[x]=0;
-	});
-        socket.on('comandosx', function(data) {
-        	var x = verifica_clp(data[1], socket);
-		comandosS[x] = data[0];
-		comandos = data[0];
-        });
-        socket.on('entradax', function(data) {
-            	I = data.split(',');
-		var data1 = I[I.length-1]
-		var x = verifica_clp(data1, socket);
-		I.length = I.length-1;
-		atualizaS[x] = 1;
-		IS[x] = I.join();
-		atualiza_entrada = 1;
-        });
-        socket.on('memoriax', function(data) {
-        	aux = data.split(',');
-		console.log(data);
-		var data1 = aux[2];
-		var x =	verifica_clp(data1, socket);
-		if (MS[x] != undefined)
-			M = MS[x].split(`,`);
-		if (IS[x] != undefined)
-			I = IS[x].split(`,`);
-		if (RS[x] != undefined)
-			R = RS[x].split(`,`);
-		if (QS[x] != undefined)
-			Q = QS[x].split(`,`);
-		if (TS[x] != undefined)
-			T =TS[x].split(`,`);
-		if (CS[x] != undefined)
-			C = CS[x].split(`,`);
-	
-            	escreve_enderecoCT(aux[0], aux[1],1);
-		MS[x] = M.join();
-		IS[x] = I.join();
-		RS[x] = R.join();
-		QS[x] = Q.join();
-		TS[x] = T.join();
-		CS[x] = C.join();
-	});
-        socket.on('trx', function(data) {
-		R = data.split(',');
-		data1 = R[R.length-1]
-		var x = verifica_clp(data1, socket);
-		RS[x] = R.join();
-	});
-   });
-
-   function verifica_clp(data1, socket){
-	var x=0;
-	console.log('Escreveu PROGRAMAX x2 = '+ x);
-		
-	while(data1 != clp[x*2]){
-		x++;
-		if (x>=(clp.length/2)){
-			clp[x*2]= data1;
+	   		console.log(" DISconnect SOCKET.ID=",socket.id);
+        	});
+        	console.log(" connect SOCKET.ID=",socket.id);
+		socket.on('connect', function(data) {
+			var x;
+			console.log('Escreveu VAR x = '+ x);
+	   		for(x=0; x<(clp.length/2); x++){
+				if (socket.id == clp[x*2+1]){
+					socket.leave(clp[x*2]);
+					break;
+	   			}
+	   		}
+	   		clp[x*2]= data;
 	   		clp[x*2+1] = socket.id;
   	   		PA[x]=0;
 	   		LP[x]=0;
-           		socket.join(data1);
+           		socket.join(data);
+	   		console.log('Escreveu clp['+data+'] = '+socket.id);
+		});
+		socket.on('clp', function(data) {
+	   		var x;
+	   		console.log('Escreveu VAR x = '+ x);
+			for(x=0; x<(clp.length/2); x++){
+				if (socket.id == clp[x*2+1]){
+					socket.leave(clp[x*2]);
+					console.log('Escreveu VAR x1 = '+ x);
+					break;
+				}
+	   		}
+	   		clp[x*2]= data;
+	   		clp[x*2+1] = socket.id;
+  	   		PA[x]=0;
+	   		LP[x]=0;
+           		socket.join(data);
+	   		console.log('Escreveu clp['+data+'] = '+socket.id);
+		});
+   		socket.on('sup', function(data) {
+	   		var x;
+			console.log('Escreveu VAR x = '+ x);
+	   		for(x=0; x<(clp.length/2); x++){
+				if (data == clp[x*2]){
+					socket.leave(sup[x*2]);
+					break;
+				}
+	   		}
+	   		sup[x*2]= data;
+	   		sup[x*2+1] = socket.id;
+  	   		socket.join(data);
+	   		console.log('Escreveu clp['+data+'] = '+socket.id);
+		});
+		socket.on('programax', function(data) {
+			var data1 = programa1[programa1.length-1];
+			var x=verifica_clp(data1, socket);
+			console.log('Escreveu PROGRAMAX x1 = '+ x);
+			programa1 = data.split(',');
+			cria_memoria();
+			atualiza_entrada = 1;
+			atualizaS[x] = 1;
+			MS[x] = M.join();
+			IS[x] = I.join();
+			RS[x] = R.join();
+			QS[x] = Q.join();
+			TS[x] = T.join();
+			CS[x] = C.join();
+			comandosS[x] = comandos;
+			programaS[x] = programa1.join();
+			PA[x]=0;
+			LP[x]=0;
+		});
+        	socket.on('comandosx', function(data) {
+        		var x = verifica_clp(data[1], socket);
+			comandosS[x] = data[0];
+			comandos = data[0];
+        	});
+        	socket.on('entradax', function(data) {
+            		I = data.split(',');
+			var data1 = I[I.length-1]
+			var x = verifica_clp(data1, socket);
+			I.length = I.length-1;
+			atualizaS[x] = 1;
+			IS[x] = I.join();
+			atualiza_entrada = 1;
+        	});
+        	socket.on('memoriax', function(data) {
+        		aux = data.split(',');
+			console.log(data);
+			var data1 = aux[2];
+			var x =	verifica_clp(data1, socket);
+			if (MS[x] != undefined)
+				M = MS[x].split(`,`);
+			if (IS[x] != undefined)
+				I = IS[x].split(`,`);
+			if (RS[x] != undefined)
+				R = RS[x].split(`,`);
+			if (QS[x] != undefined)
+				Q = QS[x].split(`,`);
+			if (TS[x] != undefined)
+				T =TS[x].split(`,`);
+			if (CS[x] != undefined)
+				C = CS[x].split(`,`);
+	
+	            	escreve_enderecoCT(aux[0], aux[1],1);
+			MS[x] = M.join();
+			IS[x] = I.join();
+			RS[x] = R.join();
+			QS[x] = Q.join();
+			TS[x] = T.join();
+			CS[x] = C.join();
+		});
+        	socket.on('trx', function(data) {
+			R = data.split(',');
+			data1 = R[R.length-1]
+			var x = verifica_clp(data1, socket);
+			RS[x] = R.join();
+		});
+   	});
+
+   	function verifica_clp(data1, socket){
+		var x=0;
+		console.log('Escreveu PROGRAMAX x2 = '+ x);
+		
+		while(data1 != clp[x*2]){
+			x++;
+			if (x>=(clp.length/2)){
+				clp[x*2]= data1;
+	   			clp[x*2+1] = socket.id;
+  	   			PA[x]=0;
+	   			LP[x]=0;
+           			socket.join(data1);
+			}
+			console.log('Escreveu PROGRAMAX x3 = '+ x);
 		}
-		console.log('Escreveu PROGRAMAX x3 = '+ x);
-	}
-	return x;
-  }
+		return x;
+  	}
 //=============================================================================
 // Send current time to all connected clients
 //=============================================================================
-var passo_atual = 0;
-var localizacao_prog =0;
+	var passo_atual = 0;
+	var localizacao_prog =0;
 		
-  function AtualizaPorTempo() {
-	temporizadores();
+	function AtualizaPorTempo() {
+		temporizadores();
 	
-   	for(var clp_index=0; clp_index<(clp.length/2); clp_index++){	
-		if (MS[clp_index] != undefined)
-			M = MS[clp_index].split(`,`);
-		if (IS[clp_index] != undefined)
-			I = IS[clp_index].split(`,`);
-		if (RS[clp_index] != undefined)
-			R = RS[clp_index].split(`,`);
-		if (QS[clp_index] != undefined)
-			Q = QS[clp_index].split(`,`);
-		if (TS[clp_index] != undefined)
-			T =TS[clp_index].split(`,`);
-		if (CS[clp_index] != undefined)
-			C = CS[clp_index].split(`,`);
-		if (programaS[clp_index] != undefined)
-			programa1 = programaS[clp_index].split(`,`);
-		else
-			programa1 = 0;
-	   	console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+programa1[0]+programa1[1]+' '+I[0]+' '+Q[0]+' '+M[0]+' '+T[0]);
-		atualiza_entrada = atualizaS[clp_index];
-		comandos = comandosS[clp_index];
-		passo_atual = PA[clp_index];
-		localizacao_prog = LP[clp_index];
+   		for(var clp_index=0; clp_index<(clp.length/2); clp_index++){	
+			if (MS[clp_index] != undefined)
+				M = MS[clp_index].split(`,`);
+			if (IS[clp_index] != undefined)
+				I = IS[clp_index].split(`,`);
+			if (RS[clp_index] != undefined)
+				R = RS[clp_index].split(`,`);
+			if (QS[clp_index] != undefined)
+				Q = QS[clp_index].split(`,`);
+			if (TS[clp_index] != undefined)
+				T =TS[clp_index].split(`,`);
+			if (CS[clp_index] != undefined)
+				C = CS[clp_index].split(`,`);
+			if (programaS[clp_index] != undefined)
+				programa1 = programaS[clp_index].split(`,`);
+			else
+				programa1 = 0;
+		   	console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+programa1[0]+programa1[1]+' '+I[0]+' '+Q[0]+' '+M[0]+' '+T[0]);
+			atualiza_entrada = atualizaS[clp_index];
+			comandos = comandosS[clp_index];
+			passo_atual = PA[clp_index];
+			localizacao_prog = LP[clp_index];
 		   
-		if( atualiza_entrada == 1) {
-			io.to(clp[clp_index*2]).emit('entrada', I.join());
-			atualiza_entrada = 0;
-		}
-		if (programa1 != 0){ 
-			if (programa1.length > 0 && comandos>0 && comandos<3){
-				passo_atual = programa1.length - 1;
-	    			programa();
-				localizacao_prog = 0;
+			if( atualiza_entrada == 1) {
+				io.to(clp[clp_index*2]).emit('entrada', I.join());
+				atualiza_entrada = 0;
 			}
-       			if (programa1.length > 0 && comandos>2){
-				if ((passo_atual >= (programa1.length-1)) || (comandos==3)) {
-					passo_atual = 0;
+			if (programa1 != 0){ 
+				if (programa1.length > 0 && comandos>0 && comandos<3){
+					passo_atual = programa1.length - 1;
+	    				programa();
 					localizacao_prog = 0;
 				}
-				localizacao_prog++;
-				passo_atual++;
-				while (programa1[passo_atual].charAt(0) =='R') {
+       				if (programa1.length > 0 && comandos>2){
+					if ((passo_atual >= (programa1.length-1)) || (comandos==3)) {
+						passo_atual = 0;
+						localizacao_prog = 0;
+					}
 					localizacao_prog++;
-					passo_atual = passo_atual+2;
-					if (passo_atual >= (programa1.length-1)) {
-						passo_atual = 1;
-						localizacao_prog = 1;
+					passo_atual++;
+					while (programa1[passo_atual].charAt(0) =='R') {
+						localizacao_prog++;
+						passo_atual = passo_atual+2;
+						if (passo_atual >= (programa1.length-1)) {
+							passo_atual = 1;
+							localizacao_prog = 1;
+						}
+					}
+					programa();
+				}
+		
+				segundo++;
+       				if (segundo>10){
+					segundo = 0;
+					atraso++;
+					if (atraso>1){
+						atraso = 0;
+						//io.emit('time', { time: new Date().toJSON() });
+						io.to(clp[clp_index*2]).emit('memoria', M.join());
+						io.to(clp[clp_index*2]).emit('tr', R.join());
+						io.to(clp[clp_index*2]).emit('timer', T.join());
+						io.to(clp[clp_index*2]).emit('counter', C.join());
+						io.to(clp[clp_index*2]).emit('saida', Q.join());
+						io.to(clp[clp_index*2]).emit('localizacao', localizacao_prog);
 					}
 				}
-				programa();
 			}
-		
-			segundo++;
-       			if (segundo>10){
-				segundo = 0;
-				atraso++;
-				if (atraso>1){
-				atraso = 0;
-				//io.emit('time', { time: new Date().toJSON() });
-				io.to(clp[clp_index*2]).emit('memoria', M.join());
-				io.to(clp[clp_index*2]).emit('tr', R.join());
-				io.to(clp[clp_index*2]).emit('timer', T.join());
-				io.to(clp[clp_index*2]).emit('counter', C.join());
-				io.to(clp[clp_index*2]).emit('saida', Q.join());
-				io.to(clp[clp_index*2]).emit('localizacao', localizacao_prog);
-			}
-		}
-	}
-        if (comandos>1)
-		comandos=0;
-	if (M != undefined)
-		MS[clp_index] = M.join();
-	if (I != undefined)
-		IS[clp_index] = I.join();
-	if (R != undefined)
-		RS[clp_index] = R.join();
-	if (Q != undefined)
-		QS[clp_index] = Q.join();
-	if (T != undefined)
-		TS[clp_index] = T.join();
-	if (C != undefined)
-		CS[clp_index] = C.join();
-	if (programa1 != 0)
-		programaS[clp_index] = programa1.join();
-	atualizaS[clp_index] = atualiza_entrada;
-	comandosS[clp_index] = comandos;
-	PA[clp_index] = passo_atual;
-	LP[clp_index] = localizacao_prog;
-  
-  }
+        		if (comandos>1)
+			comandos=0;
+		if (M != undefined)
+			MS[clp_index] = M.join();
+		if (I != undefined)
+			IS[clp_index] = I.join();
+		if (R != undefined)
+			RS[clp_index] = R.join();
+		if (Q != undefined)
+			QS[clp_index] = Q.join();
+		if (T != undefined)
+			TS[clp_index] = T.join();
+		if (C != undefined)
+			CS[clp_index] = C.join();
+		if (programa1 != 0)
+			programaS[clp_index] = programa1.join();
+		atualizaS[clp_index] = atualiza_entrada;
+		comandosS[clp_index] = comandos;
+		PA[clp_index] = passo_atual;
+		LP[clp_index] = localizacao_prog;
+  	}
 
 //=============================================================================
 // Send current time every 0,1 secs
 //=============================================================================
-    setInterval(AtualizaPorTempo, 100);
+    	setInterval(AtualizaPorTempo, 100);
 
 //=============================================================================
 // Interpreta o programa BOOLEANO
