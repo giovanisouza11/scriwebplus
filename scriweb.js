@@ -258,12 +258,12 @@ if (ativo) {
 		var x=0;
 		console.log('Escreveu PROGRAMAX x2 = '+ x);
 		
-		while(data1 != clp[x*2] && x < clp.length){
+		while(socket.id != clp[x*2+1] && x < clp.length){
 			x++;
 		}
-		if (x ==1 && clp[0]== undefined)
+		if (x ==1 && clp[1]== undefined)
 			x=0;
-		if (clp[x*2] == undefined){
+		if (clp[x*2] != data1){
 			clp[x*2]= data1;
 	   		clp[x*2+1] = socket.id;
   	   		PA[x]=0;
