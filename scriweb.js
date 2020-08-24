@@ -257,9 +257,11 @@ if (ativo) {
 		var x=0;
 		console.log('Escreveu PROGRAMAX x2 = '+ x);
 		
-		while(data1 != clp[x*2] || clp[x*2] != undefined){
+		while(data1 != clp[x*2] && x < clp.length() ){
 			x++;
 		}
+		if (x ==1 && clp[0]= undefined)
+			x=0;
 		if (clp[x*2] == undefined){
 			clp[x*2]= data1;
 	   		clp[x*2+1] = socket.id;
