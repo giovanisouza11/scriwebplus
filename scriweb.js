@@ -139,7 +139,7 @@ if (ativo) {
         	console.log(" connect SOCKET.ID=",socket.id);
 		socket.on('connect', function(data) {
 			var x;
-			console.log('Escreveu VAR x = '+ x);
+			console.log('Escreveu VAR xX = '+ x);
 	   		for(x=0; x<(clp.length/2); x++){
 				if (socket.id == clp[x*2+1]){
 					socket.leave(clp[x*2]);
