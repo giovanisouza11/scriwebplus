@@ -109,94 +109,89 @@ if (ativo) {
 // Emitindo messagem de conexao estabelecida
 if (ativo) {
     io.sockets.on('connection', function(socket) {
-        io.emit('time', { time: new Date().toJSON() });
-        socket.on('disconnect', function(data) {
-           for(var x=0; x<(clp.length/2); x++){
-		if (socket.id == clp[x*2+1]){
-			socket.leave(clp[x*2]);
-			clp[x*2] = 'k';
-			console.log('Escreveu clp['+x*2+'] = K');
-		}
-		if (socket.id == sup[x*2+1]){
-			socket.leave(sup[x*2]);
-			sup[x*2] = 'k';
-			console.log('Escreveu SUP['+x*2+'] = K');
-		}
-		if ((clp[x*2]== 'k' && sup[x*2]== 'k') ||(clp[x*2]== undefined || sup[x*2]== undefined)){
-			atualizaS.splice(x,1);
-			MS.splice(x,1);
-			IS.splice(x,1);
-			RS.splice(x,1);
-			QS.splice(x,1);
-			TS.splice(x,1);
-			CS.splice(x,1);
-			comandosS.splice(x,1);
-			programaS.splice(x,1);
-			PA.splice(x,1);
-			LP.splice(x,1);
-			clp.splice(x*2,2);
-			sup.splice(x*2,2);
-			console.log('Escreveu SUP['+x+'] clp[]= 0');
-		}
-	   }
-	   console.log(" DISconnect SOCKET.ID=",socket.id);
+    	io.emit('time', { time: new Date().toJSON() });
+        
+	Socket.on('disconnect', function(data) {
+        	for(var x=0; x<(clp.length/2); x++){
+			if (socket.id == clp[x*2+1]){
+				socket.leave(clp[x*2]);
+				clp[x*2] = 'k';
+				console.log('Escreveu clp['+x+'] = K');
+			}
+			if (socket.id == sup[x*2+1]){
+				socket.leave(sup[x*2]);
+				sup[x*2] = 'k';
+				console.log('Escreveu SUP['+x+'] = K');
+			}
+			if ((clp[x*2]== 'k' && sup[x*2]== 'k') ||(clp[x*2]== undefined || sup[x*2]== undefined)){
+				atualizaS.splice(x,1);
+				MS.splice(x,1);
+				IS.splice(x,1);
+				RS.splice(x,1);
+				QS.splice(x,1);
+				TS.splice(x,1);
+				CS.splice(x,1);
+				comandosS.splice(x,1);
+				programaS.splice(x,1);
+				PA.splice(x,1);
+				LP.splice(x,1);
+				clp.splice(x*2,2);
+				sup.splice(x*2,2);
+				console.log('Escreveu SUP['+x+'] e CLP['+x+']= 0');
+			}
+	   	}
+	   	console.log(" DISconnect SOCKET.ID=",socket.id);
         });
         console.log(" connect SOCKET.ID=",socket.id);
 	socket.on('connect', function(data) {
-	   var x;
-	   for(x=0; x<(clp.length/2); x++){
-		if (socket.id == clp[x*2+1]){
-			socket.leave(clp[x*2]);
-			break;
+		var x;
+	   	for(x=0; x<(clp.length/2); x++){
+			if (socket.id == clp[x*2+1]){
+				socket.leave(clp[x*2]);
+				break;
+	   		}
 	   	}
-	   }
-	   clp[x*2]= data;
-	   clp[x*2+1] = socket.id;
-  	   PA[x]=0;
-	   LP[x]=0;
-           socket.join(data);
-	   console.log('Escreveu clp['+data+'] = '+socket.id);
-	  
+	   	clp[x*2]= data;
+	   	clp[x*2+1] = socket.id;
+  	   	PA[x]=0;
+	   	LP[x]=0;
+           	socket.join(data);
+	   	console.log('Escreveu clp['+data+'] = '+socket.id);
 	});
 	socket.on('clp', function(data) {
-	   var x;
-	   for(x=0; x<(clp.length/2); x++){
-		if (socket.id == clp[x*2+1]){
-			socket.leave(clp[x*2]);
-			break;
-		}
-	   }
-	   clp[x*2]= data;
-	   clp[x*2+1] = socket.id;
-  	   PA[x]=0;
-	   LP[x]=0;
-           socket.join(data);
-	   console.log('Escreveu clp['+data+'] = '+socket.id);
-	  
+	   	var x;
+	   	console.log('Escreveu VAR x = '+ x);
+		for(x=0; x<(clp.length/2); x++){
+			if (socket.id == clp[x*2+1]){
+				socket.leave(clp[x*2]);
+				console.log('Escreveu VAR x1 = '+ x);
+				break;
+			}
+	   	}
+	   	clp[x*2]= data;
+	   	clp[x*2+1] = socket.id;
+  	   	PA[x]=0;
+	   	LP[x]=0;
+           	socket.join(data);
+	   	console.log('Escreveu clp['+data+'] = '+socket.id);
 	});
    	socket.on('sup', function(data) {
-	   var x;
-	   for(x=0; x<(clp.length/2); x++){
-		if (data == clp[x*2]){
-			socket.leave(sup[x*2]);
-			break;
-		}
-	   }
-	   sup[x*2]= data;
-	   sup[x*2+1] = socket.id;
-  	   socket.join(data);
-	   console.log('Escreveu clp['+data+'] = '+socket.id);
-	  
+	   	var x;
+	   	for(x=0; x<(clp.length/2); x++){
+			if (data == clp[x*2]){
+				socket.leave(sup[x*2]);
+				break;
+			}
+	   	}
+	   	sup[x*2]= data;
+	   	sup[x*2+1] = socket.id;
+  	   	socket.join(data);
+	   	console.log('Escreveu clp['+data+'] = '+socket.id);
 	});
 	socket.on('programax', function(data) {
 		var data1 = programa1[programa1.length-1];
 		var x=verifica_clp(data1, socket);
-		//for(x=0; x<(clp.length/2); x++){
-		  //if (data1 == clp[x*2])
-		//	break;
-	  	//}
 		programa1 = data.split(',');
-		//console.log(data);
 		cria_memoria();
 		atualiza_entrada = 1;
 		atualizaS[x] = 1;
@@ -210,30 +205,16 @@ if (ativo) {
 		programaS[x] = programa1.join();
 		PA[x]=0;
 		LP[x]=0;
-		//console.log('Escreveu pROGRAMA DO clp['+data1+'] = '+socket.id);
-			
 	});
         socket.on('comandosx', function(data) {
-          //console.log('laalalllal');
-		var x = verifica_clp(data[1], socket);
-		//for(x=0; x<(clp.length/2); x++){
-		//  if (data[1] == clp[x*2])
-	//		break;
-	  //	}
-
+        	var x = verifica_clp(data[1], socket);
 		comandosS[x] = data[0];
-		//console.log(data);
 		comandos = data[0];
         });
         socket.on('entradax', function(data) {
             	I = data.split(',');
-		//console.log(data);
 		var data1 = I[I.length-1]
 		var x = verifica_clp(data1, socket);
-		//for(x=0; x<(clp.length/2); x++){
-		 // if (data1 == clp[x*2])
-	//		break;
-	  //	}
 		I.length = I.length-1;
 		atualizaS[x] = 1;
 		IS[x] = I.join();
@@ -244,10 +225,6 @@ if (ativo) {
 		console.log(data);
 		var data1 = aux[2];
 		var x =	verifica_clp(data1, socket);
-		//for(x=0; x<(clp.length/2); x++){
-		 // if (data1 == clp[x*2])
-		//	break;
-	  	//}
 		if (MS[x] != undefined)
 			M = MS[x].split(`,`);
 		if (IS[x] != undefined)
@@ -268,40 +245,27 @@ if (ativo) {
 		QS[x] = Q.join();
 		TS[x] = T.join();
 		CS[x] = C.join();
-		//console.log(MS[data1]);
-		//console.log(IS[data1]);
-		//console.log(QS[data1]);
-		//console.log(RS[data1]);
-		//console.log(TS[data1]);
-		//console.log(CS[data1]);
 	});
         socket.on('trx', function(data) {
-            	//R = RS[data1];
-		//console.log(data);
 		R = data.split(',');
 		data1 = R[R.length-1]
 		var x = verifica_clp(data1, socket);
-		//for(x=0; x<(clp.length/2); x++){
-		 // if (data1 == clp[x*2])
-		//	break;
-	  	//}
 		RS[x] = R.join();
 	});
-        
 });
 
 function verifica_clp(data1, socket){
 	var x=0;
 	while(data1 != clp[x*2]){
-			x++;
-			if (x>=(clp.length/2)){
-				clp[x*2]= data1;
-	   			clp[x*2+1] = socket.id;
-  	   			PA[x]=0;
-	   			LP[x]=0;
-           			socket.join(data1);
-			}
-	   	}
+		x++;
+		if (x>=(clp.length/2)){
+			clp[x*2]= data1;
+	   		clp[x*2+1] = socket.id;
+  	   		PA[x]=0;
+	   		LP[x]=0;
+           		socket.join(data1);
+		}
+	}
 	return x;
 }
 //=============================================================================
