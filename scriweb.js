@@ -1,4 +1,4 @@
-﻿/**
+/**
 * Software SCRIWEB
 */
 //--------------------------------------
@@ -58,11 +58,6 @@ if (ativo) {
     	app.use(express.static(__dirname + '/public'));
     	app.use('/simulacao', express.static('/scriweb/simulacao'));
     	app.use('/ladder',express.static('/scriweb/ladder'));
-    	//router.get('/download', function (req, res, next) {
-    		//	var filePath = "/scriweb/simulacao/Elevador/"; //caminho do arquivo completo
-    		//	var fileName = "Elevador.csv"; // O nome padrão que o browser vai usar pra fazer download
-		//	res.download(filePath, fileName);    
-  	//  });
     	app.get('/', function(req, res) {
         	res.sendFile(__dirname + '/scriweb.html');
     	});
@@ -350,27 +345,27 @@ if (ativo) {
 				}
 			}
         		if (comandos>1)
-			comandos=0;
-		if (M != undefined)
-			MS[clp_index] = M.join();
-		if (I != undefined)
-			IS[clp_index] = I.join();
-		if (R != undefined)
-			RS[clp_index] = R.join();
-		if (Q != undefined)
-			QS[clp_index] = Q.join();
-		if (T != undefined)
-			TS[clp_index] = T.join();
-		if (C != undefined)
-			CS[clp_index] = C.join();
-		if (programa1 != 0)
-			programaS[clp_index] = programa1.join();
-		atualizaS[clp_index] = atualiza_entrada;
-		comandosS[clp_index] = comandos;
-		PA[clp_index] = passo_atual;
-		LP[clp_index] = localizacao_prog;
-  	}
-
+				comandos=0;
+			if (M != undefined)
+				MS[clp_index] = M.join();
+			if (I != undefined)
+				IS[clp_index] = I.join();
+			if (R != undefined)
+				RS[clp_index] = R.join();
+			if (Q != undefined)
+				QS[clp_index] = Q.join();
+			if (T != undefined)
+				TS[clp_index] = T.join();
+			if (C != undefined)
+				CS[clp_index] = C.join();
+			if (programa1 != 0)
+				programaS[clp_index] = programa1.join();
+			atualizaS[clp_index] = atualiza_entrada;
+			comandosS[clp_index] = comandos;
+			PA[clp_index] = passo_atual;
+			LP[clp_index] = localizacao_prog;
+  		}
+	}
 //=============================================================================
 // Send current time every 0,1 secs
 //=============================================================================
