@@ -108,11 +108,13 @@ if (ativo) {
 		socket.on('disconnect', function(data) {
         		for(var x=0; x<(clp.length/2); x++){
 				if (socket.id == clp[x*2+1]){
+					socket.emit('config_retorno', 0);
 					socket.leave(clp[x*2]);
 					clp[x*2] = 'k';
 					console.log('Escreveu clp['+x*2+'] = K');
 				}
 				if (socket.id == sup[x*2+1]){
+					socket.emit('config_socket_r', 0);
 					socket.leave(sup[x*2]);
 					sup[x*2] = 'k';
 					console.log('Escreveu SUP['+x*2+'] = K');
@@ -150,7 +152,8 @@ if (ativo) {
 	   		clp[x*2+1] = socket.id;
   	   		PA[x]=0;
 	   		LP[x]=0;
-           		socket.join(data);
+           		socket.emit('config_retorno',data);
+			socket.join(data);
 	   		console.log('Escreveu clp['+data+'] = '+socket.id);
 		});
 		socket.on('clp', function(data) {
@@ -167,7 +170,8 @@ if (ativo) {
 	   		clp[x*2+1] = socket.id;
   	   		PA[x]=0;
 	   		LP[x]=0;
-           		socket.join(data);
+           		socket.emit('config_retorno',data);
+			socket.join(data);
 	   		console.log('Escreveu clp['+data+'] = '+socket.id);
 		});
    		socket.on('sup', function(data) {
@@ -181,7 +185,8 @@ if (ativo) {
 	   		}
 	   		sup[x*2]= data;
 	   		sup[x*2+1] = socket.id;
-  	   		socket.join(data);
+  	   		socket.emit('config_socket_r',data);
+			socket.join(data);
 	   		console.log('Escreveu clp['+data+'] = '+socket.id);
 		});
 		socket.on('programax', function(data) {
