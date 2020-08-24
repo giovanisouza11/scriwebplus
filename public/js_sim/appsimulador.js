@@ -231,13 +231,13 @@ function simIhm() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
 	var linha = 70;
-	Scontext.font = '36pt Arial';
-  	Scontext.fillStyle = 'red';
-	Scontext.fillText(' '+num_clp, 1150, 40);
 	Scontext.lineWidth = 2;
   	Scontext.fillStyle = 'white';
   	Scontext.fillRect(780, 5, 310, 560);
-  	Scontext.fillStyle = 'black';
+  	Scontext.font = '36pt Arial';
+  	Scontext.fillStyle = 'red';
+	Scontext.fillText(num_clp, 795, 70);
+	Scontext.fillStyle = 'black';
   	Scontext.strokeRect(785, 10, 305, 555);
   	Scontext.font = '16pt Arial';
   	Scontext.fillStyle = 'black';
