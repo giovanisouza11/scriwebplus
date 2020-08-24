@@ -20,6 +20,16 @@ socket.on('tr', function(data) {
 socket.on('localizacao', function(data) {
        localizacao = data;
 });
+socket.on('config_retorno', function(data) {
+       localizacao = data;
+	num_clp = data;
+	context.fillStyle = 'ivory';
+  	context.fillRect(86, 220, 30, 20);
+    	context.font = '36pt Arial';
+  	context.fillStyle = 'red';
+	context.fillText(dado, 86, 240);
+});
+
 socket.on('saida', function(data) {
        Q = data.split(',');
 	 liga_led_CLP();
@@ -30,13 +40,6 @@ socket.on('saida', function(data) {
 
 function config(dado){
     	socket.emit('clp', dado);
-    	num_clp = dado;
-	
-  	context.fillStyle = 'ivory';
-  	context.fillRect(86, 220, 30, 20);
-    	context.font = '36pt Arial';
-  	context.fillStyle = 'red';
-	context.fillText(dado, 86, 240);
 }
 
 function Enviar(){
