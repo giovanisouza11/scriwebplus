@@ -145,6 +145,7 @@ if (ativo) {
         console.log(" connect SOCKET.ID=",socket.id);
 	socket.on('connect', function(data) {
 		var x;
+		console.log('Escreveu VAR x = '+ x);
 	   	for(x=0; x<(clp.length/2); x++){
 			if (socket.id == clp[x*2+1]){
 				socket.leave(clp[x*2]);
@@ -177,6 +178,7 @@ if (ativo) {
 	});
    	socket.on('sup', function(data) {
 	   	var x;
+		console.log('Escreveu VAR x = '+ x);
 	   	for(x=0; x<(clp.length/2); x++){
 			if (data == clp[x*2]){
 				socket.leave(sup[x*2]);
