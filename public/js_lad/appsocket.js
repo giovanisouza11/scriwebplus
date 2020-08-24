@@ -32,8 +32,8 @@ function config(dado){
     	socket.emit('clp', dado);
     	num_clp = dado;
     	context.font = '36pt Arial';
-  	context.fillStyle = 'black';
-	context.filltext(dado, 76, 227);
+  	context.fillStyle = 'red';
+	context.fillText(dado, 76, 227);
 }
 
 function Enviar(){
