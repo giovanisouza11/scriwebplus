@@ -258,17 +258,18 @@ if (ativo) {
 		var x=0;
 		console.log('Escreveu PROGRAMAX x2 = '+ x);
 		
-		while(data1 != clp[x*2]){
+		while(data1 != clp[x*2] || clp[x*2] == undefined){
 			x++;
-			if (x>=(clp.length/2)){
-				clp[x*2]= data1;
-	   			clp[x*2+1] = socket.id;
-  	   			PA[x]=0;
-	   			LP[x]=0;
-           			socket.join(data1);
-			}
-			console.log('Escreveu PROGRAMAX x3 = '+ x);
 		}
+		if (clp[x*2] == undefined){
+			clp[x*2]= data1;
+	   		clp[x*2+1] = socket.id;
+  	   		PA[x]=0;
+	   		LP[x]=0;
+           		socket.join(data1);
+		}
+		console.log('Escreveu PROGRAMAX x3 = '+ x);
+		
 		return x;
   	}
 //=============================================================================
