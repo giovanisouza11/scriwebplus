@@ -111,8 +111,8 @@
 		display: none; /* Hidden by default */
 		position: fixed; /* Stay in place */
 		z-index: 1; /* Sit on top */
-		margin-top:-105px;
-		margin-left:-100px;
+		/*margin-top:-105px;*/
+		/*margin-left:-100px;*/
 		left:50vw;
 		top: 50vh;
 		width: 200; /* Full width */
