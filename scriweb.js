@@ -245,7 +245,7 @@ if (ativo) {
 
    	function verifica_clp(data1, socket){
 		var x=0;
-		console.log('Escreveu PROGRAMAX x2 = '+ x);
+		console.log('Escreveu PROGRAMAX x2 = '+ x +'Dado ='+data1);
 		
 		while(data1 != clp[x*2] && x < clp.length){
 			x++;
@@ -260,6 +260,7 @@ if (ativo) {
   	   		PA[x]=0;
 	   		LP[x]=0;
            		socket.join(data1);
+			console.log('Escreveu PROGRAMAX Diferente ='+ x);
 		}
 		console.log('Escreveu PROGRAMAX x3 = '+ x);
 		
