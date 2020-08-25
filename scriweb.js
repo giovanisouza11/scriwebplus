@@ -314,7 +314,7 @@ if (ativo) {
 			localizacao_prog = LP[clp_index];
 		   
 			if( atualiza_entrada == 1) {
-				io.to(clp[clp_index*2]).emit('entrada', I.join());
+				io.in(clp[clp_index*2]).emit('entrada', I.join());
 				atualiza_entrada = 0;
 			}
 			if (programa1 != 0){ 
@@ -347,12 +347,12 @@ if (ativo) {
 					atraso++;
 					if (atraso>1){
 						atraso = 0;
-						io.to(clp[clp_index*2]).emit('memoria', M.join());
-						io.to(clp[clp_index*2]).emit('tr', R.join());
-						io.to(clp[clp_index*2]).emit('timer', T.join());
-						io.to(clp[clp_index*2]).emit('counter', C.join());
-						io.to(clp[clp_index*2]).emit('saida', Q.join());
-						io.to(clp[clp_index*2]).emit('localizacao', localizacao_prog);
+						io.in(clp[clp_index*2]).emit('memoria', M.join());
+						io.in(clp[clp_index*2]).emit('tr', R.join());
+						io.in(clp[clp_index*2]).emit('timer', T.join());
+						io.in(clp[clp_index*2]).emit('counter', C.join());
+						io.in(clp[clp_index*2]).emit('saida', Q.join());
+						io.in(clp[clp_index*2]).emit('localizacao', localizacao_prog);
 					}
 				}
 			}
