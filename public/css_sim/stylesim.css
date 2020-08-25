@@ -73,6 +73,7 @@
 		padding-top: 1px; /* Location of the box */
 		/*margin-top:-210px;*/
 		/*margin-left:-250px;*/
+		left: 200px;
 		/*left:50vw;*/
 		/*top: 50vh;*/
 		width: 480; /* Full width */
@@ -89,6 +90,7 @@
 		background-color: palegreen;
 		/*margin-top:-210px;*/
 		/*margin-left:-350px;*/
+		left: 100px;
 		/*left: 50vw;*/
 		/*top: 50vh;*/
 		height: 420px; 
