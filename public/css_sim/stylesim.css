@@ -74,6 +74,7 @@
 		/*margin-top:-300px*/;
 		/*margin-left:-250px;*/
 		left: 200px;
+		top: 100px
 		/*left:50vw;*/
 		/*top: 50vh;*/
 		width: 480; /* Full width */
@@ -91,6 +92,7 @@
 		/*margin-top:-300px;*/
 		/*margin-left:-350px;*/
 		left: 100px;
+		top:100px;
 		/*left: 50vw;*/
 		/*top: 50vh;*/
 		height: 420px; 
