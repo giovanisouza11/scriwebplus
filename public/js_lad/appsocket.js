@@ -23,10 +23,10 @@ socket.on('localizacao', function(data) {
 socket.on('config_retorno', function(data) {
        	num_clp = data;
 	context.fillStyle = 'ivory';
-  	context.fillRect(86, 220, 26, 20);
+  	context.fillRect(86, 240, 26, 20);
     	context.font = '32pt Arial';
   	context.fillStyle = 'red';
-	context.fillText(data, 86, 220);
+	context.fillText(data, 86, 240);
 });
 
 socket.on('saida', function(data) {
