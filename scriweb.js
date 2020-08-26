@@ -245,8 +245,7 @@ if (ativo) {
 
    	function verifica_clp(data1, socket){
 		var x=0;
-		console.log('Escreveu PROGRAMAX x2 = '+ x +'Dado ='+data1);
-		
+		//console.log('Escreveu PROGRAMAX x2 = '+ x +'Dado ='+data1);
 		while(data1 != clp[x*2] && x < clp.length){
 			x++;
 		}
@@ -262,8 +261,7 @@ if (ativo) {
            		socket.join(data1);
 			console.log('Escreveu PROGRAMAX Diferente ='+ x);
 		}
-		console.log('Escreveu PROGRAMAX x3 = '+ x);
-		
+		//console.log('Escreveu PROGRAMAX x3 = '+ x);
 		return x;
   	}
 //=============================================================================
@@ -292,7 +290,7 @@ if (ativo) {
 				programa1 = programaS[clp_index].split(`,`);
 			else
 				programa1 = 0;
-		   	console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+programa1[0]+programa1[1]+' '+I[0]);
+		   	//console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+programa1[0]+programa1[1]+' '+I[0]);
 			atualiza_entrada = atualizaS[clp_index];
 			comandos = comandosS[clp_index];
 			passo_atual = PA[clp_index];
