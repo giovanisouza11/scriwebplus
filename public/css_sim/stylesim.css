@@ -68,7 +68,7 @@
 	/* The Modal (background) */
 	.modal {
 		display: none; /* Hidden by default */
-		position: absolute; /* Stay in place */
+		position: fixed; /* Stay in place */
 		z-index: 1; /* Sit on top */
 		padding-top: 1px; /* Location of the box */
 		margin-top:-500px;
@@ -87,7 +87,7 @@
 	.modal-coluna {
 		display: none;
 		z-index: 1; /* Sit on top */
-		position: absolute;
+		position: fixed;
 		background-color: palegreen;
 		margin-top:-500px;
 		margin-left:-150px;
