@@ -71,8 +71,8 @@
 		position: absolute; /* Stay in place */
 		z-index: 1; /* Sit on top */
 		padding-top: 1px; /* Location of the box */
-		/*margin-top:-300px*/;
-		/*margin-left:-250px;*/
+		margin-top:-300px;
+		margin-left:-250px;
 		left: 200px;
 		top: 100px
 		/*left:50vw;*/
@@ -89,8 +89,8 @@
 		z-index: 1; /* Sit on top */
 		position: absolute;
 		background-color: palegreen;
-		/*margin-top:-300px;*/
-		/*margin-left:-350px;*/
+		margin-top:-300px;
+		margin-left:-350px;
 		left: 100px;
 		top:100px;
 		/*left: 50vw;*/
