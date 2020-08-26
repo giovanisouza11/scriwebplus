@@ -46,7 +46,7 @@ function tBotao() {
 		var t_modal = modal.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Configuração Simulador";	
 		var modalb = document.getElementById("myBody");
-		modalb.innerHTML = "<p>Número do CLP <input type='text' id='input1' name='input1' maxlength=3 size=1 /></P>";
+		modalb.innerHTML = "<p>Número do CLP <input type='number' id='input1' name='input1' max=30 min=0 /></P>";
 		modalb.innerHTML += "<p>Tamanho da Tela Largura:<input type='text' id='input2' maxlength=5 size=5/> Altura:<input type='text' id='input3' name='input3' maxlength=5 size=5 /> </p>";
 	
 		modal.style.display = "block";
