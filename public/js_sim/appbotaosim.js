@@ -51,6 +51,7 @@ function tBotao() {
 	
 		modal.style.display = "block";
 		modalc.style.display = "none";
+		document.getElementById('input1').value = num_clp;
 		// Get the <Close> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
 		span.onclick = function() {
