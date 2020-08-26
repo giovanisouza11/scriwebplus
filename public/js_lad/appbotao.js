@@ -172,10 +172,11 @@ function trocar_botao() {
 		var modalb = document.getElementById("myBody");
 		var t_modal = modal.getElementsByTagName("h2")
 		t_modal[0].innerHTML = "CONFIG";
-		modalb.innerHTML = "<p>Endereço do CLP (1 a 10): <input type=text id='input1' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = "<p>Endereço do CLP (1 a 30): <input type=number id='input1' max=30 min=0 size=2></p>"; 
 		modalb.innerHTML = modalb.innerHTML+ "<p>Tempo de Scan: <input type=text id='input2' maxlength=3 size=3></p>"; 
 		modalb.innerHTML = modalb.innerHTML+ "<p>Tempo de Atualização(Num de Scan):<input type=text id='input3' maxlength=3 size=3></p>"; 
 		modalb.innerHTML = modalb.innerHTML+ "<p>Número máximo de lógicas:<input type=text id='input3' maxlength=3 size=3></p>"; 
+		document.getElementById('input1').value = num_clp;
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button')
 		btn.appendChild(document.createTextNode('OK'));
