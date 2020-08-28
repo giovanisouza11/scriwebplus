@@ -244,15 +244,18 @@ if (ativo) {
    	});
 
    	function verifica_clp(data1, socket){
-		var x=0;
+		var x=clp.length;
 		//console.log('Escreveu PROGRAMAX x2 = '+ x +'Dado ='+data1);
-		while(data1 != clp[x*2] && x < clp.length){
-			x++;
-		}
+		//while(data1 != clp[x*2] && x < clp.length){
+		//	x++;
+		//}
 		//if (data1 != clp[x*2])
 		//	x--;
 		//if (x<clp.len)
 		//	x=0;
+		for(var xa = 0, xa<clp.length, x++)
+			if (data1 == clp[xa*2])
+				x = xa;
 		if (clp[x*2] != data1){
 			clp[x*2]= data1;
 	   		//clp[x*2+1] = socket.id;
