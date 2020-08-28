@@ -253,9 +253,10 @@ if (ativo) {
 		//	x--;
 		//if (x<clp.len)
 		//	x=0;
-		for(var xa = 0; xa<clp.length; x++)
+		for(var xa = 0; xa<clp.length; x++) {
 			if (data1 == clp[xa*2])
 				x = xa;
+		}
 		if (clp[x*2] != data1){
 			clp[x*2]= data1;
 	   		//clp[x*2+1] = socket.id;
@@ -293,7 +294,7 @@ if (ativo) {
 				programa1 = programaS[clp_index].split(`,`);
 			else
 				programa1 = 0;
-		   	//console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+programa1[0]+programa1[1]+' '+I[0]);
+		   	console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+sup[clp_index*2]+' '+I[0]);
 			atualiza_entrada = atualizaS[clp_index];
 			comandos = comandosS[clp_index];
 			passo_atual = PA[clp_index];
