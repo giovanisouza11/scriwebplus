@@ -253,7 +253,7 @@ if (ativo) {
 		//	x--;
 		//if (x<clp.len)
 		//	x=0;
-		for(var xa = 0, xa<clp.length, x++)
+		for(var xa = 0; xa<clp.length; x++)
 			if (data1 == clp[xa*2])
 				x = xa;
 		if (clp[x*2] != data1){
