@@ -111,11 +111,15 @@ if (ativo) {
 					socket.emit('config_retorno', 0);
 					socket.leave(clp[x*2]);
 					clp[x*2] = 'k';
+					console.log('CLP desCONECTADoS: '+clp);
+					console.log('SUP CONECTADoS: '+sup);
 				}
 				if (socket.id == sup[x*2+1]){
 					socket.emit('config_socket_r', 0);
 					socket.leave(sup[x*2]);
 					sup[x*2] = 'k';
+					console.log('CLP CONECTADoS: '+clp);
+					console.log('SUP desCONECTADoS: '+sup);
 				}
 				if ((clp[x*2]== 'k' && sup[x*2]== 'k') ||(clp[x*2]== undefined || sup[x*2]== undefined)){
 					atualizaS.splice(x,1);
@@ -252,18 +256,9 @@ if (ativo) {
 
    	function verifica_clp(data1, socket){
 		var x=0; //clp.length;
-		//console.log('Escreveu PROGRAMAX x2 = '+ x +'Dado ='+data1);
 		while(data1 != clp[x*2] && x < clp.length){
 			x++;
 		}
-		//if (data1 != clp[x*2])
-		//	x--;
-		//if (x<clp.len)
-		//	x=0;
-		//for(var xa = 0; xa<clp.length; x++) {
-		//	if (data1 == clp[xa*2])
-		//		x = xa;
-		//}
 		if (clp[x*2] != data1){
 			clp[x*2]= data1;
 	   		//clp[x*2+1] = socket.id;
@@ -274,7 +269,6 @@ if (ativo) {
 			console.log('CLP2 CONECTADoS: '+clp);
 			console.log('SUP2 CONECTADoS: '+sup);
 		}
-		//console.log('Escreveu PROGRAMAX x3 = '+ x);
 		return x;
   	}
 //=============================================================================
