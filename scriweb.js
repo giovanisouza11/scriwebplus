@@ -135,6 +135,7 @@ if (ativo) {
 					LP.splice(x,1);
 					clp.splice(x*2,2);
 					sup.splice(x*2,2);
+					console.log('SUP e CLP DESCARTADOS: '+sup);
 				}
 	   		}
 		});
