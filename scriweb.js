@@ -157,7 +157,7 @@ if (ativo) {
 			console.log('SUP CONECTADoS: '+sup);
 		});
 		socket.on('clp', function(data) {
-	   		var x, y,z;
+	   		var x, y;
 			var bandeira = false;
 			for(x=0; x<(clp.length/2); x++){
 				if (data == clp[x*2] && clp[x*2+1] == undefined){
@@ -166,7 +166,7 @@ if (ativo) {
 				}
 	   			if (socket.id == clp[x*2+1]){
 					socket.leave(clp[x*2]);
-					z=x;
+					y=x;
 				}
 	   			if (socket.id != clp[x*2+1] &&  data==clp[x*2] && clp[x*2+1] == undefined){
 					socket.leave(clp[y*2]);
@@ -174,7 +174,9 @@ if (ativo) {
 				}
 	   		}
 			if (bandeira == false){
-	   			clp[x*2]= data;
+	   			if (y<clp.length)
+					x=y;
+				clp[x*2]= data;
 	   			clp[x*2+1] = socket.id;
   	   			PA[x]=0;
 	   			LP[x]=0;
