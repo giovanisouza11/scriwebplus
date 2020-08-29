@@ -148,6 +148,8 @@ if (ativo) {
 	   		LP[x]=0;
            		socket.emit('config_retorno',data);
 			socket.join(data);
+			console('CLP CONECTADoS: '+clp);
+			console('SUP CONECTADoS: '+sup);
 		});
 		socket.on('clp', function(data) {
 	   		var x;
@@ -163,6 +165,9 @@ if (ativo) {
 	   		LP[x]=0;
            		socket.emit('config_retorno',data);
 			socket.join(data);
+			console('CLP CONECTADoS: '+clp);
+			console('SUP CONECTADoS: '+sup);
+		
 		});
    		socket.on('sup', function(data) {
 	   		var x;
@@ -176,6 +181,8 @@ if (ativo) {
 	   		sup[x*2+1] = socket.id;
   	   		socket.emit('config_socket_r',data);
 			socket.join(data);
+			console('CLP1 CONECTADoS: '+clp);
+			console('SUP1 CONECTADoS: '+sup);
 		});
 		socket.on('programax', function(data) {
 			programa1 = data.split(',');
@@ -264,6 +271,8 @@ if (ativo) {
 	   		LP[x]=0;
            		socket.join(data1);
 			console.log('Escreveu PROGRAMAX Diferente ='+ x);
+			console('CLP CONECTADoS: '+clp);
+			console('SUP CONECTADoS: '+sup);
 		}
 		//console.log('Escreveu PROGRAMAX x3 = '+ x);
 		return x;
@@ -294,7 +303,7 @@ if (ativo) {
 				programa1 = programaS[clp_index].split(`,`);
 			else
 				programa1 = 0;
-		   	console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+sup[clp_index*2]+' '+I[0]);
+		   	//console.log(clp_index+' '+clp[clp_index*2]+' '+clp[clp_index*2+1]+' '+sup[clp_index*2]+' '+I[0]);
 			atualiza_entrada = atualizaS[clp_index];
 			comandos = comandosS[clp_index];
 			passo_atual = PA[clp_index];
