@@ -157,22 +157,32 @@ if (ativo) {
 			console.log('SUP CONECTADoS: '+sup);
 		});
 		socket.on('clp', function(data) {
-	   		var x;
+	   		var x, y,z;
+			var bandeira = false;
 			for(x=0; x<(clp.length/2); x++){
-				if (socket.id == clp[x*2+1]){
+				if (data == clp[x*2] && clp[x*2+1] == undefined){
 					socket.leave(clp[x*2]);
-					break;
+					y=x;
+				}
+	   			if (socket.id == clp[x*2+1]){
+					socket.leave(clp[x*2]);
+					z=x;
+				}
+	   			if (socket.id != clp[x*2+1] &&  data==clp[x*2] && clp[x*2+1] == undefined){
+					socket.leave(clp[y*2]);
+					bandeira = true;
 				}
 	   		}
-	   		clp[x*2]= data;
-	   		clp[x*2+1] = socket.id;
-  	   		PA[x]=0;
-	   		LP[x]=0;
-           		socket.emit('config_retorno',data);
-			socket.join(data);
-			console.log('CLP CONECTADoS: '+clp);
-			console.log('SUP CONECTADoS: '+sup);
-		
+			if (bandeira == false){
+	   			clp[x*2]= data;
+	   			clp[x*2+1] = socket.id;
+  	   			PA[x]=0;
+	   			LP[x]=0;
+           			socket.emit('config_retorno',data);
+				socket.join(data);
+				console.log('CLP CONECTADoS: '+clp);
+				console.log('SUP CONECTADoS: '+sup);
+			}
 		});
    		socket.on('sup', function(data) {
 	   		var x;
