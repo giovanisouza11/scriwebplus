@@ -360,11 +360,8 @@ if (ativo) {
 					}
 				}
 			}
-        		segundo++;
-       			if (segundo>10)
-				segundo = 0;
-			
-			if (comandos>1)
+        		
+       			if (comandos>1)
 				comandos=0;
 			if (M != undefined)
 				MS[clp_index] = M.join();
@@ -385,6 +382,10 @@ if (ativo) {
 			PA[clp_index] = passo_atual;
 			LP[clp_index] = localizacao_prog;
   		}
+		if (segundo>10)
+			segundo = 0;
+		segundo++;
+			
 	}
 //=============================================================================
 // Send current time every 0,1 secs
