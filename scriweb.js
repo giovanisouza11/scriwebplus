@@ -217,6 +217,7 @@ if (ativo) {
 			comandosS[x] = comandos;
 			programaS[x] = programa1.join();
 			console.log(x+' '+clp[x*2]+' '+clp[x*2+1]);
+			console.log(C +' '+CS[x]);
 			PA[x]=0;
 			LP[x]=0;
 		});
