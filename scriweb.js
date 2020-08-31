@@ -169,7 +169,7 @@ if (ativo) {
 					y=x;
 				}
 	   			if (socket.id != clp[x*2+1] &&  data==clp[x*2] && clp[x*2+1] != undefined){
-					socket.leave(clp[x*2]);
+					//socket.leave(clp[x*2]);
 					bandeira = true;
 				}
 	   		}
