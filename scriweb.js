@@ -216,8 +216,8 @@ if (ativo) {
 			CS[x] = C.join();
 			comandosS[x] = comandos;
 			programaS[x] = programa1.join();
-			console.log(x+' '+clp[x*2]+' '+clp[x*2+1]);
-			console.log('Cx=  '+CS[x] + '   C= '+C);
+			//console.log(x+' '+clp[x*2]+' '+clp[x*2+1]);
+			//console.log('Cx=  '+CS[x] + '   C= '+C);
 			PA[x]=0;
 			LP[x]=0;
 		});
@@ -357,6 +357,7 @@ if (ativo) {
 						io.in(clp[clp_index*2]).emit('timer', T.join());
 						io.in(clp[clp_index*2]).emit('counter', C.join());
 						io.in(clp[clp_index*2]).emit('saida', Q.join());
+						console.log('Contador = '+C);
 						io.in(clp[clp_index*2]).emit('localizacao', localizacao_prog);
 					}
 				}
