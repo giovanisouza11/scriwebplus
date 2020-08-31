@@ -346,9 +346,7 @@ if (ativo) {
 					programa();
 				}
 		
-				segundo++;
-       				if (segundo>10){
-					segundo = 0;
+				if (segundo>10){
 					atraso++;
 					if (atraso>1){
 						atraso = 0;
@@ -362,7 +360,11 @@ if (ativo) {
 					}
 				}
 			}
-        		if (comandos>1)
+        		segundo++;
+       			if (segundo>10)
+				segundo = 0;
+			
+			if (comandos>1)
 				comandos=0;
 			if (M != undefined)
 				MS[clp_index] = M.join();
