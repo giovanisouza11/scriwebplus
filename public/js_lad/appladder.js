@@ -48,7 +48,7 @@ function draw_ladder_fundo(tipo){
 		for (var j=0; j<8; j++) {
 			context2.drawImage(AILadder, (AILadder.width/7)*tipo, 780, AILadder.width/7, 60, 65+(j*60), (i)*60, 60, 60);
 		}
-		context2.drawImage(AIVertical, (AIVertical.width/5)*tipo, 0, AIVertical.width/5, 56, 545, i*60, 5, 56);
+		context2.drawImage(AIVertical, (AIVertical.width/6)*tipo, 0, AIVertical.width/6, 56, 545, i*60, 5, 56);
 	}
 }
 
