@@ -12,6 +12,10 @@ function draw_inicio() {
 		window.innerWidth =900;
 		localStorage.tela_altura = 900;
 	}
+	if (localStorage.num_clp > 0)
+		num_clp = localStorage.num_clp;
+	else
+		num_clp = 0;
 	
 	draw_botoessim();
 	draw_simulador_inicio();
