@@ -13,7 +13,7 @@ var context3;
 document.addEventListener('mousemove', mouse_move);
 var emEdicao = 0; //0:desabilitado, 1-5: Entra funcao,tag1,end1,tag2 e end2
 var lfuncao = 0;	//funcao selecionada para entrada no ladder
-//var Num_Linhas = 100;
+var Num_Linhas = 100;
 var larray = new Array(); //Array que identifica o programa ladder
 //{ _id, tag1, var_1, tipo, var_2, ver, R-W, tag2, funcao};
 // ._id = Identificado XXY, onde XX=linha e Y=coluna
