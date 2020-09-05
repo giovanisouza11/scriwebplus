@@ -1,5 +1,5 @@
 var num_clp;
-var num_linha;
+var Num_Linhas;
 
 function draw_inicio() {
 	if (localStorange.num_clp > 0)
@@ -8,9 +8,9 @@ function draw_inicio() {
 		num_clp = 0;
 	config(num_clp);
 	if (localStorange.num_linhas > 0 && localStorange.num_linhas<301)
-		num_linha = localStorange.num_linha;
+		Num_Linhas = localStorange.num_linha;
 	else
-		num_linha = 100;		
+		Num_Linhas = 100;		
 	draw_eletrico();
     	draw_botoes();
 	draw_ladder_inicio();	
