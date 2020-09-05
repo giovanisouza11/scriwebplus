@@ -47,11 +47,13 @@ function tBotao() {
 		t_modal[0].innerHTML = "Configuração Simulador";	
 		var modalb = document.getElementById("myBody");
 		modalb.innerHTML = "<p>Número do CLP <input type='number' id='input1' name='input1' max=30 min=0 /></P>";
-		modalb.innerHTML += "<p>Tamanho da Tela Largura:<input type='text' id='input2' maxlength=5 size=5/> Altura:<input type='text' id='input3' name='input3' maxlength=5 size=5 /> </p>";
+		modalb.innerHTML += "<p>Tamanho da Tela Largura:<input type='number' id='input2' max=2000 min=200/> Altura:<input type='number' id='input3' name='input3' max=2000 min=0/> </p>";
 	
 		modal.style.display = "block";
 		modalc.style.display = "none";
 		document.getElementById('input1').value = num_clp;
+		document.getElementById('input2').value = localStorage.tela_largura;
+		document.getElementById('input3').value = localStorage.tela_altura;
 		// Get the <Close> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
 		span.onclick = function() {
@@ -62,6 +64,9 @@ function tBotao() {
 		var ok = document.getElementsByClassName("ok")[0];
 		ok.onclick = function() {
 			Config_Socket(document.getElementById('input1').value);
+			localStorage.setItem("num_clp", document.getElementById('input1').value);
+			localStorage.setItem("tela_largura", document.getElementById('input2').value);
+			localStorage.setItem("tela_altura", document.getElementById('input3').value);
 			//localStorage.num_clp = document.getElementById('input1').value;
 		}
 		// Get the <Apagar> element that closes the modal
