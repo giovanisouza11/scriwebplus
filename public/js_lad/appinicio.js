@@ -7,7 +7,7 @@ function draw_inicio() {
 	else
 		num_clp = 0;
 	config(num_clp);
-	if (localStorange.num_linhas > 0 && localStorange.num_linhas<301)
+	if (localStorange.num_linhas > 10 && localStorange.num_linhas<301)
 		Num_Linhas = localStorange.num_linhas;
 	else
 		Num_Linhas = 100;		
