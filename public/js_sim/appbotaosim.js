@@ -62,6 +62,7 @@ function tBotao() {
 		var ok = document.getElementsByClassName("ok")[0];
 		ok.onclick = function() {
 			Config_Socket(document.getElementById('input1').value);
+			//localStorage.num_clp = document.getElementById('input1').value;
 		}
 		// Get the <Apagar> element that closes the modal
 		document.getElementsByClassName("apagar")[0].style.visibility = "hidden";
