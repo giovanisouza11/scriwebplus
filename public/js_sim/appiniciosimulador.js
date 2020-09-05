@@ -1,4 +1,4 @@
-	    	
+var num_clp;	    	
 function draw_inicio() {
 	if (localStorage.tela_largura>199 && localStorage.tela_largura<2001)
 		window.innerWidth = localStorage.tela_largura;
@@ -19,5 +19,5 @@ function draw_inicio() {
 	
 	draw_botoessim();
 	draw_simulador_inicio();
-	//redraw_processo();
+	Config_Socket(num_clp);
 }	
