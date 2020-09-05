@@ -176,7 +176,10 @@ function trocar_botao() {
 		modalb.innerHTML = modalb.innerHTML+ "<p>Tempo de Scan: <input type=number id='input2' max=10 maxlength=3 size=3></p>"; 
 		modalb.innerHTML = modalb.innerHTML+ "<p>Tempo de Atualização(Num de Scan):<input type=number id='input3' max=10 maxlength=3 size=3></p>"; 
 		modalb.innerHTML = modalb.innerHTML+ "<p>Número máximo de lógicas:<input type=number id='input4' max = 200 maxlength=3 size=3></p>"; 
-		document.getElementById('input1').value = num_clp;
+		document.getElementById('input1').value = localStorage.num_clp;
+		document.getElementById('input2').value = localStorage.tempo_scan;
+		document.getElementById('input3').value = localStorage.tempo_atualizacao;
+		document.getElementById('input4').value = localStorage.num_linhas;
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button')
 		btn.appendChild(document.createTextNode('OK'));
