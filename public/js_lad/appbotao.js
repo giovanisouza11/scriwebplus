@@ -173,15 +173,19 @@ function trocar_botao() {
 		var t_modal = modal.getElementsByTagName("h2")
 		t_modal[0].innerHTML = "CONFIG";
 		modalb.innerHTML = "<p>Endereço do CLP (1 a 30): <input type=number id='input1' max=30 min=0 size=2></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Tempo de Scan: <input type=text id='input2' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Tempo de Atualização(Num de Scan):<input type=text id='input3' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Número máximo de lógicas:<input type=text id='input3' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>Tempo de Scan: <input type=number id='input2' max=10 maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>Tempo de Atualização(Num de Scan):<input type=number id='input3' max=10 maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>Número máximo de lógicas:<input type=number id='input4' max = 200 maxlength=3 size=3></p>"; 
 		document.getElementById('input1').value = num_clp;
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button')
 		btn.appendChild(document.createTextNode('OK'));
 		btn.onclick = function() {
 			config(document.getElementById('input1').value);
+			localStorage.setItem("num_clp", document.getElementById('input1').value);
+			localStorage.setItem("tempo_scan", document.getElementById('input2').value);
+			localStorage.setItem("tempo_atualizacao", document.getElementById('input3').value);
+			localStorage.setItem("num_linhas", document.getElementById('input4').value);
 			modal.style.display = "none";
 		};
 		modalb.appendChild(btn);
