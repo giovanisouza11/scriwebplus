@@ -33,8 +33,8 @@ function draw_simulador_inicio() {
 	Scontext = Scanvas.getContext("2d");
 	//Scontext1 = Scanvas.getContext("2d");
 	
-	Scanvas.width = localStorage.tela_largura + 200; //1200;
-	Scanvas.height = localStorage.tela_altura + 150; //570;
+	Scanvas.width = 1200;//localStorage.tela_largura + 200; 
+	Scanvas.height = 570; // localStorage.tela_altura + 150;
 }
 
 //=====================================================================================
