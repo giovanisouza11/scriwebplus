@@ -1,17 +1,17 @@
 var num_clp;	    	
 function draw_inicio() {
-	if (localStorage.tela_largura>199 && localStorage.tela_largura<2001)
+	if (localStorage.tela_largura<200 || localStorage.tela_largura>2000)
 		//window.innerWidth = localStorage.tela_largura;
-	else{
+	//else{
 		//window.innerWidth = 1400;
 		localStorage.tela_largura = 1400;
-	}
-	if (localStorage.tela_altura>199 && localStorage.tela_altura<2001)
+	//}
+	if (localStorage.tela_altura<200 || localStorage.tela_altura>2000)
   		//window.innerHeight= localStorage.tela_altura;
-	else{
+	//else{
 		//window.innerWidth =900;
 		localStorage.tela_altura = 900;
-	}
+	//}
 	//window.resizeTo(localStorage.tela_largura, localStorage.tela_altura);
 	if (localStorage.num_clp > 0)
 		num_clp = localStorage.num_clp;
