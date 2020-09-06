@@ -68,7 +68,8 @@ function tBotao() {
 			localStorage.setItem("num_clp", document.getElementById('input1').value);
 			localStorage.setItem("tela_largura", document.getElementById('input2').value);
 			localStorage.setItem("tela_altura", document.getElementById('input3').value);
-			draw_simulador_inicio();
+			window.resizeTo(localStorage.tela_largura, localStorage.tela_altura);
+			//draw_simulador_inicio();
 			//localStorage.num_clp = document.getElementById('input1').value;
 		}
 		// Get the <Apagar> element that closes the modal
