@@ -12,7 +12,7 @@ function draw_inicio() {
 		//window.innerWidth =900;
 		localStorage.tela_altura = 900;
 	}
-	window.resizeTo(localStorage.tela_largura, localStorage.tela_altura);
+	//window.resizeTo(localStorage.tela_largura, localStorage.tela_altura);
 	if (localStorage.num_clp > 0)
 		num_clp = localStorage.num_clp;
 	else
