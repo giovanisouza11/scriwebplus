@@ -1,6 +1,6 @@
 
 var socket = io(); //('http://192.168.0.100:4333');
-//var num_clp = 0;
+var num_clp1;
 
 socket.on('memoria', function(data) {
 	   M = data.split(',');
@@ -23,7 +23,7 @@ socket.on('saida', function(data) {
 	//		 atualiza_simulador();
 });
 socket.on('config_socket_r', function(data) {
-        num_clp = data;
+        num_clp1 = data;
 });
 function Enviar(){
     socket.emit('entradax', I.join()+ ','+  num_clp);
