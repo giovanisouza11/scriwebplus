@@ -456,6 +456,11 @@ if (ativo) {
 						escreve_enderecoCT(programa1[passo+1], 1, 3);
 						escreve_enderecoCT(programa1[passo+1], le_enderecoCT(programa1[passo+1], 1)+1, 1);
 					}
+					if (le_enderecoCT(programa1[passo+1], 3)==2){
+						escreve_enderecoCT(programa1[passo+1], 0, 0);
+						escreve_enderecoCT(programa1[passo+1], 0, 1);
+						escreve_enderecoCT(programa1[passo+1], 0, 3);
+					}
 					if (acumulador == 0) {
 						escreve_enderecoCT(programa1[passo+1], 0, 3);
 						escreve_enderecoCT(programa1[passo+1], le_enderecoCT(programa1[passo+2],0), 2);
@@ -463,11 +468,6 @@ if (ativo) {
 					if (le_enderecoCT(programa1[passo+1], 1) >= le_enderecoCT(programa1[passo+1], 2)){
 						escreve_enderecoCT(programa1[passo+1], 1, 0);
 						escreve_enderecoCT(programa1[passo+1], le_enderecoCT(programa1[passo+1], 2), 1);
-					}
-					if (le_enderecoCT(programa1[passo+1], 3)==2){
-						escreve_enderecoCT(programa1[passo+1], 0, 0);
-						escreve_enderecoCT(programa1[passo+1], 0, 1);
-						escreve_enderecoCT(programa1[passo+1], 0, 3);
 					}
 					passo++;
 					break;
