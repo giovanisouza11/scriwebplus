@@ -189,7 +189,7 @@ if (ativo) {
    		socket.on('sup', function(data) {
 	   		var x;
 	   		for(x=0; x<(sup.length/2); x++){
-				if (data == sup[x*2+1]){
+				if (socket.id == sup[x*2+1]){
 					socket.leave(sup[x*2]);
 					break;
 				}
