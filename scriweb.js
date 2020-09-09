@@ -301,7 +301,7 @@ if (ativo) {
 	function AtualizaPorTempo() {
 		temporizadores();
 	
-   		for(var clp_index=0; clp_index<(clp.length/2); clp_index++){	
+   		for(var clp_index=0; clp_index<=(clp.length/2); clp_index++){	
 			if (MS[clp_index] != undefined)
 				M = MS[clp_index].split(`,`);
 			if (IS[clp_index] != undefined)
@@ -353,8 +353,8 @@ if (ativo) {
 				}
 		
 				if (segundo>10){
-					atraso++;
-					if (atraso>1){
+					//atraso++;
+					//if (atraso>1){
 						atraso = 0;
 						io.in(clp[clp_index*2]).emit('memoria', M.join());
 						io.in(clp[clp_index*2]).emit('tr', R.join());
@@ -363,7 +363,7 @@ if (ativo) {
 						io.in(clp[clp_index*2]).emit('saida', Q.join());
 						console.log('Contador = '+C+'  endereço:'+clp[clp_index*2]);
 						io.in(clp[clp_index*2]).emit('localizacao', localizacao_prog);
-					}
+					//}
 				}
 			}
         		
