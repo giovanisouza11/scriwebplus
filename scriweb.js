@@ -61,9 +61,9 @@ if (ativo) {
     	app.get('/', function(req, res) {
         	res.sendFile(__dirname + '/scriweb.html');
     	});
-    	app.get('/config',function(req,res){
-        	res.sendFile(__dirname + '/scriwebconfig.html');
-    	});
+    	//app.get('/config',function(req,res){
+        //	res.sendFile(__dirname + '/scriwebconfig.html');
+    	//});
     	app.get('/about',function(req,res){
         	res.sendFile(__dirname + '/scriwebabout.html');
     	});
@@ -76,9 +76,9 @@ if (ativo) {
     	app.get('/servidor',function(req,res){
         	res.sendFile(__dirname + '/servidor.html');
     	});
-    	app.get('/configsim',function(req,res){
-        	res.sendFile(__dirname + '/simconfig.html');
-    	});
+    	//app.get('/configsim',function(req,res){
+        //	res.sendFile(__dirname + '/simconfig.html');
+    	//});
     	app.get('/helpsim',function(req,res){
         	res.sendFile(__dirname + '/simhelp.html');
     	});
@@ -201,6 +201,7 @@ if (ativo) {
 				}
 	   		}
 	   		sup[x*2]= data;
+	   		clp[x*2]= data;
 	   		sup[x*2+1] = socket.id;
   	   		socket.emit('config_socket_r',data);
 			socket.join(data);
