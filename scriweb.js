@@ -56,8 +56,8 @@ if (ativo) {
     	var io = require('socket.io')(server);
 
     	app.use(express.static(__dirname + '/public'));
-    	app.use('/simulacao', express.static('/scriweb/simulacao'));
-    	app.use('/ladder',express.static('/scriweb/ladder'));
+    	//app.use('/simulacao', express.static('/scriweb/simulacao'));
+    	//app.use('/ladder',express.static('/scriweb/ladder'));
     	app.get('/', function(req, res) {
         	res.sendFile(__dirname + '/scriweb.html');
     	});
