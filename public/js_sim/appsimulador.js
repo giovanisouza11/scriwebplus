@@ -31,7 +31,6 @@ var variavel;
 function draw_simulador_inicio() {
 	Scanvas = document.getElementById("tela2");
 	Scontext = Scanvas.getContext("2d");
-	//Scontext1 = Scanvas.getContext("2d");
 	
 	Scanvas.width = 1200;//localStorage.tela_largura + 200; 
 	Scanvas.height = 570; // localStorage.tela_altura + 150;
@@ -245,181 +244,181 @@ function simIhm() {
   	Scontext.font = '9pt Arial';
   	var num_linhas;
   	for (var funcao=0; funcao<6; funcao++) {
-    	switch (parseInt(funcao)){
-      	case 0:
-        	Scontext.fillStyle = 'black';
-        	Scontext.fillRect(790, linha-5, 60, 5);
-        	Scontext.fillText('ENTRADAS', 870, linha);
-        	Scontext.fillRect(955, linha-5, 60, 5);
-        	Scontext.fillRect(1025, linha-5, 60, 5);
-        	tamanho_array = I.length;
-        	num_linhas = parseInt(tamanho_array / 16);
-        	linha = linha + 15;
-        	Scontext.fillText('MSB', 790,linha);
-        	Scontext.fillText('Valor binário', 870,linha);
-        	Scontext.fillText('LSB', 990,linha);
-        	Scontext.fillText('Decimal', 1035,linha);
+    		switch (parseInt(funcao)){
+      		case 0:
+        		Scontext.fillStyle = 'black';
+        		Scontext.fillRect(790, linha-5, 60, 5);
+        		Scontext.fillText('ENTRADAS', 870, linha);
+        		Scontext.fillRect(955, linha-5, 60, 5);
+        		Scontext.fillRect(1025, linha-5, 60, 5);
+        		tamanho_array = I.length;
+        		num_linhas = parseInt(tamanho_array / 16);
+        		linha = linha + 15;
+        		Scontext.fillText('MSB', 790,linha);
+        		Scontext.fillText('Valor binário', 870,linha);
+        		Scontext.fillText('LSB', 990,linha);
+        		Scontext.fillText('Decimal', 1035,linha);
 			linha = linha + 15;
-        	break;
-      	case 1:
-        	Scontext.fillStyle = 'black';
-        	Scontext.fillRect(790, linha-5, 60, 5);
-        	Scontext.fillText('SAIDAS', 880, linha);
-        	Scontext.fillRect(955, linha-5, 60, 5);
-        	Scontext.fillRect(1025, linha-5, 60, 5);
-        	tamanho_array = Q.length;
-        	num_linhas = parseInt(tamanho_array / 16);
-        	linha = linha + 15;
-        	Scontext.fillText('MSB', 790,linha);
-        	Scontext.fillText('Valor binário', 870,linha);
-        	Scontext.fillText('LSB', 990,linha);
-        	Scontext.fillText('Decimal', 1035,linha);
-        	linha = linha + 15;
-        	break;
-      	case 2:
-        	Scontext.fillStyle = 'black';
-        	Scontext.fillRect(790, linha-5, 60, 5);
-        	Scontext.fillText('MEMÓRIAS', 870, linha);
-        	Scontext.fillRect(955, linha-5, 60, 5);
-        	Scontext.fillRect(1025, linha-5, 60, 5);
-        	tamanho_array = M.length;
-        	num_linhas = parseInt(tamanho_array / 16);
-        	linha = linha + 15;
-        	Scontext.fillText('MSB', 790,linha);
-        	Scontext.fillText('Valor binário', 870,linha);
-        	Scontext.fillText('LSB', 990,linha);
-        	Scontext.fillText('Decimal', 1035,linha);
-        	linha = linha + 15;
-        	break;
-      	case 3:
-        	Scontext.fillStyle = 'black';
-        	Scontext.fillRect(790, linha-5, 60, 5);
-        	Scontext.fillText('TIMERS', 880, linha);
-       		Scontext.fillRect(955, linha-5, 60, 5);
-        	tamanho_array = T.length;
-        	num_linhas = parseInt(tamanho_array / 3);
-        	linha = linha + 15;
-        	Scontext.fillText('Tem', 790,linha);
-        	Scontext.fillText('bit', 870,linha);
-        	Scontext.fillText('PV', 920,linha);
-        	Scontext.fillText('SP', 970,linha);
-        	linha = linha + 15;
-        	break;
-		case 4:
-        	Scontext.fillStyle = 'black';
-        	Scontext.fillRect(790, linha-5, 60, 5);
-        	Scontext.fillText('CONTADORES', 860, linha);
-        	Scontext.fillRect(955, linha-5, 60, 5);
-        	tamanho_array = C.length;
-        	num_linhas = parseInt(tamanho_array / 4);
-        	linha = linha + 15;
-        	Scontext.fillText('Cont', 790,linha);
-        	Scontext.fillText('bit', 845,linha);
-        	Scontext.fillText('PV', 895,linha);
-        	Scontext.fillText('SP', 945,linha);
-        	Scontext.fillText('AUX', 990,linha);
-        	linha = linha + 15;
-        	break;
-      	case 5:
-        	Scontext.fillStyle = 'black';
-        	Scontext.fillRect(790, linha-5, 60, 5);
-        	Scontext.fillText('RAMAIS', 880, linha);
-        	Scontext.fillRect(955, linha-5, 60, 5);
-        	tamanho_array = R.length;
-        	num_linhas = parseInt(tamanho_array / 16);
-        	linha = linha + 15;
-        	Scontext.fillText('MSB', 790,linha);
-        	Scontext.fillText('Valor binário', 870,linha);
-        	Scontext.fillText('LSB', 990,linha);
-        	linha = linha + 15;
-        	break;
-	default:
-        	tamanho_array = 1;
-    	}
-    	var posicao;
-    	var n_posicao;
-    	for (var n_linhas=0; n_linhas <= num_linhas; n_linhas++){
-      		posicao = 0;
-      		Scontext.fillStyle = 'green';
-      		if (n_linhas < num_linhas){
-        		if (funcao <3){
-        			Scontext.fillText(tipo_funcao[funcao]+n_linhas+'.15', 790,linha);
-        			n_posicao = (n_linhas * 16) + posicao;
-        		}
-        		if (funcao==5) {
-        			n_posicao = (n_linhas * 16) + posicao;
-        			Scontext.fillText(tipo_funcao[funcao]+(n_posicao+15), 790,linha);
-        		}
-      		}
-      		else  {
-        		if (funcao <3){
-        			Scontext.fillText(tipo_funcao[funcao]+n_linhas+'.'+((tamanho_array%16)-1), 790,linha);
-        			n_posicao = (n_linhas * 16) + posicao;
-        		}
-        		if (funcao==5) {
-        			n_posicao = (n_linhas * 16) + posicao;
-        			Scontext.fillText(tipo_funcao[funcao]+(n_posicao + (tamanho_array%16)-1), 790,linha);
-        		}
-      		}
-      		if(funcao==4){
-        		Scontext.fillText(tipo_funcao[funcao]+n_linhas, 790,linha);
-        		n_posicao = (n_linhas * 4) + posicao;
-      		}
-      		if(funcao==3){
-        		Scontext.fillText(tipo_funcao[funcao]+n_linhas, 790,linha);
-        		n_posicao = (n_linhas * 3) + posicao;
-      		}
-      		do {
-        		switch (parseInt(funcao)){
-        		case 0:
-        			Scontext.fillStyle = 'red';
-        			Scontext.fillText(I[n_posicao], 980-(posicao*10),linha);
-        			break;
-        		case 1:
-        			Scontext.fillStyle = 'red';
-        			Scontext.fillText(Q[n_posicao], 980-(posicao*10),linha);
-        			break;
-        		case 2:
-        			Scontext.fillStyle = 'red';
-        			Scontext.fillText(M[n_posicao], 980-(posicao*10),linha);
-        			break;
-        		case 5:
-        			Scontext.fillStyle = 'red';
-        			Scontext.fillText(R[n_posicao], 980-(posicao*10),linha);
-        			break;
-        		case 4:
-        			Scontext.fillStyle = 'red';
-        			Scontext.fillText(C[n_posicao], 850+(posicao*50),linha);
-        			if (posicao >2)
-        				posicao = 15;
-        			break;
-        		case 3:
-        			Scontext.fillStyle = 'red';
-        			Scontext.fillText(T[n_posicao], 875+(posicao*50),linha);
-        			if (posicao >1)
-        				posicao = 15;
-        			break;
-        		default:
-        			posicao = 0;
-        		}
-        		posicao++;
-        		n_posicao++;
-      		} while((n_posicao < tamanho_array) && (posicao < 15));
-
-      		if (funcao<3) {
-        		Scontext.fillStyle = 'green';
-        		Scontext.fillText(tipo_funcao[funcao]+n_linhas+'.0 - ' +tipo_funcao[funcao]+n_linhas+' = ', 990,linha);
-        		Scontext.fillStyle = 'red';
-        		Scontext.fillText(enderecoCT(tipo_funcao[funcao]+n_linhas,0), 1060,linha);
-      		}
-      		if (funcao==5) {
-        		Scontext.fillStyle = 'green';
-        		Scontext.fillText(tipo_funcao[funcao]+(n_linhas*16), 990,linha);
-      		}
-      		linha += 15;
-      		if (n_posicao >= tamanho_array)
         		break;
-    	}
+      		case 1:
+        		Scontext.fillStyle = 'black';
+        		Scontext.fillRect(790, linha-5, 60, 5);
+        		Scontext.fillText('SAIDAS', 880, linha);
+        		Scontext.fillRect(955, linha-5, 60, 5);
+        		Scontext.fillRect(1025, linha-5, 60, 5);
+        		tamanho_array = Q.length;
+        		num_linhas = parseInt(tamanho_array / 16);
+        		linha = linha + 15;
+        		Scontext.fillText('MSB', 790,linha);
+        		Scontext.fillText('Valor binário', 870,linha);
+        		Scontext.fillText('LSB', 990,linha);
+        		Scontext.fillText('Decimal', 1035,linha);
+        		linha = linha + 15;
+        		break;
+      		case 2:
+        		Scontext.fillStyle = 'black';
+        		Scontext.fillRect(790, linha-5, 60, 5);
+        		Scontext.fillText('MEMÓRIAS', 870, linha);
+        		Scontext.fillRect(955, linha-5, 60, 5);
+        		Scontext.fillRect(1025, linha-5, 60, 5);
+        		tamanho_array = M.length;
+        		num_linhas = parseInt(tamanho_array / 16);
+        		linha = linha + 15;
+        		Scontext.fillText('MSB', 790,linha);
+        		Scontext.fillText('Valor binário', 870,linha);
+        		Scontext.fillText('LSB', 990,linha);
+        		Scontext.fillText('Decimal', 1035,linha);
+        		linha = linha + 15;
+        		break;
+      		case 3:
+        		Scontext.fillStyle = 'black';
+        		Scontext.fillRect(790, linha-5, 60, 5);
+        		Scontext.fillText('TIMERS', 880, linha);
+       			Scontext.fillRect(955, linha-5, 60, 5);
+        		tamanho_array = T.length;
+        		num_linhas = parseInt(tamanho_array / 3);
+        		linha = linha + 15;
+        		Scontext.fillText('Tem', 790,linha);
+        		Scontext.fillText('bit', 870,linha);
+        		Scontext.fillText('PV', 920,linha);
+        		Scontext.fillText('SP', 970,linha);
+        		linha = linha + 15;
+        		break;
+		case 4:
+        		Scontext.fillStyle = 'black';
+        		Scontext.fillRect(790, linha-5, 60, 5);
+        		Scontext.fillText('CONTADORES', 860, linha);
+        		Scontext.fillRect(955, linha-5, 60, 5);
+        		tamanho_array = C.length;
+        		num_linhas = parseInt(tamanho_array / 4);
+        		linha = linha + 15;
+        		Scontext.fillText('Cont', 790,linha);
+        		Scontext.fillText('bit', 845,linha);
+        		Scontext.fillText('PV', 895,linha);
+        		Scontext.fillText('SP', 945,linha);
+        		Scontext.fillText('AUX', 990,linha);
+        		linha = linha + 15;
+        		break;
+      		case 5:
+        		Scontext.fillStyle = 'black';
+        		Scontext.fillRect(790, linha-5, 60, 5);
+        		Scontext.fillText('RAMAIS', 880, linha);
+        		Scontext.fillRect(955, linha-5, 60, 5);
+        		tamanho_array = R.length;
+        		num_linhas = parseInt(tamanho_array / 16);
+        		linha = linha + 15;
+        		Scontext.fillText('MSB', 790,linha);
+        		Scontext.fillText('Valor binário', 870,linha);
+        		Scontext.fillText('LSB', 990,linha);
+        		linha = linha + 15;
+        		break;
+		default:
+        		tamanho_array = 1;
+    		}
+    		var posicao;
+    		var n_posicao;
+    		for (var n_linhas=0; n_linhas <= num_linhas; n_linhas++){
+      			posicao = 0;
+      			Scontext.fillStyle = 'green';
+      			if (n_linhas < num_linhas){
+        			if (funcao <3){
+        				Scontext.fillText(tipo_funcao[funcao]+n_linhas+'.15', 790,linha);
+        				n_posicao = (n_linhas * 16) + posicao;
+        			}
+        			if (funcao==5) {
+        				n_posicao = (n_linhas * 16) + posicao;
+        				Scontext.fillText(tipo_funcao[funcao]+(n_posicao+15), 790,linha);
+        			}
+      			}
+      			else  {
+        			if (funcao <3){
+        				Scontext.fillText(tipo_funcao[funcao]+n_linhas+'.'+((tamanho_array%16)-1), 790,linha);
+        				n_posicao = (n_linhas * 16) + posicao;
+        			}
+        			if (funcao==5) {
+        				n_posicao = (n_linhas * 16) + posicao;
+        				Scontext.fillText(tipo_funcao[funcao]+(n_posicao + (tamanho_array%16)-1), 790,linha);
+        			}
+      			}
+      			if(funcao==4){
+        			Scontext.fillText(tipo_funcao[funcao]+n_linhas, 790,linha);
+        			n_posicao = (n_linhas * 4) + posicao;
+      			}
+      			if(funcao==3){
+        			Scontext.fillText(tipo_funcao[funcao]+n_linhas, 790,linha);
+        			n_posicao = (n_linhas * 3) + posicao;
+      			}
+      			do {
+        			switch (parseInt(funcao)){
+        			case 0:
+        				Scontext.fillStyle = 'red';
+        				Scontext.fillText(I[n_posicao], 980-(posicao*10),linha);
+        				break;
+        			case 1:
+        				Scontext.fillStyle = 'red';
+        				Scontext.fillText(Q[n_posicao], 980-(posicao*10),linha);
+        				break;
+        			case 2:
+        				Scontext.fillStyle = 'red';
+        				Scontext.fillText(M[n_posicao], 980-(posicao*10),linha);
+        				break;
+        			case 5:
+        				Scontext.fillStyle = 'red';
+        				Scontext.fillText(R[n_posicao], 980-(posicao*10),linha);
+        				break;
+        			case 4:
+        				Scontext.fillStyle = 'red';
+        				Scontext.fillText(C[n_posicao], 850+(posicao*50),linha);
+        				if (posicao >2)
+        					posicao = 15;
+        				break;
+        			case 3:
+        				Scontext.fillStyle = 'red';
+        				Scontext.fillText(T[n_posicao], 875+(posicao*50),linha);
+        				if (posicao >1)
+        					posicao = 15;
+        				break;
+        			default:
+        				posicao = 0;
+        			}
+        			posicao++;
+        			n_posicao++;
+      			} while((n_posicao < tamanho_array) && (posicao < 15));
+
+      			if (funcao<3) {
+        			Scontext.fillStyle = 'green';
+        			Scontext.fillText(tipo_funcao[funcao]+n_linhas+'.0 - ' +tipo_funcao[funcao]+n_linhas+' = ', 990,linha);
+        			Scontext.fillStyle = 'red';
+        			Scontext.fillText(enderecoCT(tipo_funcao[funcao]+n_linhas,0), 1060,linha);
+      			}
+      			if (funcao==5) {
+        			Scontext.fillStyle = 'green';
+        			Scontext.fillText(tipo_funcao[funcao]+(n_linhas*16), 990,linha);
+      			}
+      			linha += 15;
+      			if (n_posicao >= tamanho_array)
+        			break;
+    		}
   	}
 }
 
@@ -535,7 +534,7 @@ function escreve_endereco(Aux_data, valor)
 			break;
 		case 'M':
 			M[index] = valor;
-            envia_memoria('M'+parseInt(index/16));
+            		envia_memoria('M'+parseInt(index/16));
 			break;
 		case 'R':
 			R[index] = valor;
@@ -633,7 +632,7 @@ function enderecoCT(Aux_data, index1) {
 			retorno = 0;
 			for (var ia=0; ia<16; ia++)
 				retorno = retorno + variavelCT(Q[index+ ia])* (2**ia);
-		  break;
+		  	break;
 		case 'M':
 			retorno = 0;
 			for (var ia=0; ia<16; ia++)
