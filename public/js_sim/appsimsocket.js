@@ -20,7 +20,6 @@ socket.on('tr', function(data) {
 });
 socket.on('saida', function(data) {
        Q = data.split(',');
-	//		 atualiza_simulador();
 });
 socket.on('config_socket_r', function(data) {
         num_clp1 = data;
@@ -36,12 +35,12 @@ function envia_entrada(data){
 	while (data.length < I.length) {
 		data[data.length] = I[data.length];
 	}
-     socket.emit('entradax', data.join()+ ','+  num_clp);
+     	socket.emit('entradax', data.join()+ ','+  num_clp);
 }
 
 function envia_memoria(data){
 	//while (data.length < M.length) {
 	//	data[data.length] = M[data.length];
 	//}
-     socket.emit('memoriax', data+','+enderecoCT(data,0)+ ','+  num_clp);
+     	socket.emit('memoriax', data+','+enderecoCT(data,0)+ ','+  num_clp);
 }
