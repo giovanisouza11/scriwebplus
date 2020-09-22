@@ -362,7 +362,7 @@ if (ativo) {
 						io.in(clp[clp_index*2]).emit('timer', T.join());
 						io.in(clp[clp_index*2]).emit('counter', C.join());
 						io.in(clp[clp_index*2]).emit('saida', Q.join());
-						console.log('Contador = '+C+'  endereço:'+clp[clp_index*2]);
+						//console.log('Contador = '+C+'  endereço:'+clp[clp_index*2]);
 						io.in(clp[clp_index*2]).emit('localizacao', localizacao_prog);
 					//}
 				}
