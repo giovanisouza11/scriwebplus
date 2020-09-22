@@ -174,7 +174,7 @@ if (ativo) {
 				}
 	   		}
 			if (bandeira == false){
-	   			if (y<clp.length)
+	   			if (y<(clp.length/2))
 					x=y;
 				clp[x*2]= data;
 	   			clp[x*2+1] = socket.id;
