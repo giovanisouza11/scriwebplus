@@ -50,7 +50,7 @@ function tBotao() {
 	
 		modal.style.display = "block";
 		modalc.style.display = "none";
-		document.getElementById('input1').value = num_clp1;
+		document.getElementById('input1').value = localStorage.num_clp1;
 		document.getElementById('input2').value = localStorage.tela_largura;
 		document.getElementById('input3').value = localStorage.tela_altura;
 		// Get the <Close> element that closes the modal
