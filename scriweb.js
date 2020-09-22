@@ -209,6 +209,7 @@ if (ativo) {
 			socket.join(data);
 			console.log('CLP1 CONECTADoS: '+clp);
 			console.log('SUP1 CONECTADoS: '+sup);
+			console.log('programas: '+programaS[data]);
 		});
 		socket.on('programax', function(data) {
 			programa1 = data.split(',');
