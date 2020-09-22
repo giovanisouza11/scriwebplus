@@ -191,6 +191,8 @@ if (ativo) {
 	   		for(x=0; x<(sup.length/2); x++){
 				if (socket.id == sup[x*2+1]){
 					socket.leave(sup[x*2]);
+					sup[x*2]= '';
+					sup[x*2+1]= '';
 					//break;
 				}
 	   		}
