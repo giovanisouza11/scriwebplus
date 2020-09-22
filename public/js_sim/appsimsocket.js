@@ -1,6 +1,6 @@
 
 var socket = io(); //('http://192.168.0.100:4333');
-var num_clp1;
+//var num_clp1;
 
 socket.on('memoria', function(data) {
 	   M = data.split(',');
