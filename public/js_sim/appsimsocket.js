@@ -22,7 +22,7 @@ socket.on('saida', function(data) {
        Q = data.split(',');
 });
 socket.on('config_socket_r', function(data) {
-        num_clp1 = data;
+       localStorage.setItem("num_clp1", data);
 });
 function Enviar(){
     socket.emit('entradax', I.join()+ ','+  num_clp);
