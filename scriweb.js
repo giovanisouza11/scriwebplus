@@ -196,7 +196,7 @@ if (ativo) {
 	   		}
 			for(x=0; x<(clp.length/2); x++){
 				if (data == clp[x*2]){
-					socket.leave(sup[x*2]);
+					//socket.leave(sup[x*2]);
 					break;
 				}
 	   		}
