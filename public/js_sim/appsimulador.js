@@ -235,7 +235,7 @@ function simIhm() {
   	Scontext.fillRect(780, 5, 310, 560);
   	Scontext.font = '36pt Arial';
   	Scontext.fillStyle = 'red';
-	Scontext.fillText(num_clp1, 795, 60);
+	Scontext.fillText(localStorage.num_clp1, 795, 60);
 	Scontext.fillStyle = 'black';
   	Scontext.strokeRect(785, 10, 305, 555);
   	Scontext.font = '16pt Arial';
