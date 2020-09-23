@@ -209,7 +209,7 @@ if (ativo) {
 			socket.join(data);
 			console.log('CLP1 CONECTADoS: '+clp);
 			console.log('SUP1 CONECTADoS: '+sup);
-			console.log('programas: '+programaS[data]);
+			//console.log('programas: '+programaS[data]);
 		});
 		socket.on('programax', function(data) {
 			programa1 = data.split(',');
@@ -226,6 +226,7 @@ if (ativo) {
 			CS[x] = C.join();
 			comandosS[x] = comandos;
 			programaS[x] = programa1.join();
+			console.log('programa['+ x +']: '+programaS[x]);
 			//console.log(x+' '+clp[x*2]+' '+clp[x*2+1]);
 			//console.log('Cx=  '+CS[x] + '   C= '+C);
 			PA[x]=0;
