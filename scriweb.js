@@ -50,20 +50,17 @@ if (ativo) {
     	const PORT = process.env.PORT || 4333;	
     	var path = require('path');
     	var express = require('express');
+	var serveIndex = require('serve-index');
     	var app = express();
     	var router = express.Router();
     	var server = require('http').Server(app);
     	var io = require('socket.io')(server);
 
     	app.use(express.static(__dirname + '/public'));
-    	//app.use('/simulacao', express.static('/scriweb/simulacao'));
-    	//app.use('/ladder',express.static('/scriweb/ladder'));
+    	app.use('/files_sim', express.static('files'));
     	app.get('/', function(req, res) {
         	res.sendFile(__dirname + '/scriweb.html');
     	});
-    	//app.get('/config',function(req,res){
-        //	res.sendFile(__dirname + '/scriwebconfig.html');
-    	//});
     	app.get('/about',function(req,res){
         	res.sendFile(__dirname + '/scriwebabout.html');
     	});
@@ -76,9 +73,6 @@ if (ativo) {
     	app.get('/servidor',function(req,res){
         	res.sendFile(__dirname + '/servidor.html');
     	});
-    	//app.get('/configsim',function(req,res){
-        //	res.sendFile(__dirname + '/simconfig.html');
-    	//});
     	app.get('/helpsim',function(req,res){
         	res.sendFile(__dirname + '/simhelp.html');
     	});
