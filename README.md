@@ -1,8 +1,8 @@
 # scriweb
 Supervisório e Ladder Simulador
-simulador de ladder com um simulador industrial.
-Aplicativo disponível em
-Scriweb.herokuapp.com
-Scriweb.heroku.app/simulador
+Simulador de ladder com simulador industrial.
+Aplicativo disponível em:
+Ladder: Scriweb.herokuapp.com
+Simulador: Scriweb.heroku.app/simulador
 
-Deve baixar o diretório público/svriweb
+Para ver modelos deve-se baixar o diretório simulacao.
