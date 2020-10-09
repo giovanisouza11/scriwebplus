@@ -124,11 +124,11 @@ function tBotao() {
 	}
 	if (simEdicao==0 && valor_chave[6]==1){
 		var inputCSV = document.createElement('input');
-	 	inputCSV.type = 'download';
+	 	inputCSV.type = 'file';
 		inputCSV.accept = '*.csv';
 		inputCSV.click();
 		inputCSV.onchange = function() {
-	    		var file = this.files[0];
+	    		var file = files_sim;
 			leitorDeCSV.readAsText(file);
 			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
 		};
