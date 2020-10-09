@@ -50,7 +50,7 @@ if (ativo) {
     	const PORT = process.env.PORT || 4333;	
     	var path = require('path');
     	var express = require('express');
-	var serveIndex = require('serve-index');
+	//var serveIndex = require('serve-index');
     	var app = express();
     	var router = express.Router();
     	var server = require('http').Server(app);
