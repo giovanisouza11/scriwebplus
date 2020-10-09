@@ -125,6 +125,7 @@ function tBotao() {
 	if (simEdicao==0 && valor_chave[6]==1){
 		var inputCSV = document.createElement('input');
 	 	inputCSV.type = 'file';
+		inputCSV.path  ='public';
 		inputCSV.accept = '*.csv';
 		inputCSV.click();
 		inputCSV.onchange = function() {
