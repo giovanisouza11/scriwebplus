@@ -44,7 +44,7 @@ function draw_ladder_inicio() {
 //=====================================================================================
 function draw_ladder_fundo(tipo){
     for (var i=0; i<(Num_Linhas-1); i++) {
-		context2.drawImage(AIVertical, (AIVertical.width/6)*tipo, 0, AIVertical.width/6, 56, 57, i*60, 5, 56);
+		context2.drawImage(AIVertical, (AIVertical.width/6)*tipo, 0, AIVertical.width/6, 656, 60, i*60, 5, 56);
 		for (var j=0; j<8; j++) {
 			context2.drawImage(AILadder, (AILadder.width/7)*tipo, 780, AILadder.width/7, 60, 65+(j*60), (i)*60, 60, 60);
 		}
