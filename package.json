@@ -1,6 +1,6 @@
 {
   "name": "scriweb",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "Supervisorio Criciuma Web",
   "main": "scriweb.js",
   "dependencies": {
@@ -8,12 +8,30 @@
     "http": "^0.0.0",
     "path": "^0.12.7",
     "socket.io": "^2.3.0",
+	"server-index": "^0.0.0",
     "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "electron": "^9.0.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node scriweb.js"
+    "start": "electron scriweb.js",
+    "win32p": "electron-builder --windows portable:ia32",
+    "win32": "electron-builder --windows :ia32",
+    "win64p": "electron-builder --windows pnsisortable:x64",
+    "win64": "electron-builder --windows nsis:x64",
+    "linux32": "electron-builder --linux deb tar.xz",
+    "build": "electron-builder -mwl"
   },
   "author": "Giovani Batista de Souza",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giovanisouza11/scriweb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/giovanisouza11/scriweb/issues"
+  },
+  "homepage": "https://github.com/giovanisouza11/scriweb#readme"
 }
