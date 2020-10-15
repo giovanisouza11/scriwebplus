@@ -133,7 +133,7 @@ function tBotao() {
 			//r fileArr = file.target.result.split('\n');
 			//draw_processo(fileArr);	
 		
-			leitorDeCSV.readAsText(file);
+			leitorDeCSV.readAsDataURL(file);
 			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
 		};
 		comandos = 0;	
