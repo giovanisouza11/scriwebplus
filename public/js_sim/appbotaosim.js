@@ -123,16 +123,19 @@ function tBotao() {
 		comandos = 0;
 	}
 	if (simEdicao==0 && valor_chave[6]==1){
-		var inputCSV = document.createElement('input');
-	 	inputCSV.type = 'file';
-		inputCSV.path  ='/public';
-		inputCSV.accept = '*.csv';
-		inputCSV.click();
-		inputCSV.onchange = function() {
-	    		var file =  this.files[0];
-			leitorDeCSV.readAsText(file);
-			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
-		};
+		//var inputCSV = document.createElement('input');
+	 	//inputCSV.type = 'file';
+		//inputCSV.path  ='/public';
+		//inputCSV.accept = '*.csv';
+		//inputCSV.click();
+		//inputCSV.onchange = function() {
+	    		var file =  "simulacao/Elevador/Elevador.csv";
+			var fileArr = file.target.result.split('\n');
+			draw_processo(fileArr);	
+		
+		//	leitorDeCSV.readAsText(file);
+		//	simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
+		//};
 		comandos = 0;	
 		valor_chave[4]=0;
 		valor_chave[5]=1;
