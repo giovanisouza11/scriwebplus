@@ -124,9 +124,9 @@ function tBotao() {
 	}
 	if (simEdicao==0 && valor_chave[6]==1){
 		var inputCSV = document.createElement('input');
-	 	inputCSV.type = 'file';
+	 	inputCSV.type = 'url';
 		inputCSV.path  ='http://scriweb.herokuapp.com/scriweb/simulacao/';
-		inputCSV.accept = '*.csv';
+		inputCSV.accept = '.CSV';
 		inputCSV.click();
 		inputCSV.onchange = function() {
 	    		var file =  this.files[0]; //"http://scriweb.herokuapp.com/scriweb/simulacao/Elevador/Elevador.csv";
