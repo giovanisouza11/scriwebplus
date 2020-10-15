@@ -57,6 +57,7 @@ if (ativo) {
     	var io = require('socket.io')(server);
 
     	app.use(express.static(__dirname + '/public'));
+	app.use('/ftp', express.static(__dirname + '/scriweb/simulacao'));
     	//app.use('/ftp', express.static(__dirname + '/scriweb/simulacao'), serveIndex(__dirname + '/scriweb/simulacao', {'icons': true}));
     	app.get('/', function(req, res) {
         	res.sendFile(__dirname + '/scriweb.html');
