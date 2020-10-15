@@ -130,11 +130,11 @@ function tBotao() {
 		//inputCSV.click();
 		//inputCSV.onchange = function() {
 	    		var file =  "/public/scriweb/simulacao/Elevador/Elevador.csv";
-			var fileArr = file.target.result.split('\n');
-			draw_processo(fileArr);	
+			//var fileArr = file.target.result.split('\n');
+			//draw_processo(fileArr);	
 		
-		//	leitorDeCSV.readAsText(file);
-		//	simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
+			leitorDeCSV.readAsText(file);
+			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
 		//};
 		comandos = 0;	
 		valor_chave[4]=0;
