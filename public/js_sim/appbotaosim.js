@@ -129,7 +129,7 @@ function tBotao() {
 		//inputCSV.accept = '*.csv';
 		//inputCSV.click();
 		//inputCSV.onchange = function() {
-	    		var file =  "/public/scriweb/simulacao/Elevador/Elevador.csv";
+	    		var file =  "/scriweb/simulacao/Elevador/Elevador.csv";
 			//var fileArr = file.target.result.split('\n');
 			//draw_processo(fileArr);	
 		
