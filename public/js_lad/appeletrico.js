@@ -19,15 +19,15 @@ function draw_eletrico() {
     canvas.height = 500;
     canvas.top = 200;
 	var i;
-    for(i=0; i<6; i++){
+    for(i=0; i<16; i++){
 	   	valor_botao[i] = 0;
 		I[i] = 0;
 	}
-    for(i=0; i<6; i++)
-       	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 62+(i*60), 0, AImage1.width/5, 110);
+    for(i=0; i<16; i++)
+       	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 46+(i*46), 0, AImage1.width/5, 110);
 	desenha_clp();
-	for(i=0; i<6; i++)
-		context.drawImage(AImage1, (AImage1.width/5)*3, 110, AImage1.width/5, 110, 62+i*60, 330, AImage1.width/5, 110);
+	for(i=0; i<16; i++)
+		context.drawImage(AImage1, (AImage1.width/5)*1, 110, AImage1.width/5, 110, 46+i*46, 330, AImage1.width/5, 110);
     for(i=0; i<31; i++)
 		valor_chave[i] = 0;
 }
@@ -107,16 +107,16 @@ function draw_chave(posicaox, posisicaoy) {
 	context= canvas.getContext("2d");
 	var index = posicaox;
 	var i=posicaox;
-	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[index]+1), 0, AImage1.width/5, 110, 62+i*60, 0, AImage1.width/5, 110);
+	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[index]+1), 0, AImage1.width/5, 110, 46+i*46, 0, AImage1.width/5, 110);
 }
 
 function trocar() {
     var posicaox;
-	posicaox = parseInt((window.event.clientX -62 )/ 60);
+	posicaox = parseInt((window.event.clientX -46 )/ 46);
     var posicaoy=window.event.clientY;
 	var index = posicaox;
 
-    if ((posicaox >=0) && posicaox < 6)
+    if ((posicaox >=0) && posicaox < 16)
     {
         if (valor_botao[index]==0) {
             valor_botao[index]=1;
