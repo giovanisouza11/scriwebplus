@@ -19,14 +19,14 @@ function draw_eletrico() {
     canvas.height = 500;
     canvas.top = 200;
 	var i;
-    for(i=0; i<13; i++){
+    for(i=0; i<12; i++){
 	   	valor_botao[i] = 0;
 		I[i] = 0;
 	}
-    for(i=0; i<13; i++)
+    for(i=0; i<12; i++)
        	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 30+(i*32), 0, AImage1.width/5, 110);
 	desenha_clp();
-	for(i=0; i<16; i++)
+	for(i=0; i<12; i++)
 		context.drawImage(AImage1, (AImage1.width/5)*1, 110, AImage1.width/5, 110, 30+i*32, 330, AImage1.width/5, 110);
     for(i=0; i<31; i++)
 		valor_chave[i] = 0;
@@ -36,14 +36,14 @@ function desenha_clp(){
 	context.font = '9pt Arial';
 	context.lineWidth = 1;
 	context.fillStyle = 'ivory';
-	context.fillRect(10, 110, 410, 220);
+	context.fillRect(5, 110, 410, 220);
 	context.fillStyle = 'black';
-	context.strokeRect(10, 110, 410, 220);
+	context.strokeRect(5, 110, 410, 220);
 	context.lineWidth = 0.3;
-	context.strokeRect(10, 130, 410, 40);
-	context.strokeRect(10, 270, 410, 40);
+	context.strokeRect(5, 130, 410, 40);
+	context.strokeRect(5, 270, 410, 40);
 	context.lineWidth = 1;
-	for(var i=0; i<14; i++)
+	for(var i=0; i<13; i++)
 		desenha_borne_clp(i);
 	context.font = '9pt Arial';
 
@@ -68,24 +68,24 @@ function desenha_clp(){
 function desenha_borne_clp(i){
 	context.lineWidth = 1;
 	context.fillStyle = 'black';
-	context.strokeRect(10+(i*32), 130, 10, 20);
-	context.strokeRect(10+(i*32), 290, 10, 20);
+	context.strokeRect(8+(i*32), 130, 14, 20);
+	context.strokeRect(8+(i*32), 290, 14, 20);
 	context.lineWidth = 0.3;
-	context.strokeRect(10+(i*32), 310, 10, 20);
-	context.strokeRect(10+(i*32), 110, 10, 20);
+	context.strokeRect(8+(i*32), 310, 14, 20);
+	context.strokeRect(8+(i*32), 110, 14, 20);
 	context.lineWidth = 0.5;
 	context.shadowColor = 'black';
 	context.shadowOffsetX = 1;
 	context.shadowOffsetY = 1;
-	context.strokeRect(12+(i*32), 113, 8, 14);
-	context.strokeRect(12+(i*32), 313, 8, 14);
+	context.strokeRect(10+(i*32), 113, 12, 12);
+	context.strokeRect(10+(i*32), 313, 12, 12);
 	context.beginPath();
-	context.ellipse(15+(i*32), 120, 5, 5, 0, 0, 359);
-	context.ellipse(15+(i*32), 120, 5, 2, i*30, 0, 359);
+	context.ellipse(15+(i*32), 120, 4, 4, 0, 0, 359);
+	context.ellipse(15+(i*32), 120, 4, 2, i*30, 0, 359);
 	context.stroke();
 	context.beginPath();
-	context.ellipse(15+(i*32), 320, 5, 5, 0, 0, 359);
-	context.ellipse(15+(i*32), 320, 5, 2, i*30, 0, 359);
+	context.ellipse(15+(i*32), 320, 4, 4, 0, 0, 359);
+	context.ellipse(15+(i*32), 320, 4, 2, i*30, 0, 359);
 	context.stroke();
 	context.lineWidth = 1;
 	context.shadowOffsetX = 0;
@@ -93,12 +93,12 @@ function desenha_borne_clp(i){
 	context.font = '7pt Arial';
 
 	if (i==0){
-		context.fillText('COM', 10, 165);
-		context.fillText('COM', 10, 285);
+		context.fillText('COM', 6, 165);
+		context.fillText('COM', 6, 285);
 	}
 	else {
-		context.fillText('I0.'+(i-1), 21+(i*32), 165);
-		context.fillText('Q0.'+(i-1), 21+(i*32), 285);
+		context.fillText('I0.'+(i-1), 15+(i*32), 165);
+		context.fillText('Q0.'+(i-1), 15+(i*32), 285);
 	}
 }
 
