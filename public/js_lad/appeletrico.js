@@ -68,17 +68,17 @@ function desenha_clp(){
 function desenha_borne_clp(i){
 	context.lineWidth = 1;
 	context.fillStyle = 'black';
-	context.strokeRect(8+(i*32), 130, 14, 20);
-	context.strokeRect(8+(i*32), 290, 14, 20);
+	context.strokeRect(8+(i*32), 130, 16, 20);
+	context.strokeRect(8+(i*32), 290, 16, 20);
 	context.lineWidth = 0.3;
-	context.strokeRect(8+(i*32), 310, 14, 20);
-	context.strokeRect(8+(i*32), 110, 14, 20);
+	context.strokeRect(8+(i*32), 310, 16, 20);
+	context.strokeRect(8+(i*32), 110, 16, 20);
 	context.lineWidth = 0.5;
 	context.shadowColor = 'black';
 	context.shadowOffsetX = 1;
 	context.shadowOffsetY = 1;
-	context.strokeRect(10+(i*32), 113, 12, 12);
-	context.strokeRect(10+(i*32), 313, 12, 12);
+	context.strokeRect(10+(i*32), 113, 14, 14);
+	context.strokeRect(10+(i*32), 313, 14, 14);
 	context.beginPath();
 	context.ellipse(15+(i*32), 120, 4, 4, 0, 0, 359);
 	context.ellipse(15+(i*32), 120, 4, 2, i*30, 0, 359);
@@ -97,8 +97,8 @@ function desenha_borne_clp(i){
 		context.fillText('COM', 6, 285);
 	}
 	else {
-		context.fillText('I0.'+(i-1), 15+(i*32), 165);
-		context.fillText('Q0.'+(i-1), 15+(i*32), 285);
+		context.fillText('I0.'+(i-1), 8+(i*32), 165);
+		context.fillText('Q0.'+(i-1), 8+(i*32), 285);
 	}
 }
 
@@ -165,7 +165,7 @@ function liga_led_CLP(){
 			context.fillStyle = 'green';
 		else
 			context.fillStyle = 'white';
-		context.fillRect(30+(i*32), 132, 24, 16);
+		context.fillRect(10+(i*32), 132, 14, 16);
 	}
 	context.font = '9pt Arial';
 
@@ -210,7 +210,7 @@ function liga_led_CLP(){
 				context.fillStyle = 'green';
 			else
 				context.fillStyle = 'white';
-			context.fillRect(30+(i*32), 292, 24, 16);
+			context.fillRect(10+(i*32), 292, 14, 16);
 
 			context.drawImage(AImage1, (AImage1.width/5)+(AImage1.width/5)*Q[i], 110, AImage1.width/5, 110, 30+i*32, 330, AImage1.width/5, 110);
 		}
@@ -221,13 +221,13 @@ function liga_led_CLP(){
 function stop_CLP(){
 	context.fillStyle = 'red';
 	context.fillRect(27, 242, 32, 16);
-	for(var i=0; i <6; i++){
+	for(var i=0; i <12; i++){
 		context.fillStyle = 'white';
-		context.fillRect(84+(i*62), 132, 24, 16);
+		context.fillRect(10+(i*32), 132, 14, 16);
 	}
-	for(var i=0; i <6; i++){
+	for(var i=0; i <12; i++){
 		context.fillStyle = 'white';
-		context.fillRect(84+(i*62), 292, 24, 16);
-		context.drawImage(AImage1, (AImage1.width/5)*0, 110, AImage1.width/5, 110, 62+i*60, 330, AImage1.width/5, 110);
+		context.fillRect(10+(i*32), 292, 14, 16);
+		context.drawImage(AImage1, (AImage1.width/5)*0, 110, AImage1.width/5, 110, 30+i*32, 330, AImage1.width/5, 110);
 	}
 }
