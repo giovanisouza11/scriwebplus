@@ -43,8 +43,9 @@ function desenha_clp(){
 	context.strokeRect(10, 130, 410, 40);
 	context.strokeRect(10, 270, 410, 40);
 	context.lineWidth = 1;
-	for(var i=0; i<13; i++)
+	for(var i=0; i<14; i++)
 		desenha_borne_clp(i);
+	context.font = '9pt Arial';
 
 	context.fillStyle = 'red';
 	context.fillRect(27, 201, 32, 18);
@@ -67,28 +68,29 @@ function desenha_clp(){
 function desenha_borne_clp(i){
 	context.lineWidth = 1;
 	context.fillStyle = 'black';
-	context.strokeRect(15+(i*32), 130, 28, 20);
-	context.strokeRect(15+(i*32), 290, 28, 20);
+	context.strokeRect(10+(i*32), 130, 10, 20);
+	context.strokeRect(10+(i*32), 290, 10, 20);
 	context.lineWidth = 0.3;
-	context.strokeRect(15+(i*32), 310, 28, 20);
-	context.strokeRect(15+(i*32), 110, 28, 20);
+	context.strokeRect(10+(i*32), 310, 10, 20);
+	context.strokeRect(10+(i*32), 110, 10, 20);
 	context.lineWidth = 0.5;
 	context.shadowColor = 'black';
 	context.shadowOffsetX = 1;
 	context.shadowOffsetY = 1;
-	context.strokeRect(217+(i*32), 113, 14, 14);
-	context.strokeRect(17+(i*32), 313, 14, 14);
+	context.strokeRect(12+(i*32), 113, 8, 14);
+	context.strokeRect(12+(i*32), 313, 8, 14);
 	context.beginPath();
-	context.ellipse(17+(i*32), 120, 5, 5, 0, 0, 359);
-	context.ellipse(17+(i*32), 120, 5, 2, i*30, 0, 359);
+	context.ellipse(15+(i*32), 120, 5, 5, 0, 0, 359);
+	context.ellipse(15+(i*32), 120, 5, 2, i*30, 0, 359);
 	context.stroke();
 	context.beginPath();
-	context.ellipse(17+(i*32), 320, 5, 5, 0, 0, 359);
-	context.ellipse(17+(i*32), 320, 5, 2, i*30, 0, 359);
+	context.ellipse(15+(i*32), 320, 5, 5, 0, 0, 359);
+	context.ellipse(15+(i*32), 320, 5, 2, i*30, 0, 359);
 	context.stroke();
 	context.lineWidth = 1;
 	context.shadowOffsetX = 0;
 	context.shadowOffsetY = 0;
+	context.font = '7pt Arial';
 
 	if (i==0){
 		context.fillText('COM', 10, 165);
