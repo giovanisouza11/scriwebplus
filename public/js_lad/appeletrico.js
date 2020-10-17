@@ -19,15 +19,15 @@ function draw_eletrico() {
     canvas.height = 500;
     canvas.top = 200;
 	var i;
-    for(i=0; i<16; i++){
+    for(i=0; i<13; i++){
 	   	valor_botao[i] = 0;
 		I[i] = 0;
 	}
-    for(i=0; i<16; i++)
-       	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 15+(i*32), 0, AImage1.width/5, 110);
+    for(i=0; i<13; i++)
+       	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 30+(i*32), 0, AImage1.width/5, 110);
 	desenha_clp();
 	for(i=0; i<16; i++)
-		context.drawImage(AImage1, (AImage1.width/5)*1, 110, AImage1.width/5, 110, 15+i*32, 330, AImage1.width/5, 110);
+		context.drawImage(AImage1, (AImage1.width/5)*1, 110, AImage1.width/5, 110, 30+i*32, 330, AImage1.width/5, 110);
     for(i=0; i<31; i++)
 		valor_chave[i] = 0;
 }
@@ -43,7 +43,7 @@ function desenha_clp(){
 	context.strokeRect(10, 130, 410, 40);
 	context.strokeRect(10, 270, 410, 40);
 	context.lineWidth = 1;
-	for(var i=0; i<7; i++)
+	for(var i=0; i<13; i++)
 		desenha_borne_clp(i);
 
 	context.fillStyle = 'red';
@@ -67,36 +67,36 @@ function desenha_clp(){
 function desenha_borne_clp(i){
 	context.lineWidth = 1;
 	context.fillStyle = 'black';
-	context.strokeRect(20+(i*62), 130, 28, 20);
-	context.strokeRect(20+(i*62), 290, 28, 20);
+	context.strokeRect(15+(i*32), 130, 28, 20);
+	context.strokeRect(15+(i*32), 290, 28, 20);
 	context.lineWidth = 0.3;
-	context.strokeRect(20+(i*62), 310, 28, 20);
-	context.strokeRect(20+(i*62), 110, 28, 20);
+	context.strokeRect(15+(i*32), 310, 28, 20);
+	context.strokeRect(15+(i*32), 110, 28, 20);
 	context.lineWidth = 0.5;
 	context.shadowColor = 'black';
 	context.shadowOffsetX = 1;
 	context.shadowOffsetY = 1;
-	context.strokeRect(28+(i*62), 113, 14, 14);
-	context.strokeRect(28+(i*62), 313, 14, 14);
+	context.strokeRect(217+(i*32), 113, 14, 14);
+	context.strokeRect(17+(i*32), 313, 14, 14);
 	context.beginPath();
-	context.ellipse(35+(i*62), 120, 5, 5, 0, 0, 359);
-	context.ellipse(35+(i*62), 120, 5, 2, i*60, 0, 359);
+	context.ellipse(17+(i*32), 120, 5, 5, 0, 0, 359);
+	context.ellipse(17+(i*32), 120, 5, 2, i*30, 0, 359);
 	context.stroke();
 	context.beginPath();
-	context.ellipse(35+(i*62), 320, 5, 5, 0, 0, 359);
-	context.ellipse(35+(i*62), 320, 5, 2, i*60, 0, 359);
+	context.ellipse(17+(i*32), 320, 5, 5, 0, 0, 359);
+	context.ellipse(17+(i*32), 320, 5, 2, i*30, 0, 359);
 	context.stroke();
 	context.lineWidth = 1;
 	context.shadowOffsetX = 0;
 	context.shadowOffsetY = 0;
 
 	if (i==0){
-		context.fillText('COM', 20, 165);
-		context.fillText('COM', 20, 285);
+		context.fillText('COM', 10, 165);
+		context.fillText('COM', 10, 285);
 	}
 	else {
-		context.fillText('I0.'+(i-1), 21+(i*62), 165);
-		context.fillText('Q0.'+(i-1), 21+(i*62), 285);
+		context.fillText('I0.'+(i-1), 21+(i*32), 165);
+		context.fillText('Q0.'+(i-1), 21+(i*32), 285);
 	}
 }
 
@@ -107,12 +107,12 @@ function draw_chave(posicaox, posisicaoy) {
 	context= canvas.getContext("2d");
 	var index = posicaox;
 	var i=posicaox;
-	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[index]+1), 0, AImage1.width/5, 110, 15+i*32, 0, AImage1.width/5, 110);
+	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[index]+1), 0, AImage1.width/5, 110, 30+i*32, 0, AImage1.width/5, 110);
 }
 
 function trocar() {
     var posicaox;
-	posicaox = parseInt((window.event.clientX -15 )/ 32);
+	posicaox = parseInt((window.event.clientX -30 )/ 32);
     var posicaoy=window.event.clientY;
 	var index = posicaox;
 
@@ -158,12 +158,12 @@ function run_CLP(){
 }
 
 function liga_led_CLP(){
-	for(var i=0; i <6; i++){
+	for(var i=0; i <13; i++){
 		if (valor_botao[i]==1)
 			context.fillStyle = 'green';
 		else
 			context.fillStyle = 'white';
-		context.fillRect(84+(i*62), 132, 24, 16);
+		context.fillRect(30+(i*32), 132, 24, 16);
 	}
 	context.font = '9pt Arial';
 
@@ -203,14 +203,14 @@ function liga_led_CLP(){
 		context.fillText(i, j+403-(i*16), 256);
 	}
 	if(comandos != 0) {
-		for(var i=0; i <6; i++){
+		for(var i=0; i <13; i++){
 			if (Q[i]==1)
 				context.fillStyle = 'green';
 			else
 				context.fillStyle = 'white';
-			context.fillRect(84+(i*62), 292, 24, 16);
+			context.fillRect(30+(i*32), 292, 24, 16);
 
-			context.drawImage(AImage1, (AImage1.width/5)+(AImage1.width/5)*Q[i], 110, AImage1.width/5, 110, 62+i*60, 330, AImage1.width/5, 110);
+			context.drawImage(AImage1, (AImage1.width/5)+(AImage1.width/5)*Q[i], 110, AImage1.width/5, 110, 30+i*32, 330, AImage1.width/5, 110);
 		}
 	}
 
