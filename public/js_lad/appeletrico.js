@@ -36,12 +36,12 @@ function desenha_clp(){
 	context.font = '9pt Arial';
 	context.lineWidth = 1;
 	context.fillStyle = 'ivory';
-	context.fillRect(5, 110, 410, 220);
+	context.fillRect(5, 110, 415, 220);
 	context.fillStyle = 'black';
-	context.strokeRect(5, 110, 410, 220);
+	context.strokeRect(5, 110, 415, 220);
 	context.lineWidth = 0.3;
-	context.strokeRect(5, 130, 410, 40);
-	context.strokeRect(5, 270, 410, 40);
+	context.strokeRect(5, 130, 415, 40);
+	context.strokeRect(5, 270, 415, 40);
 	context.lineWidth = 1;
 	for(var i=0; i<13; i++)
 		desenha_borne_clp(i);
@@ -80,12 +80,12 @@ function desenha_borne_clp(i){
 	context.strokeRect(10+(i*32), 113, 14, 14);
 	context.strokeRect(10+(i*32), 313, 14, 14);
 	context.beginPath();
-	context.ellipse(15+(i*32), 120, 4, 4, 0, 0, 359);
-	context.ellipse(15+(i*32), 120, 4, 2, i*30, 0, 359);
+	context.ellipse(17+(i*32), 120, 4, 4, 0, 0, 359);
+	context.ellipse(17+(i*32), 120, 4, 2, i*30, 0, 359);
 	context.stroke();
 	context.beginPath();
-	context.ellipse(15+(i*32), 320, 4, 4, 0, 0, 359);
-	context.ellipse(15+(i*32), 320, 4, 2, i*30, 0, 359);
+	context.ellipse(17+(i*32), 320, 4, 4, 0, 0, 359);
+	context.ellipse(17+(i*32), 320, 4, 2, i*30, 0, 359);
 	context.stroke();
 	context.lineWidth = 1;
 	context.shadowOffsetX = 0;
@@ -160,12 +160,12 @@ function run_CLP(){
 }
 
 function liga_led_CLP(){
-	for(var i=0; i <13; i++){
+	for(var i=0; i <12; i++){
 		if (valor_botao[i]==1)
 			context.fillStyle = 'green';
 		else
 			context.fillStyle = 'white';
-		context.fillRect(10+(i*32), 132, 14, 16);
+		context.fillRect(42+(i*32), 132, 12, 16);
 	}
 	context.font = '9pt Arial';
 
@@ -205,12 +205,12 @@ function liga_led_CLP(){
 		context.fillText(i, j+403-(i*16), 256);
 	}
 	if(comandos != 0) {
-		for(var i=0; i <13; i++){
+		for(var i=0; i <12; i++){
 			if (Q[i]==1)
 				context.fillStyle = 'green';
 			else
 				context.fillStyle = 'white';
-			context.fillRect(10+(i*32), 292, 14, 16);
+			context.fillRect(42+(i*32), 292, 12, 16);
 
 			context.drawImage(AImage1, (AImage1.width/5)+(AImage1.width/5)*Q[i], 110, AImage1.width/5, 110, 30+i*32, 330, AImage1.width/5, 110);
 		}
