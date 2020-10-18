@@ -24,10 +24,10 @@ function draw_eletrico() {
 		I[i] = 0;
 	}
     for(i=0; i<12; i++)
-       	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 30+(i*32), 0, AImage1.width/5, 110);
+       	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 33+(i*32), 0, AImage1.width/5, 110);
 	desenha_clp();
 	for(i=0; i<12; i++)
-		context.drawImage(AImage1, (AImage1.width/5)*1, 110, AImage1.width/5, 110, 30+i*32, 330, AImage1.width/5, 110);
+		context.drawImage(AImage1, (AImage1.width/5)*1, 110, AImage1.width/5, 110, 33+i*32, 330, AImage1.width/5, 110);
     for(i=0; i<31; i++)
 		valor_chave[i] = 0;
 }
@@ -68,8 +68,8 @@ function desenha_clp(){
 function desenha_borne_clp(i){
 	context.lineWidth = 1;
 	context.fillStyle = 'black';
-	context.strokeRect(8+(i*32), 130, 16, 20);
-	context.strokeRect(8+(i*32), 290, 16, 20);
+	context.strokeRect(10+(i*32), 130, 16, 20);
+	context.strokeRect(10+(i*32), 290, 16, 20);
 	context.lineWidth = 0.3;
 	context.strokeRect(8+(i*32), 310, 16, 20);
 	context.strokeRect(8+(i*32), 110, 16, 20);
@@ -109,12 +109,12 @@ function draw_chave(posicaox, posisicaoy) {
 	context= canvas.getContext("2d");
 	var index = posicaox;
 	var i=posicaox;
-	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[index]+1), 0, AImage1.width/5, 110, 30+i*32, 0, AImage1.width/5, 110);
+	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[index]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
 }
 
 function trocar() {
     var posicaox;
-	posicaox = parseInt((window.event.clientX -30 )/ 32);
+	posicaox = parseInt((window.event.clientX -33 )/ 32);
     var posicaoy=window.event.clientY;
 	var index = posicaox;
 
@@ -165,7 +165,7 @@ function liga_led_CLP(){
 			context.fillStyle = 'green';
 		else
 			context.fillStyle = 'white';
-		context.fillRect(42+(i*32), 132, 12, 16);
+		context.fillRect(45+(i*32), 132, 12, 16);
 	}
 	context.font = '9pt Arial';
 
@@ -210,9 +210,9 @@ function liga_led_CLP(){
 				context.fillStyle = 'green';
 			else
 				context.fillStyle = 'white';
-			context.fillRect(42+(i*32), 292, 12, 16);
+			context.fillRect(45+(i*32), 292, 12, 16);
 
-			context.drawImage(AImage1, (AImage1.width/5)+(AImage1.width/5)*Q[i], 110, AImage1.width/5, 110, 30+i*32, 330, AImage1.width/5, 110);
+			context.drawImage(AImage1, (AImage1.width/5)+(AImage1.width/5)*Q[i], 110, AImage1.width/5, 110, 33+i*32, 330, AImage1.width/5, 110);
 		}
 	}
 
@@ -223,11 +223,11 @@ function stop_CLP(){
 	context.fillRect(27, 242, 32, 16);
 	for(var i=0; i <12; i++){
 		context.fillStyle = 'white';
-		context.fillRect(10+(i*32), 132, 14, 16);
+		context.fillRect(45+(i*32), 132, 14, 16);
 	}
 	for(var i=0; i <12; i++){
 		context.fillStyle = 'white';
-		context.fillRect(10+(i*32), 292, 14, 16);
-		context.drawImage(AImage1, (AImage1.width/5)*0, 110, AImage1.width/5, 110, 30+i*32, 330, AImage1.width/5, 110);
+		context.fillRect(45+(i*32), 292, 14, 16);
+		context.drawImage(AImage1, (AImage1.width/5)*0, 110, AImage1.width/5, 110, 33+i*32, 330, AImage1.width/5, 110);
 	}
 }
