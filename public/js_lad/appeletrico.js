@@ -212,7 +212,7 @@ function liga_led_CLP(){
 				context.fillStyle = 'white';
 			context.fillRect(45+(i*32), 294, 10, 16);
 
-			context.drawImage(AImage1, (AImage1.width/5)+(AImage1.width/5)*Q[i], 110, AImage1.width/5, 110, 33+i*32, 334, AImage1.width/5, 110);
+			context.drawImage(AImage1, (AImage1.width/5)+(AImage1.width/5)*Q[i], 110, AImage1.width/5, 110, 33+i*32, 336, AImage1.width/5, 110);
 		}
 	}
 
@@ -228,6 +228,6 @@ function stop_CLP(){
 	for(var i=0; i <12; i++){
 		context.fillStyle = 'white';
 		context.fillRect(45+(i*32), 294, 12, 16);
-		context.drawImage(AImage1, (AImage1.width/5)*0, 110, AImage1.width/5, 110, 33+i*32, 334, AImage1.width/5, 110);
+		context.drawImage(AImage1, (AImage1.width/5)*0, 110, AImage1.width/5, 110, 33+i*32, 336, AImage1.width/5, 110);
 	}
 }
