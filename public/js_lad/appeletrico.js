@@ -223,11 +223,11 @@ function stop_CLP(){
 	context.fillRect(27, 242, 32, 16);
 	for(var i=0; i <12; i++){
 		context.fillStyle = 'white';
-		context.fillRect(45+(i*32), 132, 14, 16);
+		context.fillRect(45+(i*32), 132, 12, 16);
 	}
 	for(var i=0; i <12; i++){
 		context.fillStyle = 'white';
-		context.fillRect(45+(i*32), 292, 14, 16);
+		context.fillRect(45+(i*32), 292, 12, 16);
 		context.drawImage(AImage1, (AImage1.width/5)*0, 110, AImage1.width/5, 110, 33+i*32, 330, AImage1.width/5, 110);
 	}
 }
