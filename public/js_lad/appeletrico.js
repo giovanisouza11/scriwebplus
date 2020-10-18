@@ -165,7 +165,7 @@ function liga_led_CLP(){
 			context.fillStyle = 'green';
 		else
 			context.fillStyle = 'white';
-		context.fillRect(45+(i*32), 132, 12, 16);
+		context.fillRect(45+(i*32), 132, 10, 16);
 	}
 	context.font = '9pt Arial';
 
@@ -210,7 +210,7 @@ function liga_led_CLP(){
 				context.fillStyle = 'green';
 			else
 				context.fillStyle = 'white';
-			context.fillRect(45+(i*32), 292, 12, 16);
+			context.fillRect(45+(i*32), 292, 10, 16);
 
 			context.drawImage(AImage1, (AImage1.width/5)+(AImage1.width/5)*Q[i], 110, AImage1.width/5, 110, 33+i*32, 330, AImage1.width/5, 110);
 		}
