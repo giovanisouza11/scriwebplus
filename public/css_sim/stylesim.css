@@ -93,7 +93,7 @@
 		animation-duration: 0.4s
 	}
 	.modal-pe1 {
-		position: relative;
+		position: absolute;
 		top: 230px;
 		left: 10px;
 		width:96%;
