@@ -123,9 +123,9 @@ function tBotao() {
 		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
-		modalb1.innerHTML = "<p><a href="http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv"><button>Elevador</button></a></p>";
-		modalb1.innerHTML += "<p>Tamanho da Tela Largura:<input type='number' id='input2' max=2000 min=200/></p>";
-		modalb1.innerHTML += "<p>Altura:<input type='number' id='input3' name='input3' max=2000 min=0/> </p>";
+		//modalb1.innerHTML = "<p><a href="http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv"><button>Elevador</button></a></p>";
+		//modalb1.innerHTML += "<p>Tamanho da Tela Largura:<input type='number' id='input2' max=2000 min=200/></p>";
+		//modalb1.innerHTML += "<p>Altura:<input type='number' id='input3' name='input3' max=2000 min=0/> </p>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button')
