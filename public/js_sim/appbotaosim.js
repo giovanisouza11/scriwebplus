@@ -46,7 +46,18 @@ function tBotao() {
 		modalb1.innerHTML = "<p>Número do CLP <input type='number' id='input1' name='input1' max=30 min=0 /></p>";
 		modalb1.innerHTML += "<p>Tamanho da Tela Largura:<input type='number' id='input2' max=2000 min=200/></p>";
 		modalb1.innerHTML += "<p>Altura:<input type='number' id='input3' name='input3' max=2000 min=0/> </p>";
-	
+		// Create <OK> element that closes the modal
+		var btn = document.createElement('button');
+		btn.setAttribute('type','button')
+		btn.appendChild(document.createTextNode('OK'));
+		btn.onclick = function() {
+			Config_Socket(document.getElementById('input1').value);
+			localStorage.setItem("tela_largura", document.getElementById('input2').value);
+			localStorage.setItem("tela_altura", document.getElementById('input3').value);
+			modal1.style.display = "none";
+		};
+		modalb1.appendChild(btn);
+		
 		modal1.style.display = "block";
 		document.getElementById('input1').value = localStorage.num_clp1;
 		document.getElementById('input2').value = localStorage.tela_largura;
@@ -56,24 +67,7 @@ function tBotao() {
 		span1.onclick = function() {
 			modal1.style.display = "none";
 		}
-		// Create <OK> element that closes the modal
-		var btn = document.createElement('button');
-		btn.setAttribute('type','button')
-		btn.appendChild(document.createTextNode('OK'));
-		btn.onclick = function() {
-			Config_Socket(document.getElementById('input1').value);
-			localStorage.setItem("tela_largura", document.getElementById('input2').value);
-			localStorage.setItem("tela_altura", document.getElementById('input3').value);
-			modal.style.display = "none";
-		};
-		modalb1.appendChild(btn);
 		
-		//var ok1 = document.getElementsById("ok1");
-		//ok1.onclick = function() {
-	//		Config_Socket(document.getElementById('input1').value);
-	//		localStorage.setItem("tela_largura", document.getElementById('input2').value);
-	//		localStorage.setItem("tela_altura", document.getElementById('input3').value);
-	//	}
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {
 			if (event.target == modal1) {
