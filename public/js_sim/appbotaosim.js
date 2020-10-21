@@ -56,13 +56,24 @@ function tBotao() {
 		span1.onclick = function() {
 			modal1.style.display = "none";
 		}
-		// Get the <OK> element that closes the modal
-		var ok1 = document.getElementsById("ok1");
-		ok1.onclick = function() {
+		// Create <OK> element that closes the modal
+		var btn = document.createElement('button');
+		btn.setAttribute('type','button')
+		btn.appendChild(document.createTextNode('OK'));
+		btn.onclick = function() {
 			Config_Socket(document.getElementById('input1').value);
 			localStorage.setItem("tela_largura", document.getElementById('input2').value);
 			localStorage.setItem("tela_altura", document.getElementById('input3').value);
-		}
+			modal.style.display = "none";
+		};
+		modalb1.appendChild(btn);
+		
+		//var ok1 = document.getElementsById("ok1");
+		//ok1.onclick = function() {
+	//		Config_Socket(document.getElementById('input1').value);
+	//		localStorage.setItem("tela_largura", document.getElementById('input2').value);
+	//		localStorage.setItem("tela_altura", document.getElementById('input3').value);
+	//	}
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {
 			if (event.target == modal1) {
