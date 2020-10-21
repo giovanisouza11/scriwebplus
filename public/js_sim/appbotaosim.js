@@ -60,7 +60,7 @@ function tBotao() {
 			//modalc.style.display = "none";
 		}
 		// Get the <OK> element that closes the modal
-		var ok = document.getElementsByClassName("ok")[0];
+		var ok = document.getElementsById("ok1")[0];
 		ok.onclick = function() {
 			Config_Socket(document.getElementById('input1').value);
 			//localStorage.setItem("num_clp", document.getElementById('input1').value);
