@@ -17,63 +17,62 @@
 
 <body onload="draw_inicio()">
     <div class="corpo">
-	    <div class="row1">
+	 <div class="row1">
     		<div class="cabecalho">
         		<h2> SCriWeb: SUPERVISÓRIO INFORMÁTICA INDUSTRIAL </h2>
     		</div>
-		</div>
-		<div class="row2">
+	</div>
+	<div class="row2">
     	   	<div class="divColuna1" id ="Botoes">
-             	<canvas id="tela1"   onclick="tBotao()"></canvas>
-			</div>
-			<div class="divColuna2" id ="Simulador">
+	             	<canvas id="tela1"   onclick="tBotao()"></canvas>
+		</div>
+		<div class="divColuna2" id ="Simulador">
              		<canvas id="tela2"  width="600" height="400" onclick="cSimulador()" ></canvas>
-			</div>
-			<div class="divColuna10" id="CampoS">
-				<label id='label_input'>Valor</label>
-				<input type=number id="input_ladder" maxlength=5 size=5 onkeyup="eInputS(event)" >
+		</div>
+		<div class="divColuna10" id="CampoS">
+			<label id='label_input'>Valor</label>
+			<input type=number id="input_ladder" maxlength=5 size=5 onkeyup="eInputS(event)" >
     		</div>
     
-		</div>
-		<div class="row3">
+	</div>
+	<div class="row3">
     		<div class="rodape">
         		Desenvolvido em 2020
-			</div>
+		</div>
         </div>
+    </div>
+    <!-- Modal content -->
+    <div id="myColuna" class="modal-coluna">
+	<canvas id="tela3" onclick="cSimFuncao()"></canvas>
+    </div>
+    <div id="myModal" class="modal">
+	<div class="modal-header">
+		<h2>Titulo Modal</h2>
 	</div>
-	<!-- Modal content -->
-	<div id="myColuna" class="modal-coluna">
-		<canvas id="tela3" onclick="cSimFuncao()"></canvas>
+	<div id="myBody" class="modal-body">
+		<p>Some text in the Modal Body</p>
 	</div>
-	<div id="myModal" class="modal">
-		<div class="modal-header">
-			<h2>Titulo Modal</h2>
-		</div>
-		<div id="myBody" class="modal-body">
-			<p>Some text in the Modal Body</p>
-		</div>
-		<div id="mype" class="modal-pe">
-			<span class="up" id="up"> &uarr; </span>
-			<span class="dw" id="dw"> &darr; </span>
-			<span class="ok" id="ok"> &#10004; </span>
-			<span class="close" id="close"> &#10008; &ensp; &ensp;</span>
-			<span class="novo" id="novo"> &#127775; &ensp; &ensp;</span>
-			<span class="apagar" id="apagar"> 	&#9760; &ensp;&ensp; </span>
-		</div>
+	<div id="mype" class="modal-pe">
+		<span class="up" id="up"> &uarr; </span>
+		<span class="dw" id="dw"> &darr; </span>
+		<span class="ok" id="ok"> &#10004; </span>
+		<span class="close" id="close"> &#10008; &ensp; &ensp;</span>
+		<span class="novo" id="novo"> &#127775; &ensp; &ensp;</span>
+		<span class="apagar" id="apagar"> 	&#9760; &ensp;&ensp; </span>
 	</div>
-	<!-- Modal content -->
-	<div id="myModal1" class="modal1">
-		<div class="modal-header">
-			<span class="close" id="close1">&times;</span>
-			<h2>Titulo Modal</h2>
-		</div>
-		<div id="myBody1" class="modal-body1">
-			<p>Some text in the Modal Body</p>
-			
-		</div>
-		<div id="mype1" class="modal-pe">
-			<span class="ok" id="ok1"> &#10004; </span>
-		</div>
+    </div>
+    <!-- Modal content -->
+    <div id="myModal1" class="modal1">
+	<div class="modal-header">
+		<span class="close" id="close1">&times;</span>
+		<h2>Titulo Modal</h2>
 	</div>
+	<div id="myBody1" class="modal-body1">
+		<p>Some text in the Modal Body</p>
+	</div>
+	<div id="mype1" class="modal-pe">
+		<span class="ok" id="ok1"> &#10004; </span>
+	</div>
+   </div>
 </body>
 </html>
