@@ -100,6 +100,20 @@
 		background-color: khaki;
 		color: white;
 	}
+	/* The Close Button */
+	.close1 {
+		color: white;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+	.close1:hover,
+	.close1:focus {
+		color: #000;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
 	/* The Modal (background) */
 	.modal {
 		display: none; /* Hidden by default */
