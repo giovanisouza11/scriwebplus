@@ -6,7 +6,7 @@
 		width: 100%;
 		margin: 0 auto;
 		background:ivory;
-       	text-align: center;
+       		text-align: center;
 	}
 	.row1 {
 		height: 30px;
@@ -22,48 +22,48 @@
 		width: 100%;
 		top: -10px;
 		margin: 0 auto;
-       	height: 50px;
+       		height: 50px;
 		background:khaki;
 		text-align: center;
 	}
 	.divColuna1 {
-        position: fixed;
-        width: 80px;
+        	position: fixed;
+        	width: 80px;
 		margin: 0 auto;
-     	height: 563px;
-        top: 42px;
+     		height: 563px;
+        	top: 42px;
 		text-align: left;
-        background:palegreen;
-     }
+        	background:palegreen;
+     	}
 	.divColuna2 {
-        position: fixed;
-        left: 100px;
-        width: 90%;
+        	position: fixed;
+        	left: 100px;
+        	width: 90%;
 		height: 563px;
-        top: 42px;
+        	top: 42px;
 		text-align: left;
-	    background:ivory;
-    }
-    .divColuna10 {
-        position: relative;
+	    	background:ivory;
+    	}
+    	.divColuna10 {
+        	position: relative;
 		top: 600px;
-        left: 1100px;
-        width: 60px; 
-        height: 15px;
-        text-align: left;
-        background:palegreen;
-    } 
-    .rodape {
-        position: fixed;
+        	left: 1100px;
+        	width: 60px; 
+        	height: 15px;
+        	text-align: left;
+        	background:palegreen;
+    	} 
+    	.rodape {
+        	position: fixed;
 		width: 100%;
 		height: 25px;
 		top: 610px;
 		margin: 0 auto;
-       	text-align: center;
+       		text-align: center;
 		border: 1px solid red;
 		background:khaki;
-        font-size: 13px;
-    }
+    	    	font-size: 13px;
+    	}
 	/* The Modal (background) */
 	.modal1 {
 		display: none; /* Hidden by default */
@@ -77,7 +77,7 @@
 	}
 	/* Modal Content */
 	.modal-body1 {
-		position: relative;
+		position: absolute;
 		background-color: ivory;
 		margin: auto;
 		padding: 0;
