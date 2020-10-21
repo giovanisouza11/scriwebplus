@@ -72,7 +72,7 @@
 		left: 100px;
 		top: 150px;
 		width: 200; /* Full width */
-		height: 250; /* Full height */
+		height: 270; /* Full height */
 		overflow: no; /* Enable scroll if needed */
 		background-color: rgb(0,0,0); /* Fallback color */
 		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -84,12 +84,21 @@
 		margin: auto;
 		padding: 0;
 		border: 1px solid #888;
-		width: 100%;
+		left: 10 px;
+		width: 96%;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 		-webkit-animation-name: animatetop;
 		-webkit-animation-duration: 0.4s;
 		animation-name: animatetop;
 		animation-duration: 0.4s
+	}
+	.modal-pe1 {
+		position: relative;
+		top: 230px;
+		left: 10px;
+		width:96%;
+		background-color: khaki;
+		color: white;
 	}
 	/* The Modal (background) */
 	.modal {
@@ -160,7 +169,7 @@
 		position: relative;
 		height:40px;
 		width:96%;
-		left: 0 px;
+		left: 10 px;
 		font-size: 20px;
 		background-color: khaki;
 		color: white;
