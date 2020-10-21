@@ -41,7 +41,7 @@ function tBotao() {
 	if (valor_chave[10]==1){
         	var modal1 = document.getElementById("myModal1");
 		var t_modal = modal1.getElementsByTagName("h2");
-		t_modal[0].innerHTML = "Configuração Simulador";	
+		t_modal[0].innerHTML = "Configuração";	
 		var modalb1 = document.getElementById("myBody1");
 		modalb1.innerHTML = "<p>Número do CLP <input type='number' id='input1' name='input1' max=30 min=0 /></p>";
 		modalb1.innerHTML += "<p>Tamanho da Tela Largura:<input type='number' id='input2' max=2000 min=200/></p>";
@@ -63,14 +63,14 @@ function tBotao() {
 		document.getElementById('input2').value = localStorage.tela_largura;
 		document.getElementById('input3').value = localStorage.tela_altura;
 		// Get the <Close> element that closes the modal
-		var span1 = document.getElementsById("close1");
+		var span1 = document.getElementById("close1");
 		span1.onclick = function() {
 			modal1.style.display = "none";
 		}
 		
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {
-			if (event.target == modal1) {
+			if (event.target == modal) {
 				modal1.style.display = "none";
 			}
 		}
