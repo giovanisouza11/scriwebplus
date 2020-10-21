@@ -52,12 +52,12 @@ function tBotao() {
 		document.getElementById('input2').value = localStorage.tela_largura;
 		document.getElementById('input3').value = localStorage.tela_altura;
 		// Get the <Close> element that closes the modal
-		var span1 = document.getElementsById("close1")[0];
+		var span1 = document.getElementsById("close1");
 		span1.onclick = function() {
 			modal1.style.display = "none";
 		}
 		// Get the <OK> element that closes the modal
-		var ok1 = document.getElementsById("ok1")[0];
+		var ok1 = document.getElementsById("ok1");
 		ok1.onclick = function() {
 			Config_Socket(document.getElementById('input1').value);
 			localStorage.setItem("tela_largura", document.getElementById('input2').value);
