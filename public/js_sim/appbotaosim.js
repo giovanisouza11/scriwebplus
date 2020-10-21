@@ -118,19 +118,36 @@ function tBotao() {
 		comandos = 0;
 	}
 	if (simEdicao==0 && valor_chave[6]==1){
-		window.open("http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv", " Download SCriWeb", "height=100,width=100");
-		var inputCSV = document.createElement('input');
-	 	inputCSV.type = 'file';
-		inputCSV.accept = '.CSV';
-		inputCSV.click();
-		inputCSV.onchange = function() {
-	    		var file =  this.files[0]; //"http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv";
-			//r fileArr = file.target.result.split('\n');
-			//draw_processo(fileArr);	
-		
-			leitorDeCSV.readAsText(file);
-			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
+		//window.open("http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv", " Download SCriWeb", "height=100,width=100");
+		var modal1 = document.getElementById("myModal1");
+		var t_modal = modal1.getElementsByTagName("h2");
+		t_modal[0].innerHTML = "Download";	
+		var modalb1 = document.getElementById("myBody1");
+		modalb1.innerHTML = "<p><a href="http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv"><button>Elevador</button></a></p>";
+		modalb1.innerHTML += "<p>Tamanho da Tela Largura:<input type='number' id='input2' max=2000 min=200/></p>";
+		modalb1.innerHTML += "<p>Altura:<input type='number' id='input3' name='input3' max=2000 min=0/> </p>";
+		// Create <OK> element that closes the modal
+		var btn = document.createElement('button');
+		btn.setAttribute('type','button')
+		btn.appendChild(document.createTextNode('OK'));
+		btn.onclick = function() {
+			modal1.style.display = "none";
 		};
+		modalb1.appendChild(btn);
+		
+		modal1.style.display = "block";
+		// Get the <Close> element that closes the modal
+		var span1 = document.getElementById("close1");
+		span1.onclick = function() {
+			modal1.style.display = "none";
+		}
+		
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal1.style.display = "none";
+			}
+		}
 		comandos = 0;	
 		valor_chave[4]=0;
 		valor_chave[5]=1;
