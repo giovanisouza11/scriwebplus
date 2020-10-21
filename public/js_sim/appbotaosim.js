@@ -64,11 +64,11 @@ function tBotao() {
 			localStorage.setItem("tela_altura", document.getElementById('input3').value);
 		}
 		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-			if (event.target == modal1) {
-				modal1.style.display = "none";
-			}
-		}
+		//window.onclick = function(event) {
+		//	if (event.target == modal1) {
+		//		modal1.style.display = "none";
+		//	}
+		//}
 
 	    	valor_chave[10]=0;
 	}
