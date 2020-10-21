@@ -39,17 +39,17 @@ function tBotao() {
 	    	valor_chave[11]=0;
 	}
 	if (valor_chave[10]==1){
-        	var modal = document.getElementById("myModal");
-		var modalc = document.getElementById("myColuna");
+        	var modal = document.getElementById("myModal1");
+		//var modalc = document.getElementById("myColuna");
 		var t_modal = modal.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Configuração Simulador";	
-		var modalb = document.getElementById("myBody");
+		var modalb = document.getElementById("myBody1");
 		modalb.innerHTML = "<p>Número do CLP <input type='number' id='input1' name='input1' max=30 min=0 /></p>";
 		modalb.innerHTML += "<p>Tamanho da Tela Largura:<input type='number' id='input2' max=2000 min=200/></p>";
 		modalb.innerHTML += "<p>Altura:<input type='number' id='input3' name='input3' max=2000 min=0/> </p>";
 	
 		modal.style.display = "block";
-		modalc.style.display = "none";
+		//modalc.style.display = "none";
 		document.getElementById('input1').value = localStorage.num_clp1;
 		document.getElementById('input2').value = localStorage.tela_largura;
 		document.getElementById('input3').value = localStorage.tela_altura;
@@ -57,7 +57,7 @@ function tBotao() {
 		var span = document.getElementsByClassName("close")[0];
 		span.onclick = function() {
 			modal.style.display = "none";
-			modalc.style.display = "none";
+			//modalc.style.display = "none";
 		}
 		// Get the <OK> element that closes the modal
 		var ok = document.getElementsByClassName("ok")[0];
@@ -68,15 +68,15 @@ function tBotao() {
 			localStorage.setItem("tela_altura", document.getElementById('input3').value);
 		}
 		// Get the <Apagar> element that closes the modal
-		document.getElementsByClassName("apagar")[0].style.visibility = "hidden";
-		document.getElementsByClassName("novo")[0].style.visibility = "hidden";
-		document.getElementsByClassName("up")[0].style.visibility = "hidden";
-		document.getElementsByClassName("dw")[0].style.visibility = "hidden";
+		//document.getElementsByClassName("apagar")[0].style.visibility = "hidden";
+		//document.getElementsByClassName("novo")[0].style.visibility = "hidden";
+		//document.getElementsByClassName("up")[0].style.visibility = "hidden";
+		//document.getElementsByClassName("dw")[0].style.visibility = "hidden";
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {
 			if (event.target == modal) {
 				modal.style.display = "none";
-				modalc.style.display = "none";
+		//		modalc.style.display = "none";
 			}
 		}
 
