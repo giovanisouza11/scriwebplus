@@ -84,7 +84,7 @@
 		margin: auto;
 		padding: 0;
 		border: 1px solid #888;
-		left: 10 px;
+		left: 10px;
 		width: 96%;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 		-webkit-animation-name: animatetop;
@@ -169,7 +169,7 @@
 		position: relative;
 		height:40px;
 		width:96%;
-		left: 10 px;
+		left: 10px;
 		font-size: 20px;
 		background-color: khaki;
 		color: white;
@@ -195,7 +195,7 @@
 	.ok, .apagar, .novo, .close {
 		color: white;
 		float: right;
-		left: 300px;
+		left: 100%;
 		font-size: 28px;
 		font-weight: bold;
 	}
