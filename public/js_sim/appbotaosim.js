@@ -54,7 +54,7 @@ function tBotao() {
 		document.getElementById('input2').value = localStorage.tela_largura;
 		document.getElementById('input3').value = localStorage.tela_altura;
 		// Get the <Close> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
+		var span = document.getElementsById("close1")[0];
 		span.onclick = function() {
 			modal.style.display = "none";
 			//modalc.style.display = "none";
