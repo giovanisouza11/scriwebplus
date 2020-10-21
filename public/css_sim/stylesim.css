@@ -69,6 +69,8 @@
 		display: none; /* Hidden by default */
 		position: fixed; /* Stay in place */
 		z-index: 1; /* Sit on top */
+		left: 200px;
+		top: 100px;
 		width: 200; /* Full width */
 		height: 210; /* Full height */
 		overflow: no; /* Enable scroll if needed */
