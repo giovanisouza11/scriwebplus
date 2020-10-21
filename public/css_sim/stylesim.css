@@ -64,15 +64,11 @@
 		background:khaki;
         font-size: 13px;
     }
-/* The Modal (background) */
+	/* The Modal (background) */
 	.modal1 {
 		display: none; /* Hidden by default */
 		position: fixed; /* Stay in place */
 		z-index: 1; /* Sit on top */
-		/*margin-top:-105px;*/
-		/*margin-left:-100px;*/
-		/*left:50vw;*/
-		/*top: 50vh;*/
 		width: 200; /* Full width */
 		height: 210; /* Full height */
 		overflow: no; /* Enable scroll if needed */
