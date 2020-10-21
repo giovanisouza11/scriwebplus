@@ -69,10 +69,10 @@
 		display: none; /* Hidden by default */
 		position: fixed; /* Stay in place */
 		z-index: 1; /* Sit on top */
-		left: 200px;
-		top: 100px;
+		left: 100px;
+		top: 150px;
 		width: 200; /* Full width */
-		height: 210; /* Full height */
+		height: 250; /* Full height */
 		overflow: no; /* Enable scroll if needed */
 		background-color: rgb(0,0,0); /* Fallback color */
 		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -160,7 +160,7 @@
 		position: relative;
 		height:40px;
 		width:96%;
-		left: 10px;
+		left: 0 px;
 		font-size: 20px;
 		background-color: khaki;
 		color: white;
