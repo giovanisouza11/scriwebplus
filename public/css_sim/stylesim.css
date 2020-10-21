@@ -92,14 +92,7 @@
 		animation-name: animatetop;
 		animation-duration: 0.4s
 	}
-	.modal-pe1 {
-		position: relative;
-		top: 230px;
-		left: 10px;
-		width:96%;
-		background-color: khaki;
-		color: white;
-	}
+	
 	/* The Close Button */
 	.close1 {
 		color: white;
