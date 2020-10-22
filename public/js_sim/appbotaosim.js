@@ -40,7 +40,7 @@ function tBotao() {
 	}
 	if (valor_chave[10]==1){
         	var modal1 = document.getElementById("myModal1");
-		var t_modal = modal1.getElementByTagName("h2");
+		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Config";	
 		var modalb1 = document.getElementById("myBody1");
 		modalb1.innerHTML = "<p>Número do CLP <input type='number' id='input1' name='input1' max=30 min=0 /></p>";
@@ -124,8 +124,12 @@ function tBotao() {
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
 		modalb1.innerHTML = "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv'>Elevador</a></p>";
-		//modalb1.innerHTML += "<p>Tamanho da Tela Largura:<input type='number' id='input2' max=2000 min=200/></p>";
-		//modalb1.innerHTML += "<p>Altura:<input type='number' id='input3' name='input3' max=2000 min=0/> </p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco/Corte_Vinco.csv'>Corte e Vinco</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao/Classificacao.csv'>Classificação</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Envase/Envase.csv'>Envase</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Expedicao/Expedicao.csv'>Expedição</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Semaforo/Semaforo.csv'>Semáforo</a></p>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button');
