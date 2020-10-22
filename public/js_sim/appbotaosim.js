@@ -48,7 +48,7 @@ function tBotao() {
 		modalb1.innerHTML += "<p>Altura:<input type='number' id='input3' name='input3' max=2000 min=0/> </p>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
-		btn.setAttribute('type','button')
+		btn.setAttribute('type','button');
 		btn.appendChild(document.createTextNode('OK'));
 		btn.onclick = function() {
 			Config_Socket(document.getElementById('input1').value);
@@ -128,7 +128,7 @@ function tBotao() {
 		//modalb1.innerHTML += "<p>Altura:<input type='number' id='input3' name='input3' max=2000 min=0/> </p>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
-		btn.setAttribute('type','button')
+		btn.setAttribute('type','button');
 		btn.appendChild(document.createTextNode('OK'));
 		btn.onclick = function() {
 			modal1.style.display = "none";
