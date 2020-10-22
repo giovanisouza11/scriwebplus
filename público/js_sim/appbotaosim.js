@@ -40,8 +40,8 @@ function tBotao() {
 	}
 	if (valor_chave[10]==1){
         	var modal1 = document.getElementById("myModal1");
-		var t_modal = modal1.getElementsByTagName("h2");
-		t_modal[0].innerHTML = "Configuração";	
+		var t_modal = modal1.getElementByTagName("h2");
+		t_modal[0].innerHTML = "Config";	
 		var modalb1 = document.getElementById("myBody1");
 		modalb1.innerHTML = "<p>Número do CLP <input type='number' id='input1' name='input1' max=30 min=0 /></p>";
 		modalb1.innerHTML += "<p>Tamanho da Tela Largura:<input type='number' id='input2' max=2000 min=200/></p>";
