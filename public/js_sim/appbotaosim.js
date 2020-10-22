@@ -118,7 +118,6 @@ function tBotao() {
 		comandos = 0;
 	}
 	if (simEdicao==0 && valor_chave[6]==1){
-		//window.open("http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv", " Download SCriWeb", "height=100,width=100");
 		var modal1 = document.getElementById("myModal1");
 		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Download";	
