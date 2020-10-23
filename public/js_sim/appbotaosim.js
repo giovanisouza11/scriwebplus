@@ -173,6 +173,7 @@ function tBotao() {
 		simFuncao1();
 	}
 	if (simEdicao==1 && valor_chave[4]==1){
+		simFuncao2();
 	}
 	if (simEdicao==1 && valor_chave[5]==1){
 		simFuncao3();
