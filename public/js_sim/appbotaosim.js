@@ -31,7 +31,7 @@ function tBotao() {
 	}
 
 	if (valor_chave[12]==1){
-    		window.open("/About", " About SCriWeb", "height=600,width=600");
+    		window.open("/About", "About SCriWeb", "height=600,width=600");
 	    	valor_chave[12]=0;
 	}
 	if (valor_chave[11]==1){
@@ -46,6 +46,9 @@ function tBotao() {
 		modalb1.innerHTML = "<p>Número do CLP <input type='number' id='input1' name='input1' max=30 min=0 /></p>";
 		modalb1.innerHTML += "<p>Tamanho da Tela Largura:<input type='number' id='input2' max=2000 min=200/></p>";
 		modalb1.innerHTML += "<p>Altura:<input type='number' id='input3' name='input3' max=2000 min=0/> </p>";
+		document.getElementById('input1').value = localStorage.num_clp1;
+		document.getElementById('input2').value = localStorage.tela_largura;
+		document.getElementById('input3').value = localStorage.tela_altura;
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button');
@@ -59,9 +62,6 @@ function tBotao() {
 		modalb1.appendChild(btn);
 		
 		modal1.style.display = "block";
-		document.getElementById('input1').value = localStorage.num_clp1;
-		document.getElementById('input2').value = localStorage.tela_largura;
-		document.getElementById('input3').value = localStorage.tela_altura;
 		// Get the <Close> element that closes the modal
 		var span1 = document.getElementById("close1");
 		span1.onclick = function() {
