@@ -89,8 +89,8 @@ function tBotao() {
 			//alert(file.name);
 		};
 		comandos = 0;	
-		valor_chave[4]=0;
-		valor_chave[5]=1;
+		valor_chave[5]=0;
+		valor_chave[6]=1;
 	}
 	if (simEdicao==0 && valor_chave[3]==1){
 	    	let texto = '0_id, 1_tipo, 2_nome, 3_var_1, 4_var_2, 5_pos_x_inicial, 6_dpos_x, 7_pos_x_final, 8_pos_y_inicial, 9_dpos_y, 10_pos_y_final, 11_inc_x1, 12_inc_x2, 13_inc_y1, 14_inc_y2, 15_var1_dependente, 16_var2_dependente, 17_piscar, 18_tempo_pisca, 19_figura, 20_funcao, 21_reserva, 22_reserva, 23_reserva, 24_reserva \n';
@@ -112,21 +112,21 @@ function tBotao() {
         	saveAs(blob, titulo + ".csv");
         	valor_chave[3]=0;
 	}
-	if (simEdicao==0 && valor_chave[4]==1){
+	if (simEdicao==0 && valor_chave[5]==1){
 		comandos = 1;
 	}
-	if (simEdicao==0 && valor_chave[5]==1){
+	if (simEdicao==0 && valor_chave[6]==1){
 		comandos = 0;
 	}
-	if (simEdicao==0 && valor_chave[6]==1){
+	if (simEdicao==0 && valor_chave[4]==1){
 		var modal1 = document.getElementById("myModal1");
 		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
-		modalb1.innerHTML = "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv'>Elevador</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco/Corte_Vinco.csv'>Corte e Vinco</a></p>";
+		modalb1.innerHTML = "<p><a href='http://scriweb.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao/Classificacao.csv'>Classificação</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco/Corte_Vinco.csv'>Corte e Vinco</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv'>Elevador</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Envase/Envase.csv'>Envase</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Expedicao/Expedicao.csv'>Expedição</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Semaforo/Semaforo.csv'>Semáforo</a></p>";
