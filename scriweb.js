@@ -80,7 +80,22 @@ if (ativo) {
 	app.get('/popup',function(req,res){
         	res.sendFile(__dirname + '/popup.html');
     	});
-    	server.listen(PORT,function() {
+    	app.get('/abouten',function(req,res){
+        	res.sendFile(__dirname + '/scriwebabouten.html');
+    	});
+    	app.get('/helpen',function(req,res){
+        	res.sendFile(__dirname + '/scriwebhelpen.html');
+    	});
+    	app.get('/simulate',function(req,res){
+        	res.sendFile(__dirname + '/simscriweben.html');
+    	});
+    	app.get('/en', function(req, res) {
+        	res.sendFile(__dirname + '/scriweben.html');
+    	});
+    	app.get('/helpsimen',function(req,res){
+        	res.sendFile(__dirname + '/simhelpen.html');
+    	});
+	server.listen(PORT,function() {
  		//JanelaElectron();
 		console.log("__________________________________________________________________");
     		console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
