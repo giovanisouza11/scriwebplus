@@ -484,7 +484,7 @@ function entrada_input(event){
 					context2.rect(75+(posicaox*60), (8+(posicaoy)*60), 20, 12);
 					context2.fillStyle = 'magenta';
 					context2.fillText(tag, 75+(posicaox*60), (20+(posicaoy)*60));
-					document.getElementById("label_input").innerHTML = "End_Origem:";
+					document.getElementById("label_input").innerHTML = "Add_Start:";
 					document.getElementById('input_ladder').value = larray[(posicaoy*8*9) + (posicaox*9) + 2];
 					if (larray[(posicaoy*8*9) + (posicaox*9) + 2] == undefined  || larray[(posicaoy*8*9) + (posicaox*9) + 2] == "undefined")
 						document.getElementById('input_ladder').value ="";
