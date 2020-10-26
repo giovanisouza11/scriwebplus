@@ -58,7 +58,7 @@ function desenha_clp(){
 	context.fillText('Memory - M0.', 76, 201);
 	context.fillText('M1.', 139, 211);
 	context.fillText('M2.', 139, 221);
-	context.fillText('Branche - TR', 78, 247);
+	context.fillText('Branch - TR', 78, 247);
 	context.fillText('Output  - Q0.', 90, 265);
 	liga_led_CLP();
 
