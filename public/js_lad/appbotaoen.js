@@ -172,10 +172,10 @@ function trocar_botao() {
 		var modalb = document.getElementById("myBody");
 		var t_modal = modal.getElementsByTagName("h2")
 		t_modal[0].innerHTML = "CONFIG";
-		modalb.innerHTML = "<p>Address CLP (1 a 30): <input type=number id='input1' max=30 min=0 size=2></p>"; 
+		modalb.innerHTML = "<p>PLC Address (1 a 30): <input type=number id='input1' max=30 min=0 size=2></p>"; 
 		modalb.innerHTML = modalb.innerHTML+ "<p>Time Scan: <input type=number id='input2' max=10 maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Numer Scan:<input type=number id='input3' max=10 maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Numer logic:<input type=number id='input4' max = 200 maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>Number Scan:<input type=number id='input3' max=10 maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>Number logic:<input type=number id='input4' max = 200 maxlength=3 size=3></p>"; 
 		document.getElementById('input1').value = localStorage.num_clp;
 		document.getElementById('input2').value = localStorage.tempo_scan;
 		document.getElementById('input3').value = localStorage.tempo_atualizacao;
