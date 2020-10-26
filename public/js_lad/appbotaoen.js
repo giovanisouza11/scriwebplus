@@ -48,7 +48,7 @@ function trocar_botao() {
 		var modalb = document.getElementById("myBody");
 		var t_modal = modal.getElementsByTagName("h2")
 		t_modal[0].innerHTML = "Delete";
-		modalb.innerHTML = "<p>Orige <input type=text id='input1' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = "<p>Start <input type=text id='input1' maxlength=3 size=3></p>"; 
 		modalb.innerHTML = modalb.innerHTML+ "<p>Length <input type=text id='input2' maxlength=3 size=3></p>"; 
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button')
