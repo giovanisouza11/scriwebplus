@@ -105,40 +105,40 @@ function cSimFuncao() {
 function cSimIHM() {
 	var modalb = document.getElementById("myBody");
 	//var lista_funcoes = [0, 'text'o, Figura, Animação, Botão, Não Figura, Display, Bargraph,resevado, reservado];
-	modalb.innerHTML = "<p>Id <input type='text' id='input01' name='input01' maxlength=3 size=1 disabled />Tipo <select id='input02' name='input02'><option value='0'>---</option><option value='1'>Texto</option><option value='2'>Figura</option><option value='3'>Animacão</option><option value='4'>Interativo</option><option value='5'>IntNãoVisual</option><option value='6'>Display</option><option value='7'>BarGraph</option>  </select> nome:<input type='text' id='input1' name='input1' maxlength=10 size=10 autofocus /> </p>";
-	modalb.innerHTML += "<p>Variável1:<input type='text' id='input2' maxlength=5 size=5/> Variável2:<input type='text' id='input3' name='input3' maxlength=5 size=5 /> </p>";
-	modalb.innerHTML += "<p>Posição x:<input type='text' id='input4' name='input4' maxlength=4 size=4 /> Largura:<input type='text' id='input5' name='input5' maxlength=4 size=4 /> Posição x final:<input type='text' id='input6' name='input6' maxlength=4 size=4 /></p>";
-	modalb.innerHTML += "<p>Posição y:<input type='text' id='input7' name='input7' maxlength=4 size=4 /> Altura :<input type='text' id='input8' name='input8' maxlength=4 size=4 /> Posição y final:<input type='text' id='input9' nameid='input9' maxlength=4 size=4 /></p>";
+	modalb.innerHTML = "<p>Id <input type='text' id='input01' name='input01' maxlength=3 size=1 disabled />Type <select id='input02' name='input02'><option value='0'>---</option><option value='1'>Text</option><option value='2'>Draw</option><option value='3'>Animate</option><option value='4'>Interative</option><option value='5'>NoVisualInt</option><option value='6'>Display</option><option value='7'>BarGraph</option>  </select> name:<input type='text' id='input1' name='input1' maxlength=10 size=10 autofocus /> </p>";
+	modalb.innerHTML += "<p>Variable1:<input type='text' id='input2' maxlength=5 size=5/> Variable2:<input type='text' id='input3' name='input3' maxlength=5 size=5 /> </p>";
+	modalb.innerHTML += "<p>Position x:<input type='text' id='input4' name='input4' maxlength=4 size=4 /> Length:<input type='text' id='input5' name='input5' maxlength=4 size=4 /> Position finish x:<input type='text' id='input6' name='input6' maxlength=4 size=4 /></p>";
+	modalb.innerHTML += "<p>Position y:<input type='text' id='input7' name='input7' maxlength=4 size=4 /> Height:<input type='text' id='input8' name='input8' maxlength=4 size=4 /> Position finish y:<input type='text' id='input9' nameid='input9' maxlength=4 size=4 /></p>";
 	if (ArrayObjStatic[index_var_config*20+17]>1 && ArrayObjStatic[index_var_config*20+17]<6) {
-		modalb.innerHTML += "<p>Inc X1:<input type='text' id='input10' name='input10' maxlength=3 size=3 /> Inc Y1:<input type='text' id='input12' name='input12' maxlength=3 size=3 /> Variável 1:<input type='text' id='input14' name='input14' maxlength=6 size=6 /></p>";
-		modalb.innerHTML += "<p>Inc X2:<input type='text' id='input11' name='input11' maxlength=3 size=3 /> Inc Y2:<input type='text' id='input13' name='input13'  maxlength=3 size=3 /> Variável 2:<input type='text' id='input15' name='input15' maxlength=6 size=6 /></p>";
-		modalb.innerHTML += "<p>Piscar:<input type='text' id='input16' name='input16' maxlength=3 size=3 /> Tempo:<input type='text' id='input17' name='input17' maxlength=3 size=3 /></p>";
-		modalb.innerHTML += "<p>Figura:<input type='text' id='input18' name='input18' maxlength=15 size=15 /> Função:<input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
+		modalb.innerHTML += "<p>Inc X1:<input type='text' id='input10' name='input10' maxlength=3 size=3 /> Inc Y1:<input type='text' id='input12' name='input12' maxlength=3 size=3 /> Variable 1:<input type='text' id='input14' name='input14' maxlength=6 size=6 /></p>";
+		modalb.innerHTML += "<p>Inc X2:<input type='text' id='input11' name='input11' maxlength=3 size=3 /> Inc Y2:<input type='text' id='input13' name='input13'  maxlength=3 size=3 /> Varible 2:<input type='text' id='input15' name='input15' maxlength=6 size=6 /></p>";
+		modalb.innerHTML += "<p>Blink:<input type='text' id='input16' name='input16' maxlength=3 size=3 /> Time:<input type='text' id='input17' name='input17' maxlength=3 size=3 /></p>";
+		modalb.innerHTML += "<p>Draw:<input type='text' id='input18' name='input18' maxlength=15 size=15 /> Function:<input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
 		//modalb.innerHTML += "<p><label for='file'>Figura:</label><input type='file' id='input18' name='input18' accept='image/png'/> Função:<input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
 		modalb.innerHTML += "<canvas id='tela4' class='modal_figura'></canvas>";
 	}
 	if (ArrayObjStatic[index_var_config*20+17]==1) {
-		modalb.innerHTML += "<p>Cor fonte: <input type='color' id='input10' name='input10' maxlength=10 size=10 /> Tamanho Fonte: <input type='text' id='input11' name='input11' maxlength=3 size=3 /> </p>";
-		modalb.innerHTML += "<p>Cor de Fundo 1: <input type='color' id='input12' name='input12' maxlength=10 size=5 /> Cor de Fundo 2: <input type='color' id='input13' name='input13' maxlength=10 size=5 /></p>";
-		modalb.innerHTML += "<p>Variável 1 <input type='text' id='input14' name='input14' maxlength=6 size=6 /> Variável 2: <input type='text' id='input15' name='input15' maxlength=6 size=6 /></p>";
-		modalb.innerHTML += "<p>Label <input type='text' id='input18' name='input18' maxlength=15 size=15 /> Função: <input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
-		modalb.innerHTML += " <p>Piscar <input type='text' id='input16' name='input16'  maxlength=3 size=3 /> Tempo: <input type='text' id='input17' name='input17' maxlength=3 size=3 /></p>";
+		modalb.innerHTML += "<p>Color Character: <input type='color' id='input10' name='input10' maxlength=10 size=10 /> Length Char: <input type='text' id='input11' name='input11' maxlength=3 size=3 /> </p>";
+		modalb.innerHTML += "<p>Color BackGround 1: <input type='color' id='input12' name='input12' maxlength=10 size=5 /> Color BlackGround 2: <input type='color' id='input13' name='input13' maxlength=10 size=5 /></p>";
+		modalb.innerHTML += "<p>Variable 1 <input type='text' id='input14' name='input14' maxlength=6 size=6 /> Variable 2: <input type='text' id='input15' name='input15' maxlength=6 size=6 /></p>";
+		modalb.innerHTML += "<p>Label <input type='text' id='input18' name='input18' maxlength=15 size=15 /> Function: <input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
+		modalb.innerHTML += " <p>Blink <input type='text' id='input16' name='input16'  maxlength=3 size=3 /> Time: <input type='text' id='input17' name='input17' maxlength=3 size=3 /></p>";
 		modalb.innerHTML += "<canvas id='tela4' class='modal_figura'></canvas>";
 	}
 	if (ArrayObjStatic[index_var_config*20+17]==6) {
-		modalb.innerHTML += "<p>Cor fonte: <input type='color' id='input10' name='input10' maxlength=`10 size=10 /> Tamanho Fonte: <input type='text' id='input11' name='input11' maxlength=3 size=3 /> </p>";
-		modalb.innerHTML += "<p>Variável <input type='text' id='input14' name='input14' maxlength=6 size=6 /> Incremento: <input type='text' id='input15' name='input13' maxlength=3 size=3 /></p>";
-		modalb.innerHTML += "<p>Piscar <input type='text' id='input16' name='input16' maxlength=3 size=3 /> Precisão: <input type='text' id='input17' name='input17' maxlength=5 size=5 /></p>";
-		modalb.innerHTML += "<p>Função: <input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
+		modalb.innerHTML += "<p>Color Character: <input type='color' id='input10' name='input10' maxlength=`10 size=10 /> Tamanho Fonte: <input type='text' id='input11' name='input11' maxlength=3 size=3 /> </p>";
+		modalb.innerHTML += "<p>Variable <input type='text' id='input14' name='input14' maxlength=6 size=6 /> Increment: <input type='text' id='input15' name='input13' maxlength=3 size=3 /></p>";
+		modalb.innerHTML += "<p>Blink <input type='text' id='input16' name='input16' maxlength=3 size=3 /> Precision: <input type='text' id='input17' name='input17' maxlength=5 size=5 /></p>";
+		modalb.innerHTML += "<p>Function: <input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
 		modalb.innerHTML += "<canvas id='tela4' class='modal_figura'></canvas>";
 		modalb.innerHTML += "<p></p><p>---: <input type='text' id='input18' maxlength=3 size=3>--: <input type='text' id='input12' maxlength=3 size=3> -: <input type='text' id='input13' name='input12' maxlength=3 size=3></p>";
 	}
 	if (ArrayObjStatic[index_var_config*20+17]==7) {
-		modalb.innerHTML += "<p>Incrementa X: <input type='text' id='input10' name='input10' maxlength=3 size=3 /> Variável 1 <input type='text' id='input14' name='input14' maxlength=6 size=6 /></p>";
-		modalb.innerHTML += "<p>Incrementa Y: <input type='text' id='input12' name='input12' maxlength=3 size=3 />  Variável 2: <input type='text' id='input15' name='input15' maxlength=6 size=6 /></p>";
-		modalb.innerHTML += "<p>Cor 1: <input type='color' id='input11' name='input11' maxlength=6 size=6 /> Cor 2: <input type='color' id='input13' name='input13' maxlength=6 size=6 /></p>";
-		modalb.innerHTML += "<p>Piscar <input type='text' id='input16' name='input16' maxlength=3 size=3 /> Precisão AD: <input type='text' id='input17' name='input17' maxlength=5 size=5 /></p>";
-		modalb.innerHTML += "<p> Função: <input type='text' id='input19' name='input19' maxlength=3 size=3 />--- <input type='text' id='input18' name='input16' maxlength=3 size=3 /></p>";
+		modalb.innerHTML += "<p>Increment X: <input type='text' id='input10' name='input10' maxlength=3 size=3 /> Variable 1 <input type='text' id='input14' name='input14' maxlength=6 size=6 /></p>";
+		modalb.innerHTML += "<p>Increment Y: <input type='text' id='input12' name='input12' maxlength=3 size=3 />  Variable 2: <input type='text' id='input15' name='input15' maxlength=6 size=6 /></p>";
+		modalb.innerHTML += "<p>Color 1: <input type='color' id='input11' name='input11' maxlength=6 size=6 /> Color 2: <input type='color' id='input13' name='input13' maxlength=6 size=6 /></p>";
+		modalb.innerHTML += "<p>Blink <input type='text' id='input16' name='input16' maxlength=3 size=3 /> PrecisionAD: <input type='text' id='input17' name='input17' maxlength=5 size=5 /></p>";
+		modalb.innerHTML += "<p> Function: <input type='text' id='input19' name='input19' maxlength=3 size=3 />--- <input type='text' id='input18' name='input16' maxlength=3 size=3 /></p>";
 		modalb.innerHTML += "<canvas id='tela4' class='modal_figura'></canvas>";
 	}
 	modalb.innerHTML += "<p></p>";
@@ -324,25 +324,25 @@ function simApontador(apontador){
 	var t_modal = modal.getElementsByTagName("h2");
 	switch (ArrayObjStatic[apontador*20+17]) {
 		case '1':
-			t_modal[0].innerHTML	= "Edição de Labbel";
+			t_modal[0].innerHTML	= "Label Edition";
 		break;
 		case '2':
-			t_modal[0].innerHTML	= "Edição de Desenho";
+			t_modal[0].innerHTML	= "Draw Edition";
 		break;
 		case '3':
-			t_modal[0].innerHTML	= "Figura Dinâmica - Sensor";
+			t_modal[0].innerHTML	= "Dinamyc Figure - Sensor";
 		break;
 		case '4':
-			t_modal[0].innerHTML	= "Obj Interativo - Botão";
+			t_modal[0].innerHTML	= "Interative Object - Button";
 		break;
 		case '5':
-			t_modal[0].innerHTML	= "Edição Objeto Não Visual";
+			t_modal[0].innerHTML	= "No Visual Object Edition";
 		break;
 		case '6':
-			t_modal[0].innerHTML	= "Edição de Display";
+			t_modal[0].innerHTML	= "Display Edition";
 		break;
 		case '7':
-			t_modal[0].innerHTML	= "Edição De BarGraph";
+			t_modal[0].innerHTML	= "BarGraph Edition";
 		break;
 	}
 	
@@ -376,7 +376,7 @@ function simApontador(apontador){
 }
 //Label
 function simFuncao1(){
-	simTitulo = "Novo Label";
+	simTitulo = "New Label";
 	novaFuncao = 1;
 	ArrayObjDinamic.push(0,0,0,0,0,ArrayLabel.length,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0)/20)-1;
@@ -384,7 +384,7 @@ function simFuncao1(){
 }
 //desenho
 function simFuncao2(){
-	simTitulo = "Novo Desenho";
+	simTitulo = "New Draw";
 	novaFuncao = 2;
 	ArrayObjDinamic.push(0,0,0,0,0,ArrayImagens.length,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0)/20)-1;
@@ -392,7 +392,7 @@ function simFuncao2(){
 }
 //figura dinamica
 function simFuncao3(){
-	simTitulo = "Nova Figura - Sensor";
+	simTitulo = "New Figure - Sensor";
 	novaFuncao = 3;
 	ArrayObjDinamic.push(0,0,0,0,0,ArrayImagens.length,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0)/20)-1;
@@ -400,7 +400,7 @@ function simFuncao3(){
 }
 //objeto interativo
 function simFuncao4(){
-	simTitulo = "Novo Objeto - Botão";
+	simTitulo = "New Object - Botão";
 	novaFuncao = 4;
 	ArrayObjDinamic.push(0,0,0,0,0,ArrayImagens.length,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0)/20)-1;
@@ -408,7 +408,7 @@ function simFuncao4(){
 }
 //interativo não visual
 function simFuncao5(){
-	simTitulo = "Novo Objeto não Visual";
+	simTitulo = "New No Visual Object";
 	novaFuncao = 5;
 	ArrayObjDinamic.push(0,0,0,0,0,0,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0)/20)-1;
@@ -416,7 +416,7 @@ function simFuncao5(){
 }
 //display
 function simFuncao6(){
-	simTitulo = "Novo Display";
+	simTitulo = "New Display";
 	novaFuncao = 6;
 	ArrayObjDinamic.push(0,0,0,0,0,0,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0)/20)-1;
@@ -424,7 +424,7 @@ function simFuncao6(){
 }
 //grafico de barras
 function simFuncao7(){
-	simTitulo = "Novo Bargraph";
+	simTitulo = "New Bargraph";
 	novaFuncao = 7;
 	ArrayObjDinamic.push(0,0,0,0,0,0,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0)/20)-1;
