@@ -54,8 +54,8 @@ function desenha_clp(){
 	context.fillText('Power', 10, 195);
 	context.strokeRect(10, 241, 36, 22);
 	context.fillText('Run', 16, 235);
-	context.fillText('Input - I0.', 90, 184);
-	context.fillText('Memory - M0.', 82, 201);
+	context.fillText('Input - I0.', 94, 184);
+	context.fillText('Memory - M0.', 88, 201);
 	context.fillText('M1.', 139, 211);
 	context.fillText('M2.', 139, 221);
 	context.fillText('Branch - TR', 90, 247);
@@ -217,7 +217,7 @@ function liga_led_CLP(){
 
 function stop_CLP(){
 	context.fillStyle = 'red';
-	context.fillRect(27, 242, 32, 16);
+	context.fillRect(12, 243, 32, 18);
 	for(var i=0; i <12; i++){
 		context.fillStyle = 'white';
 		context.fillRect(44+(i*32), 138, 12, 12);
