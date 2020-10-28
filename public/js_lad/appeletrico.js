@@ -165,7 +165,7 @@ function liga_led_CLP(){
 			context.fillStyle = 'green';
 		else
 			context.fillStyle = 'white';
-		context.fillRect(45+(i*32), 138, 12, 12);
+		context.fillRect(44+(i*32), 138, 12, 12);
 	}
 	context.font = '9pt Arial';
 
@@ -210,7 +210,7 @@ function liga_led_CLP(){
 				context.fillStyle = 'green';
 			else
 				context.fillStyle = 'white';
-			context.fillRect(45+(i*32), 290, 12, 12);
+			context.fillRect(44+(i*32), 290, 12, 12);
 
 			context.drawImage(AImage1, (AImage1.width/5)+(AImage1.width/5)*Q[i], 110, AImage1.width/5, 110, 33+i*32, 335, AImage1.width/5, 110);
 		}
@@ -220,14 +220,14 @@ function liga_led_CLP(){
 
 function stop_CLP(){
 	context.fillStyle = 'red';
-	context.fillRect(12, 242, 32, 16);
+	context.fillRect(12, 243, 32, 18);
 	for(var i=0; i <12; i++){
 		context.fillStyle = 'white';
-		context.fillRect(45+(i*32), 138, 12, 12);
+		context.fillRect(44+(i*32), 138, 12, 12);
 	}
 	for(var i=0; i <12; i++){
 		context.fillStyle = 'white';
-		context.fillRect(45+(i*32), 290, 12, 12);
+		context.fillRect(44+(i*32), 290, 12, 12);
 		context.drawImage(AImage1, (AImage1.width/5)*0, 110, AImage1.width/5, 110, 33+i*32, 335, AImage1.width/5, 110);
 	}
 }
