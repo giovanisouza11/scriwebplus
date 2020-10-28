@@ -5,9 +5,11 @@ Aplicativo disponível em:
 
 Ladder: 
 Scriweb.herokuapp.com
+Scriweb.herokuapp.com/en (English language)
 
 Simulador:
 Scriweb.heroku.app/simulador
+Scriweb.heroku.app/simulate (English language)
 
 
 Observação
