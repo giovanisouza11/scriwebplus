@@ -48,7 +48,7 @@ function desenha_clp(){
 	context.font = '9pt Arial';
 
 	context.fillStyle = 'red';
-	context.fillRect(27, 203, 32, 18);
+	context.fillRect(12, 203, 32, 18);
 	context.fillStyle = 'black';
 	context.strokeRect(10, 201, 36, 22);
 	context.fillText('Power', 10, 195);
@@ -68,8 +68,8 @@ function desenha_clp(){
 function desenha_borne_clp(i){
 	context.lineWidth = 1;
 	context.fillStyle = 'black';
-	context.strokeRect(10+(i*32), 132, 16, 20);
-	context.strokeRect(10+(i*32), 292, 16, 20);
+	context.strokeRect(10+(i*32), 136, 16, 16);
+	context.strokeRect(10+(i*32), 288, 16, 16);
 	context.lineWidth = 0.3;
 	context.strokeRect(8+(i*32), 308, 16, 16);
 	context.strokeRect(8+(i*32), 116, 16, 16);
@@ -135,26 +135,26 @@ function trocar() {
 function run_CLP(){
 	if(comandos == 1) {
 		context.fillStyle = 'green';
-		context.fillRect(27, 243, 32, 18);
+		context.fillRect(12, 243, 32, 18);
 		context.font = '16pt Arial';
 		context.fillStyle = 'black';
-		context.fillText('A', 36, 261);
+		context.fillText('A', 21, 261);
 		liga_led_CLP();
 	}
 	if(comandos == 2) {
 		context.fillStyle = 'green';
-		context.fillRect(27, 243, 32, 18);
+		context.fillRect(12, 243, 32, 18);
 		context.font = '16pt Arial';
 		context.fillStyle = 'black';
-		context.fillText('1', 36, 261);
+		context.fillText('1', 21, 261);
 		liga_led_CLP();
 	}
 	if(comandos == 3) {
 		context.fillStyle = 'green';
-		context.fillRect(27, 243, 32, 18);
+		context.fillRect(12, 243, 32, 18);
 		context.font = '16pt Arial';
 		context.fillStyle = 'black';
-		context.fillText('P', 36, 261);
+		context.fillText('P', 21, 261);
 		liga_led_CLP();
 	}
 }
@@ -165,7 +165,7 @@ function liga_led_CLP(){
 			context.fillStyle = 'green';
 		else
 			context.fillStyle = 'white';
-		context.fillRect(45+(i*32), 134, 10, 16);
+		context.fillRect(45+(i*32), 138, 10, 10);
 	}
 	context.font = '9pt Arial';
 
@@ -210,7 +210,7 @@ function liga_led_CLP(){
 				context.fillStyle = 'green';
 			else
 				context.fillStyle = 'white';
-			context.fillRect(45+(i*32), 294, 10, 16);
+			context.fillRect(45+(i*32), 290, 10, 10);
 
 			context.drawImage(AImage1, (AImage1.width/5)+(AImage1.width/5)*Q[i], 110, AImage1.width/5, 110, 33+i*32, 335, AImage1.width/5, 110);
 		}
@@ -223,11 +223,11 @@ function stop_CLP(){
 	context.fillRect(27, 242, 32, 16);
 	for(var i=0; i <12; i++){
 		context.fillStyle = 'white';
-		context.fillRect(45+(i*32), 134, 12, 16);
+		context.fillRect(45+(i*32), 138, 12, 12);
 	}
 	for(var i=0; i <12; i++){
 		context.fillStyle = 'white';
-		context.fillRect(45+(i*32), 294, 12, 16);
+		context.fillRect(45+(i*32), 290, 12, 12);
 		context.drawImage(AImage1, (AImage1.width/5)*0, 110, AImage1.width/5, 110, 33+i*32, 335, AImage1.width/5, 110);
 	}
 }
