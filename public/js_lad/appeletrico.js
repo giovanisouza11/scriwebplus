@@ -75,7 +75,7 @@ function desenha_borne_clp(i){
 	context.shadowOffsetX = 1;
 	context.shadowOffsetY = 1;
 	context.strokeRect(10+(i*32), 110, 14, 14);
-	context.strokeRect(10+(i*32), 320, 14, 14);
+	context.strokeRect(10+(i*32), 316, 14, 14);
 	context.beginPath();
 	context.ellipse(17+(i*32), 122, 4, 4, 0, 0, 359);
 	context.ellipse(17+(i*32), 122, 4, 2, i*30, 0, 359);
