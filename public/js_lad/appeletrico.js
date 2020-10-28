@@ -50,16 +50,16 @@ function desenha_clp(){
 	context.fillStyle = 'red';
 	context.fillRect(27, 203, 32, 18);
 	context.fillStyle = 'black';
-	context.strokeRect(25, 201, 36, 22);
-	context.fillText('Power', 25, 195);
-	context.strokeRect(25, 241, 36, 22);
-	context.fillText('Run', 31, 235);
+	context.strokeRect(10, 201, 36, 22);
+	context.fillText('Power', 10, 195);
+	context.strokeRect(10, 241, 36, 22);
+	context.fillText('Run', 16, 235);
 	context.fillText('Entradas - I0.', 86, 184);
 	context.fillText('Memórias - M0.', 76, 201);
 	context.fillText('M1.', 139, 211);
 	context.fillText('M2.', 139, 221);
-	context.fillText('Dervação - TR', 78, 247);
-	context.fillText('Saídss  - Q0.', 90, 265);
+	context.fillText('Derivação - TR', 78, 247);
+	context.fillText('Saídas  - Q0.', 90, 265);
 	liga_led_CLP();
 
 
@@ -71,8 +71,8 @@ function desenha_borne_clp(i){
 	context.strokeRect(10+(i*32), 132, 16, 20);
 	context.strokeRect(10+(i*32), 292, 16, 20);
 	context.lineWidth = 0.3;
-	context.strokeRect(8+(i*32), 312, 16, 20);
-	context.strokeRect(8+(i*32), 112, 16, 20);
+	context.strokeRect(8+(i*32), 308, 16, 16);
+	context.strokeRect(8+(i*32), 116, 16, 16);
 	context.lineWidth = 0.5;
 	context.shadowColor = 'black';
 	context.shadowOffsetX = 1;
