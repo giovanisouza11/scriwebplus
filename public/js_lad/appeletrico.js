@@ -70,9 +70,9 @@ function desenha_borne_clp(i){
 	context.fillStyle = 'black';
 	context.strokeRect(10+(i*32), 136, 16, 16);
 	context.strokeRect(10+(i*32), 288, 16, 16);
-	context.lineWidth = 0.3;
-	context.strokeRect(8+(i*32), 308, 16, 16);
-	context.strokeRect(8+(i*32), 116, 16, 16);
+	//context.lineWidth = 0.3;
+	//context.strokeRect(8+(i*32), 308, 16, 16);
+	//context.strokeRect(8+(i*32), 116, 16, 16);
 	context.lineWidth = 0.5;
 	context.shadowColor = 'black';
 	context.shadowOffsetX = 1;
