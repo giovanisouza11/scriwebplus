@@ -54,7 +54,7 @@ function desenha_clp(){
 	context.fillText('Power', 10, 195);
 	context.strokeRect(10, 241, 36, 22);
 	context.fillText('Run', 16, 235);
-	context.fillText('Input - I0.', 94, 184);
+	context.fillText('Input - I0.', 100, 184);
 	context.fillText('Memory - M0.', 88, 201);
 	context.fillText('M1.', 139, 211);
 	context.fillText('M2.', 139, 221);
@@ -135,7 +135,7 @@ function run_CLP(){
 		context.fillRect(12, 243, 32, 18);
 		context.font = '16pt Arial';
 		context.fillStyle = 'black';
-		context.fillText('A', 36, 261);
+		context.fillText('A', 21, 261);
 		liga_led_CLP();
 	}
 	if(comandos == 2) {
@@ -143,7 +143,7 @@ function run_CLP(){
 		context.fillRect(12, 243, 32, 18);
 		context.font = '16pt Arial';
 		context.fillStyle = 'black';
-		context.fillText('1', 36, 261);
+		context.fillText('1', 21, 261);
 		liga_led_CLP();
 	}
 	if(comandos == 3) {
@@ -151,7 +151,7 @@ function run_CLP(){
 		context.fillRect(12, 243, 32, 18);
 		context.font = '16pt Arial';
 		context.fillStyle = 'black';
-		context.fillText('P', 36, 261);
+		context.fillText('P', 21, 261);
 		liga_led_CLP();
 	}
 }
