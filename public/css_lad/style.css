@@ -113,8 +113,8 @@
 		z-index: 1; /* Sit on top */
 		/*margin-top:-105px;*/
 		/*margin-left:-100px;*/
-		/*left:50vw;*/
-		/*top: 50vh;*/
+		left:50vw;
+		top: 50vh;
 		width: 200; /* Full width */
 		height: 210; /* Full height */
 		overflow: no; /* Enable scroll if needed */
