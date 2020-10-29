@@ -203,7 +203,7 @@ function cSimIHM() {
 //Botao OK
 //------------------------------------------------------------------
 function simOk() {
-	var r=confirm("Confirme se queres gravar esta alteração!");
+	var r=confirm("Confirm Save!");
 	if (r==true)
 	{
 		ArrayObjStatic[index_var_config*20+17]  = document.getElementById('input02').value;
@@ -289,7 +289,7 @@ function simDw() {
 //Botao Apagar
 //-------------------------------------------------
 function simApagar() {
-	var r=confirm("Confirme: remover linha "+index_var_config+"!");
+	var r=confirm("Confirm: removed line "+index_var_config+"!");
 	if (r==true){
 		index_var_config
 		ArrayObjStatic.splice(index_var_config*20, 20);
