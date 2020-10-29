@@ -48,8 +48,8 @@ function trocar_botao() {
 		var modalb = document.getElementById("myBody");
 		var t_modal = modal.getElementsByTagName("h2")
 		t_modal[0].innerHTML = "Delete";
-		modalb.innerHTML = "<p>Start <input type=text id='input1' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Length <input type=text id='input2' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = "<p>From <input type=text id='input1' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>Measure <input type=text id='input2' maxlength=3 size=3></p>"; 
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button')
 		btn.appendChild(document.createTextNode('OK'));
@@ -75,9 +75,9 @@ function trocar_botao() {
 		var modalb = document.getElementById("myBody");
 		var t_modal = modal.getElementsByTagName("h2")
 		t_modal[0].innerHTML = "Move";
-		modalb.innerHTML = "<p>Start <input type=text id='input1' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Length<input type=text id='input2' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>End<input type=text id='input3' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = "<p>From <input type=text id='input1' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>Measure <input type=text id='input2' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>To <input type=text id='input3' maxlength=3 size=3></p>"; 
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button')
 		btn.appendChild(document.createTextNode('OK'));
@@ -103,9 +103,9 @@ function trocar_botao() {
 		var modalb = document.getElementById("myBody");
 		var t_modal = modal.getElementsByTagName("h2")
 		t_modal[0].innerHTML = "Copy";
-		modalb.innerHTML = "<p>Start <input type=text id='input1' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Length<input type=text id='input2' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>End<input type=text id='input3' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = "<p>From <input type=text id='input1' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>Measure <input type=text id='input2' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>To <input type=text id='input3' maxlength=3 size=3></p>"; 
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button')
 		btn.appendChild(document.createTextNode('OK'));
@@ -132,8 +132,8 @@ function trocar_botao() {
 		var modalb = document.getElementById("myBody");
 		var t_modal = modal.getElementsByTagName("h2")
 		t_modal[0].innerHTML = "Insert";
-		modalb.innerHTML = "<p>Start <input type=text id='input1' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Length<input type=text id='input2' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = "<p>From <input type=text id='input1' maxlength=3 size=3></p>"; 
+		modalb.innerHTML = modalb.innerHTML+ "<p>Measure <input type=text id='input2' maxlength=3 size=3></p>"; 
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button')
 		btn.appendChild(document.createTextNode('OK'));
