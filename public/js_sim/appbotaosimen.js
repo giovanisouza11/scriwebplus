@@ -126,7 +126,8 @@ function tBotao() {
 		modalb1.innerHTML = "<p><a href='http://scriweb.herokuapp.com/ftp/Alarme/Alarmes.csv'>Alarm</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao/Classificacao.csv'>Classification</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco/Corte_Vinco.csv'>Cut and Crease</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv'>Elevator</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv'>Elevator(3 floor)</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador5/Elevador5.csv'>Elevator(5 floor)</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Expedicao/Expedicao.csv'>Expedition</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Envase/Envase.csv'>Filling</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Semaforo/Semaforo.csv'>Traffic Ligth</a></p>";
