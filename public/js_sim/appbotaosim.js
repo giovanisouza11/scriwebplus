@@ -86,7 +86,7 @@ function tBotao() {
 	    		var file = this.files[0];
 			leitorDeCSV.readAsText(file);
 			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
-			alert(file.pathname);
+			alert(file.mozFullPath);
 		};
 		comandos = 0;	
 		valor_chave[5]=0;
