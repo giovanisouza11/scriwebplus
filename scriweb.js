@@ -86,7 +86,7 @@ if (ativo) {
     	app.get('/helpen',function(req,res){
         	res.sendFile(__dirname + '/scriwebhelpen.html');
     	});
-    	app.get('/simulate',function(req,res){
+    	app.get('/simulator',function(req,res){
         	res.sendFile(__dirname + '/simscriweben.html');
     	});
     	app.get('/en', function(req, res) {
