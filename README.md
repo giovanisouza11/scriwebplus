@@ -11,7 +11,7 @@ Scriweb.herokuapp.com/en (English language)
 Simulador:
 Scriweb.heroku.app/simulador
 
-Scriweb.heroku.app/simulate (English language)
+Scriweb.heroku.app/simulator (English language)
 
 
 Observação
