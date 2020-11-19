@@ -308,7 +308,7 @@ function fim_linha(linha){
 	var linha_anterior = linha;
 	if (larray[(linha*8*9) + (6)*9+5]>0)
 		CbooleanoTR('LD', ('R' + larray[(linha*8*9) + (6)*9+5]/10), (linha*8*9 + (7)*9));
-	else if (larray[(linha*8*9) + (7)*9+3]>2 || larray[(linha*8*9) + (7)*9+3]<8)
+	else if (larray[(linha*8*9) + (7)*9+3]>2 || larray[(linha*8*9) + (7)*9+3]<9)
 		CbooleanoTR('LD', (larray[(linha*8*9) + (6)*9+2]), (linha*8*9 + (7)*9));
 	funcao_fim_linha(linha);
 	while (larray[(linha*8*9) + (6)*9+5]>0) {
