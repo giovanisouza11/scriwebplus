@@ -531,6 +531,10 @@ if (ativo) {
 					acumulador = acumulador & (le_enderecoCT(programa1[passo+1],1) <= le_enderecoCT(programa1[passo+2],1) ? 1 : 0);
 					passo++;
 					break;
+				case '<>':
+					acumulador = acumulador & (le_enderecoCT(programa1[passo+1],1) != le_enderecoCT(programa1[passo+2],1) ? 1 : 0);
+					passo++;
+					break;
 			}
 		}
 		passo_atual = passo;
