@@ -223,6 +223,7 @@ if (ativo) {
 		});
 		socket.on('programax', function(data) {
 			programa1 = data.split(',');
+			console.log(programa1);
 			var data1 = programa1[programa1.length-1];
 			var x=verifica_clp(data1, socket);
 			cria_memoria();
