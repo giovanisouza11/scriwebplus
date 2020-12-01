@@ -131,6 +131,16 @@ function tBotao() {
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Envase/Envase.csv'>Envase</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Expedicao/Expedicao.csv'>Expedição</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Semaforo/Semaforo.csv'>Semáforo</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Matheus/Classificacao_Matheus.csv'>Classificação Matheus</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Amalia/Classificacao_Amalia.csv'>Classificação Amalia</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Arthur/Classificacao_Arthur.csv'>Classificação Arthur</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Luiz/Classificacao_Luiz.csv'>Classificação Luiz</a></p>"; 
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Nicolas/Classificacao_Nicolas.csv'>Classificação Nicolas</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Nicole/Classificacao_Nicole.csv'>Classificação Nicole</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Saymon/Classificacao_Saymon.csv'>Classificação Saymon</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificaca_Teixeirao/Classificacao_Teixeira.csv'>Classificação Gabriel Teixeira</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Leonardo/Corte_Vinco_Leonardo.csv'>Corte e Vinco Leonardo</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Pedro/Corte_Vinco_Pedro.csv'>Corte e Vinco Pedro</a></p>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button');
