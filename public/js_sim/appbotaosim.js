@@ -141,7 +141,7 @@ function tBotao() {
 		modalb1.innerHTML += "</tr><tr><p><a href='http://scriweb.herokuapp.com/ftp/Classificaca_Teixeirao/Classificacao_Teixeira.csv'>Classificação Gabriel Teixeira</a></p>";
 		modalb1.innerHTML += "</tr><tr><p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Leonardo/Corte_Vinco_Leonardo.csv'>Corte e Vinco Leonardo</a></p>";
 		modalb1.innerHTML += "</tr><tr><p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Pedro/Corte_Vinco_Pedro.csv'>Corte e Vinco Pedro</a></p>";
-		modalb1.innerHTML += "</tr><tr>";
+		modalb1.innerHTML += "</tr></td></table>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button');
