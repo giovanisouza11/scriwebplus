@@ -158,13 +158,13 @@ function tBotao() {
 		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Elevador_Savi/Elevador_Savi.csv'>Elevador Savi</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Saymon/Elevador_Saymon.csv'>Elevador Saymon</a>";
 		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Elevador_Teixeira/Elevador_Teixeira.csv'>Elevador Teixeira</a></p>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Elevador_Carlos/Elevador_Carlos.csv'>Elevador Carlos</a>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Elevador_Gustavo/Elevador_Gustavo.csv'>Elevador Luiz Gustavo</a>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Elevador_Israel/Elevador_Israel.csv'>Elevador Israel</a>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Elevador_Lucas/Elevador_Lucas.csv'>Elevador Lucas</a>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Elevador_Rafael/Elevador_Rafael.csv'>Elevador Rafael</a>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Elevador_Vinicius/Elevador_Vinicius.csv'>Elevador Vinicius</a>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Elevador_Thales/Elevador_THales.csv'>Elevador Thales</a>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Carlos/Elevador_Carlos.csv'>Elevador Carlos</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Gustavo/Elevador_Gustavo.csv'>Elevador Luiz Gustavo</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Israel/Elevador_Israel.csv'>Elevador Israel</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Lucas/Elevador_Lucas.csv'>Elevador Lucas</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Rafael/Elevador_Rafael.csv'>Elevador Rafael</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Vinicius/Elevador_Vinicius.csv'>Elevador Vinicius</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Thales/Elevador_Thales.csv'>Elevador Thales</a></p>";
 		//modalb1.innerHTML += "</td></tr></table>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
