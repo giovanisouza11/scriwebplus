@@ -139,13 +139,13 @@ function tBotao() {
 		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Classificacao_Nicole/Classificacao_Nicole.csv'>Classificação Nicole</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Saymon/Classificacao_Saymon.csv'>Classificação Saymon</a>";
 		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Classificaca_Teixeirao/Classificacao_Teixeira.csv'>Classificação Gabriel Teixeira</a></p>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Classificaca_Vinicius/Classificacao_Vinicius.csv'>Classificação Vinicius</a></p>";
+		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Classificaca_Vinicius/Classificacao_Vinicius.csv'>Classificação Vinicius</a>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Leonardo/Corte_Vinco_Leonardo.csv'>Corte e Vinco Leonardo</a>";
 		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Pedro/Corte_Vinco_Pedro.csv'>Corte e Vinco Pedro</a></p>";
 		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Carlos/Corte_Vinco_Carlos.csv'>Corte e Vinco Carlos</a></p>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Gustavo/Corte_Vinco_Gustavo.csv'>Corte e Vinco Luiz Gustavo</a></p>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Lucas/Corte_Vinco_Lucas.csv'>Corte e Vinco Lucas</a></p>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Rafael/Corte_Vinco_Rafael.csv'>Corte e Vinco Rafael</a></p>";
+		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Gustavo/Corte_Vinco_Gustavo.csv'>Corte e Vinco Luiz Gustavo</a>";
+		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Lucas/Corte_Vinco_Lucas.csv'>Corte e Vinco Lucas</a>";
+		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Rafael/Corte_Vinco_Rafael.csv'>Corte e Vinco Rafael</a>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Matheus/Elevador_Matheus.csv'>Elevador Matheus</a>";
 		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Elevador_Alvaro/Elevador_Alvaro.csv'>Elevador Alvaro</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Amalia/Elevador_Amalia.csv'>Elevador Amalia</a>";
