@@ -138,8 +138,8 @@ function tBotao() {
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Nicolas/Classificacao_Nicolas.csv'>Classificação Nicolas</a>";
 		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Classificacao_Nicole/Classificacao_Nicole.csv'>Classificação Nicole</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Saymon/Classificacao_Saymon.csv'>Classificação Saymon</a>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Classificaca_Teixeira/Classificacao_Teixeira.csv'>Classificação Gabriel Teixeira</a></p>";
-		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Classificaca_Vinicius/Classificacao_Vinicius.csv'>Classificação Vinicius</a>";
+		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Classificacao_Teixeira/Classificacao_Teixeira.csv'>Classificação Gabriel Teixeira</a></p>";
+		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Classificacao_Vinicius/Classificacao_Vinicius.csv'>Classificação Vinicius</a>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Leonardo/Corte_Vinco_Leonardo.csv'>Corte e Vinco Leonardo</a>";
 		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Pedro/Corte_Vinco_Pedro.csv'>Corte e Vinco Pedro</a></p>";
 		modalb1.innerHTML += "<a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Carlos/Corte_Vinco_Carlos.csv'>Corte e Vinco Carlos</a></p>";
