@@ -165,7 +165,7 @@ function tBotao() {
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Rafael/Elevador_Rafael.csv'>Elevador Rafael</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Vinicius/Elevador_Vinicius.csv'>Elevador Vinicius</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevator_Thales/Elevador_Thales.csv'>Elevador Thales</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevator_Arturo/Elevador_Arturo.csv'>Elevador Arturo</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Arturo/Elevador_Arturo.csv'>Elevador Arturo</a></p>";
 		//modalb1.innerHTML += "</td></tr></table>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
