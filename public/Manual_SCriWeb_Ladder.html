@@ -37,10 +37,11 @@ Do Software:</p></H1>
 <p><FONT SIZE=4><B>2.1 Da Simula&ccedil;&atilde;o</B></FONT></p>
         <p>Ap&oacute;s editar o software ladder o usu&aacute;rio poder&aacute; simular o mesmo.</p>
         <p>Para executar a simula&ccedil;&atilde;o do programa utilize um dos tr&ecirc;s comados: RUN, RUN CICLO e RUN PASSO A PASSO.</p>
-        <p>- RUN <IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_6ec85abc.jpg" NAME="graphics2" ALIGN=BOTTOM WIDTH=46 HEIGHT=24 BORDER=0>: Executa continuamente o programa, da primeira l&oacute;gica a &uacute;ltima, reiniciando-se em seguida. Esta &eacute; forma utilizada na maioria dos CLP comerciais.</p>
-        <p>- RUN CICLO <IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_5bee7f6e.jpg" NAME="graphics3" ALIGN=BOTTOM WIDTH=51 HEIGHT=26 BORDER=0>: executa apenas um ciclo do programa, ou seja, vai da primeira a &uacute;ltima l&oacute;gica e para o programa. Para executar um novo ciclo de programa&#65440; faz-se necess&aacute;rio pulsar novamente o bot&atilde;o RUN CICLO.</p>
-        <p>- RUN PASSO A PASSO <IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_b799064.jpg" NAME="graphics4" ALIGN=BOTTOM WIDTH=47 HEIGHT=27 BORDER=0>: m&eacute;todo did&aacute;tico que permite executar o programa passo a passo, a cada pulso no bot&atilde;o executa apenas uma fun&ccedil;&atilde;o do ladder (um passo), convertido para booleano. o passo que est&aacute; sendo executado pode ser visualizado no ambiente atrav&eacute;s do fundo amarelo na fun&ccedil;&atilde;o, que indica que o ladder foi executado at&eacute; o ponto indicado. Este m&eacute;todo &eacute; fundamental para que o usu&aacute;rio entenda a ordem em que os comandos s&atilde;o interpretados em um CLP.</p>
-
+        <UL>
+	<LI><p>- RUN <IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_6ec85abc.jpg" NAME="graphics2" ALIGN=BOTTOM WIDTH=46 HEIGHT=24 BORDER=0>: Executa continuamente o programa, da primeira l&oacute;gica a &uacute;ltima, reiniciando-se em seguida. Esta &eacute; forma utilizada na maioria dos CLP comerciais.</p>
+        <LI><p>- RUN CICLO <IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_5bee7f6e.jpg" NAME="graphics3" ALIGN=BOTTOM WIDTH=51 HEIGHT=26 BORDER=0>: executa apenas um ciclo do programa, ou seja, vai da primeira a &uacute;ltima l&oacute;gica e para o programa. Para executar um novo ciclo de programa&#65440; faz-se necess&aacute;rio pulsar novamente o bot&atilde;o RUN CICLO.</p>
+        <LI><p>- RUN PASSO A PASSO <IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_b799064.jpg" NAME="graphics4" ALIGN=BOTTOM WIDTH=47 HEIGHT=27 BORDER=0>: m&eacute;todo did&aacute;tico que permite executar o programa passo a passo, a cada pulso no bot&atilde;o executa apenas uma fun&ccedil;&atilde;o do ladder (um passo), convertido para booleano. o passo que est&aacute; sendo executado pode ser visualizado no ambiente atrav&eacute;s do fundo amarelo na fun&ccedil;&atilde;o, que indica que o ladder foi executado at&eacute; o ponto indicado. Este m&eacute;todo &eacute; fundamental para que o usu&aacute;rio entenda a ordem em que os comandos s&atilde;o interpretados em um CLP.</p>
+	</UL>
 
 <A NAME="_x0000_i1031"></A><p><FONT SIZE=4><B>2.2 Enviar programa para CLP Virtual</B></FONT><IMG SRC="Manual_SCriWeb_Ladder_arquivos/Manual_SCriWeb_Ladder_html_684ab400.jpg" NAME="graphics5" ALIGN=BOTTOM WIDTH=54 HEIGHT=28 BORDER=0></FONT>
         <p>Para simula&ccedil;&atilde;o do processo, antes de colocar o CLP no modo RUN &eacute; necess&aacute;rio carregar o software do ambiente de programa&ccedil;&atilde;o para o CLP Virtual.</FONT>
@@ -206,21 +207,22 @@ Do Software:</p></H1>
 <p><FONT SIZE=4><B>2.8 Da simula&ccedil;&atilde;o</B></FONT></p>
         <p>Ao simular o ladder os comandos da linguagem de programa&ccedil;&atilde;o podem aparecer em CINCO CORES diferentes, com o seguinte significado:</p>
         <IMG SRC="Manual_SCriWeb_Ladder_arquivos/image007.png" NAME="graphics13" ALIGN=BOTTOM WIDTH=494 HEIGHT=91 BORDER=0><BR>
-	<p>- PRETO - N&atilde;o est&aacute; deixando passar corrente VIRTUAL </p>
-	<p>- VERDE - Liberando a corrente VIRTUAL</p>
-       	<p>- VERMELHO - ERR0 - vari&aacute;vel Inexistente</p>
-       	<p>- AMARELO - ERR0 - Erro n&atilde;o previsto</p>
-       	<p>- FUNDO AMARELO - l&oacute;gica atual no modo passo-a-passo</p>
-
+	<UL><LI><p>- PRETO - N&atilde;o est&aacute; deixando passar corrente VIRTUAL </p>
+	<LI><p>- VERDE - Liberando a corrente VIRTUAL</p>
+       	<LI><p>- VERMELHO - ERR0 - vari&aacute;vel Inexistente</p>
+       	<LI><p>- AMARELO - ERR0 - Erro n&atilde;o previsto</p>
+       	<LI><p>- FUNDO AMARELO - l&oacute;gica atual no modo passo-a-passo</p>
+		</UL>
  <p><FONT SIZE=4><B>2.9 Das Vari&aacute;veis Aceitas</B></FONT></p>
         <p>s&atilde;o aceitas as seguintes vari&aacute;veis com os seguintes indexes:</p>
-        <p>- I : entrada</p>
-        <p>- Q : sa&iacute;das</p>
-        <p>- M : mem&oacute;rias</p>
-        <p>- C : contadores</p>
-        <p>- T : Temporizadores</p>
-        <p>- Constantes</p>
-        <p>Estas vari&aacute;veis podem ser acessadas como registradores (16 bits), como por exemplo: I0, M2, Q1</p>
+        <UL><LI><p>- I : entrada</p>
+        <LI><p>- Q : sa&iacute;das</p>
+        <LI><p>- M : mem&oacute;rias</p>
+        <LI><p>- C : contadores</p>
+        <LI><p>- T : Temporizadores</p>
+        <LI><p>- Constantes</p>
+        </UL>
+	<p>Estas vari&aacute;veis podem ser acessadas como registradores (16 bits), como por exemplo: I0, M2, Q1</p>
         <p>Estas vari&aacute;veis podem ser acessadas de forma bin&aacute;ria, como: I0.0, I0.10, M2.15, M2.1, Q1.3, etc.</p>
         <p>No CLP as entradas iniciam-se em ZERO e as sa&iacute;das tamb&eacute;m.</p>
         <p>Os contadores e temporizadores correspondem a um tipo especial, que podem indicar um registrador de 16 bits ou um endere&ccedil;o bin&aacute;rio, seu acesso sempre ser&aacute; sem a 
@@ -228,19 +230,19 @@ Do Software:</p></H1>
 
  <p><FONT SIZE=4><B>2.10 Das Fun&ccedil;&otilde;es\Comandos Ladder Aceitas</B></FONT></p>
         <p>s&atilde;o aceitas as seguintes fun&ccedil;&otilde;es/comando no ambiente ladder:</p>
-        <p>- Liga&ccedil;&atilde;o horizontal;</p>
-        <p>- Liga&ccedil;&atilde;o vertical;</p>
-        <p>- Contato NA;</p>
-        <p>- Contato NF;</p>
-        <p>- Rele bobina;</p>
-        <p>- Rele Set;</p>
-        <p>- Rele Reset;</p>
-        <p>- Temporizador na </p><p>energiza&ccedil;&atilde;o;</p>
-        <p>- Contador crescente;</p>
-        <p>- fun&ccedil;&atilde;o gen&eacute;rica: aceita fun&ccedil;&atilde;o MOV, + e -</p>
-        <p>- Contato de pulso NA;</p>
-        <p>- Fun&ccedil;&otilde;es de compara&ccedil;&atilde;o: aceita: &gt;, &lt;, =, &gt;=, &lt;= e &lt;&gt;.</p>
-
+        <UL><LI><p>- Liga&ccedil;&atilde;o horizontal;</p>
+        <LI><p>- Liga&ccedil;&atilde;o vertical;</p>
+        <LI><p>- Contato NA;</p>
+        <LI><p>- Contato NF;</p>
+        <LI><p>- Rele bobina;</p>
+        <LI><p>- Rele Set;</p>
+        <LI><p>- Rele Reset;</p>
+        <LI><p>- Temporizador na </p><p>energiza&ccedil;&atilde;o;</p>
+        <LI><p>- Contador crescente;</p>
+        <LI><p>- fun&ccedil;&atilde;o gen&eacute;rica: aceita fun&ccedil;&atilde;o MOV, + e -</p>
+        <LI><p>- Contato de pulso NA;</p>
+        <LI><p>- Fun&ccedil;&otilde;es de compara&ccedil;&atilde;o: aceita: &gt;, &lt;, =, &gt;=, &lt;= e &lt;&gt;.</p>
+		</UL>
 <p><FONT SIZE=4 STYLE="font-size: 16pt"><B>3. Do Desenvolvimento</B></FONT></p>
 <p><FONT SIZE=4><B>3.1. Dos Arquivos e Diret&Oacute;Rios</B></FONT></p>
         <p>O aplicativo &eacute; composto pela seguinte estrutura de arquivos:</p>
