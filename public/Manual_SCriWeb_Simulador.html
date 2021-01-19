@@ -57,23 +57,23 @@ interface gr&aacute;fica que representa um processo industrial.</P>
 		<LI> Crie o aplicativo para simula&ccedil;&atilde;o no
 			endere&ccedil;o localhost:4333/simulador ou scriweb.herokuapp.com/simulador;</LI>
 
-<LI><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m27a0b782.png" NAME="graphics3" ALIGN=LEFT WIDTH=76 HEIGHT=46 BORDER=0>-
+<LI><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m27a0b782.png" NAME="graphics3" ALIGN=LEFT WIDTH=68 HEIGHT=42 BORDER=0>-
  Abra um pronto;</LI><BR><BR>
-<LI><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m74df7c3.png" NAME="graphics4" ALIGN=LEFT WIDTH=73 HEIGHT=47 BORDER=0>-D&ecirc;
+<LI><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m74df7c3.png" NAME="graphics4" ALIGN=LEFT WIDTH=68 HEIGHT=42 BORDER=0>-D&ecirc;
 um play no simulador;</LI><BR><BR>
-<LI><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_5e269ee6.png" NAME="graphics8" ALIGN=LEFT WIDTH=74 HEIGHT=45 BORDER=0>-
+<LI><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_5e269ee6.png" NAME="graphics8" ALIGN=LEFT WIDTH=68 HEIGHT=42 BORDER=0>-
 	Pare a simula&ccedil;&atilde;o</LI></UL>
 	</P>
 <P><BR><BR>
 </P>
 <P>Al&eacute;m deste o software tem os seguintes bot&otilde;es:</P>
-<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_1fab3de8.png" NAME="graphics5" ALIGN=LEFT WIDTH=71 HEIGHT=48 BORDER=0>-
-Configura&ccedil;&atilde;o.</P>
-<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m2a56c48a.png" NAME="graphics6" ALIGN=LEFT WIDTH=75 HEIGHT=47 BORDER=0>-
-Help</P>
-<P><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m2559f34f.png" NAME="graphics7" ALIGN=LEFT WIDTH=74 HEIGHT=46 BORDER=0>-
-Sobre</P>
-<P><BR><BR>
+<UL><LI><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_1fab3de8.png" NAME="graphics5" ALIGN=LEFT WIDTH=68 HEIGHT=42 BORDER=0>-
+Configura&ccedil;&atilde;o.</LI><BR><BR>
+<LI><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m2a56c48a.png" NAME="graphics6" ALIGN=LEFT WIDTH=68 HEIGHT=42 BORDER=0>-
+Help</LI><BR><BR>
+<LI><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m2559f34f.png" NAME="graphics7" ALIGN=LEFT WIDTH=68 HEIGHT=42 BORDER=0>-
+Sobre</LI><BR><BR></UL>
+<P><BR>
 </P>
 <H2 CLASS="western">2.2 Da Edi&ccedil;&atilde;o</H2>
 <P>Para entrar no modo edi&ccedil;&atilde;o atrav&eacute;s do bot&atilde;o
@@ -84,23 +84,26 @@ que alterna os modo edi&ccedil;&atilde;o e simula&ccedil;&atilde;o.</P>
 <H2 CLASS="western">2.3 Das vari&aacute;veis:</H2>
 <P><BR><BR>
 </P>
-<P STYLE="margin-bottom: 0mm">Veja o help do configurador LADDER em
-localhost:4333 para ver as vari&aacute;veis permitidas no CLP
-virtual. Al&eacute;m das vari&aacute;veis do simulador Ladder, foram
+<P STYLE="margin-bottom: 0mm">Veja o arquivo help do configurador LADDER para ver as vari&aacute;veis permitidas no CLP
+	virtual.</P>
+<P STYLE="margin-bottom: 0mm">Al&eacute;m das vari&aacute;veis do simulador Ladder, foram
 incluidos novos tipos de vari&aacute;veis. As vari&aacute;veis X, Y,
 U, D, N e V. Para utilizar est&aacute; vari&aacute;vel coloque o
 apontador (X ou Y), seguido do n&uacute;mero da linha do objeto no
-arquivo de configura&ccedil;&atilde;o. Por exemplo: X10, representa a
-posicao X do objeto da linha 10; Y5, representa a posicao Y do objeto
-da linha 5. Esta posicao ser&aacute; utilizada para ativar os objetos
+	arquivo de configura&ccedil;&atilde;o.</P>
+	<P STYLE="margin-bottom: 0mm">Por exemplo:</P>
+	<UL><LI>X10, representa a posicao X do objeto da linha 10;</LI>
+		<LI> Y5, representa a posicao Y do objeto da linha 5.</LI>
+		<LI> Esta posicao ser&aacute; utilizada para ativar os objetos
 dependentes de movimenta&ccedil;&atilde;o, por exemplo quando um
-objeto tocar em um fim de curso. A verifica&ccedil;&atilde;o da
+			objeto tocar em um fim de curso.</LI>
+		<LI> A verifica&ccedil;&atilde;o da
 posicao ser&aacute; feita da seguinte forma: A = representa um dos
 extremos da figura movel (esquerda ou superior) B = o outro extremo
 (direita ou inferior) C = representa um dos extremos do objeto que
 ser&aacute; interferido (esquerda ou superior) D = o outro extremo
-(direita ou inferior) 
-</P>
+			(direita ou inferior)</LI></UL> 
+
 <P STYLE="margin-bottom: 0mm"><IMG SRC="Manual_SCriWeb_Simulador_arquivos/Manual_SCriWeb_Simulador_html_m16e8504e.png" NAME="graphics2" WIDTH=258 HEIGHT=126 BORDER=0></P>
 <P STYLE="margin-bottom: 0mm">Ser&aacute; aplicado a seguinte l&oacute;gica:
 ((((A &lt; D) AND (A &gt; C)) OR (( B &lt; D) AND (B &gt; C)) OR ((A
