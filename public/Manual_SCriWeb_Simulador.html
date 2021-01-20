@@ -324,13 +324,13 @@ fun&ccedil;&otilde;es:</P>
 png. As figuras que ser&atilde;o utilizadas para visualiza&ccedil;&atilde;o
 devem ter as seguintes complementos no nome:</P>
 	<UL>
-		<IL> '' - padrão </IL>
-		<IL> ´_off' - desligada</IL> 
-		<IL>'_on1'- Ligada</IL>
-		<IL>'_on2'- Ligada 2 para piscar</IL>
-		<IL>'3'</IL>
-		<IL>'4'</IL>
-		<IL>'5'</IL>
+		<LI> '' - padrão </LI>
+		<LI> ´_off' - desligada</LI> 
+		<LI>'_on1'- Ligada</LI>
+		<LI>'_on2'- Ligada 2 para piscar</LI>
+		<LI>'3'</LI>
+		<LI>'4'</LI>
+		<LI>'5'</LI>
 	</UL>
 <P STYLE="margin-bottom: 0mm"> A raiz do nome será mantida
 	para todas as figuras e indicadas no arquivo de simula&ccedil;&atilde;o.</P>
@@ -339,7 +339,7 @@ figuras correia_off.png, correia_on1.png e correia_on2.png e indicar
 no arquivo de simula&ccedil;&atilde;o a figura correia. Para ver uma
 figura est&aacute;tica, criar o arquivo matriz.png. 
 </P>
-<H2 CLASS="western"><BR>3.3 Das Tabelas de Simula&ccedil;&atilde;o</H2>
+<BR><H2 CLASS="western"><BR>3.3 Das Tabelas de Simula&ccedil;&atilde;o</H2>
 <P STYLE="margin-bottom: 0mm">Para simular o processo foram criadas
 cinco tabelas especificas:</P>
 <UL>
@@ -384,120 +384,63 @@ cinco tabelas especificas:</P>
 	</P>
 	
 <UL>
-	<LI><P STYLE="margin-bottom: 0mm">0_nome 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">1_Index_Figura(1:fig1, 2:fig2,
-	etc) 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">2_Timer(uso da monitoracao) 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">3_PosX 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">4_PosY 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">5_Pos_ArrayImagens ou
-	Pos_ArrayLabel 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">6_funcao 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">7_Pox_X_anterior 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">8_POs_Y_anterior 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">9_reserva 
-	</P>
+	<LI>0_nome 
+	<LI>1_Index_Figura(1:fig1, 2:fig2,etc)
+	<LI>2_Timer(uso da monitoracao) 
+	<LI>3_PosX 
+	<LI>4_PosY 
+	<LI>5_Pos_ArrayImagens ou Pos_ArrayLabel
+	<LI>6_funcao 
+	<LI>7_Pox_X_anterior 
+	<LI>8_POs_Y_anterior 
+	<LI>9_reserva 
 </UL>
 <H2 CLASS="western">3.4. Do tipo de objetos.</H2>
 <H2 CLASS="western"><BR><BR>
 </H2>
-<H3 CLASS="western">3.4.1 - Label</H3>
+<BR><H3 CLASS="western">3.4.1 - Label</H3>
 <P STYLE="margin-bottom: 0mm">Um objeto que permite inserir
 caracteres na interface gr&aacute;fica. Para sua utiliza&ccedil;&atilde;o
 deve-se configurar:</P>
 <UL>
-	<LI><P STYLE="margin-bottom: 0mm">1_tipo: Tipo de vari&aacute;vel(1:
-	Label) 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">2_nome: Nome do objeto; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">3- tag: Nome da var&aacute;vel se
-	existir; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">5_pos_x_inicial: Posi&ccedil;&atilde;o
-	do objeto; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">6_Largura: Largura do quadro; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">8_pos_y: Posicao Y; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">9_Altura: Altura do quadro; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">11_dpos_x: Cor da fonte; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">12_pos_x_final: Tamanho da fonte; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">13_Cor1: Cor de fundo do quadro se
-	tag==1; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">14-Cor2: Cor de fundo do quadro se
-	tag==0; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">19_figura: Label (mensagem) a ser
-	escrita; 
-	</P>
+	<LI>1_tipo: Tipo de vari&aacute;vel(1:Label) 
+	<LI>2_nome: Nome do objeto; 
+	<LI>3- tag: Nome da var&aacute;vel se existir; 
+	<LI>5_pos_x_inicial: Posi&ccedil;&atilde;o do objeto; 
+	<LI>6_Largura: Largura do quadro; 
+	<LI>8_pos_y: Posicao Y; 
+	<LI>9_Altura: Altura do quadro; 
+	<LI>11_dpos_x: Cor da fonte; 
+	<LI>12_pos_x_final: Tamanho da fonte;
+	<LI>13_Cor1: Cor de fundo do quadro se tag==1; 
+	<LI>14-Cor2: Cor de fundo do quadro se tag==0; 
+	<LI>19_figura: Label (mensagem) a ser escrita;
 </UL>
+<BR>
 <H3 CLASS="western">3.4.2 - Figura Est&aacute;tica</H3>
 <P STYLE="margin-bottom: 0mm">Um objeto que permite colocar uma
 figura na tela e tamb&eacute;m permite a movimenta&ccedil;&atilde;o
 da mesma na tela. Neste caso configura-se:</P>
 <UL>
-	<LI><P STYLE="margin-bottom: 0mm">1_tipo: Tipo de vari&aacute;vel(2:
-	Figuras Est&aacute;ticas) 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">2_nome: Nome do objeto; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">5_pos_x_inicial: Posi&ccedil;&atilde;o
-	do objeto; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">6_dpos_x: Tamanho do objeto; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">7_pos_x_final: Posi&ccedil;&atilde;o
-	Final, caso a figura se movimente; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">8_pos_y_inicial: Posi&ccedil;&atilde;o
-	do objeto 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">9_dpos_y: Tamanho; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">10_pos_y_final:Posi&ccedil;&atilde;o
-	final; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">11_inc_x1: Incremento relativo a
-	vari&aacute;vel 1 no eixo x; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">12_inc_x2: Incremento relativo a
-	vari&aacute;vel 2; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">13_inc_y1: Incremento relativo a
-	vari&aacute;vel 1 no eixo y; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">14_inc_y2: Incremento relativo a
-	vari&aacute;vel 2; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">15_var1_dependente: Vari&aacute;vel
-	que ativa o incremento 1; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">16_var2_dependente: Vari&aacute;vel
-	2 que ativa o incremento 2; 
-	</P>
-	<LI><P STYLE="margin-bottom: 0mm">19_figura: Nome do arquivo da
-	figura; Neste caso basta criar uma figura sem extens&otilde;es
-	(_off, _on1, etc), por exemplo: matriz.png. Ao click em cima da
-	figura ela vai para a posi&ccedil;&atilde;o inicial indicada.A
-	posicao inicial &eacute; armazenada na posi&ccedil;&atilde;o 5 e 8
-	da tabela. 
-	</P>
+	<LI>1_tipo: Tipo de vari&aacute;vel(2:	Figuras Est&aacute;ticas) 
+	<LI>2_nome: Nome do objeto; 
+	<LI>5_pos_x_inicial: Posi&ccedil;&atilde;o	do objeto; 
+	<LI>6_dpos_x: Tamanho do objeto; 
+	<LI>7_pos_x_final: Posi&ccedil;&atilde;o Final, caso a figura se movimente; 
+	<LI>8_pos_y_inicial: Posi&ccedil;&atilde;o	do objeto 
+	<LI>9_dpos_y: Tamanho; 
+	<LI>10_pos_y_final:Posi&ccedil;&atilde;o final;
+	<LI>11_inc_x1: Incremento relativo a vari&aacute;vel 1 no eixo x; 
+	<LI>12_inc_x2: Incremento relativo a vari&aacute;vel 2;
+	<LI>13_inc_y1: Incremento relativo a vari&aacute;vel 1 no eixo y; 
+	<LI>14_inc_y2: Incremento relativo a vari&aacute;vel 2;
+	<LI>15_var1_dependente: Vari&aacute;vel que ativa o incremento 1; 
+	<LI>16_var2_dependente: Vari&aacute;vel 2 que ativa o incremento 2; 
+	<LI>19_figura: Nome do arquivo da figura; Neste caso basta criar uma figura sem extens&otilde;es
+	(_off, _on1, etc), por exemplo: matriz.png. Ao click em cima da figura ela vai para a posi&ccedil;&atilde;o inicial indicada.A
+	posicao inicial &eacute; armazenada na posi&ccedil;&atilde;o 5 e 8 da tabela. 
 </UL>
+<BR>
 <H3 CLASS="western">3.4.3 - Figura Din&acirc;mica</H3>
 <P>Um objeto din&acirc;mico que permite a troca da
 imagem dependendo do valor de uma vari&aacute;vel. Para a figura
@@ -526,7 +469,7 @@ Por exemplo: correia_off.png, correia_on1.png e correia_on2.png.
 Quando a fun&ccedil;&atilde;o piscar est&aacute; desabilitada as
 figuras devem ter as extens&otilde;es: _off e on1. Por exemplo:
 fc1_off.png e fc1_on1.png. 
-
+<BR>
 <H3 CLASS="western"><BR>3.4.4 - Figura Interativa (Bot&otilde;es e
 sensores para simula&ccedil;&atilde;o)</H3>
 <P CLASS="western" STYLE="margin-bottom: 0mm">Figura interativa
@@ -569,7 +512,7 @@ do objeto
 interativa, vari&aacute;vel/propriedade de intera&ccedil;&atilde;o;
 <LI>16_var2_dependente: Vari&aacute;vel 2 de intera&ccedil;&atilde;o;
 <LI>19_figura: Nome do arquivo da figura; 
-
+<BR>
 <H3 CLASS="western">3.4.4 - Objetos N&atilde;o Visuais Interativos</H3>
 <P CLASS="western">Igual a figura interativa,mas sem a propriedade
 gr&aacute;fica. 
@@ -599,7 +542,7 @@ interativa, vari&aacute;vel/propriedade de intera&ccedil;&atilde;o;
 <LI>17-Habilita 
 <LI>18- Precis&atilde;o Conversor AD (1024,
 2048, 4096, etc) 
-
+<BR>
 <H3 CLASS="western">3.4.6 - Bargraph</H3>
 <P CLASS="western">Visualizac&atilde;o de uma figura 2D cujo um eixo
 &eacute; proporcional ao valor da mem&oacute;ria interna. Usa-se as
