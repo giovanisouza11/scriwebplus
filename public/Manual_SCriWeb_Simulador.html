@@ -87,8 +87,18 @@ que alterna os modo edi&ccedil;&atilde;o e simula&ccedil;&atilde;o.</P>
 <P STYLE="margin-bottom: 0mm">Veja o arquivo help do configurador LADDER para ver as vari&aacute;veis permitidas no CLP
 	virtual.</P>
 <P STYLE="margin-bottom: 0mm">Al&eacute;m das vari&aacute;veis do simulador Ladder, foram
-incluidos novos tipos de vari&aacute;veis. As vari&aacute;veis X, Y,
-U, D, N e V. Para utilizar est&aacute; vari&aacute;vel coloque o
+	incluidos novos tipos de vari&aacute;veis. As vari&aacute;veis: </P>
+	<UL><LI> X - Posição X do elemento da linha,
+	<LI> Y - Posição Y do elemento da linha,
+	<LI>U - INcrementa (Up) o elemento da linha,
+	<LI>D - Decrementa (DOWN) o elemento da linha,
+	<LI>N - Aplica a operação NÂO,
+	<LI>S - Set o tag da linha,
+	<LI>R - Reseta o tag,
+	<LI>V- Verifica se a posição da linha se o tag da linha for igual a UM; 
+	</UL>
+		
+<P STYLE="margin-bottom: 0mm">Para utilizar est&aacute; vari&aacute;vel coloque o
 apontador (X ou Y), seguido do n&uacute;mero da linha do objeto no
 	arquivo de configura&ccedil;&atilde;o.</P>
 	<P STYLE="margin-bottom: 0mm">Por exemplo:</P>
@@ -110,18 +120,17 @@ apontador (X ou Y), seguido do n&uacute;mero da linha do objeto no
 ((((A &lt; D) AND (A &gt; C)) OR (( B &lt; D) AND (B &gt; C)) OR ((A
 &lt; C) AND (B &gt; D)))</P>
 <P STYLE="margin-bottom: 0mm"><BR></P>
-<P STYLE="margin-bottom: 0mm">Tamb&eacute;m foram incluidas novas
-vari&aacute;veis: Set, Reset e N&atilde;o. Basta colocar as letras:
+<P STYLE="margin-bottom: 0mm">Para utilizar as vari&aacute;veis: Set, Reset e N&atilde;o. Basta colocar as letras:
 S,R e N antes da vari&aacute;vel.A vari&aacute;vel set e reset s&oacute;
 coloca em 1 ou 0 caso esteja no local.e a vari&aacute;vel N serve
 para desligar um avan&ccedil;o.</P>
 <P STYLE="margin-bottom: 0mm">Exemplos: SX1, RY4, NQ0.0</P>
-<P STYLE="margin-bottom: 0mm">A VX Ou VY &eacute; utilizado para
+<P STYLE="margin-bottom: 0mm">A vari&aacute;avel V é utilizada em conjunto com X e Y, da seguinte forma: VX ou VY &eacute; utilizado para
 verificar a posi&ccedil;&atilde;o conforme o diagrama anterior mas
 somente se variavel da linha estiver em um. Por exemplo VX1 verifica
 se o objeto atual est&aacute; alinhado com o objeto da linha 1 se o
 tag da linha 1 estiver com valor um.</P>
-<P STYLE="margin-bottom: 0mm">U e D &eacute; utilizado com o objeto
+<P STYLE="margin-bottom: 0mm">A vari&aacute;avel U e D &eacute; utilizado com o objeto
 texto para somar ou diminiur, conforme valor do tag da linha. 
 </P>
 <P STYLE="margin-bottom: 0mm"><BR></P>
@@ -339,7 +348,7 @@ figuras correia_off.png, correia_on1.png e correia_on2.png e indicar
 no arquivo de simula&ccedil;&atilde;o a figura correia. Para ver uma
 figura est&aacute;tica, criar o arquivo matriz.png. 
 </P>
-<BR><H2 CLASS="western"><BR>3.3 Das Tabelas de Simula&ccedil;&atilde;o</H2>
+<BR><H2 CLASS="western"><BR>3.3 Da Tabela de Simula&ccedil;&atilde;o</H2>
 <P STYLE="margin-bottom: 0mm">Para simular o processo foram criadas
 cinco tabelas especificas:</P>
 <UL>
@@ -395,7 +404,7 @@ cinco tabelas especificas:</P>
 	<LI>8_POs_Y_anterior 
 	<LI>9_reserva 
 </UL>
-<H2 CLASS="western">3.4. Do tipo de objetos.</H2>
+<H2 CLASS="western">3.4. Do tipo de objeto.</H2>
 <H2 CLASS="western"><BR><BR>
 </H2>
 <BR><H3 CLASS="western">3.4.1 - Label</H3>
