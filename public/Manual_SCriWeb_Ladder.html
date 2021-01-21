@@ -27,9 +27,9 @@ Do Software:</p></H1>
 <p>      O SCriWeb , Simulador Ladder Web, &eacute; um software de uso did&aacute;tico que permite a aprendizagem de CLP e sua programa&ccedil;&atilde;o. Permitindo a programa&ccedil;&atilde;o da linguagem ladder e a simula&ccedil;&atilde;o de uma m&aacute;quina ou processo industrial.</p>
 <p><FONT SIZE=4 STYLE="font-size: 16pt"><B>2. Da Utiliza&ccedil;&atilde;o:</B></FONT></p>
         <p>O software pode ser acessado da seguintes formas:</>
-	<p> Através do endereço scriweb.herokuapp.com <p>
-	<p> Versão desktop abrindo o servidor SCRIWEB, atrav&eacute;s de qualquer browser compativel com HTML 5.0</p>
-	<p> diretamente atraves do aplicativo execut&aacute;vel electron.</p>
+	<UL><LI> Através do endereço scriweb.herokuapp.com <LI>
+	<LI> Versão desktop abrindo o servidor SCRIWEB no NODEJS, atrav&eacute;s de qualquer browser compativel com HTML 5.0</LI>
+	<LI> Diretamente atraves do aplicativo execut&aacute;vel electron.</LI></UL>
         <p>O aplicativo execut&aacute;vel apresenta uma janela com as escolhas de abertura da janela de programa&ccedil;&atilde;o &lt;LADDER&gt; e/ou a janela de simula&ccedil;&atilde;o &lt;SIMULADOR&gt;.</p>
    	<IMG SRC="Manual_SCriWeb_Ladder_arquivos/image001.png" NAME="graphics1" WIDTH=431 HEIGHT=256 BORDER=0>
 	<p> Na versão browser pode-se abrir a simulação no endereço: scriweb.herokuapp.com/simulador </p>	   
@@ -249,29 +249,38 @@ Do Software:</p></H1>
         <LI><p> Fun&ccedil;&otilde;es de compara&ccedil;&atilde;o: aceita: &gt;, &lt;, =, &gt;=, &lt;= e &lt;&gt;.</p>
 		</UL>
 <br><p><FONT SIZE=4 STYLE="font-size: 16pt"><B>3. Do Desenvolvimento</B></FONT></p>
-<br><p><FONT SIZE=4><B>3.1. Dos Arquivos e Diret&Oacute;Rios</B></FONT></p>
+<br><p><FONT SIZE=4><B>3.1. Dos Arquivos e Diret&oacute;rios</B></FONT></p>
         <p>O aplicativo &eacute; composto pela seguinte estrutura de arquivos:</p>
-        <UL><LI><p> Diret&oacute;rio raiz: SCriWeb_DATA, informando a data de cria?o do arquivo no padr? ANOMESDIA</p>
+        <UL><LI><p> Diret&oacute;rio raiz: SCriWeb</p>
         <LI><p> Subdiret&oacute;rio: SCriWeb</p>
-        <LI><p> Subdiret&oacute;rio: LADDER</p>
-        <LI><p> Subdiret&oacute;rio: Simulador</p>
+        <LI><p> Subdiret&oacute;rio: public</p>
         <LI><p> Subdiret&oacute;rio: node_modules, para as dependencias do node, este diret&oacute;rio &eacute; criado automaticamente quanto executa-se na raiz da aplica&ccedil;&atilde;o &quot;npm run install&quot;</p>
-		</UL>
-<br><p><FONT SIZE=3><B>3.1.1 Subdiret&oacute;rio SCriWeb</B></FONT></p>
-        <UL><LI><p>Subdiretorio: public, para armazenamento dos script, desenhos, css da aplica&ccedil;&atilde;o e manual de opera&ccedil;&atilde;o.</p>
-        <LI><p>Arquivo: icon4.png, &iacute;cone da aplica&ccedil;&atilde;o</p>
-        <LI><p>Arquivo: package.json, script inicial da aplica&ccedil;&atilde;o ELECTRON</p>
-        <LI><p>Arquivo: Scriweb.html, p&aacute;gina HTML padrao do Supervis&atilde;oio SCriWeb</p>
+	<LI><p>Arquivo: icon4.png, &iacute;cone da aplica&ccedil;&atilde;o</p>
+        <LI><p>Arquivo: package.json, script inicial da aplica&ccedil;&atilde;o NODEJS</p>
+        <LI><p>Arquivo: package-lock.json, script inicial do servidor NODEJS</p>
+	<LI><p>Arquivo: procfile, arquivo de configuração do ambiente HEROKU</p>
+	<LI><p>Arquivo: README.md, arquivo de informação do GITHUB</p>
+	<LI><p>Arquivo: Scriweb.html, p&aacute;gina HTML padrao do Supervis&atilde;oio SCriWeb</p>
         <LI><p>Arquivo: ScriWeb.js, script da aplica&ccedil;&atilde;o NODE e ELECTRON</p>
-        <LI><p>Arquivo: ScriWebAbout, p&aacute;gina ABOUT da aplica&ccedil;&atilde;o.</p>
         <LI><p>Arquivo: ScriWebHelp, p&aacute;gina de HELP</p>
-        <LI><p>Arquivo: SCriWebConfig, p&aacute;gina para configura&ccedil;&atilde;o</p>
         <LI><p>Arquivo: Servidor.html, p&aacute;gina html a ser visualizada com o ELECTRON</p>
         <LI><p>Arquivo: SimSCriWeb.html, p&aacute;gina para montagem da aplica&ccedil;&atilde;o do simulador industrial.</p>
-        <LI><p>Arquivo: SimConfig.html, p&aacute;gina para configura&ccedil;&atilde;o da aplica&ccedil;&atilde;o de simulador</p>
         <LI><p>Arquivo: SimHelp.html, p&aacute;gina de help</p>
-        <LI><p>Arquivo: SPLASH, tela inicial SCRIWEB.</p>
-		</UL>
+        <LI><p>Arquivo: SPLASH, tela inicial SCRIWEB.</p>	
+	<LI><p>Arquivo: Scriweben.html, p&aacute;gina HTML padrao do Supervis&atilde;oio SCriWeb en inglês</p>
+        <LI><p>Arquivo: ScriWebHelpen, p&aacute;gina de HELP en inglês</p>
+        <LI><p>Arquivo: SimSCriWeben.html, p&aacute;gina para montagem da aplica&ccedil;&atilde;o do simulador industrial en inglês.</p>
+        <LI><p>Arquivo: SimHelpen.html, p&aacute;gina de help en inglês</p>
+        <LI><p>Arquivo: Scriwebabout.html, p&aacute;gina sobre</p>
+        <LI><p>Arquivo: Scriwebabouten.html, p&aacute;gina sobre en inglês</p>
+        <LI><p>Arquivo: SPLASH, tela inicial SCRIWEB.</p>	
+</UL>
+
+<br><p><FONT SIZE=3><B>3.1.1 Subdiret&oacute;rio SCriWeb</B></FONT></p>
+        <UL><LI><p>Subdiretorio: Ladder.</p>
+        <LI><p>Subdiretorio: Simulador.</p>
+	</UL>
+		
 <br><p><FONT SIZE=3><B>3.1.2 Subdiret&oacute;rio LADDER:</B></FONT></p>
         <p>Os arquivos fonte em ladder do tipo CSV para a simula&ccedil;&atilde;o ladder, com a seguinte estrutura de arquivo:</p>
         <p>Arquivo: XXX.csv, arquivo fonte programa ladder,</p>
@@ -287,7 +296,7 @@ Do Software:</p></H1>
         <LI><p>Dosagem.</p>
 		</UL>
 <br><p><FONT SIZE=3><B>3.1.4 Subdiret&oacute;rio PUBLIC:</B></FONT></p>
-        <p>Com sete subdiret&oacute;rios e arquivos do manual.</p>
+        <p>Com dez subdiret&oacute;rios e arquivos do manual.</p>
         <UL><LI><p>Subdiretorio: CSS_LAD, com os arquivos de configura?o,</p>
         <LI><p>Subdiret&oacute;rio: IMG_LAD, com as imagens da aplica?o</p>
         <LI><p>Subdiret&oacute;rio: JS_LAD, com os javascript da aplica?o.</p>
@@ -297,7 +306,8 @@ Do Software:</p></H1>
         <LI><p>Subdiret&oacute;rio: ICON, com icones do aplicativo.</p>
         <LI><p>Subdiret&oacute;rio: Manual_SCriWeb_ladder, com as imagens do Manual ladder</p>  
         <LI><p>Subdiret&oacute;rio: Manual_SCriWeb_SIMULADOR, com as imagens do Manual SIMULADOR</p>  
-       	<LI><p>Arquivo: Manual_SCriWeb_ladder, este arquivo.</p>
+       	<LI><p>Subdiret&oacute;rio: Scriweb</p>	
+	<LI><p>Arquivo: Manual_SCriWeb_ladder, este arquivo.</p>
         <LI><p>Arquivo: Manual_SCriWeb_simulador, arquivo de help do simulador.</p>
 		</UL>
 <br><p><FONT SIZE=3>3.1.4.1 Arquivos de Configura&ccedil;&atilde;o (CSS)</FONT></p>
@@ -325,11 +335,21 @@ Do Software:</p></H1>
         <LI><p> appinicio.js - Carrega as fun&ccedil;&otilde;es javascript</p>
         <LI><p> appladder.js - Para o desenho do ladder (criar e desenhar)</p>
         <LI><p> appsocket.js - para troca de informa&ccedil;&otilde;es com o servidor</p>
+        <LI><p> appfuncao.js - fun&ccedil;&atilde;o do servidor</p>
         <LI><p> FileSaver.js - para gravac&atilde;o de arquivos.</p>
         <LI><p> appbotaosim.js - controle dos bot&atilde;os no simulador</p>
         <LI><p> appiniciosimulador.js - Inicializa&ccedil;&atilde;o tela simulador</p>
+        <LI><p> appsimfuncao.js - controle de fun&ccedil;&otilde;es</p>
         <LI><p> appsimulador.js - Para o desenho do simulador (criar e desenhar)</p>
-		</UL>
+	<LI><p> appsimsocket.js - controle de sockets</p>
+	<LI><p> appbotaoen.js - controle dos bot&atilde;os en inglês</p>
+        <LI><p> appeletricoen.js - para controle do CLP, chaves e l&acirc;mpadas en inglês</p>
+        <LI><p> appinicioen.js - Carrega as fun&ccedil;&otilde;es javascript en inglês</p>
+        <LI><p> appladderen.js - Para o desenho do ladder (criar e desenhar) en inglês</p>
+       	<LI><p> appbotaosimen.js - controle dos bot&atilde;os no simulador em inglês</p>
+        <LI><p> appsimuladoren.js - Para o desenho do simulador (criar e desenhar)  em inglês</p>
+	<LI><p> appsimsfunção.js - controle de fun&ccedil;&otilde;es em inglês</p></UL>
+		
 <br><p><FONT SIZE=4><B>3.2 Das vari&aacute;veis:</B></FONT></p>
 <br><p><FONT SIZE=3><B>3.2.1 Do Timer e counter</B></FONT></p>
         <p>O array de TIMER e COUNTER tem dimens&atilde;o maior que um, comportando outros sinalizadores aderentes ao controle da fun&ccedil;&atilde;o.</p>
