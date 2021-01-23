@@ -251,7 +251,7 @@
         	<LI>Contato NF;</LI>
         	<LI>Rele bobina;</LI>
         	<LI>Rele Set;</LI>
-        	<LI>Rele Reset;</LI
+		<LI>Rele Reset;</LI>
         	<LI>Temporizador na energiza&ccedil;&atilde;o;</LI>
 		<LI>Contador crescente;</LI>
         	<LI>Fun&ccedil;&atilde;o gen&eacute;rica: aceita fun&ccedil;&atilde;o MOV, + e -</LI>
@@ -288,17 +288,17 @@
         	<LI>Arquivo: SPLASH, tela inicial SCRIWEB.</LI>	
 	</UL>
 
-<br><p><FONT SIZE=3><B>3.1.1 Subdiret&oacute;rio SCriWeb</B></FONT></p>
+<br><p><FONT SIZE=4><B>3.1.1 Subdiret&oacute;rio SCriWeb</B></FONT></p>
         <UL>
 		<LI>Subdiretorio: Ladder.</LI>
         	<LI>Subdiretorio: Simulador.</LI>
 	</UL>
 		
-<br><p><FONT SIZE=3><B>3.1.2 Subdiret&oacute;rio LADDER:</B></FONT></p>
+<br><p><FONT SIZE=4><B>3.1.2 Subdiret&oacute;rio LADDER:</B></FONT></p>
         <p>Os arquivos fonte em ladder do tipo CSV para a simula&ccedil;&atilde;o ladder, com a seguinte estrutura de arquivo:</p>
         <p>Arquivo: XXX.csv, arquivo fonte programa ladder,</p>
 
-<br><p><FONT SIZE=3><B>3.1.3 Subdiret&oacute;rio SIMULADOR:</B></FONT></p>
+<br><p><FONT SIZE=4><B>3.1.3 Subdiret&oacute;rio SIMULADOR:</B></FONT></p>
         <p>Todos os arquivos utilizados para simular um processo industrial ou m&aacute;quina, incluindo arquivos do tipo CSV e figuras.</p>
         <p>Os arquivos do tipo CSV podem ser:</p>
         <p>Arquivo: XXX.csv, arquivo com script especial para algum comando do programa XXX.csv</p>
@@ -310,7 +310,7 @@
         	<LI>Dosagem.</LI>
 	</UL>
 
-<br><p><FONT SIZE=3><B>3.1.4 Subdiret&oacute;rio PUBLIC:</B></FONT></p>
+<br><p><FONT SIZE=4><B>3.1.4 Subdiret&oacute;rio PUBLIC:</B></FONT></p>
         <p>Com dez subdiret&oacute;rios e arquivos do manual.</p>
         <UL>
 		<LI>Subdiretorio: CSS_LAD, com os arquivos de configura&ccedil;&atilde;o,</LI>
@@ -326,7 +326,7 @@
 		<LI>Arquivo: Manual_SCriWeb_ladder, este arquivo.</LI>
         	<LI>Arquivo: Manual_SCriWeb_simulador, arquivo de help do simulador.</LI>
 	</UL>
-<br><p><FONT SIZE=3>3.1.4.1 Arquivos de Configura&ccedil;&atilde;o (CSS)</FONT></p>
+<br><p><FONT SIZE=4>3.1.4.1 Arquivos de Configura&ccedil;&atilde;o (CSS)</FONT></p>
         <p>p&aacute;ginas de estilos CSS para cada p&aacute;gina da aplica&ccedil;&atilde;o ladder (CSS_LAD) e simulador (CSS_SIM):</p>
         <UL>
 		<LI>Arquivo: style.css - p&aacute;gina principal;</LI>
@@ -336,7 +336,7 @@
         	<LI>Arquivo: stylesim - p&aacute;gina principal de simula&ccedil;&atilde;o.</LI>
 	</UL>
 
-<br><p><FONT SIZE=3>3.1.4.2 Arquivos de Imagens</FONT></p>
+<br><p><FONT SIZE=4>3.1.4.2 Arquivos de Imagens</FONT></p>
         <p>Arquivos de imagens utilizados na aplica&ccedil;&atilde;o, no ladder (IMG_LAD) e no simulador (IMG_SIM).</p>
         <UL>
 		<LI> botoes4.png - imagens da barra de ferramenta, feito em tr&ecirc;s colunas, com imagens duplicadas: uma para cada estado;</LI>
@@ -346,7 +346,7 @@
         	<LI> botoessim.png - imagens da barra de ferramenta, feito em uma coluna, com imagens duplicadas: uma para cada estado. Para a tela de simula&ccedil;&atilde;o.</LI>
 	</UL>
 
-<br><p><FONT SIZE=3>3.1.4.3 Arquivos JS</FONT></p>
+<br><p><FONT SIZE=4>3.1.4.3 Arquivos JS</FONT></p>
         <p>Na pasta js_lad (LADDER) e js_sim (SIMULADOR):</p>
         <UL>
 		<LI> app_lad_config.js - aplicativo para configura&ccedil;&otilde;es</LI>
@@ -373,7 +373,7 @@
 	</UL>
 		
 <br><p><FONT SIZE=4><B>3.2 Das vari&aacute;veis:</B></FONT></p>
-<br><p><FONT SIZE=3><B>3.2.1 Do Timer e counter</B></FONT></p>
+<br><p><FONT SIZE=4><B>3.2.1 Do Timer e counter</B></FONT></p>
         <p>O array de TIMER e COUNTER tem dimens&atilde;o maior que um, comportando outros sinalizadores aderentes ao controle da fun&ccedil;&atilde;o.</p>
         <p>O array do TIMER &eacute; dividido desta forma:</p>
         <UL>
@@ -389,7 +389,7 @@
         	<LI><p> C[3] = Flag para verifica&ccedil;&atilde;o do pulso na entrada do contador. Tamb&eacute;m utilizado para impedir resetar o contador no mesmo ciclo, fazendo que o ciclo de limite atingindo permane&ccedil;a por no m&iacute;nimo um ciclo completo do CLP. Neste caso o flag &eacute; setado com o valor 2.</p>
 	</UL>
 
-<br><p><FONT SIZE=3><B>3.2.2 Dos Arquivos Ladder</B></FONT></p>
+<br><p><FONT SIZE=4><B>3.2.2 Dos Arquivos Ladder</B></FONT></p>
         <p>Arquivo Objeto: declara o arquivo em LADDER { _id, nome, var_1, tipo, var_2, ver, R-W, tag2, fun&ccedil;&atilde;o};</p>
         <UL>
 		<LI>lista._id = Identificador XXY, onde XX=linha e Y=coluna</LI>
