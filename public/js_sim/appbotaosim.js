@@ -85,7 +85,7 @@ function tBotao() {
 		inputCSV.onchange = function() {
 	    		var file = this.files[0];
 			leitorDeCSV.readAsText(file);
-			simPath = '';//simPathInicial + file.name.slice(0,file.name.length -4) + '/';
+			simPath = 'file://'simPathInicial + file.name.slice(0,file.name.length -4) + '/';
 			alert(simPath);
 		};
 		comandos = 0;	
