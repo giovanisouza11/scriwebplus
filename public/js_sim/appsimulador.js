@@ -155,7 +155,8 @@ function atualiza_simulador() {
 		}
 
 		if ((ArrayObjStatic[ij*20+17] != 1) && (ArrayObjStatic[ij*20+17] < 5)) {
-			LoadImageIndexX1(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
+			LoadImageIndexX1(ArrayObjDinamic[ij*10+1], ij);
+			//LoadImageIndexX1(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 			//LoadImageIndex(ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
@@ -1115,14 +1116,24 @@ function LoadImage2(imagefile, ij) {
     image3.src = imagefile;
     Imagens2[Imagens.length-1] = image3;
 }
-function LoadImageIndexX1(imagefile, index) {
+function LoadImageIndexX1(extensao, index) {
     var image1 = new Image();
 	image1.onload = function() {
     	Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 	};
    // image1.src = imagefile;
    // Imagens[ArrayObjDinamic[index*10+5]] = image1;
-	image1.src = Imagens[ArrayObjDinamic[index*10+5]];
+	switch (extensao)
+	{
+	case 2:
+		image1.src = Imagens1[ArrayObjDinamic[index*10+5]];
+		break;
+	case 3:
+		image1.src = Imagens2[ArrayObjDinamic[index*10+5]];
+		break;
+	default:
+		image1.src = Imagens[ArrayObjDinamic[index*10+5]];
+	}
 }
 function LoadImageX(imagefile, ij) {
     var image1 = new Image();
