@@ -157,7 +157,7 @@ function atualiza_simulador() {
 		if ((ArrayObjStatic[ij*20+17] != 1) && (ArrayObjStatic[ij*20+17] < 5)) {
 			//LoadImageIndexX1(ArrayObjDinamic[ij*10+1], ij);
 			//LoadImageIndexX1(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
-			LoadImageIndex(ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
+			LoadImageIndex(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
 			Scontext.font = ArrayObjStatic[ij*20+10]+'pt Arial';
@@ -1097,21 +1097,20 @@ function draw_processo(fileArr) {
 //https://stackoverflow.com/questions/32363801/images-not-loaded-on-first-call-in-html-canvas
 //---------------------
 function LoadImage(imagefile, ij) {
-    var image1 = new Image();
+    	var image1 = new Image();
 	image1.onload = function() {
-        Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
-		
-    };
-    image1.src = imagefile;
-    Imagens[Imagens.length] = image1;
+        	Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
+    	};
+    	image1.src = imagefile;
+    	Imagens[Imagens.length] = image1;
 }
 function LoadImageIndex(imagefile, index) {
-    var image1 = new Image();
+    	var image1 = new Image();
 	image1.onload = function() {
-    	Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+    		Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 	};
-    image1.src = imagefile;
-    Imagens[ArrayObjDinamic[index*10+5]] = image1;
+    	image1.src = imagefile;
+    	Imagens[ArrayObjDinamic[index*10+5]] = image1;
 }
 /*
 function LoadImage1(imagefile, ij) {
