@@ -1062,6 +1062,8 @@ function draw_processo(fileArr) {
 			ArrayObjDinamic[(i-1)*10+9] = fileLine[23];
 			if ((ArrayObjStatic[(i-1)*20+17] != 1) && (ArrayObjStatic[(i-1)*20+17] < 5)) {
 				LoadImage(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
+				LoadImage1(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on1.png', i-1);
+				LoadImage2(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on2.png', i-1);
 				//LoadImage(ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
 			}		
 			else {
@@ -1102,7 +1104,17 @@ function LoadImage(imagefile, ij) {
     image1.src = imagefile;
     Imagens[Imagens.length] = image1;
 }
-
+function LoadImage1(imagefile, ij) {
+    var image2 = new Image();
+	
+    image2.src = imagefile;
+    Imagens1[Imagens.length-1] = image2;
+}
+function LoadImage2(imagefile, ij) {
+    var image3 = new Image();
+    image3.src = imagefile;
+    Imagens2[Imagens.length-1] = image3;
+}
 function LoadImageIndex(imagefile, index) {
     var image1 = new Image();
 	image1.onload = function() {
@@ -1128,6 +1140,8 @@ function draw_simulador_fundo(){
 //=====================================================================================
 function inicializa_array(){
 	Imagens =[];
+	Imagens1 =[];
+	Imagens2 =[];
 	ArrayImagens = [];
 	ArrayLabel = [];
 	ArrayObjDinamic = [];
