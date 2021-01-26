@@ -155,9 +155,9 @@ function atualiza_simulador() {
 		}
 
 		if ((ArrayObjStatic[ij*20+17] != 1) && (ArrayObjStatic[ij*20+17] < 5)) {
-			LoadImageIndexX1(ArrayObjDinamic[ij*10+1], ij);
+			//LoadImageIndexX1(ArrayObjDinamic[ij*10+1], ij);
 			//LoadImageIndexX1(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
-			//LoadImageIndex(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
+			LoadImageIndex(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
 			Scontext.font = ArrayObjStatic[ij*20+10]+'pt Arial';
@@ -1063,8 +1063,8 @@ function draw_processo(fileArr) {
 			ArrayObjDinamic[(i-1)*10+9] = fileLine[23];
 			if ((ArrayObjStatic[(i-1)*20+17] != 1) && (ArrayObjStatic[(i-1)*20+17] < 5)) {
 				LoadImage(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
-				LoadImage1(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on1.png', i-1);
-				LoadImage2(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on2.png', i-1);
+				//LoadImage1(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on1.png', i-1);
+				//LoadImage2(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on2.png', i-1);
 				//LoadImage(ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
 			}		
 			else {
@@ -1186,8 +1186,8 @@ function redraw_processo() {
 	var ponteiro = 0;
 	for(var i=0; i <(ArrayObjStatic.length/20); i++) {
 		if ((ArrayObjStatic[i*20+17] != 1) && (ArrayObjStatic[i*20+17] < 5)) {
-			LoadImageX(simPath + ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
-			//LoadImage(simPath + ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
+			//LoadImageX(simPath + ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
+			LoadImage(simPath + ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
 		}		
 		else {
 			if (ArrayObjStatic[i*20+17] == 1) {
