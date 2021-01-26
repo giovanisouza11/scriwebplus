@@ -1116,14 +1116,14 @@ function LoadImageIndex(imagefile, index) {
 function LoadImage1(imagefile, ij) {
     	var image1 = new Image();
 	image1.onload = function() {
-    		Imagens1[ArrayObjDinamic[index*10+5]] = image1;
+    		Imagens1[ArrayObjDinamic[ij*10+5]] = image1;
 	};	
     	image1.src = imagefile;
 }
 function LoadImage2(imagefile, ij) {
    	 var image1 = new Image();
 	image1.onload = function() {
-    		Imagens2[ArrayObjDinamic[index*10+5]] = image1;
+    		Imagens2[ArrayObjDinamic[ij*10+5]] = image1;
 	};	
     	image1.src = imagefile;
 }
@@ -1188,7 +1188,6 @@ function redraw_processo() {
 		if ((ArrayObjStatic[i*20+17] != 1) && (ArrayObjStatic[i*20+17] < 5)) {
 			LoadImageX(simPath + ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
 			//LoadImage(simPath + ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
-			//(ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
 		}		
 		else {
 			if (ArrayObjStatic[i*20+17] == 1) {
