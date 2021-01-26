@@ -1114,24 +1114,25 @@ function LoadImageIndex(imagefile, index) {
 }
 
 function LoadImage1(imagefile, ij) {
-    var image2 = new Image();
-	
-    image2.src = imagefile;
-    Imagens1[Imagens.length-1] = image2;
+    	var image1 = new Image();
+	image1.onload = function() {
+    		Imagens1[ArrayObjDinamic[index*10+5]] = image1;
+	};	
+    	image1.src = imagefile;
 }
 function LoadImage2(imagefile, ij) {
-    var image3 = new Image();
-    image3.src = imagefile;
-    Imagens2[Imagens.length-1] = image3;
+   	 var image1 = new Image();
+	image1.onload = function() {
+    		Imagens2[ArrayObjDinamic[index*10+5]] = image1;
+	};	
+    	image1.src = imagefile;
 }
 function LoadImageIndexX1(extensao, index) {
-    var image1 = new Image();
+    	var image1 = new Image();
 	image1.onload = function() {
-    	Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+    		Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 	};
-   // image1.src = imagefile;
-   // Imagens[ArrayObjDinamic[index*10+5]] = image1;
-	switch (extensao)
+  	switch (extensao)
 	{
 	case 2:
 		image1 = Imagens1[ArrayObjDinamic[index*10+5]];
@@ -1144,11 +1145,11 @@ function LoadImageIndexX1(extensao, index) {
 	}
 }
 function LoadImageX(imagefile, ij) {
-    var image1 = new Image();
+    	var image1 = new Image();
 	image1.onload = function() {
-        Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
-    };
-    image1= Imagens[Imagens.length];
+        	Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
+    	};
+    	image1= Imagens[Imagens.length];
 }
 
 //=====================================================================================
