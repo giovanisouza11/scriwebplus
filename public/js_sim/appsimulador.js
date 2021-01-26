@@ -1130,7 +1130,7 @@ function LoadImage2(imagefile, ij) {
 function LoadImageIndexX1(extensao, index) {
     	var image1 = new Image();
 	image1.onload = function() {
-    		Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+    		Scontext.drawImage(image1, ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 	};
   	switch (extensao)
 	{
