@@ -155,7 +155,7 @@ function atualiza_simulador() {
 		}
 
 		if ((ArrayObjStatic[ij*20+17] != 1) && (ArrayObjStatic[ij*20+17] < 5)) {
-			LoadImageIndex(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
+			LoadImageIndexX1(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 			//LoadImageIndex(ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
@@ -1115,15 +1115,23 @@ function LoadImage2(imagefile, ij) {
     image3.src = imagefile;
     Imagens2[Imagens.length-1] = image3;
 }
-function LoadImageIndex(imagefile, index) {
+function LoadImageIndexX1(imagefile, index) {
     var image1 = new Image();
 	image1.onload = function() {
     	Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 	};
-    image1.src = imagefile;
-    Imagens[ArrayObjDinamic[index*10+5]] = image1;
+   // image1.src = imagefile;
+   // Imagens[ArrayObjDinamic[index*10+5]] = image1;
+	image1.src = Imagens[ArrayObjDinamic[index*10+5]];
 }
-
+function LoadImageX(imagefile, ij) {
+    var image1 = new Image();
+	image1.onload = function() {
+        Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
+		
+    };
+    image1= Imagens[Imagens.length];
+}
 //=====================================================================================
 //Desenha area de trabalho em branco
 //=====================================================================================
@@ -1158,8 +1166,8 @@ function redraw_processo() {
 	var ponteiro = 0;
 	for(var i=0; i <(ArrayObjStatic.length/20); i++) {
 		if ((ArrayObjStatic[i*20+17] != 1) && (ArrayObjStatic[i*20+17] < 5)) {
-			LoadImage(simPath + ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
-			//LoadImage(ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
+			LoadImageX(simPath + ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
+			//(ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
 		}		
 		else {
 			if (ArrayObjStatic[i*20+17] == 1) {
