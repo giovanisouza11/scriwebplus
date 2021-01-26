@@ -1126,13 +1126,13 @@ function LoadImageIndexX1(extensao, index) {
 	switch (extensao)
 	{
 	case '2':
-		image1.src = Imagens1[ArrayObjDinamic[index*10+5]];
+		image1 = Imagens1[ArrayObjDinamic[index*10+5]];
 		break;
 	case '3':
-		image1.src = Imagens2[ArrayObjDinamic[index*10+5]];
+		image1 = Imagens2[ArrayObjDinamic[index*10+5]];
 		break;
 	default:
-		image1.src = Imagens[ArrayObjDinamic[index*10+5]];
+		image1 = Imagens[ArrayObjDinamic[index*10+5]];
 	}
 }
 function LoadImageX(imagefile, ij) {
