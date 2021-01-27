@@ -99,7 +99,7 @@ function tBotao() {
 			for (var j=0; j<17; j++)
 			    texto += ArrayObjStatic[(i*20)+j]+',';
 			if (ArrayObjStatic[(i*20)+17]>1 && ArrayObjStatic[(i*20)+17]<5) 
-				texto += ArrayImagens[ArrayObjDinamic[i*10+5]]+',' + ArrayObjDinamic[i*10+6]+','+ scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7])+','+ Imagens1[ArrayObjDinamic[i*10+5]].src+','+ Imagens2[ArrayObjDinamic[i*10+5]].src + ',,';
+				texto += ArrayImagens[ArrayObjDinamic[i*10+5]]+',' + ArrayObjDinamic[i*10+6]+','+ Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7])+','+ Imagens1[ArrayObjDinamic[i*10+5]].src+','+ Imagens2[ArrayObjDinamic[i*10+5]].src + ',,';
 			if (ArrayObjStatic[(i*20)+17]==1) 
 				texto += ArrayLabel[ArrayObjDinamic[i*10+5]]+',' + ArrayObjDinamic[i*10+6]+ ',,,,,';
 			if (ArrayObjStatic[(i*20)+17]==6 || ArrayObjStatic[(i*20)+17]==7) 
