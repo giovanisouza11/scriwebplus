@@ -99,7 +99,7 @@ function tBotao() {
 			for (var j=0; j<17; j++)
 			    texto += ArrayObjStatic[(i*20)+j]+',';
 			if (ArrayObjStatic[(i*20)+17]>1 && ArrayObjStatic[(i*20)+17]<5) 
-				texto += ArrayImagens[ArrayObjDinamic[i*10+5]]+',' + ArrayObjDinamic[i*10+6]+','+ Imagens[ArrayObjDinamic[i*10+5]].useMap+','+ Imagens1[ArrayObjDinamic[i*10+5]]+','+ Imagens2[ArrayObjDinamic[i*10+5]] + ',,';
+				texto += ArrayImagens[ArrayObjDinamic[i*10+5]]+',' + ArrayObjDinamic[i*10+6]+','+ Imagens[ArrayObjDinamic[i*10+5]].src.data+','+ Imagens1[ArrayObjDinamic[i*10+5]]+','+ Imagens2[ArrayObjDinamic[i*10+5]] + ',,';
 			if (ArrayObjStatic[(i*20)+17]==1) 
 				texto += ArrayLabel[ArrayObjDinamic[i*10+5]]+',' + ArrayObjDinamic[i*10+6]+ ',,,,,';
 			if (ArrayObjStatic[(i*20)+17]==6 || ArrayObjStatic[(i*20)+17]==7) 
