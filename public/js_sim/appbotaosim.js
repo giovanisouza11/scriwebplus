@@ -4,7 +4,7 @@ var canvas1;
 var context1;
 var valor_chave = new Array(14);
 var simEdicao = 0;
-var exemplos = ['Alarmes','Classificacao','Corte_Vinco','Elevador','Elevador5','Envase','Expedicao','Semaforo','Classificacao_Matheus','Classificacao_Amalia','	Classificacao_Arthur','Classificacao_Luiz','Classificacao_Nicolas','Classificacao_Nicole','Classificacao_Saymon','Classificacao_Teixeira','Classificacao_Vinicius','Corte_Vinco_Leonardo','Corte_Vinco_Pedro','Corte_Vinco_Carlos','Corte_Vinco_Gustavo','Corte_Vinco_Lucas','Corte_Vinco_Rafael','Elevador_Matheus','Elevador_Alvaro','Elevador_Amalia','Elevador_Artur','Elevador_Leonardo','Elevador_Luiz','Elevador_Nicolas','Elevador_Nicole','Elevador_Pedro','Elevador_Savi','Elevador_Saymon','Elevador_Teixeira','Elevador_Carlos','Elevador_Gustavo','Elevador_Israel','Elevador_Lucas','Elevador_Rafael','Elevador_Vinicius','Elevator_Thales','Elevador_Arturo'];
+var exemplos = ['Alarmes','Classificacao','Corte_Vinco','Elevador','Elevador5','Envase','Expedicao','Semaforo','Classificacao_Matheus','Classificacao_Amalia','	Classificacao_Arthur','Classificacao_Luiz','Classificacao_Nicolas','Classificacao_Nicole','Classificacao_Saymon','Classificacao_Teixeira','Classificacao_Vinicius','Corte_Vinco_Leonardo','Corte_Vinco_Pedro','Corte_Vinco_Carlos','Corte_Vinco_Gustavo','Corte_Vinco_Lucas','Corte_Vinco_Rafael','Elevador_Matheus','Elevador_Alvaro','Elevador_Amalia','Elevador_Artur','Elevador_Leonardo','Elevador_Luiz','Elevador_Nicolas','Elevador_Nicole','Elevador_Pedro','Elevador_Savi','Elevador_Saymon','Elevador_Teixeira','Elevador_Carlos','Elevador_Gustavo','Elevador_Israel','Elevador_Lucas','Elevador_Rafael','Elevador_Vinicius','Elevador_Thales','Elevador_Arturo'];
 		
 //desenha os botoes
 function draw_botoessim() {
@@ -126,7 +126,7 @@ function tBotao() {
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
 		modalb1.innerHTML = "<p><a href='http://scriweb.herokuapp.com/ftp/"+exemplos[0]+"/"+exemplos[0]+".csv'>"+exemplos[0]+"</a></p>"; 
-		for(i=1; i<(exemplos.length -1); i++) 
+		for(i=1; i<(exemplos.length); i++) 
 			modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/"+exemplos[i]+"/"+exemplos[i]+".csv'>"+exemplos[i]+"</a></p>"; 
 		
 		/*
