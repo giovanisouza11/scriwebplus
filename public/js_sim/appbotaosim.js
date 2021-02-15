@@ -3,7 +3,14 @@ AImageB.src = "/img_sim/botoessim.png";
 var canvas1;
 var context1;
 var valor_chave = new Array(14);
-var simEdicao = 0; 
+var simEdicao = 0;
+var exemplos = {Alarmes,Classificacao,Corte_Vinco,Elevador,Elevador5,Envase,Expedicao,Semaforo,Classificacao_Matheus,Classificacao_Amalia
+		,Classificacao_Arthur,Classificacao_Luiz,Classificacao_Nicolas,Classificacao_Nicole,Classificacao_Saymon,Classificacao_Teixeira,
+		Classificacao_Vinicius,Corte_Vinco_Leonardo,Corte_Vinco_Pedro,Corte_Vinco_Carlos,Corte_Vinco_Gustavo,Corte_Vinco_Lucas,
+		Corte_Vinco_Rafael,Elevador_Matheus,Elevador_Alvaro,Elevador_Amalia,Elevador_Artur,Elevador_Leonardo,Elevador_Luiz,Elevador_Nicolas,Elevador_Nicole,
+		Elevador_Pedro,Elevador_Savi,Elevador_Saymon,Elevador_Teixeira,Elevador_Carlos,Elevador_Gustavo,Elevador_Israel,Elevador_Lucas,
+		Elevador_Rafael,Elevador_Vinicius,Elevator_Thales,Elevador_Arturo};
+		
 //desenha os botoes
 function draw_botoessim() {
     canvas1 = document.getElementById("tela1");
@@ -123,7 +130,11 @@ function tBotao() {
 		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
-		modalb1.innerHTML = "<p><a href='http://scriweb.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
+		modalb1.innerHTML = "<p><a href='http://scriweb.herokuapp.com/ftp/"+exemplos[0]+"/"+exemplos[0]+".csv'>"+exemplos[0]+"</a></p>"; 
+		for(i=1; i<(exemplos.length-1); i++) 
+			modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/"+exemplos[i]+"/"+exemplos[i]+".csv'>"+exemplos[i]+"</a></p>"; 
+		
+		/*
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao/Classificacao.csv'>Classificação</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco/Corte_Vinco.csv'>Corte e Vinco</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv'>Elevador(3 andares)</a></p>";
@@ -166,6 +177,7 @@ function tBotao() {
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Vinicius/Elevador_Vinicius.csv'>Elevador Vinicius</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevator_Thales/Elevador_Thales.csv'>Elevador Thales</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Arturo/Elevador_Arturo.csv'>Elevador Arturo</a></p>";
+		*/
 		//modalb1.innerHTML += "</td></tr></table>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
