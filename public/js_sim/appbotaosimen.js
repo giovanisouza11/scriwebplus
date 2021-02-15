@@ -127,7 +127,7 @@ function tBotao() {
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
 		modalb1.innerHTML = "<p><a href='http://scriweb.herokuapp.com/ftp/"+exemplos_dir[0]+"/"+exemplos_dir[0]+".csv'>"+exemplos_nom[0]+"</a></p>"; 
-		for(i=1; i<(exemplos.length); i++) 
+		for(i=1; i<(exemplos_dir.length); i++) 
 			modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/"+exemplos_dir[i]+"/"+exemplos_dir[i]+".csv'>"+exemplos_nom[i]+"</a></p>"; 
 
 		// Create <OK> element that closes the modal
