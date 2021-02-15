@@ -4,6 +4,9 @@ var canvas1;
 var context1;
 var valor_chave = new Array(14);
 var simEdicao = 0; 
+var exemplos_dir = ['Alarmes','Classificacao','Corte_Vinco','Elevador','Elevador5','Envase','Expedicao','Semaforo','Classificacao_Matheus','Classificacao_Amalia','Classificacao_Arthur','Classificacao_Luiz','Classificacao_Nicolas','Classificacao_Nicole','Classificacao_Saymon','Classificacao_Teixeira','Classificacao_Vinicius','Corte_Vinco_Leonardo','Corte_Vinco_Pedro','Corte_Vinco_Carlos','Corte_Vinco_Gustavo','Corte_Vinco_Lucas','Corte_Vinco_Rafael','Elevador_Matheus','Elevador_Alvaro','Elevador_Amalia','Elevador_Artur','Elevador_Leonardo','Elevador_Luiz','Elevador_Nicolas','Elevador_Nicole','Elevador_Pedro','Elevador_Savi','Elevador_Saymon','Elevador_Teixeira','Elevador_Carlos','Elevador_Gustavo','Elevador_Israel','Elevador_Lucas','Elevador_Rafael','Elevador_Vinicius','Elevador_Thales','Elevador_Arturo'];
+var exemplos_nom = ['Alarm','Classification','Cut and Crease','Elevator 3 floor','Elevator 5 floor','Filling','Expedition','Traffic Ligth','Classification Matheus','Classification Amalia','Classification Arthur','Classification Luiz','Classification Nicolas','Classification Nicole','Classification Saymon','Classification Teixeira','Classification Vinicius','Cut and Crease Leonardo','Cut and Crease Pedro','Cut and Crease Carlos','Cut and Crease Gustavo','Cut and Crease Lucas','Cut and Crease Rafael','Elevator Matheus','Elevator Alvaro','Elevator Amalia','Elevator Artur','Elevator Leonardo','Elevator Luiz','Elevator Nicolas','Elevator Nicole','Elevator Pedro','Elevator Savi','Elevator Saymon','Elevator Teixeira','Elevator Carlos','Elevator Gustavo','Elevator Israel','Elevator Lucas','Elevator Rafael','Elevator Vinicius','Elevator Thales','Elevator Arturo'];
+		
 //desenha os botoes
 function draw_botoessim() {
     canvas1 = document.getElementById("tela1");
@@ -123,50 +126,10 @@ function tBotao() {
 		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
-		modalb1.innerHTML = "<p><a href='http://scriweb.herokuapp.com/ftp/Alarme/Alarmes.csv'>Alarm</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao/Classificacao.csv'>Classification</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco/Corte_Vinco.csv'>Cut and Crease</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv'>Elevator(3 floor)</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador5/Elevador5.csv'>Elevator(5 floor)</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Expedicao/Expedicao.csv'>Expedition</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Envase/Envase.csv'>Filling</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Semaforo/Semaforo.csv'>Traffic Ligth</a></p>";
+		modalb1.innerHTML = "<p><a href='http://scriweb.herokuapp.com/ftp/"+exemplos_dir[0]+"/"+exemplos_dir[0]+".csv'>"+exemplos_nom[0]+"</a></p>"; 
+		for(i=1; i<(exemplos.length); i++) 
+			modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/"+exemplos_dir[i]+"/"+exemplos_dir[i]+".csv'>"+exemplos_nome[i]+"</a></p>"; 
 
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Matheus/Classificacao_Matheus.csv'>Classification Matheus</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Amalia/Classificacao_Amalia.csv'>Classification Amalia</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Arthur/Classificacao_Arthur.csv'>Classification Arthur</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Luiz/Classificacao_Luiz.csv'>Classification Luiz</a></p>"; 
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Nicolas/Classificacao_Nicolas.csv'>Classification Nicolas</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Nicole/Classificacao_Nicole.csv'>Classification Nicole</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Saymon/Classificacao_Saymon.csv'>Classification Saymon</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Teixeira/Classificacao_Teixeira.csv'>Classification Gabriel Teixeira</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao_Vinicius/Classificacao_Vinicius.csv'>Classification Vinicius</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Leonardo/Corte_Vinco_Leonardo.csv'>Cut and Crease Leonardo</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Pedro/Corte_Vinco_Pedro.csv'>Cut and Crease Pedro</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Carlos/Corte_Vinco_Carlos.csv'>Cut and Crease Carlos</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Gustavo/Corte_Vinco_Gustavo.csv'>Cut and Crease Luiz Gustavo</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Lucas/Corte_Vinco_Lucas.csv'>Cut and Crease Lucas</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco_Rafael/Corte_Vinco_Rafael.csv'>Cut and Crease Rafael</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Matheus/Elevador_Matheus.csv'>Elevator Matheus</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Alvaro/Elevador_Alvaro.csv'>Elevator Alvaro</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Amalia/Elevador_Amalia.csv'>Elevator Amalia</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Artur/Elevador_Artur.csv'>Elevator Arthur</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Leonardo/Elevador_Leonardo.csv'>Elevator Leonardo</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Luiz/Elevador_Luiz.csv'>Elevator Luiz</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Nicolas/Elevador_Nicolas.csv'>Elevator Nicolas</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Nicole/Elevador_Nicole.csv'>Elevator Nicole</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Pedro/Elevador_Pedro.csv'>Elevator Pedro</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Savi/Elevador_Savi.csv'>Elevator Savi</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Saymon/Elevador_Saymon.csv'>Elevator Saymon</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Teixeira/Elevador_Teixeira.csv'>Elevator Teixeira</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Carlos/Elevador_Carlos.csv'>Elevator Carlos</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Gustavo/Elevador_Gustavo.csv'>Elevator Luiz Gustavo</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Israel/Elevador_Israel.csv'>Elevator Israel</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Lucas/Elevador_Lucas.csv'>Elevator Lucas</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Rafael/Elevador_Rafael.csv'>Elevator Rafael</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Vinicius/Elevador_Vinicius.csv'>Elevator Vinicius</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevator_Thales/Elevador_Thales.csv'>Elevator Thales</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador_Arturo/Elevador_Arturo.csv'>Elevator Arturo</a></p>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button');
