@@ -152,18 +152,21 @@ function tBotao() {
 				modal1.style.display = "none";
 			}
 		}
-		comandos = 0;	
+		comandos = 0;
 		valor_chave[4]=0;
-		valor_chave[5]=1;
 	}
 	if (simEdicao==0 && valor_chave[1]==1){
 		valor_chave[1]=0;
 		comandos = 0;
+		valor_chave[5]=0;
+		valor_chave[6]=1;
 		simEdicao = 1;
 	}
 	if (simEdicao==1 && valor_chave[1]==1){
 		valor_chave[1]=0;
 		comandos = 0;
+		valor_chave[5]=0;
+		valor_chave[6]=1;
 		simEdicao = 0;
 	}
 	if (simEdicao==1 && valor_chave[2]==1){
