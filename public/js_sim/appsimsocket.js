@@ -7,28 +7,28 @@ socket.on('memoria', function(data) {
 
 });
 socket.on('timer', function(data) {
-	   T = data.split(',');
+	T = data.split(',');
 });
 socket.on('counter', function(data) {
-	   C = data.split(',');
+	C = data.split(',');
 });
 socket.on('entrada', function(data) {
-       I = data.split(',');
+	I = data.split(',');
 });
 socket.on('tr', function(data) {
-       R = data.split(',');
+	R = data.split(',');
 });
 socket.on('saida', function(data) {
-       Q = data.split(',');
+	Q = data.split(',');
 });
 socket.on('config_socket_r', function(data) {
-       localStorage.setItem("num_clp1", data);
+	localStorage.setItem("num_clp1", data);
 });
 function Enviar(){
-    socket.emit('entradax', I.join()+ ','+  localStorage.num_clp1);
+	socket.emit('entradax', I.join()+ ','+  localStorage.num_clp1);
 }
 function Config_Socket(dado){
-    socket.emit('sup', dado);
+	socket.emit('sup', dado);
 }
 
 function envia_entrada(data){
