@@ -78,6 +78,8 @@ function tBotao() {
 			}
 		}
 	    	valor_chave[10]=0;
+		valor_chave[5]=0;
+		valor_chave[6]=1;
 	}
 	if (simEdicao==0 && valor_chave[2]==1){
         	var inputCSV = document.createElement('input');
@@ -113,6 +115,8 @@ function tBotao() {
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
         	saveAs(blob, titulo + ".csv");
         	valor_chave[3]=0;
+		valor_chave[5]=0;
+		valor_chave[6]=1;
 	}
 	if (simEdicao==0 && valor_chave[5]==1){
 		comandos = 1;
@@ -153,12 +157,12 @@ function tBotao() {
 		
 		comandos = 0;
 		valor_chave[4]=0;
+		valor_chave[5]=0;
+		valor_chave[6]=1;
 	}
 	if (simEdicao==0 && valor_chave[1]==1){
 		valor_chave[1]=0;
 		comandos = 0;
-		valor_chave[5]=0;
-		valor_chave[6]=1;
 		simEdicao = 1;
 	}
 	if (simEdicao==1 && valor_chave[1]==1){
