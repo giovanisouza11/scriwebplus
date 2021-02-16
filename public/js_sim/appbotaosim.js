@@ -77,7 +77,6 @@ function tBotao() {
 				modal1.style.display = "none";
 			}
 		}
-
 	    	valor_chave[10]=0;
 	}
 	if (simEdicao==0 && valor_chave[2]==1){
@@ -130,7 +129,6 @@ function tBotao() {
 		for(i=1; i<(exemplos_dir.length); i++) 
 			modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/"+exemplos_dir[i]+"/"+exemplos_dir[i]+".csv'>"+exemplos_nom[i]+"</a></p>"; 
 		
-		//modalb1.innerHTML += "</td></tr></table>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button');
@@ -140,19 +138,19 @@ function tBotao() {
 		};
 		modalb1.appendChild(btn);
 		
-		modal1.style.display = "block";
 		// Get the <Close> element that closes the modal
+		modal1.style.display = "block";
 		var span1 = document.getElementById("close1");
 		span1.onclick = function() {
 			modal1.style.display = "none";
 		}
-		
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {
 			if (event.target == modal1) {
 				modal1.style.display = "none";
 			}
 		}
+		
 		comandos = 0;	
 		valor_chave[4]=0;
 		valor_chave[5]=1;
@@ -160,11 +158,15 @@ function tBotao() {
 	if (simEdicao==0 && valor_chave[1]==1){
 		valor_chave[1]=0;
 		comandos = 0;
+		valor_chave[4]=0;
+		valor_chave[5]=1;
 		simEdicao = 1;
 	}
 	if (simEdicao==1 && valor_chave[1]==1){
 		valor_chave[1]=0;
 		comandos = 0;
+		valor_chave[4]=0;
+		valor_chave[5]=1;
 		simEdicao = 0;
 	}
 	if (simEdicao==1 && valor_chave[2]==1){
@@ -195,12 +197,10 @@ function tBotao() {
 	draw_botoessim();		
 }
 
-
 //leitura de arquivos
 //Fonte https://tableless.com.br/file-api-trabalhando-com-arquivos-locais-usando-javascript/
 var leitorDeCSV = new FileReader();
 leitorDeCSV.addEventListener('load', leCSV);
-
 
 function pegaCSV(inputFile) {
 	var file = inputFile.files[0];
