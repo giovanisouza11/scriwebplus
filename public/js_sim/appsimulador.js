@@ -713,8 +713,8 @@ function simFigura(index_var) {
 	
 	var variavel1 = ArrayObjStatic[index_var*20+1];
 	var variavel2 = ArrayObjStatic[index_var*20+2];
-	var dependencia1 =	ArrayObjStatic[index_var*20+13];
-	var dependencia2 =	ArrayObjStatic[index_var*20+14];
+	var dependencia1 = ArrayObjStatic[index_var*20+13];
+	var dependencia2 = ArrayObjStatic[index_var*20+14];
 	figura_animada(index_var, variavel1, variavel2);
 	Verifica_Posicao_Tag(index_var, dependencia1, dependencia2);
 	movimenta_x(index_var, dependencia1, dependencia2);
@@ -757,7 +757,7 @@ function movimenta_x(index_var, dependencia1, dependencia2) {
 		ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+parseInt(ArrayObjStatic[index_var*20+10]);
 	}
 			
-		//movimento via complementar
+	//movimento via complementar
 	if (ArrayObjDinamic[index_var*10+6] > 0  && FuncaoMatriz.length >0){
 		var auxiliar = (ArrayObjDinamic[index_var*10+6]-1)*7;
 		if ( endereco(FuncaoMatriz[auxiliar+2]) == 1){
@@ -866,7 +866,6 @@ function Verifica_Posicao_Tag(index_var, dependencia1, dependencia2){
 //=====================================================================================
 function updown(index_var, dependencia1, dependencia2) {
 	if (dependencia1.charAt(0) == 'U' && endereco(dependencia1)==1 ){
-//		ApagaImagem(index_var);
 		escreveCT(ArrayObjStatic[index_var*20+1],parseInt(enderecoCT(ArrayObjStatic[index_var*20+1],0))+parseInt(dependencia2),0);
 		if(enderecoCT(ArrayObjStatic[index_var*20+1],0) > ArrayObjStatic[index_var*20+16])
 			escreveCT(ArrayObjStatic[index_var*20+1],ArrayObjStatic[index_var*20+16],0);
@@ -905,29 +904,29 @@ function sensor(index_var, dependencia1, dependencia2) {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2)==1){
 			escreve(ArrayObjStatic[index_var*20+1],1);
 		}
-    	else
-    		escreve(ArrayObjStatic[index_var*20+1],0);
+    		else
+    			escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	if (dependencia2.charAt(0) == 'Y' && dependencia1.charAt(0)!='X') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2)==1){
 			escreve(ArrayObjStatic[index_var*20+1],1);
 		}
-    	else
-    		escreve(ArrayObjStatic[index_var*20+1],0);
+    		else
+    			escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	if (dependencia1.charAt(0) == 'X' && dependencia2.charAt(0) == 'Y') {
 		if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1)==1)&&(verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2)==1)){
 			escreve(ArrayObjStatic[index_var*20+1],1);
 		}
-    	else
-    		escreve(ArrayObjStatic[index_var*20+1],0);
+    		else
+    			escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	if (dependencia1.charAt(0) == 'Y' && dependencia2.charAt(0) == 'X') {
 		if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1)==1)&&(verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2)==1)){
 			escreve(ArrayObjStatic[index_var*20+1],1);
 		}
-     	else
-      		escreve(ArrayObjStatic[index_var*20+1],0);
+     		else
+      			escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	//Controle via SET E RESET
 	if (dependencia1.charAt(0) == 'S' && dependencia1.charAt(1) == 'X') {
@@ -963,7 +962,7 @@ function sensor(index_var, dependencia1, dependencia2) {
 	if (dependencia1.charAt(0) == 'R' && dependencia1.charAt(1) == 'Y') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1)
 			escreve(ArrayObjStatic[index_var*20+1],0);
-  }
+  	}
 }
 
 //=====================================================================================
