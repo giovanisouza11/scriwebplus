@@ -13,6 +13,8 @@ var C = [];
 var comandos = 0; // 0:stop, 1: run 2: edicao
 
 var Imagens =[];
+var Imagens1 =[];
+var Imagens2 =[];
 var Imagens_Real =[];
 var LoadedImages = 0;
 var Extensao = ['','_off','_on1','_on2','3','4','5'];
