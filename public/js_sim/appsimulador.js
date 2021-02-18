@@ -1107,7 +1107,6 @@ function draw_processo(fileArr) {
 //---------------------
 function LoadImage(imagefile, ij) {
     	var image1 = new Image();
-	//var imageData;
 	image1.onload = function() {
         	Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
 		Imagens_Real[ij] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
@@ -1118,9 +1117,9 @@ function LoadImage(imagefile, ij) {
 function LoadImage1(imagefile, ij) {
     	var image1 = new Image();
 	image1.onload = function() {
-    		Scontext.drawImage(Imagens1[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
+    		//Scontext.drawImage(Imagens1[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
 		Imagens1[ArrayObjDinamic[ij*10+5]] = image1;
-		Imagens1_Real[ij] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
+		//Imagens1_Real[ij] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
     	};	
     	image1.src = imagefile;
 	Imagens1[ArrayObjDinamic[ij*10+5]] = image1;
@@ -1128,30 +1127,21 @@ function LoadImage1(imagefile, ij) {
 function LoadImage2(imagefile, ij) {
    	var image1 = new Image();
 	image1.onload = function() {
-    		Scontext.drawImage(Imagens2[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
-		Imagens2[ArrayObjDinamic[ij*10+5]] = image1;
-		Imagens2_Real[ij] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
+    		Imagens2[ArrayObjDinamic[ij*10+5]] = image1;
 	};	
     	image1.src = imagefile;
 	Imagens2[ArrayObjDinamic[ij*10+5]] = image1;
 }
 function LoadImageIndexX1(extensao, index) {
-    	/*var image1 = new Image();
-	image1.onload = function() {
-    		Scontext.drawImage(image1, ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
-	};*/
-  	switch (extensao)
+    	switch (extensao)
 	{
 	case 2:
-		//Scontext.putImageData(Imagens1_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
 		Scontext.drawImage(Imagens1[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 		break;
 	case 3:
-		//Scontext.putImageData(Imagens2_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
 		Scontext.drawImage(Imagens2[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 		break;
 	default:
-		//Scontext.putImageData(Imagens_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
 		Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 	}
 }
@@ -1203,15 +1193,11 @@ function LoadImageIndexX1(extensao, index) {
 */
 function LoadImageIndex(imagefile, index) {
     	var image1 = new Image();
-	//var imageData;
 	image1.onload = function() {
     		Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
-		//imageData = context.getImageData(ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]); //684, 0, 784, 250);
-    		//ctx.putImageData(imgData, 100, 0);
 	};
     	image1.src = imagefile;
     	Imagens[ArrayObjDinamic[index*10+5]] = image1;
-	//Imagens[ArrayObjDinamic[index*10+5]] = imageData;
 }
 
 function LoadImageX(imagefile, ij) {
