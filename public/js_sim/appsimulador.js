@@ -1107,7 +1107,7 @@ function LoadImage(imagefile, ij) {
 	//var imageData;
 	image1.onload = function() {
         	Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
-		Imagens_Real[ij] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjDinamic[ij*10+3] + ArrayObjStatic[ij*20+4], ArrayObjDinamic[ij*10+4] + ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
+		//Imagens_Real[ij] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjDinamic[ij*10+3] + ArrayObjStatic[ij*20+4], ArrayObjDinamic[ij*10+4] + ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
     		//ctx.putImageData(imgData, 100, 0);
     	};
     	image1.src = imagefile;
