@@ -1138,9 +1138,9 @@ function LoadImage2(imagefile, ij) {
 */
 function LoadImage(image, ij) {
     	var image1 = new Image();
-	Imagens1_Real[ArrayObjDinamic[ij*10+5]] = image;
+	Imagens_Real[ArrayObjDinamic[ij*10+5]] = image;
 	image1.onload = function() {
-        	Scontext.putImageData(Imagens1_Real[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
+        	Scontext.putImageData(Imagens_Real[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
 		//Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
     	};
     	image1 = image;
