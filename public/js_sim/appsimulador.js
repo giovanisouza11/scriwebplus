@@ -1066,14 +1066,14 @@ function draw_processo(fileArr) {
 			ArrayObjDinamic[(i-1)*10+6] = fileLine[20];
 			ArrayObjDinamic[(i-1)*10+9] = fileLine[23];
 			if ((ArrayObjStatic[(i-1)*20+17] != 1) && (ArrayObjStatic[(i-1)*20+17] < 5)) {
-				LoadImage(fileLine[21], i-1);
+				/*LoadImage(fileLine[21], i-1);
 				LoadImage1(fileLine[22], i-1);
 				LoadImage2(fileLine[23], i-1);
-				/*
+				*/
 				LoadImage(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
 				LoadImage1(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on1.png', i-1);
 				LoadImage2(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on2.png', i-1);
-				*/
+				
 				//LoadImage(ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
 			}		
 			else {
@@ -1105,7 +1105,7 @@ function draw_processo(fileArr) {
 //-----------------------------
 //https://stackoverflow.com/questions/32363801/images-not-loaded-on-first-call-in-html-canvas
 //---------------------
-/*function LoadImage(imagefile, ij) {
+function LoadImage(imagefile, ij) {
     	var image1 = new Image();
 	//var imageData;
 	image1.onload = function() {
@@ -1135,7 +1135,28 @@ function LoadImage2(imagefile, ij) {
     	image1.src = imagefile;
 	Imagens2[ArrayObjDinamic[ij*10+5]] = image1;
 }
-*/
+function LoadImageIndexX1(extensao, index) {
+    	/*var image1 = new Image();
+	image1.onload = function() {
+    		Scontext.drawImage(image1, ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+	};*/
+  	switch (extensao)
+	{
+	case 2:
+		//Scontext.putImageData(Imagens1_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
+		Scontext.drawImage(Imagens1[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+		break;
+	case 3:
+		//Scontext.putImageData(Imagens2_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
+		Scontext.drawImage(Imagens2[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+		break;
+	default:
+		//Scontext.putImageData(Imagens_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
+		Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+	}
+}
+
+/*
 function LoadImage(image, ij) {
     	var image1 = new Image();
 	Imagens_Real[ArrayObjDinamic[ij*10+5]] = image;
@@ -1166,7 +1187,20 @@ function LoadImage2(imagefile, ij) {
     	image1.src = imagefile;
 	Imagens2[ArrayObjDinamic[ij*10+5]] = image1;
 }
-
+function LoadImageIndexX1(extensao, index) {
+	switch (extensao)
+	{
+	case 2:
+		Scontext.putImageData(Imagens1_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
+		break;
+	case 3:
+		Scontext.putImageData(Imagens2_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
+		break;
+	default:
+		Scontext.putImageData(Imagens_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
+	}
+}
+*/
 function LoadImageIndex(imagefile, index) {
     	var image1 = new Image();
 	//var imageData;
@@ -1180,29 +1214,6 @@ function LoadImageIndex(imagefile, index) {
 	//Imagens[ArrayObjDinamic[index*10+5]] = imageData;
 }
 
-function LoadImageIndexX1(extensao, index) {
-    	/*var image1 = new Image();
-	image1.onload = function() {
-    		Scontext.drawImage(image1, ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
-	};*/
-  	switch (extensao)
-	{
-	case 2:
-		Scontext.putImageData(Imagens1_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
-		//Scontext.drawImage(Imagens1[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
-		//image1 = Imagens1[ArrayObjDinamic[index*10+5]];
-		break;
-	case 3:
-		Scontext.putImageData(Imagens2_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
-		//Scontext.drawImage(Imagens2[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
-		//image1 = Imagens2[ArrayObjDinamic[index*10+5]];
-		break;
-	default:
-		Scontext.putImageData(Imagens_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
-		//Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
-		//image1 = Imagens[ArrayObjDinamic[index*10+5]];
-	}
-}
 function LoadImageX(imagefile, ij) {
     	var image1 = new Image();
 	image1.onload = function() {
