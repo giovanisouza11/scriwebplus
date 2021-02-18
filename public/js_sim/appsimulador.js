@@ -16,6 +16,8 @@ var Imagens =[];
 var Imagens1 =[];
 var Imagens2 =[];
 var Imagens_Real =[];
+var Imagens1_Real =[];
+var Imagens2_Real =[];
 var LoadedImages = 0;
 var Extensao = ['','_off','_on1','_on2','3','4','5'];
 var ArrayImagens = [];
@@ -1108,7 +1110,6 @@ function LoadImage(imagefile, ij) {
 	image1.onload = function() {
         	Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
 		Imagens_Real[ij] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
-    		//ctx.putImageData(imgData, 100, 0);
     	};
     	image1.src = imagefile;
     	Imagens[Imagens.length] = image1;
@@ -1140,7 +1141,8 @@ function LoadImage1(imagefile, ij) {
     	var image1 = new Image();
 	image1.onload = function() {
     		Imagens1[ArrayObjDinamic[ij*10+5]] = image1;
-	};	
+		Imagens1_Real[ij] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
+    	};	
     	image1.src = imagefile;
 	Imagens1[ArrayObjDinamic[ij*10+5]] = image1;
 }
@@ -1148,6 +1150,7 @@ function LoadImage2(imagefile, ij) {
    	var image1 = new Image();
 	image1.onload = function() {
     		Imagens2[ArrayObjDinamic[ij*10+5]] = image1;
+		Imagens2_Real[ij] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
 	};	
     	image1.src = imagefile;
 	Imagens2[ArrayObjDinamic[ij*10+5]] = image1;
@@ -1160,15 +1163,18 @@ function LoadImageIndexX1(extensao, index) {
   	switch (extensao)
 	{
 	case 2:
-		Scontext.drawImage(Imagens1[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+		Scontext.putImageData(Imagens1_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
+		//Scontext.drawImage(Imagens1[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 		//image1 = Imagens1[ArrayObjDinamic[index*10+5]];
 		break;
 	case 3:
-		Scontext.drawImage(Imagens2[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+		Scontext.putImageData(Imagens2_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
+		//Scontext.drawImage(Imagens2[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 		//image1 = Imagens2[ArrayObjDinamic[index*10+5]];
 		break;
 	default:
-		Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+		Scontext.putImageData(Imagens_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
+		//Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 		//image1 = Imagens[ArrayObjDinamic[index*10+5]];
 	}
 }
@@ -1197,6 +1203,8 @@ function draw_simulador_fundo(){
 function inicializa_array(){
 	Imagens =[];
 	Imagens_Real = [];
+	Imagens1_Real = [];
+	Imagens2_Real = [];
 	Imagens1 =[];
 	Imagens2 =[];
 	ArrayImagens = [];
