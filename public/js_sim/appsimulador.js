@@ -13,6 +13,7 @@ var C = [];
 var comandos = 0; // 0:stop, 1: run 2: edicao
 
 var Imagens =[];
+var Imagens_Real =[];
 var LoadedImages = 0;
 var Extensao = ['','_off','_on1','_on2','3','4','5'];
 var ArrayImagens = [];
@@ -1101,15 +1102,14 @@ function draw_processo(fileArr) {
 //---------------------
 function LoadImage(imagefile, ij) {
     	var image1 = new Image();
-	var imageData;
+	//var imageData;
 	image1.onload = function() {
         	Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
-		imageData = Scontext.getImageData(ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]); //684, 0, 784, 250);
+		Imagens_Real[ij] = Scontext.getImageData(ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]); //684, 0, 784, 250);
     		//ctx.putImageData(imgData, 100, 0);
     	};
     	image1.src = imagefile;
-    	//Imagens[Imagens.length] = image1;
-	Imagens[Imagens.length] = imageData;
+    	Imagens[Imagens.length] = image1;
 }
 /*
 function LoadImage(image, ij) {
@@ -1194,6 +1194,7 @@ function draw_simulador_fundo(){
 //=====================================================================================
 function inicializa_array(){
 	Imagens =[];
+	Imagens_Real = [];
 	Imagens1 =[];
 	Imagens2 =[];
 	ArrayImagens = [];
