@@ -108,12 +108,20 @@ function tBotao() {
 				for(var j=1; j < Imagens_Real[ArrayObjDinamic[i*10+5]].data.length; j++)
 					texto += '.' + Imagens_Real[ArrayObjDinamic[i*10+5]].data[j];
 				//texto += ','+ Imagens1_Real[ArrayObjDinamic[i*10+5]]+','+ Imagens2_Real[ArrayObjDinamic[i*10+5]] + ',,';
-				texto += ','+  Imagens1_Real[ArrayObjDinamic[i*10+5]].data[0];
-				for(var j=1; j < Imagens1_Real[ArrayObjDinamic[i*10+5]].data.length; j++)
-					texto += '.' + Imagens1_Real[ArrayObjDinamic[i*10+5]].data[j];
-				texto += ','+ Imagens2_Real[ArrayObjDinamic[i*10+5]].data[0];
-				for(var j=1; j < Imagens2_Real[ArrayObjDinamic[i*10+5]].data.length; j++)
-					texto += '.' + Imagens2_Real[ArrayObjDinamic[i*10+5]].data[j];
+				if (Imagens1_Real[ArrayObjDinamic[i*10+5]] != '') {
+					texto += ','+  Imagens1_Real[ArrayObjDinamic[i*10+5]].data[0];
+					for(var j=1; j < Imagens1_Real[ArrayObjDinamic[i*10+5]].data.length; j++)
+						texto += '.' + Imagens1_Real[ArrayObjDinamic[i*10+5]].data[j];
+				}
+				else
+					texto += ',';
+				if (Imagens2_Real[ArrayObjDinamic[i*10+5]] != '') {
+					texto += ','+ Imagens2_Real[ArrayObjDinamic[i*10+5]].data[0];
+					for(var j=1; j < Imagens2_Real[ArrayObjDinamic[i*10+5]].data.length; j++)
+						texto += '.' + Imagens2_Real[ArrayObjDinamic[i*10+5]].data[j];
+				}
+				else
+					texto += ',';
 				texto += ',,';
 				
 			}
