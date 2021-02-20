@@ -106,15 +106,13 @@ function tBotao() {
 				//texto += ArrayImagens[ArrayObjDinamic[i*10+5]]+',' + ArrayObjDinamic[i*10+6]+','+ Imagens_Real[ArrayObjDinamic[i*10+5]]+','+ Imagens1_Real[ArrayObjDinamic[i*10+5]]+','+ Imagens2_Real[ArrayObjDinamic[i*10+5]] + ',,';
 				
 				texto += ArrayImagens[ArrayObjDinamic[i*10+5]]+',' + ArrayObjDinamic[i*10+6]+','; //+ Imagens_Real[ArrayObjDinamic[i*10+5]].data[0];
-				if ( Array.isArray(Imagens_Real[ArrayObjDinamic[i*10+5]]) == true)
+				if ( Array.isArray(Imagens_Real[ArrayObjDinamic[i*10+5]]))
 					texto += Imagens_Real[ArrayObjDinamic[i*10+5]].data.join('.');
-				else
-					texto += ',';
-				if ( Array.isArray(Imagens1_Real[ArrayObjDinamic[i*10+5]]) == true)
+				texto += ',';
+				if ( Array.isArray(Imagens1_Real[ArrayObjDinamic[i*10+5]]))
 					texto += Imagens1_Real[ArrayObjDinamic[i*10+5]].data.join('.');
-				else
-					texto += ',';
-				if ( Array.isArray(Imagens2_Real[ArrayObjDinamic[i*10+5]]) == true)
+				texto += ',';
+				if ( Array.isArray(Imagens2_Real[ArrayObjDinamic[i*10+5]]))
 					texto += Imagens2_Real[ArrayObjDinamic[i*10+5]].data.join('.');
 				texto += ',,';
 				
