@@ -113,15 +113,15 @@ function tBotao() {
 				}
 				texto += ',';
 				if (Imagens1_Real[ArrayObjDinamic[i*10+5]].isArray){
-					texto += Imagens_Real1[ArrayObjDinamic[i*10+5]].data[0];
-					for (var j=1; j<Imagens_Real1[ArrayObjDinamic[i*10+5]].length; j++)
-						texto += '.' + Imagens_Real1[ArrayObjDinamic[i*10+5]].data[j];
+					texto += Imagens1_Real[ArrayObjDinamic[i*10+5]].data[0];
+					for (var j=1; j<Imagens1_Real[ArrayObjDinamic[i*10+5]].length; j++)
+						texto += '.' + Imagens1_Real[ArrayObjDinamic[i*10+5]].data[j];
 				}
 				texto += ',';
 				if (Imagens2_Real[ArrayObjDinamic[i*10+5]].isArray){
-					texto += Imagens_Real2[ArrayObjDinamic[i*10+5]].data[0];
-					for (var j=1; j<Imagens_Real2[ArrayObjDinamic[i*10+5]].length; j++)
-						texto += '.' + Imagens_Real2[ArrayObjDinamic[i*10+5]].data[j];
+					texto += Imagens2_Real[ArrayObjDinamic[i*10+5]].data[0];
+					for (var j=1; j<Imagens2_Real[ArrayObjDinamic[i*10+5]].length; j++)
+						texto += '.' + Imagens2_Real[ArrayObjDinamic[i*10+5]].data[j];
 				}
 				texto += ',,';
 			}
