@@ -1066,9 +1066,9 @@ function draw_processo(fileArr) {
 			ArrayObjDinamic[(i-1)*10+6] = fileLine[20];
 			ArrayObjDinamic[(i-1)*10+9] = fileLine[23];
 			if ((ArrayObjStatic[(i-1)*20+17] != 1) && (ArrayObjStatic[(i-1)*20+17] < 5)) {
-				LoadImage(fileLine[22], i-1);
-				LoadImage1(fileLine[23], i-1);
-				LoadImage2(fileLine[24], i-1);
+				LoadImage(fileLine[21], i-1);
+				LoadImage1(fileLine[22], i-1);
+				LoadImage2(fileLine[23], i-1);
 				/*
 				LoadImage(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
 				LoadImage1(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on1.png', i-1);
@@ -1154,7 +1154,7 @@ function LoadImage(image, ij) {
     	var image1 = new Image();
 	Imagens_Real[ArrayObjDinamic[ij*10+5]] = image;
 	image1.onload = function() {
-        	Scontext.putImageData(Imagens_Real[ArrayObjDinamic[ij*10+5]].split('.'), ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
+        	Scontext.putImageData(Imagens_Real[ArrayObjDinamic[ij*10+5]].data.split('.'), ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
 		//Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
     		//Imagens_Real[ArrayObjDinamic[ij*10+5]] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
 	};
@@ -1165,7 +1165,7 @@ function LoadImage1(imagefile, ij) {
     	var image1 = new Image();
 	Imagens1_Real[ArrayObjDinamic[ij*10+5]] = imagefile;
 	image1.onload = function() {
-    		Scontext.putImageData(Imagens1_Real[ArrayObjDinamic[ij*10+5]].split('.'), ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
+    		Scontext.putImageData(Imagens1_Real[ArrayObjDinamic[ij*10+5]].data.split('.'), ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
 		//Imagens1[ArrayObjDinamic[ij*10+5]] = image1;
 		//Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
     		//Imagens_Real[ArrayObjDinamic[ij*10+5]] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
@@ -1177,7 +1177,7 @@ function LoadImage2(imagefile, ij) {
    	var image1 = new Image();
 	Imagens2_Real[ArrayObjDinamic[ij*10+5]] = imagefile;
 	image1.onload = function() {
-    		Scontext.putImageData(Imagens2_Real[ArrayObjDinamic[ij*10+5]].split('.'), ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
+    		Scontext.putImageData(Imagens2_Real[ArrayObjDinamic[ij*10+5]].data.split('.'), ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
 		//Imagens2[ArrayObjDinamic[ij*10+5]] = image1;
 		//Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
     		//Imagens_Real[ArrayObjDinamic[ij*10+5]] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
@@ -1189,13 +1189,13 @@ function LoadImageIndexX1(extensao, index) {
 	switch (extensao)
 	{
 	case 2:
-		Scontext.putImageData(Imagens1_Real[ArrayObjDinamic[index*10+5]].split('.'), ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
+		Scontext.putImageData(Imagens1_Real[ArrayObjDinamic[index*10+5]].data.split('.'), ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
 		break;
 	case 3:
-		Scontext.putImageData(Imagens2_Real[ArrayObjDinamic[index*10+5]].split('.'), ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
+		Scontext.putImageData(Imagens2_Real[ArrayObjDinamic[index*10+5]].data.split('.'), ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
 		break;
 	default:
-		Scontext.putImageData(Imagens_Real[ArrayObjDinamic[index*10+5]].split('.'), ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
+		Scontext.putImageData(Imagens_Real[ArrayObjDinamic[index*10+5]].data.split('.'), ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
 	}
 }
 
