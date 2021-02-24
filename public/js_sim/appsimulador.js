@@ -1066,9 +1066,9 @@ function draw_processo(fileArr) {
 			ArrayObjDinamic[(i-1)*10+6] = fileLine[20];
 			ArrayObjDinamic[(i-1)*10+9] = fileLine[23];
 			if ((ArrayObjStatic[(i-1)*20+17] != 1) && (ArrayObjStatic[(i-1)*20+17] < 5)) {
-				LoadImage(fileLine[20], i-1);
-				LoadImage1(fileLine[21], i-1);
-				LoadImage2(fileLine[22], i-1);
+				LoadImage(fileLine[22], i-1);
+				LoadImage1(fileLine[23], i-1);
+				LoadImage2(fileLine[24], i-1);
 				/*
 				LoadImage(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
 				LoadImage1(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on1.png', i-1);
