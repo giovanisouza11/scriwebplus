@@ -106,23 +106,14 @@ function tBotao() {
 				//texto += ArrayImagens[ArrayObjDinamic[i*10+5]]+',' + ArrayObjDinamic[i*10+6]+','+ Imagens_Real[ArrayObjDinamic[i*10+5]]+','+ Imagens1_Real[ArrayObjDinamic[i*10+5]]+','+ Imagens2_Real[ArrayObjDinamic[i*10+5]] + ',,';
 				
 				texto += ArrayImagens[ArrayObjDinamic[i*10+5]]+',' + ArrayObjDinamic[i*10+6]+','; //+ Imagens_Real[ArrayObjDinamic[i*10+5]].data[0];
-				if (Imagens_Real[ArrayObjDinamic[i*10+5]] != '' ){
-					//texto += Imagens_Real[ArrayObjDinamic[i*10+5]].data[0];
-					//for (var j=1; j<Imagens_Real[ArrayObjDinamic[i*10+5]].length; j++)
-						texto += '.' + Imagens_Real[ArrayObjDinamic[i*10+5]].data.join('.'); //data[j];
-				}
+				if (Imagens_Real[ArrayObjDinamic[i*10+5]] != '' )
+					texto += Imagens_Real[ArrayObjDinamic[i*10+5]].data.join('.'); 
 				texto += ',';
-				if (Imagens1_Real[ArrayObjDinamic[i*10+5]] == 10){
-					texto += Imagens1_Real[ArrayObjDinamic[i*10+5]].data[0];
-					for (var j=1; j<Imagens1_Real[ArrayObjDinamic[i*10+5]].length; j++)
-						texto += '.' + Imagens1_Real[ArrayObjDinamic[i*10+5]].data[j];
-				}
+				if (Imagens1_Real[ArrayObjDinamic[i*10+5]] != '')
+					texto += Imagens1_Real[ArrayObjDinamic[i*10+5]].data.join('.');
 				texto += ',';
-				if (Imagens2_Real[ArrayObjDinamic[i*10+5]] == 20){
-					texto += Imagens2_Real[ArrayObjDinamic[i*10+5]].data[0];
-					for (var j=1; j<Imagens2_Real[ArrayObjDinamic[i*10+5]].length; j++)
-						texto += '.' + Imagens2_Real[ArrayObjDinamic[i*10+5]].data[j];
-				}
+				if (Imagens2_Real[ArrayObjDinamic[i*10+5]] != '')
+					texto += Imagens2_Real[ArrayObjDinamic[i*10+5]].data.join('.');
 				texto += ',,';
 			}
 			if (ArrayObjStatic[(i*20)+17]==1) 
