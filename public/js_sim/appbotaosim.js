@@ -109,7 +109,7 @@ function tBotao() {
 				if (Imagens_Real[ArrayObjDinamic[i*10+5]] != '' ){
 					//texto += Imagens_Real[ArrayObjDinamic[i*10+5]].data[0];
 					//for (var j=1; j<Imagens_Real[ArrayObjDinamic[i*10+5]].length; j++)
-						texto += '.' + Imagens_Real[ArrayObjDinamic[i*10+5]].join('.'); //data[j];
+						texto += '.' + Imagens_Real[ArrayObjDinamic[i*10+5]].data.join('.'); //data[j];
 				}
 				texto += ',';
 				if (Imagens1_Real[ArrayObjDinamic[i*10+5]] == 10){
