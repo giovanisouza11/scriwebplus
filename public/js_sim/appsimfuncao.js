@@ -198,13 +198,13 @@ function cSimIHM() {
 	document.getElementById('input1').focus();
 }
 function leFigura() {
-	var inputCSV = document.createElement('input');
-	inputCSV.type = 'file';
-	inputCSV.accept = '.PNG';
-	inputCSV.click();
-	inputCSV.onchange = function() {
+	var inputPNG= document.createElement('input');
+	inputPNG.type = 'file';
+	inputPNG.accept = '.PNG';
+	inputPNG.click();
+	inputPNG.onchange = function() {
 		var file = this.files[0];
-		leitorDeCSV.readAsText(file);
+		leitorDePNG.readAsText(file);
 		//simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
 		//alert(simPath);
 	};
@@ -435,4 +435,11 @@ function simFuncao7(){
 	ArrayObjDinamic.push(0,0,0,0,0,0,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0)/20)-1;
 	simFuncao();
+}
+var leitorDePNG = new FileReader();
+leitorDePNG.addEventListener('load', lePNG);
+
+function lePNG(evt) {
+	var fileArr = evt.target.result.split('\n');
+	//draw_processo(fileArr);
 }
