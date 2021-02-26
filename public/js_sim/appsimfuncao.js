@@ -112,7 +112,7 @@ function cSimIHM() {
 		modalb.innerHTML += "<p>Inc X1:<input type='text' id='input10' name='input10' maxlength=3 size=3 /> Inc Y1:<input type='text' id='input12' name='input12' maxlength=3 size=3 /> Variável 1:<input type='text' id='input14' name='input14' maxlength=6 size=6 /></p>";
 		modalb.innerHTML += "<p>Inc X2:<input type='text' id='input11' name='input11' maxlength=3 size=3 /> Inc Y2:<input type='text' id='input13' name='input13'  maxlength=3 size=3 /> Variável 2:<input type='text' id='input15' name='input15' maxlength=6 size=6 /></p>";
 		modalb.innerHTML += "<p>Piscar:<input type='text' id='input16' name='input16' maxlength=3 size=3 /> Tempo:<input type='text' id='input17' name='input17' maxlength=3 size=3 /></p>";
-		modalb.innerHTML += "<p>Figura:<input type='text' id='input18' name='input18' maxlength=15 size=15 /> Função:<input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
+		modalb.innerHTML += "<p>Figura:<input type='text' id='input18' name='input18' maxlength=15 size=15 onClick='leFigura' /> Função:<input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
 		modalb.innerHTML += "<canvas id='tela4' class='modal_figura'></canvas>";
 	}
 	if (ArrayObjStatic[index_var_config*20+17]==1) {
@@ -196,6 +196,9 @@ function cSimIHM() {
 	if (ArrayObjStatic[index_var_config*20+17]==6 || ArrayObjStatic[index_var_config*20+17]==7) 
 		document.getElementById('input18').value = ArrayObjDinamic[(index_var_config)*10+5];
 	document.getElementById('input1').focus();
+}
+function leFigura() {
+	
 }
 //------------------------------------------------------------------
 //Botao OK
