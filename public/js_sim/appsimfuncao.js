@@ -198,7 +198,16 @@ function cSimIHM() {
 	document.getElementById('input1').focus();
 }
 function leFigura() {
-	
+	var inputCSV = document.createElement('input');
+	inputCSV.type = 'file';
+	inputCSV.accept = '.PNG';
+	inputCSV.click();
+	inputCSV.onchange = function() {
+		var file = this.files[0];
+		leitorDeCSV.readAsText(file);
+		//simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
+		//alert(simPath);
+	};
 }
 //------------------------------------------------------------------
 //Botao OK
