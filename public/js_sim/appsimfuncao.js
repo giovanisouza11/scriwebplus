@@ -198,7 +198,7 @@ function cSimIHM() {
 	document.getElementById('input1').focus();
 }
 function leFigura(event) {
-	if( event == 13) {
+	if( event.keyCode == 13) {
 		var inputPNG= document.createElement('input');
 		inputPNG.type = 'file';
 		inputPNG.accept = '.PNG';
