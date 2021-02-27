@@ -440,7 +440,8 @@ var leitorDePNG = new FileReader();
 leitorDePNG.addEventListener('load', lePNG);
 
 function lePNG(evt) {
+	console.log(evt);
 	Imagens_Real[ArrayObjDinamic[(index_var_config)*10+5]] = evt;
 	//draw_processo(fileArr);
-	console.log(evt);
+	
 }
