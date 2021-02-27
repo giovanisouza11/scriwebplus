@@ -179,7 +179,7 @@ function cSimIHM() {
 					lar = lar_fig;
 				}
 			}
-			CcontextFig.drawImage(Imagens[ArrayObjDinamic[index_var_config*10+5]], 0,0, lar, alt);		
+			CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index_var_config*10+5]], 0,0, lar, alt);		
 		}
 		else{
 			document.getElementById('input18').value = "";
@@ -205,7 +205,7 @@ function leFigura(event) {
 		inputPNG.click();
 		inputPNG.onchange = function() {
 			var file = this.files[0];
-			leitorDePNG.readAsText(file);
+			leitorDePNG.readAsBinaryString(file);
 		};
 	};
 }
@@ -440,6 +440,6 @@ var leitorDePNG = new FileReader();
 leitorDePNG.addEventListener('load', lePNG);
 
 function lePNG(evt) {
-	var fileArr = evt.target.result.split('\n');
+	Imagens_Real[ArrayObjDinamic[(index_var_config)*10+5]] = evt;
 	//draw_processo(fileArr);
 }
