@@ -246,8 +246,8 @@ function LoadImageConfig(imagefile, index) {
    	image1.onload = function() {
 		CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index*10+5]], 0,0, 50,100);
 	};
-	image1 = Imagens_Real[ArrayObjDinamic[index*10+5]]
-    	//image1.src = imagefile;
+	//image1 = Imagens_Real[ArrayObjDinamic[index*10+5]]
+    	image1.src = imagefile;
     	Imagens[Imagens.length] = image1;
 }
 //-----------------------------------------------
@@ -443,8 +443,7 @@ leitorDePNG.addEventListener('onloadend', lePNG);
 
 function lePNG(evt) {
 	Imagens_Real[ArrayObjDinamic[(index_var_config)*10+5]] = evt.target.result;
-	LoadImageConfig(Imagens_Real[ArrayObjDinamic[(index_var_config)*10+5]], index_var_config);
-	
+
 	//draw_processo(fileArr);
 	
 }
