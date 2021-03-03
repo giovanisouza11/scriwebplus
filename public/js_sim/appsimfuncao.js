@@ -243,7 +243,7 @@ function simOk() {
 function LoadImageConfig(imagefile, index) {
 	var image1 = new Image();
    	image1.onload = function() {
-		CcontextFig.drawImage(Imagens[ArrayObjDinamic[index*10+5]], 0,0, 50,100);
+		CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index*10+5]], 0,0, 50,100);
 	};
     	image1.src = imagefile;
     	Imagens[Imagens.length] = image1;
