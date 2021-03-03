@@ -156,8 +156,8 @@ function cSimIHM() {
 			document.getElementById('input18').value = ArrayImagens[ArrayObjDinamic[(index_var_config)*10+5]];
 			var lar= 0;
 			var alt= 0;
-			var alt_fig = Imagens[ArrayObjDinamic[index_var_config*10+5]].height;
-			var lar_fig = Imagens[ArrayObjDinamic[index_var_config*10+5]].width;
+			var alt_fig = Imagens_Real[ArrayObjDinamic[index_var_config*10+5]].height;
+			var lar_fig = Imagens_Real[ArrayObjDinamic[index_var_config*10+5]].width;
 	
 			if (lar_fig >alt_fig) {
 				if (lar_fig >100) {
