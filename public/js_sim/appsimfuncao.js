@@ -205,7 +205,7 @@ function leFigura(event) {
 		inputPNG.click();
 		inputPNG.onchange = function() {
 			var file = this.files[0];
-			console.log( file);
+			confirm(file);
 			leitorDePNG.readAsreadAsArrayBuffer(file);
 		};
 	};
