@@ -437,7 +437,7 @@ function simFuncao7(){
 	simFuncao();
 }
 var leitorDePNG = new FileReader();
-leitorDePNG.addEventListener('load', lePNG);
+leitorDePNG.addEventListener('onloadend', lePNG);
 
 function lePNG(evt) {
 	Imagens_Real[ArrayObjDinamic[(index_var_config)*10+5]] = evt.target.result;
