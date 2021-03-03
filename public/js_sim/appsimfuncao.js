@@ -205,8 +205,7 @@ function leFigura(event) {
 		inputPNG.click();
 		inputPNG.onchange = function() {
 			var file = this.files[0];
-			confirm(readAsreadAsArrayBuffer(file));
-			leitorDePNG.readAsreadAsArrayBuffer(file);
+			leitorDePNG.readAsBinaryString(file);
 		};
 	};
 }
@@ -440,11 +439,12 @@ function simFuncao7(){
 	simFuncao();
 }
 var leitorDePNG = new FileReader();
-leitorDePNG.addEventListener('onloadend', lePNG);
+leitorDePNG.addEventListener('load', lePNG);
 
 function lePNG(evt) {
 	Imagens_Real[ArrayObjDinamic[(index_var_config)*10+5]] = evt.target.result;
-
+	confirm(readAsBinaryString(file));
+			
 	//draw_processo(fileArr);
 	
 }
