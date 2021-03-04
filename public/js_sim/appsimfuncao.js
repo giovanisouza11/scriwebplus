@@ -442,7 +442,7 @@ var leitorDePNG = new FileReader();
 leitorDePNG.addEventListener('load', lePNG);
 
 function lePNG(evt) {
-	Imagens_Real[ArrayObjDinamic[(index_var_config)*10+5]] = evt.target.result;
+	Imagens_Real[ArrayObjDinamic[(index_var_config)*10+5]] = evt.target.result.split('.');
 	confirm(readAsBinaryString(file));
 			
 	//draw_processo(fileArr);
