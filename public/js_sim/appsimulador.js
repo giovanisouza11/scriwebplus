@@ -1153,7 +1153,7 @@ function LoadImageIndexX1(extensao, index) {
 function LoadImage(image, ij) {
     	var image1 = new Image();
 	const imageData = Scontext.createImageData(ArrayObjStatic[ij*10+4], ArrayObjStatic[ij*10+7]);
-	imageData.data = Uint8ClampedArray.of(image.split('.'));
+	imageData.data = Uint8ClampedArray.image.split('.');
 	Imagens_Real[ArrayObjDinamic[ij*10+5]] = imageData;
 	//image1.onload = function() {
         	Scontext.putImageData(imageData, ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
@@ -1166,7 +1166,7 @@ function LoadImage(image, ij) {
 function LoadImage1(imagefile, ij) {
     	var image1 = new Image();
 	const imageData = Scontext.createImageData(ArrayObjStatic[ij*10+4], ArrayObjStatic[ij*10+7]);
-	imageData.data = Uint8ClampedArray.of(imagefile.split('.'));
+	imageData.data = Uint8ClampedArray.imagefile.split('.');
 	Imagens1_Real[ArrayObjDinamic[ij*10+5]] = imageData;
 	image1.onload = function() {
     		Scontext.putImageData(imageData, ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
@@ -1180,7 +1180,7 @@ function LoadImage1(imagefile, ij) {
 function LoadImage2(imagefile, ij) {
    	var image1 = new Image();
 	const imageData = Scontext.createImageData(ArrayObjStatic[ij*10+4], ArrayObjStatic[ij*10+7]);
-	imageData.data = Uint8ClampedArray.of(imagefile.split('.'));
+	imageData.data = Uint8ClampedArray.imagefile.split('.');
 	Imagens2_Real[ArrayObjDinamic[ij*10+5]] = imageData;
 	image1.onload = function() {
     		Scontext.putImageData(imageData, ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
