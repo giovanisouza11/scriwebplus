@@ -1155,13 +1155,13 @@ function LoadImage(image, ij) {
 	const imageData = Scontext.createImageData(ArrayObjStatic[ij*10+4], ArrayObjStatic[ij*10+7]);
 	imageData.data = Uint8ClampedArray.of(image.split('.'));
 	Imagens_Real[ArrayObjDinamic[ij*10+5]] = imageData;
-	image1.onload = function() {
+	//image1.onload = function() {
         	Scontext.putImageData(imageData, ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
 		//Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
     		//Imagens_Real[ArrayObjDinamic[ij*10+5]] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
-	};
-    	image1 = image;
-    	Imagens[Imagens.length] = image1;
+	//};
+    	//image1 = image;
+    	//Imagens[Imagens.length] = image1;
 }
 function LoadImage1(imagefile, ij) {
     	var image1 = new Image();
