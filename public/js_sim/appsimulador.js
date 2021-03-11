@@ -1066,9 +1066,9 @@ function draw_processo(fileArr) {
 			ArrayObjDinamic[(i-1)*10+6] = fileLine[20];
 			ArrayObjDinamic[(i-1)*10+9] = fileLine[23];
 			if ((ArrayObjStatic[(i-1)*20+17] != 1) && (ArrayObjStatic[(i-1)*20+17] < 5)) {
-				var r=confirm("Table:"+ fileLine[21]);
-				var r1=confirm("Table1:"+ fileLine[22]);
-				var r2=confirm("Table2:"+ fileLine[23]);
+				//var r=confirm("Table:"+ fileLine[21]);
+				//var r1=confirm("Table1:"+ fileLine[22]);
+				//var r2=confirm("Table2:"+ fileLine[23]);
 				LoadImage(fileLine[21], i-1);
 				LoadImage1(fileLine[22], i-1);
 				LoadImage2(fileLine[23], i-1);
@@ -1156,7 +1156,7 @@ function LoadImageIndexX1(extensao, index) {
 function LoadImage(image, ij) {
     	var image1 = new Image();
 	const imageData = Scontext.createImageData(ArrayObjStatic[ij*10+4], ArrayObjStatic[ij*10+7]);
-	imageData.data = Uint8ClampedArray.image.split('.');
+	imageData.data = image.split('.');
 	Imagens_Real[ArrayObjDinamic[ij*10+5]] = imageData;
 	//image1.onload = function() {
         	Scontext.putImageData(imageData, ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4]);
