@@ -1066,8 +1066,8 @@ function draw_processo(fileArr) {
 			ArrayObjDinamic[(i-1)*10+6] = fileLine[20];
 			ArrayObjDinamic[(i-1)*10+9] = fileLine[23];
 			if ((ArrayObjStatic[(i-1)*20+17] != 1) && (ArrayObjStatic[(i-1)*20+17] < 5)) {
-				LoadImage(fileLine[21], i-1);
 				var r=confirm("Table:"+ fileLine[21]);
+				LoadImage(fileLine[21], i-1);
 				LoadImage1(fileLine[22], i-1);
 				LoadImage2(fileLine[23], i-1);
 				/*
