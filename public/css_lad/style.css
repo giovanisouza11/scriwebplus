@@ -1,98 +1,98 @@
-	body {
-        font-family: Verdana;
+body {
+	font-family: Verdana;
         font-size: 13px;
-	}
-	.corpo {
-		width: 100%;
-		margin: 0 auto;
-		background:#FFE;
+}
+.corpo {
+	width: 100%;
+	margin: 0 auto;
+	background:#FFE;
      	text-align: center;
-	}
-	.row1 {
-		width: 520px;
-	}
-	.row2 {
-		width: 100%;
-	}
-	.cabecalho {
-		position: fixed;
-		width: 640px;
-		top: 0px;
-		height: 60px;
-		background:khaki;
+}
+.row1 {
+	width: 520px;
+}
+.row2 {
+	width: 100%;
+}
+.cabecalho {
+	position: fixed;
+	width: 640px;
+	top: 0px;
+	height: 60px;
+	background:khaki;
      	border: 1px solid red;
-		text-align: center;
-	}
-	.figura1 {
+	text-align: center;
+}
+.figura1 {
         position: fixed;
-	    display:block;
-		top:60px;
-		left:165px;
+    	display:block;
+	top:60px;
+	left:165px;
         width: 70px; 
         height: 150px;
         font-size: 20px;
-    }
-	.figura2 {
+}
+.figura2 {
         position: fixed;
         display:block;
         top:168px;
-		left:10px;
-		width: 529px; 
+	left:10px;
+	width: 529px; 
         height: 400px;
         font-size: 20px;
-	}
-	.figura3 {
+}
+.figura3 {
         position: fixed;
         display:block;
         top:348px;
-		left:165px;
-		width: 70px; 
+	left:165px;
+	width: 70px; 
         height: 150px;
         font-size: 20px;
-	}
-	.divColuna1 {
+}
+.divColuna1 {
         position: fixed;
         left: 0px;
         width: 425px; 
         top: 65px;
-		text-align: left;
+	text-align: left;
         background:#FFF;
-     	}
-	.divColuna2 {
+}
+.divColuna2 {
         position: fixed;
         left: 425px;
         width: 225px; 
         top: 65px;
-		text-align: left;
-	    background:#FFE;
-        }
-	.divColuna6 {
-        	position: fixed;
-        	width: 80px;
-		margin: 0 auto;
-     		height: 563px;
-        	top: 10px;
-		text-align: left;
-        	background:palegreen;
-     	}
-	.divColuna7 {
-       		position: fixed;
-        	left: 100px;
-        	width: 90%;
-		height: 563px;
-        	top: 100px;
-		text-align: left;
-	    	background:ivory;
-        }
-	.classSimul {
-       		position: relative;
-        	width: 640;
-		height: 563px;
-        	top: 10px;
-		text-align: left;
-	    	background:ivory;
-        }
-    .divColuna3 {
+	text-align: left;
+	background:#FFE;
+}
+.divColuna6 {
+       	position: fixed;
+       	width: 80px;
+	margin: 0 auto;
+     	height: 563px;
+        top: 10px;
+	text-align: left;
+        background:palegreen;
+ }
+.divColuna7 {
+   	position: fixed;
+       	left: 100px;
+       	width: 90%;
+	height: 563px;
+       	top: 100px;
+	text-align: left;
+    	background:ivory;
+}
+.classSimul {
+	position: relative;
+       	width: 640;
+	height: 563px;
+       	top: 10px;
+	text-align: left;
+    	background:ivory;
+}
+.divColuna3 {
 	position: absolute;
         left: 651px;
         width: 600; 
