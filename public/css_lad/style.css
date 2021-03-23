@@ -67,25 +67,33 @@
 	    background:#FFE;
         }
 	.divColuna6 {
-        position: fixed;
+        	position: fixed;
         	width: 80px;
 		margin: 0 auto;
      		height: 563px;
-        	top: 480px;
+        	top: 10px;
 		text-align: left;
         	background:palegreen;
      	}
 	.divColuna7 {
        		position: fixed;
         	left: 100px;
-        	width: 50%;
+        	width: 90%;
 		height: 563px;
-        	top: 480px;
+        	top: 100px;
+		text-align: left;
+	    	background:ivory;
+        }
+	.classSimul {
+       		position: relative;
+        	width: 640;
+		height: 563px;
+        	top: 10px;
 		text-align: left;
 	    	background:ivory;
         }
     .divColuna3 {
-		position: absolute;
+	position: absolute;
         left: 651px;
         width: 600; 
         height: 2000;
@@ -94,9 +102,9 @@
     }
     .divColuna4 {
         display: none;
-		position: relative;
-		border: 1px solid #888;
-		top: 590px;
+	position: relative;
+	border: 1px solid #888;
+	top: 590px;
         left: 10px;
         width: 80px; 
         height:40px;
@@ -114,14 +122,14 @@
         background:palegreen;
     }	    
     .rodape {
-        position: fixed;
-		top: 540px;
+        position: relative;
+	top: 10px;
         width: 640px;
-		height: 40px;
-		margin: 0 auto;
-       	text-align: center;
-		border: 1px solid red;
-		background:khaki;
+	height: 40px;
+	margin: 0 auto;
+      	text-align: center;
+	border: 1px solid red;
+	background:khaki;
         font-size: 13px;
     }
 	/* The Modal (background) */
