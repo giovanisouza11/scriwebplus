@@ -76,20 +76,20 @@ body {
 	background:#FFE;
 }
 .divColuna6 {
-       	position: relative;
+       	position: fixed;
        	width: 80px;
 	margin: 0 auto;
      	height: 563px;
-        top: 10px;
+        top: 400px;
 	text-align: left;
         background:palegreen;
  }
 .divColuna7 {
-   	position: relative;
+   	position: dixed;
        	left: 100px;
        	width: 90%;
 	height: 563px;
-       	top: 10px;
+       	top: 400px;
 	text-align: left;
     	background:ivory;
 }
@@ -97,7 +97,7 @@ body {
 	position: relative;
        	width: 640;
 	height: 563px;
-       	top: 10px;
+       	top: 400px;
 	text-align: left;
     	background:ivory;
 }
