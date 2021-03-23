@@ -11,11 +11,13 @@ body {
 .row1 {
 	position: fixed;
 	top:0px;
+	left:0px;
 	width: 520px;
 }
 .row2 {
 	position: fixed;
-	left:0px;
+	left:520px;
+	top:0px;
 	width: 100%;
 }
 .cabecalho {
@@ -89,6 +91,7 @@ body {
     	background:ivory;
 }
 .classSimul {
+	display: none;
 	position: relative;
        	width: 640;
 	height: 563px;
