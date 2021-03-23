@@ -68,19 +68,21 @@
         }
 	.divColuna6 {
         position: fixed;
-        left: 0px;
-        width: 100px; 
-        top: 400px;
+        	width: 80px;
+		margin: 0 auto;
+     		height: 563px;
+        	top: 42px;
 		text-align: left;
-        background:#FFF;
+        	background:palegreen;
      	}
 	.divColuna7 {
-        position: fixed;
-        left: 110px;
-        width: 400px; 
-        top: 400px;
+       		position: fixed;
+        	left: 100px;
+        	width: 50%;
+		height: 563px;
+        	top: 42px;
 		text-align: left;
-	    background:#FFE;
+	    	background:ivory;
         }
     .divColuna3 {
 		position: absolute;
