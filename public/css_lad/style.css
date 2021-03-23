@@ -12,13 +12,16 @@ body {
 	position: fixed;
 	top:0px;
 	left:0px;
-	width: 520px;
+	width: 640px;
+	height: 100%;
+	
 }
 .row2 {
 	position: fixed;
 	left:520px;
 	top:0px;
 	width: 100%;
+	height: 100%;
 }
 .cabecalho {
 	position: fixed;
@@ -73,7 +76,7 @@ body {
 	background:#FFE;
 }
 .divColuna6 {
-       	position: fixed;
+       	position: relative;
        	width: 80px;
 	margin: 0 auto;
      	height: 563px;
@@ -82,16 +85,15 @@ body {
         background:palegreen;
  }
 .divColuna7 {
-   	position: fixed;
+   	position: relative;
        	left: 100px;
        	width: 90%;
 	height: 563px;
-       	top: 100px;
+       	top: 10px;
 	text-align: left;
     	background:ivory;
 }
 .classSimul {
-	display: none;
 	position: relative;
        	width: 640;
 	height: 563px;
