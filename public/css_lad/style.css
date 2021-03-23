@@ -57,12 +57,28 @@
         top: 65px;
 		text-align: left;
         background:#FFF;
-     }
+     	}
 	.divColuna2 {
         position: fixed;
         left: 425px;
         width: 225px; 
         top: 65px;
+		text-align: left;
+	    background:#FFE;
+        }
+	.divColuna6 {
+        position: fixed;
+        left: 0px;
+        width: 100px; 
+        top: 400px;
+		text-align: left;
+        background:#FFF;
+     	}
+	.divColuna7 {
+        position: fixed;
+        left: 110px;
+        width: 400px; 
+        top: 400px;
 		text-align: left;
 	    background:#FFE;
         }
