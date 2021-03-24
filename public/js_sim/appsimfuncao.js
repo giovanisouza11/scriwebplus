@@ -58,7 +58,7 @@ function simFuncao() {
 //Desenha  a Arvore de elementos do supervisorio
 //-------------------------------------------------------
 function simArvore() {
-	var Ccanvas  = document.getElementById("tela3");
+	var Ccanvas  = document.getElementById("tela7");
 	Ccontext = Ccanvas.getContext("2d");
 	Ccanvas.width = 70;
 	Ccanvas.height = (ArrayObjStatic.length/20)*15+10;
