@@ -13,7 +13,7 @@ function draw_botoes() {
 
 	for(i=1; i<11; i++)
                 context1.drawImage(AImageB, 70*valor_chave[i], 45*(i-1), 70, 45, 7,(i-1)*47, 70, 45);
-    for(i=11; i<21; i++)
+    	for(i=11; i<21; i++)
                 context1.drawImage(AImageB, 140+(70*valor_chave[i]), 45*(i-11), 70, 45, 79,(i-11)*47, 70, 45);
  	for(i=21; i<31; i++)
                 context1.drawImage(AImageB, 280+(70*valor_chave[i]), 45*(i-21), 70, 45, 151,(i-21)*47, 70, 45);
@@ -282,7 +282,7 @@ function trocar_botao() {
 
 //leitura de arquivos
 //Fonte https://tableless.com.br/file-api-trabalhando-com-arquivos-locais-usando-javascript/
-var leitorDeCSV = new FileReader();
+var leitorDeCSV1 = new FileReader();
 leitorDeCSV1.addEventListener('load', leCSV1);
 
 
