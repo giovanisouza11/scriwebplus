@@ -5,10 +5,13 @@ function ladder_simulador(){
 	if (ladder.style.display === "block") {
 		ladder.style.display = "none";
 		simul.style.display = "block";
+		draw_botoessim();
 	}
 	else {
 		ladder.style.display = "block";
 		simul.style.display = "none";
+		draw_eletrico();
+    		draw_botoes();
 	}
 }
 
