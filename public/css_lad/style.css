@@ -82,23 +82,23 @@ body {
        	width: 80px;
 	margin: 0 auto;
      	left: 0px;
-	height: 563px;
-        top: 550px;
+	height: 500px;
+        top: 570px;
 	text-align: left;
         background:palegreen;
  }
 .divColuna7 {
    	position: absolute;
        	left: 100px;
-       	width: 640px;
-	height: 563px;
-       	top: 550px;
+       	width: 550px;
+	height: 500px;
+       	top: 570px;
 	text-align: left;
     	background:ivory;
 }
 .divColuna10 {
        	position: relative;
-	top: 600px;
+	top: 1070px;
        	left: 1100px;
        	width: 60px; 
        	height: 15px;
@@ -107,9 +107,9 @@ body {
 } 
 .classSimul {
 	position: fixed;
-       	width: 640;
-	height: 563px;
-       	top: 400px;
+       	width: 650;
+	height: 500px;
+       	top: 570px;
 	left: 0px;
 	text-align: left;
     	background:ivory;
@@ -144,8 +144,8 @@ body {
         background:palegreen;
 }	    
 .rodape {
-        position: relative;
-	top: 5px;
+        position: fixed;
+	botton: 0px;
 	left: 0px;
 	width: 640px;
 	height: 40px;
