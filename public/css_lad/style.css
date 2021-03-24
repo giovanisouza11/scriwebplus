@@ -106,6 +106,17 @@ body {
        	background:palegreen;
 } 
 .classSimul {
+	display: block;
+	position: fixed;
+       	width: 650;
+	height: 500px;
+       	top: 570px;
+	left: 0px;
+	text-align: left;
+    	background:ivory;
+}
+.classLadder {
+	display: none;
 	position: fixed;
        	width: 650;
 	height: 500px;
