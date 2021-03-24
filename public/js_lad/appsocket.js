@@ -59,9 +59,7 @@ function envia_entrada(data){
 socket.on('config_socket_r', function(data) {
 	localStorage.setItem("num_clp1", data);
 });
-function Enviar_Entrada(){
-	socket.emit('entradax', I.join()+ ','+  localStorage.num_clp1);
-}
+
 function Config_Socket(dado){
 	socket.emit('sup', dado);
 }
