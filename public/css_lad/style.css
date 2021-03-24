@@ -85,7 +85,7 @@ body {
         background:palegreen;
  }
 .divColuna7 {
-   	position: absolute;
+   	position: fixed;
        	left: 100px;
        	width: 550px;
 	height: 550px;
