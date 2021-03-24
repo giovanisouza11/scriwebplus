@@ -1,8 +1,8 @@
 // habilita a tela de simulador ou o clp
 function ladder_simulador(){
-	var ladder = document.getElementsByClassName("classLadder");
-	var simul = document.getElementsByClassName("classSimul");
-	if (ladder.style.display == "block") {
+	var ladder = document.getElementsByClassName('classLadder');
+	var simul = document.getElementsByClassName('classSimul');
+	if (ladder.style.display === "block") {
 		ladder.style.display = "none";
 		simul.style.display = "block";
 	}
