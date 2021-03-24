@@ -116,7 +116,7 @@ body {
     	background:ivory;
 }
 .classLadder {
-	display: none;
+	display: block;
 	position: fixed;
        	width: 650;
 	height: 500px;
