@@ -64,6 +64,7 @@ body {
         left: 0px;
         width: 425px; 
         top: 65px;
+	height: 500px;
 	text-align: left;
         background:#FFF;
 }
@@ -72,11 +73,12 @@ body {
         left: 425px;
         width: 225px; 
         top: 65px;
+	height: 500px;
 	text-align: left;
 	background:#FFE;
 }
 .divColuna6 {
-       	position: absolute;
+       	position: relative;
        	width: 80px;
 	margin: 0 auto;
      	left: 0px;
@@ -86,7 +88,7 @@ body {
         background:palegreen;
  }
 .divColuna7 {
-   	position: absolute;
+   	position: relative;
        	left: 100px;
        	width: 640px;
 	height: 563px;
