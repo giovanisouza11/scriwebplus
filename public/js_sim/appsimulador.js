@@ -37,8 +37,8 @@ function draw_simulador_inicio() {
 	Scanvas = document.getElementById("tela6");
 	Scontext = Scanvas.getContext("2d");
 	
-	Scanvas.width = 550;//localStorage.tela_largura + 200; 
-	Scanvas.height = 570; // localStorage.tela_altura + 150;
+	Scanvas.width = 535;//localStorage.tela_largura + 200; 
+	Scanvas.height = 525; // localStorage.tela_altura + 150;
 }
 
 //=====================================================================================
@@ -1239,9 +1239,9 @@ function LoadImageX(imagefile, ij) {
 function draw_simulador_fundo(){
 	Scontext.lineWidth = 1;
 	Scontext.fillStyle = 'white';
-	Scontext.fillRect(1, 1, 550, 550);
+	Scontext.fillRect(1, 1, 534, 524);
 	Scontext.fillStyle = 'black';
-	Scontext.strokeRect(2, 2, 549, 549);
+	Scontext.strokeRect(2, 2, 533, 523);
 }
 
 //=====================================================================================
