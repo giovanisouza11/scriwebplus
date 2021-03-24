@@ -1,7 +1,7 @@
 var AImageB1 = new Image();
 AImageB1.src = "/img_sim/botoessim.png";
-var canvas1;
-var context1;
+var canvasA;
+var contextA;
 var valor_chave = new Array(14);
 var simEdicao = 0;
 var exemplos_dir = ['Alarme','Classificacao','Corte_Vinco','Elevador','Elevador5','Envase','Expedicao','Semaforo','Classificacao_Matheus','Classificacao_Amalia','Classificacao_Arthur','Classificacao_Luiz','Classificacao_Nicolas','Classificacao_Nicole','Classificacao_Saymon','Classificacao_Teixeira','Classificacao_Vinicius','Corte_Vinco_Leonardo','Corte_Vinco_Pedro','Corte_Vinco_Carlos','Corte_Vinco_Gustavo','Corte_Vinco_Lucas','Corte_Vinco_Rafael','Elevador_Matheus','Elevador_Alvaro','Elevador_Amalia','Elevador_Artur','Elevador_Leonardo','Elevador_Luiz','Elevador_Nicolas','Elevador_Nicole','Elevador_Pedro','Elevador_Savi','Elevador_Saymon','Elevador_Teixeira','Elevador_Carlos','Elevador_Gustavo','Elevador_Israel','Elevador_Lucas','Elevador_Rafael','Elevador_Vinicius','Elevador_Thales','Elevador_Arturo'];
@@ -9,15 +9,15 @@ var exemplos_nom = ['Alarme','Classificação','Corte e Vinco','Elevador','Eleva
 		
 //desenha os botoes
 function draw_botoessim() {
-    canvas1 = document.getElementById("tela5");
-    context1 = canvas1.getContext("2d");
-    canvas1.width = 75;
-    canvas1.height = 570;
+    canvasA = document.getElementById("tela5");
+    contextA = canvasA.getContext("2d");
+    canvasA.width = 75;
+    canvasA.height = 570;
 
     for(i=1; i<13; i++) {
         if (valor_chave[i] === undefined)
 		valor_chave[i] = 0;
-        context1.drawImage(AImageB1, 70*valor_chave[i]+(140*simEdicao), 45*(i-1), 70, 45, 5,(i-1)*47, 70, 45);
+        contextA.drawImage(AImageB1, 70*valor_chave[i]+(140*simEdicao), 45*(i-1), 70, 45, 5,(i-1)*47, 70, 45);
     }
 }
 
