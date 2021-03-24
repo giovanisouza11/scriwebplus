@@ -94,6 +94,15 @@ body {
 	text-align: left;
     	background:ivory;
 }
+.divColuna10 {
+       	position: relative;
+	top: 600px;
+       	left: 1100px;
+       	width: 60px; 
+       	height: 15px;
+       	text-align: left;
+       	background:palegreen;
+} 
 .classSimul {
 	position: fixed;
        	width: 640;
