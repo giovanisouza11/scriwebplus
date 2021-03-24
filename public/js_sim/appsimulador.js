@@ -1070,14 +1070,14 @@ function draw_processo(fileArr) {
 				//var r=confirm("Table:"+ fileLine[21]);
 				//var r1=confirm("Table1:"+ fileLine[22]);
 				//var r2=confirm("Table2:"+ fileLine[23]);
-				LoadImage(fileLine[21], i-1);
+				/*LoadImage(fileLine[21], i-1);
 				LoadImage1(fileLine[22], i-1);
 				LoadImage2(fileLine[23], i-1);
-				/*
+				*/
 				LoadImage(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
 				LoadImage1(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on1.png', i-1);
 				LoadImage2(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on2.png', i-1);
-				*/
+				
 			}		
 			else {
 				if (ArrayObjStatic[(i-1)*20+17] == 1) {
@@ -1108,7 +1108,7 @@ function draw_processo(fileArr) {
 //-----------------------------
 //https://stackoverflow.com/questions/32363801/images-not-loaded-on-first-call-in-html-canvas
 //---------------------
-/*
+
 function LoadImage(imagefile, ij) {
     	var image1 = new Image();
 	image1.onload = function() {
@@ -1152,8 +1152,8 @@ function LoadImageIndexX1(extensao, index) {
 		Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 	}
 }
-*/
 
+/*
 function LoadImage(image, ij) {
     	//var image1 = new Image();
 	const imageData = Scontext.createImageData(ArrayObjStatic[ij*10+4], ArrayObjStatic[ij*10+7]);
@@ -1215,7 +1215,7 @@ function LoadImageIndexX1(extensao, index) {
 		Scontext.putImageData(Imagens_Real[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4]);
 	}
 }
-
+*/
 function LoadImageIndex(imagefile, index) {
     	var image1 = new Image();
 	image1.onload = function() {
@@ -1239,9 +1239,9 @@ function LoadImageX(imagefile, ij) {
 function draw_simulador_fundo(){
 	Scontext.lineWidth = 1;
 	Scontext.fillStyle = 'white';
-	Scontext.fillRect(5, 5, 770, 560);
+	Scontext.fillRect(1, 1, 550, 550);
 	Scontext.fillStyle = 'black';
-	Scontext.strokeRect(10, 10, 765, 555);
+	Scontext.strokeRect(2, 2, 549, 549);
 }
 
 //=====================================================================================
