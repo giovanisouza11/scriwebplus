@@ -105,7 +105,7 @@ body {
 .classSimul {
 	display: none;
 	position: fixed;
-       	width: 640;
+       	width: 640px;
 	height: 550px;
        	top: 65px;
 	left: 0px;
@@ -115,7 +115,7 @@ body {
 .classLadder {
 	display: block;
 	position: fixed;
-       	width: 640;
+       	width: 640px;
 	height: 550px;
        	top: 65px;
 	left: 0px;
