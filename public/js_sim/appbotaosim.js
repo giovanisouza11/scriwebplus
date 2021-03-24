@@ -17,14 +17,14 @@ function draw_botoessim() {
     for(i=1; i<13; i++) {
         if (valor_chave[i] === undefined)
 		valor_chave[i] = 0;
-        contextA.drawImage(AImageB1, 70*valor_chave[i]+(140*simEdicao), 45*(i-1), 70, 45, 5,(i-1)*42, 70, 40);
+        contextA.drawImage(AImageB1, 70*valor_chave[i]+(140*simEdicao), 45*(i-1), 70, 45, 5,(i-1)*43, 70, 43);
     }
 }
 
 //Verifica QUAL botao foi acionado
 //Separa em tres grupos: 0 a 10: comandos do software, 11 a 20: edicao do ladder, 21 a 30: funcoes do ladder
 function tBotao() {
-	var posicaoy= parseInt((window.event.clientY-30)/42);
+	var posicaoy= parseInt((window.event.clientY-60)/43);
 
 	if ((posicaoy >=0) && (posicaoy < 12))
 	{
