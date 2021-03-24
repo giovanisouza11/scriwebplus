@@ -1,5 +1,5 @@
-var AImageB = new Image();
-AImageB.src = "/img_sim/botoessim.png";
+var AImageB1 = new Image();
+AImageB1.src = "/img_sim/botoessim.png";
 var canvas1;
 var context1;
 var valor_chave = new Array(14);
@@ -17,7 +17,7 @@ function draw_botoessim() {
     for(i=1; i<13; i++) {
         if (valor_chave[i] === undefined)
 		valor_chave[i] = 0;
-        context1.drawImage(AImageB, 70*valor_chave[i]+(140*simEdicao), 45*(i-1), 70, 45, 5,(i-1)*47, 70, 45);
+        context1.drawImage(AImageB1, 70*valor_chave[i]+(140*simEdicao), 45*(i-1), 70, 45, 5,(i-1)*47, 70, 45);
     }
 }
 
