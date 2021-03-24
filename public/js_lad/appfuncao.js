@@ -1,7 +1,18 @@
-	
+// habilita a tela de simulador ou o clp
 function ladder_simulador(){
-	
+	var ladder = document.getElementByClassName("classLadder");
+	var simul = document.getElementByClassName("classSimul");
+	if (ladder.style.display == "block") {
+		ladder.style.display = "none";
+		simul.style.display = "block";
+	}
+	else {
+		ladder.style.display = "block";
+		simul.style.display = "none";
+	}
 }
+
+
 function funAIM(data) {
     var nLogicas = data.split(',');
 	let texto = '_id, nome, var_1, tipo, var_2, ver, R-W, pisca, funcao' + '\n';
