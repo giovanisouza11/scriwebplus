@@ -206,14 +206,14 @@ function trocar_botao() {
 	   valor_chave[8]=0;
 	}
 	if (valor_chave[1]==1){
-        var inputCSV = document.createElement('input');
+        	var inputCSV = document.createElement('input');
 		inputCSV.type = 'file';
 		inputCSV.accept = '.CSV';
-	    inputCSV.click();
+	    	inputCSV.click();
 		inputCSV.onchange = function() {
 			//inputCSV.setPropertie('accept', '.csv');
 			var file = this.files[0];
-		    leitorDeCSV.readAsText(file);
+		    	leitorDeCSV1.readAsText(file);
 		};
 		valor_chave[1]=0;
 		valor_chave[4]==0;
@@ -283,15 +283,15 @@ function trocar_botao() {
 //leitura de arquivos
 //Fonte https://tableless.com.br/file-api-trabalhando-com-arquivos-locais-usando-javascript/
 var leitorDeCSV = new FileReader();
-leitorDeCSV.addEventListener('load', leCSV);
+leitorDeCSV1.addEventListener('load', leCSV1);
 
 
-function pegaCSV(inputFile) {
+function pegaCSV1(inputFile) {
 	var file = inputFile.files[0];
-	leitorDeCSV.readAsText(file);
+	leitorDeCSV1.readAsText(file);
 }
 
-function leCSV(evt) {
+function leCSV1(evt) {
 	var fileArr = evt.target.result.split('\n');
 	
 //document.getElementById("rodape1").innerHTML = fileArr;
