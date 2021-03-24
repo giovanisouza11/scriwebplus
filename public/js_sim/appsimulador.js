@@ -37,7 +37,7 @@ function draw_simulador_inicio() {
 	Scanvas = document.getElementById("tela2");
 	Scontext = Scanvas.getContext("2d");
 	
-	Scanvas.width = 1200;//localStorage.tela_largura + 200; 
+	Scanvas.width = 550;//localStorage.tela_largura + 200; 
 	Scanvas.height = 570; // localStorage.tela_altura + 150;
 }
 
@@ -147,7 +147,7 @@ function AtualizaPorTempo() {
 //Disparado ao receber SocketIO
 //==============================================		=======================================
 function atualiza_simulador() {
-	simIhm();
+	//simIhm();
 	            	
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++){
 		if (comandos == 1) {
