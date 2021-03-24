@@ -1,4 +1,7 @@
 	
+function ladder_simulador(){
+	
+}
 function funAIM(data) {
     var nLogicas = data.split(',');
 	let texto = '_id, nome, var_1, tipo, var_2, ver, R-W, pisca, funcao' + '\n';
