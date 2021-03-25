@@ -49,8 +49,7 @@ function draw_simulador_inicio() {
 function cSimulador() {
 	var posicaoy = parseInt(window.event.clientY-40);//-5);
 	var posicaox = parseInt(window.event.clientX-110);//-75);
-  	if (
-		edImages>0) {
+  	if (LoadedImages>0) {
     	for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
 			if (Scomandos ==0 || Scomandos == 1) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
@@ -175,7 +174,7 @@ function atualiza_simulador() {
 		}
 		if (ArrayObjStatic[ij*20+17] == 7) {
 			Scontext.fillStyle = ArrayObjStatic[ij*20+10];
-			var percentual = parseInt(enderecoCT(ArrayObjStatic[ij*20+1],0)*ArrayObjStatic[ij*20+7]/ ArrayObjStatic[ij*20+16]);
+			var percentual = parseInt(Sim_enderecoCT(ArrayObjStatic[ij*20+1],0)*ArrayObjStatic[ij*20+7]/ ArrayObjStatic[ij*20+16]);
 			Scontext.fillRect(parseInt(ArrayObjDinamic[ij*10+3]), parseInt(ArrayObjDinamic[ij*10+4]), parseInt(ArrayObjStatic[ij*20+4]), parseInt(ArrayObjStatic[ij*20+7])-percentual);
 			Scontext.fillStyle = ArrayObjStatic[ij*20+12];
 			Scontext.fillRect(ArrayObjDinamic[ij*10+3], parseInt(ArrayObjDinamic[ij*10+4])+parseInt(ArrayObjStatic[ij*20+7])-parseInt(percentual), ArrayObjStatic[ij*20+4], percentual);
