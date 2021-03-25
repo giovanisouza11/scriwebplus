@@ -54,8 +54,8 @@ function Enviar(){
 }
 
 function Envia_Entrada_S(data){
-	while (data.length < I.length) {
-		data[data.length] = I[data.length];
+	while (data.length < SI.length) {
+		data[data.length] = SI[data.length];
 	}
 	socket.emit('entradax', data.join()+ ','+ num_clp);
 }
@@ -75,5 +75,5 @@ socket.on('config_socket_r', function(data) {
 	localStorage.setItem("num_clp1", data);
 });
 function Enviar_S(){
-	socket.emit('entradax', I.join()+ ','+  localStorage.num_clp1);
+	socket.emit('entradax', SI.join()+ ','+  localStorage.num_clp1);
 }
