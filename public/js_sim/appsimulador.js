@@ -4,13 +4,13 @@
 var Scanvas;
 var Scontext; //, Scontext1;
 //document.addEventListener('mousemove', mouse_move);
-/*var M = [];
-var I = [];
-var R = [];
-var Q = [];
-var T = [];
-var C = [];
-*/
+var SM = [];
+var SI = [];
+var SR = [];
+var SQ = [];
+var ST = [];
+var SC = [];
+
 var comandos = 0; // 0:stop, 1: run 2: edicao
 
 var Imagens =[];
@@ -260,7 +260,7 @@ function simIhm() {
         		Scontext.fillText('ENTRADAS', 870, linha);
         		Scontext.fillRect(955, linha-5, 60, 5);
         		Scontext.fillRect(1025, linha-5, 60, 5);
-        		tamanho_array = I.length;
+        		tamanho_array = SI.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Scontext.fillText('MSB', 790,linha);
@@ -275,7 +275,7 @@ function simIhm() {
         		Scontext.fillText('SAIDAS', 880, linha);
         		Scontext.fillRect(955, linha-5, 60, 5);
         		Scontext.fillRect(1025, linha-5, 60, 5);
-        		tamanho_array = Q.length;
+        		tamanho_array = SQ.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Scontext.fillText('MSB', 790,linha);
@@ -290,7 +290,7 @@ function simIhm() {
         		Scontext.fillText('MEMÓRIAS', 870, linha);
         		Scontext.fillRect(955, linha-5, 60, 5);
         		Scontext.fillRect(1025, linha-5, 60, 5);
-        		tamanho_array = M.length;
+        		tamanho_array = SM.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Scontext.fillText('MSB', 790,linha);
@@ -304,7 +304,7 @@ function simIhm() {
         		Scontext.fillRect(790, linha-5, 60, 5);
         		Scontext.fillText('TIMERS', 880, linha);
        			Scontext.fillRect(955, linha-5, 60, 5);
-        		tamanho_array = T.length;
+        		tamanho_array = ST.length;
         		num_linhas = parseInt(tamanho_array / 3);
         		linha = linha + 15;
         		Scontext.fillText('Tem', 790,linha);
@@ -318,7 +318,7 @@ function simIhm() {
         		Scontext.fillRect(790, linha-5, 60, 5);
         		Scontext.fillText('CONTADORES', 860, linha);
         		Scontext.fillRect(955, linha-5, 60, 5);
-        		tamanho_array = C.length;
+        		tamanho_array = SC.length;
         		num_linhas = parseInt(tamanho_array / 4);
         		linha = linha + 15;
         		Scontext.fillText('Cont', 790,linha);
@@ -333,7 +333,7 @@ function simIhm() {
         		Scontext.fillRect(790, linha-5, 60, 5);
         		Scontext.fillText('RAMAIS', 880, linha);
         		Scontext.fillRect(955, linha-5, 60, 5);
-        		tamanho_array = R.length;
+        		tamanho_array = SR.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Scontext.fillText('MSB', 790,linha);
@@ -463,22 +463,22 @@ function endereco(Aux_data){
 
 	switch (primeiro_char) {
 		case 'Q':
-			retorno = Q[index];
+			retorno = SQ[index];
 			break;
 		case 'I':
-			retorno = I[index];
+			retorno = SI[index];
 			break;
 		case 'M':
-			retorno = M[index];
+			retorno = SM[index];
 			break;
 		case 'R':
-			retorno = R[index];
+			retorno = SR[index];
 			break;
 		case 'T':
-			retorno = T[3*index];
+			retorno = ST[3*index];
 			break;
 		case 'C':
-			retorno = C[4*index];
+			retorno = SC[4*index];
 			break;
 		case 'D':
 			retorno = endereco(ArrayObjStatic[index*20+1]);
@@ -535,24 +535,24 @@ function escreve_endereco(Aux_data, valor)
 
 	switch (Aux_data.charAt(0)) {
 		case 'Q':
-			Q[index] = valor;
+			SQ[index] = valor;
 			break;
 		case 'I':
-			I[index] = valor;
-			envia_entrada(I);
+			SI[index] = valor;
+			Envia_Entrada_S(SI);
 			break;
 		case 'M':
-			M[index] = valor;
-            		envia_memoria('M'+parseInt(index/16));
+			SM[index] = valor;
+            		Envia_Memoria_S('M'+parseInt(index/16));
 			break;
 		case 'R':
-			R[index] = valor;
+			SR[index] = valor;
 			break;
 		case 'T':
-			T[3*index+1] = valor;
+			ST[3*index+1] = valor;
 			break;
 		case 'C':
-			C[4*index+3] = 2;
+			SC[4*index+3] = 2;
 			break;
 	}
 }
@@ -578,34 +578,34 @@ function escreveCT(Aux_data, valor, index1)
 		case 'I':
 			for (var ia=0; ia<=14; ia++) {
 				var auxiliar = parseInt(valor) %2;
-				I[index+ ia] = auxiliar;
+				SI[index+ ia] = auxiliar;
 				valor = parseInt(valor / 2);
 			}
-			I[index+15] = valor;
-			envia_entrada(I);
+			SI[index+15] = valor;
+			Envia_Entrada_S(SI);
 			break;
 		case 'Q':
 			for (var ia=0; ia<=14; ia++) {
 				var auxiliar = parseInt(valor) %2;
-				Q[index+ ia] = auxiliar;
+				SQ[index+ ia] = auxiliar;
 				valor = parseInt(valor / 2);
 			}
-			Q[index+15] = valor;
+			SQ[index+15] = valor;
 			break;
 		case 'M':
 			for (var ia=0; ia<=14; ia++) {
 				var auxiliar = parseInt(valor) %2;
-				M[index+ ia] = auxiliar;
+				SM[index+ ia] = auxiliar;
 				valor = parseInt(valor / 2);
 			}
-			M[index+15] = valor;
-			envia_memoria('M'+parseInt(index/16));
+			SM[index+15] = valor;
+			Envia_Memoria_S('M'+parseInt(index/16));
 			break;
 		case 'T':
-			T[3*index+index1] = valor;
+			ST[3*index+index1] = valor;
 			break;
 		case 'C':
-			C[4*index+index1] = valor;
+			SC[4*index+index1] = valor;
 			break;
 	}
 }
@@ -635,23 +635,23 @@ function enderecoCT(Aux_data, index1) {
 		case 'I':
 			retorno = 0;
 			for (var ia=0; ia<16; ia++)
-				retorno = retorno + variavelCT(I[index+ ia])* (2**ia);
+				retorno = retorno + variavelCT(SI[index+ ia])* (2**ia);
 			break;
 		case 'Q':
 			retorno = 0;
 			for (var ia=0; ia<16; ia++)
-				retorno = retorno + variavelCT(Q[index+ ia])* (2**ia);
+				retorno = retorno + variavelCT(SQ[index+ ia])* (2**ia);
 		  	break;
 		case 'M':
 			retorno = 0;
 			for (var ia=0; ia<16; ia++)
-				retorno = retorno + variavelCT(M[index+ ia])* (2**ia);
+				retorno = retorno + variavelCT(SM[index+ ia])* (2**ia);
 			break;
 		case 'T':
-			retorno = T[3*index+index1];
+			retorno = ST[3*index+index1];
 			break;
 		case 'C':
-			retorno = C[4*index+index1];
+			retorno = SC[4*index+index1];
 			break;
 		case 'X':
 			retorno = (index1==0) ? parseInt(ArrayObjDinamic[index*10+3]) : parseInt(ArrayObjDinamic[index*10+3])+parseInt(ArrayObjStatic[index*20+4]);
