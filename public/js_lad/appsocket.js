@@ -69,7 +69,7 @@ function Config_Socket(dado){
 }
 
 function Envia_Memoria_S(data){
-     	socket.emit('memoriax', data+','+enderecoCT(data,0)+ ','+  localStorage.num_clp1);
+     	socket.emit('memoriax', data+','+Sim_enderecoCT(data,0)+ ','+  localStorage.num_clp1);
 }
 socket.on('config_socket_r', function(data) {
 	localStorage.setItem("num_clp1", data);
