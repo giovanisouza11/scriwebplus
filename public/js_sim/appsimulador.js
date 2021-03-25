@@ -4,12 +4,13 @@
 var Scanvas;
 var Scontext; //, Scontext1;
 //document.addEventListener('mousemove', mouse_move);
-var M = [];
+/*var M = [];
 var I = [];
 var R = [];
 var Q = [];
 var T = [];
 var C = [];
+*/
 var comandos = 0; // 0:stop, 1: run 2: edicao
 
 var Imagens =[];
