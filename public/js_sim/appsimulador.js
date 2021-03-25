@@ -11,7 +11,7 @@ var SQ = [];
 var ST = [];
 var SC = [];
 
-var comandos = 0; // 0:stop, 1: run 2: edicao
+var Scomandos = 0; // 0:stop, 1: run 2: edicao
 
 var Imagens =[];
 var Imagens1 =[];
@@ -52,7 +52,7 @@ function cSimulador() {
   	if (
 		edImages>0) {
     	for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
-			if (comandos ==0 || comandos == 1) {
+			if (Scomandos ==0 || Scomandos == 1) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
 					if (endereco(ArrayObjStatic[index_var*20+1])==1) {
@@ -151,7 +151,7 @@ function atualiza_simulador() {
 	//simIhm();
 	            	
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++){
-		if (comandos == 1) {
+		if (Scomandos == 1) {
 			simTimer(ij);
 			simFigura(ij);
 		}
