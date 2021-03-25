@@ -3,18 +3,24 @@ var socket = io(); //('http://192.168.0.100:4333');
 socket.emit('connect', num_clp);
 socket.on('memoria', function(data) {
 	M = data.split(',');
+	SM = data.split(',');
 });
 socket.on('timer', function(data) {
 	T = data.split(',');
+	ST = data.split(',');
 });
 socket.on('counter', function(data) {
 	C = data.split(',');
+	SC = data.split(',');
+
 });
 socket.on('entrada', function(data) {
        	I = data.split(',');
+	SI = data.split(',');
 });
 socket.on('tr', function(data) {
        R = data.split(',');
+       SR = data.split(',');	
 });
 socket.on('localizacao', function(data) {
        localizacao = data;
@@ -32,7 +38,7 @@ socket.on('saida', function(data) {
        	Q = data.split(',');
 	liga_led_CLP();
 	if (comandos != 0) {
-			monitora_ladder();
+		monitora_ladder();
 	};
 });
 
@@ -47,7 +53,7 @@ function Enviar(){
     	socket.emit('entradax',data);
 }
 
-function envia_entrada(data){
+function Envia_Entrada_S(data){
 	while (data.length < I.length) {
 		data[data.length] = I[data.length];
 	}
@@ -62,6 +68,12 @@ function Config_Socket(dado){
 	socket.emit('sup', dado);
 }
 
-function envia_memoria(data){
+function Envia_Memoria_S(data){
      	socket.emit('memoriax', data+','+enderecoCT(data,0)+ ','+  localStorage.num_clp1);
+}
+socket.on('config_socket_r', function(data) {
+	localStorage.setItem("num_clp1", data);
+});
+function Enviar_S(){
+	socket.emit('entradax', I.join()+ ','+  localStorage.num_clp1);
 }
