@@ -92,7 +92,7 @@ function tBotao() {
 			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
 			//alert(simPath);
 		};
-		comandos = 0;	
+		Scomandos = 0;	
 		valor_chave1[5]=0;
 		valor_chave1[6]=1;
 	}
@@ -131,10 +131,10 @@ function tBotao() {
 		valor_chave1[6]=1;
 	}
 	if (simEdicao==0 && valor_chave1[5]==1){
-		comandos = 1;
+		Scomandos = 1;
 	}
 	if (simEdicao==0 && valor_chave1[6]==1){
-		comandos = 0;
+		Scomandos = 0;
 	}
 	if (simEdicao==0 && valor_chave1[4]==1){
 		var modal1 = document.getElementById("myModal1");
@@ -167,25 +167,25 @@ function tBotao() {
 			}
 		}
 		
-		comandos = 0;
+		Scomandos = 0;
 		valor_chave1[4]=0;
 		valor_chave1[5]=0;
 		valor_chave1[6]=1;
 	}
 	if (simEdicao==0 && valor_chave1[1]==1){
 		valor_chave1[1]=0;
-		comandos = 0;
+		Scomandos = 0;
 		simEdicao = 1;
 	}
 	if (simEdicao==1 && valor_chave1[1]==1){
 		valor_chave1[1]=0;
-		comandos = 0;
+		Scomandos = 0;
 		valor_chave1[5]=0;
 		valor_chave1[6]=1;
 		simEdicao = 0;
 	}
 	if (simEdicao==1 && valor_chave1[2]==1){
-		comandos = 2;
+		Scomandos = 2;
 	}
 	if (simEdicao==1 && valor_chave1[3]==1){
 		simFuncao1();
