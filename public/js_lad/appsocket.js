@@ -53,6 +53,13 @@ function Enviar(){
     	socket.emit('entradax',data);
 }
 
+function Envia_Entrada_Ele(data){
+	while (data.length < SI.length) {
+		data[data.length] = SI[data.length];
+	}
+	socket.emit('entradax', data.join()+ ','+ num_clp);
+}
+
 function Envia_Entrada_S(data){
 	while (data.length < SI.length) {
 		data[data.length] = SI[data.length];
