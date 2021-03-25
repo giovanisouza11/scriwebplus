@@ -71,7 +71,7 @@ socket.on('config_socket_r', function(data) {
 	localStorage.setItem("num_clp1", data);
 });
 
-function Config_Socket(dado){
+function Config_Socket_Sim(dado){
 	socket.emit('sup', dado);
 }
 
