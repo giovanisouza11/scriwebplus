@@ -57,7 +57,7 @@ function tBotao() {
 		btn.setAttribute('type','button');
 		btn.appendChild(document.createTextNode('OK'));
 		btn.onclick = function() {
-			Config_Socket(document.getElementById('input1').value);
+			Config_Socket_Sim(document.getElementById('input1').value);
 			localStorage.setItem("tela_largura", document.getElementById('input2').value);
 			localStorage.setItem("tela_altura", document.getElementById('input3').value);
 			modal1.style.display = "none";
