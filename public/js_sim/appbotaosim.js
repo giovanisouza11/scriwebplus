@@ -15,9 +15,9 @@ function draw_botoessim() {
     canvasA.height = 570;
 
     for(i=1; i<13; i++) {
-        if (valor_chave[i] === undefined)
+        if (valor_chave1[i] === undefined)
 		valor_chave1[i] = 0;
-        contextA.drawImage(AImageB1, 70*valor_chave[i]+(140*simEdicao), 45*(i-1), 70, 45, 5,(i-1)*43, 70, 43);
+        contextA.drawImage(AImageB1, 70*valor_chave1[i]+(140*simEdicao), 45*(i-1), 70, 45, 5,(i-1)*43, 70, 43);
     }
 }
 
