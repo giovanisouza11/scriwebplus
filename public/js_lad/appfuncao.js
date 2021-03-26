@@ -2,7 +2,7 @@
 function ladder_simulador(){
 	var ladder = document.getElementById('IdLadder');
 	var simul = document.getElementById('IdSimul');
-	if (simul.style.display == "block") {
+	if (simul.style.display === "block") {
 		ladder.style.display = "block";
 		simul.style.display = "none";
 		draw_eletrico();
