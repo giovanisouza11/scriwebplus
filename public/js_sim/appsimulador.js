@@ -39,7 +39,7 @@ function draw_simulador_inicio() {
 	
 	Scanvas.width = 650;//localStorage.tela_largura + 200; 
 	Scanvas.height = 525; // localStorage.tela_altura + 150;
-	draw_simulador_fundo()
+	draw_simulador_fundo();
 }
 
 //=====================================================================================
@@ -80,7 +80,7 @@ function cSimulador() {
 						ICampo.style.left = " "+ArrayObjDinamic[index_var*10+3] + "px";
 						ICampo.style.top = " "+ArrayObjDinamic[index_var*10+4]  + "px";
 						document.getElementById('label_input').innerHTML = ArrayObjStatic[index_var*20+1];
-						document.getElementById('input_ladder').value = enderecoCT(ArrayObjStatic[index_var*20+1],0);
+						document.getElementById('input_ladder').value = Sim_enderecoCT(ArrayObjStatic[index_var*20+1],0);
 						CInput.focus();
 					}
 				}
