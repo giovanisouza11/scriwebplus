@@ -2,7 +2,7 @@
 function ladder_simulador(){
 	var ladder = document.getElementById('idLadder');
 	var simul = document.getElementById('idSimul');
-	if (ladder.style.display === "block") {
+	if (ladder.style.display == "block") {
 		ladder.style.display = "none";
 		simul.style.display = "block";
 		draw_botoessim();
