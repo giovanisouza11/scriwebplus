@@ -11,6 +11,7 @@ var ST = [];
 var SC = [];
 
 var Scomandos = 0; // 0:stop, 1: run 2: edicao
+var simulacao_set_inicial = 0;
 
 var Imagens =[];
 var Imagens1 =[];
@@ -40,6 +41,7 @@ function draw_simulador_inicio() {
 	Scanvas.width = 650;//localStorage.tela_largura + 200; 
 	Scanvas.height = 525; // localStorage.tela_altura + 150;
 	draw_simulador_fundo();
+	simulacao_set_inicial = 1;
 }
 
 //=====================================================================================
