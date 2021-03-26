@@ -59,7 +59,7 @@ body {
         top: 65px;
 	height: 500px;
 	text-align: left;
-        background:#FFF;
+        background:ivory;
 }
 .divColuna2 {
         position: fixed;
@@ -68,7 +68,7 @@ body {
         top: 65px;
 	height: 500px;
 	text-align: left;
-	background:#FFE;
+	background:palegreen;
 }
 .divColuna6 {
        	position: fixed;
@@ -106,7 +106,7 @@ body {
        	top: 65px;
 	left: 0px;
 	text-align: left;
-    	background:ivory;
+    	background:cyan;
 }
 .classLadder {
 	display: block;
@@ -116,7 +116,7 @@ body {
        	top: 65px;
 	left: 0px;
 	text-align: left;
-    	background:ivory;
+    	background:cyan;
 }
 .divColuna3 {
 	position: absolute;
