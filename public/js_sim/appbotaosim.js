@@ -224,6 +224,10 @@ function pegaCSV(inputFile) {
 
 function leCSV2(evt) {
 	var fileArr = evt.target.result.split('\n');
+	if (simulacao_set_inicial == 0) {
+		draw_botoessim();
+		draw_processo();
+	}
 	alert("entrou");
 	draw_processo(fileArr);
 	alert("saiu");
