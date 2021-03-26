@@ -228,7 +228,7 @@ function leCSV2(evt) {
 		draw_botoessim();
 		draw_simulador_inicio();
 	}
-	alert("entrou");
+	//alert("entrou");
 	draw_processo(fileArr);
-	alert("saiu");
+	//alert("saiu");
 }
