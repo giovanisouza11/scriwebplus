@@ -90,7 +90,7 @@ function tBotao() {
 	    		var file = this.files[0];
 			leitorDeCSV.readAsText(file);
 			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
-			//alert(simPath);
+			alert(simPath);
 		};
 		Scomandos = 0;	
 		valor_chave1[5]=0;
