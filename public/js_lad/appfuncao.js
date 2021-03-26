@@ -1,17 +1,17 @@
 // habilita a tela de simulador ou o clp
 function ladder_simulador(){
-	var ladder = document.getElementById('IdLadder');
-	var simul = document.getElementById('IdSimul');
-	if (ladder.style.display === "block") {
-		ladder.style.display = "none";
-		simul.style.display = "block";
-		draw_botoessim();
-	}
-	else {
+	var ladder = document.getElementById('idLadder');
+	var simul = document.getElementById('idSimul');
+	if (simul.style.display === "block") {
 		ladder.style.display = "block";
 		simul.style.display = "none";
 		draw_eletrico();
     		draw_botoes();
+	}
+	else {
+		ladder.style.display = "none";
+		simul.style.display = "block";
+		draw_botoessim();
 	}
 }
 
