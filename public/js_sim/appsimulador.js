@@ -1019,9 +1019,9 @@ function verificaTexto(posicao, deslocamento, dependencia) {
 // Apos leitura do arquivo
 //=====================================================================================
 function draw_processo(fileArr) {
-	alerta("drawprocesso");
+	//alerta("drawprocesso");
 	inicializa_array();
-	alerta("inicializaarray");
+	//alerta("inicializaarray");
 	draw_simulador_fundo();
 	alerta("drawsimuladorfundo");
 	Scontext.font = '9pt Arial';
@@ -1244,9 +1244,9 @@ function LoadImageX(imagefile, ij) {
 function draw_simulador_fundo(){
 	Scontext.lineWidth = 1;
 	Scontext.fillStyle = 'white';
-	Scontext.fillRect(1, 1, 559, 524);
+	Scontext.fillRect(1, 1, 569, 524);
 	Scontext.fillStyle = 'black';
-	Scontext.strokeRect(2, 2, 558, 523);
+	Scontext.strokeRect(2, 2, 568, 523);
 }
 
 //=====================================================================================
