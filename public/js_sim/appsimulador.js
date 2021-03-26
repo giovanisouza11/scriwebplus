@@ -37,7 +37,7 @@ function draw_simulador_inicio() {
 	Scanvas = document.getElementById("tela6");
 	Scontext = Scanvas.getContext("2d");
 	
-	Scanvas.width = 560;//localStorage.tela_largura + 200; 
+	Scanvas.width = 580;//localStorage.tela_largura + 200; 
 	Scanvas.height = 525; // localStorage.tela_altura + 150;
 }
 
