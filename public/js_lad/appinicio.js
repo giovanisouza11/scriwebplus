@@ -1,5 +1,7 @@
 var num_clp;
 var Num_Linhas;
+var tela_largura;
+var tela_altura;
 
 function draw_inicio() {
 	if (localStorage.num_clp > 0)
