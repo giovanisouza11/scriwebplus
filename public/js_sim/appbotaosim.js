@@ -224,5 +224,7 @@ function pegaCSV(inputFile) {
 
 function leCSV(evt) {
 	var fileArr = evt.target.result.split('\n');
+	alert("entrou");
 	draw_processo(fileArr);
+	alert("saiu");
 }
