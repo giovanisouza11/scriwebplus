@@ -2,8 +2,7 @@
 //Inicializa variaveis
 //=====================================================================================
 var Scanvas;
-var Scontext; //, Scontext1;
-//document.addEventListener('mousemove', mouse_move);
+var Scontext; 
 var SM = [];
 var SI = [];
 var SR = [];
@@ -106,7 +105,7 @@ function cSimulador() {
 				}			
 			}
 			//ENtra em modo ediçao
-			if ((comandos==2) && ((ArrayObjStatic[index_var*20+17]!=1 && ArrayObjStatic[index_var*20+17]!=6 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1) ||
+			if ((Scomandos==2) && ((ArrayObjStatic[index_var*20+17]!=1 && ArrayObjStatic[index_var*20+17]!=6 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1) ||
 			(ArrayObjStatic[index_var*20+17]==1 && verificaTexto(posicaox, -1*ArrayObjStatic[index_var*20+10]*ArrayImagens[ArrayObjDinamic[index_var*10+5]].length, 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1) ||
 			(ArrayObjStatic[index_var*20+17]==6 && verificaTexto(posicaox, -5*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1))) {
 				simApontador(index_var);
