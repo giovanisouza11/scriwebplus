@@ -1022,7 +1022,7 @@ function draw_processo(fileArr) {
 	//alerta("drawprocesso");
 	inicializa_array();
 	//alerta("inicializaarray");
-	draw_simulador_fundo();
+	//draw_simulador_fundo();
 	alerta("drawsimuladorfundo");
 	Scontext.font = '9pt Arial';
 	var ponteiro = 0;
