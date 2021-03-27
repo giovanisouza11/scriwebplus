@@ -163,8 +163,8 @@ function atualiza_simulador() {
 		}
 
 		if ((ArrayObjStatic[ij*20+17] != 1) && (ArrayObjStatic[ij*20+17] < 5)) {
-			LoadImageIndexX1(ArrayObjDinamic[ij*10+1], ij);
-			//LoadImageIndexX1(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
+			//LoadImageIndexX1(ArrayObjDinamic[ij*10+1], ij);
+			LoadImageIndexX1(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 			//LoadImageIndex(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
