@@ -231,5 +231,6 @@ function leCSV2(evt) {
 	//alert(fileArr);
 	//alert("entrou");
 	Sim_draw_processo(fileArr);
+	//Sim_draw_processo(fileArr);
 	//alert("saiu");
 }
