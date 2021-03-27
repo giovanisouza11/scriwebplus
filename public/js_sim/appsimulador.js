@@ -544,7 +544,7 @@ function Sim_escreve_endereco(Aux_data, valor)
 			break;
 		case 'M':
 			SM[index] = valor;
-            		Envia_Memoria_S('M'+parseInt(index/16));
+            		Envia_Memoria_S('SM'+parseInt(index/16));
 			break;
 		case 'R':
 			SR[index] = valor;
@@ -600,7 +600,7 @@ function Sim_escreveCT(Aux_data, valor, index1)
 				valor = parseInt(valor / 2);
 			}
 			SM[index+15] = valor;
-			Envia_Memoria_S('M'+parseInt(index/16));
+			Envia_Memoria_S('SM'+parseInt(index/16));
 			break;
 		case 'T':
 			ST[3*index+index1] = valor;
