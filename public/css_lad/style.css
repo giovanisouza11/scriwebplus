@@ -98,7 +98,7 @@ body {
        	background:palegreen;
 } 
 .classSimul {
-	display: block;
+	display: none;
 	position: fixed;
        	width: 640px;
 	height: 550px;
@@ -107,7 +107,7 @@ body {
 	text-align: left;
 }
 .classLadder {
-	display: none;
+	display: block;
 	position: fixed;
        	width: 640px;
 	height: 550px;
