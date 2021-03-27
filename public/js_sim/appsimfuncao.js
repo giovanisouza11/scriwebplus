@@ -58,7 +58,7 @@ function simFuncao() {
 //Desenha  a Arvore de elementos do supervisorio
 //-------------------------------------------------------
 function simArvore() {
-	var Ccanvas  = document.getElementById("tela3");
+	var Ccanvas  = document.getElementById("tela7");
 	Ccontext = Ccanvas.getContext("2d");
 	Ccanvas.width = 70;
 	Ccanvas.height = (ArrayObjStatic.length/20)*15+10;
@@ -112,7 +112,7 @@ function cSimIHM() {
 		modalb.innerHTML += "<p>Inc X1:<input type='text' id='input10' name='input10' maxlength=3 size=3 /> Inc Y1:<input type='text' id='input12' name='input12' maxlength=3 size=3 /> Variável 1:<input type='text' id='input14' name='input14' maxlength=6 size=6 /></p>";
 		modalb.innerHTML += "<p>Inc X2:<input type='text' id='input11' name='input11' maxlength=3 size=3 /> Inc Y2:<input type='text' id='input13' name='input13'  maxlength=3 size=3 /> Variável 2:<input type='text' id='input15' name='input15' maxlength=6 size=6 /></p>";
 		modalb.innerHTML += "<p>Piscar:<input type='text' id='input16' name='input16' maxlength=3 size=3 /> Tempo:<input type='text' id='input17' name='input17' maxlength=3 size=3 /></p>";
-		modalb.innerHTML += "<p>Figura:<input type='text' id='input18' name='input18' maxlength=15 size=15 /> Função:<input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
+		modalb.innerHTML += "<p>Figura:<input type='text' id='input18' name='input18' maxlength=15 size=15 onkeyup='leFigura(event)' /> Função:<input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
 		modalb.innerHTML += "<canvas id='tela4' class='modal_figura'></canvas>";
 	}
 	if (ArrayObjStatic[index_var_config*20+17]==1) {
@@ -156,8 +156,8 @@ function cSimIHM() {
 			document.getElementById('input18').value = ArrayImagens[ArrayObjDinamic[(index_var_config)*10+5]];
 			var lar= 0;
 			var alt= 0;
-			var alt_fig = Imagens[ArrayObjDinamic[index_var_config*10+5]].height;
-			var lar_fig = Imagens[ArrayObjDinamic[index_var_config*10+5]].width;
+			var alt_fig = Imagens_Real[ArrayObjDinamic[index_var_config*10+5]].height;
+			var lar_fig = Imagens_Real[ArrayObjDinamic[index_var_config*10+5]].width;
 	
 			if (lar_fig >alt_fig) {
 				if (lar_fig >100) {
@@ -179,7 +179,7 @@ function cSimIHM() {
 					lar = lar_fig;
 				}
 			}
-			CcontextFig.drawImage(Imagens[ArrayObjDinamic[index_var_config*10+5]], 0,0, lar, alt);		
+			CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index_var_config*10+5]], 0,0, lar, alt);		
 		}
 		else{
 			document.getElementById('input18').value = "";
@@ -196,6 +196,18 @@ function cSimIHM() {
 	if (ArrayObjStatic[index_var_config*20+17]==6 || ArrayObjStatic[index_var_config*20+17]==7) 
 		document.getElementById('input18').value = ArrayObjDinamic[(index_var_config)*10+5];
 	document.getElementById('input1').focus();
+}
+function leFigura(event) {
+	if( event.keyCode == 13) {
+		var inputPNG= document.createElement('input');
+		inputPNG.type = 'file';
+		inputPNG.accept = '.PNG';
+		inputPNG.click();
+		inputPNG.onchange = function() {
+			var file = this.files[0];
+			leitorDePNG.readAsBinaryString(file);
+		};
+	};
 }
 //------------------------------------------------------------------
 //Botao OK
@@ -230,9 +242,11 @@ function simOk() {
 //-------------------------------------------------
 function LoadImageConfig(imagefile, index) {
 	var image1 = new Image();
+	//image1 = Imagens_Real[ArrayObjDinamic[index*10+5]]
    	image1.onload = function() {
-		CcontextFig.drawImage(Imagens[ArrayObjDinamic[index*10+5]], 0,0, 50,100);
+		CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index*10+5]], 0,0, 50,100);
 	};
+	//image1 = Imagens_Real[ArrayObjDinamic[index*10+5]]
     	image1.src = imagefile;
     	Imagens[Imagens.length] = image1;
 }
@@ -423,4 +437,14 @@ function simFuncao7(){
 	ArrayObjDinamic.push(0,0,0,0,0,0,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0)/20)-1;
 	simFuncao();
+}
+var leitorDePNG = new FileReader();
+leitorDePNG.addEventListener('load', lePNG);
+
+function lePNG(evt) {
+	Imagens_Real[ArrayObjDinamic[(index_var_config)*10+5]] = evt.target.result.join('.');
+	confirm(readAsBinaryString(file));
+			
+	//draw_processo(fileArr);
+	
 }

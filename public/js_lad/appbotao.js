@@ -13,7 +13,7 @@ function draw_botoes() {
 
 	for(i=1; i<11; i++)
                 context1.drawImage(AImageB, 70*valor_chave[i], 45*(i-1), 70, 45, 7,(i-1)*47, 70, 45);
-    for(i=11; i<21; i++)
+    	for(i=11; i<21; i++)
                 context1.drawImage(AImageB, 140+(70*valor_chave[i]), 45*(i-11), 70, 45, 79,(i-11)*47, 70, 45);
  	for(i=21; i<31; i++)
                 context1.drawImage(AImageB, 280+(70*valor_chave[i]), 45*(i-21), 70, 45, 151,(i-21)*47, 70, 45);
@@ -206,14 +206,14 @@ function trocar_botao() {
 	   valor_chave[8]=0;
 	}
 	if (valor_chave[1]==1){
-        var inputCSV = document.createElement('input');
+        	var inputCSV = document.createElement('input');
 		inputCSV.type = 'file';
 		inputCSV.accept = '.CSV';
-	    inputCSV.click();
+	    	inputCSV.click();
 		inputCSV.onchange = function() {
 			//inputCSV.setPropertie('accept', '.csv');
 			var file = this.files[0];
-		    leitorDeCSV.readAsText(file);
+		    	leitorDeCSV1.readAsText(file);
 		};
 		valor_chave[1]=0;
 		valor_chave[4]==0;
@@ -282,16 +282,16 @@ function trocar_botao() {
 
 //leitura de arquivos
 //Fonte https://tableless.com.br/file-api-trabalhando-com-arquivos-locais-usando-javascript/
-var leitorDeCSV = new FileReader();
-leitorDeCSV.addEventListener('load', leCSV);
+var leitorDeCSV1 = new FileReader();
+leitorDeCSV1.addEventListener('load', leCSV1);
 
 
-function pegaCSV(inputFile) {
+function pegaCSV1(inputFile) {
 	var file = inputFile.files[0];
-	leitorDeCSV.readAsText(file);
+	leitorDeCSV1.readAsText(file);
 }
 
-function leCSV(evt) {
+function leCSV1(evt) {
 	var fileArr = evt.target.result.split('\n');
 	
 //document.getElementById("rodape1").innerHTML = fileArr;

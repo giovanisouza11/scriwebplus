@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css_lad/style.css">
 	<script src=/socket.io/socket.io.js></script>
 	<!-- Biblioteca que adicionara o código -->
-    <!-- Fonte: https://www.mundojs.com.br/2018/01/15/filesaver-salve-arquivos-com-javascript/-->
+    	<!-- Fonte: https://www.mundojs.com.br/2018/01/15/filesaver-salve-arquivos-com-javascript/-->
 	<script type="text/javascript" src="js_lad/FileSaver.js"></script>
 	
 	<script type="text/javascript" src="js_lad/appeletrico.js"></script>
@@ -18,49 +18,87 @@
 	<!--<script type="text/javascript" src="multilang/multilang.js"></script>-->
 	<!--<script type="text/javascript" src="multilang/language.js"></script>-->
 	<!--Fonte: https://www.devmedia.com.br/construindo-um-servidor-web-com-node-js/32023-->
+	<!--Simulador-->
+	<script type="text/javascript" src="js_sim/appsimulador.js"></script>
+	<script type="text/javascript" src="js_sim/appsimfuncao.js"></script>
+	<script type="text/javascript" src="js_sim/appbotaosim.js"></script>
+    	
 </head>
 
 <body onload="draw_inicio()">
     <div class="corpo">
-	    <div class="row1">
-    		<div  class="cabecalho">
-        		<h2 id="titulo4">SCriWeb: SUPERVISÓRIO INFORMÁTICA INDUSTRIAL </h2>
+	<div class="row1">
+    		<div  class="cabecalho" onclick="ladder_simulador()">
+        		<h2 id="titulo4" >SCriWeb: SUPERVISÓRIO INFORMÁTICA INDUSTRIAL </h2>
     		</div>
-        	<div class="divColuna1" id ="Ladder">
-             	<canvas id="tela1"   onclick="trocar()"></canvas>
+        	<div class="classLadder" id="idLadder">
+			<div class="divColuna1" id="Ladder">
+             			<canvas id="tela1"   onclick="trocar()"></canvas>
 			</div>
-			<div class="divColuna2" id ="Botoes">
-             	<canvas id="tela2" onclick="trocar_botao()" ></canvas>
+			<div class="divColuna2" id="Botoes">
+             			<canvas id="tela2" onclick="trocar_botao()" ></canvas>
 			</div>
-			<div id="rodape" class="rodape">
+		</div>
+		<div class="classSimul" id="idSimul">
+    			<div class="divColuna6" id="Botoes1">
+	             		<canvas id="tela5" onclick="tBotao()"></canvas>
+			</div>
+			<div class="divColuna7" id="Simulador">
+             			<canvas id="tela6" onclick="cSimulador()" ></canvas>
+			</div>
+		</div>
+		<div class="divColuna10" id="CampoS">
+			<label id='label_input'>Valor</label>
+			<input type=number id="input_ladder" maxlength=5 size=5 onkeyup="eInputS(event)" >
+    		</div>
+		<!-- Modal content -->
+    		<div id="myColuna" class="modal-coluna">
+			<canvas id="tela7" onclick="cSimFuncao()"></canvas>
+    		</div>
+    		<div id="myModal" class="modal">
+			<div class="modal-header">
+				<h2>Titulo Modal</h2>
+			</div>
+			<div id="myBody" class="modal-body">
+				<p>Some text</p>
+			</div>
+			<div id="mype" class="modal-pe">
+				<span class="up" id="up"> &uarr; </span>
+				<span class="dw" id="dw"> &darr; </span>
+				<span class="ok" id="ok"> &#10004; </span>
+				<span class="close" id="close"> &#10008; &ensp; &ensp;</span>
+				<span class="novo" id="novo"> &#127775; &ensp; &ensp;</span>
+				<span class="apagar" id="apagar"> &#9760; &ensp;&ensp; </span>
+			</div>
+    		</div>
+			
+    		<div id="rodape" class="rodape" >
         		Desenvolvido em 2020</span>
     		</div>
-        </div>
-		<div class="row2">
-    		<div class="divColuna3" id ="CLP">
-                <canvas id="tela3" onclick="editar_ladder()"></canvas>
+	    	<!-- Modal content -->
+    		<div id="myModal1" class="modal1">
+			<div class="modal-header1">
+				<span class="close1" id="close1">&times;</span>
+				<h2>Titulo Modal</h2>
 			</div>
-			<div class="divColuna4" id="Campo">
-				<label id='label_input' >Endereço</label>
+				<div id="myBody1" class="modal-body1">
+				<p>Some text</p>
+			</div>
+   		</div>
+	</div>
+	<div class="row2">
+    		<div class="divColuna3" id ="CLP">
+                	<canvas id="tela3" onclick="editar_ladder()"></canvas>
+		</div>
+		<div class="divColuna4" id="Campo">
+			<label id='label_input' >Endereço</label>
         		<input type=text id="input_ladder" maxlength=7 size=6 onkeyup="entrada_input(event)">
     		</div>
         	<div class="divColuna5" id="Fig">
         		<canvas id="tela4"></canvas>
-			</div>
-    	</div>
-    </div>
-	<!-- Modal content -->
-	<div id="myModal" class="modal">
-		<div class="modal-content">
-			<div class="modal-header">
-				<span class="close">&times;</span>
-				<h2>Titulo Modal</h2>
-			</div>
-			<div id="myBody" class="modal-body">
-				<p>Some text in the Modal Body</p>
-			</div>
 		</div>
-	</div>
-
+    	</div>
+	
+    </div>
 </body>
 </html>

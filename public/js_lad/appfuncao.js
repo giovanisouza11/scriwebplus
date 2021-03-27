@@ -1,4 +1,21 @@
-	
+// habilita a tela de simulador ou o clp
+function ladder_simulador(){
+	var ladder = document.getElementById('idLadder');
+	var simul = document.getElementById('idSimul');
+	if (simul.style.display === "block") {
+		ladder.style.display = "block";
+		simul.style.display = "none";
+		draw_eletrico();
+    		draw_botoes();
+	}
+	else {
+		ladder.style.display = "none";
+		simul.style.display = "block";
+		draw_botoessim();
+	}
+}
+
+
 function funAIM(data) {
     var nLogicas = data.split(',');
 	let texto = '_id, nome, var_1, tipo, var_2, ver, R-W, pisca, funcao' + '\n';

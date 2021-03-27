@@ -125,7 +125,7 @@ function trocar() {
 		}
 		draw_chave(posicaox, posicaoy);
 	}
-	envia_entrada(valor_botao);
+	Envia_Entrada_Ele(valor_botao);
 	run_CLP();
 }
 
