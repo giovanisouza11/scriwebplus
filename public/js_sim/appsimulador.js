@@ -1079,9 +1079,9 @@ function Sim_draw_processo(fileArr) {
 				LoadImage1(fileLine[22], i-1);
 				LoadImage2(fileLine[23], i-1);
 				*/
-				LoadImage(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
-				LoadImage1(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on1.png', i-1);
-				LoadImage2(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on2.png', i-1);
+				//LoadImage(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
+				//LoadImage1(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on1.png', i-1);
+				//LoadImage2(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + '_on2.png', i-1);
 				
 			}		
 			else {
