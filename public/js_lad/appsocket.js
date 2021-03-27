@@ -36,6 +36,7 @@ socket.on('config_retorno', function(data) {
 
 socket.on('saida', function(data) {
        	Q = data.split(',');
+	SQ = data.split(',');
 	liga_led_CLP();
 	if (comandos != 0) {
 		monitora_ladder();
@@ -48,15 +49,17 @@ function config(dado){
 
 function Enviar(){
 	var data = I.join()+ ','+ num_clp;
-    	socket.emit('programax', programa+ ','+ num_clp);
+    	SI = I;
+	socket.emit('programax', programa+ ','+ num_clp);
     	socket.emit('comandosx', comando+ ','+ num_clp);
     	socket.emit('entradax',data);
 }
 
 function Envia_Entrada_Ele(data){
-	while (data.length < SI.length) {
-		data[data.length] = SI[data.length];
+	while (data.length < I.length) {
+		data[data.length] = I[data.length];
 	}
+	SI = data.split(',');
 	socket.emit('entradax', data.join()+ ','+ num_clp);
 }
 
@@ -64,6 +67,7 @@ function Envia_Entrada_S(data){
 	while (data.length < SI.length) {
 		data[data.length] = SI[data.length];
 	}
+	I = data.split(',');
 	socket.emit('entradax', data.join()+ ','+ num_clp);
 }
 
