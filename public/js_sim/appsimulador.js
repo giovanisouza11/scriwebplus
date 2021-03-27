@@ -539,11 +539,11 @@ function Sim_escreve_endereco(Aux_data, valor)
 			break;
 		case 'I':
 			Sim_I[index] = valor;
-			envia_entrada_S(Sim_I);
+			Envia_Entrada_S(Sim_I);
 			break;
 		case 'M':
 			Sim_M[index] = valor;
-            		envia_memoria_S('Sim_M'+parseInt(index/16));
+            		Envia_Memoria_S('Sim_M'+parseInt(index/16));
 			break;
 		case 'R':
 			Sim_R[index] = valor;
@@ -582,7 +582,7 @@ function Sim_escreveCT(Aux_data, valor, index1)
 				valor = parseInt(valor / 2);
 			}
 			Sim_I[index+15] = valor;
-			envia_entrada_S(Sim_I);
+			Envia_Entrada_S(Sim_I);
 			break;
 		case 'Q':
 			for (var ia=0; ia<=14; ia++) {
@@ -599,7 +599,7 @@ function Sim_escreveCT(Aux_data, valor, index1)
 				valor = parseInt(valor / 2);
 			}
 			Sim_M[index+15] = valor;
-			envia_memoria_S('Sim_M'+parseInt(index/16));
+			Envia_Memoria_S('Sim_M'+parseInt(index/16));
 			break;
 		case 'T':
 			Sim_T[3*index+index1] = valor;
