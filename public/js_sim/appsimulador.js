@@ -1018,7 +1018,7 @@ function verificaTexto(posicao, deslocamento, dependencia) {
 //Desenho o processo para simulacao apartir de uma matriz
 // Apos leitura do arquivo
 //=====================================================================================
-function draw_processo(fileArr) {
+function Sim_draw_processo(fileArr) {
 	//alerta("drawprocesso");
 	inicializa_array();
 	//alerta("inicializaarray");
