@@ -90,7 +90,6 @@ function tBotao() {
 	    		var file = this.files[0];
 			leitorDeCSV2.readAsText(file);
 			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
-			alert(simPath);
 		};
 		Scomandos = 0;	
 		valor_chave1[5]=0;
@@ -228,6 +227,8 @@ function leCSV2(evt) {
 		draw_botoessim();
 		draw_simulador_inicio();
 	}
+	
+	alert(fileArr);
 	//alert("entrou");
 	draw_processo(fileArr);
 	//alert("saiu");
