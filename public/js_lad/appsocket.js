@@ -3,24 +3,24 @@ var socket = io(); //('http://192.168.0.100:4333');
 socket.emit('connect', num_clp);
 socket.on('memoria', function(data) {
 	M = data.split(',');
-	SM = data.split(',');
+	Sim_M = data.split(',');
 });
 socket.on('timer', function(data) {
 	T = data.split(',');
-	ST = data.split(',');
+	Sim_T = data.split(',');
 });
 socket.on('counter', function(data) {
 	C = data.split(',');
-	SC = data.split(',');
+	Sim_C = data.split(',');
 
 });
 socket.on('entrada', function(data) {
        	I = data.split(',');
-	SI = data.split(',');
+	Sim_I = data.split(',');
 });
 socket.on('tr', function(data) {
        R = data.split(',');
-       SR = data.split(',');	
+       Sim_R = data.split(',');	
 });
 socket.on('localizacao', function(data) {
        localizacao = data;
@@ -36,7 +36,7 @@ socket.on('config_retorno', function(data) {
 
 socket.on('saida', function(data) {
        	Q = data.split(',');
-	SQ = data.split(',');
+	Sim_Q = data.split(',');
 	liga_led_CLP();
 	if (comandos != 0) {
 		monitora_ladder();
@@ -49,7 +49,7 @@ function config(dado){
 
 function Enviar(){
 	var data = I.join()+ ','+ num_clp;
-    	SI = I;
+    	Sim_I = I;
 	socket.emit('programax', programa+ ','+ num_clp);
     	socket.emit('comandosx', comando+ ','+ num_clp);
     	socket.emit('entradax',data);
@@ -57,9 +57,9 @@ function Enviar(){
 
 function Envia_Entrada_Ele(data){
 	while (data.length < I.length) {
-		data[data.length] = I[data.length];
+		data[(I.length)-1] = I[(I.length)-1];
 	}
-	SI = data.split(',');
+	Sim_I = data.split(',');
 	socket.emit('entradax', data.join()+ ','+ num_clp);
 }
 
