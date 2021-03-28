@@ -58,23 +58,23 @@ function simFuncao() {
 //Desenha  a Arvore de elementos do supervisorio
 //-------------------------------------------------------
 function simArvore() {
-	var Ccanvas  = document.getElementById("tela7");
-	Ccontext = Ccanvas.getContext("2d");
-	Ccanvas.width = 70;
-	Ccanvas.height = (ArrayObjStatic.length/20)*15+10;
+	var Sim_Ccanvas  = document.getElementById("tela7");
+	Sim_Ccontext = Sim_Ccanvas.getContext("2d");
+	Sim_Ccanvas.width = 70;
+	Sim_Ccanvas.height = (ArrayObjStatic.length/20)*15+10;
 	if (ArrayObjStatic.length >0)
 		for (var i=0; i<(ArrayObjStatic.length/20); i++){
 			if (i == index_var_config)
-				Ccontext.fillStyle = 'red';
+				Sim_Ccontext.fillStyle = 'red';
 			else
-				Ccontext.fillStyle = 'black';
+				Sim_Ccontext.fillStyle = 'black';
 
-			Ccontext.strokeRect(10, ((i+1)*15)-10, 10, 10);
-			Ccontext.font = '10pt Arial';
-			Ccontext.fillText('+', 0, ((i+1)*15));
-			Ccontext.fillText(ArrayObjStatic[i*20], 23, (i+1)*15);
-			Ccontext.font = '7pt Arial';
-			Ccontext.fillText(ArrayObjStatic[i*20+17], 11, (i+1)*15);
+			Sim_Ccontext.strokeRect(10, ((i+1)*15)-10, 10, 10);
+			Sim_Ccontext.font = '10pt Arial';
+			Sim_Ccontext.fillText('+', 0, ((i+1)*15));
+			Sim_Ccontext.fillText(ArrayObjStatic[i*20], 23, (i+1)*15);
+			Sim_Ccontext.font = '7pt Arial';
+			Sim_Ccontext.fillText(ArrayObjStatic[i*20+17], 11, (i+1)*15);
 		}
 }
 //-------------------------------------------------------------
@@ -141,10 +141,10 @@ function cSimIHM() {
 	}
 	modalb.innerHTML += "<p></p>";
 	
-	var CcanvasFig  = document.getElementById("tela4");
-	var CcontextFig = CcanvasFig.getContext("2d");
-	CcanvasFig.width = 100;
-	CcanvasFig.height = 100;
+	var Sim_CcanvasFig  = document.getElementById("tela4");
+	var Sim_CcontextFig = Sim_CcanvasFig.getContext("2d");
+	Sim_CcanvasFig.width = 100;
+	Sim_CcanvasFig.height = 100;
 		
 	document.getElementById('input01').value = index_var_config;
 	document.getElementById('input02').selectedIndex = ArrayObjStatic[index_var_config*20+17];
@@ -179,7 +179,7 @@ function cSimIHM() {
 					lar = lar_fig;
 				}
 			}
-			CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index_var_config*10+5]], 0,0, lar, alt);		
+			Sim_CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index_var_config*10+5]], 0,0, lar, alt);		
 		}
 		else{
 			document.getElementById('input18').value = "";
@@ -244,7 +244,7 @@ function LoadImageConfig(imagefile, index) {
 	var image1 = new Image();
 	//image1 = Imagens_Real[ArrayObjDinamic[index*10+5]]
    	image1.onload = function() {
-		CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index*10+5]], 0,0, 50,100);
+		Sim_CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index*10+5]], 0,0, 50,100);
 	};
 	//image1 = Imagens_Real[ArrayObjDinamic[index*10+5]]
     	image1.src = imagefile;
@@ -444,7 +444,5 @@ leitorDePNG.addEventListener('load', lePNG);
 function lePNG(evt) {
 	Imagens_Real[ArrayObjDinamic[(index_var_config)*10+5]] = evt.target.result.join('.');
 	confirm(readAsBinaryString(file));
-			
 	//draw_processo(fileArr);
-	
 }
