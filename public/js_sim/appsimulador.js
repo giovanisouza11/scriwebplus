@@ -481,16 +481,16 @@ function Sim_endereco(Aux_data){
 			retorno = Sim_C[4*index];
 			break;
 		case 'D':
-			retorno = endereco(ArrayObjStatic[index*20+1]);
+			retorno = Sim_endereco(ArrayObjStatic[index*20+1]);
 			break;
 		case 'U':
-			retorno = endereco(ArrayObjStatic[index*20+1]);
+			retorno = Sim_endereco(ArrayObjStatic[index*20+1]);
 			break;
 		case 'X':
-			retorno = endereco(ArrayObjStatic[index*20+1]);
+			retorno = Sim_endereco(ArrayObjStatic[index*20+1]);
 			break;
 		case 'Y':
-			retorno = endereco(ArrayObjStatic[index*20+1]);
+			retorno = Sim_endereco(ArrayObjStatic[index*20+1]);
 			break;
 		default:
 			retorno = 3;
