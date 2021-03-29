@@ -174,7 +174,7 @@ function tBotao() {
 	if (simEdicao==0 && Sim_valor_chave1[1]==1){
 		Sim_valor_chave1[1]=0;
 		Sim_comandos = 0;
-		Sim_simEdicao = 1;
+		simEdicao = 1;
 	}
 	if (simEdicao==1 && Sim_valor_chave1[1]==1){
 		Sim_valor_chave1[1]=0;
