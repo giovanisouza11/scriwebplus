@@ -28,5 +28,5 @@ function draw_inicio() {
 	
 	draw_botoessim();
 	draw_simulador_inicio();
-	Config_Socket(localStorage.num_clp1);
+	Sim_Config_Socket(localStorage.num_clp1);
 }
