@@ -88,7 +88,7 @@ function tBotao() {
 		inputCSV.click();
 		inputCSV.onchange = function() {
 	    		var file = this.files[0];
-			leitorDeCSV2.readAsText(file);
+			Sim_leitorDeCSV.readAsText(file);
 			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
 		};
 		Sim_comandos = 0;	
@@ -213,15 +213,15 @@ function tBotao() {
 
 //leitura de arquivos
 //Fonte https://tableless.com.br/file-api-trabalhando-com-arquivos-locais-usando-javascript/
-var leitorDeCSV2 = new FileReader();
-leitorDeCSV2.addEventListener('load', leCSV2);
+var Sim_leitorDeCSV = new FileReader();
+Sim_leitorDeCSV.addEventListener('load', Sim_leCSV);
 
-function pegaCSV(inputFile) {
+function pegaCSV2(inputFile) {
 	var file = inputFile.files[0];
 	leitorDeCSV2.readAsText(file);
 };
 
-function leCSV2(evt) {
+function Sim_leCSV(evt) {
 	var fileArr = evt.target.result.split('\n');
 	if (simulacao_set_inicial == 0) {
 		draw_simulador_inicio();
