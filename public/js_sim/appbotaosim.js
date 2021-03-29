@@ -218,7 +218,7 @@ Sim_leitorDeCSV.addEventListener('load', Sim_leCSV);
 
 function pegaCSV2(inputFile) {
 	var file = inputFile.files[0];
-	leitorDeCSV2.readAsText(file);
+	Sim_leitorDeCSV.readAsText(file);
 };
 
 function Sim_leCSV(evt) {
