@@ -226,6 +226,6 @@ function leCSV2(evt) {
 	if (simulacao_set_inicial == 0) {
 		draw_simulador_inicio();
 	};
-	alerta("entrou");
+	alert("entrou");
 	Sim_draw_processo(fileArr);
 };
