@@ -26,7 +26,7 @@ function draw_inicio() {
 	if (localStorage.num_clp1 <0 || localStorage.numclp1>30)
 		locaStorage.setItem("num_clp1", 0);
 	
-	draw_botoessim();
-	draw_simulador_inicio();
-	Sim_Config_Socket(localStorage.num_clp1);
+	//draw_botoessim();
+	//draw_simulador_inicio();
+	//Sim_Config_Socket(localStorage.num_clp1);
 }
