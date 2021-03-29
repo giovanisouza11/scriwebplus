@@ -1018,7 +1018,7 @@ function verificaTexto(posicao, deslocamento, dependencia) {
 //=====================================================================================
 function Sim_draw_processo(fileArr) {
 	inicializa_array();
-	alerta("To aqui");
+	alert("To aqui");
 	draw_simulador_fundo();
 	Sim_context.font = '9pt Arial';
 	var ponteiro = 0;
