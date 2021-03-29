@@ -33,7 +33,7 @@ var variavel;
 //Desenha area de trabalho em branco
 //=====================================================================================
 function draw_simulador_inicio() {
-	Sim_canvas = document.getElementById("tela2");
+	Sim_canvas = document.getElementById("tela6");
 	Sim_context = Sim_canvas.getContext("2d");
 	
 	Sim_canvas.width = 650;//localStorage.tela_largura + 200; 
