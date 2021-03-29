@@ -78,10 +78,6 @@ socket.on('config_socket_r', function(data) {
 function Sim_Config_Socket(dado){
     	socket.emit('clp', dado);
 }
-function Config_Socket_Sim(dado){
-	socket.emit('sup', dado);
-}
-
 function Envia_Memoria_S(data){
      	socket.emit('memoriax', data+','+Sim_enderecoCT(data,0)+ ','+  localStorage.num_clp1);
 }
@@ -90,4 +86,7 @@ socket.on('config_socket_r', function(data) {
 });
 function Enviar_S(){
 	socket.emit('entradax', Sim_I.join()+ ','+  localStorage.num_clp1);
+}
+function Config_Socket_Sim(dado){
+	socket.emit('sup', dado);
 }
