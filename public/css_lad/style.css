@@ -98,7 +98,7 @@ body {
        	background:palegreen;
 } 
 .classSimul {
-	display: block;
+	display: none;
 	position: fixed;
        	width: 640px;
 	height: 550px;
