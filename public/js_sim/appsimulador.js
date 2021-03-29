@@ -2,8 +2,7 @@
 //Inicializa variaveis
 //=====================================================================================
 var Sim_canvas;
-var Sim_context; //, Scontext1;
-//document.addEventListener('mousemove', mouse_move);
+var Sim_context; 
 var Sim_M = [];
 var Sim_I = [];
 var Sim_R = [];
