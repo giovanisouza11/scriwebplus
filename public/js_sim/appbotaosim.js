@@ -19,7 +19,7 @@ function draw_botoessim() {
 		Sim_valor_chave1[i] = 0;
         Sim_contextA.drawImage(Sim_AImageB1, 70*Sim_valor_chave1[i]+(140*simEdicao), 45*(i-1), 70, 45, 5,(i-1)*43, 70, 43);
     }
-};
+}
 
 //Verifica QUAL botao foi acionado
 //Separa em tres grupos: 0 a 10: comandos do software, 11 a 20: edicao do ladder, 21 a 30: funcoes do ladder
@@ -219,13 +219,13 @@ Sim_leitorDeCSV.addEventListener('load', Sim_leCSV);
 function pegaCSV2(inputFile) {
 	var file = inputFile.files[0];
 	Sim_leitorDeCSV.readAsText(file);
-};
+}
 
 function Sim_leCSV(evt) {
 	var fileArr = evt.target.result.split('\n');
 	if (simulacao_set_inicial == 0) {
 		draw_simulador_inicio();
-	};
+	}
 	alert("entrou");
 	Sim_draw_processo(fileArr);
-};
+}
