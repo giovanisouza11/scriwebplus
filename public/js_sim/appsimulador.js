@@ -1224,9 +1224,9 @@ function LoadImageX(imagefile, ij) {
 function draw_simulador_fundo(){
 	Sim_context.lineWidth = 1;
 	Sim_context.fillStyle = 'white';
-	Sim_context.fillRect(5, 5, 770, 560);
+	Sim_context.fillRect(1, 1, 650, 525);
 	Sim_context.fillStyle = 'black';
-	Sim_context.strokeRect(10, 10, 765, 555);
+	Sim_context.strokeRect(2, 2, 649, 524);
 }
 
 //=====================================================================================
