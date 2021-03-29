@@ -145,9 +145,9 @@ function AtualizaPorTempo() {
 //=====================================================================================
 //Atualiza variãveis e canvas
 //Disparado ao receber SocketIO
-//==============================================		=======================================
+//=====================================================================================
 function atualiza_simulador() {
-	simIhm();
+	//simIhm();
 	            	
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++){
 		if (Sim_comandos == 1) {
@@ -224,7 +224,7 @@ function getTextWidth(text, font) {
 function ApagaImagem(index){
 	Sim_context.fillStyle = 'white';
 	if ((ArrayObjDinamic[index*10+3] != ArrayObjDinamic[index*10+7]) || (ArrayObjDinamic[index*10+4] != ArrayObjDinamic[index*10+8])){
-		Scontext.fillRect(ArrayObjDinamic[index*10+7], ArrayObjDinamic[index*10+8], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+		Sim_context.fillRect(ArrayObjDinamic[index*10+7], ArrayObjDinamic[index*10+8], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 		ArrayObjDinamic[index*10+7] = ArrayObjDinamic[index*10+3];
 		ArrayObjDinamic[index*10+8] = ArrayObjDinamic[index*10+4];
 	}
@@ -259,7 +259,7 @@ function simIhm() {
         		Sim_context.fillText('ENTRADAS', 870, linha);
         		Sim_context.fillRect(955, linha-5, 60, 5);
         		Sim_context.fillRect(1025, linha-5, 60, 5);
-        		tamanho_array = I.length;
+        		tamanho_array = Sim_I.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Sim_context.fillText('MSB', 790,linha);
@@ -274,7 +274,7 @@ function simIhm() {
         		Sim_context.fillText('SAIDAS', 880, linha);
         		Sim_context.fillRect(955, linha-5, 60, 5);
         		Sim_context.fillRect(1025, linha-5, 60, 5);
-        		tamanho_array = Q.length;
+        		tamanho_array = Sim_Q.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Sim_context.fillText('MSB', 790,linha);
@@ -289,7 +289,7 @@ function simIhm() {
         		Sim_context.fillText('MEMÓRIAS', 870, linha);
         		Sim_context.fillRect(955, linha-5, 60, 5);
         		Sim_context.fillRect(1025, linha-5, 60, 5);
-        		tamanho_array = M.length;
+        		tamanho_array = Sim_M.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Sim_context.fillText('MSB', 790,linha);
@@ -303,7 +303,7 @@ function simIhm() {
         		Sim_context.fillRect(790, linha-5, 60, 5);
         		Sim_context.fillText('TIMERS', 880, linha);
        			Sim_context.fillRect(955, linha-5, 60, 5);
-        		tamanho_array = T.length;
+        		tamanho_array = Sim_T.length;
         		num_linhas = parseInt(tamanho_array / 3);
         		linha = linha + 15;
         		Sim_context.fillText('Tem', 790,linha);
@@ -317,7 +317,7 @@ function simIhm() {
         		Sim_context.fillRect(790, linha-5, 60, 5);
         		Sim_context.fillText('CONTADORES', 860, linha);
         		Sim_context.fillRect(955, linha-5, 60, 5);
-        		tamanho_array = C.length;
+        		tamanho_array = Sim_C.length;
         		num_linhas = parseInt(tamanho_array / 4);
         		linha = linha + 15;
         		Sim_context.fillText('Cont', 790,linha);
@@ -332,7 +332,7 @@ function simIhm() {
         		Sim_context.fillRect(790, linha-5, 60, 5);
         		Sim_context.fillText('RAMAIS', 880, linha);
         		Sim_context.fillRect(955, linha-5, 60, 5);
-        		tamanho_array = R.length;
+        		tamanho_array = Sim_R.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Sim_context.fillText('MSB', 790,linha);
@@ -380,29 +380,29 @@ function simIhm() {
         			switch (parseInt(funcao)){
         			case 0:
         				Sim_context.fillStyle = 'red';
-        				Sim_context.fillText(I[n_posicao], 980-(posicao*10),linha);
+        				Sim_context.fillText(Sim_I[n_posicao], 980-(posicao*10),linha);
         				break;
         			case 1:
         				Sim_context.fillStyle = 'red';
-        				Sim_context.fillText(Q[n_posicao], 980-(posicao*10),linha);
+        				Sim_context.fillText(Sim_Q[n_posicao], 980-(posicao*10),linha);
         				break;
         			case 2:
         				Sim_context.fillStyle = 'red';
-        				Sim_context.fillText(M[n_posicao], 980-(posicao*10),linha);
+        				Sim_context.fillText(Sim_M[n_posicao], 980-(posicao*10),linha);
         				break;
         			case 5:
         				Sim_context.fillStyle = 'red';
-        				Sim_context.fillText(R[n_posicao], 980-(posicao*10),linha);
+        				Sim_context.fillText(Sim_R[n_posicao], 980-(posicao*10),linha);
         				break;
         			case 4:
         				Sim_context.fillStyle = 'red';
-        				Sim_context.fillText(C[n_posicao], 850+(posicao*50),linha);
+        				Sim_context.fillText(Sim_C[n_posicao], 850+(posicao*50),linha);
         				if (posicao >2)
         					posicao = 15;
         				break;
         			case 3:
         				Sim_context.fillStyle = 'red';
-        				Sim_context.fillText(T[n_posicao], 875+(posicao*50),linha);
+        				Sim_context.fillText(Sim_T[n_posicao], 875+(posicao*50),linha);
         				if (posicao >1)
         					posicao = 15;
         				break;
@@ -1018,6 +1018,7 @@ function verificaTexto(posicao, deslocamento, dependencia) {
 //=====================================================================================
 function Sim_draw_processo(fileArr) {
 	inicializa_array();
+	alerta("To aqui");
 	draw_simulador_fundo();
 	Sim_context.font = '9pt Arial';
 	var ponteiro = 0;
@@ -1082,7 +1083,7 @@ function Sim_draw_processo(fileArr) {
 					funcaoLabel(i-1);
 				}
 				if (ArrayObjStatic[(i-1)*20+17] == 6) {
-					Scontext.fillText(enderecoCT(ArrayObjStatic[(i-1)*20+1],0),ArrayObjStatic[(i-1)*20+3] ,ArrayObjStatic[(i-1)*20+6]);
+					Scontext.fillText(Sim_enderecoCT(ArrayObjStatic[(i-1)*20+1],0),ArrayObjStatic[(i-1)*20+3] ,ArrayObjStatic[(i-1)*20+6]);
 				}
 				if (ArrayObjStatic[(i-1)*20+17] == 7) {
 					Scontext.fillStyle = 'blue';
@@ -1262,7 +1263,7 @@ function redraw_processo() {
 				funcaoLabel(i);
 			}
 			if (ArrayObjStatic[i*20+17] == 6) {
-				Sim_context.fillText(enderecoCT(ArrayObjStatic[i*20+1],0),ArrayObjStatic[i*20+3] ,ArrayObjStatic[i*20+6]);
+				Sim_context.fillText(Sim_enderecoCT(ArrayObjStatic[i*20+1],0),ArrayObjStatic[i*20+3] ,ArrayObjStatic[i*20+6]);
 			}
 			if (ArrayObjStatic[i*20+17] == 7) {
 				Sim_context.fillStyle = 'blue';
