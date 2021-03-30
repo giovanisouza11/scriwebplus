@@ -218,7 +218,7 @@ var Sim_LeitorDeCSV = new FileReader();
 Sim_LeitorDeCSV.addEventListener('load', Sim_leCSV);
 /*Sim_LeitorDeCSV.onLoad = function(evt){
 	var fileArr = evt.target.result.split('\n');
-	if (simulacao_set_inicial == 0) {
+	if (simulacao_set_inicio == 0) {
 		draw_simulador_inicio();
 	}
 	alert("entrou");
@@ -233,7 +233,7 @@ function pegaCSV2(inputFile) {
 function Sim_leCSV(evt) {
 	alert("aaau");
 	var fileArr = evt.target.result.split('\n');
-	if (simulacao_set_inicial == 0) {
+	if (simulacao_set_inicio == 0) {
 		draw_simulador_inicio();
 	}
 	alert("entrou");
