@@ -10,7 +10,7 @@ var Sim_Q = [];
 var Sim_T = [];
 var Sim_C = [];
 var Sim_comandos = 0; // 0:stop, 1: run 2: edicao
-var simulacao_set_inicial = 0;
+var simulacao_set_inicio = 0;
 var Imagens =[];
 var Imagens1 =[];
 var Imagens2 =[];
@@ -39,7 +39,7 @@ function draw_simulador_inicio() {
 	Sim_canvas.width = 650;//localStorage.tela_largura + 200; 
 	Sim_canvas.height = 525; // localStorage.tela_altura + 150;
 	draw_simulador_fundo();
-	simulacao_set_inicial = 1;
+	simulacao_set_inicio = 1;
 }
 
 //=====================================================================================
