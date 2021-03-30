@@ -4,7 +4,7 @@ var simTitulo = "sem titulo";
 
 function simFuncao() {
 	simArvore();
-	var modal = document.getElementById("myModal");
+	var modal = document.getElementById("myModal2");
 	var modalc = document.getElementById("myColuna");
 	var t_modal = modal.getElementsByTagName("h2");
 	t_modal[0].innerHTML = simTitulo;	
@@ -103,7 +103,7 @@ function cSimFuncao() {
 //Desenha atela Html para edicao do supervisorio
 //-------------------------------------------------------------
 function cSimIHM() {
-	var modalb = document.getElementById("myBody");
+	var modalb = document.getElementById("myBody2");
 	modalb.innerHTML = "<p>Id <input type='text' id='input01' name='input01' maxlength=3 size=1 disabled />Tipo <select id='input02' name='input02'><option value='0'>---</option><option value='1'>Texto</option><option value='2'>Figura</option><option value='3'>Animacão</option><option value='4'>Interativo</option><option value='5'>IntNãoVisual</option><option value='6'>Display</option><option value='7'>BarGraph</option>  </select> nome:<input type='text' id='input1' name='input1' maxlength=10 size=10 autofocus /> </p>";
 	modalb.innerHTML += "<p>Variável1:<input type='text' id='input2' maxlength=5 size=5/> Variável2:<input type='text' id='input3' name='input3' maxlength=5 size=5 /> </p>";
 	modalb.innerHTML += "<p>Posição x:<input type='text' id='input4' name='input4' maxlength=4 size=4 /> Largura:<input type='text' id='input5' name='input5' maxlength=4 size=4 /> Posição x final:<input type='text' id='input6' name='input6' maxlength=4 size=4 /></p>";
