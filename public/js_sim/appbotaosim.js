@@ -231,8 +231,8 @@ function pegaCSV2(inputFile) {
 }
 
 function Sim_leCSV(evt) {
+	var fileArr = evt.target.result.split('\n');
 	alert("aaau");
-	var fileArr = 1 ; //evt.target.result.split('\n');
 	if (simulacao_set_inicio == 0) {
 		draw_simulador_inicio();
 	}
