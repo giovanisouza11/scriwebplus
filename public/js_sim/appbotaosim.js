@@ -234,7 +234,7 @@ function Sim_leCSV(evt) {
 	var fileArr = evt.target.result.split('\n');
 	alert("aaau");
 	//if (simulacao_set_inicio == 0) {
-		draw_simulador_inicio();
+		//draw_simulador_inicio();
 	//}
 	alert("entrou");
 	Sim_draw_processo(fileArr);
