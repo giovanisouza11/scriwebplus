@@ -4,7 +4,7 @@ var simTitulo = "sem titulo";
 
 function simFuncao() {
 	simArvore();
-	var modal = document.getElementById("myModal2");
+	var modal = document.getElementById("myModal");
 	var modalc = document.getElementById("myColuna");
 	var t_modal = modal.getElementsByTagName("h2");
 	t_modal[0].innerHTML = simTitulo;	
@@ -58,23 +58,23 @@ function simFuncao() {
 //Desenha  a Arvore de elementos do supervisorio
 //-------------------------------------------------------
 function simArvore() {
-	var Sim_Ccanvas  = document.getElementById("tela7");
-	Sim_Ccontext = Sim_Ccanvas.getContext("2d");
-	Sim_Ccanvas.width = 70;
-	Sim_Ccanvas.height = (ArrayObjStatic.length/20)*15+10;
+	var Ccanvas  = document.getElementById("tela7");
+	Ccontext = Ccanvas.getContext("2d");
+	Ccanvas.width = 70;
+	Ccanvas.height = (ArrayObjStatic.length/20)*15+10;
 	if (ArrayObjStatic.length >0)
 		for (var i=0; i<(ArrayObjStatic.length/20); i++){
 			if (i == index_var_config)
-				Sim_Ccontext.fillStyle = 'red';
+				Ccontext.fillStyle = 'red';
 			else
-				Sim_Ccontext.fillStyle = 'black';
+				Ccontext.fillStyle = 'black';
 
-			Sim_Ccontext.strokeRect(10, ((i+1)*15)-10, 10, 10);
-			Sim_Ccontext.font = '10pt Arial';
-			Sim_Ccontext.fillText('+', 0, ((i+1)*15));
-			Sim_Ccontext.fillText(ArrayObjStatic[i*20], 23, (i+1)*15);
-			Sim_Ccontext.font = '7pt Arial';
-			Sim_Ccontext.fillText(ArrayObjStatic[i*20+17], 11, (i+1)*15);
+			Ccontext.strokeRect(10, ((i+1)*15)-10, 10, 10);
+			Ccontext.font = '10pt Arial';
+			Ccontext.fillText('+', 0, ((i+1)*15));
+			Ccontext.fillText(ArrayObjStatic[i*20], 23, (i+1)*15);
+			Ccontext.font = '7pt Arial';
+			Ccontext.fillText(ArrayObjStatic[i*20+17], 11, (i+1)*15);
 		}
 }
 //-------------------------------------------------------------
@@ -103,7 +103,7 @@ function cSimFuncao() {
 //Desenha atela Html para edicao do supervisorio
 //-------------------------------------------------------------
 function cSimIHM() {
-	var modalb = document.getElementById("myBody2");
+	var modalb = document.getElementById("myBody");
 	modalb.innerHTML = "<p>Id <input type='text' id='input01' name='input01' maxlength=3 size=1 disabled />Tipo <select id='input02' name='input02'><option value='0'>---</option><option value='1'>Texto</option><option value='2'>Figura</option><option value='3'>Animacão</option><option value='4'>Interativo</option><option value='5'>IntNãoVisual</option><option value='6'>Display</option><option value='7'>BarGraph</option>  </select> nome:<input type='text' id='input1' name='input1' maxlength=10 size=10 autofocus /> </p>";
 	modalb.innerHTML += "<p>Variável1:<input type='text' id='input2' maxlength=5 size=5/> Variável2:<input type='text' id='input3' name='input3' maxlength=5 size=5 /> </p>";
 	modalb.innerHTML += "<p>Posição x:<input type='text' id='input4' name='input4' maxlength=4 size=4 /> Largura:<input type='text' id='input5' name='input5' maxlength=4 size=4 /> Posição x final:<input type='text' id='input6' name='input6' maxlength=4 size=4 /></p>";
@@ -141,10 +141,10 @@ function cSimIHM() {
 	}
 	modalb.innerHTML += "<p></p>";
 	
-	var Sim_CcanvasFig  = document.getElementById("tela4");
-	var Sim_CcontextFig = Sim_CcanvasFig.getContext("2d");
-	Sim_CcanvasFig.width = 100;
-	Sim_CcanvasFig.height = 100;
+	var CcanvasFig  = document.getElementById("tela4");
+	var CcontextFig = CcanvasFig.getContext("2d");
+	CcanvasFig.width = 100;
+	CcanvasFig.height = 100;
 		
 	document.getElementById('input01').value = index_var_config;
 	document.getElementById('input02').selectedIndex = ArrayObjStatic[index_var_config*20+17];
@@ -179,7 +179,7 @@ function cSimIHM() {
 					lar = lar_fig;
 				}
 			}
-			Sim_CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index_var_config*10+5]], 0,0, lar, alt);		
+			CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index_var_config*10+5]], 0,0, lar, alt);		
 		}
 		else{
 			document.getElementById('input18').value = "";
@@ -244,7 +244,7 @@ function LoadImageConfig(imagefile, index) {
 	var image1 = new Image();
 	//image1 = Imagens_Real[ArrayObjDinamic[index*10+5]]
    	image1.onload = function() {
-		Sim_CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index*10+5]], 0,0, 50,100);
+		CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index*10+5]], 0,0, 50,100);
 	};
 	//image1 = Imagens_Real[ArrayObjDinamic[index*10+5]]
     	image1.src = imagefile;
@@ -444,5 +444,7 @@ leitorDePNG.addEventListener('load', lePNG);
 function lePNG(evt) {
 	Imagens_Real[ArrayObjDinamic[(index_var_config)*10+5]] = evt.target.result.join('.');
 	confirm(readAsBinaryString(file));
+			
 	//draw_processo(fileArr);
+	
 }
