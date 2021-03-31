@@ -36,8 +36,8 @@ function draw_simulador_inicio() {
 	Sim_canvas = document.getElementById("tela6");
 	Sim_context = Sim_canvas.getContext("2d");
 	
-	Sim_canvas.width = 650;//localStorage.tela_largura + 200; 
-	Sim_canvas.height = 525; // localStorage.tela_altura + 150;
+	Sim_canvas.width = 650; 
+	Sim_canvas.height = 525;
 	draw_simulador_fundo();
 	simulacao_set_inicio = 1;
 }
@@ -47,8 +47,8 @@ function draw_simulador_inicio() {
 //Click com omouse
 //=====================================================================================
 function cSimulador() {
-	var posicaoy = parseInt(window.event.clientY-40);//-5);
-	var posicaox = parseInt(window.event.clientX-110);//-75);
+	var posicaoy = parseInt(window.event.clientY-40);
+	var posicaox = parseInt(window.event.clientX-110);
   	if (LoadedImages>0) {
     	for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
 			if (Sim_comandos ==0 || Sim_comandos == 1) {
@@ -147,7 +147,7 @@ function AtualizaPorTempo() {
 //Disparado ao receber SocketIO
 //=====================================================================================
 function atualiza_simulador() {
-	//simIhm();
+	simIhm();
 	            	
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++){
 		if (Sim_comandos == 1) {
@@ -214,8 +214,8 @@ function funcaoLabel(apontador){
 //---------------------------------------------------------------------
 function getTextWidth(text, font) {
    Sim_context.font = font;
-    var metrics = Sim_context.measureText(text);
-    return metrics.width;
+   var metrics = Sim_context.measureText(text);
+   return metrics.width;
 }
 //=====================================================================================
 //Apaga Imagens se posicao X ou Y forem diferentes
