@@ -1,23 +1,23 @@
-var AImageB1 = new Image();
-AImageB1.src = "/img_sim/botoessim.png";
-var canvasA;
-var contextA;
-var valor_chave1 = new Array(14);
+var Sim_AImageB1 = new Image();
+Sim_AImageB1.src = "/img_sim/botoessim.png";
+var Sim_canvasA;
+var Sim_contextA;
+var Sim_valor_chave1 = new Array(14);
 var simEdicao = 0;
 var exemplos_dir = ['Alarme','Classificacao','Corte_Vinco','Elevador','Elevador5','Envase','Expedicao','Semaforo','Classificacao_Matheus','Classificacao_Amalia','Classificacao_Arthur','Classificacao_Luiz','Classificacao_Nicolas','Classificacao_Nicole','Classificacao_Saymon','Classificacao_Teixeira','Classificacao_Vinicius','Corte_Vinco_Leonardo','Corte_Vinco_Pedro','Corte_Vinco_Carlos','Corte_Vinco_Gustavo','Corte_Vinco_Lucas','Corte_Vinco_Rafael','Elevador_Matheus','Elevador_Alvaro','Elevador_Amalia','Elevador_Artur','Elevador_Leonardo','Elevador_Luiz','Elevador_Nicolas','Elevador_Nicole','Elevador_Pedro','Elevador_Savi','Elevador_Saymon','Elevador_Teixeira','Elevador_Carlos','Elevador_Gustavo','Elevador_Israel','Elevador_Lucas','Elevador_Rafael','Elevador_Vinicius','Elevador_Thales','Elevador_Arturo'];
 var exemplos_nom = ['Alarme','Classificação','Corte e Vinco','Elevador','Elevador 5 andares','Envase','Expedição','Semáforo','Classificação Matheus','Classificação Amalia','Classificação Arthur','Classificação Luiz','Classificação Nicolas','Classificação Nicole','Classificação Saymon','Classificação Teixeira','Classificação Vinicius','Corte e Vinco Leonardo','Corte e Vinco Pedro','Corte e Vinco Carlos','Corte e Vinco Gustavo','Corte e Vinco Lucas','Corte e Vinco Rafael','Elevador Matheus','Elevador Alvaro','Elevador Amalia','Elevador Artur','Elevador Leonardo','Elevador Luiz','Elevador Nicolas','Elevador Nicole','Elevador Pedro','Elevador Savi','Elevador Saymon','Elevador Teixeira','Elevador Carlos','Elevador Gustavo','Elevador Israel','Elevador Lucas','Elevador Rafael','Elevador Vinicius','Elevador Thales','Elevador Arturo'];
 		
 //desenha os botoes
 function draw_botoessim() {
-    canvasA = document.getElementById("tela6");
-    contextA = canvasA.getContext("2d");
-    canvasA.width = 75;
-    canvasA.height = 570;
+    Sim_canvasA = document.getElementById("tela6");
+    Sim_contextA = Sim_canvasA.getContext("2d");
+    Sim_canvasA.width = 75;
+    Sim_canvasA.height = 570;
 
     for(i=1; i<13; i++) {
-        if (valor_chave1[i] === undefined)
-		valor_chave1[i] = 0;
-        contextA.drawImage(AImageB1, 70*valor_chave1[i]+(140*simEdicao), 45*(i-1), 70, 45, 5,(i-1)*43, 70, 43);
+        if (Sim_valor_chave1[i] === undefined)
+		Sim_valor_chave1[i] = 0;
+        Sim_contextA.drawImage(Sim_AImageB1, 70*Sim_valor_chave1[i]+(140*simEdicao), 45*(i-1), 70, 45, 5,(i-1)*43, 70, 43);
     }
 }
 
@@ -29,19 +29,19 @@ function tBotao() {
 	if ((posicaoy >=0) && (posicaoy < 12))
 	{
 		for(i=1; i<13; i++)
-			valor_chave1[i] = 0;
-		valor_chave1[posicaoy+1]=1;
+			Sim_valor_chave1[i] = 0;
+		Sim_valor_chave1[posicaoy+1]=1;
 	}
 
-	if (valor_chave1[12]==1){
+	if (Sim_valor_chave1[12]==1){
     		window.open("/About", "About SCriWeb", "height=600,width=600");
-	    	valor_chave1[12]=0;
+	    	Sim_valor_chave1[12]=0;
 	}
-	if (valor_chave1[11]==1){
+	if (Sim_valor_chave1[11]==1){
         	window.open("/helpsim", "Help SCriWeb", "height=800,width=1000");
-	    	valor_chave1[11]=0;
+	    	Sim_valor_chave1[11]=0;
 	}
-	if (valor_chave1[10]==1){
+	if (Sim_valor_chave1[10]==1){
         	var modal1 = document.getElementById("myModal1");
 		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Config";	
@@ -57,7 +57,7 @@ function tBotao() {
 		btn.setAttribute('type','button');
 		btn.appendChild(document.createTextNode('OK'));
 		btn.onclick = function() {
-			Config_Socket_Sim(document.getElementById('input1').value);
+			Sim_Config_Socket(document.getElementById('input1').value);
 			localStorage.setItem("tela_largura", document.getElementById('input2').value);
 			localStorage.setItem("tela_altura", document.getElementById('input3').value);
 			modal1.style.display = "none";
@@ -77,11 +77,12 @@ function tBotao() {
 				modal1.style.display = "none";
 			}
 		}
-	    	valor_chave1[10]=0;
-		valor_chave1[5]=0;
-		valor_chave1[6]=1;
+	    	Sim_valor_chave1[10]=0;
+	    	Sim_valor_chave1[10]=0;
+	    	Sim_valor_chave1[5]=0;
+		Sim_valor_chave1[6]=1;
 	}
-	if (simEdicao==0 && valor_chave1[2]==1){
+	if (simEdicao==0 && Sim_valor_chave1[2]==1){
         	var inputCSV = document.createElement('input');
 	 	inputCSV.type = 'file';
 		inputCSV.accept = '.CSV';
@@ -91,9 +92,9 @@ function tBotao() {
 			leitorDeCSV2.readAsText(file);
 			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
 		};
-		Scomandos = 0;	
-		valor_chave1[5]=0;
-		valor_chave1[6]=1;
+		Sim_comandos = 0;	
+		Sim_valor_chave1[5]=0;
+		Sim_valor_chave1[6]=1;
 	}
 	if (simEdicao==0 && valor_chave1[3]==1){
 	    	let texto = '0_id, 1_tipo, 2_nome, 3_var_1, 4_var_2, 5_pos_x_inicial, 6_dpos_x, 7_pos_x_final, 8_pos_y_inicial, 9_dpos_y, 10_pos_y_final, 11_inc_x1, 12_inc_x2, 13_inc_y1, 14_inc_y2, 15_var1_dependente, 16_var2_dependente, 17_piscar, 18_tempo_pisca, 19_figura, 20_funcao, 21_reserva, 22_reserva, 23_reserva, 24_reserva \n';
@@ -125,17 +126,17 @@ function tBotao() {
         	let titulo ='SimScriWeb';
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
         	saveAs(blob, titulo + ".csv");
-        	valor_chave1[3]=0;
-		valor_chave1[5]=0;
-		valor_chave1[6]=1;
+        	Sim_valor_chave1[3]=0;
+		Sim_valor_chave1[5]=0;
+		Sim_valor_chave1[6]=1;
 	}
-	if (simEdicao==0 && valor_chave1[5]==1){
-		Scomandos = 1;
+	if (simEdicao==0 && Sim_valor_chave1[5]==1){
+		Sim_comandos = 1;
 	}
-	if (simEdicao==0 && valor_chave1[6]==1){
-		Scomandos = 0;
+	if (simEdicao==0 && Sim_valor_chave1[6]==1){
+		Sim_comandos = 0;
 	}
-	if (simEdicao==0 && valor_chave1[4]==1){
+	if (simEdicao==0 && Sim_valor_chave1[4]==1){
 		var modal1 = document.getElementById("myModal1");
 		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Download";	
@@ -166,45 +167,45 @@ function tBotao() {
 			}
 		}
 		
-		Scomandos = 0;
-		valor_chave1[4]=0;
-		valor_chave1[5]=0;
-		valor_chave1[6]=1;
+		Sim_comandos = 0;
+		Sim_valor_chave1[4]=0;
+		Sim_valor_chave1[5]=0;
+		Sim_valor_chave1[6]=1;
 	}
-	if (simEdicao==0 && valor_chave1[1]==1){
-		valor_chave1[1]=0;
-		Scomandos = 0;
+	if (simEdicao==0 && Sim_valor_chave1[1]==1){
+		Sim_valor_chave1[1]=0;
+		Sim_comandos = 0;
 		simEdicao = 1;
 	}
-	if (simEdicao==1 && valor_chave1[1]==1){
-		valor_chave1[1]=0;
-		Scomandos = 0;
-		valor_chave1[5]=0;
-		valor_chave1[6]=1;
+	if (simEdicao==1 && Sim_valor_chave1[1]==1){
+		Sim_valor_chave1[1]=0;
+		Sim_comandos = 0;
+		Sim_valor_chave1[5]=0;
+		Sim_valor_chave1[6]=1;
 		simEdicao = 0;
 	}
-	if (simEdicao==1 && valor_chave1[2]==1){
-		Scomandos = 2;
+	if (simEdicao==1 && Sim_valor_chave1[2]==1){
+		Sim_comandos = 2;
 	}
-	if (simEdicao==1 && valor_chave1[3]==1){
+	if (simEdicao==1 && Sim_valor_chave1[3]==1){
 		simFuncao1();
 	}
-	if (simEdicao==1 && valor_chave1[4]==1){
+	if (simEdicao==1 && Sim_valor_chave1[4]==1){
 		simFuncao2();
 	}
-	if (simEdicao==1 && valor_chave1[5]==1){
+	if (simEdicao==1 && Sim_valor_chave1[5]==1){
 		simFuncao3();
 	}
-	if (simEdicao==1 && valor_chave1[6]==1){
+	if (simEdicao==1 && Sim_valor_chave1[6]==1){
 		simFuncao4();
 	}
-	if (simEdicao==1 && valor_chave1[7]==1){
+	if (simEdicao==1 && Sim_valor_chave1[7]==1){
 		simFuncao5();
 	}
-	if (simEdicao==1 && valor_chave1[8]==1){
+	if (simEdicao==1 && Sim_valor_chave1[8]==1){
 		simFuncao6();
 	}
-	if (simEdicao==1 && valor_chave1[9]==1){
+	if (simEdicao==1 && Sim_valor_chave1[9]==1){
 		simFuncao7();
 	}
 
