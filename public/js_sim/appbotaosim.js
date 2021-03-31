@@ -9,7 +9,7 @@ var exemplos_nom = ['Alarme','Classificação','Corte e Vinco','Elevador','Eleva
 		
 //desenha os botoes
 function draw_botoessim() {
-    canvasA = document.getElementById("tela5");
+    canvasA = document.getElementById("tela6");
     contextA = canvasA.getContext("2d");
     canvasA.width = 75;
     canvasA.height = 570;
