@@ -1,16 +1,16 @@
 //=====================================================================================
 //Inicializa variaveis
 //=====================================================================================
-var Scanvas;
-var Scontext; 
-var SM = [];
-var SI = [];
-var SR = [];
-var SQ = [];
-var ST = [];
-var SC = [];
+var Sim_canvas;
+var Sim_context; 
+var Sim_M = [];
+var Sim_I = [];
+var Sim_R = [];
+var Sim_Q = [];
+var Sim_T = [];
+var Sim_C = [];
 
-var Scomandos = 0; // 0:stop, 1: run 2: edicao
+var Sim_comandos = 0; // 0:stop, 1: run 2: edicao
 var simulacao_set_inicial = 0;
 
 var Imagens =[];
@@ -35,11 +35,11 @@ var variavel;
 //Desenha area de trabalho em branco
 //=====================================================================================
 function draw_simulador_inicio() {
-	Scanvas = document.getElementById("tela6");
-	Scontext = Scanvas.getContext("2d");
+	Sim_canvas = document.getElementById("tela6");
+	Sim_context = Sim_canvas.getContext("2d");
 	
-	Scanvas.width = 650;//localStorage.tela_largura + 200; 
-	Scanvas.height = 525; // localStorage.tela_altura + 150;
+	Sim_canvas.width = 650;//localStorage.tela_largura + 200; 
+	Sim_canvas.height = 525; // localStorage.tela_altura + 150;
 	draw_simulador_fundo();
 	simulacao_set_inicial = 1;
 }
@@ -53,7 +53,7 @@ function cSimulador() {
 	var posicaox = parseInt(window.event.clientX-110);//-75);
   	if (LoadedImages>0) {
     	for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
-			if (Scomandos ==0 || Scomandos == 1) {
+			if (Sim_comandos ==0 || Sim_comandos == 1) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
 					if (Sim_endereco(ArrayObjStatic[index_var*20+1])==1) {
@@ -152,7 +152,7 @@ function atualiza_simulador() {
 	//simIhm();
 	            	
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++){
-		if (Scomandos == 1) {
+		if (Sim_comandos == 1) {
 			simTimer(ij);
 			simFigura(ij);
 		}
@@ -168,18 +168,18 @@ function atualiza_simulador() {
 			//LoadImageIndex(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
-			Scontext.font = ArrayObjStatic[ij*20+10]+'pt Arial';
-			Scontext.fillStyle = 'white';
-			Scontext.fillRect(ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6], 4*ArrayObjStatic[ij*20+10], -ArrayObjStatic[ij*20+10]);
-  			Scontext.fillStyle = ArrayObjStatic[ij*20+9];
-			Scontext.fillText(Sim_enderecoCT(ArrayObjStatic[ij*20+1],0),ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6]);
+			Sim_context.font = ArrayObjStatic[ij*20+10]+'pt Arial';
+			Sim_context.fillStyle = 'white';
+			Sim_context.fillRect(ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6], 4*ArrayObjStatic[ij*20+10], -ArrayObjStatic[ij*20+10]);
+  			Sim_context.fillStyle = ArrayObjStatic[ij*20+9];
+			Sim_context.fillText(Sim_enderecoCT(ArrayObjStatic[ij*20+1],0),ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6]);
 		}
 		if (ArrayObjStatic[ij*20+17] == 7) {
-			Scontext.fillStyle = ArrayObjStatic[ij*20+10];
+			Sim_context.fillStyle = ArrayObjStatic[ij*20+10];
 			var percentual = parseInt(Sim_enderecoCT(ArrayObjStatic[ij*20+1],0)*ArrayObjStatic[ij*20+7]/ ArrayObjStatic[ij*20+16]);
-			Scontext.fillRect(parseInt(ArrayObjDinamic[ij*10+3]), parseInt(ArrayObjDinamic[ij*10+4]), parseInt(ArrayObjStatic[ij*20+4]), parseInt(ArrayObjStatic[ij*20+7])-percentual);
-			Scontext.fillStyle = ArrayObjStatic[ij*20+12];
-			Scontext.fillRect(ArrayObjDinamic[ij*10+3], parseInt(ArrayObjDinamic[ij*10+4])+parseInt(ArrayObjStatic[ij*20+7])-parseInt(percentual), ArrayObjStatic[ij*20+4], percentual);
+			Sim_context.fillRect(parseInt(ArrayObjDinamic[ij*10+3]), parseInt(ArrayObjDinamic[ij*10+4]), parseInt(ArrayObjStatic[ij*20+4]), parseInt(ArrayObjStatic[ij*20+7])-percentual);
+			Sim_context.fillStyle = ArrayObjStatic[ij*20+12];
+			Sim_context.fillRect(ArrayObjDinamic[ij*10+3], parseInt(ArrayObjDinamic[ij*10+4])+parseInt(ArrayObjStatic[ij*20+7])-parseInt(percentual), ArrayObjStatic[ij*20+4], percentual);
 		} 
 		if (ArrayObjStatic[ij*20+17] == 1) {
 			funcaoLabel(ij);
@@ -191,23 +191,23 @@ function atualiza_simulador() {
 // Desenha o label e o quadro em volta
 //----------------------------------------------------------
 function funcaoLabel(apontador){
-	Scontext.font = ArrayObjStatic[apontador*20+10]+'pt Arial';
+	Sim_context.font = ArrayObjStatic[apontador*20+10]+'pt Arial';
 	var Llabel = ArrayLabel[ArrayObjDinamic[apontador*10+5]];
 	if (ArrayObjStatic[apontador*20+1] != '') {
 		if (Sim_endereco(ArrayObjStatic[apontador*20+1]) != 0)
-			Scontext.fillStyle = ArrayObjStatic[apontador*20+12];
+			Sim_context.fillStyle = ArrayObjStatic[apontador*20+12];
 		else
-			Scontext.fillStyle = ArrayObjStatic[apontador*20+11];
-		Scontext.fillRect(ArrayObjDinamic[apontador*10+3], ArrayObjDinamic[apontador*10+4],ArrayObjStatic[apontador*20+4],ArrayObjStatic[apontador*20+7]);	
-		Scontext.fillStyle = ArrayObjStatic[apontador*20+9];
+			Sim_context.fillStyle = ArrayObjStatic[apontador*20+11];
+		Sim_context.fillRect(ArrayObjDinamic[apontador*10+3], ArrayObjDinamic[apontador*10+4],ArrayObjStatic[apontador*20+4],ArrayObjStatic[apontador*20+7]);	
+		Sim_context.fillStyle = ArrayObjStatic[apontador*20+9];
 		//var LlabelX = parseInt(ArrayObjStatic[apontador*20+3]) + (parseInt(ArrayObjStatic[apontador*20+4])-(Llabel.length * parseInt(ArrayObjStatic[apontador*20+10])))/2;
 		var LlabelX = parseInt(ArrayObjStatic[apontador*20+3]) + (parseInt(ArrayObjStatic[apontador*20+4])-getTextWidth(Llabel,Scontext.font))/2;
 		var LlabelY = parseInt(ArrayObjStatic[apontador*20+6])+parseInt(ArrayObjStatic[apontador*20+10])+(parseInt(ArrayObjStatic[apontador*20+7])-parseInt(ArrayObjStatic[apontador*20+10]))/2;
-		Scontext.fillText(Llabel,LlabelX,LlabelY);	
+		Sim_context.fillText(Llabel,LlabelX,LlabelY);	
 	}	
 	else {
-		Scontext.fillStyle = ArrayObjStatic[apontador*20+9];
-		Scontext.fillText(Llabel,ArrayObjStatic[apontador*20+3] ,ArrayObjStatic[apontador*20+6]);
+		Sim_context.fillStyle = ArrayObjStatic[apontador*20+9];
+		Sim_context.fillText(Llabel,ArrayObjStatic[apontador*20+3] ,ArrayObjStatic[apontador*20+6]);
 	}
 }
 //------------------------------------------------------------------
@@ -215,8 +215,8 @@ function funcaoLabel(apontador){
 //https://www.it-swarm.dev/pt/javascript/calcular-largura-do-texto-com-javascript/958395213/
 //---------------------------------------------------------------------
 function getTextWidth(text, font) {
-    Scontext.font = font;
-    var metrics = Scontext.measureText(text);
+    Sim_context.font = font;
+    var metrics = Sim_context.measureText(text);
     return metrics.width;
 }
 //=====================================================================================
@@ -224,9 +224,9 @@ function getTextWidth(text, font) {
 //
 //=====================================================================================
 function ApagaImagem(index){
-	Scontext.fillStyle = 'white';
+	Sim_context.fillStyle = 'white';
 	if ((ArrayObjDinamic[index*10+3] != ArrayObjDinamic[index*10+7]) || (ArrayObjDinamic[index*10+4] != ArrayObjDinamic[index*10+8])){
-		Scontext.fillRect(ArrayObjDinamic[index*10+7], ArrayObjDinamic[index*10+8], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+		Sim_context.fillRect(ArrayObjDinamic[index*10+7], ArrayObjDinamic[index*10+8], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 		ArrayObjDinamic[index*10+7] = ArrayObjDinamic[index*10+3];
 		ArrayObjDinamic[index*10+8] = ArrayObjDinamic[index*10+4];
 	}
@@ -240,18 +240,18 @@ function simIhm() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
 	var linha = 70;
-	Scontext.lineWidth = 2;
-  	Scontext.fillStyle = 'white';
-  	Scontext.fillRect(780, 5, 310, 560);
-  	Scontext.font = '36pt Arial';
-  	Scontext.fillStyle = 'red';
-	Scontext.fillText(localStorage.num_clp1, 795, 60);
-	Scontext.fillStyle = 'black';
-  	Scontext.strokeRect(785, 10, 305, 555);
-  	Scontext.font = '16pt Arial';
-  	Scontext.fillStyle = 'black';
-  	Scontext.fillText('Mapa de Memória', 860, 40);
-  	Scontext.font = '9pt Arial';
+	Sim_context.lineWidth = 2;
+  	Sim_context.fillStyle = 'white';
+  	Sim_context.fillRect(780, 5, 310, 560);
+  	Sim_context.font = '36pt Arial';
+  	Sim_context.fillStyle = 'red';
+	Sim_context.fillText(localStorage.num_clp1, 795, 60);
+	Sim_context.fillStyle = 'black';
+  	Sim_context.strokeRect(785, 10, 305, 555);
+  	Sim_context.font = '16pt Arial';
+  	Sim_context.fillStyle = 'black';
+  	Sim_context.fillText('Mapa de Memória', 860, 40);
+  	Sim_context.font = '9pt Arial';
   	var num_linhas;
   	for (var funcao=0; funcao<6; funcao++) {
     		switch (parseInt(funcao)){
@@ -1089,11 +1089,11 @@ function Sim_draw_processo(fileArr) {
 					funcaoLabel(i-1);
 				}
 				if (ArrayObjStatic[(i-1)*20+17] == 6) {
-					Scontext.fillText(Sim_enderecoCT(ArrayObjStatic[(i-1)*20+1],0),ArrayObjStatic[(i-1)*20+3] ,ArrayObjStatic[(i-1)*20+6]);
+					Sim_context.fillText(Sim_enderecoCT(ArrayObjStatic[(i-1)*20+1],0),ArrayObjStatic[(i-1)*20+3] ,ArrayObjStatic[(i-1)*20+6]);
 				}
 				if (ArrayObjStatic[(i-1)*20+17] == 7) {
-					Scontext.fillStyle = 'blue';
-					Scontext.fillRect(ArrayObjDinamic[(i-1)*10+3], ArrayObjDinamic[(i-1)*10+4], ArrayObjStatic[(i-1)*20+4], ArrayObjStatic[(i-1)*20+7]);
+					Sim_context.fillStyle = 'blue';
+					Sim_context.fillRect(ArrayObjDinamic[(i-1)*10+3], ArrayObjDinamic[(i-1)*10+4], ArrayObjStatic[(i-1)*20+4], ArrayObjStatic[(i-1)*20+7]);
 				}
 			}
 		}
@@ -1117,8 +1117,8 @@ function Sim_draw_processo(fileArr) {
 function LoadImage(imagefile, ij) {
     	var image1 = new Image();
 	image1.onload = function() {
-        	Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
-		Imagens_Real[ij] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
+        	Sim_context.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
+		Imagens_Real[ij] =Sim_context.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
     	};
     	image1.src = imagefile;
     	Imagens[Imagens.length] = image1;
@@ -1126,9 +1126,9 @@ function LoadImage(imagefile, ij) {
 function LoadImage1(imagefile, ij) {
     	var image1 = new Image();
 	image1.onload = function() {
-    		Scontext.drawImage(Imagens1[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
+    		Sim_context.drawImage(Imagens1[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
 		Imagens1[ArrayObjDinamic[ij*10+5]] = image1;
-		Imagens1_Real[ij] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
+		Imagens1_Real[ij] =Sim_context.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
     	};	
     	image1.src = imagefile;
 	Imagens1[ArrayObjDinamic[ij*10+5]] = image1;
@@ -1136,9 +1136,9 @@ function LoadImage1(imagefile, ij) {
 function LoadImage2(imagefile, ij) {
    	var image1 = new Image();
 	image1.onload = function() {
-    		Scontext.drawImage(Imagens2[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
+    		Sim_context.drawImage(Imagens2[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
 		Imagens2[ArrayObjDinamic[ij*10+5]] = image1;
-		Imagens2_Real[ij] = Scontext.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
+		Imagens2_Real[ij] = Sim_context.getImageData(ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]); //684, 0, 784, 250);
     		
 	};	
     	image1.src = imagefile;
@@ -1148,13 +1148,13 @@ function LoadImageIndexX1(extensao, index) {
     	switch (extensao)
 	{
 	case 2:
-		Scontext.drawImage(Imagens1[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+		Sim_context.drawImage(Imagens1[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 		break;
 	case 3:
-		Scontext.drawImage(Imagens2[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+		Sim_context.drawImage(Imagens2[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 		break;
 	default:
-		Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+		Sim_context.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 	}
 }
 
@@ -1224,7 +1224,7 @@ function LoadImageIndexX1(extensao, index) {
 function LoadImageIndex(imagefile, index) {
     	var image1 = new Image();
 	image1.onload = function() {
-    		Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+    		Sim_context.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 	};
     	image1.src = imagefile;
     	Imagens[ArrayObjDinamic[index*10+5]] = image1;
@@ -1233,7 +1233,7 @@ function LoadImageIndex(imagefile, index) {
 function LoadImageX(imagefile, ij) {
     	var image1 = new Image();
 	image1.onload = function() {
-        	Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
+        	Sim_context.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
     	};
     	image1= Imagens[Imagens.length];
 }
@@ -1242,11 +1242,11 @@ function LoadImageX(imagefile, ij) {
 //Desenha area de trabalho em branco
 //=====================================================================================
 function draw_simulador_fundo(){
-	Scontext.lineWidth = 1;
-	Scontext.fillStyle = 'white';
-	Scontext.fillRect(1, 1, 569, 524);
-	Scontext.fillStyle = 'black';
-	Scontext.strokeRect(2, 2, 568, 523);
+	Sim_context.lineWidth = 1;
+	Sim_context.fillStyle = 'white';
+	Sim_context.fillRect(1, 1, 569, 524);
+	Sim_context.fillStyle = 'black';
+	Sim_context.strokeRect(2, 2, 568, 523);
 }
 
 //=====================================================================================
@@ -1271,7 +1271,7 @@ function inicializa_array(){
 // Apos leitura do alteracao doarquivo em appsimfuncao.js
 //=====================================================================================
 function redraw_processo() {
-	Scontext.font = '9pt Arial';
+	Sim_context.font = '9pt Arial';
 	var ponteiro = 0;
 	for(var i=0; i <(ArrayObjStatic.length/20); i++) {
 		if ((ArrayObjStatic[i*20+17] != 1) && (ArrayObjStatic[i*20+17] < 5)) {
@@ -1283,11 +1283,11 @@ function redraw_processo() {
 				funcaoLabel(i);
 			}
 			if (ArrayObjStatic[i*20+17] == 6) {
-				Scontext.fillText(Sim_enderecoCT(ArrayObjStatic[i*20+1],0),ArrayObjStatic[i*20+3] ,ArrayObjStatic[i*20+6]);
+				Sim_context.fillText(Sim_enderecoCT(ArrayObjStatic[i*20+1],0),ArrayObjStatic[i*20+3] ,ArrayObjStatic[i*20+6]);
 			}
 			if (ArrayObjStatic[i*20+17] == 7) {
-				Scontext.fillStyle = 'blue';
-				Scontext.fillRect(ArrayObjDinamic[i*10+3], ArrayObjDinamic[i*10+4], ArrayObjStatic[i*20+4], ArrayObjStatic[i*20+7]);
+				Sim_context.fillStyle = 'blue';
+				Sim_context.fillRect(ArrayObjDinamic[i*10+3], ArrayObjDinamic[i*10+4], ArrayObjStatic[i*20+4], ArrayObjStatic[i*20+7]);
 			}
 		}
 	}
