@@ -10,7 +10,7 @@ var R = [];
 var Q = [];
 var T = [];
 var C = [];
-var Sim_Comandos = 0; // 0:stop, 1: run 2: edicao
+//var Sim_Comandos = 0; // 0:stop, 1: run 2: edicao
 
 var Imagens =[];
 var LoadedImages = 0;
@@ -44,7 +44,7 @@ function Sim_Simulador_Click() {
 	var posicaox = parseInt(window.event.clientX-70);
   	if (LoadedImages>0) {
     	for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
-			if (Sim_Comandos ==0 || Sim_Comandos == 1) {
+			if (comandos > 0) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
 					if (Sim_endereco(ArrayObjStatic[index_var*20+1])==1) {
@@ -99,7 +99,7 @@ function Sim_Simulador_Click() {
 				}			
 			}
 			//ENtra em modo ediçao
-			if ((Sim_Comandos==2) && ((ArrayObjStatic[index_var*20+17]!=1 && ArrayObjStatic[index_var*20+17]!=6 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1) ||
+			if ((comandos >0) && ((ArrayObjStatic[index_var*20+17]!=1 && ArrayObjStatic[index_var*20+17]!=6 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1) ||
 			(ArrayObjStatic[index_var*20+17]==1 && verificaTexto(posicaox, -1*ArrayObjStatic[index_var*20+10]*ArrayImagens[ArrayObjDinamic[index_var*10+5]].length, 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1) ||
 			(ArrayObjStatic[index_var*20+17]==6 && verificaTexto(posicaox, -5*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1))) {
 				simApontador(index_var);
@@ -143,7 +143,7 @@ function atualiza_simulador() {
 	Sim_Ihm();
 	            	
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++){
-		if (Sim_Comandos == 1) {
+		if (comandos > 0) {
 			simTimer(ij);
 			simFigura(ij);
 		}
