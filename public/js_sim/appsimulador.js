@@ -1,8 +1,8 @@
 //=====================================================================================
 //Inicializa variaveis
 //=====================================================================================
-var Scanvas;
-var Scontext; //, Scontext1;
+var Sim_Canvas;
+var Sim_Context; //, Sim_Context1;
 //document.addEventListener('mousemove', mouse_move);
 var M = [];
 var I = [];
@@ -10,7 +10,7 @@ var R = [];
 var Q = [];
 var T = [];
 var C = [];
-var comandos = 0; // 0:stop, 1: run 2: edicao
+var Sim_Comandos = 0; // 0:stop, 1: run 2: edicao
 
 var Imagens =[];
 var LoadedImages = 0;
@@ -19,8 +19,8 @@ var ArrayImagens = [];
 var ArrayLabel = [];
 var ArrayObjDinamic = [];
 var ArrayObjStatic =[];
-var simPath;
-var simPathInicial = 'scriweb/simulacao/';
+var Sim_Path;
+var Sim_PathInicial = 'scriweb/simulacao/';
 var FuncaoMatriz =[];
 var tempo = window.setInterval(AtualizaPorTempo, 500);
 var variavel;
@@ -28,41 +28,41 @@ var variavel;
 //Inicializa Canvas
 //Desenha area de trabalho em branco
 //=====================================================================================
-function draw_simulador_inicio() {
-	Scanvas = document.getElementById("tela6");
-	Scontext = Scanvas.getContext("2d");
+function Sim_Draw_Inicio() {
+	Sim_Canvas = document.getElementById("tela6");
+	Sim_Context = Sim_Canvas.getContext("2d");
 	
-	Scanvas.width = 1200;//localStorage.tela_largura + 200; 
-	Scanvas.height = 570; // localStorage.tela_altura + 150;
+	Sim_Canvas.width = 570;//localStorage.tela_largura + 200; 
+	Sim_Canvas.height = 525; // localStorage.tela_altura + 150;
 }
 
 //=====================================================================================
 //Inicializa Canvas
 //Click com omouse
 //=====================================================================================
-function cSimulador() {
+function Sim_Simulador_Click() {
 	var posicaoy = parseInt(window.event.clientY-40);//-5);
 	var posicaox = parseInt(window.event.clientX-110);//-75);
   	if (LoadedImages>0) {
     	for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
-			if (comandos ==0 || comandos == 1) {
+			if (Sim_Comandos ==0 || Sim_Comandos == 1) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
-					if (endereco(ArrayObjStatic[index_var*20+1])==1) {
-						escreve_endereco(ArrayObjStatic[index_var*20+1],0);
+					if (Sim_endereco(ArrayObjStatic[index_var*20+1])==1) {
+						Sim_escreve_endereco(ArrayObjStatic[index_var*20+1],0);
 					}
 					else {
-						escreve_endereco(ArrayObjStatic[index_var*20+1],1);
+						Sim_escreve_endereco(ArrayObjStatic[index_var*20+1],1);
 					}
 				}
  
 				if (ArrayObjStatic[index_var*20+17]==4 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
-					if (endereco(ArrayObjStatic[index_var*20+1])==1) {
-						escreve_endereco(ArrayObjStatic[index_var*20+1],0);
+					if (Sim_endereco(ArrayObjStatic[index_var*20+1])==1) {
+						Sim_escreve_endereco(ArrayObjStatic[index_var*20+1],0);
 					}
 					else {
-						escreve_endereco(ArrayObjStatic[index_var*20+1],1);
+						Sim_escreve_endereco(ArrayObjStatic[index_var*20+1],1);
 					}
 				}
 				if (ArrayObjStatic[index_var*20+17]==6) {
@@ -74,7 +74,7 @@ function cSimulador() {
 						ICampo.style.left = " "+ArrayObjDinamic[index_var*10+3] + "px";
 						ICampo.style.top = " "+ArrayObjDinamic[index_var*10+4]  + "px";
 						document.getElementById('label_input').innerHTML = ArrayObjStatic[index_var*20+1];
-						document.getElementById('input_ladder').value = enderecoCT(ArrayObjStatic[index_var*20+1],0);
+						document.getElementById('input_ladder').value = Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0);
 						CInput.focus();
 					}
 				}
@@ -100,7 +100,7 @@ function cSimulador() {
 				}			
 			}
 			//ENtra em modo ediçao
-			if ((comandos==2) && ((ArrayObjStatic[index_var*20+17]!=1 && ArrayObjStatic[index_var*20+17]!=6 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1) ||
+			if ((Sim_Comandos==2) && ((ArrayObjStatic[index_var*20+17]!=1 && ArrayObjStatic[index_var*20+17]!=6 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1) ||
 			(ArrayObjStatic[index_var*20+17]==1 && verificaTexto(posicaox, -1*ArrayObjStatic[index_var*20+10]*ArrayImagens[ArrayObjDinamic[index_var*10+5]].length, 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1) ||
 			(ArrayObjStatic[index_var*20+17]==6 && verificaTexto(posicaox, -5*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1))) {
 				simApontador(index_var);
@@ -117,11 +117,11 @@ function eInputS(event){
 	if (event.keyCode == 13) { //Tecla enter
 		var ICampo = document.getElementById('CampoS');
 		var CInput = document.getElementById('input_ladder');
-		escreveCT(ArrayObjStatic[variavel*20+1], CInput.value, 0);
-		if(enderecoCT(ArrayObjStatic[variavel*20+1],0) > ArrayObjStatic[variavel*20+16])
-			escreveCT(ArrayObjStatic[variavel*20+1],parseInt(ArrayObjStatic[variavel*20+16]),0);
-		if(enderecoCT(ArrayObjStatic[variavel*20+1],0) < 0)
-			escreveCT(ArrayObjStatic[variavel*20+1],0,0);
+		Sim_Escreve_CT(ArrayObjStatic[variavel*20+1], CInput.value, 0);
+		if(Sim_Endereco_CT(ArrayObjStatic[variavel*20+1],0) > ArrayObjStatic[variavel*20+16])
+			Sim_Escreve_CT(ArrayObjStatic[variavel*20+1],parseInt(ArrayObjStatic[variavel*20+16]),0);
+		if(Sim_Endereco_CT(ArrayObjStatic[variavel*20+1],0) < 0)
+			Sim_Escreve_CT(ArrayObjStatic[variavel*20+1],0,0);
 
 		ICampo.style.left = "1100px";
 		ICampo.style.top = "600px";
@@ -141,10 +141,10 @@ function AtualizaPorTempo() {
 //Disparado ao receber SocketIO
 //==============================================		=======================================
 function atualiza_simulador() {
-	simIhm();
+	Sim_Ihm();
 	            	
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++){
-		if (comandos == 1) {
+		if (Sim_Comandos == 1) {
 			simTimer(ij);
 			simFigura(ij);
 		}
@@ -155,21 +155,21 @@ function atualiza_simulador() {
 		}
 
 		if ((ArrayObjStatic[ij*20+17] != 1) && (ArrayObjStatic[ij*20+17] < 5)) {
-			LoadImageIndex(simPath + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
+			LoadImageIndex(Sim_Path + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
-			Scontext.font = ArrayObjStatic[ij*20+10]+'pt Arial';
-			Scontext.fillStyle = 'white';
-			Scontext.fillRect(ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6], 4*ArrayObjStatic[ij*20+10], -ArrayObjStatic[ij*20+10]);
-  			Scontext.fillStyle = ArrayObjStatic[ij*20+9];
-			Scontext.fillText(enderecoCT(ArrayObjStatic[ij*20+1],0),ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6]);
+			Sim_Context.font = ArrayObjStatic[ij*20+10]+'pt Arial';
+			Sim_Context.fillStyle = 'white';
+			Sim_Context.fillRect(ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6], 4*ArrayObjStatic[ij*20+10], -ArrayObjStatic[ij*20+10]);
+  			Sim_Context.fillStyle = ArrayObjStatic[ij*20+9];
+			Sim_Context.fillText(Sim_enderecoCT(ArrayObjStatic[ij*20+1],0),ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6]);
 		}
 		if (ArrayObjStatic[ij*20+17] == 7) {
-			Scontext.fillStyle = ArrayObjStatic[ij*20+10];
-			var percentual = parseInt(enderecoCT(ArrayObjStatic[ij*20+1],0)*ArrayObjStatic[ij*20+7]/ ArrayObjStatic[ij*20+16]);
-			Scontext.fillRect(parseInt(ArrayObjDinamic[ij*10+3]), parseInt(ArrayObjDinamic[ij*10+4]), parseInt(ArrayObjStatic[ij*20+4]), parseInt(ArrayObjStatic[ij*20+7])-percentual);
-			Scontext.fillStyle = ArrayObjStatic[ij*20+12];
-			Scontext.fillRect(ArrayObjDinamic[ij*10+3], parseInt(ArrayObjDinamic[ij*10+4])+parseInt(ArrayObjStatic[ij*20+7])-parseInt(percentual), ArrayObjStatic[ij*20+4], percentual);
+			Sim_Context.fillStyle = ArrayObjStatic[ij*20+10];
+			var percentual = parseInt(Sim_enderecoCT(ArrayObjStatic[ij*20+1],0)*ArrayObjStatic[ij*20+7]/ ArrayObjStatic[ij*20+16]);
+			Sim_Context.fillRect(parseInt(ArrayObjDinamic[ij*10+3]), parseInt(ArrayObjDinamic[ij*10+4]), parseInt(ArrayObjStatic[ij*20+4]), parseInt(ArrayObjStatic[ij*20+7])-percentual);
+			Sim_Context.fillStyle = ArrayObjStatic[ij*20+12];
+			Sim_Context.fillRect(ArrayObjDinamic[ij*10+3], parseInt(ArrayObjDinamic[ij*10+4])+parseInt(ArrayObjStatic[ij*20+7])-parseInt(percentual), ArrayObjStatic[ij*20+4], percentual);
 		} 
 		if (ArrayObjStatic[ij*20+17] == 1) {
 			funcaoLabel(ij);
@@ -181,23 +181,23 @@ function atualiza_simulador() {
 // Desenha o label e o quadro em volta
 //----------------------------------------------------------
 function funcaoLabel(apontador){
-	Scontext.font = ArrayObjStatic[apontador*20+10]+'pt Arial';
+	Sim_Context.font = ArrayObjStatic[apontador*20+10]+'pt Arial';
 	var Llabel = ArrayLabel[ArrayObjDinamic[apontador*10+5]];
 	if (ArrayObjStatic[apontador*20+1] != '') {
-		if (endereco(ArrayObjStatic[apontador*20+1]) != 0)
-			Scontext.fillStyle = ArrayObjStatic[apontador*20+12];
+		if (Sim_endereco(ArrayObjStatic[apontador*20+1]) != 0)
+			Sim_Context.fillStyle = ArrayObjStatic[apontador*20+12];
 		else
-			Scontext.fillStyle = ArrayObjStatic[apontador*20+11];
-		Scontext.fillRect(ArrayObjDinamic[apontador*10+3], ArrayObjDinamic[apontador*10+4],ArrayObjStatic[apontador*20+4],ArrayObjStatic[apontador*20+7]);	
-		Scontext.fillStyle = ArrayObjStatic[apontador*20+9];
+			Sim_Context.fillStyle = ArrayObjStatic[apontador*20+11];
+		Sim_Context.fillRect(ArrayObjDinamic[apontador*10+3], ArrayObjDinamic[apontador*10+4],ArrayObjStatic[apontador*20+4],ArrayObjStatic[apontador*20+7]);	
+		Sim_Context.fillStyle = ArrayObjStatic[apontador*20+9];
 		//var LlabelX = parseInt(ArrayObjStatic[apontador*20+3]) + (parseInt(ArrayObjStatic[apontador*20+4])-(Llabel.length * parseInt(ArrayObjStatic[apontador*20+10])))/2;
-		var LlabelX = parseInt(ArrayObjStatic[apontador*20+3]) + (parseInt(ArrayObjStatic[apontador*20+4])-getTextWidth(Llabel,Scontext.font))/2;
+		var LlabelX = parseInt(ArrayObjStatic[apontador*20+3]) + (parseInt(ArrayObjStatic[apontador*20+4])-getTextWidth(Llabel,Sim_Context.font))/2;
 		var LlabelY = parseInt(ArrayObjStatic[apontador*20+6])+parseInt(ArrayObjStatic[apontador*20+10])+(parseInt(ArrayObjStatic[apontador*20+7])-parseInt(ArrayObjStatic[apontador*20+10]))/2;
-		Scontext.fillText(Llabel,LlabelX,LlabelY);	
+		Sim_Context.fillText(Llabel,LlabelX,LlabelY);	
 	}	
 	else {
-		Scontext.fillStyle = ArrayObjStatic[apontador*20+9];
-		Scontext.fillText(Llabel,ArrayObjStatic[apontador*20+3] ,ArrayObjStatic[apontador*20+6]);
+		Sim_Context.fillStyle = ArrayObjStatic[apontador*20+9];
+		Sim_Context.fillText(Llabel,ArrayObjStatic[apontador*20+3] ,ArrayObjStatic[apontador*20+6]);
 	}
 }
 //------------------------------------------------------------------
@@ -205,8 +205,8 @@ function funcaoLabel(apontador){
 //https://www.it-swarm.dev/pt/javascript/calcular-largura-do-texto-com-javascript/958395213/
 //---------------------------------------------------------------------
 function getTextWidth(text, font) {
-    Scontext.font = font;
-    var metrics = Scontext.measureText(text);
+    Sim_Context.font = font;
+    var metrics = Sim_Context.measureText(text);
     return metrics.width;
 }
 //=====================================================================================
@@ -214,9 +214,9 @@ function getTextWidth(text, font) {
 //
 //=====================================================================================
 function ApagaImagem(index){
-	Scontext.fillStyle = 'white';
+	Sim_Context.fillStyle = 'white';
 	if ((ArrayObjDinamic[index*10+3] != ArrayObjDinamic[index*10+7]) || (ArrayObjDinamic[index*10+4] != ArrayObjDinamic[index*10+8])){
-		Scontext.fillRect(ArrayObjDinamic[index*10+7], ArrayObjDinamic[index*10+8], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+		Sim_Context.fillRect(ArrayObjDinamic[index*10+7], ArrayObjDinamic[index*10+8], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 		ArrayObjDinamic[index*10+7] = ArrayObjDinamic[index*10+3];
 		ArrayObjDinamic[index*10+8] = ArrayObjDinamic[index*10+4];
 	}
@@ -226,110 +226,110 @@ function ApagaImagem(index){
 //Mostra um painel com todas as variáveis do sistema
 //Visualiza as variáveis do sistema
 //=====================================================================================
-function simIhm() {
+function Sim_Ihm() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
 	var linha = 70;
-	Scontext.lineWidth = 2;
-  	Scontext.fillStyle = 'white';
-  	Scontext.fillRect(780, 5, 310, 560);
-  	Scontext.font = '36pt Arial';
-  	Scontext.fillStyle = 'red';
-	Scontext.fillText(localStorage.num_clp1, 795, 60);
-	Scontext.fillStyle = 'black';
-  	Scontext.strokeRect(785, 10, 305, 555);
-  	Scontext.font = '16pt Arial';
-  	Scontext.fillStyle = 'black';
-  	Scontext.fillText('Mapa de Memória', 860, 40);
-  	Scontext.font = '9pt Arial';
+	Sim_Context.lineWidth = 2;
+  	Sim_Context.fillStyle = 'white';
+  	Sim_Context.fillRect(780, 5, 310, 560);
+  	Sim_Context.font = '36pt Arial';
+  	Sim_Context.fillStyle = 'red';
+	Sim_Context.fillText(localStorage.num_clp1, 795, 60);
+	Sim_Context.fillStyle = 'black';
+  	Sim_Context.strokeRect(785, 10, 305, 555);
+  	Sim_Context.font = '16pt Arial';
+  	Sim_Context.fillStyle = 'black';
+  	Sim_Context.fillText('Mapa de Memória', 860, 40);
+  	Sim_Context.font = '9pt Arial';
   	var num_linhas;
   	for (var funcao=0; funcao<6; funcao++) {
     		switch (parseInt(funcao)){
       		case 0:
-        		Scontext.fillStyle = 'black';
-        		Scontext.fillRect(790, linha-5, 60, 5);
-        		Scontext.fillText('ENTRADAS', 870, linha);
-        		Scontext.fillRect(955, linha-5, 60, 5);
-        		Scontext.fillRect(1025, linha-5, 60, 5);
+        		Sim_Context.fillStyle = 'black';
+        		Sim_Context.fillRect(790, linha-5, 60, 5);
+        		Sim_Context.fillText('ENTRADAS', 870, linha);
+        		Sim_Context.fillRect(955, linha-5, 60, 5);
+        		Sim_Context.fillRect(1025, linha-5, 60, 5);
         		tamanho_array = I.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
-        		Scontext.fillText('MSB', 790,linha);
-        		Scontext.fillText('Valor binário', 870,linha);
-        		Scontext.fillText('LSB', 990,linha);
-        		Scontext.fillText('Decimal', 1035,linha);
+        		Sim_Context.fillText('MSB', 790,linha);
+        		Sim_Context.fillText('Valor binário', 870,linha);
+        		Sim_Context.fillText('LSB', 990,linha);
+        		Sim_Context.fillText('Decimal', 1035,linha);
 			linha = linha + 15;
         		break;
       		case 1:
-        		Scontext.fillStyle = 'black';
-        		Scontext.fillRect(790, linha-5, 60, 5);
-        		Scontext.fillText('SAIDAS', 880, linha);
-        		Scontext.fillRect(955, linha-5, 60, 5);
-        		Scontext.fillRect(1025, linha-5, 60, 5);
+        		Sim_Context.fillStyle = 'black';
+        		Sim_Context.fillRect(790, linha-5, 60, 5);
+        		Sim_Context.fillText('SAIDAS', 880, linha);
+        		Sim_Context.fillRect(955, linha-5, 60, 5);
+        		Sim_Context.fillRect(1025, linha-5, 60, 5);
         		tamanho_array = Q.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
-        		Scontext.fillText('MSB', 790,linha);
-        		Scontext.fillText('Valor binário', 870,linha);
-        		Scontext.fillText('LSB', 990,linha);
-        		Scontext.fillText('Decimal', 1035,linha);
+        		Sim_Context.fillText('MSB', 790,linha);
+        		Sim_Context.fillText('Valor binário', 870,linha);
+        		Sim_Context.fillText('LSB', 990,linha);
+        		Sim_Context.fillText('Decimal', 1035,linha);
         		linha = linha + 15;
         		break;
       		case 2:
-        		Scontext.fillStyle = 'black';
-        		Scontext.fillRect(790, linha-5, 60, 5);
-        		Scontext.fillText('MEMÓRIAS', 870, linha);
-        		Scontext.fillRect(955, linha-5, 60, 5);
-        		Scontext.fillRect(1025, linha-5, 60, 5);
+        		Sim_Context.fillStyle = 'black';
+        		Sim_Context.fillRect(790, linha-5, 60, 5);
+        		Sim_Context.fillText('MEMÓRIAS', 870, linha);
+        		Sim_Context.fillRect(955, linha-5, 60, 5);
+        		Sim_Context.fillRect(1025, linha-5, 60, 5);
         		tamanho_array = M.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
-        		Scontext.fillText('MSB', 790,linha);
-        		Scontext.fillText('Valor binário', 870,linha);
-        		Scontext.fillText('LSB', 990,linha);
-        		Scontext.fillText('Decimal', 1035,linha);
+        		Sim_Context.fillText('MSB', 790,linha);
+        		Sim_Context.fillText('Valor binário', 870,linha);
+        		Sim_Context.fillText('LSB', 990,linha);
+        		Sim_Context.fillText('Decimal', 1035,linha);
         		linha = linha + 15;
         		break;
       		case 3:
-        		Scontext.fillStyle = 'black';
-        		Scontext.fillRect(790, linha-5, 60, 5);
-        		Scontext.fillText('TIMERS', 880, linha);
-       			Scontext.fillRect(955, linha-5, 60, 5);
+        		Sim_Context.fillStyle = 'black';
+        		Sim_Context.fillRect(790, linha-5, 60, 5);
+        		Sim_Context.fillText('TIMERS', 880, linha);
+       			Sim_Context.fillRect(955, linha-5, 60, 5);
         		tamanho_array = T.length;
         		num_linhas = parseInt(tamanho_array / 3);
         		linha = linha + 15;
-        		Scontext.fillText('Tem', 790,linha);
-        		Scontext.fillText('bit', 870,linha);
-        		Scontext.fillText('PV', 920,linha);
-        		Scontext.fillText('SP', 970,linha);
+        		Sim_Context.fillText('Tem', 790,linha);
+        		Sim_Context.fillText('bit', 870,linha);
+        		Sim_Context.fillText('PV', 920,linha);
+        		Sim_Context.fillText('SP', 970,linha);
         		linha = linha + 15;
         		break;
 		case 4:
-        		Scontext.fillStyle = 'black';
-        		Scontext.fillRect(790, linha-5, 60, 5);
-        		Scontext.fillText('CONTADORES', 860, linha);
-        		Scontext.fillRect(955, linha-5, 60, 5);
+        		Sim_Context.fillStyle = 'black';
+        		Sim_Context.fillRect(790, linha-5, 60, 5);
+        		Sim_Context.fillText('CONTADORES', 860, linha);
+        		Sim_Context.fillRect(955, linha-5, 60, 5);
         		tamanho_array = C.length;
         		num_linhas = parseInt(tamanho_array / 4);
         		linha = linha + 15;
-        		Scontext.fillText('Cont', 790,linha);
-        		Scontext.fillText('bit', 845,linha);
-        		Scontext.fillText('PV', 895,linha);
-        		Scontext.fillText('SP', 945,linha);
-        		Scontext.fillText('AUX', 990,linha);
+        		Sim_Context.fillText('Cont', 790,linha);
+        		Sim_Context.fillText('bit', 845,linha);
+        		Sim_Context.fillText('PV', 895,linha);
+        		Sim_Context.fillText('SP', 945,linha);
+        		Sim_Context.fillText('AUX', 990,linha);
         		linha = linha + 15;
         		break;
       		case 5:
-        		Scontext.fillStyle = 'black';
-        		Scontext.fillRect(790, linha-5, 60, 5);
-        		Scontext.fillText('RAMAIS', 880, linha);
-        		Scontext.fillRect(955, linha-5, 60, 5);
+        		Sim_Context.fillStyle = 'black';
+        		Sim_Context.fillRect(790, linha-5, 60, 5);
+        		Sim_Context.fillText('RAMAIS', 880, linha);
+        		Sim_Context.fillRect(955, linha-5, 60, 5);
         		tamanho_array = R.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
-        		Scontext.fillText('MSB', 790,linha);
-        		Scontext.fillText('Valor binário', 870,linha);
-        		Scontext.fillText('LSB', 990,linha);
+        		Sim_Context.fillText('MSB', 790,linha);
+        		Sim_Context.fillText('Valor binário', 870,linha);
+        		Sim_Context.fillText('LSB', 990,linha);
         		linha = linha + 15;
         		break;
 		default:
@@ -339,62 +339,62 @@ function simIhm() {
     		var n_posicao;
     		for (var n_linhas=0; n_linhas <= num_linhas; n_linhas++){
       			posicao = 0;
-      			Scontext.fillStyle = 'green';
+      			Sim_Context.fillStyle = 'green';
       			if (n_linhas < num_linhas){
         			if (funcao <3){
-        				Scontext.fillText(tipo_funcao[funcao]+n_linhas+'.15', 790,linha);
+        				Sim_Context.fillText(tipo_funcao[funcao]+n_linhas+'.15', 790,linha);
         				n_posicao = (n_linhas * 16) + posicao;
         			}
         			if (funcao==5) {
         				n_posicao = (n_linhas * 16) + posicao;
-        				Scontext.fillText(tipo_funcao[funcao]+(n_posicao+15), 790,linha);
+        				Sim_Context.fillText(tipo_funcao[funcao]+(n_posicao+15), 790,linha);
         			}
       			}
       			else  {
         			if (funcao <3){
-        				Scontext.fillText(tipo_funcao[funcao]+n_linhas+'.'+((tamanho_array%16)-1), 790,linha);
+        				Sim_Context.fillText(tipo_funcao[funcao]+n_linhas+'.'+((tamanho_array%16)-1), 790,linha);
         				n_posicao = (n_linhas * 16) + posicao;
         			}
         			if (funcao==5) {
         				n_posicao = (n_linhas * 16) + posicao;
-        				Scontext.fillText(tipo_funcao[funcao]+(n_posicao + (tamanho_array%16)-1), 790,linha);
+        				Sim_Context.fillText(tipo_funcao[funcao]+(n_posicao + (tamanho_array%16)-1), 790,linha);
         			}
       			}
       			if(funcao==4){
-        			Scontext.fillText(tipo_funcao[funcao]+n_linhas, 790,linha);
+        			Sim_Context.fillText(tipo_funcao[funcao]+n_linhas, 790,linha);
         			n_posicao = (n_linhas * 4) + posicao;
       			}
       			if(funcao==3){
-        			Scontext.fillText(tipo_funcao[funcao]+n_linhas, 790,linha);
+        			Sim_Context.fillText(tipo_funcao[funcao]+n_linhas, 790,linha);
         			n_posicao = (n_linhas * 3) + posicao;
       			}
       			do {
         			switch (parseInt(funcao)){
         			case 0:
-        				Scontext.fillStyle = 'red';
-        				Scontext.fillText(I[n_posicao], 980-(posicao*10),linha);
+        				Sim_Context.fillStyle = 'red';
+        				Sim_Context.fillText(I[n_posicao], 980-(posicao*10),linha);
         				break;
         			case 1:
-        				Scontext.fillStyle = 'red';
-        				Scontext.fillText(Q[n_posicao], 980-(posicao*10),linha);
+        				Sim_Context.fillStyle = 'red';
+        				Sim_Context.fillText(Q[n_posicao], 980-(posicao*10),linha);
         				break;
         			case 2:
-        				Scontext.fillStyle = 'red';
-        				Scontext.fillText(M[n_posicao], 980-(posicao*10),linha);
+        				Sim_Context.fillStyle = 'red';
+        				Sim_Context.fillText(M[n_posicao], 980-(posicao*10),linha);
         				break;
         			case 5:
-        				Scontext.fillStyle = 'red';
-        				Scontext.fillText(R[n_posicao], 980-(posicao*10),linha);
+        				Sim_Context.fillStyle = 'red';
+        				Sim_Context.fillText(R[n_posicao], 980-(posicao*10),linha);
         				break;
         			case 4:
-        				Scontext.fillStyle = 'red';
-        				Scontext.fillText(C[n_posicao], 850+(posicao*50),linha);
+        				Sim_Context.fillStyle = 'red';
+        				Sim_Context.fillText(C[n_posicao], 850+(posicao*50),linha);
         				if (posicao >2)
         					posicao = 15;
         				break;
         			case 3:
-        				Scontext.fillStyle = 'red';
-        				Scontext.fillText(T[n_posicao], 875+(posicao*50),linha);
+        				Sim_Context.fillStyle = 'red';
+        				Sim_Context.fillText(T[n_posicao], 875+(posicao*50),linha);
         				if (posicao >1)
         					posicao = 15;
         				break;
@@ -406,14 +406,14 @@ function simIhm() {
       			} while((n_posicao < tamanho_array) && (posicao < 15));
 
       			if (funcao<3) {
-        			Scontext.fillStyle = 'green';
-        			Scontext.fillText(tipo_funcao[funcao]+n_linhas+'.0 - ' +tipo_funcao[funcao]+n_linhas+' = ', 990,linha);
-        			Scontext.fillStyle = 'red';
-        			Scontext.fillText(enderecoCT(tipo_funcao[funcao]+n_linhas,0), 1060,linha);
+        			Sim_Context.fillStyle = 'green';
+        			Sim_Context.fillText(tipo_funcao[funcao]+n_linhas+'.0 - ' +tipo_funcao[funcao]+n_linhas+' = ', 990,linha);
+        			Sim_Context.fillStyle = 'red';
+        			Sim_Context.fillText(Sim_enderecoCT(tipo_funcao[funcao]+n_linhas,0), 1060,linha);
       			}
       			if (funcao==5) {
-        			Scontext.fillStyle = 'green';
-        			Scontext.fillText(tipo_funcao[funcao]+(n_linhas*16), 990,linha);
+        			Sim_Context.fillStyle = 'green';
+        			Sim_Context.fillText(tipo_funcao[funcao]+(n_linhas*16), 990,linha);
       			}
       			linha += 15;
       			if (n_posicao >= tamanho_array)
@@ -425,7 +425,7 @@ function simIhm() {
 //======================================================================
 //retira o valor da funcao Q/E/T/C/M
 //=======================================================================
-function endereco(Aux_data){
+function Sim_Endereco(Aux_data){
 	var tamanho = Aux_data.length;
 	var negacao = 0;
 	var index;
@@ -499,18 +499,18 @@ function endereco(Aux_data){
 
 //======================================================================
 // Escole variavel Analogica ou Digital
-function escreve(Aux_data, valor)
+function Sim_Escreve(Aux_data, valor)
 {
 	if( Aux_data.indexOf('.') != -1)
-		escreve_endereco(Aux_data,valor);
+		Sim_escreve_endereco(Aux_data,valor);
 	else
-		escreveCT(Aux_data,valor);
+		Sim_Escreve_CT(Aux_data,valor);
 }
 
 //======================================================================
 //ESCREVE o valor da funcao Q/E/M
 //=======================================================================
-function escreve_endereco(Aux_data, valor)
+function Sim_escreve_endereco(Aux_data, valor)
 {
 	var index;
 	if (Aux_data.charAt(0) != 'R' && Aux_data.charAt(0) != 'C' && Aux_data.charAt(0) != 'T'){
@@ -551,7 +551,7 @@ function escreve_endereco(Aux_data, valor)
 //======================================================================
 //ESCREVE o valor da funcao T/C
 //=======================================================================
-function escreveCT(Aux_data, valor, index1)
+function Sim_Escreve_CT(Aux_data, valor, index1)
 {
 	var index;
 	if (Aux_data.charAt(0) != 'R' && Aux_data.charAt(0) != 'C' && Aux_data.charAt(0) != 'T'){
@@ -605,7 +605,7 @@ function escreveCT(Aux_data, valor, index1)
 //======================================================================
 //retira o valor da funcao T/C
 //=======================================================================
-function enderecoCT(Aux_data, index1) {
+function Sim_Endereco_CT(Aux_data, index1) {
 	var tamanho = Aux_data.length;
 	var index;
 	var retorno;
@@ -651,10 +651,10 @@ function enderecoCT(Aux_data, index1) {
 			retorno = (index1==0) ? parseInt(ArrayObjDinamic[index*10+4]) : parseInt(ArrayObjDinamic[index*10+4])+parseInt(ArrayObjStatic[index*20+7]);
 			break;
 		case 'D':
-			retorno = enderecoCT(ArrayObjStatic[index*20+1], 0);
+			retorno = Sim_Endereco_CT(ArrayObjStatic[index*20+1], 0);
 			break;
 		case 'U':
-			retorno = enderecoCT(ArrayObjStatic[index*20+1], 0);
+			retorno = Sim_Endereco_CT(ArrayObjStatic[index*20+1], 0);
 			break;
 		default:
 			if (isNaN(parseInt(Aux_data)))
@@ -726,12 +726,12 @@ function simFigura(index_var) {
 //=====================================================================================
 function figura_animada(index_var, variavel1, variavel2) {
  	if (variavel1 != '')
-		ArrayObjDinamic[index_var*10+1] = endereco(variavel1)+1;
+		ArrayObjDinamic[index_var*10+1] = Sim_Endereco(variavel1)+1;
 	else
 		ArrayObjDinamic[index_var*10+1] = 0;
 
 	if (variavel2 != '')
-		ArrayObjDinamic[index_var*10+1] = (endereco(variavel1) + endereco(variavel2))+1;
+		ArrayObjDinamic[index_var*10+1] = (Sim_endereco(variavel1) + Sim_Endereco(variavel2))+1;
 
 	if (ArrayObjStatic[index_var*20+16] < ArrayObjDinamic[index_var*10+2] && (ArrayObjStatic[index_var*20+15]>0) && ArrayObjDinamic[index_var*10+1]>1)
 		if (ArrayObjDinamic[index_var*10+1] ==	2)
@@ -746,11 +746,11 @@ function figura_animada(index_var, variavel1, variavel2) {
 function movimenta_x(index_var, dependencia1, dependencia2) {
 
 	//movimenta o objeto no eixo x
-	if (ArrayObjStatic[index_var*20+9]!=0 && (endereco(dependencia1) ==1)){
+	if (ArrayObjStatic[index_var*20+9]!=0 && (Sim_endereco(dependencia1) ==1)){
 		ApagaImagem(index_var);
 		ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+ parseInt(ArrayObjStatic[index_var*20+9]);
 	}
-	if (ArrayObjStatic[index_var*20+10]!=0 && (endereco(dependencia2) ==1)){
+	if (ArrayObjStatic[index_var*20+10]!=0 && (Sim_endereco(dependencia2) ==1)){
 		ApagaImagem(index_var);
 		ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+parseInt(ArrayObjStatic[index_var*20+10]);
 	}
@@ -783,12 +783,12 @@ function movimenta_x(index_var, dependencia1, dependencia2) {
 //Movimenta no eixo Y
 //=====================================================================================
 function movimenta_y(index_var, dependencia1, dependencia2) {
-	if (ArrayObjStatic[index_var*20+11]!=0 && (endereco(dependencia1) ==1)){
+	if (ArrayObjStatic[index_var*20+11]!=0 && (Sim_endereco(dependencia1) ==1)){
 		ApagaImagem(index_var);
 		ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+ parseInt(ArrayObjStatic[index_var*20+11]);
 	}
 		
-	if (ArrayObjStatic[index_var*20+12]!=0 && (endereco(dependencia2) ==1)){
+	if (ArrayObjStatic[index_var*20+12]!=0 && (Sim_endereco(dependencia2) ==1)){
 		ApagaImagem(index_var);
 		ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+parseInt(ArrayObjStatic[index_var*20+12]);
 	}
@@ -822,39 +822,39 @@ function movimenta_y(index_var, dependencia1, dependencia2) {
 function Verifica_Posicao_Tag(index_var, dependencia1, dependencia2){
 	if (((dependencia1.charAt(0) =='V') && (dependencia1.charAt(1) =='X')) || ((dependencia2.charAt(0) =='V') && (dependencia2.charAt(1) =='X'))) {
 		if (ArrayObjStatic[index_var*20+9]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1.substr(1))==1) && (endereco(dependencia1.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1.substr(1))==1) && (Sim_endereco(dependencia1.substr(1))==1)){
 				ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+ parseInt(ArrayObjStatic[index_var*20+9]);
 			}		
 		if (ArrayObjStatic[index_var*20+10]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2.substr(1))==1) && (endereco(dependencia2.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2.substr(1))==1) && (Sim_endereco(dependencia2.substr(1))==1)){
 				ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+ parseInt(ArrayObjStatic[index_var*20+10]);
 			}		
 	
 		if (ArrayObjStatic[index_var*20+11]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1.substr(1))==1) && (endereco(dependencia1.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1.substr(1))==1) && (Sim_endereco(dependencia1.substr(1))==1)){
 				ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+ parseInt(ArrayObjStatic[index_var*20+11]);
 		}		
 		if (ArrayObjStatic[index_var*20+12]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2.substr(1))==1) && (endereco(dependencia2.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2.substr(1))==1) && (Sim_endereco(dependencia2.substr(1))==1)){
 				ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+ parseInt(ArrayObjStatic[index_var*20+12]);
 		}
 	}
 	if (((dependencia1.charAt(0) =='V') && (dependencia1.charAt(1) =='Y')) || ((dependencia2.charAt(0) =='V') && (dependencia2.charAt(1) =='Y'))) {
 		if (ArrayObjStatic[index_var*20+9]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1.substr(1))==1) && (endereco(dependencia1.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1.substr(1))==1) && (Sim_endereco(dependencia1.substr(1))==1)){
 				ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+ parseInt(ArrayObjStatic[index_var*20+9]);
 			}		
 		if (ArrayObjStatic[index_var*20+10]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1) && (endereco(dependencia2.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1) && (Sim_endereco(dependencia2.substr(1))==1)){
 				ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+ parseInt(ArrayObjStatic[index_var*20+10]);
 			}		
 	
 		if (ArrayObjStatic[index_var*20+11]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1.substr(1))==1) && (endereco(dependencia1.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1.substr(1))==1) && (Sim_endereco(dependencia1.substr(1))==1)){
 				ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+ parseInt(ArrayObjStatic[index_var*20+11]);
 		}		
 		if (ArrayObjStatic[index_var*20+12]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1) && (endereco(dependencia2.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1) && (Sim_endereco(dependencia2.substr(1))==1)){
 				ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+ parseInt(ArrayObjStatic[index_var*20+12]);
 		}
 	}
@@ -865,14 +865,14 @@ function Verifica_Posicao_Tag(index_var, dependencia1, dependencia2){
 function updown(index_var, dependencia1, dependencia2) {
 	if (dependencia1.charAt(0) == 'U' && endereco(dependencia1)==1 ){
 //		ApagaImagem(index_var);
-		escreveCT(ArrayObjStatic[index_var*20+1],parseInt(enderecoCT(ArrayObjStatic[index_var*20+1],0))+parseInt(dependencia2),0);
-		if(enderecoCT(ArrayObjStatic[index_var*20+1],0) > ArrayObjStatic[index_var*20+16])
-			escreveCT(ArrayObjStatic[index_var*20+1],ArrayObjStatic[index_var*20+16],0);
+		Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],parseInt(Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0))+parseInt(dependencia2),0);
+		if(Sim_enderecoCT(ArrayObjStatic[index_var*20+1],0) > ArrayObjStatic[index_var*20+16])
+			Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],ArrayObjStatic[index_var*20+16],0);
 	}
 	if (dependencia1.charAt(0) == 'D' && endereco(dependencia1)==1) {
-		escreveCT(ArrayObjStatic[index_var*20+1],parseInt(enderecoCT(ArrayObjStatic[index_var*20+1],0))-parseInt(dependencia2),0);
-		if (enderecoCT(ArrayObjStatic[index_var*20+1],0) < 0)
-			escreveCT(ArrayObjStatic[index_var*20+1],0,0);
+		Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],parseInt(Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0))-parseInt(dependencia2),0);
+		if (Sim_enderecoCT(ArrayObjStatic[index_var*20+1],0) < 0)
+			Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],0,0);
 	}
 }
 
@@ -886,7 +886,7 @@ function sensor(index_var, dependencia1, dependencia2) {
 	var RESET = 'X';
 	if (dependencia1.charAt(0) == 'X' && dependencia2.charAt(0)!='Y') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1)==1){
-			escreve(ArrayObjStatic[index_var*20+1],1);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 		}
 		else
     		escreve(ArrayObjStatic[index_var*20+1],0);
@@ -894,73 +894,73 @@ function sensor(index_var, dependencia1, dependencia2) {
 
 	if (dependencia1.charAt(0) == 'Y' && dependencia2.charAt(0)!='X') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1)==1){
-			escreve(ArrayObjStatic[index_var*20+1],1);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 		}
 		else
     		escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	if (dependencia2.charAt(0) == 'X' && dependencia1.charAt(0)!='Y') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2)==1){
-			escreve(ArrayObjStatic[index_var*20+1],1);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 		}
     	else
-    		escreve(ArrayObjStatic[index_var*20+1],0);
+    		Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	if (dependencia2.charAt(0) == 'Y' && dependencia1.charAt(0)!='X') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2)==1){
-			escreve(ArrayObjStatic[index_var*20+1],1);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 		}
     	else
-    		escreve(ArrayObjStatic[index_var*20+1],0);
+    		Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	if (dependencia1.charAt(0) == 'X' && dependencia2.charAt(0) == 'Y') {
 		if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1)==1)&&(verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2)==1)){
-			escreve(ArrayObjStatic[index_var*20+1],1);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 		}
     	else
-    		escreve(ArrayObjStatic[index_var*20+1],0);
+    		Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	if (dependencia1.charAt(0) == 'Y' && dependencia2.charAt(0) == 'X') {
 		if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1)==1)&&(verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2)==1)){
-			escreve(ArrayObjStatic[index_var*20+1],1);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 		}
      	else
-      		escreve(ArrayObjStatic[index_var*20+1],0);
+      		Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	//Controle via SET E RESET
 	if (dependencia1.charAt(0) == 'S' && dependencia1.charAt(1) == 'X') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4],dependencia1.substr(1))==1)
-			escreve(ArrayObjStatic[index_var*20+1],1);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 	}
 
 	if (dependencia1.charAt(0) == 'S' && dependencia1.charAt(1) == 'Y') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1.substr(1))==1)
-			escreve(ArrayObjStatic[index_var*20+1],1);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 	}
 	if (dependencia2.charAt(0) == 'R' && dependencia2.charAt(1) == 'X') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2.substr(1))==1)
-			escreve(ArrayObjStatic[index_var*20+1],0);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
  	}
 	if (dependencia2.charAt(0) == 'R' && dependencia2.charAt(1) == 'Y') {
-		if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1) && (endereco(ArrayObjStatic[index_var*20+1])==1)) 
-			escreve(ArrayObjStatic[index_var*20+1],0);
+		if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1) && (Sim_endereco(ArrayObjStatic[index_var*20+1])==1)) 
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	if (dependencia2.charAt(0) == 'S' && dependencia2.charAt(1) == 'X') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4],dependencia1.substr(1))==1)
-			escreve(ArrayObjStatic[index_var*20+1],1);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 	}
 
 	if (dependencia2.charAt(0) == 'S' && dependencia2.charAt(1) == 'Y') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1.substr(1))==1)
-			escreve(ArrayObjStatic[index_var*20+1],1);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 	}
 	if (dependencia1.charAt(0) == 'R' && dependencia1.charAt(1) == 'X') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2.substr(1))==1)
-			escreve(ArrayObjStatic[index_var*20+1],0);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
  	}
 	if (dependencia1.charAt(0) == 'R' && dependencia1.charAt(1) == 'Y') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1)
-			escreve(ArrayObjStatic[index_var*20+1],0);
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
   }
 }
 
@@ -969,8 +969,8 @@ function sensor(index_var, dependencia1, dependencia2) {
 //=====================================================================================
 function verificaPosicao(posicao, deslocamento, dependencia) {
 	var retorno = 0;
-	var A = enderecoCT(dependencia,0);
-	var B = enderecoCT(dependencia,1);
+	var A = Sim_Endereco_CT(dependencia,0);
+	var B = Sim_Endereco_CT(dependencia,1);
 	var C = parseInt(posicao);
 	var D = parseInt(posicao)+ parseInt(deslocamento);
 
@@ -985,8 +985,8 @@ function verificaPosicao(posicao, deslocamento, dependencia) {
 //=====================================================================================
 function verificaTexto(posicao, deslocamento, dependencia) {
 	var retorno = 0;
-	var A = enderecoCT(dependencia,0);
-	var B = enderecoCT(dependencia,1);
+	var A = Sim_Endereco_CT(dependencia,0);
+	var B = Sim_Endereco_CT(dependencia,1);
 	var C = parseInt(posicao);
 	var D = parseInt(posicao)+ parseInt(deslocamento);
 	if ((B -A)>0)
@@ -1009,10 +1009,10 @@ function verificaTexto(posicao, deslocamento, dependencia) {
 //Desenho o processo para simulacao apartir de uma matriz
 // Apos leitura do arquivo
 //=====================================================================================
-function draw_processo(fileArr) {
-	inicializa_array();
-	draw_simulador_fundo();
-	Scontext.font = '9pt Arial';
+function Sim_Draw_Processo(fileArr) {
+	Sim_Inicializa_Array();
+	Sim_Draw_Fundo();
+	Sim_Context.font = '9pt Arial';
 	var ponteiro = 0;
 	for (var i=1; i<fileArr.length; i++) {
 		var fileLine = fileArr[i].split(',');
@@ -1060,18 +1060,18 @@ function draw_processo(fileArr) {
 			ArrayObjDinamic[(i-1)*10+6] = fileLine[20];
 			ArrayObjDinamic[(i-1)*10+9] = fileLine[23];
 			if ((ArrayObjStatic[(i-1)*20+17] != 1) && (ArrayObjStatic[(i-1)*20+17] < 5)) {
-				LoadImage(simPath + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
+				LoadImage(Sim_Path + ArrayImagens[ArrayObjDinamic[(i-1)*10+5]] + Extensao[ArrayObjDinamic[(i-1)*10+1]] + '.png', i-1);
 			}		
 			else {
 				if (ArrayObjStatic[(i-1)*20+17] == 1) {
 					funcaoLabel(i-1);
 				}
 				if (ArrayObjStatic[(i-1)*20+17] == 6) {
-					Scontext.fillText(enderecoCT(ArrayObjStatic[(i-1)*20+1],0),ArrayObjStatic[(i-1)*20+3] ,ArrayObjStatic[(i-1)*20+6]);
+					Sim_Context.fillText(Sim_enderecoCT(ArrayObjStatic[(i-1)*20+1],0),ArrayObjStatic[(i-1)*20+3] ,ArrayObjStatic[(i-1)*20+6]);
 				}
 				if (ArrayObjStatic[(i-1)*20+17] == 7) {
-					Scontext.fillStyle = 'blue';
-					Scontext.fillRect(ArrayObjDinamic[(i-1)*10+3], ArrayObjDinamic[(i-1)*10+4], ArrayObjStatic[(i-1)*20+4], ArrayObjStatic[(i-1)*20+7]);
+					Sim_Context.fillStyle = 'blue';
+					Sim_Context.fillRect(ArrayObjDinamic[(i-1)*10+3], ArrayObjDinamic[(i-1)*10+4], ArrayObjStatic[(i-1)*20+4], ArrayObjStatic[(i-1)*20+7]);
 				}
 			}
 		}
@@ -1094,7 +1094,7 @@ function draw_processo(fileArr) {
 function LoadImage(imagefile, ij) {
     var image1 = new Image();
 	image1.onload = function() {
-        Scontext.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
+        Sim_Context.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
 		
     };
     image1.src = imagefile;
@@ -1104,7 +1104,7 @@ function LoadImage(imagefile, ij) {
 function LoadImageIndex(imagefile, index) {
     var image1 = new Image();
 	image1.onload = function() {
-    	Scontext.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
+    	Sim_Context.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
 	};
     image1.src = imagefile;
     Imagens[ArrayObjDinamic[index*10+5]] = image1;
@@ -1113,18 +1113,18 @@ function LoadImageIndex(imagefile, index) {
 //=====================================================================================
 //Desenha area de trabalho em branco
 //=====================================================================================
-function draw_simulador_fundo(){
-	Scontext.lineWidth = 1;
-	Scontext.fillStyle = 'white';
-	Scontext.fillRect(5, 5, 770, 560);
-	Scontext.fillStyle = 'black';
-	Scontext.strokeRect(10, 10, 765, 555);
+function Sim_Draw_Fundo(){
+	Sim_Context.lineWidth = 1;
+	Sim_Context.fillStyle = 'white';
+	Sim_Context.fillRect(5, 5, 770, 560);
+	Sim_Context.fillStyle = 'black';
+	Sim_Context.strokeRect(10, 10, 765, 555);
 }
 
 //=====================================================================================
 // Inicializa o array
 //=====================================================================================
-function inicializa_array(){
+function Sim_Inicializa_Array(){
 	Imagens =[];
 	ArrayImagens = [];
 	ArrayLabel = [];
@@ -1138,22 +1138,22 @@ function inicializa_array(){
 // Apos leitura do alteracao doarquivo em appsimfuncao.js
 //=====================================================================================
 function redraw_processo() {
-	Scontext.font = '9pt Arial';
+	Sim_Context.font = '9pt Arial';
 	var ponteiro = 0;
 	for(var i=0; i <(ArrayObjStatic.length/20); i++) {
 		if ((ArrayObjStatic[i*20+17] != 1) && (ArrayObjStatic[i*20+17] < 5)) {
-			LoadImage(simPath + ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
+			LoadImage(Sim_Path + ArrayImagens[ArrayObjDinamic[i*10+5]] + Extensao[ArrayObjDinamic[i*10+1]] + '.png', i);
 		}		
 		else {
 			if (ArrayObjStatic[i*20+17] == 1) {
 				funcaoLabel(i);
 			}
 			if (ArrayObjStatic[i*20+17] == 6) {
-				Scontext.fillText(enderecoCT(ArrayObjStatic[i*20+1],0),ArrayObjStatic[i*20+3] ,ArrayObjStatic[i*20+6]);
+				Sim_Context.fillText(Sim_enderecoCT(ArrayObjStatic[i*20+1],0),ArrayObjStatic[i*20+3] ,ArrayObjStatic[i*20+6]);
 			}
 			if (ArrayObjStatic[i*20+17] == 7) {
-				Scontext.fillStyle = 'blue';
-				Scontext.fillRect(ArrayObjDinamic[i*10+3], ArrayObjDinamic[i*10+4], ArrayObjStatic[i*20+4], ArrayObjStatic[i*20+7]);
+				Sim_Context.fillStyle = 'blue';
+				Sim_Context.fillRect(ArrayObjDinamic[i*10+3], ArrayObjDinamic[i*10+4], ArrayObjStatic[i*20+4], ArrayObjStatic[i*20+7]);
 			}
 		}
 	}

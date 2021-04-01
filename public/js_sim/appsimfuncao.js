@@ -2,13 +2,13 @@ var index_var_config = 0;
 var novaFuncao = 1;
 var simTitulo = "sem titulo";
 
-function simFuncao() {
-	simArvore();
+function Sim_Funcao() {
+	Sim_Arvore();
 	var modal = document.getElementById("myModal");
 	var modalc = document.getElementById("myColuna");
 	var t_modal = modal.getElementsByTagName("h2");
 	t_modal[0].innerHTML = simTitulo;	
-	cSimIHM();
+	Sim_IHM_Click();
 	
 	modal.style.display = "block";
 	modalc.style.display = "block";
@@ -21,30 +21,30 @@ function simFuncao() {
 	// Get the <OK> element that closes the modal
 	var ok = document.getElementsByClassName("ok")[0];
 	ok.onclick = function() {
-		simOk();
+		Sim_Botao_Ok();
 	}
 	// Get the <Apagar> element that closes the modal
 	var apagar = document.getElementsByClassName("apagar")[0];
 	apagar.onclick = function() {
-		simApagar();
+		Sim_Botao_Apagar();
 	}
 	// Get the <Novo> element that closes the modal
 	var novo = document.getElementsByClassName("novo")[0];
 	document.getElementsByClassName("novo")[0].style.visibility = "visible";
 	novo.onclick = function() {
-		simNovo(novaFuncao);
+		Sim_Botao_Novo(novaFuncao);
 	}
 	// Get the <Para Cima> element that closes the modal
 	var up = document.getElementsByClassName("up")[0];
 	document.getElementsByClassName("up")[0].style.visibility = "visible";
 	up.onclick = function() {
-		simUp();
+		Sim_Botao_Up();
 	}
 	// Get the <Para Baixo> element that closes the modal
 	var dw = document.getElementsByClassName("dw")[0];
 	document.getElementsByClassName("dw")[0].style.visibility = "visible";
 	dw.onclick = function() {
-		simDw();
+		Sim_Botao_Down();
 	}
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
@@ -57,7 +57,7 @@ function simFuncao() {
 //_______________________________________________________
 //Desenha  a Arvore de elementos do supervisorio
 //-------------------------------------------------------
-function simArvore() {
+function Sim_Arvore() {
 	var Ccanvas  = document.getElementById("tela3");
 	Ccontext = Ccanvas.getContext("2d");
 	Ccanvas.width = 70;
@@ -80,7 +80,7 @@ function simArvore() {
 //-------------------------------------------------------------
 //Click na área do simulador
 //------------------------------------------------------------
-function cSimFuncao() {
+function Sim_Funcao_Click() {
   	//propriedadas das figuras dinâmicas. 0_nome, 1_tipo(1:fig1, 2:fig2, etc), 2_Timer(uso da monitoracao), 3_PosX, 4_PosY,
 	// 5_Pos_ArrayImagens, 6_funcao, 7_PosX_Ant, 8_PosY_ant, 9_reserva
 
@@ -97,12 +97,12 @@ function cSimFuncao() {
 				index_var_config = i;
    		}
 	}
-	cSimIHM();
+	Sim_Funcao_IHM();
 }
 //-------------------------------------------------------------
 //Desenha atela Html para edicao do supervisorio
 //-------------------------------------------------------------
-function cSimIHM() {
+function Sim_Funcao_IHM() {
 	var modalb = document.getElementById("myBody");
 	//var lista_funcoes = [0, 'text'o, Figura, Animação, Botão, Não Figura, Display, Bargraph,resevado, reservado];
 	modalb.innerHTML = "<p>Id <input type='text' id='input01' name='input01' maxlength=3 size=1 disabled />Tipo <select id='input02' name='input02'><option value='0'>---</option><option value='1'>Texto</option><option value='2'>Figura</option><option value='3'>Animacão</option><option value='4'>Interativo</option><option value='5'>IntNãoVisual</option><option value='6'>Display</option><option value='7'>BarGraph</option>  </select> nome:<input type='text' id='input1' name='input1' maxlength=10 size=10 autofocus /> </p>";
@@ -202,7 +202,7 @@ function cSimIHM() {
 //------------------------------------------------------------------
 //Botao OK
 //------------------------------------------------------------------
-function simOk() {
+function Sim_Botao_Ok() {
 	var r=confirm("Confirme se queres gravar esta alteração!");
 	if (r==true)
 	{
@@ -223,8 +223,8 @@ function simOk() {
 			ArrayObjDinamic[(index_var_config)*10+5] = document.getElementById('input18').value;
 		ArrayObjDinamic[index_var_config*10+3] = ArrayObjStatic[index_var_config*20+3];
 		ArrayObjDinamic[index_var_config*10+4] = ArrayObjStatic[index_var_config*20+6];
-		simArvore();
-		cSimIHM();
+		Sim_Arvore();
+		Sim_IHM_Click();
 		//window.reload();
 		//redraw_processo();
 		//document.getElementById('myform').reset();
@@ -244,7 +244,7 @@ function LoadImageConfig(imagefile, index) {
 //-----------------------------------------------
 //Botao para cima
 //----------------------------------------------
-function simUp() {
+function Sim_Botao_Up() {
 	if (index_var_config > 0){
 		var auxiliar;
 		for(var i= index_var_config*20; i < ((index_var_config*20)+20); i++){
@@ -259,14 +259,14 @@ function simUp() {
 		}
 		index_var_config--;
 	
-		simArvore();
-		cSimIHM();
+		Sim_Arvore();
+		Sim_Funcao_IHM();
 	}
 }
 //-------------------------------------------------
 //Botao oara baix0
 //-------------------------------------------------
-function simDw() {
+function Sim_Botao_Down() {
 	if (index_var_config < (ArrayObjStatic.length/20)){
 		var auxiliar;
 		for( var i= index_var_config*20; i < ((index_var_config*20)+20); i++){
@@ -281,28 +281,28 @@ function simDw() {
 		}
 		index_var_config++;
 	
-		simArvore();
-		cSimIHM();
+		Sim_Arvore();
+		Sim_IHM_Click();
 	}
 }
 //--------------------------------------------------
 //Botao Apagar
 //-------------------------------------------------
-function simApagar() {
+function Sim_Botao_Apagar() {
 	var r=confirm("Confirme: remover linha "+index_var_config+"!");
 	if (r==true){
 		index_var_config
 		ArrayObjStatic.splice(index_var_config*20, 20);
 		ArrayObjDinamic.splice(index_var_config*10, 10);
 			
-		simArvore();
-		cSimIHM();
+		Sim_Arvore();
+		Sim_IHM_Click();
 	}
 }
 //---------------------------------------------------
 //Novo Item
 //---------------------------------------------------
-function simNovo(novaFuncao) {
+function Sim_Botao_Novo(novaFuncao) {
 	if( novaFuncao ==1) 
 		ArrayObjDinamic.push(0,0,0,0,0,ArrayLabel.length,0,0,0,0);
 	else{
@@ -313,8 +313,8 @@ function simNovo(novaFuncao) {
 	}
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,novaFuncao,0,0)/20)-1;
 	
-	simArvore();
-	cSimIHM();
+	Sim_Arvore();
+	Sim_IHM_Click();
 }
 //------------------------------------------------------
 //Chama a tela de configuracao se clicar no item da tela
@@ -347,7 +347,7 @@ function simApontador(apontador){
 	}
 	
 	index_var_config = apontador;
-	cSimIHM();
+	Sim_IHM_Click();
 	
 	modal.style.display = "block";
 	var span = document.getElementsByClassName("close")[0];
@@ -356,12 +356,12 @@ function simApontador(apontador){
 	}
 	var ok = document.getElementsByClassName("ok")[0];
 	ok.onclick = function() {
-		simOk();
+		Sim_Botao_Ok();
 		modal.style.display = "none";
 	}
 	var apagar = document.getElementsByClassName("apagar")[0];
 	apagar.onclick = function() {
-		simApagar();
+		Sim_Botao_Apagar();
 		modal.style.display = "none";
 	}
 	document.getElementsByClassName("novo")[0].style.visibility = "hidden";
@@ -375,58 +375,58 @@ function simApontador(apontador){
 	
 }
 //Label
-function simFuncao1(){
+function Sim_Funcao1(){
 	simTitulo = "Novo Label";
 	novaFuncao = 1;
 	ArrayObjDinamic.push(0,0,0,0,0,ArrayLabel.length,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0)/20)-1;
-	simFuncao();
+	Sim_Funcao();
 }
 //desenho
-function simFuncao2(){
+function Sim_Funcao2(){
 	simTitulo = "Novo Desenho";
 	novaFuncao = 2;
 	ArrayObjDinamic.push(0,0,0,0,0,ArrayImagens.length,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0)/20)-1;
-	simFuncao();
+	Sim_Funcao();
 }
 //figura dinamica
-function simFuncao3(){
+function Sim_Funcao3(){
 	simTitulo = "Nova Figura - Sensor";
 	novaFuncao = 3;
 	ArrayObjDinamic.push(0,0,0,0,0,ArrayImagens.length,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0)/20)-1;
-	simFuncao();
+	Sim_Funcao();
 }
 //objeto interativo
-function simFuncao4(){
+function Sim_Funcao4(){
 	simTitulo = "Novo Objeto - Botão";
 	novaFuncao = 4;
 	ArrayObjDinamic.push(0,0,0,0,0,ArrayImagens.length,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0)/20)-1;
-	simFuncao();
+	Sim_Funcao();
 }
 //interativo não visual
-function simFuncao5(){
+function Sim_Funcao5(){
 	simTitulo = "Novo Objeto não Visual";
 	novaFuncao = 5;
 	ArrayObjDinamic.push(0,0,0,0,0,0,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0)/20)-1;
-	simFuncao();
+	Sim_Funcao();
 }
 //display
-function simFuncao6(){
+function Sim_Funcao6(){
 	simTitulo = "Novo Display";
 	novaFuncao = 6;
 	ArrayObjDinamic.push(0,0,0,0,0,0,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0)/20)-1;
-	simFuncao();
+	Sim_Funcao();
 }
 //grafico de barras
-function simFuncao7(){
+function Sim_Funcao7(){
 	simTitulo = "Novo Bargraph";
 	novaFuncao = 7;
 	ArrayObjDinamic.push(0,0,0,0,0,0,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0)/20)-1;
-	simFuncao();
+	Sim_Funcao();
 }

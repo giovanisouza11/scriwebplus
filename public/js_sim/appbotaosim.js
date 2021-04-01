@@ -1,44 +1,44 @@
-var AImageB = new Image();
-AImageB.src = "/img_sim/botoessim.png";
-var canvas1;
-var context1;
-var valor_chave = new Array(14);
-var simEdicao = 0; 
+var Sim_ImageB = new Image();
+Sim_ImageB.src = "/img_sim/botoessim.png";
+var Sim_Canvas1;
+var Sim_Context1;
+var Sim_Botao_Funcao = new Array(14);
+var Sim_Edicao = 0; 
 //desenha os botoes
-function draw_botoessim() {
-    canvas1 = document.getElementById("tela5");
-    context1 = canvas1.getContext("2d");
-    canvas1.width = 75;
-    canvas1.height = 570;
+function Sim_Draw_Botoes() {
+    Sim_Canvas1 = document.getElementById("tela1");
+    Sim_Context1 = Sim_Canvas1.getContext("2d");
+    Sim_Canvas1.width = 75;
+    Sim_Canvas1.height = 570;
 
     for(i=1; i<13; i++) {
-        if (valor_chave[i] === undefined)
-		valor_chave[i] = 0;
-        context1.drawImage(AImageB, 70*valor_chave[i]+(140*simEdicao), 45*(i-1), 70, 45, 5,(i-1)*47, 70, 45);
+        if (Sim_Botao_Funcao[i] === undefined)
+		Sim_Botao_Funcao[i] = 0;
+        Sim_Context1.drawImage(Sim_ImageB, 70*Sim_Botao_Funcao[i]+(140*Sim_Edicao), 45*(i-1), 70, 45, 5,(i-1)*47, 70, 45);
     }
 }
 
 //Verifica QUAL botao foi acionado
-//Separa em tres grupos: 0 a 10: comandos do software, 11 a 20: edicao do ladder, 21 a 30: funcoes do ladder
-function tBotao() {
+//Separa em tres grupos: 0 a 10: Sim_Comandos do software, 11 a 20: edicao do ladder, 21 a 30: funcoes do ladder
+function Sim_Botao_Click() {
 	var posicaoy= parseInt((window.event.clientY-30)/47);
 
 	if ((posicaoy >=0) && (posicaoy < 12))
 	{
 		for(i=1; i<13; i++)
-			valor_chave[i] = 0;
-		valor_chave[posicaoy+1]=1;
+			Sim_Botao_Funcao[i] = 0;
+		Sim_Botao_Funcao[posicaoy+1]=1;
 	}
 
-	if (valor_chave[12]==1){
+	if (Sim_Botao_Funcao[12]==1){
     		window.open("/About", "About SCriWeb", "height=600,width=600");
-	    	valor_chave[12]=0;
+	    	Sim_Botao_Funcao[12]=0;
 	}
-	if (valor_chave[11]==1){
+	if (Sim_Botao_Funcao[11]==1){
         	window.open("/helpsim", "Help SCriWeb", "height=800,width=1000");
-	    	valor_chave[11]=0;
+	    	Sim_Botao_Funcao[11]=0;
 	}
-	if (valor_chave[10]==1){
+	if (Sim_Botao_Funcao[10]==1){
         	var modal1 = document.getElementById("myModal1");
 		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Config";	
@@ -75,24 +75,24 @@ function tBotao() {
 			}
 		}
 
-	    	valor_chave[10]=0;
+	    	Sim_Botao_Funcao[10]=0;
 	}
-	if (simEdicao==0 && valor_chave[2]==1){
+	if (Sim_Edicao==0 && Sim_Botao_Funcao[2]==1){
         	var inputCSV = document.createElement('input');
 	 	inputCSV.type = 'file';
 		inputCSV.accept = '.CSV';
 		inputCSV.click();
 		inputCSV.onchange = function() {
 	    		var file = this.files[0];
-			leitorDeCSV.readAsText(file);
-			simPath = simPathInicial + file.name.slice(0,file.name.length -4) + '/';
+			Sim_Leitor_Arquivo.readAsText(file);
+			Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
 			//alert(file.fullPath);
 		};
-		comandos = 0;	
-		valor_chave[5]=0;
-		valor_chave[6]=1;
+		Sim_Comandos = 0;	
+		Sim_Botao_Funcao[5]=0;
+		Sim_Botao_Funcao[6]=1;
 	}
-	if (simEdicao==0 && valor_chave[3]==1){
+	if (Sim_Edicao==0 && Sim_Botao_Funcao[3]==1){
 	    	let texto = '0_id, 1_tipo, 2_nome, 3_var_1, 4_var_2, 5_pos_x_inicial, 6_dpos_x, 7_pos_x_final, 8_pos_y_inicial, 9_dpos_y, 10_pos_y_final, 11_inc_x1, 12_inc_x2, 13_inc_y1, 14_inc_y2, 15_var1_dependente, 16_var2_dependente, 17_piscar, 18_tempo_pisca, 19_figura, 20_funcao, 21_reserva, 22_reserva, 23_reserva, 24_reserva \n';
 	    	for (var i=0; i<(ArrayObjStatic.length/20); i++) {
 			texto += i +','+ArrayObjStatic[i*20+17]+',';
@@ -110,15 +110,15 @@ function tBotao() {
         	let titulo ='SimScriWeb';
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
         	saveAs(blob, titulo + ".csv");
-        	valor_chave[3]=0;
+        	Sim_Botao_Funcao[3]=0;
 	}
-	if (simEdicao==0 && valor_chave[5]==1){
-		comandos = 1;
+	if (Sim_Edicao==0 && Sim_Botao_Funcao[5]==1){
+		Sim_Comandos = 1;
 	}
-	if (simEdicao==0 && valor_chave[6]==1){
-		comandos = 0;
+	if (Sim_Edicao==0 && Sim_Botao_Funcao[6]==1){
+		Sim_Comandos = 0;
 	}
-	if (simEdicao==0 && valor_chave[4]==1){
+	if (Sim_Edicao==0 && Sim_Botao_Funcao[4]==1){
 		var modal1 = document.getElementById("myModal1");
 		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Download";	
@@ -189,61 +189,61 @@ function tBotao() {
 				modal1.style.display = "none";
 			}
 		}
-		comandos = 0;	
-		valor_chave[4]=0;
-		valor_chave[5]=1;
+		Sim_Comandos = 0;	
+		Sim_Botao_Funcao[4]=0;
+		Sim_Botao_Funcao[5]=1;
 	}
-	if (simEdicao==0 && valor_chave[1]==1){
-		valor_chave[1]=0;
-		comandos = 0;
-		simEdicao = 1;
+	if (Sim_Edicao==0 && Sim_Botao_Funcao[1]==1){
+		Sim_Botao_Funcao[1]=0;
+		Sim_Comandos = 0;
+		Sim_Edicao = 1;
 	}
-	if (simEdicao==1 && valor_chave[1]==1){
-		valor_chave[1]=0;
-		comandos = 0;
-		simEdicao = 0;
+	if (Sim_Edicao==1 && Sim_Botao_Funcao[1]==1){
+		Sim_Botao_Funcao[1]=0;
+		Sim_Comandos = 0;
+		Sim_Edicao = 0;
 	}
-	if (simEdicao==1 && valor_chave[2]==1){
-		comandos = 2;
+	if (Sim_Edicao==1 && Sim_Botao_Funcao[2]==1){
+		Sim_Comandos = 2;
 	}
-	if (simEdicao==1 && valor_chave[3]==1){
-		simFuncao1();
+	if (Sim_Edicao==1 && Sim_Botao_Funcao[3]==1){
+		Sim_Funcao1();
 	}
-	if (simEdicao==1 && valor_chave[4]==1){
-		simFuncao2();
+	if (Sim_Edicao==1 && Sim_Botao_Funcao[4]==1){
+		Sim_Funcao2();
 	}
-	if (simEdicao==1 && valor_chave[5]==1){
-		simFuncao3();
+	if (Sim_Edicao==1 && Sim_Botao_Funcao[5]==1){
+		Sim_Funcao3();
 	}
-	if (simEdicao==1 && valor_chave[6]==1){
-		simFuncao4();
+	if (Sim_Edicao==1 && Sim_Botao_Funcao[6]==1){
+		Sim_Funcao4();
 	}
-	if (simEdicao==1 && valor_chave[7]==1){
-		simFuncao5();
+	if (Sim_Edicao==1 && Sim_Botao_Funcao[7]==1){
+		Sim_Funcao5();
 	}
-	if (simEdicao==1 && valor_chave[8]==1){
-		simFuncao6();
+	if (Sim_Edicao==1 && Sim_Botao_Funcao[8]==1){
+		Sim_Funcao6();
 	}
-	if (simEdicao==1 && valor_chave[9]==1){
-		simFuncao7();
+	if (Sim_Edicao==1 && Sim_Botao_Funcao[9]==1){
+		Sim_Funcao7();
 	}
 
-	draw_botoessim();		
+	Sim_Draw_Botoes();		
 }
 
 
 //leitura de arquivos
 //Fonte https://tableless.com.br/file-api-trabalhando-com-arquivos-locais-usando-javascript/
-var leitorDeCSV = new FileReader();
-leitorDeCSV.addEventListener('load', leCSV);
+var Sim_Leitor_Arquivo = new FileReader();
+Sim_Leitor_Arquivo.addEventListener('load', Sim_Le_Arquivo);
 
 
 function pegaCSV(inputFile) {
 	var file = inputFile.files[0];
-	leitorDeCSV.readAsText(file);
+	Sim_Leitor_Arquivo.readAsText(file);
 }
 
-function leCSV(evt) {
+function Sim_Le_Arquivo(evt) {
 	var fileArr = evt.target.result.split('\n');
-	draw_processo(fileArr);
+	Sim_Draw_Processo(fileArr);
 }
