@@ -42,11 +42,11 @@
 			<div class="divColuna7" id="Simulador">
              			<canvas id="tela6" onclick="Sim_Simulador_Click()" ></canvas>
 			</div>
+			<div class="divColuna10" id="CampoS">
+				<label id='label_input'>Valor</label>
+				<input type=number id="input_ladder" maxlength=5 size=5 onkeyup="eInputS(event)" >
+    			</div>
 		</div>
-		<div class="divColuna10" id="CampoS">
-			<label id='label_input'>Valor</label>
-			<input type=number id="input_ladder" maxlength=5 size=5 onkeyup="eInputS(event)" >
-    		</div>
 		<!-- Modal content -->
     		<div id="myColuna" class="modal-coluna">
 			<canvas id="tela7" onclick="Sim_Funcao_Click()"></canvas>
@@ -78,21 +78,22 @@
 				<span class="novo" id="novo"> &#127775; &ensp; &ensp;</span>
 				<span class="apagar" id="apagar"> &#9760; &ensp;&ensp; </span>
 			</div>
-    		</div>
+    			<!-- Modal content -->
+    			<div id="myModal1" class="modal1">
+				<div class="modal-header1">
+					<span class="close1" id="close1">&times;</span>
+					<h2>Titulo Modal</h2>
+				</div>
+				<div id="myBody1" class="modal-body1">
+					<p>Some text</p>
+				</div>
+   			</div>
+		</div>
 			
     		<div id="rodape" class="rodape" >
         		Desenvolvido em 2020</span>
     		</div>
-	    	<!-- Modal content -->
-    		<div id="myModal1" class="modal1">
-			<div class="modal-header1">
-				<span class="close1" id="close1">&times;</span>
-				<h2>Titulo Modal</h2>
-			</div>
-				<div id="myBody1" class="modal-body1">
-				<p>Some text</p>
-			</div>
-   		</div>
+	    	
 	</div>
 	<div class="row2">
     		<div class="divColuna3" id ="CLP">
