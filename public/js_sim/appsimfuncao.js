@@ -103,7 +103,7 @@ function Sim_Funcao_Click() {
 //Desenha atela Html para edicao do supervisorio
 //-------------------------------------------------------------
 function Sim_Funcao_IHM() {
-	var modalb = document.getElementById("myBody");
+	var modalb = document.getElementById("myBody2");
 	//var lista_funcoes = [0, 'text'o, Figura, Animação, Botão, Não Figura, Display, Bargraph,resevado, reservado];
 	modalb.innerHTML = "<p>Id <input type='text' id='input01' name='input01' maxlength=3 size=1 disabled />Tipo <select id='input02' name='input02'><option value='0'>---</option><option value='1'>Texto</option><option value='2'>Figura</option><option value='3'>Animacão</option><option value='4'>Interativo</option><option value='5'>IntNãoVisual</option><option value='6'>Display</option><option value='7'>BarGraph</option>  </select> nome:<input type='text' id='input1' name='input1' maxlength=10 size=10 autofocus /> </p>";
 	modalb.innerHTML += "<p>Variável1:<input type='text' id='input2' maxlength=5 size=5/> Variável2:<input type='text' id='input3' name='input3' maxlength=5 size=5 /> </p>";
@@ -115,7 +115,7 @@ function Sim_Funcao_IHM() {
 		modalb.innerHTML += "<p>Piscar:<input type='text' id='input16' name='input16' maxlength=3 size=3 /> Tempo:<input type='text' id='input17' name='input17' maxlength=3 size=3 /></p>";
 		modalb.innerHTML += "<p>Figura:<input type='text' id='input18' name='input18' maxlength=15 size=15 /> Função:<input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
 		//modalb.innerHTML += "<p><label for='file'>Figura:</label><input type='file' id='input18' name='input18' accept='image/png'/> Função:<input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
-		modalb.innerHTML += "<canvas id='tela4' class='modal_figura'></canvas>";
+		modalb.innerHTML += "<canvas id='tela8' class='modal_figura'></canvas>";
 	}
 	if (ArrayObjStatic[index_var_config*20+17]==1) {
 		modalb.innerHTML += "<p>Cor fonte: <input type='color' id='input10' name='input10' maxlength=10 size=10 /> Tamanho Fonte: <input type='text' id='input11' name='input11' maxlength=3 size=3 /> </p>";
@@ -123,14 +123,14 @@ function Sim_Funcao_IHM() {
 		modalb.innerHTML += "<p>Variável 1 <input type='text' id='input14' name='input14' maxlength=6 size=6 /> Variável 2: <input type='text' id='input15' name='input15' maxlength=6 size=6 /></p>";
 		modalb.innerHTML += "<p>Label <input type='text' id='input18' name='input18' maxlength=15 size=15 /> Função: <input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
 		modalb.innerHTML += " <p>Piscar <input type='text' id='input16' name='input16'  maxlength=3 size=3 /> Tempo: <input type='text' id='input17' name='input17' maxlength=3 size=3 /></p>";
-		modalb.innerHTML += "<canvas id='tela4' class='modal_figura'></canvas>";
+		modalb.innerHTML += "<canvas id='tela8' class='modal_figura'></canvas>";
 	}
 	if (ArrayObjStatic[index_var_config*20+17]==6) {
 		modalb.innerHTML += "<p>Cor fonte: <input type='color' id='input10' name='input10' maxlength=`10 size=10 /> Tamanho Fonte: <input type='text' id='input11' name='input11' maxlength=3 size=3 /> </p>";
 		modalb.innerHTML += "<p>Variável <input type='text' id='input14' name='input14' maxlength=6 size=6 /> Incremento: <input type='text' id='input15' name='input13' maxlength=3 size=3 /></p>";
 		modalb.innerHTML += "<p>Piscar <input type='text' id='input16' name='input16' maxlength=3 size=3 /> Precisão: <input type='text' id='input17' name='input17' maxlength=5 size=5 /></p>";
 		modalb.innerHTML += "<p>Função: <input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
-		modalb.innerHTML += "<canvas id='tela4' class='modal_figura'></canvas>";
+		modalb.innerHTML += "<canvas id='tela8' class='modal_figura'></canvas>";
 		modalb.innerHTML += "<p></p><p>---: <input type='text' id='input18' maxlength=3 size=3>--: <input type='text' id='input12' maxlength=3 size=3> -: <input type='text' id='input13' name='input12' maxlength=3 size=3></p>";
 	}
 	if (ArrayObjStatic[index_var_config*20+17]==7) {
@@ -139,11 +139,11 @@ function Sim_Funcao_IHM() {
 		modalb.innerHTML += "<p>Cor 1: <input type='color' id='input11' name='input11' maxlength=6 size=6 /> Cor 2: <input type='color' id='input13' name='input13' maxlength=6 size=6 /></p>";
 		modalb.innerHTML += "<p>Piscar <input type='text' id='input16' name='input16' maxlength=3 size=3 /> Precisão AD: <input type='text' id='input17' name='input17' maxlength=5 size=5 /></p>";
 		modalb.innerHTML += "<p> Função: <input type='text' id='input19' name='input19' maxlength=3 size=3 />--- <input type='text' id='input18' name='input16' maxlength=3 size=3 /></p>";
-		modalb.innerHTML += "<canvas id='tela4' class='modal_figura'></canvas>";
+		modalb.innerHTML += "<canvas id='tela8' class='modal_figura'></canvas>";
 	}
 	modalb.innerHTML += "<p></p>";
 	
-	var CcanvasFig  = document.getElementById("tela4");
+	var CcanvasFig  = document.getElementById("tela8");
 	var CcontextFig = CcanvasFig.getContext("2d");
 	CcanvasFig.width = 100;
 	CcanvasFig.height = 100;
@@ -320,7 +320,7 @@ function Sim_Botao_Novo(novaFuncao) {
 //Chama a tela de configuracao se clicar no item da tela
 //---------------------------------------------------------
 function simApontador(apontador){
-	var modal = document.getElementById("myModal");
+	var modal = document.getElementById("myModal2");
 	var t_modal = modal.getElementsByTagName("h2");
 	switch (ArrayObjStatic[apontador*20+17]) {
 		case '1':
