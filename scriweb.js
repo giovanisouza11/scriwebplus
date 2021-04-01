@@ -122,16 +122,16 @@ if (ativo) {
 					socket.leave(clp[x*2]);
 					clp[x*2] = 'k';
 					console.log('CLP desCONECTADoS: '+clp);
-					console.log('SUP CONECTADoS: '+sup);
-				}
-				if (socket.id == sup[x*2+1]){
+				//	console.log('SUP CONECTADoS: '+sup);
+				//}
+				/*if (socket.id == sup[x*2+1]){
 					socket.emit('config_socket_r', 0);
 					socket.leave(sup[x*2]);
 					sup[x*2] = 'k';
 					console.log('CLP CONECTADoS: '+clp);
 					console.log('SUP desCONECTADoS: '+sup);
-				}
-				if ((clp[x*2]== 'k' && sup[x*2]== 'k') ||(clp[x*2]== undefined || sup[x*2]== undefined)){
+				}*/
+				//if ((clp[x*2]== 'k' && sup[x*2]== 'k') ||(clp[x*2]== undefined || sup[x*2]== undefined)){
 					atualizaS.splice(x,1);
 					MS.splice(x,1);
 					IS.splice(x,1);
@@ -196,7 +196,7 @@ if (ativo) {
 				console.log('SUP CONECTADoS: '+sup);
 			}
 		});
-   		socket.on('sup', function(data) {
+   	/*	socket.on('sup', function(data) {
 	   		var x;
 	   		for(x=0; x<(sup.length/2); x++){
 				if (socket.id == sup[x*2+1]){
@@ -220,7 +220,7 @@ if (ativo) {
 			console.log('CLP1 CONECTADoS: '+clp);
 			console.log('SUP1 CONECTADoS: '+sup);
 			//console.log('programas: '+programaS[data]);
-		});
+		});*/
 		socket.on('programax', function(data) {
 			programa1 = data.split(',');
 			console.log(programa1);
