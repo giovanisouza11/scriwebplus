@@ -9,19 +9,19 @@ function Sim_Draw_Botoes() {
     Sim_Canvas1 = document.getElementById("tela5");
     Sim_Context1 = Sim_Canvas1.getContext("2d");
     Sim_Canvas1.width = 75;
-    Sim_Canvas1.height = 570;
+    Sim_Canvas1.height = 550;
 
     for(i=1; i<13; i++) {
         if (Sim_Botao_Funcao[i] === undefined)
 		Sim_Botao_Funcao[i] = 0;
-        Sim_Context1.drawImage(Sim_ImageB, 70*Sim_Botao_Funcao[i]+(140*Sim_Edicao), 45*(i-1), 70, 45, 5,(i-1)*47, 70, 45);
+        Sim_Context1.drawImage(Sim_ImageB, 70*Sim_Botao_Funcao[i]+(140*Sim_Edicao), 45*(i-1), 70, 45, 5,(i-1)*45, 70, 43);
     }
 }
 
 //Verifica QUAL botao foi acionado
 //Separa em tres grupos: 0 a 10: Sim_Comandos do software, 11 a 20: edicao do ladder, 21 a 30: funcoes do ladder
 function Sim_Botao_Click() {
-	var posicaoy= parseInt((window.event.clientY-30)/47);
+	var posicaoy= parseInt((window.event.clientY-60)/45);
 
 	if ((posicaoy >=0) && (posicaoy < 12))
 	{

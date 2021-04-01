@@ -32,7 +32,7 @@ function Sim_Draw_Inicio() {
 	Sim_Canvas = document.getElementById("tela6");
 	Sim_Context = Sim_Canvas.getContext("2d");
 	
-	Sim_Canvas.width = 570;//localStorage.tela_largura + 200; 
+	Sim_Canvas.width = 550;//localStorage.tela_largura + 200; 
 	Sim_Canvas.height = 525; // localStorage.tela_altura + 150;
 }
 
@@ -1117,9 +1117,9 @@ function Sim_Draw_Fundo(){
 	Sim_Draw_Inicio();
 	Sim_Context.lineWidth = 1;
 	Sim_Context.fillStyle = 'white';
-	Sim_Context.fillRect(1, 1, 570, 525);
+	Sim_Context.fillRect(1, 1, 550, 525);
 	Sim_Context.fillStyle = 'black';
-	Sim_Context.strokeRect(2, 2, 569, 525);
+	Sim_Context.strokeRect(2, 2, 549, 525);
 }
 
 //=====================================================================================
