@@ -226,7 +226,7 @@ function Sim_Botao_Ok() {
 		Sim_Arvore();
 		Sim_IHM_Click();
 		//window.reload();
-		//redraw_processo();
+		//Sim_Redraw_Processo();
 		//document.getElementById('myform').reset();
 	}
 }
