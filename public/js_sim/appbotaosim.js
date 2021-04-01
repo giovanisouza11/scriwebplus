@@ -39,7 +39,7 @@ function Sim_Botao_Click() {
 	    	Sim_Botao_Funcao[11]=0;
 	}
 	if (Sim_Botao_Funcao[10]==1){
-        		var modal1 = document.getElementById("myModal1");
+/*        		var modal1 = document.getElementById("myModal1");
 		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Config";	
 		var modalb1 = document.getElementById("myBody1");
@@ -75,7 +75,8 @@ function Sim_Botao_Click() {
 			}
 		}
 
-	    	Sim_Botao_Funcao[10]=0;
+*/	 
+	   	Sim_Botao_Funcao[10]=0;
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[2]==1){
         	var inputCSV = document.createElement('input');

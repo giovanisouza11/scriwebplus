@@ -4,7 +4,7 @@ var simTitulo = "sem titulo";
 
 function Sim_Funcao() {
 	Sim_Arvore();
-	var modal = document.getElementById("myModal");
+	var modal = document.getElementById("myModal2");
 	var modalc = document.getElementById("myColuna");
 	var t_modal = modal.getElementsByTagName("h2");
 	t_modal[0].innerHTML = simTitulo;	
@@ -58,7 +58,7 @@ function Sim_Funcao() {
 //Desenha  a Arvore de elementos do supervisorio
 //-------------------------------------------------------
 function Sim_Arvore() {
-	var Ccanvas  = document.getElementById("tela3");
+	var Ccanvas  = document.getElementById("tela7");
 	Ccontext = Ccanvas.getContext("2d");
 	Ccanvas.width = 70;
 	Ccanvas.height = (ArrayObjStatic.length/20)*15+10;
