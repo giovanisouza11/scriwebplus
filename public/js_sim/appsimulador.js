@@ -1114,11 +1114,12 @@ function LoadImageIndex(imagefile, index) {
 //Desenha area de trabalho em branco
 //=====================================================================================
 function Sim_Draw_Fundo(){
+	Sim_Draw_Inicio();
 	Sim_Context.lineWidth = 1;
 	Sim_Context.fillStyle = 'white';
-	Sim_Context.fillRect(5, 5, 770, 560);
+	Sim_Context.fillRect(1, 1, 570, 525);
 	Sim_Context.fillStyle = 'black';
-	Sim_Context.strokeRect(10, 10, 765, 555);
+	Sim_Context.strokeRect(2, 2, 569, 525);
 }
 
 //=====================================================================================
