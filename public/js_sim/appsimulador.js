@@ -1137,7 +1137,7 @@ function Sim_Inicializa_Array(){
 //Redesenha o processo para simulacao
 // Apos leitura do alteracao doarquivo em appsimfuncao.js
 //=====================================================================================
-function redraw_processo() {
+function Sim_Redraw_Processo() {
 	Sim_Context.font = '9pt Arial';
 	var ponteiro = 0;
 	for(var i=0; i <(ArrayObjStatic.length/20); i++) {
