@@ -11,7 +11,7 @@ function ladder_simulador(){
 	else {
 		ladder.style.display = "none";
 		simul.style.display = "block";
-		draw_botoessim();
+		Sim_Draw_Botoes();
 	}
 }
 
