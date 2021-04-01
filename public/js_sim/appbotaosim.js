@@ -6,7 +6,7 @@ var valor_chave = new Array(14);
 var simEdicao = 0; 
 //desenha os botoes
 function draw_botoessim() {
-    canvas1 = document.getElementById("tela1");
+    canvas1 = document.getElementById("tela5");
     context1 = canvas1.getContext("2d");
     canvas1.width = 75;
     canvas1.height = 570;
