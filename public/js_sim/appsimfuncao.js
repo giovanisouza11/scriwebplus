@@ -221,10 +221,11 @@ function Sim_Botao_Ok() {
 		}
 		if (ArrayObjStatic[index_var_config*20+17]>4) 
 			ArrayObjDinamic[(index_var_config)*10+5] = document.getElementById('input18').value;
-		ArrayObjDinamic[index_var_config*10+3] = ArrayObjStatic[index_var_config*20+3];
+		ArrayObjDinamic[index_var_con
+				fig*10+3] = ArrayObjStatic[index_var_config*20+3];
 		ArrayObjDinamic[index_var_config*10+4] = ArrayObjStatic[index_var_config*20+6];
 		Sim_Arvore();
-		Sim_IHM_Click();
+		Sim_Funcao_IHM();
 		//window.reload();
 		//Sim_Redraw_Processo();
 		//document.getElementById('myform').reset();
@@ -282,7 +283,7 @@ function Sim_Botao_Down() {
 		index_var_config++;
 	
 		Sim_Arvore();
-		Sim_IHM_Click();
+		Sim_Funcao_IHM();
 	}
 }
 //--------------------------------------------------
@@ -296,7 +297,7 @@ function Sim_Botao_Apagar() {
 		ArrayObjDinamic.splice(index_var_config*10, 10);
 			
 		Sim_Arvore();
-		Sim_IHM_Click();
+		Sim_Funcao_IHM();
 	}
 }
 //---------------------------------------------------
@@ -314,7 +315,7 @@ function Sim_Botao_Novo(novaFuncao) {
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,novaFuncao,0,0)/20)-1;
 	
 	Sim_Arvore();
-	Sim_IHM_Click();
+	Sim_Funcao_IHM();
 }
 //------------------------------------------------------
 //Chama a tela de configuracao se clicar no item da tela
@@ -347,7 +348,7 @@ function simApontador(apontador){
 	}
 	
 	index_var_config = apontador;
-	Sim_IHM_Click();
+	Sim_Funcao_IHM();
 	
 	modal.style.display = "block";
 	var span = document.getElementsByClassName("close")[0];
