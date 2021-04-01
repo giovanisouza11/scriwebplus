@@ -58,7 +58,7 @@ function simFuncao() {
 //Desenha  a Arvore de elementos do supervisorio
 //-------------------------------------------------------
 function simArvore() {
-	var Ccanvas  = document.getElementById("tela7");
+	var Ccanvas  = document.getElementById("tela3");
 	Ccontext = Ccanvas.getContext("2d");
 	Ccanvas.width = 70;
 	Ccanvas.height = (ArrayObjStatic.length/20)*15+10;
@@ -90,7 +90,7 @@ function cSimFuncao() {
 	var modalc = document.getElementById("myColuna");
 	var yScroll = modalc.scrollTop;
 	var posicaoy = parseInt(window.event.clientY+yScroll-125);
-	var posicaox = parseInt(window.event.clientX-modalc.style.left);
+	var posicaox = parseInt(window.event.clientX-modalc.style.left);//-110);//-75);
   	if (ArrayObjDinamic.length > 0){
 		for( var i=0; i < ((ArrayObjDinamic.length/10)+1); i++){
 			if ((posicaoy > ((i *15)-10)) && (posicaoy < (i *15)))
@@ -104,6 +104,7 @@ function cSimFuncao() {
 //-------------------------------------------------------------
 function cSimIHM() {
 	var modalb = document.getElementById("myBody");
+	//var lista_funcoes = [0, 'text'o, Figura, Animação, Botão, Não Figura, Display, Bargraph,resevado, reservado];
 	modalb.innerHTML = "<p>Id <input type='text' id='input01' name='input01' maxlength=3 size=1 disabled />Tipo <select id='input02' name='input02'><option value='0'>---</option><option value='1'>Texto</option><option value='2'>Figura</option><option value='3'>Animacão</option><option value='4'>Interativo</option><option value='5'>IntNãoVisual</option><option value='6'>Display</option><option value='7'>BarGraph</option>  </select> nome:<input type='text' id='input1' name='input1' maxlength=10 size=10 autofocus /> </p>";
 	modalb.innerHTML += "<p>Variável1:<input type='text' id='input2' maxlength=5 size=5/> Variável2:<input type='text' id='input3' name='input3' maxlength=5 size=5 /> </p>";
 	modalb.innerHTML += "<p>Posição x:<input type='text' id='input4' name='input4' maxlength=4 size=4 /> Largura:<input type='text' id='input5' name='input5' maxlength=4 size=4 /> Posição x final:<input type='text' id='input6' name='input6' maxlength=4 size=4 /></p>";
@@ -112,7 +113,8 @@ function cSimIHM() {
 		modalb.innerHTML += "<p>Inc X1:<input type='text' id='input10' name='input10' maxlength=3 size=3 /> Inc Y1:<input type='text' id='input12' name='input12' maxlength=3 size=3 /> Variável 1:<input type='text' id='input14' name='input14' maxlength=6 size=6 /></p>";
 		modalb.innerHTML += "<p>Inc X2:<input type='text' id='input11' name='input11' maxlength=3 size=3 /> Inc Y2:<input type='text' id='input13' name='input13'  maxlength=3 size=3 /> Variável 2:<input type='text' id='input15' name='input15' maxlength=6 size=6 /></p>";
 		modalb.innerHTML += "<p>Piscar:<input type='text' id='input16' name='input16' maxlength=3 size=3 /> Tempo:<input type='text' id='input17' name='input17' maxlength=3 size=3 /></p>";
-		modalb.innerHTML += "<p>Figura:<input type='text' id='input18' name='input18' maxlength=15 size=15 onkeyup='leFigura(event)' /> Função:<input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
+		modalb.innerHTML += "<p>Figura:<input type='text' id='input18' name='input18' maxlength=15 size=15 /> Função:<input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
+		//modalb.innerHTML += "<p><label for='file'>Figura:</label><input type='file' id='input18' name='input18' accept='image/png'/> Função:<input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
 		modalb.innerHTML += "<canvas id='tela4' class='modal_figura'></canvas>";
 	}
 	if (ArrayObjStatic[index_var_config*20+17]==1) {
@@ -120,7 +122,7 @@ function cSimIHM() {
 		modalb.innerHTML += "<p>Cor de Fundo 1: <input type='color' id='input12' name='input12' maxlength=10 size=5 /> Cor de Fundo 2: <input type='color' id='input13' name='input13' maxlength=10 size=5 /></p>";
 		modalb.innerHTML += "<p>Variável 1 <input type='text' id='input14' name='input14' maxlength=6 size=6 /> Variável 2: <input type='text' id='input15' name='input15' maxlength=6 size=6 /></p>";
 		modalb.innerHTML += "<p>Label <input type='text' id='input18' name='input18' maxlength=15 size=15 /> Função: <input type='text' id='input19' name='input19' maxlength=3 size=3 /></p>";
-		modalb.innerHTML += "<p>Piscar <input type='text' id='input16' name='input16'  maxlength=3 size=3 /> Tempo: <input type='text' id='input17' name='input17' maxlength=3 size=3 /></p>";
+		modalb.innerHTML += " <p>Piscar <input type='text' id='input16' name='input16'  maxlength=3 size=3 /> Tempo: <input type='text' id='input17' name='input17' maxlength=3 size=3 /></p>";
 		modalb.innerHTML += "<canvas id='tela4' class='modal_figura'></canvas>";
 	}
 	if (ArrayObjStatic[index_var_config*20+17]==6) {
@@ -156,8 +158,8 @@ function cSimIHM() {
 			document.getElementById('input18').value = ArrayImagens[ArrayObjDinamic[(index_var_config)*10+5]];
 			var lar= 0;
 			var alt= 0;
-			var alt_fig = Imagens_Real[ArrayObjDinamic[index_var_config*10+5]].height;
-			var lar_fig = Imagens_Real[ArrayObjDinamic[index_var_config*10+5]].width;
+			var alt_fig = Imagens[ArrayObjDinamic[index_var_config*10+5]].height;
+			var lar_fig = Imagens[ArrayObjDinamic[index_var_config*10+5]].width;
 	
 			if (lar_fig >alt_fig) {
 				if (lar_fig >100) {
@@ -179,7 +181,7 @@ function cSimIHM() {
 					lar = lar_fig;
 				}
 			}
-			CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index_var_config*10+5]], 0,0, lar, alt);		
+			CcontextFig.drawImage(Imagens[ArrayObjDinamic[index_var_config*10+5]], 0,0, lar, alt);		
 		}
 		else{
 			document.getElementById('input18').value = "";
@@ -196,18 +198,6 @@ function cSimIHM() {
 	if (ArrayObjStatic[index_var_config*20+17]==6 || ArrayObjStatic[index_var_config*20+17]==7) 
 		document.getElementById('input18').value = ArrayObjDinamic[(index_var_config)*10+5];
 	document.getElementById('input1').focus();
-}
-function leFigura(event) {
-	if( event.keyCode == 13) {
-		var inputPNG= document.createElement('input');
-		inputPNG.type = 'file';
-		inputPNG.accept = '.PNG';
-		inputPNG.click();
-		inputPNG.onchange = function() {
-			var file = this.files[0];
-			leitorDePNG.readAsBinaryString(file);
-		};
-	};
 }
 //------------------------------------------------------------------
 //Botao OK
@@ -235,20 +225,21 @@ function simOk() {
 		ArrayObjDinamic[index_var_config*10+4] = ArrayObjStatic[index_var_config*20+6];
 		simArvore();
 		cSimIHM();
+		//window.reload();
+		//redraw_processo();
+		//document.getElementById('myform').reset();
 	}
 }
 //------------------------------------------------
 //carrega figura
 //-------------------------------------------------
 function LoadImageConfig(imagefile, index) {
-	var image1 = new Image();
-	//image1 = Imagens_Real[ArrayObjDinamic[index*10+5]]
-   	image1.onload = function() {
-		CcontextFig.drawImage(Imagens_Real[ArrayObjDinamic[index*10+5]], 0,0, 50,100);
+    var image1 = new Image();
+	image1.onload = function() {
+    	CcontextFig.drawImage(Imagens[ArrayObjDinamic[index*10+5]], 0,0, 50,100);
 	};
-	//image1 = Imagens_Real[ArrayObjDinamic[index*10+5]]
-    	image1.src = imagefile;
-    	Imagens[Imagens.length] = image1;
+    image1.src = imagefile;
+    Imagens[Imagens.length] = image1;
 }
 //-----------------------------------------------
 //Botao para cima
@@ -267,6 +258,7 @@ function simUp() {
 			ArrayObjDinamic[i-10] = auxiliar;
 		}
 		index_var_config--;
+	
 		simArvore();
 		cSimIHM();
 	}
@@ -332,25 +324,25 @@ function simApontador(apontador){
 	var t_modal = modal.getElementsByTagName("h2");
 	switch (ArrayObjStatic[apontador*20+17]) {
 		case '1':
-			t_modal[0].innerHTML = "Edição de Labbel";
+			t_modal[0].innerHTML	= "Edição de Labbel";
 		break;
 		case '2':
-			t_modal[0].innerHTML = "Edição de Desenho";
+			t_modal[0].innerHTML	= "Edição de Desenho";
 		break;
 		case '3':
-			t_modal[0].innerHTML = "Figura Dinâmica - Sensor";
+			t_modal[0].innerHTML	= "Figura Dinâmica - Sensor";
 		break;
 		case '4':
-			t_modal[0].innerHTML = "Obj Interativo - Botão";
+			t_modal[0].innerHTML	= "Obj Interativo - Botão";
 		break;
 		case '5':
-			t_modal[0].innerHTML = "Edição Objeto Não Visual";
+			t_modal[0].innerHTML	= "Edição Objeto Não Visual";
 		break;
 		case '6':
-			t_modal[0].innerHTML = "Edição de Display";
+			t_modal[0].innerHTML	= "Edição de Display";
 		break;
 		case '7':
-			t_modal[0].innerHTML = "Edição De BarGraph";
+			t_modal[0].innerHTML	= "Edição De BarGraph";
 		break;
 	}
 	
@@ -437,14 +429,4 @@ function simFuncao7(){
 	ArrayObjDinamic.push(0,0,0,0,0,0,0,0,0,0);
 	index_var_config = parseInt(ArrayObjStatic.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0)/20)-1;
 	simFuncao();
-}
-var leitorDePNG = new FileReader();
-leitorDePNG.addEventListener('load', lePNG);
-
-function lePNG(evt) {
-	Imagens_Real[ArrayObjDinamic[(index_var_config)*10+5]] = evt.target.result.join('.');
-	confirm(readAsBinaryString(file));
-			
-	//draw_processo(fileArr);
-	
 }
