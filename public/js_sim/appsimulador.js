@@ -31,7 +31,6 @@ var variavel;
 function Sim_Draw_Inicio() {
 	Sim_Canvas = document.getElementById("tela6");
 	Sim_Context = Sim_Canvas.getContext("2d");
-	
 	Sim_Canvas.width = 560;//localStorage.tela_largura + 200; 
 	Sim_Canvas.height = 525; // localStorage.tela_altura + 150;
 }
@@ -41,8 +40,8 @@ function Sim_Draw_Inicio() {
 //Click com omouse
 //=====================================================================================
 function Sim_Simulador_Click() {
-	var posicaoy = parseInt(window.event.clientY-40);//-5);
-	var posicaox = parseInt(window.event.clientX-110);//-75);
+	var posicaoy = parseInt(window.event.clientY-60);
+	var posicaox = parseInt(window.event.clientX-70);
   	if (LoadedImages>0) {
     	for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
 			if (Sim_Comandos ==0 || Sim_Comandos == 1) {
@@ -123,8 +122,8 @@ function eInputS(event){
 		if(Sim_Endereco_CT(ArrayObjStatic[variavel*20+1],0) < 0)
 			Sim_Escreve_CT(ArrayObjStatic[variavel*20+1],0,0);
 
-		ICampo.style.left = "1100px";
-		ICampo.style.top = "600px";
+		ICampo.style.left = "10px";
+		ICampo.style.top = "700px";
 		CInput.blur();
 	}
 }
