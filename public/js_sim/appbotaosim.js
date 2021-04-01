@@ -6,7 +6,7 @@ var Sim_Botao_Funcao = new Array(14);
 var Sim_Edicao = 0; 
 //desenha os botoes
 function Sim_Draw_Botoes() {
-    Sim_Canvas1 = document.getElementById("tela1");
+    Sim_Canvas1 = document.getElementById("tela5");
     Sim_Context1 = Sim_Canvas1.getContext("2d");
     Sim_Canvas1.width = 75;
     Sim_Canvas1.height = 570;
