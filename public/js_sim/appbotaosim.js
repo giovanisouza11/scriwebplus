@@ -114,10 +114,10 @@ function Sim_Botao_Click() {
         	Sim_Botao_Funcao[3]=0;
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[5]==1){
-		Sim_Comandos = 1;
+	//	Sim_Comandos = 1;
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[6]==1){
-		Sim_Comandos = 0;
+	//	Sim_Comandos = 0;
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[4]==1){
 		var modal1 = document.getElementById("myModal1");
@@ -190,22 +190,22 @@ function Sim_Botao_Click() {
 				modal1.style.display = "none";
 			}
 		}
-		Sim_Comandos = 0;	
+	//	Sim_Comandos = 0;	
 		Sim_Botao_Funcao[4]=0;
 		Sim_Botao_Funcao[5]=1;
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[1]==1){
 		Sim_Botao_Funcao[1]=0;
-		Sim_Comandos = 0;
+	//	Sim_Comandos = 0;
 		Sim_Edicao = 1;
 	}
 	if (Sim_Edicao==1 && Sim_Botao_Funcao[1]==1){
 		Sim_Botao_Funcao[1]=0;
-		Sim_Comandos = 0;
+	//	Sim_Comandos = 0;
 		Sim_Edicao = 0;
 	}
 	if (Sim_Edicao==1 && Sim_Botao_Funcao[2]==1){
-		Sim_Comandos = 2;
+	//	Sim_Comandos = 2;
 	}
 	if (Sim_Edicao==1 && Sim_Botao_Funcao[3]==1){
 		Sim_Funcao1();
