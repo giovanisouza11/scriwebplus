@@ -4,12 +4,12 @@
 var Sim_Canvas;
 var Sim_Context; //, Sim_Context1;
 //document.addEventListener('mousemove', mouse_move);
-var Sim_M = [];
-var Sim_I = [];
-var Sim_R = [];
-var Sim_Q = [];
-var Sim_T = [];
-var Sim_C = [];
+var M = [];
+var I = [];
+var R = [];
+var Q = [];
+var T = [];
+var C = [];
 var Sim_Comandos = 0; // 0:stop, 1: run 2: edicao
 
 var Imagens =[];
@@ -131,7 +131,7 @@ function eInputS(event){
 
 //Interrupção de tempo
 function AtualizaPorTempo() {
-	if (LoadedImages>0) {
+	if (LoadedImages>0 && (Tela_Eletrico_Simulador == 1)) {
 		atualiza_simulador();
 	}
 }
@@ -251,7 +251,7 @@ function Sim_Ihm() {
         		Sim_Context.fillText('ENTRADAS', 870, linha);
         		Sim_Context.fillRect(955, linha-5, 60, 5);
         		Sim_Context.fillRect(1025, linha-5, 60, 5);
-        		tamanho_array = Sim_I.length;
+        		tamanho_array = I.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Sim_Context.fillText('MSB', 790,linha);
@@ -266,7 +266,7 @@ function Sim_Ihm() {
         		Sim_Context.fillText('SAIDAS', 880, linha);
         		Sim_Context.fillRect(955, linha-5, 60, 5);
         		Sim_Context.fillRect(1025, linha-5, 60, 5);
-        		tamanho_array = Sim_Q.length;
+        		tamanho_array = Q.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Sim_Context.fillText('MSB', 790,linha);
@@ -281,7 +281,7 @@ function Sim_Ihm() {
         		Sim_Context.fillText('MEMÓRIAS', 870, linha);
         		Sim_Context.fillRect(955, linha-5, 60, 5);
         		Sim_Context.fillRect(1025, linha-5, 60, 5);
-        		tamanho_array = Sim_M.length;
+        		tamanho_array = M.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Sim_Context.fillText('MSB', 790,linha);
@@ -295,7 +295,7 @@ function Sim_Ihm() {
         		Sim_Context.fillRect(790, linha-5, 60, 5);
         		Sim_Context.fillText('TIMERS', 880, linha);
        			Sim_Context.fillRect(955, linha-5, 60, 5);
-        		tamanho_array = Sim_T.length;
+        		tamanho_array = T.length;
         		num_linhas = parseInt(tamanho_array / 3);
         		linha = linha + 15;
         		Sim_Context.fillText('Tem', 790,linha);
@@ -309,7 +309,7 @@ function Sim_Ihm() {
         		Sim_Context.fillRect(790, linha-5, 60, 5);
         		Sim_Context.fillText('CONTADORES', 860, linha);
         		Sim_Context.fillRect(955, linha-5, 60, 5);
-        		tamanho_array = Sim_C.length;
+        		tamanho_array = C.length;
         		num_linhas = parseInt(tamanho_array / 4);
         		linha = linha + 15;
         		Sim_Context.fillText('Cont', 790,linha);
@@ -324,7 +324,7 @@ function Sim_Ihm() {
         		Sim_Context.fillRect(790, linha-5, 60, 5);
         		Sim_Context.fillText('RAMAIS', 880, linha);
         		Sim_Context.fillRect(955, linha-5, 60, 5);
-        		tamanho_array = Sim_R.length;
+        		tamanho_array = R.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Sim_Context.fillText('MSB', 790,linha);
@@ -372,29 +372,29 @@ function Sim_Ihm() {
         			switch (parseInt(funcao)){
         			case 0:
         				Sim_Context.fillStyle = 'red';
-        				Sim_Context.fillText(Sim_I[n_posicao], 980-(posicao*10),linha);
+        				Sim_Context.fillText(I[n_posicao], 980-(posicao*10),linha);
         				break;
         			case 1:
         				Sim_Context.fillStyle = 'red';
-        				Sim_Context.fillText(Sim_Q[n_posicao], 980-(posicao*10),linha);
+        				Sim_Context.fillText(Q[n_posicao], 980-(posicao*10),linha);
         				break;
         			case 2:
         				Sim_Context.fillStyle = 'red';
-        				Sim_Context.fillText(Sim_M[n_posicao], 980-(posicao*10),linha);
+        				Sim_Context.fillText(M[n_posicao], 980-(posicao*10),linha);
         				break;
         			case 5:
         				Sim_Context.fillStyle = 'red';
-        				Sim_Context.fillText(Sim_R[n_posicao], 980-(posicao*10),linha);
+        				Sim_Context.fillText(R[n_posicao], 980-(posicao*10),linha);
         				break;
         			case 4:
         				Sim_Context.fillStyle = 'red';
-        				Sim_Context.fillText(Sim_C[n_posicao], 850+(posicao*50),linha);
+        				Sim_Context.fillText(C[n_posicao], 850+(posicao*50),linha);
         				if (posicao >2)
         					posicao = 15;
         				break;
         			case 3:
         				Sim_Context.fillStyle = 'red';
-        				Sim_Context.fillText(Sim_T[n_posicao], 875+(posicao*50),linha);
+        				Sim_Context.fillText(T[n_posicao], 875+(posicao*50),linha);
         				if (posicao >1)
         					posicao = 15;
         				break;
@@ -454,19 +454,19 @@ function Sim_Endereco(Aux_data){
 
 	switch (primeiro_char) {
 		case 'Q':
-			retorno = Sim_Q[index];
+			retorno = Q[index];
 			break;
 		case 'I':
-			retorno = Sim_I[index];
+			retorno = I[index];
 			break;
 		case 'M':
-			retorno = Sim_M[index];
+			retorno = M[index];
 			break;
 		case 'R':
-			retorno = Sim_R[index];
+			retorno = R[index];
 			break;
 		case 'T':
-			retorno = Sim_T[3*index];
+			retorno = T[3*index];
 			break;
 		case 'C':
 			retorno = Sim_C[4*index];
@@ -526,24 +526,24 @@ function Sim_escreve_endereco(Aux_data, valor)
 
 	switch (Aux_data.charAt(0)) {
 		case 'Q':
-			Sim_Q[index] = valor;
+			Q[index] = valor;
 			break;
 		case 'I':
-			Sim_I[index] = valor;
-			envia_entrada(Sim_I);
+			I[index] = valor;
+			Envia_Entrada_S(I);
 			break;
 		case 'M':
-			Sim_M[index] = valor;
-            		envia_memoria('Sim_M'+parseInt(index/16));
+			M[index] = valor;
+            			Envia_Memoria_S('M'+parseInt(index/16));
 			break;
 		case 'R':
-			Sim_R[index] = valor;
+			R[index] = valor;
 			break;
 		case 'T':
-			Sim_T[3*index+1] = valor;
+			T[3*index+1] = valor;
 			break;
 		case 'C':
-			Sim_C[4*index+3] = 2;
+			C[4*index+3] = 2;
 			break;
 	}
 }
@@ -569,34 +569,34 @@ function Sim_Escreve_CT(Aux_data, valor, index1)
 		case 'I':
 			for (var ia=0; ia<=14; ia++) {
 				var auxiliar = parseInt(valor) %2;
-				Sim_I[index+ ia] = auxiliar;
+				I[index+ ia] = auxiliar;
 				valor = parseInt(valor / 2);
 			}
-			Sim_I[index+15] = valor;
-			envia_entrada(Sim_I);
+			I[index+15] = valor;
+			Envia_Entrada_S(I);
 			break;
 		case 'Q':
 			for (var ia=0; ia<=14; ia++) {
 				var auxiliar = parseInt(valor) %2;
-				Sim_Q[index+ ia] = auxiliar;
+				Q[index+ ia] = auxiliar;
 				valor = parseInt(valor / 2);
 			}
-			Sim_Q[index+15] = valor;
+			Q[index+15] = valor;
 			break;
 		case 'M':
 			for (var ia=0; ia<=14; ia++) {
 				var auxiliar = parseInt(valor) %2;
-				Sim_M[index+ ia] = auxiliar;
+				M[index+ ia] = auxiliar;
 				valor = parseInt(valor / 2);
 			}
-			Sim_M[index+15] = valor;
-			envia_memoria('Sim_M'+parseInt(index/16));
+			M[index+15] = valor;
+			Envia_Memoria_S('M'+parseInt(index/16));
 			break;
 		case 'T':
-			Sim_T[3*index+index1] = valor;
+			T[3*index+index1] = valor;
 			break;
 		case 'C':
-			Sim_C[4*index+index1] = valor;
+			C[4*index+index1] = valor;
 			break;
 	}
 }
@@ -626,23 +626,23 @@ function Sim_Endereco_CT(Aux_data, index1) {
 		case 'I':
 			retorno = 0;
 			for (var ia=0; ia<16; ia++)
-				retorno = retorno + variavelCT(Sim_I[index+ ia])* (2**ia);
+				retorno = retorno + variavelCT(I[index+ ia])* (2**ia);
 			break;
 		case 'Q':
 			retorno = 0;
 			for (var ia=0; ia<16; ia++)
-				retorno = retorno + variavelCT(Sim_Q[index+ ia])* (2**ia);
+				retorno = retorno + variavelCT(Q[index+ ia])* (2**ia);
 		  	break;
 		case 'M':
 			retorno = 0;
 			for (var ia=0; ia<16; ia++)
-				retorno = retorno + variavelCT(Sim_M[index+ ia])* (2**ia);
+				retorno = retorno + variavelCT(M[index+ ia])* (2**ia);
 			break;
 		case 'T':
-			retorno = Sim_T[3*index+index1];
+			retorno = T[3*index+index1];
 			break;
 		case 'C':
-			retorno = Sim_C[4*index+index1];
+			retorno = C[4*index+index1];
 			break;
 		case 'X':
 			retorno = (index1==0) ? parseInt(ArrayObjDinamic[index*10+3]) : parseInt(ArrayObjDinamic[index*10+3])+parseInt(ArrayObjStatic[index*20+4]);
@@ -1010,7 +1010,7 @@ function verificaTexto(posicao, deslocamento, dependencia) {
 // Apos leitura do arquivo
 //=====================================================================================
 function Sim_Draw_Processo(fileArr) {
-	Sim_Inicializa_Array();
+	Inicializa_Array();
 	Sim_Draw_Fundo();
 	Sim_Context.font = '9pt Arial';
 	var ponteiro = 0;
