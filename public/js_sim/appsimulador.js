@@ -29,7 +29,7 @@ var variavel;
 //Desenha area de trabalho em branco
 //=====================================================================================
 function draw_simulador_inicio() {
-	Scanvas = document.getElementById("tela2");
+	Scanvas = document.getElementById("tela6");
 	Scontext = Scanvas.getContext("2d");
 	
 	Scanvas.width = 1200;//localStorage.tela_largura + 200; 
