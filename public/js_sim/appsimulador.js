@@ -468,7 +468,7 @@ function Sim_Endereco(Aux_data){
 			retorno = T[3*index];
 			break;
 		case 'C':
-			retorno = Sim_C[4*index];
+			retorno = C[4*index];
 			break;
 		case 'D':
 			retorno = endereco(ArrayObjStatic[index*20+1]);
@@ -1009,7 +1009,7 @@ function verificaTexto(posicao, deslocamento, dependencia) {
 // Apos leitura do arquivo
 //=====================================================================================
 function Sim_Draw_Processo(fileArr) {
-	Inicializa_Array();
+	Sim_Inicializa_Array();
 	Sim_Draw_Fundo();
 	Sim_Context.font = '9pt Arial';
 	var ponteiro = 0;
