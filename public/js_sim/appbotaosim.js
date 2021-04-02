@@ -39,43 +39,6 @@ function Sim_Botao_Click() {
 	    	Sim_Botao_Funcao[11]=0;
 	}
 	if (Sim_Botao_Funcao[10]==1){
-/*        		var modal1 = document.getElementById("myModal1");
-		var t_modal = modal1.getElementsByTagName("h2");
-		t_modal[0].innerHTML = "Config";	
-		var modalb1 = document.getElementById("myBody1");
-		modalb1.innerHTML = "<p>Número do CLP <input type='number' id='input1' name='input1' max=30 min=0 /></p>";
-		modalb1.innerHTML += "<p>Tamanho da Tela Largura:<input type='number' id='input2' max=2000 min=200/></p>";
-		modalb1.innerHTML += "<p>Altura:<input type='number' id='input3' name='input3' max=2000 min=0/> </p>";
-		document.getElementById('input1').value = localStorage.num_clp1;
-		document.getElementById('input2').value = localStorage.tela_largura;
-		document.getElementById('input3').value = localStorage.tela_altura;
-		// Create <OK> element that closes the modal
-		var btn = document.createElement('button');
-		btn.setAttribute('type','button');
-		btn.appendChild(document.createTextNode('OK'));
-		btn.onclick = function() {
-			Config_Socket(document.getElementById('input1').value);
-			localStorage.setItem("tela_largura", document.getElementById('input2').value);
-			localStorage.setItem("tela_altura", document.getElementById('input3').value);
-			modal1.style.display = "none";
-		};
-		modalb1.appendChild(btn);
-		
-		modal1.style.display = "block";
-		// Get the <Close> element that closes the modal
-		var span1 = document.getElementById("close1");
-		span1.onclick = function() {
-			modal1.style.display = "none";
-		}
-		
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-			if (event.target == modal1) {
-				modal1.style.display = "none";
-			}
-		}
-
-*/	 
 	   	Sim_Botao_Funcao[10]=0;
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[2]==1){
@@ -192,43 +155,46 @@ function Sim_Botao_Click() {
 				modal1.style.display = "none";
 			}
 		}
-	//	Sim_Comandos = 0;	
 		Sim_Botao_Funcao[4]=0;
-		//Sim_Botao_Funcao[5]=1;
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[1]==1){
 		Sim_Botao_Funcao[1]=0;
-	//	Sim_Comandos = 0;
 		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao==1 && Sim_Botao_Funcao[1]==1){
+	if (Sim_Edicao>0 && Sim_Botao_Funcao[1]==1){
 		Sim_Botao_Funcao[1]=0;
-	//	Sim_Comandos = 0;
 		Sim_Edicao = 0;
 	}
 	if (Sim_Edicao==1 && Sim_Botao_Funcao[2]==1){
-	//	Sim_Comandos = 2;
+		Sim_Edicao = 2;
 	}
-	if (Sim_Edicao==1 && Sim_Botao_Funcao[3]==1){
+	if (Sim_Edicao>0 && Sim_Botao_Funcao[3]==1){
 		Sim_Funcao1();
+		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao==1 && Sim_Botao_Funcao[4]==1){
+	if (Sim_Edicao>0 && Sim_Botao_Funcao[4]==1){
 		Sim_Funcao2();
+		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao==1 && Sim_Botao_Funcao[5]==1){
+	if (Sim_Edicao>0 && Sim_Botao_Funcao[5]==1){
 		Sim_Funcao3();
+		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao==1 && Sim_Botao_Funcao[6]==1){
+	if (Sim_Edicao>0 && Sim_Botao_Funcao[6]==1){
 		Sim_Funcao4();
+		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao==1 && Sim_Botao_Funcao[7]==1){
+	if (Sim_Edicao>0 && Sim_Botao_Funcao[7]==1){
 		Sim_Funcao5();
+		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao==1 && Sim_Botao_Funcao[8]==1){
+	if (Sim_Edicao>0 && Sim_Botao_Funcao[8]==1){
 		Sim_Funcao6();
+		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao==1 && Sim_Botao_Funcao[9]==1){
+	if (Sim_Edicao>0 && Sim_Botao_Funcao[9]==1){
 		Sim_Funcao7();
+		Sim_Edicao = 1;
 	}
 
 	Sim_Draw_Botoes();		
