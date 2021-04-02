@@ -72,6 +72,7 @@ function Sim_Simulador_Click() {
 						var CInput = document.getElementById('Sim_Input_Ladder');
 						ICampo.style.left = " "+ArrayObjDinamic[index_var*10+3] + "px";
 						ICampo.style.top = " "+ArrayObjDinamic[index_var*10+4]  + "px";
+						ICampo.style.display = "block";
 						document.getElementById('Sim_Label_Input').innerHTML = ArrayObjStatic[index_var*20+1];
 						document.getElementById('Sim_Input_Ladder').value = Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0);
 						CInput.focus();
@@ -125,6 +126,7 @@ function eInputS(event){
 		ICampo.style.left = "10px";
 		ICampo.style.top = "700px";
 		CInput.blur();
+		ICampo.style.display = "none";
 	}
 }
 
