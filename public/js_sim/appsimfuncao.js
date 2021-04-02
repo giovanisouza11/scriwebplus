@@ -8,7 +8,7 @@ function Sim_Funcao() {
 	var modalc = document.getElementById("myColuna");
 	var t_modal = modal.getElementsByTagName("h2");
 	t_modal[0].innerHTML = simTitulo;	
-	Sim_IHM_Click();
+	Sim_Funcao_IHM();
 	
 	modal.style.display = "block";
 	modalc.style.display = "block";
