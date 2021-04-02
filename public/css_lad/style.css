@@ -20,11 +20,10 @@ body {
 	position: fixed;
 	width: 640px;
 	top: 0px;
-	height: 20px;
+	height: 40px;
 	background:khaki;
      	border: 1px solid red;
 	text-align: center;
-	vertical-align: 5px;
 }
 .figura1 {
         position: fixed;
@@ -154,7 +153,6 @@ body {
 	height: 20px;
 	margin: 0 auto;
       	text-align: center;
-	vertical-align: 5px;
 	border: 1px solid red;
 	background:khaki;
         font-size: 13px;
