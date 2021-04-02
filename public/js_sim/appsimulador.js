@@ -45,7 +45,7 @@ function Sim_Simulador_Click() {
 	var posicaox = parseInt(window.event.clientX-70);
   	if (LoadedImages>0) {
     	for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
-			if (simEdicao == 0) {
+			if (Sim_Edicao == 0) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
 					if (Sim_endereco(ArrayObjStatic[index_var*20+1])==1) {
@@ -101,7 +101,7 @@ function Sim_Simulador_Click() {
 				}			
 			}
 			//ENtra em modo ediçao
-			if ((simEdicao == 1) && ((ArrayObjStatic[index_var*20+17]!=1 && ArrayObjStatic[index_var*20+17]!=6 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1) ||
+			if ((Sim_Edicao == 1) && ((ArrayObjStatic[index_var*20+17]!=1 && ArrayObjStatic[index_var*20+17]!=6 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1) ||
 			(ArrayObjStatic[index_var*20+17]==1 && verificaTexto(posicaox, -1*ArrayObjStatic[index_var*20+10]*ArrayImagens[ArrayObjDinamic[index_var*10+5]].length, 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1) ||
 			(ArrayObjStatic[index_var*20+17]==6 && verificaTexto(posicaox, -5*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1))) {
 				simApontador(index_var);
@@ -133,7 +133,7 @@ function eInputS(event){
 
 //Interrupção de tempo Tela_Eletrico_Simulador
 function AtualizaPorTempo() {
-	if (LoadedImages>0 && (Tela_Eletrico_Simulador == 1)) {
+	if (LoadedImages>0 && (Tela_Eletrico_Simulador == 1) && (Sim_Edicao ==0)) {
 		atualiza_simulador();
 	}
 }
@@ -141,7 +141,7 @@ function AtualizaPorTempo() {
 //=====================================================================================
 //Atualiza variãveis e canvas
 //Disparado ao receber SocketIO
-//==============================================		=======================================
+//===================================================================================
 function atualiza_simulador() {
 	Sim_Ihm();
 	            	
