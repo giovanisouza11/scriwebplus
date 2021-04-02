@@ -40,6 +40,7 @@ function Sim_Draw_Inicio() {
 //Click com omouse
 //=====================================================================================
 function Sim_Simulador_Click() {
+	alert("clicou");
 	var posicaoy = parseInt(window.event.clientY-60);
 	var posicaox = parseInt(window.event.clientX-70);
   	if (LoadedImages>0) {
