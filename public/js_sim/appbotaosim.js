@@ -12,9 +12,12 @@ function Sim_Draw_Botoes() {
     Sim_Canvas1.height = 550;
 
     for(i=1; i<13; i++) {
+	var num_fig = 70*Sim_Botao_Funcao[i]+(140*Sim_Edicao);   
         if (Sim_Botao_Funcao[i] === undefined)
 		Sim_Botao_Funcao[i] = 0;
-        Sim_Context1.drawImage(Sim_ImageB, 70*Sim_Botao_Funcao[i]+(140*Sim_Edicao), 45*(i-1), 70, 45, 5,(i-1)*44, 70, 43);
+	if (Sim_Edicao == 2)
+		num_fig = 210*Sim_Botao_Funcao[i];
+	Sim_Context1.drawImage(Sim_ImageB, num_fig, 45*(i-1), 70, 45, 5,(i-1)*44, 70, 43);
     }
 }
 
