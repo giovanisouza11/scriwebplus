@@ -44,7 +44,7 @@ function Sim_Simulador_Click() {
 	var posicaox = parseInt(window.event.clientX-70);
 	alert("clicou "+ posicaox + " " + posicaoy);
   	if (LoadedImages>0) {
-    	for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
+    		for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
 			if (Sim_Edicao == 0) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
@@ -134,7 +134,7 @@ function eInputS(event){
 //Interrupção de tempo Tela_Eletrico_Simulador
 function AtualizaPorTempo() {
 	if (LoadedImages>0 && (Tela_Eletrico_Simulador == 1) && (Sim_Edicao ==0)) {
-		atualiza_simulador();
+		Atualiza_Simulador();
 	}
 }
 
@@ -142,8 +142,8 @@ function AtualizaPorTempo() {
 //Atualiza variãveis e canvas
 //Disparado ao receber SocketIO
 //===================================================================================
-function atualiza_simulador() {
-	Sim_Ihm();
+function Atualiza_Simulador() {
+	//Sim_Ihm();
 	            	
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++){
 		if (comandos > 0) {
@@ -237,7 +237,7 @@ function Sim_Ihm() {
   	Sim_Context.fillRect(780, 5, 310, 560);
   	Sim_Context.font = '36pt Arial';
   	Sim_Context.fillStyle = 'red';
-	Sim_Context.fillText(localStorage.num_clp1, 795, 60);
+	//Sim_Context.fillText(localStorage.num_clp1, 795, 60);
 	Sim_Context.fillStyle = 'black';
   	Sim_Context.strokeRect(785, 10, 305, 555);
   	Sim_Context.font = '16pt Arial';
