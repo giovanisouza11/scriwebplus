@@ -22,7 +22,7 @@ function draw_botoes() {
 //Verifica QUAL botao foi acionado
 //Separa em tres grupos: 0 a 10: comandos do software, 11 a 20: edicao do ladder, 21 a 30: funcoes do ladder
 function trocar_botao() {
-	var posicaoy= parseInt((window.event.clientY-40)/47);
+	var posicaoy= parseInt((window.event.clientY-7)/47);
 	var posicaox = parseInt((window.event.clientX-425)/72);
 	if (posicaox == 1)
 		posicaoy = posicaoy + 10;
