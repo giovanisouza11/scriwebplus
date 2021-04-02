@@ -4,12 +4,12 @@
 var Sim_Canvas;
 var Sim_Context; //, Sim_Context1;
 //document.addEventListener('mousemove', mouse_move);
-var M = [];
-var I = [];
-var R = [];
-var Q = [];
-var T = [];
-var C = [];
+//var M = [];
+//var I = [];
+//var R = [];
+//var Q = [];
+//var T = [];
+//var C = [];
 //var Sim_Comandos = 0; // 0:stop, 1: run 2: edicao
 
 var Imagens =[];
