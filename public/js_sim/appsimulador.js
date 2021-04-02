@@ -69,11 +69,11 @@ function Sim_Simulador_Click() {
 					{
 						variavel = index_var;
 						var ICampo = document.getElementById('CampoS');
-						var CInput = document.getElementById('input_ladder');
+						var CInput = document.getElementById('Sim_Input_Ladder');
 						ICampo.style.left = " "+ArrayObjDinamic[index_var*10+3] + "px";
 						ICampo.style.top = " "+ArrayObjDinamic[index_var*10+4]  + "px";
-						document.getElementById('label_input').innerHTML = ArrayObjStatic[index_var*20+1];
-						document.getElementById('input_ladder').value = Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0);
+						document.getElementById('Sim_Label_Input').innerHTML = ArrayObjStatic[index_var*20+1];
+						document.getElementById('Sim_Input_Ladder').value = Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0);
 						CInput.focus();
 					}
 				}
@@ -115,7 +115,7 @@ function Sim_Simulador_Click() {
 function eInputS(event){
 	if (event.keyCode == 13) { //Tecla enter
 		var ICampo = document.getElementById('CampoS');
-		var CInput = document.getElementById('input_ladder');
+		var CInput = document.getElementById('Sim_Input_Ladder');
 		Sim_Escreve_CT(ArrayObjStatic[variavel*20+1], CInput.value, 0);
 		if(Sim_Endereco_CT(ArrayObjStatic[variavel*20+1],0) > ArrayObjStatic[variavel*20+16])
 			Sim_Escreve_CT(ArrayObjStatic[variavel*20+1],parseInt(ArrayObjStatic[variavel*20+16]),0);
