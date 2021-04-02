@@ -42,7 +42,7 @@ function Sim_Draw_Inicio() {
 function Sim_Simulador_Click() {
 	var posicaoy = parseInt(window.event.clientY-60);
 	var posicaox = parseInt(window.event.clientX-70);
-	alert("clicou "+ posicaox + " " + posicaoy);
+	//alert("clicou "+ posicaox + " " + posicaoy);
   	if (LoadedImages>0) {
     		for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
 			if (Sim_Edicao == 0) {
@@ -54,6 +54,8 @@ function Sim_Simulador_Click() {
 					else {
 						Sim_escreve_endereco(ArrayObjStatic[index_var*20+1],1);
 					}
+					alert("clicou LABEL");
+  	
 				}
  
 				if (ArrayObjStatic[index_var*20+17]==4 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
@@ -64,6 +66,8 @@ function Sim_Simulador_Click() {
 					else {
 						Sim_escreve_endereco(ArrayObjStatic[index_var*20+1],1);
 					}
+					alert("clicou FIGURA");
+  	
 				}
 				if (ArrayObjStatic[index_var*20+17]==6) {
 					if (verificaTexto(posicaox, -4*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1)
@@ -77,12 +81,16 @@ function Sim_Simulador_Click() {
 						document.getElementById('Sim_Label_Input').innerHTML = ArrayObjStatic[index_var*20+1];
 						document.getElementById('Sim_Input_Ladder').value = Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0);
 						CInput.focus();
+						alert("clicou ENTRADA");
+  	
 					}
 				}
 				if (ArrayObjStatic[index_var*20+17]==7 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
 					ArrayObjDinamic[index_var*10+3] = ArrayObjStatic[index_var*20+3];
 					ArrayObjDinamic[index_var*10+4] = ArrayObjStatic[index_var*20+6];
+					alert("clicou BARGRAPH");
+  	
 				}			
 				if (ArrayObjStatic[index_var*20+17]==2 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
@@ -98,6 +106,8 @@ function Sim_Simulador_Click() {
 						ArrayObjStatic[index_var*20+4] = ArrayObjStatic[(index_var-1)*20+4];
 						ArrayObjStatic[(index_var-1)*20+4] = auxiliar;
 					}
+					alert("clicou FIGURA ANimada");
+  	
 				}			
 			}
 			//ENtra em modo ediçao
@@ -105,6 +115,8 @@ function Sim_Simulador_Click() {
 			(ArrayObjStatic[index_var*20+17]==1 && verificaTexto(posicaox, -1*ArrayObjStatic[index_var*20+10]*ArrayImagens[ArrayObjDinamic[index_var*10+5]].length, 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1) ||
 			(ArrayObjStatic[index_var*20+17]==6 && verificaTexto(posicaox, -5*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1))) {
 				simApontador(index_var);
+				alert("clicou EDICAO");
+  	
 			}
 		}
   	} 
