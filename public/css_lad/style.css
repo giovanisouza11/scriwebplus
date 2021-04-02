@@ -20,7 +20,7 @@ body {
 	position: fixed;
 	width: 640px;
 	top: 0px;
-	height: 60px;
+	height: 40px;
 	background:khaki;
      	border: 1px solid red;
 	text-align: center;
@@ -56,7 +56,7 @@ body {
         position: fixed;
         left: 0px;
         width: 425px; 
-        top: 65px;
+        top: 45px;
 	height: 500px;
 	text-align: left;
         background:ivory;
@@ -65,7 +65,7 @@ body {
         position: fixed;
         left: 425px;
         width: 225px; 
-        top: 65px;
+        top: 45px;
 	height: 500px;
 	text-align: left;
 	background:palegreen;
@@ -75,7 +75,7 @@ body {
        	width: 80px;
      	left: 0px;
 	height: 525px;
-        top: 65px;
+        top: 45px;
 	text-align: left;
         background:palegreen;
  }
@@ -84,12 +84,13 @@ body {
        	left: 80px;
        	width: 535px;
 	height: 525px;
-       	top: 65px;
+       	top: 45px;
 	text-align: left;
     	background:ivory;
 }
 .divColuna10 {
-       	position: relative;
+       	display: none;
+	position: relative;
 	top: 1070px;
        	left: 1100px;
        	width: 60px; 
@@ -102,7 +103,7 @@ body {
 	position: fixed;
        	width: 640px;
 	height: 550px;
-       	top: 65px;
+       	top: 45px;
 	left: 0px;
 	text-align: left;
 }
@@ -111,7 +112,7 @@ body {
 	position: fixed;
        	width: 640px;
 	height: 550px;
-       	top: 65px;
+       	top: 45px;
 	left: 0px;
 	text-align: left;
 }
@@ -149,7 +150,7 @@ body {
 	bottom: 0px;
 	left: 0px;
 	width: 640px;
-	height: 40px;
+	height: 30px;
 	margin: 0 auto;
       	text-align: center;
 	border: 1px solid red;
@@ -185,89 +186,13 @@ body {
 	animation-name: animatetop;
 	animation-duration: 0.4s
 }
-/* The Modal (background) */
-	.modal2 {
-		display: none; /* Hidden by default */
-		position: fixed; /* Stay in place */
-		z-index: 1; /* Sit on top */
-		padding-top: 1px; /* Location of the box */
-		margin-top:0px;
-		margin-left:0px;
-		left: 200px;
-		top: 100px;
-		/*left:50vw;*/
-		/*top: 50vh;*/
-		width: 480; /* Full width */
-		height: 420; /* Full height */
-		background-color: rgb(0,0,0); /* Fallback color */
-		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-	}
-
-	/* Modal Content */
-	.modal-coluna {
-		display: none;
-		z-index: 1; /* Sit on top */
-		position: fixed;
-		background-color: palegreen;
-		margin-top:0px;
-		margin-left:0px;
-		left: 100px;
-		top:100px;
-		/*left: 50vw;*/
-		/*top: 50vh;*/
-		height: 420px; 
-		width: 100px;
-		border: 1px solid #888;
-		overflow: auto; /* Enable scroll if needed */
-		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-		-webkit-animation-name: animatetop;
-		-webkit-animation-duration: 0.2s;
-		animation-name: animatetop;
-		animation-duration: 0.2s;
-	}
-	.modal-body2 {
-		position: absolute;
-		background-color: ivory;
-		margin: auto;
-		width:96%;
-		padding: 0;
-		border: 1px solid #888;
-		left: 10px;
-		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.19);
-		-webkit-animation-name: animatetop;
-		-webkit-animation-duration: 0.5s;
-		animation-name: animatetop;
-		animation-duration: 0.5s;
-	}
-/* Add Animation */
-@-webkit-keyframes animatetop {
-	from {top:-400px; opacity:0} 
-	to {top:0; opacity:1}
-}
-@keyframes animatetop {
-	from {top:-400px; opacity:0}
-	to {top:0; opacity:1}
-}
-/* The Close Button */
-.close {
-	color: white;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-}
-.close:hover,
-	.close:focus {
-	color: #000;
-	text-decoration: none;
-	cursor: pointer;
-}
 .modal-header {
 	padding: 2px 16px;
 	background-color: khaki;
 	color: white;
 }
 .modal-body {padding: 2px 16px;}
-/* The Modal (background) */
+/* Modal Content */
 .modal1 {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
@@ -305,6 +230,68 @@ body {
 	font-size: 18px;
 	background-color: khaki;
 	color: white;
+}
+/* The Modal (background) */
+.modal2 {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 1px; /* Location of the box */
+	margin-top:0px;
+	margin-left:0px;
+	left: 200px;
+	top: 100px;
+	/*left:50vw;*/
+	/*top: 50vh;*/
+	width: 480; /* Full width */
+	height: 420; /* Full height */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-coluna {
+	display: none;
+	z-index: 1; /* Sit on top */
+	position: fixed;
+	background-color: palegreen;
+	margin-top:0px;
+	margin-left:0px;
+	left: 100px;
+	top:100px;
+	/*left: 50vw;*/
+	/*top: 50vh;*/
+	height: 420px; 
+	width: 100px;
+	border: 1px solid #888;
+	overflow: auto; /* Enable scroll if needed */
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.2s;
+	animation-name: animatetop;
+	animation-duration: 0.2s;
+}
+.modal-body2 {
+	position: absolute;
+	background-color: ivory;
+	margin: auto;
+	width:96%;
+	padding: 0;
+	border: 1px solid #888;
+	left: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.5s;
+	animation-name: animatetop;
+	animation-duration: 0.5s;
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+	from {top:-400px; opacity:0} 
+	to {top:0; opacity:1}
+}
+@keyframes animatetop {
+	from {top:-400px; opacity:0}
+	to {top:0; opacity:1}
 }
 /* The Close Button */
 .close1 {
