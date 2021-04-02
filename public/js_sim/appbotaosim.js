@@ -24,7 +24,7 @@ function Sim_Draw_Botoes() {
 //Verifica QUAL botao foi acionado
 //Separa em tres grupos: 0 a 10: Sim_Comandos do software, 11 a 20: edicao do ladder, 21 a 30: funcoes do ladder
 function Sim_Botao_Click() {
-	var posicaoy= parseInt((window.event.clientY-60)/44);
+	var posicaoy= parseInt((window.event.clientY-40)/44);
 
 	if ((posicaoy >=0) && (posicaoy < 12))
 	{
