@@ -40,7 +40,7 @@ function Sim_Simulador_Click() {
 			if (Sim_Edicao == 0) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
-					if (Sim_endereco(ArrayObjStatic[index_var*20+1])==1) {
+					if (Sim_Endereco(ArrayObjStatic[index_var*20+1])==1) {
 						Sim_escreve_endereco(ArrayObjStatic[index_var*20+1],0);
 					}
 					else {
@@ -52,7 +52,7 @@ function Sim_Simulador_Click() {
  
 				if (ArrayObjStatic[index_var*20+17]==4 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
-					if (Sim_endereco(ArrayObjStatic[index_var*20+1])==1) {
+					if (Sim_Endereco(ArrayObjStatic[index_var*20+1])==1) {
 						Sim_escreve_endereco(ArrayObjStatic[index_var*20+1],0);
 					}
 					else {
@@ -168,11 +168,11 @@ function Atualiza_Simulador() {
 			Sim_Context.fillStyle = 'white';
 			Sim_Context.fillRect(ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6], 4*ArrayObjStatic[ij*20+10], -ArrayObjStatic[ij*20+10]);
   			Sim_Context.fillStyle = ArrayObjStatic[ij*20+9];
-			Sim_Context.fillText(Sim_enderecoCT(ArrayObjStatic[ij*20+1],0),ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6]);
+			Sim_Context.fillText(Sim_EnderecoCT(ArrayObjStatic[ij*20+1],0),ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6]);
 		}
 		if (ArrayObjStatic[ij*20+17] == 7) {
 			Sim_Context.fillStyle = ArrayObjStatic[ij*20+10];
-			var percentual = parseInt(Sim_enderecoCT(ArrayObjStatic[ij*20+1],0)*ArrayObjStatic[ij*20+7]/ ArrayObjStatic[ij*20+16]);
+			var percentual = parseInt(Sim_EnderecoCT(ArrayObjStatic[ij*20+1],0)*ArrayObjStatic[ij*20+7]/ ArrayObjStatic[ij*20+16]);
 			Sim_Context.fillRect(parseInt(ArrayObjDinamic[ij*10+3]), parseInt(ArrayObjDinamic[ij*10+4]), parseInt(ArrayObjStatic[ij*20+4]), parseInt(ArrayObjStatic[ij*20+7])-percentual);
 			Sim_Context.fillStyle = ArrayObjStatic[ij*20+12];
 			Sim_Context.fillRect(ArrayObjDinamic[ij*10+3], parseInt(ArrayObjDinamic[ij*10+4])+parseInt(ArrayObjStatic[ij*20+7])-parseInt(percentual), ArrayObjStatic[ij*20+4], percentual);
@@ -190,7 +190,7 @@ function funcaoLabel(apontador){
 	Sim_Context.font = ArrayObjStatic[apontador*20+10]+'pt Arial';
 	var Llabel = ArrayLabel[ArrayObjDinamic[apontador*10+5]];
 	if (ArrayObjStatic[apontador*20+1] != '') {
-		if (Sim_endereco(ArrayObjStatic[apontador*20+1]) != 0)
+		if (Sim_Endereco(ArrayObjStatic[apontador*20+1]) != 0)
 			Sim_Context.fillStyle = ArrayObjStatic[apontador*20+12];
 		else
 			Sim_Context.fillStyle = ArrayObjStatic[apontador*20+11];
