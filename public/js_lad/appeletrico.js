@@ -110,8 +110,8 @@ function desenha_borne_clp(i){
 
 
 function draw_chave(posicaox, posisicaoy) {
-        canvas = document.getElementById("tela1");
-	context= canvas.getContext("2d");
+       // canvas = document.getElementById("tela1");
+	//context= canvas.getContext("2d");
 	var i=posicaox;
 	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[i]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
 }
