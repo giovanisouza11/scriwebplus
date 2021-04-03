@@ -42,7 +42,7 @@ function Sim_Draw_Inicio() {
 function Sim_Simulador_Click() {
 	var posicaoy = parseInt(window.event.clientY-40);
 	var posicaox = parseInt(window.event.clientX-70);
-	alert("clicou "+ posicaox + " " + posicaoy);
+	alert("clicou "+ posicaox + " " + posicaoy+" LoadedImages "+LoadesImages);
   	if (LoadedImages>0) {
     		for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
 			alert("index_var "+index_var);
