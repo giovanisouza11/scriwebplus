@@ -33,10 +33,10 @@ function Sim_Draw_Inicio() {
 function Sim_Simulador_Click() {
 	var posicaoy = parseInt(window.event.clientY-40);
 	var posicaox = parseInt(window.event.clientX-70);
-	alert("clicou "+ posicaox + " " + posicaoy+" LoadedImages "+LoadedImages);
+	//alert("clicou "+ posicaox + " " + posicaoy+" LoadedImages "+LoadedImages);
   	if (LoadedImages>0) {
     		for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
-			alert(" "+ArrayObjStatic[index_var*20+17]+" "+verificaPosicao(posicaox, 0, 'X'+index_var)+ " "+verificaPosicao(posicaoy, 0, 'Y'+index_var));
+			//alert(" "+ArrayObjStatic[index_var*20+17]+" "+verificaPosicao(posicaox, 0, 'X'+index_var)+ " "+verificaPosicao(posicaoy, 0, 'Y'+index_var));
 			if (Sim_Edicao == 0) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
@@ -46,7 +46,7 @@ function Sim_Simulador_Click() {
 					else {
 						Sim_Escreve_Endereco(ArrayObjStatic[index_var*20+1],1);
 					}
-					alert("clicou LABEL");
+					//alert("clicou LABEL");
   	
 				}
  
@@ -58,7 +58,7 @@ function Sim_Simulador_Click() {
 					else {
 						Sim_Escreve_Endereco(ArrayObjStatic[index_var*20+1],1);
 					}
-					alert("clicou FIGURA");
+					//alert("clicou FIGURA");
   	
 				}
 				if (ArrayObjStatic[index_var*20+17]==6) {
@@ -73,7 +73,7 @@ function Sim_Simulador_Click() {
 						document.getElementById('Sim_Label_Input').innerHTML = ArrayObjStatic[index_var*20+1];
 						document.getElementById('Sim_Input_Ladder').value = Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0);
 						CInput.focus();
-						alert("clicou ENTRADA");
+					//	alert("clicou ENTRADA");
   	
 					}
 				}
@@ -81,7 +81,7 @@ function Sim_Simulador_Click() {
 				{
 					ArrayObjDinamic[index_var*10+3] = ArrayObjStatic[index_var*20+3];
 					ArrayObjDinamic[index_var*10+4] = ArrayObjStatic[index_var*20+6];
-					alert("clicou BARGRAPH");
+					//alert("clicou BARGRAPH");
   	
 				}			
 				if (ArrayObjStatic[index_var*20+17]==2 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
@@ -98,7 +98,7 @@ function Sim_Simulador_Click() {
 						ArrayObjStatic[index_var*20+4] = ArrayObjStatic[(index_var-1)*20+4];
 						ArrayObjStatic[(index_var-1)*20+4] = auxiliar;
 					}
-					alert("clicou FIGURA ANimada");
+					//alert("clicou FIGURA ANimada");
   	
 				}			
 			}
@@ -107,7 +107,7 @@ function Sim_Simulador_Click() {
 			(ArrayObjStatic[index_var*20+17]==1 && verificaTexto(posicaox, -1*ArrayObjStatic[index_var*20+10]*ArrayImagens[ArrayObjDinamic[index_var*10+5]].length, 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1) ||
 			(ArrayObjStatic[index_var*20+17]==6 && verificaTexto(posicaox, -5*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1))) {
 				simApontador(index_var);
-				alert("clicou EDICAO");
+				//alert("clicou EDICAO");
   	
 			}
 		}
