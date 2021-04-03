@@ -6,8 +6,8 @@ function ladder_simulador(){
 	if (simul.style.display === "block") {
 		ladder.style.display = "block";
 		simul.style.display = "none";
-		draw_eletrico();
-    		draw_botoes();
+		//draw_eletrico();
+    		//draw_botoes();
 		Atualiza_Chaves();
 		Tela_Eletrico_Simulador = 0;
 	}
