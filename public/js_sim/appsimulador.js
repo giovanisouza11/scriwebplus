@@ -31,8 +31,8 @@ var variavel;
 function Sim_Draw_Inicio() {
 	Sim_Canvas = document.getElementById("tela6");
 	Sim_Context = Sim_Canvas.getContext("2d");
-	Sim_Canvas.width = 560;//localStorage.tela_largura + 200; 
-	Sim_Canvas.height = 525; // localStorage.tela_altura + 150;
+	Sim_Canvas.width = 560; 
+	Sim_Canvas.height = 525; 
 }
 
 //=====================================================================================
@@ -45,6 +45,7 @@ function Sim_Simulador_Click() {
 	alert("clicou "+ posicaox + " " + posicaoy);
   	if (LoadedImages>0) {
     		for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
+			alert("index_var "+index_var);
 			if (Sim_Edicao == 0) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
