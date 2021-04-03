@@ -3,15 +3,6 @@
 //=====================================================================================
 var Sim_Canvas;
 var Sim_Context; //, Sim_Context1;
-//document.addEventListener('mousemove', mouse_move);
-//var M = [];
-//var I = [];
-//var R = [];
-//var Q = [];
-//var T = [];
-//var C = [];
-//var Sim_Comandos = 0; // 0:stop, 1: run 2: edicao
-
 var Imagens =[];
 var LoadedImages = 0;
 var Extensao = ['','_off','_on1','_on2','3','4','5'];
@@ -1029,6 +1020,7 @@ function Sim_Draw_Processo(fileArr) {
 	Sim_Draw_Fundo();
 	Sim_Context.font = '9pt Arial';
 	var ponteiro = 0;
+	LoadedImages = 1;
 	for (var i=1; i<fileArr.length; i++) {
 		var fileLine = fileArr[i].split(',');
 		if ((fileLine[1] >0) && (fileLine[1]<10)) {
@@ -1100,7 +1092,7 @@ function Sim_Draw_Processo(fileArr) {
 			};
 		}
 	};
-	LoadedImages = 1;
+
 }
 
 //-----------------------------
