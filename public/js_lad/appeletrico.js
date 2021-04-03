@@ -34,7 +34,8 @@ function draw_eletrico() {
 function Atualiza_Chaves(){
    for(i=0; i<12; i++){
    	valor_botao[i] = I[i];
-       	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 33+(i*32), 0, AImage1.width/5, 110);
+       	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 33+(i*32), 0, AImage1.width/5, 110)
+	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[i]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
    } 	
 }
 function desenha_clp(){
@@ -109,9 +110,8 @@ function desenha_borne_clp(i){
 function draw_chave(posicaox, posisicaoy) {
         canvas = document.getElementById("tela1");
 	context= canvas.getContext("2d");
-	var index = posicaox;
 	var i=posicaox;
-	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[index]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
+	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[i]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
 }
 
 function trocar() {
