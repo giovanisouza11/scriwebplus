@@ -34,8 +34,8 @@ function draw_eletrico() {
 function Atualiza_Chaves(){
    for(i=0; i<12; i++){
    	valor_botao[i] = I[i];
-       	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 33+(i*32), 0, AImage1.width/5, 110)
-	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[i]), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
+       	//context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 33+(i*32), 0, AImage1.width/5, 110)
+	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[i]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
    } 	
 }
 function desenha_clp(){
