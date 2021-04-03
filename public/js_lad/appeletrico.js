@@ -21,7 +21,7 @@ function draw_eletrico() {
 	var i;
     for(i=0; i<12; i++){
 	   	valor_botao[i] = 0;
-		I[i] = 0;
+	//	I[i] = 0;
 	}
     for(i=0; i<12; i++)
        	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 33+(i*32), 0, AImage1.width/5, 110);
