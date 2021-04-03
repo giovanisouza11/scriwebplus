@@ -306,6 +306,20 @@ body {
 	text-decoration: none;
 	cursor: pointer;
 }
+/* The Close Button */
+.close2 {
+	color: white;
+	float: right;
+	font-size: 20px;
+	font-weight: bold;
+}
+.close2:hover,
+.close2:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
