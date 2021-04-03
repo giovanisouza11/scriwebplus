@@ -8,6 +8,7 @@ function ladder_simulador(){
 		simul.style.display = "none";
 		draw_eletrico();
     		draw_botoes();
+		Atualiza_Chaves();
 		Tela_Eletrico_Simulador = 0;
 	}
 	else {
