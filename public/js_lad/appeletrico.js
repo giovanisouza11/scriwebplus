@@ -31,7 +31,12 @@ function draw_eletrico() {
     for(i=0; i<31; i++)
 		valor_chave[i] = 0;
 }
-
+function Atualiza_Chaves(){
+   for(i=0; i<12; i++){
+   	valor_botao[i] = I[i];
+       	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 33+(i*32), 0, AImage1.width/5, 110);
+   } 	
+}
 function desenha_clp(){
 	context.font = '9pt Arial';
 	context.lineWidth = 1;
