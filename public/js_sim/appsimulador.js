@@ -820,7 +820,7 @@ function movimenta_y(index_var, dependencia1, dependencia2) {
 		if (ArrayObjStatic[index_var*20+6]<ArrayObjDinamic[index_var*10+4])
 			ArrayObjDinamic[index_var*10+4] = ArrayObjStatic[index_var*20+6];
 	}
-}
+};
 
 //=====================================================================================
 //Verifica a posicao e se o tag estaON
@@ -828,43 +828,42 @@ function movimenta_y(index_var, dependencia1, dependencia2) {
 function Verifica_Posicao_Tag(index_var, dependencia1, dependencia2) {
 	if (((dependencia1.charAt(0) =='V') && (dependencia1.charAt(1) =='X')) || ((dependencia2.charAt(0) =='V') && (dependencia2.charAt(1) =='X'))) {
 		if (ArrayObjStatic[index_var*20+9]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1.substr(1))==1) && (Sim_Endereco(dependencia1.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1.substr(1))==1) && (Sim_Endereco(dependencia1.substr(1))==1)) {
 				ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+ parseInt(ArrayObjStatic[index_var*20+9]);
 			}		
 		if (ArrayObjStatic[index_var*20+10]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2.substr(1))==1) && (Sim_Endereco(dependencia2.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2.substr(1))==1) && (Sim_Endereco(dependencia2.substr(1))==1)) {
 				ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+ parseInt(ArrayObjStatic[index_var*20+10]);
 			}		
 	
 		if (ArrayObjStatic[index_var*20+11]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1.substr(1))==1) && (Sim_Endereco(dependencia1.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1.substr(1))==1) && (Sim_Endereco(dependencia1.substr(1))==1)) {
 				ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+ parseInt(ArrayObjStatic[index_var*20+11]);
-		}		
+			}		
 		if (ArrayObjStatic[index_var*20+12]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2.substr(1))==1) && (Sim_Endereco(dependencia2.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2.substr(1))==1) && (Sim_Endereco(dependencia2.substr(1))==1)) {
 				ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+ parseInt(ArrayObjStatic[index_var*20+12]);
-		}
+			}
 	}
 	if (((dependencia1.charAt(0) =='V') && (dependencia1.charAt(1) =='Y')) || ((dependencia2.charAt(0) =='V') && (dependencia2.charAt(1) =='Y'))) {
 		if (ArrayObjStatic[index_var*20+9]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1.substr(1))==1) && (Sim_Endereco(dependencia1.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1.substr(1))==1) && (Sim_Endereco(dependencia1.substr(1))==1)) {
 				ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+ parseInt(ArrayObjStatic[index_var*20+9]);
 			}		
 		if (ArrayObjStatic[index_var*20+10]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1) && (Sim_Endereco(dependencia2.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1) && (Sim_Endereco(dependencia2.substr(1))==1)) {
 				ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+ parseInt(ArrayObjStatic[index_var*20+10]);
 			}		
-	
 		if (ArrayObjStatic[index_var*20+11]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1.substr(1))==1) && (Sim_Endereco(dependencia1.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1.substr(1))==1) && (Sim_Endereco(dependencia1.substr(1))==1)) {
 				ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+ parseInt(ArrayObjStatic[index_var*20+11]);
-		}		
+			}		
 		if (ArrayObjStatic[index_var*20+12]!=0)
-			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1) && (Sim_Endereco(dependencia2.substr(1))==1)){
+			if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1) && (Sim_Endereco(dependencia2.substr(1))==1)) {
 				ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+ parseInt(ArrayObjStatic[index_var*20+12]);
-		}
+			}
 	}
-}
+};
 //=====================================================================================
 //Up e Down
 //=====================================================================================
@@ -880,7 +879,7 @@ function updown(index_var, dependencia1, dependencia2) {
 		if (Sim_EnderecoCT(ArrayObjStatic[index_var*20+1],0) < 0)
 			Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],0,0);
 	}
-}
+};
 
 //=====================================================================================
 //Sensor
