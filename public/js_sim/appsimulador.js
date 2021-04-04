@@ -2,7 +2,7 @@
 //Inicializa variaveis
 //=====================================================================================
 var Sim_Canvas;
-var Sim_Context; //, Sim_Context1;
+var Sim_Context;
 var Imagens =[];
 var LoadedImages = 0;
 var Extensao = ['','_off','_on1','_on2','3','4','5'];
@@ -35,7 +35,7 @@ function Sim_Simulador_Click() {
 	var posicaox = parseInt(window.event.clientX-70);
 	//alert("clicou "+ posicaox + " " + posicaoy+" LoadedImages "+LoadedImages);
   	if (LoadedImages>0) {
-    		for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++){ 
+    		for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++) { 
 			//alert(" "+ArrayObjStatic[index_var*20+17]+" "+verificaPosicao(posicaox, 0, 'X'+index_var)+ " "+verificaPosicao(posicaoy, 0, 'Y'+index_var));
 			if (Sim_Edicao == 0) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
@@ -118,7 +118,7 @@ function Sim_Simulador_Click() {
 // Quando aparece o campo INPUT
 // Para entrada TAG e ENDERECO
 //=====================================================================================
-function eInputS(event){
+function eInputS(event) {
 	if (event.keyCode == 13) { //Tecla enter
 		var ICampo = document.getElementById('CampoS');
 		var CInput = document.getElementById('Sim_Input_Ladder');
@@ -149,7 +149,7 @@ function AtualizaPorTempo() {
 function Atualiza_Simulador() {
 	//Sim_Ihm();
 	            	
-	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++){
+	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++) {
 		if (comandos > 0) {
 			simTimer(ij);
 			simFigura(ij);
@@ -186,7 +186,7 @@ function Atualiza_Simulador() {
 //Funcao de label
 // Desenha o label e o quadro em volta
 //----------------------------------------------------------
-function funcaoLabel(apontador){
+function funcaoLabel(apontador) {
 	Sim_Context.font = ArrayObjStatic[apontador*20+10]+'pt Arial';
 	var Llabel = ArrayLabel[ArrayObjDinamic[apontador*10+5]];
 	if (ArrayObjStatic[apontador*20+1] != '') {
@@ -219,7 +219,7 @@ function getTextWidth(text, font) {
 //Apaga Imagens se posicao X ou Y forem diferentes
 //
 //=====================================================================================
-function ApagaImagem(index){
+function ApagaImagem(index) {
 	Sim_Context.fillStyle = 'white';
 	if ((ArrayObjDinamic[index*10+3] != ArrayObjDinamic[index*10+7]) || (ArrayObjDinamic[index*10+4] != ArrayObjDinamic[index*10+8])){
 		Sim_Context.fillRect(ArrayObjDinamic[index*10+7], ArrayObjDinamic[index*10+8], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
@@ -343,7 +343,7 @@ function Sim_Ihm() {
     		}
     		var posicao;
     		var n_posicao;
-    		for (var n_linhas=0; n_linhas <= num_linhas; n_linhas++){
+    		for (var n_linhas=0; n_linhas <= num_linhas; n_linhas++) {
       			posicao = 0;
       			Sim_Context.fillStyle = 'green';
       			if (n_linhas < num_linhas){
@@ -357,7 +357,7 @@ function Sim_Ihm() {
         			}
       			}
       			else  {
-        			if (funcao <3){
+        			if (funcao <3) {
         				Sim_Context.fillText(tipo_funcao[funcao]+n_linhas+'.'+((tamanho_array%16)-1), 790,linha);
         				n_posicao = (n_linhas * 16) + posicao;
         			}
@@ -366,11 +366,11 @@ function Sim_Ihm() {
         				Sim_Context.fillText(tipo_funcao[funcao]+(n_posicao + (tamanho_array%16)-1), 790,linha);
         			}
       			}
-      			if(funcao==4){
+      			if(funcao==4) {
         			Sim_Context.fillText(tipo_funcao[funcao]+n_linhas, 790,linha);
         			n_posicao = (n_linhas * 4) + posicao;
       			}
-      			if(funcao==3){
+      			if(funcao==3) {
         			Sim_Context.fillText(tipo_funcao[funcao]+n_linhas, 790,linha);
         			n_posicao = (n_linhas * 3) + posicao;
       			}
@@ -431,7 +431,7 @@ function Sim_Ihm() {
 //======================================================================
 //retira o valor da funcao Q/E/T/C/M
 //=======================================================================
-function Sim_Endereco(Aux_data){
+function Sim_Endereco(Aux_data) {
 	var tamanho = Aux_data.length;
 	var negacao = 0;
 	var index;
@@ -519,7 +519,7 @@ function Sim_Escreve(Aux_data, valor)
 function Sim_Escreve_Endereco(Aux_data, valor)
 {
 	var index;
-	if (Aux_data.charAt(0) != 'R' && Aux_data.charAt(0) != 'C' && Aux_data.charAt(0) != 'T'){
+	if (Aux_data.charAt(0) != 'R' && Aux_data.charAt(0) != 'C' && Aux_data.charAt(0) != 'T') {
 		var ponto = Aux_data.indexOf('.');
 		if (ponto == -1)
 			index = parseInt(Aux_data.substr(1)) *16;
@@ -560,7 +560,7 @@ function Sim_Escreve_Endereco(Aux_data, valor)
 function Sim_Escreve_CT(Aux_data, valor, index1)
 {
 	var index;
-	if (Aux_data.charAt(0) != 'R' && Aux_data.charAt(0) != 'C' && Aux_data.charAt(0) != 'T'){
+	if (Aux_data.charAt(0) != 'R' && Aux_data.charAt(0) != 'C' && Aux_data.charAt(0) != 'T') {
 		var ponto = Aux_data.indexOf('.');
 		if (ponto == -1)
 			index = parseInt(Aux_data.substr(1)) *16;
@@ -752,26 +752,26 @@ function figura_animada(index_var, variavel1, variavel2) {
 function movimenta_x(index_var, dependencia1, dependencia2) {
 
 	//movimenta o objeto no eixo x
-	if (ArrayObjStatic[index_var*20+9]!=0 && (Sim_Endereco(dependencia1) ==1)){
+	if (ArrayObjStatic[index_var*20+9]!=0 && (Sim_Endereco(dependencia1) ==1)) {
 		ApagaImagem(index_var);
 		ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+ parseInt(ArrayObjStatic[index_var*20+9]);
 	}
-	if (ArrayObjStatic[index_var*20+10]!=0 && (Sim_Endereco(dependencia2) ==1)){
+	if (ArrayObjStatic[index_var*20+10]!=0 && (Sim_Endereco(dependencia2) ==1)) {
 		ApagaImagem(index_var);
 		ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3])+parseInt(ArrayObjStatic[index_var*20+10]);
 	}
 			
 		//movimento via complementar
-	if (ArrayObjDinamic[index_var*10+6] > 0  && FuncaoMatriz.length >0){
+	if (ArrayObjDinamic[index_var*10+6] > 0  && FuncaoMatriz.length >0) {
 		var auxiliar = (ArrayObjDinamic[index_var*10+6]-1)*7;
-		if ( endereco(FuncaoMatriz[auxiliar+2]) == 1){
+		if ( endereco(FuncaoMatriz[auxiliar+2]) == 1) {
 			ApagaImagem(index_var);
 			ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3]) + parseInt(FuncaoMatriz[auxiliar+3]);		
 		}
 	}
 
 	//limites inicial e final relativo a posicao X
-	if (ArrayObjStatic[index_var*20+5]>ArrayObjStatic[index_var*20+3]){
+	if (ArrayObjStatic[index_var*20+5]>ArrayObjStatic[index_var*20+3]) {
 		if (ArrayObjStatic[index_var*20+5]<ArrayObjDinamic[index_var*10+3])
 			ArrayObjDinamic[index_var*10+3] = ArrayObjStatic[index_var*20+5];
 		if (ArrayObjStatic[index_var*20+3]>ArrayObjDinamic[index_var*10+3])
@@ -789,18 +789,18 @@ function movimenta_x(index_var, dependencia1, dependencia2) {
 //Movimenta no eixo Y
 //=====================================================================================
 function movimenta_y(index_var, dependencia1, dependencia2) {
-	if (ArrayObjStatic[index_var*20+11]!=0 && (Sim_Endereco(dependencia1) ==1)){
+	if (ArrayObjStatic[index_var*20+11]!=0 && (Sim_Endereco(dependencia1) ==1)) {
 		ApagaImagem(index_var);
 		ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+ parseInt(ArrayObjStatic[index_var*20+11]);
 	}
 		
-	if (ArrayObjStatic[index_var*20+12]!=0 && (Sim_Endereco(dependencia2) ==1)){
+	if (ArrayObjStatic[index_var*20+12]!=0 && (Sim_Endereco(dependencia2) ==1)) {
 		ApagaImagem(index_var);
 		ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+parseInt(ArrayObjStatic[index_var*20+12]);
 	}
 	
 	//movimento via complementar
-	if (ArrayObjDinamic[index_var*10+6] > 0  && FuncaoMatriz.length >0){
+	if (ArrayObjDinamic[index_var*10+6] > 0  && FuncaoMatriz.length >0) {
 		var auxiliar = (ArrayObjDinamic[index_var*10+6]-1)*7;
 		if ( endereco(FuncaoMatriz[auxiliar+2]) == 1){
 			ApagaImagem(index_var);
@@ -808,7 +808,7 @@ function movimenta_y(index_var, dependencia1, dependencia2) {
 		}
 	}
 	//limites inicial e final relativo a posicao Y
-	if (ArrayObjStatic[index_var*20+8]>ArrayObjStatic[index_var*20+6]){
+	if (ArrayObjStatic[index_var*20+8]>ArrayObjStatic[index_var*20+6]) {
 		if (ArrayObjStatic[index_var*20+8]<ArrayObjDinamic[index_var*10+4])
 			ArrayObjDinamic[index_var*10+4] = ArrayObjStatic[index_var*20+8];
 		if (ArrayObjStatic[index_var*20+6]>ArrayObjDinamic[index_var*10+4])
@@ -825,7 +825,7 @@ function movimenta_y(index_var, dependencia1, dependencia2) {
 //=====================================================================================
 //Verifica a posicao e se o tag estaON
 //=====================================================================================
-function Verifica_Posicao_Tag(index_var, dependencia1, dependencia2){
+function Verifica_Posicao_Tag(index_var, dependencia1, dependencia2) {
 	if (((dependencia1.charAt(0) =='V') && (dependencia1.charAt(1) =='X')) || ((dependencia2.charAt(0) =='V') && (dependencia2.charAt(1) =='X'))) {
 		if (ArrayObjStatic[index_var*20+9]!=0)
 			if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1.substr(1))==1) && (Sim_Endereco(dependencia1.substr(1))==1)){
@@ -869,7 +869,7 @@ function Verifica_Posicao_Tag(index_var, dependencia1, dependencia2){
 //Up e Down
 //=====================================================================================
 function updown(index_var, dependencia1, dependencia2) {
-	if (dependencia1.charAt(0) == 'U' && endereco(dependencia1)==1 ){
+	if (dependencia1.charAt(0) == 'U' && endereco(dependencia1)==1 ) {
 //		ApagaImagem(index_var);
 		Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],parseInt(Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0))+parseInt(dependencia2),0);
 		if(Sim_EnderecoCT(ArrayObjStatic[index_var*20+1],0) > ArrayObjStatic[index_var*20+16])
@@ -999,7 +999,7 @@ function verificaTexto(posicao, deslocamento, dependencia) {
 		retorno = verificaPosicao(posicao, 0, dependencia);
 	else
 	{
-		if (deslocamento < 0){
+		if (deslocamento < 0) {
 			if ((A < C) && (A > D))
 				retorno = 1;
 		}
@@ -1120,7 +1120,7 @@ function LoadImageIndex(imagefile, index) {
 //=====================================================================================
 //Desenha area de trabalho em branco
 //=====================================================================================
-function Sim_Draw_Fundo(){
+function Sim_Draw_Fundo() {
 	Sim_Draw_Inicio();
 	Sim_Context.lineWidth = 1;
 	Sim_Context.fillStyle = 'white';
@@ -1132,7 +1132,7 @@ function Sim_Draw_Fundo(){
 //=====================================================================================
 // Inicializa o array
 //=====================================================================================
-function Sim_Inicializa_Array(){
+function Sim_Inicializa_Array() {
 	Imagens =[];
 	ArrayImagens = [];
 	ArrayLabel = [];
