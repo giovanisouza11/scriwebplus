@@ -161,7 +161,7 @@ function Atualiza_Simulador() {
 		}
 
 		if ((ArrayObjStatic[ij*20+17] != 1) && (ArrayObjStatic[ij*20+17] < 5)) {
-			alert(ArrayObjStatic[ij*20+13]);
+			alert("Eita "+ ArrayObjStatic[ij*20+13]);
 			LoadImageIndex(Sim_Path + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
@@ -720,7 +720,7 @@ function simFigura(index_var) {
 	var variavel2 = ArrayObjStatic[index_var*20+2];
 	var dependencia1 = ArrayObjStatic[index_var*20+13];
 	var dependencia2 = ArrayObjStatic[index_var*20+14];
-	alert(ArrayObjStatic[index_var*20+13]+' '+dependencia1);
+	alert('Linha: '+ij+' '+ArrayObjStatic[index_var*20+13]+' '+dependencia1);
 	figura_animada(index_var, variavel1, variavel2);
 	movimenta_x(index_var, dependencia1, dependencia2);
 	movimenta_y(index_var, dependencia1, dependencia2);
