@@ -34,7 +34,7 @@ function Sim_Simulador_Click() {
 	var posicaoy = parseInt(window.event.clientY-40);
 	var posicaox = parseInt(window.event.clientX-70);
 	//alert("clicou "+ posicaox + " " + posicaoy+" LoadedImages "+LoadedImages);
-	alert(ArrayObjStatic);
+	//alert(ArrayObjStatic);
   	if (LoadedImages>0) {
     		for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++) { 
 			//alert(" "+ArrayObjStatic[index_var*20+17]+" "+verificaPosicao(posicaox, 0, 'X'+index_var)+ " "+verificaPosicao(posicaoy, 0, 'Y'+index_var));
