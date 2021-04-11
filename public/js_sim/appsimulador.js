@@ -1025,7 +1025,7 @@ function Sim_Draw_Processo(fileArr) {
 	var ponteiro = 0;
 	LoadedImages = 1;
 	for (var i=1; i<fileArr.length; i++) {
-		alert('linha '+i);
+		//alert('linha '+i);
 		var fileLine = fileArr[i].split(',');
 		if ((fileLine[1] >0) && (fileLine[1]<10)) {
 			if ((fileLine[1] != 1) && (fileLine[1] <5)) {
