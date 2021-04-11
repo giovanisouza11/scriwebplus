@@ -161,7 +161,7 @@ function Atualiza_Simulador() {
 		}
 
 		if ((ArrayObjStatic[ij*20+17] != 1) && (ArrayObjStatic[ij*20+17] < 5)) {
-			alert(ArrayObjStatic[ij*20+13];
+			alert(ArrayObjStatic[ij*20+13]);
 			LoadImageIndex(Sim_Path + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
