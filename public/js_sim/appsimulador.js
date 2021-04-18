@@ -308,10 +308,10 @@ function Desenha_Ihm_Sim() {
         		tamanho_array = T.length;
         		num_linhas = parseInt(tamanho_array / 9);
         		//linha = linha + 15;
-        		Sim_Context.fillText('Tem', 40,linha);
-        		Sim_Context.fillText('bit', 70,linha);
-        		Sim_Context.fillText('PV', 100,linha);
-        		Sim_Context.fillText('SP', 130,linha);
+        		Sim_Context.fillText('Tem', 70,linha);
+        		Sim_Context.fillText('bit', 100,linha);
+        		Sim_Context.fillText('PV', 130,linha);
+        		Sim_Context.fillText('SP', 160,linha);
         		//linha = linha + 15;
         		break;
 		case 4:
@@ -376,7 +376,7 @@ function Desenha_Ihm_Sim() {
         			n_posicao = (n_linhas * 4) + posicao;
       			}
       			if(funcao==3) {
-        			Sim_Context.fillText(tipo_funcao[funcao]+n_linhas, 160,linha);
+        			Sim_Context.fillText(tipo_funcao[funcao]+n_linhas, 190,linha);
         			n_posicao = (n_linhas * 3) + posicao;
       			}
       			do {
@@ -404,8 +404,8 @@ function Desenha_Ihm_Sim() {
         					posicao = 15;
         				break;
         			case 3:
-        				Sim_Context.fillStyle = 'red';
-        				Sim_Context.fillText(T[n_posicao], 190+(posicao*30),linha);
+					Sim_Context.fillStyle = 'red';
+        				Sim_Context.fillText(T[n_posicao], 220+(posicao*30),linha);
         				if (posicao >9)
         					posicao = 15;
         				break;
