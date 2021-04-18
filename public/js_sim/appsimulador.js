@@ -244,7 +244,7 @@ function Sim_Ihm() {
   	//Sim_Context.fillRect(250, 5, 310, 520);
   	Sim_Context.font = '36pt Arial';
   	Sim_Context.fillStyle = 'red';
-	Sim_Context.fillText(localStorage.num_clp1, 10, 500);
+	Sim_Context.fillText(num_clp, 10, 500);
 	//Sim_Context.fillStyle = 'black';
   	//Sim_Context.strokeRect(255, 10, 305, 5125);
   	//Sim_Context.font = '16pt Arial';
