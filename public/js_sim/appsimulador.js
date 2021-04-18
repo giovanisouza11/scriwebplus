@@ -148,7 +148,7 @@ function AtualizaPorTempo() {
 //Disparado ao receber SocketIO
 //===================================================================================
 function Atualiza_Simulador() {
-	Sim_Ihm();
+	//Sim_Ihm();
 	            	
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++) {
 		//alert("linha "+ ij);
