@@ -242,7 +242,7 @@ function Desenha_Ihm_Sim() {
 	//Sim_Context.lineWidth = 2;
   	Sim_Context.fillStyle = 'white';
   	Sim_Context.fillRect(10, 500, 500, 50);
-  	Sim_Context.font = '36pt Arial';
+  	Sim_Context.font = '18pt Arial';
   	Sim_Context.fillStyle = 'red';
 	Sim_Context.fillText(num_clp, 10, 500);
 	Sim_Context.fillStyle = 'black';
@@ -302,17 +302,17 @@ function Desenha_Ihm_Sim() {
         		break;
 		case 3:
         		Sim_Context.fillStyle = 'black';
-        		Sim_Context.fillRect(30, linha-5, 60, 5);
-        		Sim_Context.fillText('TIMERS', 100, linha);
-       			Sim_Context.fillRect(200, linha-5, 60, 5);
+        		//Sim_Context.fillRect(30, linha-5, 60, 5);
+        		Sim_Context.fillText('TIMERS', 20, linha);
+       			//Sim_Context.fillRect(200, linha-5, 60, 5);
         		tamanho_array = T.length;
         		num_linhas = parseInt(tamanho_array / 3);
-        		linha = linha + 15;
+        		//linha = linha + 15;
         		Sim_Context.fillText('Tem', 30,linha);
-        		Sim_Context.fillText('bit', 60,linha);
-        		Sim_Context.fillText('PV', 90,linha);
-        		Sim_Context.fillText('SP', 120,linha);
-        		linha = linha + 15;
+        		Sim_Context.fillText('bit', 50,linha);
+        		Sim_Context.fillText('PV', 70,linha);
+        		Sim_Context.fillText('SP', 90,linha);
+        		//linha = linha + 15;
         		break;
 		case 4:
         		Sim_Context.fillStyle = 'black';
@@ -404,7 +404,7 @@ function Desenha_Ihm_Sim() {
         				break;
         			case 3:
         				Sim_Context.fillStyle = 'red';
-        				Sim_Context.fillText(T[n_posicao], 30+(posicao*30),linha);
+        				Sim_Context.fillText(T[n_posicao], 30+(posicao*20),linha);
         				if (posicao >1)
         					posicao = 15;
         				break;
