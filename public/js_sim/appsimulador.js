@@ -376,8 +376,8 @@ function Desenha_Ihm_Sim() {
         			n_posicao = (n_linhas * 4) + posicao;
       			}
       			if(funcao==3) {
-        			Sim_Context.fillText(tipo_funcao[funcao]+(n_linhas*3), 190,linha);
         			n_posicao = (n_linhas * 3) + posicao;
+				Sim_Context.fillText(tipo_funcao[funcao]+n_posicao, 190,linha);
       			}
       			do {
         			switch (parseInt(funcao)){
