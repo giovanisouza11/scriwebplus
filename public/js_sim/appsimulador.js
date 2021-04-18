@@ -376,7 +376,7 @@ function Desenha_Ihm_Sim() {
         			n_posicao = (n_linhas * 4) + posicao;
       			}
       			if(funcao==3) {
-        			Sim_Context.fillText(tipo_funcao[funcao]+n_linhas, 30,linha);
+        			Sim_Context.fillText(tipo_funcao[funcao]+n_linhas, 160,linha);
         			n_posicao = (n_linhas * 3) + posicao;
       			}
       			do {
@@ -405,7 +405,7 @@ function Desenha_Ihm_Sim() {
         				break;
         			case 3:
         				Sim_Context.fillStyle = 'red';
-        				Sim_Context.fillText(T[n_posicao], 110+(posicao*20),linha);
+        				Sim_Context.fillText(T[n_posicao], 190+(posicao*30),linha);
         				if (posicao >9)
         					posicao = 15;
         				break;
