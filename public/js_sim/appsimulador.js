@@ -238,7 +238,7 @@ function ApagaImagem(index) {
 function Desenha_Ihm_Sim() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
-	var linha = 515;
+	var linha = 510;
 	//Sim_Context.lineWidth = 2;
   	Sim_Context.fillStyle = 'white';
   	Sim_Context.fillRect(10, 500, 550, 25);
