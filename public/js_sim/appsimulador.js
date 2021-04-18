@@ -238,7 +238,7 @@ function ApagaImagem(index) {
 function Desenha_Ihm_Sim() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
-	var linha = 525;
+	var linha = 515;
 	//Sim_Context.lineWidth = 2;
   	Sim_Context.fillStyle = 'white';
   	Sim_Context.fillRect(10, 500, 550, 25);
@@ -406,7 +406,7 @@ function Desenha_Ihm_Sim() {
         			case 3:
 					Sim_Context.fillStyle = 'red';
         				Sim_Context.fillText(T[n_posicao], 220+(posicao*30),linha);
-        				if (posicao >9)
+        				if (posicao >7)
         					posicao = 15;
         				break;
         			default:
