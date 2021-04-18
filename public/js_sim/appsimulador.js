@@ -426,7 +426,7 @@ function Desenha_Ihm_Sim() {
         			Sim_Context.fillStyle = 'green';
         			Sim_Context.fillText(tipo_funcao[funcao]+(n_linhas*16), 530,linha);
       			}
-      			//linha += 15;
+      			linha += 15;
       			if (n_posicao >= tamanho_array)
         			break;
     		}
