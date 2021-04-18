@@ -6,13 +6,13 @@ var Sim_Context;
 var Imagens =[];
 var LoadedImages = 0;
 var Extensao = ['','_off','_on1','_on2','3','4','5'];
-var ArrayImagens = [];
-var ArrayLabel = [];
-var ArrayObjDinamic = [];
-var ArrayObjStatic =[];
+var ArrayImagens = new Array();
+var ArrayLabel = new Array();
+var ArrayObjDinamic = new Array();
+var ArrayObjStatic = new Array();
 var Sim_Path;
 var Sim_PathInicial = 'scriweb/simulacao/';
-var FuncaoMatriz =[];
+var FuncaoMatriz = new Array();
 var tempo = window.setInterval(AtualizaPorTempo, 500);
 var variavel;
 //=====================================================================================
