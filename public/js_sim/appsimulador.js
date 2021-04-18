@@ -240,17 +240,17 @@ function Desenha_Ihm_Sim() {
 	var tipo_funcao = ['I','Q','M','T','C','R'];
 	var linha = 500;
 	//Sim_Context.lineWidth = 2;
-  	//Sim_Context.fillStyle = 'white';
-  	//Sim_Context.fillRect(250, 5, 310, 520);
+  	Sim_Context.fillStyle = 'white';
+  	Sim_Context.fillRect(10, 500, 500, 50);
   	Sim_Context.font = '36pt Arial';
   	Sim_Context.fillStyle = 'red';
-	//Sim_Context.fillText(num_clp, 10, 500);
-	//Sim_Context.fillStyle = 'black';
+	Sim_Context.fillText(num_clp, 10, 500);
+	Sim_Context.fillStyle = 'black';
   	//Sim_Context.strokeRect(255, 10, 305, 5125);
   	//Sim_Context.font = '16pt Arial';
   	//Sim_Context.fillStyle = 'black';
   	//Sim_Context.fillText('Mapa de Memória', 270, 40);
-  	//Sim_Context.font = '9pt Arial';
+  	Sim_Context.font = '9pt Arial';
   	var num_linhas;
   	var funcao = 3;
 	//for (var funcao=0; funcao<6; funcao++) {
