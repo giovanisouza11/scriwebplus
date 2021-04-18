@@ -238,13 +238,13 @@ function ApagaImagem(index) {
 function Desenha_Ihm_Sim() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
-	var linha = 500;
+	var linha = 525;
 	//Sim_Context.lineWidth = 2;
   	Sim_Context.fillStyle = 'white';
-  	Sim_Context.fillRect(10, 500, 500, 50);
+  	Sim_Context.fillRect(10, 500, 550, 25);
   	Sim_Context.font = '18pt Arial';
   	Sim_Context.fillStyle = 'red';
-	Sim_Context.fillText(num_clp, 10, 500);
+	Sim_Context.fillText(num_clp, 10, 515);
 	Sim_Context.fillStyle = 'black';
   	//Sim_Context.strokeRect(255, 10, 305, 5125);
   	//Sim_Context.font = '16pt Arial';
