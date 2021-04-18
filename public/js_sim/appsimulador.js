@@ -148,7 +148,7 @@ function AtualizaPorTempo() {
 //Disparado ao receber SocketIO
 //===================================================================================
 function Atualiza_Simulador() {
-	//Sim_Ihm();
+	Desenha_Ihm_Sim();
 	            	
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++) {
 		//alert("linha "+ ij);
@@ -235,7 +235,7 @@ function ApagaImagem(index) {
 //Mostra um painel com todas as variáveis do sistema
 //Visualiza as variáveis do sistema
 //=====================================================================================
-function Sim_Ihm() {
+function Desenha_Ihm_Sim() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
 	var linha = 500;
@@ -285,7 +285,7 @@ function Sim_Ihm() {
         		Sim_Context.fillText('Decimal',530,linha);
         		linha = linha + 15;
         		break;
-      		 2:
+      		 case 2:
         		Sim_Context.fillStyle = 'black';
         		Sim_Context.fillRect(790, linha-5, 60, 5);
         		Sim_Context.fillText('MEMÓRIAS', 870, linha);
