@@ -901,7 +901,7 @@ function sensor(index_var, dependencia1, dependencia2) {
 			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 		}
 		else
-    		escreve(ArrayObjStatic[index_var*20+1],0);
+    			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 
 	if (dependencia1.charAt(0) == 'Y' && dependencia2.charAt(0)!='X') {
@@ -909,35 +909,35 @@ function sensor(index_var, dependencia1, dependencia2) {
 			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 		}
 		else
-    		escreve(ArrayObjStatic[index_var*20+1],0);
+    			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	if (dependencia2.charAt(0) == 'X' && dependencia1.charAt(0)!='Y') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2)==1){
 			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 		}
-    	else
-    		Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+    		else
+    			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	if (dependencia2.charAt(0) == 'Y' && dependencia1.charAt(0)!='X') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2)==1){
 			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 		}
-    	else
-    		Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+    		else
+    			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	if (dependencia1.charAt(0) == 'X' && dependencia2.charAt(0) == 'Y') {
 		if ((verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia1)==1)&&(verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2)==1)){
 			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 		}
-    	else
-    		Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+    		else
+    			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	if (dependencia1.charAt(0) == 'Y' && dependencia2.charAt(0) == 'X') {
 		if ((verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia1)==1)&&(verificaPosicao(ArrayObjDinamic[index_var*10+3], ArrayObjStatic[index_var*20+4], dependencia2)==1)){
 			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
 		}
-     	else
-      		Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+     		else
+      			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
 	}
 	//Controle via SET E RESET
 	if (dependencia1.charAt(0) == 'S' && dependencia1.charAt(1) == 'X') {
@@ -973,7 +973,7 @@ function sensor(index_var, dependencia1, dependencia2) {
 	if (dependencia1.charAt(0) == 'R' && dependencia1.charAt(1) == 'Y') {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1)
 			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
-  }
+  	}
 }
 
 //=====================================================================================
@@ -1081,7 +1081,7 @@ function Sim_Draw_Processo(fileArr) {
 					funcaoLabel(i-1);
 				}
 				if (ArrayObjStatic[(i-1)*20+17] == 6) {
-					Sim_Context.fillText(Sim_EnderecoCT(ArrayObjStatic[(i-1)*20+1],0),ArrayObjStatic[(i-1)*20+3] ,ArrayObjStatic[(i-1)*20+6]);
+					Sim_Context.fillText(Sim_Endereco_CT(ArrayObjStatic[(i-1)*20+1],0),ArrayObjStatic[(i-1)*20+3] ,ArrayObjStatic[(i-1)*20+6]);
 				}
 				if (ArrayObjStatic[(i-1)*20+17] == 7) {
 					Sim_Context.fillStyle = 'blue';
@@ -1164,7 +1164,7 @@ function Sim_Redraw_Processo() {
 				funcaoLabel(i);
 			}
 			if (ArrayObjStatic[i*20+17] == 6) {
-				Sim_Context.fillText(Sim_EnderecoCT(ArrayObjStatic[i*20+1],0),ArrayObjStatic[i*20+3] ,ArrayObjStatic[i*20+6]);
+				Sim_Context.fillText(Sim_Endereco_CT(ArrayObjStatic[i*20+1],0),ArrayObjStatic[i*20+3] ,ArrayObjStatic[i*20+6]);
 			}
 			if (ArrayObjStatic[i*20+17] == 7) {
 				Sim_Context.fillStyle = 'blue';
