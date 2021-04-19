@@ -138,7 +138,7 @@ function eInputS(event) {
 
 //Interrupção de tempo Tela_Eletrico_Simulador
 function AtualizaPorTempo() {
-	if (LoadedImages>0 && (Tela_Eletrico_Simulador == 1) && (Sim_Edicao ==0)) {
+	if (LoadedImages>0  && (Sim_Edicao ==0)) {
 		Atualiza_Simulador();
 	}
 }
@@ -163,7 +163,7 @@ function Atualiza_Simulador() {
 		}
 
 		if ((ArrayObjStatic[ij*20+17] != 1) && (ArrayObjStatic[ij*20+17] < 5)) {
-			alert("Eita "+ ArrayObjStatic[ij*20+13]);
+			//alert("Eita "+ ArrayObjStatic[ij*20+13]);
 			LoadImageIndex(Sim_Path + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
