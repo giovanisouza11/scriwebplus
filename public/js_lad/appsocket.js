@@ -66,7 +66,7 @@ function Envia_Entrada_Ele(data){
 
 function Envia_Entrada_S(data){
 	while (data.length < I.length) {
-		data[data.length] = I[data.length];
+		data[(I.length)-1] = I[(I.length)-1];
 	}
 	//Sim_I = data.split(',');
 	if (Tela_Eletrico_Simulador==1)
