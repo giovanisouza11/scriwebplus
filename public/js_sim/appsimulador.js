@@ -771,7 +771,7 @@ function movimenta_x(index_var, dependencia1, dependencia2) {
 		//movimento via complementar
 	if (ArrayObjDinamic[index_var*10+6] > 0  && FuncaoMatriz.length >0) {
 		var auxiliar = (ArrayObjDinamic[index_var*10+6]-1)*7;
-		if ( endereco(FuncaoMatriz[auxiliar+2]) == 1) {
+		if ( Sim_Endereco(FuncaoMatriz[auxiliar+2]) == 1) {
 			ApagaImagem(index_var);
 			ArrayObjDinamic[index_var*10+3] = parseInt(ArrayObjDinamic[index_var*10+3]) + parseInt(FuncaoMatriz[auxiliar+3]);		
 		}
@@ -809,7 +809,7 @@ function movimenta_y(index_var, dependencia1, dependencia2) {
 	//movimento via complementar
 	if (ArrayObjDinamic[index_var*10+6] > 0  && FuncaoMatriz.length >0) {
 		var auxiliar = (ArrayObjDinamic[index_var*10+6]-1)*7;
-		if ( endereco(FuncaoMatriz[auxiliar+2]) == 1){
+		if ( Sim_Endereco(FuncaoMatriz[auxiliar+2]) == 1){
 			ApagaImagem(index_var);
 			ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4]) + parseInt(FuncaoMatriz[auxiliar+4]);		
 		}
@@ -875,13 +875,13 @@ function Verifica_Posicao_Tag(index_var, dependencia1, dependencia2) {
 //Up e Down
 //=====================================================================================
 function updown(index_var, dependencia1, dependencia2) {
-	if (dependencia1.charAt(0) == 'U' && endereco(dependencia1)==1 ) {
+	if (dependencia1.charAt(0) == 'U' && Sim_Endereco(dependencia1)==1 ) {
 //		ApagaImagem(index_var);
 		Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],parseInt(Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0))+parseInt(dependencia2),0);
 		if(Sim_EnderecoCT(ArrayObjStatic[index_var*20+1],0) > ArrayObjStatic[index_var*20+16])
 			Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],ArrayObjStatic[index_var*20+16],0);
 	}
-	if (dependencia1.charAt(0) == 'D' && endereco(dependencia1)==1) {
+	if (dependencia1.charAt(0) == 'D' && Sim_Endereco(dependencia1)==1) {
 		Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],parseInt(Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0))-parseInt(dependencia2),0);
 		if (Sim_EnderecoCT(ArrayObjStatic[index_var*20+1],0) < 0)
 			Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],0,0);
