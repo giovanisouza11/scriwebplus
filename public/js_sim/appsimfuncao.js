@@ -3,11 +3,11 @@ var novaFuncao = 1;
 var simTitulo = "sem titulo";
 
 function Sim_Funcao() {
-	Sim_Arvore();
 	var modal = document.getElementById("myModal2");
 	var modalc = document.getElementById("myColuna");
 	var t_modal = modal.getElementsByTagName("h2");
 	t_modal[0].innerHTML = simTitulo;	
+	Sim_Arvore();
 	Sim_Funcao_IHM();
 	
 	modal.style.display = "block";
