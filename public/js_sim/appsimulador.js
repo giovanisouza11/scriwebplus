@@ -1131,9 +1131,9 @@ function Sim_Draw_Fundo() {
 	Sim_Draw_Inicio();
 	Sim_Context.lineWidth = 1;
 	Sim_Context.fillStyle = 'white';
-	Sim_Context.fillRect(1, 1, 559, 524);
+	Sim_Context.fillRect(0, 0, 560, 525);
 	Sim_Context.fillStyle = 'black';
-	Sim_Context.strokeRect(2, 2, 558, 523);
+	Sim_Context.strokeRect(1, 1, 559, 524);
 }
 
 //=====================================================================================
