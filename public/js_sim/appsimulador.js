@@ -157,6 +157,7 @@ function Atualiza_Simulador() {
 			simFigura(ij);
 		}
 		else {
+			alert("linha "+ ij);
 			ArrayObjDinamic[ij*10+3] = ArrayObjStatic[ij*20+3];
 			ArrayObjDinamic[ij*10+4] = ArrayObjStatic[ij*20+6];
 			ApagaImagem(ij);
