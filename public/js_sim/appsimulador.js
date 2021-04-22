@@ -169,7 +169,7 @@ function Atualiza_Simulador() {
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
 			Sim_Context.font = ArrayObjStatic[ij*20+10]+'pt Arial';
-			Sim_Context.fillStyle = 'white';
+			Sim_Context.fillStyle = 'yellow';//'white';
 			Sim_Context.fillRect(ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6], 4*ArrayObjStatic[ij*20+10], -ArrayObjStatic[ij*20+10]);
   			Sim_Context.fillStyle = ArrayObjStatic[ij*20+9];
 			Sim_Context.fillText(Sim_EnderecoCT(ArrayObjStatic[ij*20+1],0),ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6]);
