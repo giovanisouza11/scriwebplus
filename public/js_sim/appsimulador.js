@@ -1147,6 +1147,7 @@ function Sim_Inicializa_Array() {
 	ArrayObjDinamic = [];
 	ArrayObjStatic =[];
 	LoadedImages = 0;
+	FuncaoMatriz[ponteiro]
 }
 
 //=====================================================================================
