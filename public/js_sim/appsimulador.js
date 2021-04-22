@@ -48,7 +48,6 @@ function Sim_Simulador_Click() {
 						Sim_Escreve_Endereco(ArrayObjStatic[index_var*20+1],1);
 					}
 					//alert("clicou LABEL");
-  	
 				}
  
 				if (ArrayObjStatic[index_var*20+17]==4 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
