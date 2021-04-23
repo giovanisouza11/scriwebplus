@@ -183,7 +183,7 @@ function Atualiza_Simulador() {
 		if (ArrayObjStatic[ij*20+17] == 1) {
 			funcaoLabel(ij);
 		}
-	};
+	}
 }
 //----------------------------------------------------------
 //Funcao de label
@@ -746,11 +746,12 @@ function figura_animada(index_var, variavel1, variavel2) {
 	if (variavel2 != '')
 		ArrayObjDinamic[index_var*10+1] = (Sim_Endereco(variavel1) + Sim_Endereco(variavel2))+1;
 
-	if (ArrayObjStatic[index_var*20+16] < ArrayObjDinamic[index_var*10+2] && (ArrayObjStatic[index_var*20+15]>0) && ArrayObjDinamic[index_var*10+1]>1)
+	if (ArrayObjStatic[index_var*20+16] < ArrayObjDinamic[index_var*10+2] && (ArrayObjStatic[index_var*20+15]>0) && ArrayObjDinamic[index_var*10+1]>1) {
 		if (ArrayObjDinamic[index_var*10+1] ==	2)
 			ArrayObjDinamic[index_var*10+1] = 3;
 		else
 			ArrayObjDinamic[index_var*10+1] = 2;
+	}
 }
 
 //=====================================================================================
@@ -827,7 +828,7 @@ function movimenta_y(index_var, dependencia1, dependencia2) {
 		if (ArrayObjStatic[index_var*20+6]<ArrayObjDinamic[index_var*10+4])
 			ArrayObjDinamic[index_var*10+4] = ArrayObjStatic[index_var*20+6];
 	}
-};
+}
 
 //=====================================================================================
 //Verifica a posicao e se o tag estaON
@@ -870,7 +871,7 @@ function Verifica_Posicao_Tag(index_var, dependencia1, dependencia2) {
 				ArrayObjDinamic[index_var*10+4] = parseInt(ArrayObjDinamic[index_var*10+4])+ parseInt(ArrayObjStatic[index_var*20+12]);
 			}
 	}
-};
+}
 //=====================================================================================
 //Up e Down
 //=====================================================================================
@@ -886,7 +887,7 @@ function updown(index_var, dependencia1, dependencia2) {
 		if (Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0) < 0)
 			Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],0,0);
 	}
-};
+}
 
 //=====================================================================================
 //Sensor
@@ -1096,9 +1097,9 @@ function Sim_Draw_Processo(fileArr) {
 			for (var ij=2; ij < 8; ij++){
 				FuncaoMatriz[ponteiro] = fileLine[ij];
 				ponteiro++;
-			};
+			}
 		}
-	};
+	}
 
 }
 
@@ -1110,7 +1111,7 @@ function LoadImage(imagefile, ij) {
 	image1.onload = function() {
         Sim_Context.drawImage(Imagens[ArrayObjDinamic[ij*10+5]], ArrayObjDinamic[ij*10+3],ArrayObjDinamic[ij*10+4], ArrayObjStatic[ij*20+4], ArrayObjStatic[ij*20+7]);
 		
-    };
+    }
     image1.src = imagefile;
     Imagens[Imagens.length] = image1;
 }
@@ -1119,7 +1120,7 @@ function LoadImageIndex(imagefile, index) {
     var image1 = new Image();
 	image1.onload = function() {
     	Sim_Context.drawImage(Imagens[ArrayObjDinamic[index*10+5]], ArrayObjDinamic[index*10+3],ArrayObjDinamic[index*10+4], ArrayObjStatic[index*20+4], ArrayObjStatic[index*20+7]);
-	};
+	}
     image1.src = imagefile;
     Imagens[ArrayObjDinamic[index*10+5]] = image1;
 }
