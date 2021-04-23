@@ -878,12 +878,12 @@ function updown(index_var, dependencia1, dependencia2) {
 	if (dependencia1.charAt(0) == 'U' && Sim_Endereco(dependencia1)==1 ) {
 //		ApagaImagem(index_var);
 		Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],parseInt(Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0))+parseInt(dependencia2),0);
-		if(Sim_EnderecoCT(ArrayObjStatic[index_var*20+1],0) > ArrayObjStatic[index_var*20+16])
+		if(Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0) > ArrayObjStatic[index_var*20+16])
 			Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],ArrayObjStatic[index_var*20+16],0);
 	}
 	if (dependencia1.charAt(0) == 'D' && Sim_Endereco(dependencia1)==1) {
 		Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],parseInt(Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0))-parseInt(dependencia2),0);
-		if (Sim_EnderecoCT(ArrayObjStatic[index_var*20+1],0) < 0)
+		if (Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0) < 0)
 			Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],0,0);
 	}
 };
