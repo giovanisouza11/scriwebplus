@@ -171,11 +171,11 @@ function Atualiza_Simulador() {
 			Sim_Context.fillStyle = 'yellow';//'white';
 			Sim_Context.fillRect(ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6], 4*ArrayObjStatic[ij*20+10], -ArrayObjStatic[ij*20+10]);
   			Sim_Context.fillStyle = ArrayObjStatic[ij*20+9];
-			Sim_Context.fillText(Sim_EnderecoCT(ArrayObjStatic[ij*20+1],0),ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6]);
+			Sim_Context.fillText(Sim_Endereco_CT(ArrayObjStatic[ij*20+1],0),ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6]);
 		}
 		if (ArrayObjStatic[ij*20+17] == 7) {
 			Sim_Context.fillStyle = ArrayObjStatic[ij*20+10];
-			var percentual = parseInt(Sim_EnderecoCT(ArrayObjStatic[ij*20+1],0)*ArrayObjStatic[ij*20+7]/ ArrayObjStatic[ij*20+16]);
+			var percentual = parseInt(Sim_Endereco_CT(ArrayObjStatic[ij*20+1],0)*ArrayObjStatic[ij*20+7]/ ArrayObjStatic[ij*20+16]);
 			Sim_Context.fillRect(parseInt(ArrayObjDinamic[ij*10+3]), parseInt(ArrayObjDinamic[ij*10+4]), parseInt(ArrayObjStatic[ij*20+4]), parseInt(ArrayObjStatic[ij*20+7])-percentual);
 			Sim_Context.fillStyle = ArrayObjStatic[ij*20+12];
 			Sim_Context.fillRect(ArrayObjDinamic[ij*10+3], parseInt(ArrayObjDinamic[ij*10+4])+parseInt(ArrayObjStatic[ij*20+7])-parseInt(percentual), ArrayObjStatic[ij*20+4], percentual);
