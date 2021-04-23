@@ -19,12 +19,12 @@ function draw_inicio() {
 	//onLoad();
 	
 	if (localStorage.tela_largura<200 || localStorage.tela_largura>2000)
-		locaStorage.setItem("tela_largura", 1400);
+		localStorage.setItem("tela_largura", 1400);
 	if (localStorage.tela_altura<200 || localStorage.tela_altura>2000)
-		locaStorage.setItem("tela_altura", 900);
+		localStorage.setItem("tela_altura", 900);
 	//window.resizeTo(localStorage.tela_largura, localStorage.tela_altura);
 	if (localStorage.num_clp1 <0 || localStorage.numclp1>30)
-		locaStorage.setItem("num_clp1", 0);
+		localStorage.setItem("num_clp1", 0);
 	
 	//Sim_Draw_Botoes();
 	//Sim_Draw_Inicio();
