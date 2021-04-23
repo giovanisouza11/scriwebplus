@@ -150,7 +150,7 @@ function Atualiza_Simulador() {
 	Desenha_Ihm_Sim();
 	            	
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++) {
-		alert("linha "+ ij);
+		alert("linha "+ ij+" De "+ ArrayObjDinamic.length / 10);
 		if (comandos > 0) {
 			simTimer(ij);
 			simFigura(ij);
