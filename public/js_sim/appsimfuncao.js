@@ -221,8 +221,7 @@ function Sim_Botao_Ok() {
 		}
 		if (ArrayObjStatic[index_var_config*20+17]>4) 
 			ArrayObjDinamic[(index_var_config)*10+5] = document.getElementById('input18').value;
-		ArrayObjDinamic[index_var_con
-				fig*10+3] = ArrayObjStatic[index_var_config*20+3];
+		ArrayObjDinamic[index_var_config*10+3] = ArrayObjStatic[index_var_config*20+3];
 		ArrayObjDinamic[index_var_config*10+4] = ArrayObjStatic[index_var_config*20+6];
 		Sim_Arvore();
 		Sim_Funcao_IHM();
