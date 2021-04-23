@@ -37,7 +37,7 @@ function Sim_Simulador_Click() {
 	//alert(ArrayObjDinamic);
   	if (LoadedImages>0) {
     		for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++) { 
-			//alert(" "+ArrayObjStatic[index_var*20+17]+" "+verificaPosicao(posicaox, 0, 'X'+index_var)+ " "+verificaPosicao(posicaoy, 0, 'Y'+index_var));
+			alert(index_var+" "+verificaPosicao(posicaox, 0, 'X'+index_var)+ " "+verificaPosicao(posicaoy, 0, 'Y'+index_var));
 			if (Sim_Edicao == 0) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
