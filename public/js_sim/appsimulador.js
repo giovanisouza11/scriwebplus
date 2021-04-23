@@ -166,7 +166,7 @@ function Atualiza_Simulador() {
 			LoadImageIndex(Sim_Path + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
-			alert("Eita "+ ArrayObjStatic[ij*20+9] + "  " +ArrayObjStatic[ij] );
+			//alert("Eita "+ ArrayObjStatic[ij*20+9] + "  " +ArrayObjStatic[ij] );
 			Sim_Context.font = ArrayObjStatic[ij*20+10]+'pt Arial';
 			Sim_Context.fillStyle = 'yellow';//'white';
 			Sim_Context.fillRect(ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6], 4*ArrayObjStatic[ij*20+10], -ArrayObjStatic[ij*20+10]);
