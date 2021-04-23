@@ -1,7 +1,7 @@
 ﻿//=====================================================================================
 //Inicializa variaveis
 //=====================================================================================
-
+var aux_data;
 var AILadder = new Image();    //objetos de programacao Ladder
 AILadder.src = "/img_lad/ladder.png";
 var AIVertical = new Image();  //linha vertical do diagrama ladder
