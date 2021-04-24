@@ -30,9 +30,10 @@ function Sim_Draw_Inicio() {
 //Inicializa Canvas
 //Click com omouse
 //=====================================================================================
-function Sim_Simulador_Click1() {
+function Sim_Simulador_Click() {
 	var posicaoy = parseInt(window.event.clientY-40);
 	var posicaox = parseInt(window.event.clientX-70);
+	alert("Posicao  "+verificaPosicao(posicaox, 0, 'X'+index_var)+ " "+verificaPosicao(posicaoy, 0, 'Y'+index_var));
 	if (LoadedImages>0) {
     		for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++) { 
 			//alert(index_var+" "+verificaPosicao(posicaox, 0, 'X'+index_var)+ " "+verificaPosicao(posicaoy, 0, 'Y'+index_var));
