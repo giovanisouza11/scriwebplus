@@ -319,7 +319,7 @@ function Sim_Botao_Novo(novaFuncao) {
 //------------------------------------------------------
 //Chama a tela de configuracao se clicar no item da tela
 //---------------------------------------------------------
-function Sim_Simulador_Click(apontador){
+function Sim_Apontador(apontador){
 	var modal = document.getElementById("myModal2");
 	var t_modal = modal.getElementsByTagName("h2");
 	switch (ArrayObjStatic[apontador*20+17]) {
