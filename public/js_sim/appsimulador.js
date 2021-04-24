@@ -33,11 +33,9 @@ function Sim_Draw_Inicio() {
 function Sim_Simulador_Click() {
 	var posicaoy = parseInt(window.event.clientY-40);
 	var posicaox = parseInt(window.event.clientX-70);
-	//alert("clicou "+ posicaox + " " + posicaoy+" LoadedImages "+LoadedImages);
-	//alert(ArrayObjDinamic);
-  	if (LoadedImages>0) {
+	if (LoadedImages>0) {
     		for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++) { 
-			alert(index_var+" "+verificaPosicao(posicaox, 0, 'X'+index_var)+ " "+verificaPosicao(posicaoy, 0, 'Y'+index_var));
+			//alert(index_var+" "+verificaPosicao(posicaox, 0, 'X'+index_var)+ " "+verificaPosicao(posicaoy, 0, 'Y'+index_var));
 			if (Sim_Edicao == 0) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
@@ -47,7 +45,6 @@ function Sim_Simulador_Click() {
 					else {
 						Sim_Escreve_Endereco(ArrayObjStatic[index_var*20+1],1);
 					}
-					//alert("clicou LABEL");
 				}
  
 				if (ArrayObjStatic[index_var*20+17]==4 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
@@ -58,8 +55,6 @@ function Sim_Simulador_Click() {
 					else {
 						Sim_Escreve_Endereco(ArrayObjStatic[index_var*20+1],1);
 					}
-					//alert("clicou FIGURA");
-  	
 				}
 				if (ArrayObjStatic[index_var*20+17]==6) {
 					if (verificaTexto(posicaox, -4*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1)
@@ -73,16 +68,12 @@ function Sim_Simulador_Click() {
 						document.getElementById('Sim_Label_Input').innerHTML = ArrayObjStatic[index_var*20+1];
 						document.getElementById('Sim_Input_Ladder').value = Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0);
 						CInput.focus();
-					//	alert("clicou ENTRADA");
-  	
 					}
 				}
 				if (ArrayObjStatic[index_var*20+17]==7 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
 					ArrayObjDinamic[index_var*10+3] = ArrayObjStatic[index_var*20+3];
 					ArrayObjDinamic[index_var*10+4] = ArrayObjStatic[index_var*20+6];
-					//alert("clicou BARGRAPH");
-  	
 				}			
 				if (ArrayObjStatic[index_var*20+17]==2 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
@@ -98,8 +89,6 @@ function Sim_Simulador_Click() {
 						ArrayObjStatic[index_var*20+4] = ArrayObjStatic[(index_var-1)*20+4];
 						ArrayObjStatic[(index_var-1)*20+4] = auxiliar;
 					}
-					//alert("clicou FIGURA ANimada");
-  	
 				}			
 			}
 			//ENtra em modo ediçao
@@ -107,8 +96,6 @@ function Sim_Simulador_Click() {
 			(ArrayObjStatic[index_var*20+17]==1 && verificaTexto(posicaox, -1*ArrayObjStatic[index_var*20+10]*ArrayImagens[ArrayObjDinamic[index_var*10+5]].length, 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1) ||
 			(ArrayObjStatic[index_var*20+17]==6 && verificaTexto(posicaox, -5*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1))) {
 				simApontador(index_var);
-				//alert("clicou EDICAO");
-  	
 			}
 		}
   	} 
@@ -150,13 +137,11 @@ function Atualiza_Simulador() {
 	Desenha_Ihm_Sim();
 	            	
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++) {
-		//alert("linha "+ ij+" De "+ ArrayObjDinamic.length / 10);
 		if (comandos > 0) {
 			simTimer(ij);
 			simFigura(ij);
 		}
 		else {
-		//	alert("linha "+ ij);
 			ArrayObjDinamic[ij*10+3] = ArrayObjStatic[ij*20+3];
 			ArrayObjDinamic[ij*10+4] = ArrayObjStatic[ij*20+6];
 			ApagaImagem(ij);
@@ -166,7 +151,6 @@ function Atualiza_Simulador() {
 			LoadImageIndex(Sim_Path + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
-			//alert("Eita "+ ArrayObjStatic[ij*20+9] + "  " +ArrayObjStatic[ij] );
 			Sim_Context.font = ArrayObjStatic[ij*20+10]+'pt Arial';
 			Sim_Context.fillStyle = 'yellow';//'white';
 			Sim_Context.fillRect(ArrayObjStatic[ij*20+3] ,ArrayObjStatic[ij*20+6], 4*ArrayObjStatic[ij*20+10], -ArrayObjStatic[ij*20+10]);
@@ -725,7 +709,6 @@ function simFigura(index_var) {
 	var variavel2 = ArrayObjStatic[index_var*20+2];
 	var dependencia1 = ArrayObjStatic[index_var*20+13];
 	var dependencia2 = ArrayObjStatic[index_var*20+14];
-	//alert('Linha: '+index_var+' '+ArrayObjStatic[index_var*20+13]+' '+dependencia1);
 	figura_animada(index_var, variavel1, variavel2);
 	movimenta_x(index_var, dependencia1, dependencia2);
 	movimenta_y(index_var, dependencia1, dependencia2);
