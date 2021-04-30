@@ -79,7 +79,7 @@ function Sim_Botao_Click() {
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[5]==1){
 		Sim_Botao_Funcao[5]=0;
-		//Sim_Edicao =3;
+		Sim_Edicao =3;
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[6]==1){
 		Sim_Botao_Funcao[6]=0;
@@ -161,38 +161,38 @@ function Sim_Botao_Click() {
 		Sim_Botao_Funcao[1]=0;
 		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao>0 && Sim_Botao_Funcao[1]==1){
+	if ((Sim_Edicao==1 || Sim_Edicao==2) && Sim_Botao_Funcao[1]==1){
 		Sim_Botao_Funcao[1]=0;
 		Sim_Edicao = 0;
 	}
 	if (Sim_Edicao==1 && Sim_Botao_Funcao[2]==1){
 		Sim_Edicao = 2;
 	}
-	if (Sim_Edicao>0 && Sim_Botao_Funcao[3]==1){
+	if ((Sim_Edicao==1 || Sim_Edicao==2) && Sim_Botao_Funcao[3]==1){
 		Sim_Funcao1();
 		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao>0 && Sim_Botao_Funcao[4]==1){
+	if ((Sim_Edicao==1 || Sim_Edicao==2) && Sim_Botao_Funcao[4]==1){
 		Sim_Funcao2();
 		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao>0 && Sim_Botao_Funcao[5]==1){
+	if ((Sim_Edicao==1 || Sim_Edicao==2) && Sim_Botao_Funcao[5]==1){
 		Sim_Funcao3();
 		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao>0 && Sim_Botao_Funcao[6]==1){
+	if ((Sim_Edicao==1 || Sim_Edicao==2) && Sim_Botao_Funcao[6]==1){
 		Sim_Funcao4();
 		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao>0 && Sim_Botao_Funcao[7]==1){
+	if ((Sim_Edicao==1 || Sim_Edicao==2) && Sim_Botao_Funcao[7]==1){
 		Sim_Funcao5();
 		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao>0 && Sim_Botao_Funcao[8]==1){
+	if ((Sim_Edicao==1 || Sim_Edicao==2) && Sim_Botao_Funcao[8]==1){
 		Sim_Funcao6();
 		Sim_Edicao = 1;
 	}
-	if (Sim_Edicao>0 && Sim_Botao_Funcao[9]==1){
+	if ((Sim_Edicao==1 || Sim_Edicao==2) && Sim_Botao_Funcao[9]==1){
 		Sim_Funcao7();
 		Sim_Edicao = 1;
 	}
