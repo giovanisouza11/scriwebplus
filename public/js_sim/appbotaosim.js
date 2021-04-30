@@ -79,7 +79,7 @@ function Sim_Botao_Click() {
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[5]==1){
 		Sim_Botao_Funcao[5]=0;
-		Sim_Edicao =3;
+		//Sim_Edicao =3;
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[6]==1){
 		Sim_Botao_Funcao[6]=0;
