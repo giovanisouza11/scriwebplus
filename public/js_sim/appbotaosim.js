@@ -17,6 +17,8 @@ function Sim_Draw_Botoes() {
 		Sim_Botao_Funcao[i] = 0;
 	if (Sim_Edicao == 2)
 		Sim_Edicao_Aux = 1;
+	if (Sim_Edicao == 3)
+		Sim_Edicao_Aux = 0;
 	Sim_Context1.drawImage(Sim_ImageB, 70*Sim_Botao_Funcao[i]+(140*Sim_Edicao_Aux), 45*(i-1), 70, 45, 5,(i-1)*44, 70, 43);
     }
 }
@@ -77,7 +79,7 @@ function Sim_Botao_Click() {
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[5]==1){
 		Sim_Botao_Funcao[5]=0;
-		//Sim_Edicao =3;
+		Sim_Edicao =3;
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[6]==1){
 		Sim_Botao_Funcao[6]=0;
