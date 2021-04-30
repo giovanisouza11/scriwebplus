@@ -143,7 +143,7 @@ function Atualiza_Simulador() {
 			simTimer(ij);
 			simFigura(ij);
 		}
-		if (comandos == 0 || Sim_Edicao == 3) {
+		if (comandos == 0){ // || Sim_Edicao == 3) {
 			ArrayObjDinamic[ij*10+3] = ArrayObjStatic[ij*20+3];
 			ArrayObjDinamic[ij*10+4] = ArrayObjStatic[ij*20+6];
 			ApagaImagem(ij);
@@ -171,8 +171,8 @@ function Atualiza_Simulador() {
 			funcaoLabel(ij);
 		}
 	}
-	if (Sim_Edicao == 3)
-		Sim_Edicao = 0;
+	//if (Sim_Edicao == 3)
+	//	Sim_Edicao = 0;
 }
 //----------------------------------------------------------
 //Funcao de label
