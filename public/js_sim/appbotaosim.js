@@ -3,7 +3,7 @@ Sim_ImageB.src = "/img_sim/botoessim.png";
 var Sim_Canvas1;
 var Sim_Context1;
 var Sim_Botao_Funcao = new Array(14);
-var Sim_Edicao = 0; 
+//var Sim_Edicao = 0; 
 //desenha os botoes
 function Sim_Draw_Botoes() {
     Sim_Canvas1 = document.getElementById("tela5");
