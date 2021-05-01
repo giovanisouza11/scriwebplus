@@ -15,7 +15,6 @@ var Sim_PathInicial = 'scriweb/simulacao/';
 var FuncaoMatriz = new Array();
 var tempo = window.setInterval(AtualizaPorTempo, 500);
 var variavel;
-//var Sim_Edicao = 0;
 //=====================================================================================
 //Inicializa Canvas
 //Desenha area de trabalho em branco
@@ -137,13 +136,19 @@ function AtualizaPorTempo() {
 //===================================================================================
 function Atualiza_Simulador() {
 	Desenha_Ihm_Sim();
-	            	
+	var Aux_Atualiza;
+	if (Sim_Edicao == 3) {
+		Sim_Edicao = 0;
+		Aux_Atualiza =1;
+	}
+	else
+		Aux_Atualiza = 0;
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++) {
 		if (comandos > 0) {
 			simTimer(ij);
 			simFigura(ij);
 		}
-		if (comandos == 0 || Sim_Edicao == 3) {
+		if (comandos == 0 || Aux_Atualiza ==1) {
 			ArrayObjDinamic[ij*10+3] = ArrayObjStatic[ij*20+3];
 			ArrayObjDinamic[ij*10+4] = ArrayObjStatic[ij*20+6];
 			ApagaImagem(ij);
@@ -170,9 +175,6 @@ function Atualiza_Simulador() {
 		if (ArrayObjStatic[ij*20+17] == 1) {
 			funcaoLabel(ij);
 		}
-	};
-	if (Sim_Edicao == 3) {
-		Sim_Edicao = 0;
 	}
 }
 //----------------------------------------------------------
