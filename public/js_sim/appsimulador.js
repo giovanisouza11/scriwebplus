@@ -170,9 +170,10 @@ function Atualiza_Simulador() {
 		if (ArrayObjStatic[ij*20+17] == 1) {
 			funcaoLabel(ij);
 		}
-	}
-	if (Sim_Edicao == 3)
+	};
+	if (Sim_Edicao == 3) {
 		Sim_Edicao = 0;
+	}
 }
 //----------------------------------------------------------
 //Funcao de label
