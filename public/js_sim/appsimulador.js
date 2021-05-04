@@ -33,10 +33,8 @@ function Sim_Draw_Inicio() {
 function Sim_Simulador_Click() {
 	var posicaoy = parseInt(window.event.clientY-40);
 	var posicaox = parseInt(window.event.clientX-70);
-	//alert("Posicao  "+verificaPosicao(posicaox, 0, 'X'+index_var)+ " "+verificaPosicao(posicaoy, 0, 'Y'+index_var));
 	if (LoadedImages>0) {
     		for(var index_var=0; index_var<( parseInt(ArrayObjDinamic.length / 10)+1); index_var++) { 
-			//alert(index_var+" "+verificaPosicao(posicaox, 0, 'X'+index_var)+ " "+verificaPosicao(posicaoy, 0, 'Y'+index_var));
 			if (Sim_Edicao == 0) {
 				if (ArrayObjStatic[index_var*20+17]==1 && verificaPosicao(posicaox, 0, 'X'+index_var)==1 && verificaPosicao(posicaoy, 0, 'Y'+index_var)==1)
 				{
@@ -155,7 +153,6 @@ function Atualiza_Simulador() {
 		}
 
 		if ((ArrayObjStatic[ij*20+17] != 1) && (ArrayObjStatic[ij*20+17] < 5)) {
-			//alert(ArrayObjDinamic[ij*10+3]+' '+ArrayObjDinamic[ij*10+4]);
 			LoadImageIndex(Sim_Path + ArrayImagens[ArrayObjDinamic[ij*10+5]] + Extensao[ArrayObjDinamic[ij*10+1]]+'.png', ij);
 		}
 		if (ArrayObjStatic[ij*20+17] == 6) {
@@ -231,34 +228,24 @@ function Desenha_Ihm_Sim() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
 	var linha = 510;
-	//Sim_Context.lineWidth = 2;
-  	Sim_Context.fillStyle = 'white';
+	Sim_Context.fillStyle = 'white';
   	Sim_Context.fillRect(10, 500, 550, 25);
   	Sim_Context.font = '18pt Arial';
   	Sim_Context.fillStyle = 'red';
 	Sim_Context.fillText(num_clp, 10, 515);
 	Sim_Context.fillStyle = 'black';
-  	//Sim_Context.strokeRect(255, 10, 305, 5125);
-  	//Sim_Context.font = '16pt Arial';
-  	//Sim_Context.fillStyle = 'black';
-  	//Sim_Context.fillText('Mapa de Memória', 270, 40);
   	Sim_Context.font = '9pt Arial';
   	var num_linhas;
   	var funcao = 3;
-	//for (var funcao=0; funcao<6; funcao++) {
-    		switch (parseInt(funcao)){
+	switch (parseInt(funcao)){
       		case 0:
         		Sim_Context.fillStyle = 'black';
         		Sim_Context.fillRect(280, linha-5, 60, 5);
         		Sim_Context.fillText('ENTRADAS', 280, linha);
-        		//Sim_Context.fillRect(955, linha-5, 60, 5);
-        		//Sim_Context.fillRect(1025, linha-5, 60, 5);
         		tamanho_array = I.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Sim_Context.fillText('MSB', 280,linha);
-        		//Sim_Context.fillText('Valor binário', 870,linha);
-        		//Sim_Context.fillText('LSB', 990,linha);
         		Sim_Context.fillText('Decimal', 530,linha);
 			linha = linha + 15;
         		break;
@@ -266,14 +253,10 @@ function Desenha_Ihm_Sim() {
         		Sim_Context.fillStyle = 'black';
         		Sim_Context.fillRect(280, linha-5, 60, 5);
         		Sim_Context.fillText('SAIDAS', 280, linha);
-        		//Sim_Context.fillRect(955, linha-5, 60, 5);
-        		//Sim_Context.fillRect(1025, linha-5, 60, 5);
         		tamanho_array = Q.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
         		Sim_Context.fillText('MSB', 280,linha);
-        		//Sim_Context.fillText('Valor binário', 870,linha);
-        		//Sim_Context.fillText('LSB', 990,linha);
         		Sim_Context.fillText('Decimal',530,linha);
         		linha = linha + 15;
         		break;
@@ -294,17 +277,13 @@ function Desenha_Ihm_Sim() {
         		break;
 		case 3:
         		Sim_Context.fillStyle = 'black';
-        		//Sim_Context.fillRect(30, linha-5, 60, 5);
         		Sim_Context.fillText('TIMERS', 20, linha);
-       			//Sim_Context.fillRect(200, linha-5, 60, 5);
-        		tamanho_array = T.length;
+       			tamanho_array = T.length;
         		num_linhas = parseInt(tamanho_array / 9);
-        		//linha = linha + 15;
         		Sim_Context.fillText('Tem', 70,linha);
         		Sim_Context.fillText('bit', 100,linha);
         		Sim_Context.fillText('PV', 130,linha);
         		Sim_Context.fillText('SP', 160,linha);
-        		//linha = linha + 15;
         		break;
 		case 4:
         		Sim_Context.fillStyle = 'black';
@@ -336,11 +315,10 @@ function Desenha_Ihm_Sim() {
         		break;
 		default:
         		tamanho_array = 1;
-    		}
-    		var posicao;
-    		var n_posicao;
-		//posicao = 0;
-      		for (var n_linhas=0; n_linhas <= num_linhas; n_linhas++) {
+    	}
+    	var posicao;
+    	var n_posicao;
+	for (var n_linhas=0; n_linhas <= num_linhas; n_linhas++) {
       			posicao = 0;
       			Sim_Context.fillStyle = 'green';
       			if (n_linhas < num_linhas){
@@ -397,9 +375,12 @@ function Desenha_Ihm_Sim() {
         					posicao = 15;
         				break;
         			case 3:
-					Sim_Context.fillStyle = 'red';
+					if (n_posicao%3 > 0)
+						Sim_Context.fillStyle = 'red';
+					else
+        					Sim_Context.fillStyle = 'red';
         				Sim_Context.fillText(T[n_posicao], 220+(posicao*30),linha);
-        				if (posicao >7)
+        				if (posicao >8)
         					posicao = 15;
         				break;
         			default:
@@ -423,7 +404,6 @@ function Desenha_Ihm_Sim() {
       			if (n_posicao >= tamanho_array)
         			break;
     		}
-  	//}
 }
 
 //======================================================================
