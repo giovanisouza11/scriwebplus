@@ -345,11 +345,11 @@ function Desenha_Ihm_Sim() {
         			Sim_Context.fillText(tipo_funcao[funcao]+n_linhas, 280,linha);
         			n_posicao = (n_linhas * 4) + posicao;
       			}
-      			if(funcao==3) {
-        			Sim_Context.fillText(tipo_funcao[funcao]+(n_linhas*3), 190,linha);
-				n_posicao = (n_linhas * 9) + posicao;
-				
-      			}
+      			//if(funcao==3) {
+        		//	Sim_Context.fillText(tipo_funcao[funcao]+(n_linhas*3), 190,linha);
+			//	n_posicao = (n_linhas * 9) + posicao;
+			//	
+      			//}
       			do {
         			switch (parseInt(funcao)){
         			case 0:
@@ -379,8 +379,8 @@ function Desenha_Ihm_Sim() {
 						Sim_Context.fillStyle = 'red';
 					else {
         					Sim_Context.fillStyle = 'blue';
-						Sim_Context.fillText(tipo_funcao[3]+(n_posicao*3), 190,linha);
-						n_posicao++;
+						Sim_Context.fillText(tipo_funcao[3]+(n_posicao*3),  220+(posicao*30),linha);
+						posicao++;
 					}
 						
         				Sim_Context.fillText(T[n_posicao], 220+(posicao*30),linha);
