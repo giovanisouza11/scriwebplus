@@ -347,7 +347,7 @@ function Desenha_Ihm_Sim() {
       			}
       			//if(funcao==3) {
         		//	Sim_Context.fillText(tipo_funcao[funcao]+(n_linhas*3), 190,linha);
-			//	n_posicao = (n_linhas * 9) + posicao;
+				n_posicao = (n_linhas * 9) + posicao;
 			//	
       			//}
       			do {
