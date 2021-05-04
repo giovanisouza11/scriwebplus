@@ -375,10 +375,14 @@ function Desenha_Ihm_Sim() {
         					posicao = 15;
         				break;
         			case 3:
-					if (n_posicao%3 > 0)
+					if ((n_posicao%3) > 0)
 						Sim_Context.fillStyle = 'red';
-					else
-        					Sim_Context.fillStyle = 'red';
+					else {
+        					Sim_Context.fillStyle = 'blue';
+						Sim_Context.fillText(tipo_funcao[3]+(n_posicao*3), 190,linha);
+						n_posicao++;
+					}
+						
         				Sim_Context.fillText(T[n_posicao], 220+(posicao*30),linha);
         				if (posicao >8)
         					posicao = 15;
