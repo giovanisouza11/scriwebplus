@@ -4,15 +4,7 @@ Simulador de ladder com simulador industrial.
 Aplicativo disponível em:
 
 Ladder: 
-Scriweb.herokuapp.com
-
-Scriweb.herokuapp.com/en (English language)
-
-Simulador:
-Scriweb.heroku.app/simulador
-
-Scriweb.heroku.app/simulator (English language)
-
+Scriwebplus.herokuapp.com
 
 Observação
 Para ver modelos deve-se baixar o diretório SCRIWEB.
