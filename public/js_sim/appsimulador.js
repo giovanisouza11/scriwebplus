@@ -380,12 +380,13 @@ function Desenha_Ihm_Sim() {
 					}
 					else {
         					Sim_Context.fillStyle = 'blue';
-						Sim_Context.fillText(tipo_funcao[3]+(n_posicao),220+(posicao*30),linha);
+						Sim_Context.fillText(tipo_funcao[3]+(n_posicao),200+(posicao*30),linha);
+						Sim_Context.fillStyle = 'red';
 						posicao++;
 					}
 						
-        				Sim_Context.fillText(T[n_posicao], 220+(posicao*30),linha);
-        				if (posicao >6)
+        				Sim_Context.fillText(T[n_posicao], 200+(posicao*30),linha);
+        				if (posicao >10)
         					posicao = 15;
         				break;
         			default:
