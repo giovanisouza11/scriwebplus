@@ -1,13 +1,13 @@
 function Enviar(){
-	clpI = I;
+	//clpI = I;
 	clp_programa = booleano;
 	clp_cria_memoria()
     	clp_comandos = comandos;
 }
 
 function Envia_Entrada_Ele(data){
-	while (data.length < I.length) {
-		data[(I.length)-1] = I[(I.length)-1];
+	while (data.length < clpI.length) {
+		data[(clpI.length)-1] = clpI[(clpI.length)-1];
 	}
 
 	if (Tela_Eletrico_Simulador == 0)
@@ -15,8 +15,8 @@ function Envia_Entrada_Ele(data){
 }
 
 function Envia_Entrada_S(data){
-	while (data.length < I.length) {
-		data[(I.length)-1] = I[(I.length)-1];
+	while (data.length < clpI.length) {
+		data[(clpI.length)-1] = clpI[(clpI.length)-1];
 	}
 	if (Tela_Eletrico_Simulador==1)
 		clpI = data;
