@@ -15,7 +15,7 @@ function draw_inicio() {
 	draw_eletrico();
     	draw_botoes();
 	draw_ladder_inicio();	
-	config(num_clp);
+	//config(num_clp);
 	//onLoad();
 	
 	if (localStorage.tela_largura<200 || localStorage.tela_largura>2000)
