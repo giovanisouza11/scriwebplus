@@ -81,5 +81,5 @@ function Envia_Entrada_S(data){
 //}
 function Envia_Memoria_S(data){
     	//socket.emit('memoriax', data+','+Sim_enderecoCT(data,0)+ ','+ num_clp); 
-	clpM[ ] = Sim_enderecoCT(data,0);
+	clpM[data.substr(1)] = Sim_enderecoCT(data,0);
 }
