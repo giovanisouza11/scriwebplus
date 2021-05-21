@@ -1,6 +1,7 @@
 function Enviar(){
 	clpI = I;
 	clp_programa = booleano;
+	clp_cria_memoria()
     	clp_comandos = comandos;
 }
 
