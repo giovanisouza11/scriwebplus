@@ -13,7 +13,7 @@ var ArrayObjStatic = new Array();
 var Sim_Path;
 var Sim_PathInicial = 'scriweb/simulacao/';
 var FuncaoMatriz = new Array();
-var tempo = window.setInterval(AtualizaPorTempo, 500);
+var tempo = window.setInterval(AtualizaPorTempo, 100);
 var variavel;
 //=====================================================================================
 //Inicializa Canvas
@@ -126,6 +126,7 @@ function AtualizaPorTempo() {
 	if ( (Sim_Edicao ==0 || Sim_Edicao ==3)  && LoadedImages>0) {
 		Atualiza_Simulador();
 	}
+	clp_AtualizaPorTempo();
 }
 
 //=====================================================================================
