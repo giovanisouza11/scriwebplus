@@ -1,36 +1,34 @@
-/**
 * Software SCRIWEB
 */
 //--------------------------------------
 //Variaveis globais
 //--------------------------------------
-var clp= new Array();
+/*var clp= new Array();
 var sup= new Array();
 var ativo = true;
 var M = new Array();
 var I = new Array();
 var R = new Array();
 var Q = new Array();
-
+*/
 //O array de TIMER e COUNTER tem dimensao maior que 1
 // T[0] = valor binário do temporizador, convere se totalizador é maior que limite
 // T[1] = valor totalizado do temporizador
 // T[2] = Valor limite do temporizador
-var T = new Array();
+//var T = new Array();
 
 //O array de TIMER e COUNTER tem dimensao maior que 1
 // C[0] = valor binário do temporizador, convere se totalizador é maior que limite
 // C[1] = valor totalizado do contador
 // C[2] = Valor limite do contador
 // C[3] = Flag para verificacao do pulso na entrada co contador
-var C = new Array();
+//var C = new Array();
 
-var programa1 = new Array();
+/*var programa1 = new Array();
 var comandos = 0;
 var segundo = 0;
 var atraso = 0;
 var atualiza_entrada = 0;
-
 //Variaveis para CLP SOCKET
 var MS = new Array();
 var IS = new Array();
@@ -43,6 +41,7 @@ var programaS = new Array();
 var atualizaS = new Array();
 var PA = new Array();
 var LP = new Array();
+*/
 //-----------------------------------------
 //Iniciando servidor HTTP
 //-----------------------------------------
@@ -68,19 +67,19 @@ if (ativo) {
     	app.get('/help',function(req,res){
         	res.sendFile(__dirname + '/scriwebhelp.html');
     	});
-    	app.get('/simulador',function(req,res){
+    /*	app.get('/simulador',function(req,res){
         	res.sendFile(__dirname + '/simscriweb.html');
     	});
     	app.get('/servidor',function(req,res){
         	res.sendFile(__dirname + '/servidor.html');
-    	});
+    	});*/
     	app.get('/helpsim',function(req,res){
         	res.sendFile(__dirname + '/simhelp.html');
     	});
 	app.get('/popup',function(req,res){
         	res.sendFile(__dirname + '/popup.html');
     	});
-    	app.get('/abouten',function(req,res){
+    /*	app.get('/abouten',function(req,res){
         	res.sendFile(__dirname + '/scriwebabouten.html');
     	});
     	app.get('/helpen',function(req,res){
@@ -94,10 +93,9 @@ if (ativo) {
     	});
     	app.get('/helpsimen',function(req,res){
         	res.sendFile(__dirname + '/simhelpen.html');
-    	});
+    	}); */
 	server.listen(PORT,function() {
- 		//JanelaElectron();
-		console.log("__________________________________________________________________");
+ 		console.log("__________________________________________________________________");
     		console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
     		console.log("| Neste servidor foi gerado uma pagina HTML                       |");
     		console.log("|                                                                 |");
@@ -108,7 +106,7 @@ if (ativo) {
     		console.log("___________________________________________________________________");
     	});
 }
-
+/*
 // Iniciando Socket.IO
 // Emitindo messagem de conexao estabelecida
 if (ativo) {
@@ -122,16 +120,16 @@ if (ativo) {
 					socket.leave(clp[x*2]);
 					clp[x*2] = 'k';
 					console.log('CLP desCONECTADoS: '+clp);
-				//	console.log('SUP CONECTADoS: '+sup);
-				//}
-				/*if (socket.id == sup[x*2+1]){
+					console.log('SUP CONECTADoS: '+sup);
+				}
+				if (socket.id == sup[x*2+1]){
 					socket.emit('config_socket_r', 0);
 					socket.leave(sup[x*2]);
 					sup[x*2] = 'k';
 					console.log('CLP CONECTADoS: '+clp);
 					console.log('SUP desCONECTADoS: '+sup);
-				}*/
-				//if ((clp[x*2]== 'k' && sup[x*2]== 'k') ||(clp[x*2]== undefined || sup[x*2]== undefined)){
+				}
+				if ((clp[x*2]== 'k' && sup[x*2]== 'k') ||(clp[x*2]== undefined || sup[x*2]== undefined)){
 					atualizaS.splice(x,1);
 					MS.splice(x,1);
 					IS.splice(x,1);
@@ -196,7 +194,7 @@ if (ativo) {
 				console.log('SUP CONECTADoS: '+sup);
 			}
 		});
-   	/*	socket.on('sup', function(data) {
+   		socket.on('sup', function(data) {
 	   		var x;
 	   		for(x=0; x<(sup.length/2); x++){
 				if (socket.id == sup[x*2+1]){
@@ -220,7 +218,7 @@ if (ativo) {
 			console.log('CLP1 CONECTADoS: '+clp);
 			console.log('SUP1 CONECTADoS: '+sup);
 			//console.log('programas: '+programaS[data]);
-		});*/
+		});
 		socket.on('programax', function(data) {
 			programa1 = data.split(',');
 			console.log(programa1);
@@ -290,7 +288,6 @@ if (ativo) {
 			RS[x] = R.join();
 		});
    	});
-
    	function verifica_clp(data1, socket){
 		var x=0; //clp.length;
 		while(data1 != clp[x*2] && x < clp.length){
@@ -413,7 +410,6 @@ if (ativo) {
 // Send current time every 0,1 secs
 //=============================================================================
     	setInterval(AtualizaPorTempo, 100);
-
 //=============================================================================
 // Interpreta o programa BOOLEANO
 //=============================================================================
@@ -591,7 +587,6 @@ if (ativo) {
 			}
 		}
   	}
-
 //======================================================================
 //procura o endereco maior
 //=======================================================================
@@ -616,7 +611,6 @@ if (ativo) {
 		}
 		return index;
 	}
-
 //======================================================================
 //retira o valor da funcao Q/E/M
 //=======================================================================
@@ -634,7 +628,6 @@ if (ativo) {
 		else {
 			index = parseInt(Aux_data.substr(1));
 		}
-
 		switch (Aux_data.charAt(0)) {
 			case 'Q':
 				retorno = Q[index];
@@ -676,7 +669,6 @@ if (ativo) {
 		else {
 			index = parseInt(Aux_data.substr(1));
 		}
-
 		switch (Aux_data.charAt(0)) {
 			case 'I':
 				retorno = 0;
@@ -705,7 +697,6 @@ if (ativo) {
 		}
 		return parseInt(retorno);
 	}
-
 //======================================================================
 //ESCREVE o valor da funcao Q/E/M
 //=======================================================================
@@ -722,7 +713,6 @@ if (ativo) {
 		else {
 			index = parseInt(Aux_data.substr(1));
 		}
-
 		switch (Aux_data.charAt(0)) {
 			case 'Q':
 				Q[index] = valor;
@@ -747,7 +737,6 @@ if (ativo) {
 				break;
 		}
 	}
-
 //======================================================================
 //ESCREVE o valor da funcao T/C
 //=======================================================================
@@ -764,7 +753,6 @@ if (ativo) {
 		else {
 			index = parseInt(Aux_data.substr(1));
 		}
-
 		switch (Aux_data.charAt(0)) {
 			case 'I':
 				for (var ia=0; ia<=14; ia++) {
@@ -798,8 +786,6 @@ if (ativo) {
 				break;
 		}
 	}
-
-
   //======================================================================
   //Controla Temporizadores
   //=======================================================================
@@ -823,95 +809,4 @@ if (ativo) {
     			}
 		}
 	}					
-}
-
-  //======================================================================
-  //Abre primeira janela do simulador endereco localhost:4333
-  //=======================================================================
-
-function JanelaElectron(){
-	const { app, BrowserWindow, webFrame, Menu, BrowserView } = require('electron');
-	const url = require('url');
-	const shell = require('electron').shell;
-
-	let isShown = true;
-
-	app.win = null;
-
-	app.on('ready', () => {
-
-		app.win = new BrowserWindow({
-			width: 600,
-			height: 320,
-			minWidth: 300,
-			minHeight: 200,
-			show: false,
-			backgroundColor: '#FFE',
-			//icon: { linux: '/icon/icon.png', win32: '/icon/icon.ico' },
-			icon: path.join(__dirname,'public','icon','icon4.png'),
-			resizable: true,
-			webPreferences: { zoomFactor: 1.0, nodeIntegration: true, backgroundThrottling: false}
-		});
-
-		var splash = new BrowserWindow({ width: 280, height: 350, frame: false });
-		splash.loadURL(`file://${__dirname}/splash.html`);
-
-		app.win.setMenu(null);
-		app.win.loadURL('http://localhost:4333/servidor');
-
-		app.win.on('closed', () => {
-			win = null;
-			app.quit();
-		});
-
-		app.win.on('hide', function () {
-			isShown = false;
-		});
-
-		app.win.on('show', function () {
-			isShown = true;
-		});
-
-		app.win.once('ready-to-show', () => {
-			setTimeout(function(){
-				splash.close();
-				app.win.show();
-			}, 5000);
-		});
-		app.on('window-all-closed', () => {
-			app.quit();
-		});
-
-		app.on('activate', () => {
-			if (app.win === null) {
-				createWindow();
-			} else {
-				app.win.show();
-			}
-		});
-	});
-
-	app.inspect = function () {
-		app.win.toggleDevTools();
-	}
-
-	app.toggleFullscreen = function () {
-		app.win.setFullScreen(!app.win.isFullScreen());
-	}
-
-	app.toggleVisible = function () {
-		if (process.platform === 'win32') {
-			if (!app.win.isMinimized()) { app.win.minimize(); } else { app.win.restore(); }
-			} else {
-			if (isShown && !app.win.isFullScreen()) { app.win.hide(); } else { app.win.show(); }
-		}
-	}
-
-	app.injectMenu = function (Menu) {
-		try {
-			Menu.setApplicationMenu(null);
-		} catch (err) {
-			console.warn('Cannot inject menu.');
-		}
-	}
 }
