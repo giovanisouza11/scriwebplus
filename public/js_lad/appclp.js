@@ -29,7 +29,7 @@ var clp_programa = new Array();
 var clp_comandos = 0;
 var clp_segundo = 0;
 var clp_atraso = 0;
-var clp_atualiza_entrada = 0;
+//var clp_atualiza_entrada = 0;
 
 //=============================================================================
 // Send current time to all connected clients
@@ -38,59 +38,56 @@ var clp_passo_atual = 0;
 var clp_localizacao_prog =0;
 		
 function clp_AtualizaPorTempo() {
-	  clp_temporizadores();
+	clp_temporizadores();
 	
-	if( clp_atualiza_entrada == 1) {
-		clpI = I;
-		atualiza_entrada = 0;
-	}
+//	if( clp_atualiza_entrada == 1) {
+//		clpI = I;
+//		atualiza_entrada = 0;
+//	}
 	if (clp_programa != 0){ 
-			if (clp_programa.length > 0 && clp_comandos>0 && clp_comandos<3){
-					clp_passo_atual = clp_programa.length - 1;
-	    				clp_programaCLP();
-					clp_localizacao_prog = 0;
-				}
-       				if (clp_programa.length > 0 && clp_comandos>2){
-					if ((clp_passo_atual >= (clp_programa.length-1)) || (clp_comandos==3)) {
-						clp_passo_atual = 0;
-						clp_localizacao_prog = 0;
-					}
-					clp_localizacao_prog++;
-					clp_passo_atual++;
-					while (clp_programa[passo_atual].charAt(0) =='R') {
-						clp_localizacao_prog++;
-						clp_passo_atual = clp_passo_atual+2;
-						if (clp_passo_atual >= (clp_programa.length-1)) {
-							clp_passo_atual = 1;
-							clp_localizacao_prog = 1;
-						}
-					}
-					clp_programaCLP();
-				}
-		
-				if (clp_segundo>10){
-					clp_atraso = 0;
-					M = clpM;
-					R = clpR;
-					T = clpT;
-					C = clpC;
-					Q = clpQ;
-					localizacao = clp_localizacao_prog;
-					liga_led_CLP();
-					if (comandos != 0) {
-						monitora_ladder();
-					};
+		if (clp_programa.length > 0 && clp_comandos>0 && clp_comandos<3){
+			clp_passo_atual = clp_programa.length - 1;
+			clp_programaCLP();
+			clp_localizacao_prog = 0;
+		}
+		if (clp_programa.length > 0 && clp_comandos>2){
+			if ((clp_passo_atual >= (clp_programa.length-1)) || (clp_comandos==3)) {
+				clp_passo_atual = 0;
+				clp_localizacao_prog = 0;
+			}
+			clp_localizacao_prog++;
+			clp_passo_atual++;
+			while (clp_programa[passo_atual].charAt(0) =='R') {
+				clp_localizacao_prog++;
+				clp_passo_atual = clp_passo_atual+2;
+				if (clp_passo_atual >= (clp_programa.length-1)) {
+					clp_passo_atual = 1;
+					clp_localizacao_prog = 1;
 				}
 			}
-        		
-       			if (clp_comandos>1)
-				clp_comandos=0;
+			clp_programaCLP();
 		}
-		if (clp_segundo>10)
-			clp_segundo = 0;
-		clp_segundo++;
-			
+		if (clp_segundo>10){
+			clp_atraso = 0;
+			M = clpM;
+			R = clpR;
+			T = clpT;
+			C = clpC;
+			Q = clpQ;
+			localizacao = clp_localizacao_prog;
+			liga_led_CLP();
+			if (comandos != 0) {
+				monitora_ladder();
+			};
+		}
 	}
+        		
+	if (clp_comandos>1)
+		clp_comandos=0;
+	if (clp_segundo>10)
+		clp_segundo = 0;
+	clp_segundo++;
+}
 //=============================================================================
 // Send current time every 0,1 secs
 //=============================================================================
