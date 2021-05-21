@@ -47,31 +47,30 @@
   //  	socket.emit('clp', dado);
 //}
 
-//function Enviar(){
-//	var data = I.join()+ ','+ num_clp;
+function Enviar(){
+	clpI = I;
     	//Sim_I = I;
-//	socket.emit('programax', programa+ ','+ num_clp);
-  //  	socket.emit('comandosx', comando+ ','+ num_clp);
-    //	socket.emit('entradax',data);
-//}
+	clp_programa = programa;
+    	clp_comandos = comando;
+}
 
-//function Envia_Entrada_Ele(data){
-//	while (data.length < I.length) {
-//		data[(I.length)-1] = I[(I.length)-1];
-//	}
-	//Sim_I = data.split(',');
-//	if (Tela_Eletrico_Simulador == 0)
-//		socket.emit('entradax', data.join()+ ','+ num_clp);
-//}
+function Envia_Entrada_Ele(data){
+	while (data.length < I.length) {
+		data[(I.length)-1] = I[(I.length)-1];
+	}
 
-//function Envia_Entrada_S(data){
-//	while (data.length < I.length) {
-//		data[(I.length)-1] = I[(I.length)-1];
-//	}
+	if (Tela_Eletrico_Simulador == 0)
+		clpI = data; 
+}
+
+function Envia_Entrada_S(data){
+	while (data.length < I.length) {
+		data[(I.length)-1] = I[(I.length)-1];
+	}
 	//Sim_I = data.split(',');
-//	if (Tela_Eletrico_Simulador==1)
-//		socket.emit('entradax', data.join()+ ','+ num_clp);
-//}
+	if (Tela_Eletrico_Simulador==1)
+		clpI = data;
+}
 
 //socket.on('config_socket_r', function(data) {
 //	localStorage.setItem("num_clp1", data);
@@ -80,6 +79,7 @@
 //function Sim_Config_Socket(dado){
 //    	socket.emit('clp', dado);
 //}
-//function Envia_Memoria_S(data){
-  //   	socket.emit('memoriax', data+','+Sim_enderecoCT(data,0)+ ','+ num_clp);
-//}
+function Envia_Memoria_S(data){
+    	//socket.emit('memoriax', data+','+Sim_enderecoCT(data,0)+ ','+ num_clp); 
+	clpM[ ] = Sim_enderecoCT(data,0);
+}
