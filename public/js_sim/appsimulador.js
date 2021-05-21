@@ -13,7 +13,7 @@ var ArrayObjStatic = new Array();
 var Sim_Path;
 var Sim_PathInicial = 'scriweb/simulacao/';
 var FuncaoMatriz = new Array();
-var tempo = window.setInterval(AtualizaPorTempo, 100);
+var tempo = window.setInterval(AtualizaPorTempo, 500);
 var variavel;
 //=====================================================================================
 //Inicializa Canvas
