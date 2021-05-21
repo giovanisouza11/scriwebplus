@@ -76,6 +76,10 @@ function clp_AtualizaPorTempo() {
 					C = clpC;
 					Q = clpQ;
 					localizacao = clp_localizacao_prog;
+					liga_led_CLP();
+					if (comandos != 0) {
+						monitora_ladder();
+					};
 				}
 			}
         		
