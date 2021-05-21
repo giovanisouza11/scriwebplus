@@ -4,9 +4,6 @@
 //--------------------------------------
 //Variaveis globais
 //--------------------------------------
-//var clp= new Array();
-//var sup= new Array();
-/var clpAtivo = true;
 var clpM = new Array();
 var clpI = new Array();
 var clpR = new Array();
