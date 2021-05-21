@@ -97,7 +97,7 @@ function clp_programaCLP(){
 		for (var aux_tr=0; aux_tr<(clpR.length); aux_tr++)
 			clpR[aux_tr] = 0;
 	}
-	for (passo=0; clp_passo<(clp_passo_atual); clp_passo = clp_passo+2){
+	for (passo=0; passo<(clp_passo_atual); passo = passo+2){
 		switch (clp_programa[passo]) {
 			case 'LD':
 				acumulador = clp_le_endereco(clp_programa[passo+1]);
