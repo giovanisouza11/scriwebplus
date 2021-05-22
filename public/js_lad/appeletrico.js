@@ -1,6 +1,6 @@
 ﻿var AImage1 = new Image();
 AImage1.src = "/img_lad/eletrico.png";
-var valor_botao = new Array(7);
+var real_I = new Array(7);
 var M = new Array();
 var I = new Array();
 var R = new Array();
@@ -20,7 +20,7 @@ function draw_eletrico() {
     canvas.top = 200;
 	var i;
     for(i=0; i<12; i++){
-	   	valor_botao[i] = 0;
+	   	real_I[i] = 0;
 	//	I[i] = 0;
 	}
     for(i=0; i<12; i++)
@@ -33,9 +33,9 @@ function draw_eletrico() {
 }
 function Atualiza_Chaves(){
    for(i=0; i<12; i++){
-   	valor_botao[i] = I[i];
+   	real_I[i] = I[i];
        	//context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 33+(i*32), 0, AImage1.width/5, 110)
-	//context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[i]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
+	//context.drawImage(AImage1, (AImage1.width/5)*(real_I[i]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
 	draw_chave(i,0);
    } 	
    liga_led_CLP();
@@ -113,7 +113,7 @@ function draw_chave(posicaox, posisicaoy) {
        // canvas = document.getElementById("tela1");
 	//context= canvas.getContext("2d");
 	var i=posicaox;
-	context.drawImage(AImage1, (AImage1.width/5)*(valor_botao[i]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
+	context.drawImage(AImage1, (AImage1.width/5)*(real_I[i]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
 }
 
 function trocar() {
@@ -124,15 +124,15 @@ function trocar() {
 
     if ((posicaox >=0) && posicaox < 16)
     {
-        if (valor_botao[index]==0) {
-            valor_botao[index]=1;
+        if (real_I[index]==0) {
+            real_I[index]=1;
 		}
 		else{
-			valor_botao[index]=0;
+			real_I[index]=0;
 		}
 		draw_chave(posicaox, posicaoy);
 	}
-	Envia_Entrada_Ele(valor_botao);
+	Envia_Entrada_Ele(real_I);
 	run_CLP();
 }
 
@@ -165,7 +165,7 @@ function run_CLP(){
 
 function liga_led_CLP(){
 	for(var i=0; i <12; i++){
-		if (valor_botao[i]==1)
+		if (real_I[i]==1)
 			context.fillStyle = 'green';
 		else
 			context.fillStyle = 'white';
