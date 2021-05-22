@@ -9,7 +9,7 @@ function Envia_Entrada_Ele(data){
 	while (data.length < clpI.length) {
 		data[(clpI.length)-1] = clpI[(clpI.length)-1];
 	}
-	I = data;
+	//I = data;
 	if (Tela_Eletrico_Simulador == 0)
 		clpI = data; 
 }
@@ -18,7 +18,7 @@ function Envia_Entrada_S(data){
 	while (data.length < clpI.length) {
 		data[(clpI.length)-1] = clpI[(clpI.length)-1];
 	}
-	I = data;
+	//I = data;
 	if (Tela_Eletrico_Simulador==1)
 		clpI = data;
 }
