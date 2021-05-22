@@ -448,7 +448,7 @@ function Sim_Endereco(Aux_data) {
 			retorno = Q[index];
 			break;
 		case 'I':
-			retorno = I[index];
+			retorno = real_I[index];
 			break;
 		case 'M':
 			retorno = M[index];
@@ -520,8 +520,8 @@ function Sim_Escreve_Endereco(Aux_data, valor)
 			Q[index] = valor;
 			break;
 		case 'I':
-			I[index] = valor;
-			Envia_Entrada_S(I);
+			real_I[index] = valor;
+			Envia_Entrada_S(real_I);
 			break;
 		case 'M':
 			M[index] = valor;
@@ -560,11 +560,11 @@ function Sim_Escreve_CT(Aux_data, valor, index1)
 		case 'I':
 			for (var ia=0; ia<=14; ia++) {
 				var auxiliar = parseInt(valor) %2;
-				I[index+ ia] = auxiliar;
+				real_I[index+ ia] = auxiliar;
 				valor = parseInt(valor / 2);
 			}
-			I[index+15] = valor;
-			Envia_Entrada_S(I);
+			real_I[index+15] = valor;
+			Envia_Entrada_S(real_I);
 			break;
 		case 'Q':
 			for (var ia=0; ia<=14; ia++) {
@@ -617,7 +617,7 @@ function Sim_Endereco_CT(Aux_data, index1) {
 		case 'I':
 			retorno = 0;
 			for (var ia=0; ia<16; ia++)
-				retorno = retorno + variavelCT(I[index+ ia])* (2**ia);
+				retorno = retorno + variavelCT(real_I[index+ ia])* (2**ia);
 			break;
 		case 'Q':
 			retorno = 0;
