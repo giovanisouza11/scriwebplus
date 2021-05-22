@@ -67,6 +67,7 @@ function clp_AtualizaPorTempo() {
 			T = clpT;
 			C = clpC;
 			Q = clpQ;
+			I = clpI;
 			localizacao = clp_localizacao_prog;
 			liga_led_CLP();
 			if (comandos != 0) {
