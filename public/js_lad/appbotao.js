@@ -250,7 +250,7 @@ function trocar_botao() {
                 //socket.emit('programax', texto+','+num_clp); 
 		clp_programa = booleano;
 		clp_cria_memoria();
-		alerta(clp_programa);
+		alert(clp_programa);
 		I = clpI;
 		valor_chave[3]=0;
 		valor_chave[7]=1;
