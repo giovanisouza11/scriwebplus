@@ -14,7 +14,7 @@ function Envia_Entrada_Ele(data){
 		clpI = data; 
 		sim_I = clpI;
 	}
-	alert("CLPI '+ clpI+ "/n real_I "+ real_I);
+	alert("CLPI "+ clpI+ "/n real_I "+ real_I);
 }
 
 function Envia_Entrada_S(data){
