@@ -10,8 +10,10 @@ function Envia_Entrada_Ele(data){
 		data[(clpI.length)-1] = clpI[(clpI.length)-1];
 	}
 	//I = data;
-	if (Tela_Eletrico_Simulador == 0)
+	if (Tela_Eletrico_Simulador == 0) {
 		clpI = data; 
+		simI = clpI;
+	}
 }
 
 function Envia_Entrada_S(data){
@@ -19,8 +21,10 @@ function Envia_Entrada_S(data){
 		data[(clpI.length)-1] = clpI[(clpI.length)-1];
 	}
 	//I = data;
-	if (Tela_Eletrico_Simulador==1)
+	if (Tela_Eletrico_Simulador==1) {
 		clpI = data;
+		realI = clpI;
+	}
 }
 
 function Envia_Memoria_S(data){
