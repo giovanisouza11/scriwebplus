@@ -12,7 +12,7 @@ function Envia_Entrada_Ele(data){
 	//I = data;
 	if (Tela_Eletrico_Simulador == 0) {
 		clpI = data; 
-		simI = clpI;
+		sim_I = clpI;
 	}
 }
 
@@ -23,7 +23,7 @@ function Envia_Entrada_S(data){
 	//I = data;
 	if (Tela_Eletrico_Simulador==1) {
 		clpI = data;
-		realI = clpI;
+		real_I = clpI;
 	}
 }
 
