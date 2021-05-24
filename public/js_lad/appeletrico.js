@@ -33,7 +33,7 @@ function draw_eletrico() {
 }
 function Atualiza_Chaves(){
    for(i=0; i<12; i++){
-   	real_I[i] = I[i];
+   	//real_I[i] = I[i];
        	//context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 33+(i*32), 0, AImage1.width/5, 110)
 	//context.drawImage(AImage1, (AImage1.width/5)*(real_I[i]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
 	draw_chave(i,0);
