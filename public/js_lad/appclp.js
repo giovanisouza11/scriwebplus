@@ -86,6 +86,7 @@ function clp_AtualizaPorTempo() {
 // Send current time every 0,1 secs
 //=============================================================================
     	//setInterval(clp_AtualizaPorTempo, 100);
+var clp_tempo = window.setInterval(clp_AtualizaPorTempo, 100);
 
 //=============================================================================
 // Interpreta o programa BOOLEANO
