@@ -15,6 +15,7 @@ var Sim_PathInicial = 'scriweb/simulacao/';
 var FuncaoMatriz = new Array();
 var tempo = window.setInterval(AtualizaPorTempo, 100);
 var variavel;
+var sim_segundos = 0;
 //=====================================================================================
 //Inicializa Canvas
 //Desenha area de trabalho em branco
@@ -123,10 +124,15 @@ function eInputS(event) {
 
 //Interrupção de tempo Tela_Eletrico_Simulador
 function AtualizaPorTempo() {
-	if ( (Sim_Edicao ==0 || Sim_Edicao ==3)  && LoadedImages>0) {
-		Atualiza_Simulador();
+	sim_segundos++;
+	if (sim_segundos > 5) {
+		if ( (Sim_Edicao ==0 || Sim_Edicao ==3)  && LoadedImages>0) {
+			Atualiza_Simulador();
+		}
 	}
 	clp_AtualizaPorTempo();
+	if (sim_segundos > 5)
+		sim_segundos = 0;
 }
 
 //=====================================================================================
