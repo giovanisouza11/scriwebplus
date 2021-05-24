@@ -13,7 +13,7 @@ var ArrayObjStatic = new Array();
 var Sim_Path;
 var Sim_PathInicial = 'scriweb/simulacao/';
 var FuncaoMatriz = new Array();
-var tempo = window.setInterval(AtualizaPorTempo, 100);
+var tempo = window.setInterval(AtualizaPorTempo, 200);
 var variavel;
 var sim_segundos = 0;
 var sim_I = new Array();
@@ -126,13 +126,13 @@ function eInputS(event) {
 //Interrupção de tempo Tela_Eletrico_Simulador
 function AtualizaPorTempo() {
 	sim_segundos++;
-	if (sim_segundos > 5) {
+	if (sim_segundos > 3) {
 		if ( (Sim_Edicao ==0 || Sim_Edicao ==3)  && LoadedImages>0) {
 			Atualiza_Simulador();
 		}
 	}
 	clp_AtualizaPorTempo();
-	if (sim_segundos > 5)
+	if (sim_segundos > 3)
 		sim_segundos = 0;
 }
 
