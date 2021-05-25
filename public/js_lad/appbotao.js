@@ -3,6 +3,7 @@ AImageB.src = "/img_lad/botoes4.png";
 var canvas1;
 var context1;
 var valor_chave = new Array(31);
+let titulo_lad = 'Scriweb';
 
 //desenha os botoes
 function draw_botoes() {
@@ -214,6 +215,7 @@ function trocar_botao() {
 			//inputCSV.setPropertie('accept', '.csv');
 			var file = this.files[0];
 		    	leitorDeCSV1.readAsText(file);
+			titulo_lad =;
 		};
 		valor_chave[1]=0;
 		valor_chave[4]==0;
@@ -234,7 +236,7 @@ function trocar_botao() {
 			//for (var j=0; j<2; j++)
 		//	texto += booleano[i]+' , ';
 		//}
-        let titulo ='scriweb';
+        //let titulo ='scriweb';
         var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
         saveAs(blob, titulo + ".csv");
         valor_chave[2]=0;
