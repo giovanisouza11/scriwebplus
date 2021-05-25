@@ -37,4 +37,6 @@
     		console.log("| Execute no Browser para criar/alterar/monitorar/simular         |");
     		console.log("|    localhost:4333 ou XXX.XXX.XXX.XXX:4333                       |");
     		console.log("___________________________________________________________________");
+		console.log(__dirname);
+		
     	});
