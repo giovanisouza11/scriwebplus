@@ -238,7 +238,7 @@ function trocar_botao() {
 		//}
         //let titulo ='scriweb';
         var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
-        saveAs(blob, titulo + ".csv");
+        saveAs(blob, titulo_lad + ".csv");
         valor_chave[2]=0;
 	}
 	if (valor_chave[3]==1){
