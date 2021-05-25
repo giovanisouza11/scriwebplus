@@ -34,9 +34,7 @@
     		console.log("|      SUPERVISORIO WEB INFORMATICA INDUSTRIAL rodando!           |");
     		console.log("| Neste servidor foi gerado uma pagina HTML                       |");
     		console.log("|                                                                 |");
-    		console.log("| Execute no Browser para criar/alterar/monitorar LADDER.         |");
+    		console.log("| Execute no Browser para criar/alterar/monitorar/simular         |");
     		console.log("|    localhost:4333 ou XXX.XXX.XXX.XXX:4333                       |");
-    		console.log("| Execute no Browser para Supervisão/simular processo Industrial.|");
-    		console.log("|    localhost:4333/simulador ou XXX.XXX.XXX.XXX:4333/simulador   |");
     		console.log("___________________________________________________________________");
     	});
