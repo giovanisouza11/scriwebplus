@@ -289,9 +289,10 @@ function trocar_botao() {
 		//socket.emit('comandosx', 0+ ','+  num_clp);
 	}
 	if (valor_chave[16]==1){
+		var inputCSV = document.createElement('input');
 		if (window.File && window.FileReader && window.FileList && window.Blob) {
-                	var fileSelected = document.getElementById('txtfiletoread');
-                	fileSelected.addEventListener('change', function (e) {
+                	//var fileSelected = document.getElementById('txtfiletoread');
+                	inputCSV.addEventListener('change', function (e) {
                     		//Set the extension for the file
                     		var fileExtension = /text.*/;
                     		//Get the file object
