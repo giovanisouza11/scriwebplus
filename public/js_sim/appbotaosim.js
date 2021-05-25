@@ -56,7 +56,7 @@ function Sim_Botao_Click() {
 	    		var file = this.files[0];
 			Sim_Leitor_Arquivo.readAsText(file);
 			Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
-			titulo = file.name.slice(0,file.name.length -4;
+			titulo = file.name.slice(0,file.name.length -4);
 		};
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[3]==1){
