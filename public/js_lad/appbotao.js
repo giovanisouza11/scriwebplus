@@ -215,7 +215,7 @@ function trocar_botao() {
 			//inputCSV.setPropertie('accept', '.csv');
 			var file = this.files[0];
 		    	leitorDeCSV1.readAsText(file);
-			titulo_lad =;
+			titulo_lad = file.name.slice(0,file.name.length -4);
 		};
 		valor_chave[1]=0;
 		valor_chave[4]==0;
