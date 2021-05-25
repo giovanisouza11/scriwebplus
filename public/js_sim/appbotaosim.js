@@ -90,13 +90,13 @@ function Sim_Botao_Click() {
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
 		modalb1.innerHTML = "<p><a href='http://scriweb.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Classificacao/Classificacao.csv'>Classificação</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Corte_Vinco/Corte_Vinco.csv'>Corte e Vinco</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador/Elevador.csv'>Elevador(3 andares)</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Elevador5/Elevador5.csv'>Elevador(5 andares)</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Envase/Envase.csv'>Envase</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Expedicao/Expedicao.csv'>Expedição</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriweb.herokuapp.com/ftp/Semaforo/Semaforo.csv'>Semáforo</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Classificacao/Classificacao.csv'>Classificação</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Corte_Vinco/Corte_Vinco.csv'>Corte e Vinco</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Elevador/Elevador.csv'>Elevador(3 andares)</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Elevador5/Elevador5.csv'>Elevador(5 andares)</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Envase/Envase.csv'>Envase</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Expedicao/Expedicao.csv'>Expedição</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Semaforo/Semaforo.csv'>Semáforo</a></p>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button');
