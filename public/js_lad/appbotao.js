@@ -296,7 +296,8 @@ function trocar_botao() {
 	      inputCSV.type = 'file';
 		if (window.File && window.FileReader && window.FileList && window.Blob) {
                 	//var fileSelected = document.getElementById('txtfiletoread');
-               	inputCSV.addEventListener('change', function (e) {
+               		inputCSV.onchange = function {
+			//inputCSV.addEventListener('change', function (e) {
                     		//Set the extension for the file
                     		var fileExtension = /text.*/;
                     		//Get the file object
@@ -314,7 +315,7 @@ function trocar_botao() {
                     		else {
                         		alert("Por favor selecione arquivo texto");
                     		}
-	                }, false);
+	                }; //, false);
             }
             else {
                	alert("Arquivo(s) não suportado(s)");
