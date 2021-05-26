@@ -296,7 +296,7 @@ function trocar_botao() {
 	      inputCSV.type = 'file';
 		if (window.File && window.FileReader && window.FileList && window.Blob) {
                 	//var fileSelected = document.getElementById('txtfiletoread');
-               		inputCSV.onchange = function {
+               		inputCSV.onchange = function() {
 			//inputCSV.addEventListener('change', function (e) {
                     		//Set the extension for the file
                     		var fileExtension = /text.*/;
