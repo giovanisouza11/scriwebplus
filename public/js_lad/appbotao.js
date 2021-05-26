@@ -299,7 +299,7 @@ function trocar_botao() {
                		inputCSV.onchange = function() {
 			//inputCSV.addEventListener('change', function (e) {
                     		//Set the extension for the file
-                    		var fileExtension = /text.*/;
+                    		//var fileExtension = /text.*/;
                     		//Get the file object
                    		var fileTobeRead = fileSelected.files[0];
                    	 	//Check of the extension match
