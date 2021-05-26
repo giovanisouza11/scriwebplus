@@ -291,11 +291,11 @@ function trocar_botao() {
 	if (valor_chave[16]==1){
 	//https://codigosimples.net/2016/04/25/ler-um-arquivo-local-usando-html5-e-javascript/
 	//
-		alert("botao 16");
-		var inputCSV = document.createElement('input');
-	      inputCSV.type = 'file';
 		if (window.File && window.FileReader && window.FileList && window.Blob) {
-                	//var fileSelected = document.getElementById('txtfiletoread');
+                	alert("botao 16");
+			var inputCSV = document.createElement('input');
+	      		inputCSV.type = 'file';
+			//var fileSelected = document.getElementById('txtfiletoread');
                		inputCSV.onchange = function() {
 			//inputCSV.addEventListener('change', function (e) {
                     		//Set the extension for the file
