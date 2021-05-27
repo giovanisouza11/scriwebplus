@@ -13,12 +13,12 @@ function Sim_Funcao() {
 	modal.style.display = "block";
 	modalc.style.display = "block";
 	// Get the <Close> element that closes the modal
-	var span = document.getElementByID("close2");
+	var span = document.getElementById("close2");
 	span.onclick = function() {
 		modal.style.display = "none";
 		modalc.style.display = "none";
 	}
-	var span1 = document.getElementByID("closex");
+	var span1 = document.getElementById("closex");
 	span1.onclick = function() {
 		modal.style.display = "none";
 		modalc.style.display = "none";
