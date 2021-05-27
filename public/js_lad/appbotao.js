@@ -58,7 +58,7 @@ function trocar_botao() {
 			modal.style.display = "none";
 		};
 		modalb.appendChild(btn);
-		var span = document.getElementsByClassName("close")[0];
+		var span = document.getElementById("close2");
 		modal.style.display = "block";
 		span.onclick = function() {
 			modal.style.display = "none";
@@ -85,7 +85,7 @@ function trocar_botao() {
 			modal.style.display = "none";
 		};
 		modalb.appendChild(btn);
-		var span = document.getElementsByClassName("close")[0];
+		var span = document.getElementById("close2");
 		modal.style.display = "block";
 		span.onclick = function() {
 			modal.style.display = "none";
@@ -112,7 +112,7 @@ function trocar_botao() {
 			modal.style.display = "none";
 		};
 		modalb.appendChild(btn);
-		var span = document.getElementsByClassName("close")[0];
+		var span = document.getElementById("close2");
 		modal.style.display = "block";
 		span.onclick = function() {
 			modal.style.display = "none";
@@ -139,7 +139,7 @@ function trocar_botao() {
 			modal.style.display = "none";
 		};
 		modalb.appendChild(btn);
-		var span = document.getElementsByClassName("close")[0];
+		var span = document.getElementById("close2");
 		modal.style.display = "block";
 		span.onclick = function() {
 			modal.style.display = "none";
@@ -185,7 +185,7 @@ function trocar_botao() {
 			modal.style.display = "none";
 		};
 		modalb.appendChild(btn);
-		var span = document.getElementsByClassName("close")[0];
+		var span = document.getElementById("close2");
 		modal.style.display = "block";
 		span.onclick = function() {
 			modal.style.display = "none";
