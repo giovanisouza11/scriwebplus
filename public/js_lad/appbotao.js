@@ -289,30 +289,30 @@ function trocar_botao() {
 		//socket.emit('comandosx', 0+ ','+  num_clp);
 	}
 	if (valor_chave[16]==1){
-	/*	if (window.File && window.FileReader && window.FileList && window.Blob) {
-                	alert("botao 16");
-			var inputCSV = document.createElement('input');
-	      		inputCSV.type = 'file';
-			inputCSV.click();
-			inputCSV.onchange = function() {
-		    		//var fileExtension = /text.*/;
-                   		var fileTobeRead = fileSelected.files[0];
-                    		if (fileTobeRead.type.match(fileExtension)) {
-                        		var fileReader = new FileReader();
-                        		fileReader.onload = function (e) {
-                            			var fileContents = document.getElementById('filecontents');
-                            			fileContents.innerText = fileReader.result;
-                        		}
-                        		fileReader.readAsText(fileTobeRead);
-                    		}
-                    		else {
-                        		alert("Por favor selecione arquivo texto");
-                    		}
-	                }; 
-            }
-            else {
-               	alert("Arquivo(s) não suportado(s)");
-            } */
+	//	if (window.File && window.FileReader && window.FileList && window.Blob) {
+        //        	alert("botao 16");
+	//		var inputCSV = document.createElement('input');
+	//      		inputCSV.type = 'file';
+	//		inputCSV.click();
+	//		inputCSV.onchange = function() {
+	//	    		//var fileExtension = /text.*/;
+        //          		var fileTobeRead = fileSelected.files[0];
+        //            		if (fileTobeRead.type.match(fileExtension)) {
+        //                		var fileReader = new FileReader();
+        //                		fileReader.onload = function (e) {
+        //                    			var fileContents = document.getElementById('filecontents');
+        //                    			fileContents.innerText = fileReader.result;
+        //                		}
+        //                		fileReader.readAsText(fileTobeRead);
+        //            		}
+        //            		else {
+        //                		alert("Por favor selecione arquivo texto");
+        //            		}
+	//                }; 
+        //    }
+        //    else {
+        //       	alert("Arquivo(s) não suportado(s)");
+        //    } 
  	}
 }
 
