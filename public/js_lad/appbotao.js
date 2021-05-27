@@ -289,33 +289,15 @@ function trocar_botao() {
 		//socket.emit('comandosx', 0+ ','+  num_clp);
 	}
 	if (valor_chave[16]==1){
-		//var inputCSV = document.createElement('input');
-		//inputCSV.type = 'file';
-		//inputCSV.accept = '.CSV';
-	    	//inputCSV.click();
-		//inputCSV.onchange = function() {
-			//inputCSV.setPropertie('accept', '.csv');
-		//	var file = this.files[0];
-		  //  	leitorDeCSV1.readAsText(file);
-			//titulo_lad = file.name.slice(0,file.name.length -4);
-		//};
-	//https://codigosimples.net/2016/04/25/ler-um-arquivo-local-usando-html5-e-javascript/
-	//
-		if (window.File && window.FileReader && window.FileList && window.Blob) {
+	/*	if (window.File && window.FileReader && window.FileList && window.Blob) {
                 	alert("botao 16");
 			var inputCSV = document.createElement('input');
 	      		inputCSV.type = 'file';
 			inputCSV.click();
-			//var fileSelected = document.getElementById('txtfiletoread');
-               		inputCSV.onchange = function() {
-			//inputCSV.addEventListener('change', function (e) {
-                    		//Set the extension for the file
-                    		//var fileExtension = /text.*/;
-                    		//Get the file object
+			inputCSV.onchange = function() {
+		    		//var fileExtension = /text.*/;
                    		var fileTobeRead = fileSelected.files[0];
-                   	 	//Check of the extension match
                     		if (fileTobeRead.type.match(fileExtension)) {
-                        		//Initialize the FileReader object to read the 2file
                         		var fileReader = new FileReader();
                         		fileReader.onload = function (e) {
                             			var fileContents = document.getElementById('filecontents');
@@ -326,11 +308,11 @@ function trocar_botao() {
                     		else {
                         		alert("Por favor selecione arquivo texto");
                     		}
-	                }; //, false);
+	                }; 
             }
             else {
                	alert("Arquivo(s) não suportado(s)");
-            } 
+            } */
  	}
 }
 
