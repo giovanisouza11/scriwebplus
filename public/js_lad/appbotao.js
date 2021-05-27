@@ -43,7 +43,6 @@ function trocar_botao() {
 		draw_botoes();
 	}
 	if (valor_chave[20]==1){
-		//window.open("popup", "Apagar", "height=200,width=200");
 		// Get the modal
 		var modal = document.getElementById("myModal");
 		var modalb = document.getElementById("myBody");
@@ -71,7 +70,6 @@ function trocar_botao() {
 		}
 	}
 	if (valor_chave[19]==1){
-		//window.open("popup", "Mover", "height=200,width=200");
 		var modal = document.getElementById("myModal");
 		var modalb = document.getElementById("myBody");
 		var t_modal = modal.getElementsByTagName("h2")
@@ -99,7 +97,6 @@ function trocar_botao() {
 		}
 	}
 	if (valor_chave[18]==1){
-		//window.open("popup", "Copiar", "height=200,width=200");
 		var modal = document.getElementById("myModal");
 		var modalb = document.getElementById("myBody");
 		var t_modal = modal.getElementsByTagName("h2")
@@ -128,7 +125,6 @@ function trocar_botao() {
 
 	}
 	if (valor_chave[17]==1){
-		//window.open("popup", "Inserir", "height=200,width=200");
 		var modal = document.getElementById("myModal");
 		var modalb = document.getElementById("myBody");
 		var t_modal = modal.getElementsByTagName("h2")
@@ -157,19 +153,15 @@ function trocar_botao() {
 	}
 
 	if (valor_chave[10]==1){
-        //location.href='/About';
         window.open("About", "SCriWeb", "height=600,width=600");
 	    valor_chave[10]=0;
 	}
 	if (valor_chave[9]==1){
-        //location.href='Help';
         window.open("Help", "SCriWeb", "height=800,width=1000");
 	    valor_chave[9]=0;
 	}
 	if (valor_chave[8]==1){
-        //location.href='/Config';
-       // window.open("Config", "SCriWeb", "height=320,width=500");
-	 	var modal = document.getElementById("myModal");
+         	var modal = document.getElementById("myModal");
 		var modalb = document.getElementById("myBody");
 		var t_modal = modal.getElementsByTagName("h2")
 		t_modal[0].innerHTML = "CONFIG";
@@ -185,7 +177,7 @@ function trocar_botao() {
 		btn.setAttribute('type','button')
 		btn.appendChild(document.createTextNode('OK'));
 		btn.onclick = function() {
-			config(document.getElementById('input1').value);
+			//config(document.getElementById('input1').value);
 			localStorage.setItem("num_clp", document.getElementById('input1').value);
 			localStorage.setItem("tempo_scan", document.getElementById('input2').value);
 			localStorage.setItem("tempo_atualizacao", document.getElementById('input3').value);
@@ -243,11 +235,11 @@ function trocar_botao() {
 	}
 	if (valor_chave[3]==1){
 		compila_ladder();
-		let texto = '';
-		for (var i=0; i<(booleano.length); i++) {
+		//let texto = '';
+		//for (var i=0; i<(booleano.length); i++) {
 			//for (var j=0; j<2; j++)
-			texto += booleano[i]+',';
-		}
+		//	texto += booleano[i]+',';
+		//}
 
                 //socket.emit('programax', texto+','+num_clp); 
 		clp_programa = booleano;
