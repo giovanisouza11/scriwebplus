@@ -125,17 +125,10 @@ function eInputS(event) {
 
 //Interrupção de tempo Tela_Eletrico_Simulador
 function AtualizaPorTempo() {
-	//sim_segundos++;
-	//if (sim_segundos > 3) {
-		if ( (Sim_Edicao ==0 || Sim_Edicao ==3)  && LoadedImages>0) {
-			Atualiza_Simulador();
-		}
-	//}
-	//clp_AtualizaPorTempo();
-	//if (sim_segundos > 3)
-	//	sim_segundos = 0;
+	if ( (Sim_Edicao ==0 || Sim_Edicao ==3)  && LoadedImages>0) {
+		Atualiza_Simulador();
+	}
 }
-
 //=====================================================================================
 //Atualiza variãveis e canvas
 //Disparado ao receber SocketIO
