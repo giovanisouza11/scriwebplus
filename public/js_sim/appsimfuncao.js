@@ -355,8 +355,12 @@ function Sim_Apontador(apontador){
 	Sim_Funcao_IHM();
 	
 	modal.style.display = "block";
-	var span = document.getElementsByClassName("close")[0];
+	var span = document.getElementById("close");
 	span.onclick = function() {
+		modal.style.display = "none";
+	}
+	var span1 = document.getElementById("closex");
+	span1.onclick = function() {
 		modal.style.display = "none";
 	}
 	var ok = document.getElementsByClassName("ok")[0];
