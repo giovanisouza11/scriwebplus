@@ -13,30 +13,26 @@ var canvas;
 var context;
 
 function draw_eletrico() {
-    canvas = document.getElementById("tela1");
+    	canvas = document.getElementById("tela1");
 	context= canvas.getContext("2d");
-    canvas.width = 425;
-    canvas.height = 500;
-    canvas.top = 200;
+    	canvas.width = 425;
+    	canvas.height = 500;
+    	canvas.top = 200;
 	var i;
-    for(i=0; i<12; i++){
+	for(i=0; i<12; i++){
 	   	real_I[i] = 0;
-	//	I[i] = 0;
 	}
-    for(i=0; i<12; i++)
-       	context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 33+(i*32), 0, AImage1.width/5, 110);
+    	for(i=0; i<12; i++)
+       		context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 33+(i*32), 0, AImage1.width/5, 110);
 	desenha_clp();
 	for(i=0; i<12; i++)
 		context.drawImage(AImage1, (AImage1.width/5)*1, 110, AImage1.width/5, 110, 33+i*32, 335, AImage1.width/5, 110);
-    for(i=0; i<31; i++)
+    	for(i=0; i<31; i++)
 		valor_chave[i] = 0;
 }
 function Atualiza_Chaves(){
    for(i=0; i<12; i++){
-   	//real_I[i] = I[i];
-       	//context.drawImage(AImage1, (AImage1.width/5)*1, 0, AImage1.width/5, 110, 33+(i*32), 0, AImage1.width/5, 110)
-	//context.drawImage(AImage1, (AImage1.width/5)*(real_I[i]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
-	draw_chave(i,0);
+   	draw_chave(i,0);
    } 	
    liga_led_CLP();
 }
@@ -54,7 +50,6 @@ function desenha_clp(){
 	for(var i=0; i<13; i++)
 		desenha_borne_clp(i);
 	context.font = '9pt Arial';
-
 	context.fillStyle = 'red';
 	context.fillRect(12, 203, 32, 18);
 	context.fillStyle = 'black';
@@ -69,8 +64,6 @@ function desenha_clp(){
 	context.fillText('Derivação - TR', 78, 247);
 	context.fillText('Saídas  - Q0.', 90, 265);
 	liga_led_CLP();
-
-
 }
 
 function desenha_borne_clp(i){
@@ -107,25 +100,21 @@ function desenha_borne_clp(i){
 	}
 }
 
-
-
 function draw_chave(posicaox, posisicaoy) {
-       // canvas = document.getElementById("tela1");
-	//context= canvas.getContext("2d");
 	var i=posicaox;
 	context.drawImage(AImage1, (AImage1.width/5)*(real_I[i]+1), 0, AImage1.width/5, 110, 33+i*32, 0, AImage1.width/5, 110);
 }
 
 function trocar() {
-    var posicaox;
+    	var posicaox;
 	posicaox = parseInt((window.event.clientX -33 )/ 32);
-    var posicaoy=window.event.clientY;
+    	var posicaoy=window.event.clientY;
 	var index = posicaox;
 
-    if ((posicaox >=0) && posicaox < 16)
-    {
-        if (real_I[index]==0) {
-            real_I[index]=1;
+    	if ((posicaox >=0) && posicaox < 16)
+    	{
+        	if (real_I[index]==0) {
+            		real_I[index]=1;
 		}
 		else{
 			real_I[index]=0;
