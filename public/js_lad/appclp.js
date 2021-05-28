@@ -26,11 +26,6 @@ var clp_programa = new Array();
 var clp_comandos = 0;
 var clp_segundo = 0;
 var clp_atraso = 0;
-//var clp_atualiza_entrada = 0;
-
-//=============================================================================
-// Send current time to all connected clients
-//=============================================================================
 var clp_passo_atual = 0;
 var clp_localizacao_prog =0;
 		
@@ -85,14 +80,12 @@ function clp_AtualizaPorTempo() {
 //=============================================================================
 // Send current time every 0,1 secs
 //=============================================================================
-    	//setInterval(clp_AtualizaPorTempo, 100);
 var clp_tempo = window.setInterval(clp_AtualizaPorTempo, 100);
 
 //=============================================================================
 // Interpreta o programa BOOLEANO
 //=============================================================================
 function clp_programaCLP(){
-        //var aux4;
 	var acumulador;
 	var passo;
 	if (clp_comandos > 0 && clp_comandos<4){
@@ -217,122 +210,121 @@ function clp_programaCLP(){
 //=============================================================================
 // encontra o maior index para criar todo o array
 //=============================================================================
-	function clp_cria_memoria(){
-		var tipo_memoria = ['I','Q','M','R','C','T'];
-		var ultimo_endereco;
-		var auxiliar;
-		for (var funcao=0;funcao<6; funcao++) {
-			ultimo_endereco = 0;
-			for (var passo=0; passo<(clp_programa.length)-1; passo = passo+2){
-				if (funcao < 6) {
-					auxiliar = procura_max_endereco(tipo_memoria[funcao], clp_programa[passo+1]);
+function clp_cria_memoria(){
+	var tipo_memoria = ['I','Q','M','R','C','T'];
+	var ultimo_endereco;
+	var auxiliar;
+	for (var funcao=0;funcao<6; funcao++) {
+		ultimo_endereco = 0;
+		for (var passo=0; passo<(clp_programa.length)-1; passo = passo+2){
+			if (funcao < 6) {
+				auxiliar = procura_max_endereco(tipo_memoria[funcao], clp_programa[passo+1]);
+				if (auxiliar > ultimo_endereco)
+					ultimo_endereco = auxiliar;
+				if (clp_programa[passo] == 'TMR' || clp_programa[passo] == 'CNR' || clp_programa[passo] == 'MOV' || clp_programa[passo] == '<' || clp_programa[passo] == '>' || clp_programa[passo] == '<=' || clp_programa[passo] == '>=' || clp_programa[passo] == '='){
+					auxiliar = procura_max_endereco(tipo_memoria[funcao], clp_programa[passo+2]);
 					if (auxiliar > ultimo_endereco)
 						ultimo_endereco = auxiliar;
-					if (clp_programa[passo] == 'TMR' || clp_programa[passo] == 'CNR' || clp_programa[passo] == 'MOV' || clp_programa[passo] == '<' || clp_programa[passo] == '>' || clp_programa[passo] == '<=' || clp_programa[passo] == '>=' || clp_programa[passo] == '='){
-						auxiliar = procura_max_endereco(tipo_memoria[funcao], clp_programa[passo+2]);
-						if (auxiliar > ultimo_endereco)
-							ultimo_endereco = auxiliar;
-						passo++;
-					}
-				}
-			}
-			for (var i=0; i<(ultimo_endereco+1); i++) {
-				switch (tipo_memoria[funcao]) {
-					case 'Q':
-						clpQ[i] = 0;
-						break;
-					case 'I':
-						clpI[i] = 0;
-						break;
-					case 'M':
-						clpM[i] = 0;
-						break;
-					case 'R':
-						clpR[i] = 0;
-						break;
-					case 'T':
-						clpT[3*i] = 0;
-						clpT[3*i+1] = 0;
-						clpT[3*i+2] = 0;
-						break;
-					case 'C':
-						clpC[4*i] = 0;
-						clpC[4*i+1] = 0;
-						clpC[4*i+2] = 0;
-						clpC[4*i+3] = 0;
-						break;
+					passo++;
 				}
 			}
 		}
-  	}
+		for (var i=0; i<(ultimo_endereco+1); i++) {
+			switch (tipo_memoria[funcao]) {
+				case 'Q':
+					clpQ[i] = 0;
+					break;
+				case 'I':
+					clpI[i] = 0;
+					break;
+				case 'M':
+					clpM[i] = 0;
+					break;
+				case 'R':
+					clpR[i] = 0;
+					break;
+				case 'T':
+					clpT[3*i] = 0;
+					clpT[3*i+1] = 0;
+					clpT[3*i+2] = 0;
+					break;
+				case 'C':
+					clpC[4*i] = 0;
+					clpC[4*i+1] = 0;
+					clpC[4*i+2] = 0;
+					clpC[4*i+3] = 0;
+					break;
+			}
+		}
+	}
+}
 
 //======================================================================
 //procura o endereco maior
 //=======================================================================
-	function procura_max_endereco(Operando, Aux_data)
-	{
-		var index = 0;
-		if (Aux_data != undefined){
-			if (Aux_data.charAt(0) == Operando) {
-				if (Aux_data.charAt(0) != 'R' && Aux_data.charAt(0) != 'C' && Aux_data.charAt(0) != 'T'){
-					var ponto = Aux_data.indexOf('.');
-					if (ponto == -1)
-						index = (parseInt(Aux_data.substr(1))+1) *16;
-					else
-						index = (parseInt(Aux_data.charAt(ponto-1)) *16)+ parseInt(Aux_data.substr(ponto+1));
-				}
-				else {
-					index = parseInt(Aux_data.substr(1));
-				}
+function procura_max_endereco(Operando, Aux_data)
+{
+	var index = 0;
+	if (Aux_data != undefined){
+		if (Aux_data.charAt(0) == Operando) {
+			if (Aux_data.charAt(0) != 'R' && Aux_data.charAt(0) != 'C' && Aux_data.charAt(0) != 'T'){
+				var ponto = Aux_data.indexOf('.');
+				if (ponto == -1)
+					index = (parseInt(Aux_data.substr(1))+1) *16;
+				else
+					index = (parseInt(Aux_data.charAt(ponto-1)) *16)+ parseInt(Aux_data.substr(ponto+1));
 			}
-			else
-				index = 0;
+			else {
+				index = parseInt(Aux_data.substr(1));
+			}
 		}
-		return index;
+		else
+			index = 0;
 	}
+	return index;
+}
 
 //======================================================================
 //retira o valor da funcao Q/E/M
 //=======================================================================
-	function clp_le_endereco(Aux_data)
-	{
-		var index;
-		var retorno;
-		if (Aux_data.charAt(0) != 'R' && Aux_data.charAt(0) != 'C' && Aux_data.charAt(0) != 'T'){
-			var ponto = Aux_data.indexOf('.');
-			if (ponto == -1)
-				index = parseInt(Aux_data.substr(1)) *16;
-			else
-				index = (parseInt(Aux_data.charAt(ponto-1)) *16)+ parseInt(Aux_data.substr(ponto+1));
-		}
-		else {
-			index = parseInt(Aux_data.substr(1));
-		}
-
-		switch (Aux_data.charAt(0)) {
-			case 'Q':
-				retorno = clpQ[index];
-				break;
-			case 'I':
-				retorno = clpI[index];
-				break;
-			case 'M':
-				retorno = clpM[index];
-				break;
-			case 'R':
-				retorno = clpR[index];
-				break;
-			case 'T':
-				retorno = clpT[3*index];
-				break;
-			case 'C':
-				retorno = clpC[4*index];
-				break;
-			default:
-				retorno = parseInt(Aux_data.substr(1));
-		}
-		return parseInt(retorno);
+function clp_le_endereco(Aux_data)
+{
+	var index;
+	var retorno;
+	if (Aux_data.charAt(0) != 'R' && Aux_data.charAt(0) != 'C' && Aux_data.charAt(0) != 'T'){
+		var ponto = Aux_data.indexOf('.');
+		if (ponto == -1)
+			index = parseInt(Aux_data.substr(1)) *16;
+		else
+			index = (parseInt(Aux_data.charAt(ponto-1)) *16)+ parseInt(Aux_data.substr(ponto+1));
 	}
+	else {
+		index = parseInt(Aux_data.substr(1));
+	}
+	switch (Aux_data.charAt(0)) {
+		case 'Q':
+			retorno = clpQ[index];
+			break;
+		case 'I':
+			retorno = clpI[index];
+			break;
+		case 'M':
+			retorno = clpM[index];
+			break;
+		case 'R':
+			retorno = clpR[index];
+			break;
+		case 'T':
+			retorno = clpT[3*index];
+			break;
+		case 'C':
+			retorno = clpC[4*index];
+			break;
+		default:
+			retorno = parseInt(Aux_data.substr(1));
+	}
+	return parseInt(retorno);
+}
 //======================================================================
 //retira o valor da funcao T/C
 //=======================================================================
@@ -470,10 +462,9 @@ function clp_escreve_enderecoCT(Aux_data, valor, index1)
 	}
 }
 
-
-  //======================================================================
-  //Controla Temporizadores
-  //=======================================================================
+//======================================================================
+//Controla Temporizadores
+//=======================================================================
 function clp_temporizadores()
 {
 	for (var i = 0; i<= (clpT.length/3); i++ ){
