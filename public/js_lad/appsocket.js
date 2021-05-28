@@ -2,7 +2,7 @@ function Enviar(){
 	//clpI = I;
 	clp_programa = booleano;
 	clp_cria_memoria()
-    	clp_comandos = comandos;
+    	//clp_comandos = comandos;
 }
 
 function Envia_Entrada_Ele(data){
