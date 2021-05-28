@@ -74,9 +74,9 @@ function Sim_Botao_Click() {
 			//texto += ArrayObjDinamic[i*10+5] +',' + ArrayObjDinamic[i*10+6]+ ',,,,,';
 			texto += '\n';
 		}
-		for (var i=1; i<(FuncaoMatriz.length+1); i++) {
+		for (var i=1; i<((FuncaoMatriz.length/8)+1); i++) {
 			texto += i + ',X,' ;
-			for (var j=0; j<5; j++)
+			for (var j=0; j<6; j++)
 			    texto += FuncaoMatriz[j]+',';
 			texto += '\n';
 		}
