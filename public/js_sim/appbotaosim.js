@@ -76,7 +76,7 @@ function Sim_Botao_Click() {
 		}
 		for (var i=1; i<((FuncaoMatriz.length/8)+1); i++) {
 			texto += i + ',X,' ;
-			for (var j=0; j<6; j++)
+			for (var j=0; j<7; j++)
 			    texto += FuncaoMatriz[j]+',';
 			texto += '\n';
 		}
