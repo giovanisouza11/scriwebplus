@@ -71,8 +71,10 @@ function clp_AtualizaPorTempo() {
 		}
 	}
         		
-	if (clp_comandos>1)
+	if (clp_comandos>1) {
+		alert("comandos=0");
 		clp_comandos=0;
+	}
 	if (clp_segundo>10)
 		clp_segundo = 0;
 	clp_segundo++;
