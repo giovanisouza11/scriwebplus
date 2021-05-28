@@ -254,23 +254,19 @@ function trocar_botao() {
 		comandos = 1;
 		run_CLP();
 		clp_comandos = 1;
-		//socket.emit('comandosx', 1+ ','+  num_clp);
 	}
-	if (valor_chave[5]==1){
+	if (valor_chave[5]==1 && clp_comandos == 0){
 		run_CLP();
 		comandos = 2;
 		clp_comandos = 2;
-		//socket.emit('comandosx', 2+ ','+  num_clp);
 	}
-	if (valor_chave[6]==1){
+	if (valor_chave[6]==1 && clp_comandos == 0){
 		run_CLP();
 		if (comandos == 3)
 			clp_comandos = 4;
-			//socket.emit('comandosx', 4+ ','+  num_clp);
 		else {
 			comandos = 3;
 			clp_comandos = 3;
-			//socket.emit('comandosx', 3+ ','+  num_clp);
 		}
 	}
 	if (valor_chave[7]==1){
