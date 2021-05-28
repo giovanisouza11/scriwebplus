@@ -255,12 +255,13 @@ function trocar_botao() {
 		run_CLP();
 		clp_comandos = 1;
 	}
-	if (valor_chave[5]==1 && clp_comandos == 0){
+	if (valor_chave[5]==1){
 		run_CLP();
 		comandos = 2;
 		clp_comandos = 2;
+		valor_chave[5]=0;
 	}
-	if (valor_chave[6]==1 && clp_comandos == 0){
+	if (valor_chave[6]==1){
 		run_CLP();
 		if (comandos == 3)
 			clp_comandos = 4;
@@ -268,6 +269,7 @@ function trocar_botao() {
 			comandos = 3;
 			clp_comandos = 3;
 		}
+		valor_chave[6]=0;
 	}
 	if (valor_chave[7]==1){
 		comandos = 0;
