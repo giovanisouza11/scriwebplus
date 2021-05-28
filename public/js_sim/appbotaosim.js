@@ -80,7 +80,7 @@ function Sim_Botao_Click() {
 			    texto += FuncaoMatriz[j]+',';
 			texto += '\n';
 		}
-		FuncaoMatriz[ponteiro]
+
         	//let titulo ='SimScriWeb';
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
         	saveAs(blob, titulo + ".csv");
