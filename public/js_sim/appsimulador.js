@@ -124,8 +124,8 @@ function eInputS(event) {
 }
 
 //Interrupção de tempo Tela_Eletrico_Simulador
-function AtualizaPorTempo() {
-	if ( (Sim_Edicao ==0 || Sim_Edicao ==3)  && LoadedImages>0) {
+function AtualizaPorTempo() { 
+	if ( (Sim_Edicao ==0 || Sim_Edicao ==3)  && LoadedImages>0 && Tela_Eletrico_Simulador==1) {
 		Atualiza_Simulador();
 	}
 }
