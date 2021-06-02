@@ -32,7 +32,7 @@ var clp_localizacao_prog =0;
 function clp_AtualizaPorTempo() {
 	clp_temporizadores();
 	
-	if (clp_programa != 0 && Tela_Eletrico_Simulador==1){ 
+	if (clp_programa != 0){ 
 		if (clp_programa.length > 0 && clp_comandos>0 && clp_comandos<3){
 			clp_passo_atual = clp_programa.length - 1;
 			clp_programaCLP();
