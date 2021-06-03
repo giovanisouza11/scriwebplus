@@ -953,6 +953,33 @@ function sensor(index_var, dependencia1, dependencia2) {
 		if (verificaPosicao(ArrayObjDinamic[index_var*10+4], ArrayObjStatic[index_var*20+7], dependencia2.substr(1))==1)
 			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
   	}
+	sensor_Nivel(index_var, dependencia1, dependencia2);
+}
+
+//=====================================================================================
+//Verifica se a posicao de um objeto está entre (sobre) um outro objet
+//=====================================================================================
+function sensor_Nivel(index_var, dependencia1, dependencia2) {
+	if (dependencia1.charAt(0) == 'N') {
+		if ((Sim_Endereco_CT(dependencia1.substr(1))< Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])) && (Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])!=0))
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+		else
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
+		if ((Sim_Endereco_CT(dependencia1.substr(1))> Sim_Endereco_CT(ArrayObjStatic[index_var*20+10])) && (Sim_Endereco_CT(ArrayObjStatic[index_var*20+10])!=0))
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
+		else
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+	}
+	if (dependencia2.charAt(0) == 'N') {
+		if ((Sim_Endereco_CT(dependencia2.substr(1))< Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])) && (Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])!=0))
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+		else
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
+		if ((Sim_Endereco_CT(dependencia2.substr(1))> Sim_Endereco_CT(ArrayObjStatic[index_var*20+10])) && (Sim_Endereco_CT(ArrayObjStatic[index_var*20+10])!=0))
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
+		else
+			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+	}
 }
 
 //=====================================================================================
