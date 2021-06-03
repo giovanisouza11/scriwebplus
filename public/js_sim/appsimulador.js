@@ -962,24 +962,32 @@ function sensor(index_var, dependencia1, dependencia2) {
 function sensor_Nivel(index_var, dependencia1, dependencia2) {
 	if (dependencia1.charAt(0) == 'N') {
 		//alert(Sim_Endereco_CT(dependencia1.substr(1))+' - '+ Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])+' - '+ Sim_Endereco_CT(ArrayObjStatic[index_var*20+10]))
-		if ((Sim_Endereco_CT(dependencia1.substr(1))< Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])) && (Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])!=0))
-			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
-		else
-			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
-		if ((Sim_Endereco_CT(dependencia1.substr(1))> Sim_Endereco_CT(ArrayObjStatic[index_var*20+10])) && (Sim_Endereco_CT(ArrayObjStatic[index_var*20+10])!=0))
-			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
-		else
-			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+		if (Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])!=0){
+			if (Sim_Endereco_CT(dependencia1.substr(1)< Sim_Endereco_CT(ArrayObjStatic[index_var*20+9]))
+				Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
+			else
+				Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+		}
+		if (Sim_Endereco_CT(ArrayObjStatic[index_var*20+10])!=0) {
+			if (Sim_Endereco_CT(dependencia1.substr(1) > Sim_Endereco_CT(ArrayObjStatic[index_var*20+10]))
+				Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
+			else
+				Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+		}
 	}
 	if (dependencia2.charAt(0) == 'N') {
-		if ((Sim_Endereco_CT(dependencia2.substr(1))< Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])) && (Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])!=0))
-			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
-		else
-			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
-		if ((Sim_Endereco_CT(dependencia2.substr(1))> Sim_Endereco_CT(ArrayObjStatic[index_var*20+10])) && (Sim_Endereco_CT(ArrayObjStatic[index_var*20+10])!=0))
-			Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
-		else
-			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+		if (Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])!=0){
+			if (Sim_Endereco_CT(dependencia1.substr(2)< Sim_Endereco_CT(ArrayObjStatic[index_var*20+9]))
+				Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
+			else
+				Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+		}
+		if (Sim_Endereco_CT(ArrayObjStatic[index_var*20+10])!=0) {
+			if (Sim_Endereco_CT(dependencia2.substr(1) > Sim_Endereco_CT(ArrayObjStatic[index_var*20+10]))
+				Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
+			else
+				Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+		}
 	}
 }
 
