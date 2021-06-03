@@ -107,6 +107,7 @@ function Sim_Botao_Click() {
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Envase/Envase.csv'>Envase</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Expedicao/Expedicao.csv'>Expedição</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Semaforo/Semaforo.csv'>Semáforo</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Tanque/Tanque.csv'>Tanque</a></p>";
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button');
