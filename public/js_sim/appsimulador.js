@@ -960,7 +960,7 @@ function sensor(index_var, dependencia1, dependencia2) {
 //Verifica se a posicao de um objeto está entre (sobre) um outro objet
 //=====================================================================================
 function sensor_Nivel(index_var, dependencia1, dependencia2) {
-	if (dependencia1.charAt(0) == 'N') {
+	if (dependencia1.charAt(0) == 'L') {
 		//alert(Sim_Endereco_CT(dependencia1.substr(1))+' - '+ Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])+' - '+ Sim_Endereco_CT(ArrayObjStatic[index_var*20+10]))
 		if (Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])!=0){
 			if (Sim_Endereco_CT(dependencia1.substr(1))< Sim_Endereco_CT(ArrayObjStatic[index_var*20+9]))
@@ -975,7 +975,7 @@ function sensor_Nivel(index_var, dependencia1, dependencia2) {
 				Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
 		}
 	}
-	if (dependencia2.charAt(0) == 'N') {
+	if (dependencia2.charAt(0) == 'L') {
 		if (Sim_Endereco_CT(ArrayObjStatic[index_var*20+9])!=0){
 			if (Sim_Endereco_CT(dependencia1.substr(2))< Sim_Endereco_CT(ArrayObjStatic[index_var*20+9]))
 				Sim_Escreve(ArrayObjStatic[index_var*20+1],1);
