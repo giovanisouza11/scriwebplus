@@ -675,11 +675,21 @@ function variavelCT(Aux_data) {
 //
 //------------------------------------------------------------------------------------
 function simTimer(index_var) {
-	if (ArrayObjStatic[index_var*20+15]>0 && ArrayObjStatic[index_var*20+17]<5) {
-		if (ArrayObjStatic[index_var*20+16]<ArrayObjDinamic[index_var*10+2])
-			ArrayObjDinamic[index_var*10+2] = 0;
-		else
-			ArrayObjDinamic[index_var*10+2] = ArrayObjDinamic[index_var*10+2] + 1;
+	if (ArrayObjStatic[index_var*20+15]>0 && ArrayObjStatic[index_var*20+17]<5 ) {
+		if (ArrayObjStatic[index_var*20+13] != 'PB') {
+			if (ArrayObjStatic[index_var*20+16]<ArrayObjDinamic[index_var*10+2])
+				ArrayObjDinamic[index_var*10+2] = 0;
+			else
+				ArrayObjDinamic[index_var*10+2] = ArrayObjDinamic[index_var*10+2] + 1;
+		}
+		else {
+			if (Sim_Endereco(ArrayObjStatic[index_var*20+1]==1 && ArrayObjDinamic[index_var*10+2]>ArrayObjStatic[index_var*20+16])
+				ArrayObjDinamic[index_var*10+2] = 0;
+			if (Sim_Endereco(ArrayObjStatic[index_var*20+1]==1)
+				ArrayObjDinamic[index_var*10+2] = ArrayObjDinamic[index_var*10+2] + 1;
+			if (ArrayObjDinamic[index_var*10+2]>ArrayObjStatic[index_var*20+16])
+				Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
+		}
 	}
 	else
 		ArrayObjDinamic[index_var*10+2] = 0;
