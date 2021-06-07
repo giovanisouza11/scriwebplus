@@ -37,11 +37,11 @@ function Sim_Botao_Click() {
 	}
 
 	if (Sim_Botao_Funcao[12]==1){
-    		window.open("/About", "About SCriWeb", "height=600,width=600");
+    		window.open("/About", "About SCriWeb");//, "height=600,width=600");
 	    	Sim_Botao_Funcao[12]=0;
 	}
 	if (Sim_Botao_Funcao[11]==1){
-        	window.open("/helpsim", "Help SCriWeb", "height=800,width=1000");
+        	window.open("/helpsim", "Help SCriWeb");//, "height=800,width=1000");
 	    	Sim_Botao_Funcao[11]=0;
 	}
 	if (Sim_Botao_Funcao[10]==1){
