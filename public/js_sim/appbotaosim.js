@@ -194,14 +194,10 @@ function Sim_Le_Arquivo(evt) {
 }
 
 function Sim_Le_Arquivo_Nuvem(arquivo) {
-	//inputCSV.onchange = function() {
-		atert("OLA");
-    		var file = 'http://scriweb.herokuapp.com/ftp/'+arquivo+'/'+arquivo+'.csv';
-		Sim_Leitor_Arquivo.readAsText(file);
-		Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
-		titulo = file.name.slice(0,file.name.length -4);
+	alert("OLA");
+    	var file = 'http://scriwebplus.herokuapp.com/ftp/'+arquivo+'/'+arquivo+'.csv';
+	Sim_Leitor_Arquivo.readAsText(file);
+	Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
+	titulo = file.name.slice(0,file.name.length -4);
 	modal1.style.display = "none";
-	
-	
-	//};
 }
