@@ -98,8 +98,8 @@ function Sim_Botao_Click() {
 		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
-		modalb1.innerHTML = "<p><button onclick='Sim_Le_Arquivo_Nuvem()'>Alarmes</button></p>";
-		modalb1.innerHTML == "<p><a href='http://scriwebshow.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
+		//modalb1.innerHTML = "<p><button onclick='Sim_Le_Arquivo_Nuvem()'>Alarmes</button></p>";
+		modalb1.innerHTML = "<p><a href='http://scriwebshow.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Caldeira/Caldeira.csv'>Caldeira</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Classificacao/Classificacao.csv'>Classificação</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Corte_Vinco/Corte_Vinco.csv'>Corte e Vinco</a></p>";
@@ -194,7 +194,7 @@ function Sim_Le_Arquivo(evt) {
 }
 
 function Sim_Le_Arquivo_Nuvem() {
-	alert("OLA");
+	//alert("OLA");
     	var arquivo = 'Alarme';
 	var file = 'http://scriwebplus.herokuapp.com/ftp/'+arquivo+'/'+arquivo+'.csv';
 	Sim_Leitor_Arquivo.readAsText(file);
