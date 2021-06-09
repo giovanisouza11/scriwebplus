@@ -223,11 +223,11 @@ function trocar_botao() {
 			texto += '\n';
 		}
 		compila_ladder();
-		texto += '\n\n';
-		for (var i=0; i<(booleano.length); i++) {
+		//texto += '\n\n';
+		//for (var i=0; i<(booleano.length); i++) {
 			//for (var j=0; j<2; j++)
-			texto += booleano[i]+' , ';
-		}
+		//	texto += booleano[i]+' , ';
+		//}
         //let titulo ='scriweb';
         var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
         saveAs(blob, titulo_lad + ".csv");
