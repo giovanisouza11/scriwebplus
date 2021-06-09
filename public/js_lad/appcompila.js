@@ -375,7 +375,7 @@ function melhora_logica(){
 		for (var linha=0; linha < (larray.length/9); linha++){
 			if (larray[(linha)*8*9 + col*9 + 3]==11){
 				for(var aux=1;aux<9;aux++)
-					larray[(linha)*8*9 + aux*9]=larray[(linha)*8*9 + (aux+1)*9];
+					larray[(linha)*8*9 + col*9+ aux]=larray[(linha)*8*9 + (col+1)*9 + aux];
 			}
 		}
 	}
