@@ -379,8 +379,8 @@ function melhora_logica(){
 						larray[(linha)*8*9 + col*9+ aux]=larray[(linha)*8*9 + (col+1)*9 + aux];
 						larray[(linha)*8*9 + (col+1)*9 + aux] = 0;
 					}
-					larray[(linha)*8*9 + (col+1)*9 + aux] = 11;
 				}
+				larray[(linha)*8*9 + (col+1)*9 + 3] = 11;
 			}
 		}
 	}
