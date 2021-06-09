@@ -372,7 +372,7 @@ function procura_coluna_inicio(linha){
 
 function melhora_logica(){
 	for(var col = 0; col < 6; col++) {
-		for var linha=0; linha < (larray.length/9); linha++){
+		for (var linha=0; linha < (larray.length/9); linha++){
 			if (larray[(linha)*8*9 + col*9 + 3]==1){
 				larray[(linha)*8*9 + col*9 + 3]=larray[(linha)*8*9 + (col+1)*9 + 3];
 			}
