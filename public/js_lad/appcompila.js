@@ -28,7 +28,7 @@ function compila_ladder(){
 		for (var j=0; j<9; j++)
 			larray[(auxi*9)+j] = atexto[(auxi*9)+j];
 	}
-	//melhora_logica();
+	melhora_logica();
 	compila_logicas_ladder();
 }
 
@@ -392,4 +392,19 @@ function melhora_logica(){
 		}
 	}
 	compila_logicas_ladder();
+	var linha = 0;
+	do {
+		var auxiliar = 0;
+		for(var col = 0; col < 7; col++) {
+			while ((larray[(linha+auxiliar)*8*9 + col*9 + 3]==11 || larray[(linha+auxiliar)*8*9 + col*9 + 3]=="undefined") && larray[(linha+auxiliar)*8*9 + col*9 + 5] >0) {
+				auxiliar++;
+			}
+			if (larray[(linha+auxiliar)*8*9 + col*9 + 5] == 0 || larray[(linha+auxiliar)*8*9 + col*9 + 5] == "undef1ned")
+				for (var aux = 0; aux<auxiliar; aux++){
+					larray[(linha+aux)*8*9 + (col-1)*9+ 5]=larray[(linha+aux)*8*9 + (col)*9 + 5];
+					larray[(linha)*8*9 + (col+1)*9 + 5] = 0;
+				}
+		}
+		linha ++;	
+	} while(linha < (larray.length/9){
 }
