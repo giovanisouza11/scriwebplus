@@ -402,9 +402,9 @@ function melhorar_logica(){
 			if (larray[(linha+auxiliar)*8*9 + col*9 + 5] == 0 || larray[(linha+auxiliar)*8*9 + col*9 + 5] == "undef1ned")
 				for (var aux = 0; aux<auxiliar; aux++){
 					larray[(linha+aux)*8*9 + (col-1)*9+ 5]=larray[(linha+aux)*8*9 + (col)*9 + 5];
-					larray[(linha)*8*9 + (col+1)*9 + 5] = 0;
+					larray[(linha+aux)*8*9 + col*9 + 5] = 0;
 				}
 		}
 		linha ++;	
-	} while(linha < (larray.length/9);
+	} while(linha < (larray.length/9));
 }
