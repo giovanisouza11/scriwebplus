@@ -28,7 +28,14 @@ function compila_ladder(){
 		for (var j=0; j<9; j++)
 			larray[(auxi*9)+j] = atexto[(auxi*9)+j];
 	}
-	//melhora_logica();
+	melhora_logica();
+	compila_logicas_ladder();
+}
+
+//--------------------------------------------------
+// funcao compila e pre-compila logicas ladder
+//----------------------------------------------
+function compila_logicas_ladder(){
 	zera_tr();
 	zera_booleano();
 	ib = 0;
@@ -384,4 +391,5 @@ function melhora_logica(){
 			}
 		}
 	}
+	compila_logica_ladder();
 }
