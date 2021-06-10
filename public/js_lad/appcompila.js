@@ -391,5 +391,5 @@ function melhora_logica(){
 			}
 		}
 	}
-	compila_logica_ladder();
+	compila_logicas_ladder();
 }
