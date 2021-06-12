@@ -59,7 +59,7 @@ function Sim_Simulador_Click() {
 				}
 				if (ArrayObjStatic[index_var*20+17]==6) {
 					
-					if (verificaTexto(posicaox, 4*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1)
+					if (verificaTexto(posicaox, -4*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, -1*ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1)
 					{
 						variavel = index_var;
 						var ICampo = document.getElementById('CampoS');
