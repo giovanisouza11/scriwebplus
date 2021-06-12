@@ -58,8 +58,10 @@ function Sim_Simulador_Click() {
 					}
 				}
 				if (ArrayObjStatic[index_var*20+17]==6) {
+					alert("Aqui");
 					if (verificaTexto(posicaox, -4*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1)
 					{
+						alert("Aui");
 						variavel = index_var;
 						var ICampo = document.getElementById('CampoS');
 						var CInput = document.getElementById('Sim_Input_Ladder');
