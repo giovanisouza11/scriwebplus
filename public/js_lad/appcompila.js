@@ -406,5 +406,5 @@ function otimizar_logica(){
 				}
 		}
 		linha ++;	
-	} while(linha < (larray.length/(8*9));
+	} while(linha < (larray.length/(8*9)));
 }
