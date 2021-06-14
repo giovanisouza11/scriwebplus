@@ -28,7 +28,7 @@ function compila_ladder(){
 		for (var j=0; j<9; j++)
 			larray[(auxi*9)+j] = atexto[(auxi*9)+j];
 	}
-	//melhorar_logica();
+	otimizar_logica();
 	compila_logicas_ladder();
 }
 
@@ -377,7 +377,7 @@ function procura_coluna_inicio(linha){
 // Melhora a logica retirando espaçoes extras
 //======================================================================================
 
-function melhorar_logica(){
+function otimizar_logica(){
 	for(var col = 0; col < 6; col++) {
 		for (var linha=0; linha < (larray.length/9); linha++){
 			if (larray[(linha)*8*9 + col*9 + 3]==11 && (larray[(linha)*8*9 + col*9 + 5] == 0  || larray[(linha)*8*9 + col*9 + 5] == "undefined")&& (larray[(linha-1)*8*9 + col*9 + 5] == 0  || larray[(linha-1)*8*9 + col*9 + 5] == "undefined")){
@@ -406,5 +406,5 @@ function melhorar_logica(){
 				}
 		}
 		linha ++;	
-	} while(linha < (larray.length/9));
+	} while(linha < (larray.length/(8*9));
 }
