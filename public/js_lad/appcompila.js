@@ -392,7 +392,7 @@ function otimizar_logica(){
 		}
 	}
 	compila_logicas_ladder();
-	var linha = 0;
+/*	var linha = 0;
 	do {
 		var auxiliar = 0;
 		for(var col = 0; col < 7; col++) {
@@ -406,5 +406,5 @@ function otimizar_logica(){
 				}
 		}
 		linha ++;	
-	} while(linha < (larray.length/(8*9)));
+	} while(linha < (larray.length/(8*9))); */
 }
