@@ -28,7 +28,7 @@ function compila_ladder(){
 		for (var j=0; j<9; j++)
 			larray[(auxi*9)+j] = atexto[(auxi*9)+j];
 	}*/
-	otimizar_logica();
+	//otimizar_logica();
 	compila_logicas_ladder();
 }
 
@@ -380,15 +380,13 @@ function procura_coluna_inicio(linha){
 function otimizar_logica(){
 	for(var col = 0; col < 6; col++) {
 		for (var linha=1; linha < (larray.length/9); linha++){
-			if (larray[(linha)*8*9 + col*9 + 3]==11 && (larray[(linha)*8*9 + col*9 + 5] == 0  || larray[(linha)*8*9 + col*9 + 5] == "undefined")&& (larray[(linha-1)*8*9 + col*9 + 5] == 0  || larray[(linha-1)*8*9 + col*9 + 5] == "undefined" || linha ==0)) {
-				for(var aux=1;aux<9;aux++){
-					if (aux!=5){
-						larray[(linha)*8*9 + col*9+ aux]=larray[(linha)*8*9 + (col+1)*9 + aux];
-						larray[(linha)*8*9 + (col+1)*9 + aux] = 0;
-					}
-				}
-				larray[(linha)*8*9 + (col+1)*9 + 3] = 11;
+			if (larray[(linha)*8*9 + col*9 + 3]==11 && (larray[(linha)*8*9 + col*9 + 5] == 0  || larray[(linha)*8*9 + col*9 + 5] == "undefined") && (linha ==0)) {
+				tras_esquerda();			
 			}
+			if (linha > 0)
+				if (larray[(linha)*8*9 + col*9 + 3]==11 && (larray[(linha)*8*9 + col*9 + 5] == 0  || larray[(linha)*8*9 + col*9 + 5] == "undefined") && (larray[(linha-1)*8*9 + col*9 + 5] == 0  || larray[(linha-1)*8*9 + col*9 + 5] == "undefined")) {
+					tras_esquerda();			
+				}
 		}
 	}
 /*	compila_logicas_ladder();
@@ -407,4 +405,14 @@ function otimizar_logica(){
 		}
 		linha ++;	
 	} while(linha < (larray.length/(8*9))); */
+}
+
+function tras_esquerda(){
+	for(var aux=1;aux<9;aux++){
+		if (aux!=5){
+			larray[(linha)*8*9 + col*9+ aux]=larray[(linha)*8*9 + (col+1)*9 + aux];
+			larray[(linha)*8*9 + (col+1)*9 + aux] = 0;
+		}
+	}
+	larray[(linha)*8*9 + (col+1)*9 + 3] = 11;
 }
