@@ -18,7 +18,7 @@ function compila_ladder(){
 	//Inclui/completa o array, quando existir uma nova linha não continua
 	//
 	var texto = '';
-	/*for (var auxi=0; auxi<(larray.length/9); auxi++) {
+	for (var auxi=0; auxi<(larray.length/9); auxi++) {
 		for (var j=0; j<9; j++)
 		    texto += larray[(auxi*9)+j]+',';
 	}
@@ -27,8 +27,8 @@ function compila_ladder(){
 	for (var auxi=0; auxi<(atexto.length/9); auxi++) {
 		for (var j=0; j<9; j++)
 			larray[(auxi*9)+j] = atexto[(auxi*9)+j];
-	}*/
-	//otimizar_logica();
+	}
+	otimizar_logica();
 	compila_logicas_ladder();
 }
 
