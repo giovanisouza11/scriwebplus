@@ -28,7 +28,7 @@ function compila_ladder(){
 		for (var j=0; j<9; j++)
 			larray[(auxi*9)+j] = atexto[(auxi*9)+j];
 	}
-	//otimizar_logica();
+	otimizar_logica();
 	compila_logicas_ladder();
 }
 
@@ -379,7 +379,7 @@ function procura_coluna_inicio(linha){
 
 function otimizar_logica(){
 	for(var col = 0; col < 6; col++) {
-		for (var linha=0; linha < (larray.length/9); linha++){
+		for (var linha=1; linha < (larray.length/9); linha++){
 			if (larray[(linha)*8*9 + col*9 + 3]==11 && (larray[(linha)*8*9 + col*9 + 5] == 0  || larray[(linha)*8*9 + col*9 + 5] == "undefined")&& (larray[(linha-1)*8*9 + col*9 + 5] == 0  || larray[(linha-1)*8*9 + col*9 + 5] == "undefined")){
 				for(var aux=1;aux<9;aux++){
 					if (aux!=5){
