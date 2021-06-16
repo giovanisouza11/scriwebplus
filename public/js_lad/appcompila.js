@@ -28,7 +28,7 @@ function compila_ladder(){
 		for (var j=0; j<9; j++)
 			larray[(auxi*9)+j] = atexto[(auxi*9)+j];
 	}
-	otimizar_logica();
+	//otimizar_logica();
 	compila_logicas_ladder();
 }
 
