@@ -384,9 +384,9 @@ function otimizar_logica() {
 				tras_esquerda();	
 			}
 			//if (linha > 0) {
-				if (larray[(linha)*8*9 + col*9 + 3]==11 && (larray[(linha)*8*9 + col*9 + 5] == 0  || larray[(linha)*8*9 + col*9 + 5] == "undefined") && (larray[(linha-1)*8*9 + col*9 + 5] == 0  || larray[(linha-1)*8*9 + col*9 + 5] == "undefined")) {
-					tras_esquerda();
-				}
+			//	if (larray[(linha)*8*9 + col*9 + 3]==11 && (larray[(linha)*8*9 + col*9 + 5] == 0  || larray[(linha)*8*9 + col*9 + 5] == "undefined") && (larray[(linha-1)*8*9 + col*9 + 5] == 0  || larray[(linha-1)*8*9 + col*9 + 5] == "undefined")) {
+			//		tras_esquerda();
+			//	}
 			//}
 		}
 	}
