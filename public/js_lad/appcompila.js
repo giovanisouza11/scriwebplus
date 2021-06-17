@@ -378,7 +378,7 @@ function procura_coluna_inicio(linha){
 //======================================================================================
 
 function otimizar_logica() {
-	var linha = 0;
+/*	var linha = 0;
 	for(var coluna = 0; coluna < 6; coluna++) {
 		linha = 0;
 		for (linha=0; linha < (larray.length/(9*8)); linha++){
@@ -391,7 +391,7 @@ function otimizar_logica() {
 				}
 			}
 		}
-	}
+	}*/
 /*	compila_logicas_ladder();
 	linha = 0;
 	do {
