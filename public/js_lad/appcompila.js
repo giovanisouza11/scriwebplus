@@ -379,15 +379,15 @@ function procura_coluna_inicio(linha){
 
 function otimizar_logica() {
 	var linha = 0;
-	for(var col = 0; col < 6; col++) {
+	for(var coluna = 0; coluna < 6; coluna++) {
 		linha = 0;
 		for (linha=0; linha < (larray.length/(9*8)); linha++){
-			if (larray[(linha)*8*9 + col*9 + 3]==11 && (larray[(linha)*8*9 + col*9 + 5] == 0  || larray[(linha)*8*9 + col*9 + 5] == "undefined") && (linha ==0)) {
-				tras_esquerda(linha, col);	
+			if (larray[(linha)*8*9 + coluna*9 + 3]==11 && (larray[(linha)*8*9 + coluna*9 + 5] == 0  || larray[(linha)*8*9 + coluna*9 + 5] == "undefined") && (linha ==0)) {
+				tras_esquerda(linha, coluna);	
 			}
 			if (linha > 0) {
-				if (larray[(linha)*8*9 + col*9 + 3]==11 && (larray[(linha)*8*9 + col*9 + 5] == 0  || larray[(linha)*8*9 + col*9 + 5] == "undefined") && (larray[(linha-1)*8*9 + col*9 + 5] == 0  || larray[(linha-1)*8*9 + col*9 + 5] == "undefined")) {
-					tras_esquerda(linha, col);
+				if (larray[(linha)*8*9 + coluna*9 + 3]==11 && (larray[(linha)*8*9 + coluna*9 + 5] == 0  || larray[(linha)*8*9 + coluna*9 + 5] == "undefined") && (larray[(linha-1)*8*9 + coluna*9 + 5] == 0  || larray[(linha-1)*8*9 + coluna*9 + 5] == "undefined")) {
+					tras_esquerda(linha, coluna);
 				}
 			}
 		}
@@ -410,12 +410,12 @@ function otimizar_logica() {
 	} while(linha < (larray.length/(8*9))); */
 }
 
-function tras_esquerda(linha, col) {
+function tras_esquerda(linha, coluna) {
 	for(var aux=1;aux<9;aux++) {
 		if (aux!=5){
-			larray[(linha)*8*9 + col*9+ aux]=larray[(linha)*8*9 + (col+1)*9 + aux];
-			larray[(linha)*8*9 + (col+1)*9 + aux] = 0;
+			larray[(linha)*8*9 + coluna*9+ aux]=larray[(linha)*8*9 + (coluna+1)*9 + aux];
+			larray[(linha)*8*9 + (coluna+1)*9 + aux] = 0;
 		}
 	}
-	larray[(linha)*8*9 + (col+1)*9 + 3] = 11;
+	larray[(linha)*8*9 + (coluna+1)*9 + 3] = 11;
 }
