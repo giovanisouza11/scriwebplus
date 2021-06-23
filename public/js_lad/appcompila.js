@@ -28,6 +28,11 @@ function compila_ladder(){
 		for (var j=0; j<9; j++)
 			larray[(auxi*9)+j] = atexto[(auxi*9)+j];
 	}
+	//Numera ad linha e colunas
+	for (var auxi=0; auxi<(larray.length/(9*8)); auxi++) {
+		for (var j=0; j<9; j++)
+		    larray[(auxi*8)+j] = (auxi*10)+j;
+	}
 	otimizar_logica();
 	compila_logicas_ladder();
 }
