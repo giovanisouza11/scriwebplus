@@ -395,8 +395,8 @@ function otimizar_logica() {
 			}
 		}
 	}
-/*	compila_logicas_ladder();
-	linha = 0;
+	compila_logicas_ladder();
+/*	linha = 0;
 	do {
 		var auxiliar = 0;
 		for(var col = 0; col < 7; col++) {
