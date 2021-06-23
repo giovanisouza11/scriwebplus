@@ -378,20 +378,20 @@ function procura_coluna_inicio(linha){
 //======================================================================================
 
 function otimizar_logica() {
-/*	var linha = 0;
+	var linha = 0;
 	for(var coluna = 0; coluna < 6; coluna++) {
 		linha = 0;
 		for (linha=0; linha < (larray.length/(9*8)); linha++){
 			if (larray[(linha)*8*9 + coluna*9 + 3]==11 && (larray[(linha)*8*9 + coluna*9 + 5] == 0  || larray[(linha)*8*9 + coluna*9 + 5] == "undefined") && (linha ==0)) {
-				tras_esquerda(linha, coluna);	
+				//tras_esquerda(linha, coluna);	
 			}
 			if (linha > 0) {
 				if (larray[(linha)*8*9 + coluna*9 + 3]==11 && (larray[(linha)*8*9 + coluna*9 + 5] == 0  || larray[(linha)*8*9 + coluna*9 + 5] == "undefined") && (larray[(linha-1)*8*9 + coluna*9 + 5] == 0  || larray[(linha-1)*8*9 + coluna*9 + 5] == "undefined")) {
-					tras_esquerda(linha, coluna);
+				//	tras_esquerda(linha, coluna);
 				}
 			}
 		}
-	}*/
+	}
 /*	compila_logicas_ladder();
 	linha = 0;
 	do {
