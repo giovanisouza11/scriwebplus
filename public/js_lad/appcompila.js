@@ -387,15 +387,15 @@ function otimizar_logica() {
 	for(var coluna = 0; coluna < 6; coluna++) {
 		linha = 0;
 		if (larray[(linha)*8*9 + coluna*9 + 3]==11 && (larray[(linha)*8*9 + coluna*9 + 5] == 0  || larray[(linha)*8*9 + coluna*9 + 5] == "undefined")) {
-			tras_esquerda(linha, coluna);	
+			//tras_esquerda(linha, coluna);	
 		}
 		for (linha=1; linha < (larray.length/(9*8)); linha++){
 			if (larray[(linha)*8*9 + coluna*9 + 3]==11 && (larray[(linha)*8*9 + coluna*9 + 5] == 0  || larray[(linha)*8*9 + coluna*9 + 5] == "undefined") && (larray[(linha-1)*8*9 + coluna*9 + 5] == 0  || larray[(linha-1)*8*9 + coluna*9 + 5] == "undefined")) {
-				tras_esquerda(linha, coluna);
+			//	tras_esquerda(linha, coluna);
 			}
 		}
 	}
-	compila_logicas_ladder();
+	//compila_logicas_ladder();
 /*	linha = 0;
 	do {
 		var auxiliar = 0;
