@@ -101,9 +101,11 @@ function Sim_Botao_Click() {
 		//modalb1.innerHTML = "<p><button onclick='Sim_Le_Arquivo_Nuvem()'>Alarmes</button></p>";
 		modalb1.innerHTML = "<p><a href='http://scriwebshow.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Caldeira/Caldeira.csv'>Caldeira</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Cascata/Cascata.csv'>Cascata de Motores</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Classificacao/Classificacao.csv'>Classificação</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Corte_Vinco/Corte_Vinco.csv'>Corte e Vinco</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Dosagem/Dosagem.csv'>Dosagem</a></p>";
+		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Desbobinador/Desbobinador.csv'>Desbobinador</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Elevador/Elevador.csv'>Elevador(3 andares)</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Elevador5/Elevador5.csv'>Elevador(5 andares)</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebshow.herokuapp.com/ftp/Envase/Envase.csv'>Envase</a></p>";
