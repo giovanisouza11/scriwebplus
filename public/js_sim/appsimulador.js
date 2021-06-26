@@ -965,8 +965,23 @@ function sensor(index_var, dependencia1, dependencia2) {
 			Sim_Escreve(ArrayObjStatic[index_var*20+1],0);
   	}
 	sensor_Nivel(index_var, dependencia1, dependencia2);
+	reset_Nivel(index_var, dependencia1, dependencia2);
 }
-
+//=====================================================================================
+//Reseta o nivel
+//=====================================================================================
+function reset_Nivel(index_var, dependencia1, dependencia2) {
+	if (dependencia1.charAt(0) == 'R' && dependencia1.charAt(1) != 'Y' && dependencia1.charAt(1) != 'x') {
+		if (Sim_Endereco(dependencia1.substr(1))==1) {
+			Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],0);
+		}
+	}
+	if (dependencia2.charAt(0) == 'R' && dependencia2.charAt(1) != 'Y' && dependencia2.charAt(1) != 'x') {
+		if (Sim_Endereco(dependencia2.substr(1))==1) {
+			Sim_Escreve_CT(ArrayObjStatic[index_var*20+1],0);
+		}
+	}
+}
 //=====================================================================================
 //Verifica se a posicao de um objeto está entre (sobre) um outro objet
 //=====================================================================================
