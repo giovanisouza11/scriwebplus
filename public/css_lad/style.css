@@ -72,8 +72,8 @@ body {
 }
 .divColuna6 {
        	position: fixed;
-       	width: 535px;
-     	left: 80px;
+       	width: 80px;
+     	left: 535px;
 	height: 525px;
         top: 45px;
 	text-align: left;
@@ -82,7 +82,7 @@ body {
 .divColuna7 {
    	position: fixed;
        	left: 0px;
-       	width: 80px;
+       	width: 535px;
 	height: 525px;
        	top: 45px;
 	text-align: left;
