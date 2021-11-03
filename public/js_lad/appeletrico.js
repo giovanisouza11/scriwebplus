@@ -13,6 +13,12 @@ var canvas;
 var context;
 
 function draw_eletrico() {
+	//canvas da IHM
+	canvasIHM = document.getElementById("tela8");
+	contextIHM= canvasIHM.getContext("2d");
+    	canvasIHM.width = 425;
+    	canvasIHM.height = 300;
+	canvasIHM.top = 700;
     	canvas = document.getElementById("tela1");
 	context= canvas.getContext("2d");
     	canvas.width = 425;
