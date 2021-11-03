@@ -229,17 +229,18 @@ function ApagaImagem(index) {
 function Desenha_Ihm_Sim() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
-	var linha = 510;
+	var linha = 10;
 	Ihm_Context.fillStyle = 'white';
-  	Ihm_Context.fillRect(10, 500, 550, 25);
+  	Ihm_Context.fillRect(10, 10, 550, 25);
   	Ihm_Context.font = '18pt Arial';
   	Ihm_Context.fillStyle = 'red';
-	Ihm_Context.fillText(num_clp, 10, 515);
+	Ihm_Context.fillText(num_clp, 10, 10);
 	Ihm_Context.fillStyle = 'black';
   	Ihm_Context.font = '9pt Arial';
   	var num_linhas;
-  	var funcao = 3;
-	switch (parseInt(funcao)){
+  	for(var funcao = 0; funcao < 6; funcao++)
+	{
+	    switch (parseInt(funcao)){
       		case 0:
         		Ihm_Context.fillStyle = 'black';
         		Ihm_Context.fillRect(280, linha-5, 60, 5);
@@ -317,10 +318,10 @@ function Desenha_Ihm_Sim() {
         		break;
 		default:
         		tamanho_array = 1;
-    	}
-    	var posicao;
-    	var n_posicao;
-	for (var n_linhas=0; n_linhas <= num_linhas; n_linhas++) {
+    	   }
+    	   var posicao;
+    	   var n_posicao;
+	   for (var n_linhas=0; n_linhas <= num_linhas; n_linhas++) {
       			posicao = 0;
       			Ihm_Context.fillStyle = 'green';
       			if (n_linhas < num_linhas){
@@ -411,7 +412,8 @@ function Desenha_Ihm_Sim() {
       			linha += 15;
       			if (n_posicao >= tamanho_array)
         			break;
-    		}
+    	  	}
+	}
 }
 
 //======================================================================
