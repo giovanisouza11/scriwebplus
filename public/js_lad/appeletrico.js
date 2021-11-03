@@ -9,8 +9,10 @@ var T = new Array();
 var C = new Array();
 var localizacao;
 var comandos = 0; // 0:stop, 1: run 2: run ciclo, 3:Run Passo
-var canvas, Ihm_Canvas;
-var context, Ihm_Context;
+var canvas;
+var Ihm_Canvas;
+var context;
+var Ihm_Context;
 
 function draw_eletrico() {
 	//canvas da IHM
