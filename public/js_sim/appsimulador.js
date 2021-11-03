@@ -232,6 +232,8 @@ function Desenha_Ihm_Sim() {
 	var linha = 10;
 	Ihm_Context.fillStyle = 'white';
   	Ihm_Context.fillRect(10, 10, 550, 25);
+  	Ihm_Context.fillStyle = 'black';
+  	Ihm_Context.strokeRect(10, 10, 550, 300);
   	Ihm_Context.font = '18pt Arial';
   	Ihm_Context.fillStyle = 'red';
 	Ihm_Context.fillText(num_clp, 10, 10);
@@ -240,11 +242,11 @@ function Desenha_Ihm_Sim() {
   	var num_linhas;
   	for(var funcao = 0; funcao < 6; funcao++)
 	{
-	    switch (parseInt(funcao)){
+	    	switch (parseInt(funcao)){
       		case 0:
         		Ihm_Context.fillStyle = 'black';
-        		Ihm_Context.fillRect(10, linha-5, 60, 5);
-        		Ihm_Context.fillText('ENTRADAS', 10, linha);
+        		Ihm_Context.fillRect(10, linha-5, 550, 5);
+        		Ihm_Context.fillText('ENTRADAS', 200, linha);
         		tamanho_array = I.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
@@ -254,8 +256,8 @@ function Desenha_Ihm_Sim() {
         		break;
       		case 1:
         		Ihm_Context.fillStyle = 'black';
-        		Ihm_Context.fillRect(100, linha-5, 60, 5);
-        		Ihm_Context.fillText('SAIDAS', 10, linha);
+        		Ihm_Context.fillRect(10, linha-5, 550, 5);
+        		Ihm_Context.fillText('SAIDAS', 230, linha);
         		tamanho_array = Q.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 15;
@@ -265,8 +267,8 @@ function Desenha_Ihm_Sim() {
         		break;
       		 case 2:
         		Ihm_Context.fillStyle = 'black';
-        		Ihm_Context.fillRect(530, linha-5, 60, 5);
-        		Ihm_Context.fillText('MEMÓRIAS', 10, linha);
+        		Ihm_Context.fillRect(10, linha-5, 550, 5);
+        		Ihm_Context.fillText('MEMÓRIAS', 200, linha);
         		Ihm_Context.fillRect(10, linha-5, 60, 5);
         		Ihm_Context.fillRect(10, linha-5, 60, 5);
         		tamanho_array = M.length;
@@ -318,10 +320,10 @@ function Desenha_Ihm_Sim() {
         		break;
 		default:
         		tamanho_array = 1;
-    	   }
-    	   var posicao;
-    	   var n_posicao;
-	   for (var n_linhas=0; n_linhas <= num_linhas; n_linhas++) {
+    	   	}
+    	   	var posicao;
+    	   	var n_posicao;
+	   	for (var n_linhas=0; n_linhas <= num_linhas; n_linhas++) {
       			posicao = 0;
       			Ihm_Context.fillStyle = 'green';
       			if (n_linhas < num_linhas){
@@ -348,11 +350,11 @@ function Desenha_Ihm_Sim() {
         			Ihm_Context.fillText(tipo_funcao[funcao]+n_linhas, 280,linha);
         			n_posicao = (n_linhas * 4) + posicao;
       			}
-      			//if(funcao==3) {
-        		//	Ihm_Context.fillText(tipo_funcao[funcao]+(n_linhas*3), 190,linha);
+      			if(funcao==3) {
+        			Ihm_Context.fillText(tipo_funcao[funcao]+(n_linhas*3), 190,linha);
 				n_posicao = (n_linhas * 9) + posicao;
-			//	
-      			//}
+				
+      			}
       			do {
         			switch (parseInt(funcao)){
         			case 0:
@@ -401,13 +403,13 @@ function Desenha_Ihm_Sim() {
 
       			if (funcao<3) {
         			Ihm_Context.fillStyle = 'green';
-        			Ihm_Context.fillText(tipo_funcao[funcao]+n_linhas+'.0 - ' +tipo_funcao[funcao]+n_linhas+' = ', 530,linha);
+        			Ihm_Context.fillText(tipo_funcao[funcao]+n_linhas+'.0 - ' +tipo_funcao[funcao]+n_linhas+' = ', 50,linha);
         			Ihm_Context.fillStyle = 'red';
-        			Ihm_Context.fillText(Sim_Endereco_CT(tipo_funcao[funcao]+n_linhas,0), 540,linha);
+        			Ihm_Context.fillText(Sim_Endereco_CT(tipo_funcao[funcao]+n_linhas,0), 10,linha);
       			}
       			if (funcao==5) {
         			Ihm_Context.fillStyle = 'green';
-        			Ihm_Context.fillText(tipo_funcao[funcao]+(n_linhas*16), 530,linha);
+        			Ihm_Context.fillText(tipo_funcao[funcao]+(n_linhas*16), 50,linha);
       			}
       			linha += 15;
       			if (n_posicao >= tamanho_array)
