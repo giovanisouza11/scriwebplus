@@ -116,6 +116,16 @@ body {
 	left: 0px;
 	text-align: left;
 }
+.classIHM {
+	display: block;
+	position: fixed;
+       	width: 640px;
+	height: 550px;
+       	top: 600px;
+	left: 0px;
+	text-align: left;
+}
+
 .divColuna3 {
 	position: absolute;
         left: 651px;
