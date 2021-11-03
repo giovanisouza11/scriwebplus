@@ -9,16 +9,16 @@ var T = new Array();
 var C = new Array();
 var localizacao;
 var comandos = 0; // 0:stop, 1: run 2: run ciclo, 3:Run Passo
-var canvas, Ihm_Canvas
+var canvas, Ihm_Canvas;
 var context, Ihm_Context;
 
 function draw_eletrico() {
 	//canvas da IHM
-	Ihm_canvas = document.getElementById("tela8");
-	Ihm_context =  Ihm_canvas.getContext("2d");
-    	Ihm_canvas.width = 425;
-    	Ihm_canvas.height = 300;
-	Ihm_canvas.top = 700;
+	Ihm_Canvas = document.getElementById("tela8");
+	Ihm_Context =  Ihm_Canvas.getContext("2d");
+    	Ihm_Canvas.width = 425;
+    	Ihm_Canvas.height = 300;
+	Ihm_Canvas.top = 700;
     	//Canvas eletrico
 	canvas = document.getElementById("tela1");
 	context= canvas.getContext("2d");
