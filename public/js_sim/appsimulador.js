@@ -118,7 +118,7 @@ function eInputS(event) {
 			Sim_Escreve_CT(ArrayObjStatic[variavel*20+1],0,0);
 
 		ICampo.style.left = "10px";
-		ICampo.style.top = '1100px";
+		ICampo.style.top = '1100px';
 		CInput.blur();
 		ICampo.style.display = "none";
 	}
