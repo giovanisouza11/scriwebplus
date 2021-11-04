@@ -352,11 +352,11 @@ tamanho_array = T.length;
         			}
       			}
       			if(funcao==4) {
-        			Ihm_Context.fillText(tipo_funcao[funcao]+n_linhas, 280,linha);
+        			Ihm_Context.fillText(tipo_funcao[funcao]+n_linhas, 100,linha);
         			n_posicao = (n_linhas * 4) + posicao;
       			}
       			if(funcao==3) {
-        			Ihm_Context.fillText(tipo_funcao[funcao]+(n_linhas*3), 190,linha);
+        			Ihm_Context.fillText(tipo_funcao[funcao]+(n_linhas*3), 100,linha);
 				n_posicao = (n_linhas * 9) + posicao;
 				
       			}
