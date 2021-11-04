@@ -63,12 +63,12 @@ function Sim_Simulador_Click() {
 					{
 						variavel = index_var;
 						var ICampo = document.getElementById('CampoS');
-						var CInput = document.getElementById('Sim_Input_Ladder');
+						var CInput = document.getElementById('Input_Ladder');
 						ICampo.style.left = " "+ArrayObjDinamic[index_var*10+3] + "px";
 						ICampo.style.top = " "+ArrayObjDinamic[index_var*10+4]  + "px";
 						ICampo.style.display = "block";
-						document.getElementById('Sim_Label_Input').innerHTML = ArrayObjStatic[index_var*20+1];
-						document.getElementById('Sim_Input_Ladder').value = Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0);
+						document.getElementById('Label_Input').innerHTML = ArrayObjStatic[index_var*20+1];
+						document.getElementById('Input_Ladder').value = Sim_Endereco_CT(ArrayObjStatic[index_var*20+1],0);
 						CInput.focus();
 					}
 				}
