@@ -109,8 +109,8 @@ function Sim_Simulador_Click() {
 //=====================================================================================
 function eInputS(event) {
 	if (event.keyCode == 13) { //Tecla enter
-		var ICampo = document.getElementById('CampoS');
-		var CInput = document.getElementById('Sim_Input_Ladder');
+		var ICampo = document.getElementById('Campo');
+		var CInput = document.getElementById('Input_Ladder');
 		Sim_Escreve_CT(ArrayObjStatic[variavel*20+1], CInput.value, 0);
 		if(Sim_Endereco_CT(ArrayObjStatic[variavel*20+1],0) > ArrayObjStatic[variavel*20+16])
 			Sim_Escreve_CT(ArrayObjStatic[variavel*20+1],parseInt(ArrayObjStatic[variavel*20+16]),0);
@@ -118,7 +118,7 @@ function eInputS(event) {
 			Sim_Escreve_CT(ArrayObjStatic[variavel*20+1],0,0);
 
 		ICampo.style.left = "10px";
-		ICampo.style.top = "700px";
+		ICampo.style.top = '1100px";
 		CInput.blur();
 		ICampo.style.display = "none";
 	}
