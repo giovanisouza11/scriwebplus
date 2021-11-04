@@ -276,7 +276,7 @@ tamanho_array = Q.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 20;
         		Ihm_Context.fillText('MSB', 10,linha);
-        		Ihm_Context.fillText('Valor binário', 10,linha);
+        		Ihm_Context.fillText('Valor binário', 200,linha);
         		Ihm_Context.fillText('LSB - Decimal', 550,linha);
         		
         		linha = linha + 15;
