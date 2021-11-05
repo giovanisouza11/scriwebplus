@@ -17,7 +17,7 @@ var Ihm_Context;
 function draw_eletrico() {
 	//canvas da IHM
 	Ihm_Canvas = document.getElementById("tela8");
-	Ihm_Context =  Ihm_Canvas.rtgetContext("2d");
+	Ihm_Context =  Ihm_Canvas.getContext("2d");
     	Ihm_Canvas.width = 700;
     	Ihm_Canvas.height = 300;
 	Ihm_Canvas.top = 700;
