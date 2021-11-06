@@ -293,7 +293,7 @@ function Desenha_Ihm_Sim() {
         		Ihm_Context.fillText('TIMERS', 290, linha);
        			Ihm_Context.fillRect(540, linha-5, 100, 5);
 			tamanho_array = T.length;
-        		num_linhas = parseInt(tamanho_array / 9);
+        		num_linhas = parseInt(tamanho_array / 3);
                         linha = linha + 30;
         		Ihm_Context.fillText('Tem', 100,linha);
         		Ihm_Context.fillText('bit', 200,linha);
