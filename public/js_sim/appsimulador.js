@@ -122,6 +122,7 @@ function eInputS(event) {
 		ICampo.style.top = "1100px";
 		CInput.blur();
 		ICampo.style.display = "none";
+                emEdicao = 0;
 	}
 }
 
