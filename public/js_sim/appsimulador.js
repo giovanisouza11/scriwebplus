@@ -62,6 +62,7 @@ function Sim_Simulador_Click() {
 					if (verificaTexto(posicaox, -4*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, -1*ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1)
 					{
 						variavel = index_var;
+                                                Auxenter = 1;
 						var ICampo = document.getElementById('Campo');
 						var CInput = document.getElementById('input_ladder');
 						ICampo.style.left = " "+ArrayObjDinamic[index_var*10+3] + "px";
