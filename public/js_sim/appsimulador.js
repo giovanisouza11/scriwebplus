@@ -143,7 +143,7 @@ function Atualiza_Simulador() {
 		Sim_Edicao = 0;
 		Aux_Atualiza =1;
 	}
-	else PP
+	else 
 		Aux_Atualiza = 0;
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++) {
 		if (comandos > 0) {
