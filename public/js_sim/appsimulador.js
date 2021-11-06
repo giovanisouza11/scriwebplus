@@ -185,7 +185,7 @@ function funcaoLabel(apontador) {
 	var Llabel = ArrayLabel[ArrayObjDinamic[apontador*10+5]];
 	if (ArrayObjStatic[apontador*20+1] != '') {
 		if (Sim_Endereco(ArrayObjStatic[apontador*20+1]) != 0)
-	Á		Sim_Context.fillStyle = ArrayObjStatic[apontador*20+12];
+			Sim_Context.fillStyle = ArrayObjStatic[apontador*20+12];
 		else
 			Sim_Context.fillStyle = ArrayObjStatic[apontador*20+11];
 		Sim_Context.fillRect(ArrayObjDinamic[apontador*10+3], ArrayObjDinamic[apontador*10+4],ArrayObjStatic[apontador*20+4],ArrayObjStatic[apontador*20+7]);	
