@@ -254,33 +254,33 @@ function Desenha_Ihm_Sim() {
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 30;
         		Ihm_Context.fillText('MSB', 10,linha);
-			Ihm_Context.fillText('Valor binário', 200,linha);
+			Ihm_Context.fillText('Valor binário', 250,linha);
         		Ihm_Context.fillText('LSB - Decimal', 500,linha);
 			linha = linha + 20;
         		break;
       		case 1:
         		Ihm_Context.fillStyle = 'black';
         		Ihm_Context.fillRect(10, linha-5, 160, 5);
-        		Ihm_Context.fillText('SAIDAS', 200, linha);
-        		Ihm_Context.fillRect(400, linha-5, 150, 5);
+        		Ihm_Context.fillText('SAIDAS',320, linha);
+        		Ihm_Context.fillRect(500, linha-5, 150, 5);
 			tamanho_array = Q.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 30;
         		Ihm_Context.fillText('MSB', 10,linha);
-        		Ihm_Context.fillText('Valor binário', 200,linha);
+        		Ihm_Context.fillText('Valor binário', 250,linha);
         		Ihm_Context.fillText('LSB - Decimal',500,linha);
         		linha = linha + 20;
         		break;
       		 case 2:
         		Ihm_Context.fillStyle = 'black';
         		Ihm_Context.fillRect(10, linha-5, 160, 5);
-        		Ihm_Context.fillText('MEMÓRIAS', 190, linha);
-        		Ihm_Context.fillRect(400, linha-5, 150, 5);
+        		Ihm_Context.fillText('MEMÓRIAS', 300, linha);
+        		Ihm_Context.fillRect(500, linha-5, 150, 5);
         		tamanho_array = M.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 30;
         		Ihm_Context.fillText('MSB', 10,linha);
-        		Ihm_Context.fillText('Valor binário', 200,linha);
+        		Ihm_Context.fillText('Valor binário', 250,linha);
         		Ihm_Context.fillText('LSB - Decimal', 500,linha);
         		
         		linha = linha + 20;
@@ -317,13 +317,13 @@ function Desenha_Ihm_Sim() {
       		case 5:
         		Ihm_Context.fillStyle = 'black';
         		Ihm_Context.fillRect(10, linha-5, 160, 5);
-        		Ihm_Context.fillText('RAMAIS', 200, linha);
-        		Ihm_Context.fillRect(400, linha-5, 150, 5);
+        		Ihm_Context.fillText('RAMAIS', 310, linha);
+        		Ihm_Context.fillRect(500, linha-5, 150, 5);
         		tamanho_array = R.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 30;
         		Ihm_Context.fillText('MSB', 10,linha);
-        		Ihm_Context.fillText('Valor binário', 200,linha);
+        		Ihm_Context.fillText('Valor binário', 250,linha);
         		Ihm_Context.fillText('LSB', 500,linha);
         		linha = linha + 20;
         		break;
