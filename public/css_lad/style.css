@@ -88,16 +88,7 @@ body {
 	text-align: left;
     	background:ivory;
 }
-.divColuna10 {
-       	display: none;
-	position: relative;
-	top: 1070px;
-       	left: 1100px;
-       	width: 60px; 
-       	height: 15px;
-       	text-align: left;
-       	background:palegreen;
-} 
+
 .classSimul {
 	display: none;
 	position: fixed;
