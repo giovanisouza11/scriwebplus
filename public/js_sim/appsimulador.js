@@ -229,7 +229,7 @@ function ApagaImagem(index) {
 function Desenha_Ihm_Sim() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
-	var linha = 10;
+	var linha = 30;
 	Ihm_Context.lineWidth = 2;
 	Ihm_Context.fillStyle = 'white';
   	Ihm_Context.fillRect(0, 0, 640, 450);
@@ -248,8 +248,8 @@ function Desenha_Ihm_Sim() {
       		case 0:
         		Ihm_Context.fillStyle = 'black';
         		Ihm_Context.fillRect(10, linha-5, 160, 5);
-        		Ihm_Context.fillText('ENTRADAS', 200, linha);
-        		Ihm_Context.fillRect(400, linha-5, 150, 5);
+        		Ihm_Context.fillText('ENTRADAS', 300, linha);
+        		Ihm_Context.fillRect(500, linha-5, 150, 5);
 			tamanho_array = I.length;
         		num_linhas = parseInt(tamanho_array / 16);
         		linha = linha + 30;
