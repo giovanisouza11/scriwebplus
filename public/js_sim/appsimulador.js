@@ -229,15 +229,15 @@ function ApagaImagem(index) {
 function Desenha_Ihm_Sim() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
-	var linha = 30;
+	var linha = 60;
 	Ihm_Context.lineWidth = 2;
 	Ihm_Context.fillStyle = 'white';
-  	Ihm_Context.fillRect(0, 0, 640,700);
+  	Ihm_Context.fillRect(0, 0, 650,700);
   	Ihm_Context.fillStyle = 'black';
-  	Ihm_Context.strokeRect(10, 10, 640, 695);
+  	Ihm_Context.strokeRect(1, 1, 650, 700);
   	Ihm_Context.font = '18pt Arial';
   	Ihm_Context.fillStyle = 'red';
-	Ihm_Context.fillText('Mapa de Memória', 860, 40);
+	Ihm_Context.fillText('Mapa de Memória', 200, 30);
 	//Ihm_Context.fillText(num_clp, 10, 10);
 	Ihm_Context.fillStyle = 'black';
   	Ihm_Context.font = '14pt Arial';
@@ -368,8 +368,8 @@ function Desenha_Ihm_Sim() {
         			switch (parseInt(funcao)){
         			case 0:
         				Ihm_Context.fillStyle = 'red';
-                                        if (  I[n_posicao]<> "undefined") 
-        				Ihm_Context.fillText(I[n_posicao], 460-(posicao*25),linha);
+                                        if (I[n_posicao] != "undefined") 
+        					Ihm_Context.fillText(I[n_posicao], 460-(posicao*25),linha);
         				break;
         			case 1:
         				Ihm_Context.fillStyle = 'red';
@@ -385,7 +385,7 @@ function Desenha_Ihm_Sim() {
         				break;
         			case 4:
         				Ihm_Context.fillStyle = 'red';
-Ihm_Context.fillText(C[n_posicao], 200+(posicao*100),linha);
+					Ihm_Context.fillText(C[n_posicao], 200+(posicao*100),linha);
         				if (posicao >2)
         					posicao = 15;
         				break;
