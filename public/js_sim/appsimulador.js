@@ -356,11 +356,11 @@ function Desenha_Ihm_Sim() {
         			}
       			}
       			if(funcao==4) {
-        			Ihm_Context.fillText(tipo_funcao[funcao]+n_linhas, 10,linha);
+        			Ihm_Context.fillText(tipo_funcao[funcao]+n_linhas, 100,linha);
         			n_posicao = (n_linhas * 4) + posicao;
       			}
       			if(funcao==3) {
-        			Ihm_Context.fillText(tipo_funcao[funcao]+(n_linhas*3), 10,linha);
+        			Ihm_Context.fillText(tipo_funcao[funcao]+(n_linhas*3), 100,linha);
 				n_posicao = (n_linhas * 3) + posicao;
 				
       			}
@@ -368,29 +368,29 @@ function Desenha_Ihm_Sim() {
         			switch (parseInt(funcao)){
         			case 0:
         				Ihm_Context.fillStyle = 'red';
-        				Ihm_Context.fillText(I[n_posicao], 500-(posicao*30),linha);
+        				Ihm_Context.fillText(I[n_posicao], 460-(posicao*30),linha);
         				break;
         			case 1:
         				Ihm_Context.fillStyle = 'red';
-        				Ihm_Context.fillText(Q[n_posicao], 500-(posicao*30),linha);
+        				Ihm_Context.fillText(Q[n_posicao], 460-(posicao*30),linha);
         				break;
         			case 2:
         				Ihm_Context.fillStyle = 'red';
-        				Ihm_Context.fillText(M[n_posicao], 500-(posicao*30),linha);
+        				Ihm_Context.fillText(M[n_posicao], 460-(posicao*30),linha);
         				break;
         			case 5:
         				Ihm_Context.fillStyle = 'red';
-        				Ihm_Context.fillText(R[n_posicao], 500-(posicao*30),linha);
+        				Ihm_Context.fillText(R[n_posicao], 460-(posicao*30),linha);
         				break;
         			case 4:
         				Ihm_Context.fillStyle = 'red';
-        				Ihm_Context.fillText(C[n_posicao], 30+(posicao*100),linha);
+        				Ihm_Context.fillText(C[n_posicao], 30+(posicao*200),linha);
         				if (posicao >2)
         					posicao = 15;
         				break;
         			case 3:
 					Ihm_Context.fillStyle = 'red';
-        				Ihm_Context.fillText(T[n_posicao], 30+(posicao*100),linha);
+        				Ihm_Context.fillText(T[n_posicao], 30+(posicao*200),linha);
         				if (posicao >1)
         					posicao = 15;
         				break;
@@ -403,9 +403,9 @@ function Desenha_Ihm_Sim() {
 
       			if (funcao<3) {
         			Ihm_Context.fillStyle = 'green';
-        			Ihm_Context.fillText(tipo_funcao[funcao]+n_linhas+'.0 - ' +tipo_funcao[funcao]+n_linhas+' = ', 550,linha);
+        			Ihm_Context.fillText(tipo_funcao[funcao]+n_linhas+'.0 - ' +tipo_funcao[funcao]+n_linhas+' = ', 500,linha);
         			Ihm_Context.fillStyle = 'red';
-        			Ihm_Context.fillText(Sim_Endereco_CT(tipo_funcao[funcao]+n_linhas,0), 600,linha);
+        			Ihm_Context.fillText(Sim_Endereco_CT(tipo_funcao[funcao]+n_linhas,0), 610,linha);
       			}
       			if (funcao==5) {
         			Ihm_Context.fillStyle = 'green';
