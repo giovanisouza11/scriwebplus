@@ -317,7 +317,7 @@ function entrada_input(event){
 		var tipo_funcao = larray[(posicaoy*(8*9)) + (posicaox*9) + 3];
 
 		var tag = CInput.value.toUpperCase();
-                If (emEdicao == 10)
+                if (emEdicao == 10)
                         eInputS(event);
 		if (emEdicao == 5) {
 			larray[(posicaoy*8*9) + (posicaox*9) + 7] = tag;
