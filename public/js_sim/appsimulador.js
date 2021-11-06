@@ -232,7 +232,7 @@ function Desenha_Ihm_Sim() {
 	var linha = 10;
 	Ihm_Context.lineWidth = 2;
 	Ihm_Context.fillStyle = 'white';
-  	Ihm_Context.fillRect(10, 10, 640, 440);
+  	Ihm_Context.fillRect(0, 0, 640, 450);
   	Ihm_Context.fillStyle = 'black';
   	Ihm_Context.strokeRect(10, 10, 640, 440);
   	Ihm_Context.font = '18pt Arial';
