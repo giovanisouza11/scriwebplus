@@ -318,7 +318,7 @@ function entrada_input(event){
 
 		var tag = CInput.value.toUpperCase();
                 If (emEdicao == 10)
-                        einputS(event);
+                        eInputS(event);
 		if (emEdicao == 5) {
 			larray[(posicaoy*8*9) + (posicaox*9) + 7] = tag;
 			context2.fillStyle = 'white';
