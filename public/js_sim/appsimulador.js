@@ -295,8 +295,8 @@ function Desenha_Ihm_Sim() {
                         linha = linha + 30;
         		Ihm_Context.fillText('Tem', 100,linha);
         		Ihm_Context.fillText('bit', 200,linha);
-        		Ihm_Context.fillText('PV', 300,linha);
-        		Ihm_Context.fillText('SP', 400,linha);
+        		Ihm_Context.fillText('PV', 275,linha);
+        		Ihm_Context.fillText('SP', 350,linha);
         		linha = linha + 30;
                         break;
 		case 4:
@@ -309,9 +309,9 @@ function Desenha_Ihm_Sim() {
         		linha = linha + 30;
         		Ihm_Context.fillText('Cont', 100,linha);
         		Ihm_Context.fillText('bit', 200,linha);
-        		Ihm_Context.fillText('PV', 300,linha);
-        		Ihm_Context.fillText('SP', 400,linha);
-        		Ihm_Context.fillText('AUX', 500,linha);
+        		Ihm_Context.fillText('PV', 275,linha);
+        		Ihm_Context.fillText('SP', 350,linha);
+        		Ihm_Context.fillText('AUX', 425,linha);
         		linha = linha + 30;
         		break;
       		case 5:
@@ -385,13 +385,13 @@ function Desenha_Ihm_Sim() {
         				break;
         			case 4:
         				Ihm_Context.fillStyle = 'red';
-					Ihm_Context.fillText(C[n_posicao], 200+(posicao*100),linha);
+					Ihm_Context.fillText(C[n_posicao], 200+(posicao*75),linha);
         				if (posicao >2)
         					posicao = 15;
         				break;
         			case 3:
 					Ihm_Context.fillStyle = 'red';
-        				Ihm_Context.fillText(T[n_posicao], 200+(posicao*100),linha);
+        				Ihm_Context.fillText(T[n_posicao], 200+(posicao*75),linha);
         				if (posicao >1)
         					posicao = 15;
         				break;
