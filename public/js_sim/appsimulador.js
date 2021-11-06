@@ -362,7 +362,7 @@ function Desenha_Ihm_Sim() {
         			n_posicao = (n_linhas * 4) + posicao;
       			}
       			if(funcao==3) {
-        			Ihm_Context.fillText(tipo_funcao[funcao]+(n_linhas*3), 100,linha);
+        			Ihm_Context.fillText(tipo_funcao[funcao]+n_linhas, 100,linha);
 				n_posicao = (n_linhas * 3) + posicao;
 				
       			}
