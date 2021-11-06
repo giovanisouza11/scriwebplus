@@ -62,7 +62,7 @@ function Sim_Simulador_Click() {
 					if (verificaTexto(posicaox, -4*ArrayObjStatic[index_var*20+10], 'X'+index_var)==1 && verificaTexto(posicaoy, -1*ArrayObjStatic[index_var*20+10], 'Y'+index_var)==1)
 					{
 						variavel = index_var;
-                                                Auxenter = 1;
+                                                emEdicao = 10;
 						var ICampo = document.getElementById('Campo');
 						var CInput = document.getElementById('input_ladder');
 						ICampo.style.left = " "+ArrayObjDinamic[index_var*10+3] + "px";
@@ -142,7 +142,7 @@ function Atualiza_Simulador() {
 		Sim_Edicao = 0;
 		Aux_Atualiza =1;
 	}
-	else
+	else PP
 		Aux_Atualiza = 0;
 	for(var ij=0; ij < parseInt((ArrayObjDinamic.length / 10)+1); ij++) {
 		if (comandos > 0) {
