@@ -234,9 +234,9 @@ function Desenha_Ihm_Sim() {
 	var linha = 60;
 	Ihm_Context.lineWidth = 2;
 	Ihm_Context.fillStyle = 'white';
-  	Ihm_Context.fillRect(0, 0, 650,700);
+  	Ihm_Context.fillRect(0, 0, 800,700);
   	Ihm_Context.fillStyle = 'black';
-  	Ihm_Context.strokeRect(1, 1, 650, 700);
+  	Ihm_Context.strokeRect(1, 1, 799, 700);
   	Ihm_Context.font = '18pt Arial';
   	Ihm_Context.fillStyle = 'red';
 	Ihm_Context.fillText('Mapa de Memória', 220, 30);
