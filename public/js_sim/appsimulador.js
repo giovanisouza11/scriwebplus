@@ -232,11 +232,11 @@ function Desenha_Ihm_Sim() {
 	var tamanho_array = 0;
 	var tipo_funcao = ['I','Q','M','T','C','R'];
 	var linha = 60;
-	Ihm_Context.lineWidth = 2;
+	Ihm_Context.lineWidth = 3;
 	Ihm_Context.fillStyle = 'white';
-  	Ihm_Context.fillRect(0, 0, 800,700);
+  	Ihm_Context.fillRect(0, 0, 1000,700);
   	Ihm_Context.fillStyle = 'black';
-  	Ihm_Context.strokeRect(1, 1, 799, 700);
+  	Ihm_Context.strokeRect(1, 1, 999, 700);
   	Ihm_Context.font = '18pt Arial';
   	Ihm_Context.fillStyle = 'red';
 	Ihm_Context.fillText('Mapa de Memória', 220, 30);
@@ -258,7 +258,7 @@ function Desenha_Ihm_Sim() {
         		Ihm_Context.fillText('MSB', 10,linha);
 			Ihm_Context.fillText('Valor binário', 250,linha);
         		Ihm_Context.fillText('LSB  -  Decimal', 500,linha);
-			linha = linha + 25;
+			linha = linha + 30;
         		break;
       		case 1:
         		Ihm_Context.fillStyle = 'black';
