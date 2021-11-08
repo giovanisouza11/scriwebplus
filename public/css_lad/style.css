@@ -25,32 +25,16 @@ body {
      	border: 1px solid red;
 	text-align: center;
 }
-.figura1 {
+.rodape {
         position: fixed;
-    	display:block;
-	top:60px;
-	left:165px;
-        width: 70px; 
-        height: 150px;
-        font-size: 20px;
-}
-.figura2 {
-        position: fixed;
-        display:block;
-        top:168px;
-	left:10px;
-	width: 529px; 
-        height: 400px;
-        font-size: 20px;
-}
-.figura3 {
-        position: fixed;
-        display:block;
-        top:348px;
-	left:165px;
-	width: 70px; 
-        height: 150px;
-        font-size: 20px;
+	bottom: 0px;
+	left: 0px;
+	width: 640px;
+	height: 20px;
+	text-align: center;
+	border: 1px solid red;
+	background:khaki;
+        font-size: 13px;
 }
 .divColuna1 {
         position: fixed;
@@ -145,18 +129,6 @@ body {
         text-align: left;
         background:palegreen;
 }	    
-.rodape {
-        position: fixed;
-	bottom: 0px;
-	left: 0px;
-	width: 640px;
-	height: 20px;
-	margin: 0 auto;
-      	text-align: center;
-	border: 1px solid red;
-	background:khaki;
-        font-size: 13px;
-}
 /* The Modal (background) */
 .modal {
 	display: none; /* Hidden by default */
