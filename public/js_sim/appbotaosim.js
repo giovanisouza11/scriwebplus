@@ -112,6 +112,12 @@ function Sim_Botao_Click() {
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Expedicao/Expedicao.csv'>Expedição</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Semaforo/Semaforo.csv'>Semáforo</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Tanque/Tanque.csv'>Tanque</a></p>";
+		modalb1.innerHTML += "<input id="myfiles" multiple type="file">";
+
+
+
+
+
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
 		btn.setAttribute('type','button');
@@ -197,7 +203,7 @@ function Sim_Le_Arquivo(evt) {
 }
 
 function Sim_Le_Arquivo_Nuvem() {
-	//alert("OLA");
+	alert("OLA");
     	var arquivo = 'Alarme';
 	//var file = 'http://scriwebplus.herokuapp.com/ftp/'+arquivo+'/'+arquivo+'.csv';
 	var file = arquivo+'.csv';
@@ -206,3 +212,15 @@ function Sim_Le_Arquivo_Nuvem() {
 	titulo = file.name.slice(0,file.name.length -4);
 	modal1.style.display = "none";
 }
+
+var puxarArquivos = function() {
+    var fileInput = document.querySelector("#myfiles");
+    var files = fileInput.files;
+
+    for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        alert(file.name);
+    }
+}
+// seta o 'onchange' do elemento input para chamar a função puxarArquivos
+document.querySelector("#myfiles").onchange = puxarArquivos;
