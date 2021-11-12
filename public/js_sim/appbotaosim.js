@@ -112,7 +112,7 @@ function Sim_Botao_Click() {
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Expedicao/Expedicao.csv'>Expedição</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Semaforo/Semaforo.csv'>Semáforo</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Tanque/Tanque.csv'>Tanque</a></p>";
-		modalb1.innerHTML += "<input id="myfiles" multiple type="file">"
+		modalb1.innerHTML += "<input id="myfiles" multiple type="file">";
 		modalb1.innerHTML += "<script>";
 		// seta o 'onchange' do elemento input para chamar a função puxarArquivos
 		modalb1.innerHTML += "document.querySelector("#myfiles").onchange = puxarArquivos;";
