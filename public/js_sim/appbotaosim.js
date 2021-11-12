@@ -199,7 +199,8 @@ function Sim_Le_Arquivo(evt) {
 function Sim_Le_Arquivo_Nuvem() {
 	//alert("OLA");
     	var arquivo = 'Alarme';
-	var file = 'http://scriwebplus.herokuapp.com/ftp/'+arquivo+'/'+arquivo+'.csv';
+	//var file = 'http://scriwebplus.herokuapp.com/ftp/'+arquivo+'/'+arquivo+'.csv';
+	var file = '/'+arquivo+'/'+arquivo+'.csv';
 	Sim_Leitor_Arquivo.readAsText(file);
 	Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
 	titulo = file.name.slice(0,file.name.length -4);
