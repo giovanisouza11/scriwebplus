@@ -198,13 +198,23 @@ function Sim_Le_Arquivo(evt) {
 }
 
 function Sim_Le_Arquivo_Nuvem() {
-	alert("OLA");
+	var inputCSV = document.createElement('input');
+	inputCSV.type = 'file';
+	inputCSV.accept = '.CSV';
+	inputCSV.click();
+	inputCSV.onchange = function() {
+		var file = this.files[0];
+		Sim_Leitor_Arquivo.readAsText(file);
+		Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
+		titulo = file.name.slice(0,file.name.length -4);
+	};
+	/*alert("OLA");
     	var arquivo = 'Alarme';
 	//var file = 'http://scriwebplus.herokuapp.com/ftp/'+arquivo+'/'+arquivo+'.csv';
 	var file = arquivo+'.csv';
 	Sim_Leitor_Arquivo.readAsText(file);
 	Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
 	titulo = file.name.slice(0,file.name.length -4);
-	modal1.style.display = "none";
+	modal1.style.display = "none";*/
 }
 
