@@ -201,6 +201,7 @@ function Sim_Le_Arquivo_Nuvem() {
 	var inputCSV = document.createElement('input');
 	inputCSV.type = 'file';
 	inputCSV.accept = '.CSV';
+	inputCSV.href = 'http://scriwebplus.herokuapp.com/ftp/';
 	inputCSV.click();
 	inputCSV.onchange = function() {
 		var file = this.files[0];
