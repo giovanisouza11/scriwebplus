@@ -210,11 +210,11 @@ function Sim_Le_Arquivo_Nuvem() {
 		titulo = file.name.slice(0,file.name.length -4);
 	};*/
 	var arquivo = 'Alarme';
-	var file = this.files[0];
-	file.name = 'http://scriwebplus.herokuapp.com/ftp/'+arquivo+'/'+arquivo+'.csv';
+	//var file = this.files[0];
+	var file = 'http://scriwebplus.herokuapp.com/ftp/'+arquivo+'/'+arquivo+'.csv';
 	alert(arquivo);
     	//var file = arquivo+'.csv';
-	Sim_Leitor_Arquivo.readAsText(inputCSV.value);
+	Sim_Leitor_Arquivo.readAsText(file);
 	alert(arquivo);
 	Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
 	titulo = file.name.slice(0,file.name.length -4);
