@@ -202,7 +202,7 @@ function Sim_Le_Arquivo_Nuvem() {
 	var inputCSV = document.createElement('input');
 	inputCSV.type = 'file';
 	inputCSV.accept = '.CSV';
-	//inputCSV.value = 'http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.csv';
+	inputCSV.value = 'http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.csv';
 	inputCSV.click();
 	inputCSV.onchange = function() {
 		var file = this.files[0];
