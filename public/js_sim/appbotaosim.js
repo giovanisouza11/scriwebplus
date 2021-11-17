@@ -199,18 +199,18 @@ function Sim_Le_Arquivo(evt) {
 }
 
 function Sim_Le_Arquivo_Nuvem() {
-	/*var inputCSV = document.createElement('input');
+	var inputCSV = document.createElement('input');
 	inputCSV.type = 'file';
 	inputCSV.accept = '.CSV';
-	inputCSV.value = 'http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.csv';
+	//inputCSV.value = 'http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.csv';
 	inputCSV.click();
 	inputCSV.onchange = function() {
 		var file = this.files[0];
 		Sim_Leitor_Arquivo.readAsText(file);
 		Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
 		titulo = file.name.slice(0,file.name.length -4);
-	};*/
-	var arquivo = 'Alarme';
+	};
+	/*var arquivo = 'Alarme';
 	//var file = this.files[0];
 	var file = 'http://scriwebplus.herokuapp.com/ftp/'+arquivo+'/'+arquivo+'.csv';
 	alert(arquivo);
@@ -219,6 +219,6 @@ function Sim_Le_Arquivo_Nuvem() {
 	alert(arquivo);
 	Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
 	titulo = file.name.slice(0,file.name.length -4);
-	modal1.style.display = "none";
+	modal1.style.display = "none";*/
 }
 
