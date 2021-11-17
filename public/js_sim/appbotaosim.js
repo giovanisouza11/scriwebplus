@@ -99,7 +99,9 @@ function Sim_Botao_Click() {
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
 		modalb1.innerHTML = "<p><button onclick='Sim_Le_Arquivo_Nuvem()'>Alarmes</button></p>";
-		modalb1.innerHTML += "<p><a href='javascript:Sim_Le_Arquivo_Nuvem();'>Alarmes</a></p>"
+		modalb1.innerHTML += "<p><input type='file' id='files' name='files[]' multiple /></p>";
+		modalb1.innerHTML += "<p><output id='list'></output></p>";
+		//modalb1.innerHTML += "<p><a href='javascript:Sim_Le_Arquivo_Nuvem();'>Alarmes</a></p>"
 		//modalb1.innerHTML = "<p><a href='http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Caldeira/Caldeira.csv'>Caldeira</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Cascata/Cascata.csv'>Cascata de Motores</a></p>";
@@ -186,7 +188,7 @@ function Sim_Botao_Click() {
 //Fonte https://tableless.com.br/file-api-trabalhando-com-arquivos-locais-usando-javascript/
 var Sim_Leitor_Arquivo = new FileReader();
 Sim_Leitor_Arquivo.addEventListener('load', Sim_Le_Arquivo);
-
+document.getElementById('files').addEventListener('change', handleFileSelect, false);
 
 function pegaCSV(inputFile) {
 	var file = inputFile.files[0];
@@ -221,4 +223,31 @@ function Sim_Le_Arquivo_Nuvem() {
 	titulo = file.name.slice(0,file.name.length -4);
 	modal1.style.display = "none";*/
 }
+function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
 
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          var span = document.createElement('span');
+          span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>'].join('');
+          document.getElementById('list').insertBefore(span, null);
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+}
