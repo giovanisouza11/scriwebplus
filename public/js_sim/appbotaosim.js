@@ -99,7 +99,7 @@ function Sim_Botao_Click() {
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
 		modalb1.innerHTML = "<p><button onclick='Sim_Le_Arquivo_Nuvem()'>Alarmes</button></p>";
-		modalb1.innerHTML += "<p><a href="javascript:Sim_Le_Arquivo_Nuvem();">Alarmes</a></p>
+		modalb1.innerHTML += "<p><a href='javascript:Sim_Le_Arquivo_Nuvem();'>Alarmes</a></p>"
 		//modalb1.innerHTML = "<p><a href='http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Caldeira/Caldeira.csv'>Caldeira</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Cascata/Cascata.csv'>Cascata de Motores</a></p>";
