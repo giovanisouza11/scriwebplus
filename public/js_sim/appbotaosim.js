@@ -195,6 +195,8 @@ Sim_Leitor_Arquivo.addEventListener('load', Sim_Le_Arquivo);
 function pegaCSV(inputFile) {
 	var file = inputFile.files[0];
 	Sim_Leitor_Arquivo.readAsText(file);
+	Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
+	titulo = file.name.slice(0,file.name.length -4);
 }
 
 function Sim_Le_Arquivo(evt) {
