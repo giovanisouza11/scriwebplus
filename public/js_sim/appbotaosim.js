@@ -202,14 +202,14 @@ function Sim_Le_Arquivo(evt) {
 	Sim_Draw_Processo(fileArr);
 }
 
-function Sim_Le_Arquivo_Nuvem() {
+function Sim_Le_Arquivo_Nuvem(inputfile) {
 	/*var inputCSV = document.createElement('input');
 	inputCSV.type = 'file';
 	inputCSV.accept = '.CSV';
 	inputCSV.value = 'http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.csv';
 	inputCSV.click();
 	inputCSV.onchange = function() { */
-		var file = this.files[0];
+		var file = inputfile[0];
 		Sim_Leitor_Arquivo.readAsText(file);
 		Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
 		titulo = file.name.slice(0,file.name.length -4);
