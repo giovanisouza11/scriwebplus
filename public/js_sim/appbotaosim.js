@@ -99,7 +99,7 @@ function Sim_Botao_Click() {
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
 		modalb1.innerHTML = "<p><button onclick='Sim_Le_Arquivo_Nuvem()'>Alarmes</button></p>";
-		modalb1.innerHTML += "<p><input type='file' id='files' name='files[]' /></p>";
+		modalb1.innerHTML += "<p><input type='file' id='files' onchange='Sim_Le_Arquivo_Nuvem(this.file)' /></p>";
 		//modalb1.innerHTML += "<p><output id='list'></output></p>";
 		//modalb1.innerHTML += "<p><a href='javascript:Sim_Le_Arquivo_Nuvem();'>Alarmes</a></p>"
 		//modalb1.innerHTML = "<p><a href='http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
@@ -115,7 +115,7 @@ function Sim_Botao_Click() {
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Expedicao/Expedicao.csv'>Expedição</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Semaforo/Semaforo.csv'>Semáforo</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Tanque/Tanque.csv'>Tanque</a></p>";
-		modalb1.innerHTML += "<script>document.getElementById('files').addEventListener('change', Sim_Le_Arquivo_Nuvem, false);</script>";
+		//modalb1.innerHTML += "<script>document.getElementById('files').addEventListener('change', Sim_Le_Arquivo_Nuvem, false);</script>";
 
 		
 		// Create <OK> element that closes the modal
