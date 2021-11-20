@@ -100,6 +100,8 @@ function Sim_Botao_Click() {
 		var modalb1 = document.getElementById("myBody1");
 		modalb1.innerHTML = "<p><button onclick='Sim_Le_Arquivo_Nuvem()'>Alarmes</button></p>";
 		modalb1.innerHTML += "<p><input type='file' id='files' onchange='pegaCSV(this)' /></p>";
+		modalb1.innerHTML += "<script> $(t_modal).ready(function() {$('input[type="file"]').change(function(e) {var geekss = e.target.files[0].name;
+                alert('arquivo'); }); }); </script>"
 		//modalb1.innerHTML += "<p><output id='list'></output></p>";
 		//modalb1.innerHTML += "<p><a href='javascript:Sim_Le_Arquivo_Nuvem();'>Alarmes</a></p>"
 		//modalb1.innerHTML = "<p><a href='http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
