@@ -115,6 +115,8 @@ function Sim_Botao_Click() {
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Expedicao/Expedicao.csv'>Expedição</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Semaforo/Semaforo.csv'>Semáforo</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Tanque/Tanque.csv'>Tanque</a></p>";
+		modalb1.innerHTML += "<script>document.getElementById('files').addEventListener('change', Sim_Le_Arquivo_Nuvem, false);</script>";
+
 		
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
@@ -188,7 +190,7 @@ function Sim_Botao_Click() {
 //Fonte https://tableless.com.br/file-api-trabalhando-com-arquivos-locais-usando-javascript/
 var Sim_Leitor_Arquivo = new FileReader();
 Sim_Leitor_Arquivo.addEventListener('load', Sim_Le_Arquivo);
-document.getElementById('files').addEventListener('change', Sim_Le_Arquivo_Nuvem, false);
+//document.getElementById('files').addEventListener('change', Sim_Le_Arquivo_Nuvem, false);
 
 function pegaCSV(inputFile) {
 	var file = inputFile.files[0];
