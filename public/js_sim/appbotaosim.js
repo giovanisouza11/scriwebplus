@@ -213,6 +213,7 @@ function Sim_Le_Arquivo_Nuvem() {
 		Sim_Leitor_Arquivo.readAsText(file);
 		Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
 		titulo = file.name.slice(0,file.name.length -4);
+		alert(titulo);
 	/*};
 	var arquivo = 'Alarme';
 	//var file = this.files[0];
