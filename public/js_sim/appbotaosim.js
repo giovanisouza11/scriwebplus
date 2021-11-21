@@ -88,13 +88,14 @@ function Sim_Botao_Click() {
 		var zip = new JSZip();
 		var img = zip.folder(titulo);
 		zip.folder("file:///c:/scriweb/simulador/elevador").forEach(function (relativePath, file){
-    			img.file(file.name, file.target.result);
+    			//img.file(file.name, file.target.result);
+			log(relativePath);
 		});
 		var aux_titulo = titulo+".csv";
 		img.file(aux_titulo, texto);
 		aux_titulo = titulo+".zip";
 		zip.generateAsync({type:"blob"}).then(function(content) {
-    			saveAs(content, );
+    			saveAs(content, aux_titulo);
 		});
         }
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[5]==1){
