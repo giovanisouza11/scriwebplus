@@ -83,11 +83,11 @@ function Sim_Botao_Click() {
 
         	//let titulo ='SimScriWeb';
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
-		var titulo = new JSZip();
-		titulo.file(titulo+".csv", blob);
-		//var img = zip.folder("images");
-		//img.file("smile.gif", imgData, {base64: true});
-		titulo.generateAsync({type:"blob"}).then(function(content) {
+		var zip = new JSZip();
+		//titulo.file(titulo+".csv", texto);
+		var img = zip.folder(titulo);
+		img.file(titulo+".csv", texto);
+		zip.generateAsync({type:"blob"}).then(function(content) {
     			// see FileSaver.js
     			saveAs(content, titulo+".zip");
 		});
