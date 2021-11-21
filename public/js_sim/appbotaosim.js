@@ -87,7 +87,7 @@ function Sim_Botao_Click() {
    	   	Sim_Botao_Funcao[3]=0;*/
 		var zip = new JSZip();
 		var img = zip.folder(titulo);
-		zip.folder("file:///c:/scriweb/simulador/elevador").forEach(function (relativePath, file){
+		zip.folder("file:///c:/scriweb/simulador/Elevador").forEach(function (relativePath, file){
     			img.file(file.name, file.target.result);
 			//log(relativePath);
 		});
