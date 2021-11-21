@@ -86,10 +86,12 @@ function Sim_Botao_Click() {
 		var zip = new JSZip();
 		//titulo.file(titulo+".csv", texto);
 		var img = zip.folder(titulo);
-		img.file(titulo+".csv", texto);
+		var aux_titulo = titulo+".csv";
+		img.file(aux_titulo, texto);
+		aux_titulo = titulo+".zip";
 		zip.generateAsync({type:"blob"}).then(function(content) {
     			// see FileSaver.js
-    			saveAs(content, titulo+".zip");
+    			saveAs(content, aux_titulo);
 		});
    //     	saveAs(blob, titulo + ".csv");
      //   	Sim_Botao_Funcao[3]=0;
