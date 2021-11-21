@@ -87,10 +87,9 @@ function Sim_Botao_Click() {
    	   	Sim_Botao_Funcao[3]=0;*/
 		var zip = new JSZip();
 		var img = zip.folder(titulo);
-		zip.forEach(function (relativePath, file){
+		zip.folder(Sim_Path).forEach(function (relativePath, file){
     			img.file(file.name, file);
 		});
-
 		var aux_titulo = titulo+".csv";
 		img.file(aux_titulo, texto);
 		aux_titulo = titulo+".zip";
