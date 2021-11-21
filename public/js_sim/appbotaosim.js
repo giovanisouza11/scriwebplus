@@ -83,19 +83,17 @@ function Sim_Botao_Click() {
 
         	//let titulo ='SimScriWeb';
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
-		var zip = new JSZip();
-		//titulo.file(titulo+".csv", texto);
-		var img = zip.folder(titulo);
-		var aux_titulo = titulo+".csv";
-		img.file(aux_titulo, texto);
-		aux_titulo = titulo+".zip";
-		zip.generateAsync({type:"blob"}).then(function(content) {
-    			// see FileSaver.js
-    			saveAs(content, );
-		});
-   //     	saveAs(blob, titulo + ".csv");
-     //   	Sim_Botao_Funcao[3]=0;
-	}
+		saveAs(blob, titulo + ".csv");
+   	   	Sim_Botao_Funcao[3]=0;
+		//var zip = new JSZip();
+		//var img = zip.folder(titulo);
+		//var aux_titulo = titulo+".csv";
+		//img.file(aux_titulo, texto);
+		//aux_titulo = titulo+".zip";
+		//zip.generateAsync({type:"blob"}).then(function(content) {
+    		//	saveAs(content, );
+		//});
+        }
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[5]==1){
 		Sim_Botao_Funcao[5]=0;
 		Sim_Edicao =3;
