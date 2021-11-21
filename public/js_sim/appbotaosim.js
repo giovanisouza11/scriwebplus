@@ -91,7 +91,7 @@ function Sim_Botao_Click() {
 		aux_titulo = titulo+".zip";
 		zip.generateAsync({type:"blob"}).then(function(content) {
     			// see FileSaver.js
-    			saveAs(content, aux_titulo);
+    			saveAs(content, );
 		});
    //     	saveAs(blob, titulo + ".csv");
      //   	Sim_Botao_Funcao[3]=0;
