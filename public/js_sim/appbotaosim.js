@@ -90,7 +90,7 @@ function Sim_Botao_Click() {
 		//zip.folder.(Sim_Path)
 		zip.folder(img).forEach(function (relativePath, file){
     			img.file(file.name, file.target.result);
-			//log(relativePath);
+			alert(relativePath+' '+file.name);
 		});
 		var aux_titulo = titulo+".csv";
 		img.file(aux_titulo, texto);
