@@ -83,7 +83,7 @@ function Sim_Botao_Click() {
 
         	//let titulo ='SimScriWeb';
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
-		saveAs(blob, titulo + ".csv");
+		saveAs(blob, titulo + ".csv", popup);
    	   	Sim_Botao_Funcao[3]=0;
 		/*var zip = new JSZip();
 		var img = zip.folder(titulo);
