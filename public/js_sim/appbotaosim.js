@@ -94,8 +94,9 @@ function Sim_Botao_Click() {
 		});
 		var aux_titulo = titulo+".csv";
 		img.file(aux_titulo, texto);
-		for( var aux1= 0; aux1 < Imagens.length; aux1++)
-			img.file(Imagens[aux1].name, Imagens[aux1]); 
+		for (var aux1= 0; aux1 < Imagens.length; aux1++)
+		{    img.file(Imagens[aux1]); 
+		}
 		aux_titulo = titulo+".zip";
 		zip.generateAsync({type:"blob"}).then(function(content) {
     			saveAs(content, aux_titulo);
