@@ -82,13 +82,13 @@ function Sim_Botao_Click() {
 		}
 
         	//let titulo ='SimScriWeb';
-        	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
-		/*saveAs(blob, titulo + ".csv");
+        	/*var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
+		saveAs(blob, titulo + ".csv");
    	   	Sim_Botao_Funcao[3]=0;*/
 		var zip = new JSZip();
 		var img = zip.folder(titulo);
 		//zip.folder.(Sim_Path)
-		zip.folder(img).forEach(function ("file:///E:\scriweb\simulador\Elevador", file){
+		zip.folder(img).forEach(function (relativePath, file){
     			img.file(file.name, file.target.result);
 			//log(relativePath);
 		});
