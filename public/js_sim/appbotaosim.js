@@ -96,7 +96,7 @@ function Sim_Botao_Click() {
 		var aux_titulo = titulo+".csv";
 		img.file(aux_titulo, texto);
 		for (var aux1= 0; aux1 < Imagens.length; aux1++)
-		{    img.file(aux1, Imagens[aux1]); 
+		{    img.file(Sim_Path + ArrayImagens[ArrayObjDinamic[(aux1)*10+5]] + Extensao[ArrayObjDinamic[(aux1)*10+1]] + '.png', Imagens[aux1]); 
 		}
 		
 		aux_titulo = titulo+".zip";
