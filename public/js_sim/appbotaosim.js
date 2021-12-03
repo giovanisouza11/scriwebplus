@@ -51,7 +51,7 @@ function Sim_Botao_Click() {
         	var inputCSV = document.createElement('input');
 	 	inputCSV.type = 'file';
 		inputCSV.accept = '.CSV';
-		inputCSV.value = 'scriweb/semaforo/semaforo.csv';
+		//inputCSV.value = 'scriweb/semaforo/semaforo.csv';
 		inputCSV.click();
 		inputCSV.onchange = function() {
 	    		var file = this.files[0];
