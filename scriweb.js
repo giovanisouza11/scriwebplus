@@ -5,12 +5,12 @@
 //Iniciando servidor HTTP
 //-----------------------------------------
   	const PORT = process.env.PORT || 4333;	
-    	var path = require('path');
+    	//var path = require('path');
     	var express = require('express');
     	var app = express();
     	var router = express.Router();
     	var server = require('http').Server(app);
-    	var io = require('socket.io')(server);
+    	//var io = require('socket.io')(server);
 
     	app.use(express.static(__dirname + '/public'));
 	app.use('/ftp', express.static(__dirname + '/scriweb/simulacao'));
