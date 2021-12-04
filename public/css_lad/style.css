@@ -115,6 +115,14 @@ body {
         text-align: left;
 	background:palegreen;
 }
+.divColuna8 {
+	position: absolute;
+        left: 651px;
+        width: 600px; 
+        height: 2000px;
+        text-align: left;
+	background:palegreen;
+}
 .divColuna4 {
         display: none;
 	position: relative;
