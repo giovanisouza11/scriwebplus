@@ -9,7 +9,7 @@ let titulo_sfc = 'ScriSfc';
 function draw_botoes_sfc() {
         canvasSfc1 = document.getElementById("tela_sfc");
 	contextSfc1 = canvasSfc1.getContext("2d");
-        canvasSfc1.width = 220;
+        canvasSfc1.width = 140;
         canvasSfc1.height = 500;
 
 	for(i=1; i<11; i++)
