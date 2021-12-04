@@ -4,7 +4,7 @@ function ladder_simulador(){
 	var ladder = document.getElementById('idLadder');
 	var simul = document.getElementById('idSimul');
 	var sfc = document.getElementById('idSfcBotoes');
-	var botoes = document.getElementById('idBotoes');
+	var botoes = document.getElementById('Botoes');
 	var div3 = document.getElementById('idCLP');
 	var div8 = document.getElementById('idSFC');
 	if (simul.style.display === "block") {
