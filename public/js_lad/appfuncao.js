@@ -23,8 +23,8 @@ function ladder_simulador(){
 			sfc.style.display = "none";
 			simul.style.display = "block";
 			Sim_Draw_Botoes();
-			div3.style.display = "none";
-			div8.style.display = "block";
+			div3.style.display = "block";
+			div8.style.display = "none";
 			Tela_Eletrico_Simulador = 1;
 		}
 		else{
