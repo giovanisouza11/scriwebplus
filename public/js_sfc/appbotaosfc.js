@@ -1,166 +1,50 @@
-var AImageB = new Image();
-AImageB.src = "/img_sfc/botoes_sfc.png";
-var canvas1;
-var context1;
-var valor_chave = new Array(31);
-let titulo_lad = 'Scriweb';
+var AImageSfc = new Image();
+AImageSfc.src = "/img_sfc/botoes_sfc.png";
+var canvasSfc1;
+var contextSfc1;
+var valor_chave_sfc = new Array(21);
+let titulo_sfc = 'ScriSfc';
 
 //desenha os botoes
-function draw_botoes() {
-        canvas1 = document.getElementById("tela2");
-	context1 = canvas1.getContext("2d");
-        canvas1.width = 220;
-        canvas1.height = 500;
+function draw_botoes_sfc() {
+        canvasSfc1 = document.getElementById("tela2");
+	contextSfc1 = canvasSfc1.getContext("2d");
+        canvasSfc1.width = 220;
+        canvasSfc1.height = 500;
 
 	for(i=1; i<11; i++)
-                context1.drawImage(AImageB, 70*valor_chave[i], 45*(i-1), 70, 45, 7,(i-1)*47, 70, 45);
+                contextSfc1.drawImage(AImageSfc, 70*valor_chave_sfc[i], 45*(i-1), 70, 45, 7,(i-1)*47, 70, 45);
     	for(i=11; i<21; i++)
-                context1.drawImage(AImageB, 140+(70*valor_chave[i]), 45*(i-11), 70, 45, 79,(i-11)*47, 70, 45);
- 	for(i=21; i<31; i++)
-                context1.drawImage(AImageB, 280+(70*valor_chave[i]), 45*(i-21), 70, 45, 151,(i-21)*47, 70, 45);
+                contextSfc1.drawImage(AImageSfc, 140+(70*valor_chave_sfc[i]), 45*(i-11), 70, 45, 79,(i-11)*47, 70, 45);
 }
 
 //Verifica QUAL botao foi acionado
-//Separa em tres grupos: 0 a 10: comandos do software, 11 a 20: edicao do ladder, 21 a 30: funcoes do ladder
-function trocar_botao() {
-	var posicaoy= parseInt((window.event.clientY-1)/47);
-	var posicaox = parseInt((window.event.clientX-425)/72);
-	if (posicaox == 1)
-		posicaoy = posicaoy + 10;
-	if (posicaox == 2)
-		posicaoy = posicaoy + 20;
-
-	//document.getElementById("Horario_Conexao").innerHTML = posicaoy;
-	if ((posicaoy >=0) && (posicaoy < 31))
+//Separa em dois grupos: 0 a 10: comandos do software, 11 a 20: edicao do SFC
+function trocar_botao_sfc() {
+	var posicaoysfc = parseInt((window.event.clientY-1)/47);
+	var posicaoxsfc = parseInt((window.event.clientX-425)/72);
+	if (posicaoxsfc == 1)
+		posicaoysfc = posicaoy + 10;
+	if ((posicaoysfc >=0) && (posicaoysfc < 21))
 	{
-		for(var i=11; i<31; i++)
-			valor_chave[i] = 0;
-		if((posicaoy >=3) && (posicaoy < 8))
+		for(var i=11; i<21; i++)
+			valor_chave_sfc[i] = 0;
+		if((posicaoysfc >=3) && (posicaoysfc < 8))
 			for(var i=2; i<8; i++)
-				valor_chave[i] = 0;
+				valor_chave_sfc[i] = 0;
 
-		valor_chave[posicaoy]=1;
-		draw_botoes();
+		valor_chave_sfc[posicaoysfc]=1;
+		draw_botoes_sfc();
 	}
-	if (valor_chave[20]==1){
-		// Get the modal
-		var modal = document.getElementById("myModal");
-		var modalb = document.getElementById("myBody");
-		var t_modal = modal.getElementsByTagName("h2")
-		t_modal[0].innerHTML = "Apagar";
-		modalb.innerHTML = "<p>Origem <input type=text id='input1' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Quantidade<input type=text id='input2' maxlength=3 size=3></p>"; 
-		var btn = document.createElement('button');
-		btn.setAttribute('type','button')
-		btn.appendChild(document.createTextNode('OK'));
-		btn.onclick = function() {
-			funAIM(document.getElementById('input1').value + ','+document.getElementById('input2').value +',0');
-			modal.style.display = "none";
-		};
-		modalb.appendChild(btn);
-		var span = document.getElementById("close2");
-		modal.style.display = "block";
-		span.onclick = function() {
-			modal.style.display = "none";
-		};
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
+	if (valor_chave_sfc[10]==1){
+        	window.open("About", "SCriWeb");//, "height=600,width=600");
+	    	valor_chave_sfc[10]=0;
 	}
-	if (valor_chave[19]==1){
-		var modal = document.getElementById("myModal");
-		var modalb = document.getElementById("myBody");
-		var t_modal = modal.getElementsByTagName("h2")
-		t_modal[0].innerHTML = "Mover";
-		modalb.innerHTML = "<p>Origem <input type=text id='input1' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Quantidade<input type=text id='input2' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Destino<input type=text id='input3' maxlength=3 size=3></p>"; 
-		var btn = document.createElement('button');
-		btn.setAttribute('type','button')
-		btn.appendChild(document.createTextNode('OK'));
-		btn.onclick = function() {
-			funAIM(document.getElementById('input1').value + ','+document.getElementById('input2').value +','+document.getElementById('input3').value);
-			modal.style.display = "none";
-		};
-		modalb.appendChild(btn);
-		var span = document.getElementById("close2");
-		modal.style.display = "block";
-		span.onclick = function() {
-			modal.style.display = "none";
-		};
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
+	if (valor_chave_sfc[9]==1){
+        	window.open("Help", "SCriWeb");//, "height=800,width=1000");
+	    	valor_chave_sfc[9]=0;
 	}
-	if (valor_chave[18]==1){
-		var modal = document.getElementById("myModal");
-		var modalb = document.getElementById("myBody");
-		var t_modal = modal.getElementsByTagName("h2")
-		t_modal[0].innerHTML = "Copiar";
-		modalb.innerHTML = "<p>Origem <input type=text id='input1' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Quantidade<input type=text id='input2' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Destino<input type=text id='input3' maxlength=3 size=3></p>"; 
-		var btn = document.createElement('button');
-		btn.setAttribute('type','button')
-		btn.appendChild(document.createTextNode('OK'));
-		btn.onclick = function() {
-			funAIM(document.getElementById('input1').value + ','+document.getElementById('input2').value +','+document.getElementById('input3').value);
-			modal.style.display = "none";
-		};
-		modalb.appendChild(btn);
-		var span = document.getElementById("close2");
-		modal.style.display = "block";
-		span.onclick = function() {
-			modal.style.display = "none";
-		};
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
-
-	}
-	if (valor_chave[17]==1){
-		var modal = document.getElementById("myModal");
-		var modalb = document.getElementById("myBody");
-		var t_modal = modal.getElementsByTagName("h2")
-		t_modal[0].innerHTML = "Inserir";
-		modalb.innerHTML = "<p>Origem <input type=text id='input1' maxlength=3 size=3></p>"; 
-		modalb.innerHTML = modalb.innerHTML+ "<p>Quantidade<input type=text id='input2' maxlength=3 size=3></p>"; 
-		var btn = document.createElement('button');
-		btn.setAttribute('type','button')
-		btn.appendChild(document.createTextNode('OK'));
-		btn.onclick = function() {
-			funAIM(document.getElementById('input1').value + ','+document.getElementById('input2').value +',0');
-			modal.style.display = "none";
-		};
-		modalb.appendChild(btn);
-		var span = document.getElementById("close2");
-		modal.style.display = "block";
-		span.onclick = function() {
-			modal.style.display = "none";
-		};
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
-
-	}
-
-	if (valor_chave[10]==1){
-        window.open("About", "SCriWeb");//, "height=600,width=600");
-	    valor_chave[10]=0;
-	}
-	if (valor_chave[9]==1){
-        window.open("Help", "SCriWeb");//, "height=800,width=1000");
-	    valor_chave[9]=0;
-	}
-	if (valor_chave[8]==1){
+	if (valor_chave_sfc[8]==1){
          	var modal = document.getElementById("myModal");
 		var modalb = document.getElementById("myBody");
 		var t_modal = modal.getElementsByTagName("h2")
@@ -196,9 +80,9 @@ function trocar_botao() {
 			}
 		}
 	
-	   valor_chave[8]=0;
+	   valor_chave_sfc[8]=0;
 	}
-	if (valor_chave[1]==1){
+	if (valor_chave_sfc[1]==1){
         	var inputCSV = document.createElement('input');
 		inputCSV.type = 'file';
 		inputCSV.accept = '.CSV';
@@ -206,23 +90,23 @@ function trocar_botao() {
 		inputCSV.onchange = function() {
 			//inputCSV.setPropertie('accept', '.csv');
 			var file = this.files[0];
-		    	leitorDeCSV1.readAsText(file);
-			titulo_lad = file.name.slice(0,file.name.length -4);
+		    	leitorDeSfc.readAsText(file);
+			titulo_sfc = file.name.slice(0,file.name.length -4);
 		};
-		valor_chave[1]=0;
-		valor_chave[4]==0;
-		valor_chave[5]==0;
-		valor_chave[6]==0;
-		valor_chave[7]==1;
+		valor_chave_sfc[1]=0;
+		valor_chave_sfc[4]==0;
+		valor_chave_sfc[5]==0;
+		valor_chave_sfc[6]==0;
+		valor_chave_sfc[7]==1;
 	}
-	if (valor_chave[2]==1){
+	if (valor_chave_sfc[2]==1){
 	    let texto = '_id, nomecep, var_1, tipo, var_2, ver, R-W, pisca, funcao' + '\n';
 	    for (var i=0; i<(larray.length/9); i++) {
 			for (var j=0; j<9; j++)
 			    texto += larray[(i*9)+j]+',';
 			texto += '\n';
 		}
-		compila_ladder();
+		compila_sfc();
 		//texto += '\n\n';
 		//for (var i=0; i<(booleano.length); i++) {
 			//for (var j=0; j<2; j++)
@@ -230,11 +114,11 @@ function trocar_botao() {
 		//}
         //let titulo ='scriweb';
         var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
-        saveAs(blob, titulo_lad + ".csv");
-        valor_chave[2]=0;
+        saveAs(blob, titulo_sfc + ".csv");
+        valor_chave_sfc[2]=0;
 	}
-	if (valor_chave[3]==1){
-		compila_ladder();
+	if (valor_chave_sfc[3]==1){
+		compila_sfc();
 		//let texto = '';
 		//for (var i=0; i<(booleano.length); i++) {
 			//for (var j=0; j<2; j++)
@@ -246,22 +130,22 @@ function trocar_botao() {
 		clp_cria_memoria();
 		//alert(clp_programa);
 		I = clpI;
-		valor_chave[3]=0;
-		valor_chave[7]=1;
+		valor_chave_sfc[3]=0;
+		valor_chave_sfc[7]=1;
 	}
 
-	if (valor_chave[4]==1){
+	if (valor_chave_sfc[4]==1){
 		comandos = 1;
 		run_CLP();
 		clp_comandos = 1;
 	}
-	if (valor_chave[5]==1){
+	if (valor_chave_sfc[5]==1){
 		run_CLP();
 		comandos = 2;
 		clp_comandos = 2;
 		//valor_chave[5]=0;
 	}
-	if (valor_chave[6]==1){
+	if (valor_chave_sfc[6]==1){
 		run_CLP();
 		if (comandos == 3)
 			clp_comandos = 4;
@@ -271,55 +155,28 @@ function trocar_botao() {
 		}
 		//valor_chave[6]=0;
 	}
-	if (valor_chave[7]==1){
+	if (valor_chave_sfc[7]==1){
 		comandos = 0;
 		stop_CLP();
 		monitora_ladder(larray);
 		clp_comandos = 0;
 		//socket.emit('comandosx', 0+ ','+  num_clp);
 	}
-	if (valor_chave[16]==1){
-	//	if (window.File && window.FileReader && window.FileList && window.Blob) {
-        //        	alert("botao 16");
-	//		var inputCSV = document.createElement('input');
-	//      		inputCSV.type = 'file';
-	//		inputCSV.click();
-	//		inputCSV.onchange = function() {
-	//	    		//var fileExtension = /text.*/;
-        //          		var fileTobeRead = fileSelected.files[0];
-        //            		if (fileTobeRead.type.match(fileExtension)) {
-        //                		var fileReader = new FileReader();
-        //                		fileReader.onload = function (e) {
-        //                    			var fileContents = document.getElementById('filecontents');
-        //                    			fileContents.innerText = fileReader.result;
-        //                		}
-        //                		fileReader.readAsText(fileTobeRead);
-        //            		}
-        //            		else {
-        //                		alert("Por favor selecione arquivo texto");
-        //            		}
-	//                }; 
-        //    }
-        //    else {
-        //       	alert("Arquivo(s) não suportado(s)");
-        //    } 
- 	}
 }
 
 
 //leitura de arquivos
 //Fonte https://tableless.com.br/file-api-trabalhando-com-arquivos-locais-usando-javascript/
 var leitorDeCSV1 = new FileReader();
-leitorDeCSV1.addEventListener('load', leCSV1);
+leitorDeSfc.addEventListener('load', leSfc);
 
 
-function pegaCSV1(inputFile) {
+function pegaSfc(inputFile) {
 	var file = inputFile.files[0];
-	leitorDeCSV1.readAsText(file);
+	leitorDeSfc.readAsText(file);
 }
 
-function leCSV1(evt) {
+function leSfc(evt) {
 	var fileArr = evt.target.result.split('\n');
-	
-//document.getElementById("rodape1").innerHTML = fileArr;
-	draw_ladder(fileArr);
+	draw_sfc(fileArr);
+}
