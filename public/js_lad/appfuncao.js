@@ -31,7 +31,7 @@ function ladder_simulador(){
 			Tela_Eletrico_Simulador = 1;
 		}
 		else{
-			ladder.style.display = "none";
+			ladder.style.display = "block";
 			simul.style.display = "none";
 			sfc.style.display = "block";
 			div3.style.display = "none";
