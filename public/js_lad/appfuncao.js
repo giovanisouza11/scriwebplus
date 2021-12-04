@@ -33,7 +33,7 @@ function ladder_simulador(){
 			sfc.style.display = "block";
 			div3.style.display = "none";
 			div8.style.display = "block";
-			Draw_Botoes_Sfc();
+			draw_botoes_sfc();
 			//Tela_Eletrico_Simulador = 2;
 		}
 	}
