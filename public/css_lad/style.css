@@ -99,7 +99,14 @@ body {
 	left: 0px;
 	text-align: left;
 }
-
+.classSfc {
+	position: fixed;
+       	width: 120px;
+	height: 550px;
+       	top: 45px;
+	left: 485px;
+	text-align: left;
+}
 .divColuna3 {
 	position: absolute;
         left: 651px;
