@@ -3,9 +3,9 @@ var Tela_Eletrico_Simulador =0;
 function ladder_simulador(){
 	var ladder = document.getElementById('idLadder');
 	var simul = document.getElementById('idSimul');
-	var sfc = document.getElementById('idSfc');
-	var div3 = document.getElementById('iddiv3');
-	var div8 = document.getElementById('iddiv8');
+	var sfc = document.getElementById('idSfcBotoes');
+	var div3 = document.getElementById('idCLP');
+	var div8 = document.getElementById('idSFC');
 	if (simul.style.display === "block") {
 		ladder.style.display = "block";
 		simul.style.display = "none";
