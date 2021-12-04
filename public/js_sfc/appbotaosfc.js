@@ -12,10 +12,16 @@ function draw_botoes_sfc() {
         canvasSfc1.width = 160;
         canvasSfc1.height = 500;
 
-	for(i=1; i<11; i++)
+	for(i=1; i<11; i++){
+		if (valor_chave_sfc[i] === undefined)
+			valor_chave_sfc[i] = 0;
                 contextSfc1.drawImage(AImageSfc, 70*valor_chave_sfc[i], 45*(i-1), 70, 45, 7,(i-1)*47, 70, 45);
-    	for(i=11; i<21; i++)
+	}
+    	for(i=11; i<21; i++){
+		if (valor_chave_sfc[i] === undefined)
+			valor_chave_sfc[i] = 0;
                 contextSfc1.drawImage(AImageSfc, 140+(70*valor_chave_sfc[i]), 45*(i-11), 70, 45, 79,(i-11)*47, 70, 45);
+	}
 }
 
 //Verifica QUAL botao foi acionado
