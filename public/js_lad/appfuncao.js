@@ -3,7 +3,7 @@ var Tela_Eletrico_Simulador =0;
 function ladder_simulador(){
 	var ladder = document.getElementById('idLadder');
 	var simul = document.getElementById('idSimul');
-	var sfc = document.getElementById('idSfc');
+	var sfc = document.getElementById('idBotoes_Sfc');
 	if (simul.style.display === "block") {
 		ladder.style.display = "block";
 		simul.style.display = "none";
