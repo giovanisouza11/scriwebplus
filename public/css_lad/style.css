@@ -102,11 +102,12 @@ body {
 .classSfc {
 	display: none;
 	position: fixed;
-       	width: 120px;
-	height: 550px;
-       	top: 45px;
-	left: 485px;
+	left: 425px;
+        width: 150px; 
+        top: 45px;
+	height: 500px;
 	text-align: left;
+	background:palegreen;
 }
 .divColuna3 {
 	position: absolute;
