@@ -28,7 +28,7 @@ function draw_botoes_sfc() {
 //Separa em dois grupos: 0 a 10: comandos do software, 11 a 20: edicao do SFC
 function trocar_botao_sfc() {
 	var posicaoysfc = parseInt((window.event.clientY-1)/47);
-	var posicaoxsfc = parseInt((window.event.clientX-425)/72);
+	var posicaoxsfc = parseInt((window.event.clientX-460)/72);
 	if (posicaoxsfc == 1)
 		posicaoysfc = posicaoy + 10;
 	if ((posicaoysfc >=0) && (posicaoysfc < 21))
