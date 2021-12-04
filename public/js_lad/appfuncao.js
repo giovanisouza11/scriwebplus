@@ -3,19 +3,31 @@ var Tela_Eletrico_Simulador =0;
 function ladder_simulador(){
 	var ladder = document.getElementById('idLadder');
 	var simul = document.getElementById('idSimul');
+	var sfc = document.getElementById('idSfc');
 	if (simul.style.display === "block") {
 		ladder.style.display = "block";
 		simul.style.display = "none";
+		sfc.style.display = "none";
 		//draw_eletrico();
     		//draw_botoes();
 		Atualiza_Chaves();
 		Tela_Eletrico_Simulador = 0;
 	}
 	else {
-		ladder.style.display = "none";
-		simul.style.display = "block";
-		Sim_Draw_Botoes();
-		Tela_Eletrico_Simulador = 1;
+		if (sfc.style.display === "block") {
+			ladder.style.display = "none";
+			sfc.style.display = "none";
+			simul.style.display = "block";
+			Sim_Draw_Botoes();
+			Tela_Eletrico_Simulador = 1;
+		}
+		else{
+			ladder.style.display = "none";
+			simul.style.display = "none";
+			sfc.style.display = "block";
+			//Sim_Draw_Botoes();
+			//Tela_Eletrico_Simulador = 2;
+		}
 	}
 }
 
