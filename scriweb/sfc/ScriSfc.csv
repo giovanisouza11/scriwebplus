@@ -1,0 +1,10 @@
+_id, numero, acao1, acao2, acao3, acao4, acao6, acao6, acao7, acao8, acao9, acao10, transicao1, transicao2, transicao3, transicao4, tnasicao,5,transicao6,transicao7, transicao8, memoria, posicaoX,posicaoY
+1,0,Q0.1=0,Q0.2=0,,,,,,,,1,2,,,,,,,M0.0,20,50,,
+2,1,Q0.1=1,,,,,,,,,3,,,,,,,,M0.1,20,200,,
+3,2,Q0.2,Q0.2=1,,,,,,,,4,,,,,,,,M0.2,20,350,,
+_id, numero, condicao1, condicao2, condicao3, condicao4, condicao6, condicao6, condicao7, ponto1, ponto2,ponto3,ponto4,ponto5,ponto6,ponto7,ponto8,,,,,,,
+1,0,I0.0=0,,,,,,,5010,5050,,,,,,,,,,,,,
+2,1,I0.0,,,,,,,80100,80200,,,,,,,,,,,,,
+3,2,I0.0,I0.1,,,,,,50100,50150,30150,30330,50330,50350,,,,,,,,,
+4,3,I0.3,I0.2=0,,,,,,80300,80350,,,,,,,,,,,,,
+5,4,I0.0=0,,,,,,,20370,10370,10070,20070,,,,,,,,,,,
