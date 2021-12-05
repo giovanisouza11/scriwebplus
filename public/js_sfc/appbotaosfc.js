@@ -30,7 +30,7 @@ function trocar_botao_sfc() {
 	var posicaoysfc = parseInt((window.event.clientY-1)/47);
 	var posicaoxsfc = parseInt((window.event.clientX-460)/72);
 	if (posicaoxsfc == 1)
-		posicaoysfc = posicaoy + 10;
+		posicaoysfc = posicaoysfc + 10;
 	if ((posicaoysfc >=0) && (posicaoysfc < 21))
 	{
 		for(var i=11; i<21; i++)
@@ -106,22 +106,23 @@ function trocar_botao_sfc() {
 		valor_chave_sfc[7]==1;
 	}
 	if (valor_chave_sfc[2]==1){
-	    let texto = '_id, nomecep, var_1, tipo, var_2, ver, R-W, pisca, funcao' + '\n';
-	    for (var i=0; i<(larray.length/9); i++) {
+	    	let texto = '_id, numero, acao1, acao2, acao3, acao4, acao6, acao6, acao7, acao8, acao9, acao10, transicao1, transicao2, transicao3, transicao4, tnasicao,5,transicao6,transicao7, transicao8, memoria, posicaoX,posicaoY' + '\n';
+	    	for (var i=0; i<(larray.length/9); i++) {
 			for (var j=0; j<9; j++)
 			    texto += larray[(i*9)+j]+',';
 			texto += '\n';
 		}
+	 	let texto = '_id, numero, condicao1, condicao2, condicao3, condicao4, condicao6, condicao6, condicao7, ponto1, ponto2,ponto3,ponto4,ponto5,ponto6,ponto7,ponto8' + '\n';
 		compila_sfc();
 		//texto += '\n\n';
 		//for (var i=0; i<(booleano.length); i++) {
 			//for (var j=0; j<2; j++)
 		//	texto += booleano[i]+' , ';
 		//}
-        //let titulo ='scriweb';
-        var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
-        saveAs(blob, titulo_sfc + ".csv");
-        valor_chave_sfc[2]=0;
+        	//let titulo ='scriweb';
+        	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
+        	saveAs(blob, titulo_sfc + ".csv");
+        	valor_chave_sfc[2]=0;
 	}
 	if (valor_chave_sfc[3]==1){
 		compila_sfc();
