@@ -112,7 +112,7 @@ function trocar_botao_sfc() {
 			    texto += larray[(i*9)+j]+',';
 			texto += '\n';
 		}
-	 	texto = '_id, numero, condicao1, condicao2, condicao3, condicao4, condicao6, condicao6, condicao7, ponto1, ponto2,ponto3,ponto4,ponto5,ponto6,ponto7,ponto8' + '\n';
+	 	texto = texto+'_id, numero, condicao1, condicao2, condicao3, condicao4, condicao6, condicao6, condicao7, ponto1, ponto2,ponto3,ponto4,ponto5,ponto6,ponto7,ponto8' + '\n';
 		compila_sfc();
 		//texto += '\n\n';
 		//for (var i=0; i<(booleano.length); i++) {
