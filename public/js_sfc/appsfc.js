@@ -2,7 +2,7 @@
 //Inicializa variaveis
 //=====================================================================================
 var AISfc = new Image();    //objetos de programacao Ladder
-AISFC.src = "/img_sfc/sfc.png";
+AISfc.src = "/img_sfc/sfc.png";
 var lfuncaosfc=0;
 var canvassfc;    //local desenho programa
 var contextsfc;
@@ -146,7 +146,7 @@ function mouse_move_sfc(){
 		for (var i=11; i<21; i++) {
 			if ( valor_chave[i] ==1) {
 				lfuncaosfc = i - 10;
-				context3.drawImage(AILadder, 60*4, 60*(i-21), 60, 60, 0, 0, 60, 60);
+				context3.drawImage(AISfc, 60*4, 60*(i-21), 60, 60, 0, 0, 60, 60);
 				ICampo.style.display = "none";
 				IFigura.style.display = "block";
 				IFigura.style.left = " "+(window.event.clientX-30) + "px";
