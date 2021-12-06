@@ -38,7 +38,7 @@ function ladder_simulador(){
 			div8.style.display = "block";
 			botoes.style.display = "none";
 			draw_botoes_sfc();
-			//Tela_Eletrico_Simulador = 2;
+			Tela_Eletrico_Simulador = 2;
 		}
 	}
 }
