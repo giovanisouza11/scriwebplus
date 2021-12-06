@@ -4,12 +4,20 @@
 var AISfc = new Image();    //objetos de programacao Ladder
 AISFC.src = "/img_sfc/sfc.png";
 var lfuncaosfc=0;
+var canvassfc;    //local desenho programa
+var contextsfc;
 
 //=====================================================================================
 //Inicializa Canvas
 //Desenha area de trabalho em branco
 //=====================================================================================
 function draw_sfc_inicio() {
+	canvassfc = document.getElementById("tela_sfc");
+	contextsfc = canvassfc.getContext("2d");
+	canvassfc.width = 600;
+	canvassfc.height = 60 * Num_Linhas;
+	//draw_ladder_fundo(0);
+	//inicializa_array();
 }
 
 //=====================================================================================
