@@ -233,7 +233,7 @@ function mouse_move(){
 	if (Tela_Eletrico_Simulador == 2)
 		mouse_move_sfc();
 	else
-		mouse_move_sfc();
+		mouse_move_ladder();
 }
 function mouse_move_ladder(){
 	canvas3 = document.getElementById("tela4");
