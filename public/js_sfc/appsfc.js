@@ -6,6 +6,8 @@ AISfc.src = "/img_sfc/sfc.png";
 var lfuncaosfc=0;
 var canvassfc;    //local desenho programa
 var contextsfc;
+var canvassfcFig;    //local desenho programa
+var contextsfcfig;
 
 //=====================================================================================
 //Inicializa Canvas
@@ -133,10 +135,10 @@ function draw_sfc(fileArr) {
 //=====================================================================================
 //com problema
 function mouse_move_sfc(){
-	canvas3 = document.getElementById("tela4");
-	context3 = canvas3.getContext("2d");
-	canvas3.width = 60;
-	canvas3.height = 60;
+	canvassfcfig = document.getElementById("tela4");
+	contextsfcfig = canvassfcfig.getContext("2d");
+	canvassfcfig.width = 60;
+	canvassfcfig.height = 60;
     	var ICampo = document.getElementById('Campo');
 	var IFigura = document.getElementById('Fig');
 	var yTop = window.event.clientY + document.body.scrollTop - 20;
@@ -146,7 +148,7 @@ function mouse_move_sfc(){
 		for (var i=11; i<21; i++) {
 			if ( valor_chave[i] ==1) {
 				lfuncaosfc = i - 10;
-				context3.drawImage(AISfc, 60*4, 60*(i-11), 60, 60, 0, 0, 60, 60);
+				contextsfcfig.drawImage(AISfc, 60*4, 60*(i-11), 60, 60, 0, 0, 60, 60);
 				ICampo.style.display = "none";
 				IFigura.style.display = "block";
 				IFigura.style.left = " "+(window.event.clientX-30) + "px";
