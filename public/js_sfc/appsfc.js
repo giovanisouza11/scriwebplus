@@ -18,7 +18,7 @@ function draw_sfc_inicio() {
 	contextsfc = canvassfc.getContext("2d");
 	canvassfc.width = 600;
 	canvassfc.height = 60 * Num_Linhas;
-	draw_ladder_fundo(0);
+	draw_sfc_fundo(0);
 	//inicializa_array();
 }
 
@@ -26,7 +26,9 @@ function draw_sfc_inicio() {
 //Desenha area de trabalho em branco
 //=====================================================================================
 function draw_sfc_fundo(tipo){
-    	contextsfc.drawImage(AISfc, 0, 0, 60, 60, 0, 0, 60, 60);
+	for (var iy = 0, iy <(cabvassfc.height /60), iy + 69)
+		for (var ix = 0, ix <(cabvassfc.width /60), ix + 69)
+		   	contextsfc.drawImage(AISfc, 0, 0, 60, 60, ix, iy, 60, 60);
 	
 }
 
