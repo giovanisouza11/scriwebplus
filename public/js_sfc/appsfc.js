@@ -60,7 +60,7 @@ function editar_sfc() {
 			lArraySfc[(posicaoy*8*9) + (posicaox*9) +4] = '';
 			lArraySfc[(posicaoy*8*9) + (posicaox*9) +7] = '';
 			lArraySfc[(posicaoy*8*9) + (posicaox*9) +8] = '';
-			context2.drawImage(AISfc, (AISfc.width/7)*2, 60*13, 57, 60, 65+((posicaox)*60), (posicaoy)*60, 57, 60);			
+			contextsfc.drawImage(AISfc, (AISfc.width/7)*2, 60*13, 57, 60, 65+((posicaox)*60), (posicaoy)*60, 57, 60);			
 		}
 		//{ _id, nome, var_1, tipo, var_2, ver, R-W, tag2, funcao};
 		lArraySfc[(posicaoy*8*9) + (posicaox*9) +3] = lfuncao;
