@@ -30,6 +30,8 @@ function draw_sfc_fundo(tipo) {
 		   	var i_x = 100;
 			var i_y = 100;
 			contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, i_x, i_y, 60, 60);
+			contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, 0, 0, 60, 60);
+				
 	//	}
 	//}
 }
