@@ -64,7 +64,7 @@ function editar_sfc() {
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +4] = '';
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +7] = '';
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +8] = '';
-			contextsfc.drawImage(AISfc, (AISfc.width/7)*2, 60*lfuncaosfc, 57, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 57, 60);			
+			contextsfc.drawImage(AISfc, (AISfc.width/7)*2, 60*(lfuncaosfc-1), 57, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 57, 60);			
 		}
 		//{ _id, nome, var_1, tipo, var_2, ver, R-W, tag2, funcao};
 		lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +3] = lfuncaosfc;
@@ -147,7 +147,7 @@ function mouse_move_sfc(){
 		for (var i=11; i<21; i++) {
 			if ( valor_chave_sfc[i] ==1) {
 				lfuncaosfc = i - 10;
-				context3.drawImage(AISfc, 60*4, 60*(i-11), 60, 60, 0, 0, 60, 60);
+				context3.drawImage(AISfc, 0, 60*(i-11), 60, 60, 0, 0, 60, 60);
 				ICampo.style.display = "none";
 				IFigura.style.display = "block";
 				IFigura.style.left = " "+(window.event.clientX-30) + "px";
