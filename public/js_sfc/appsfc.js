@@ -8,6 +8,7 @@ var canvassfc;    //local desenho programa
 var contextsfc;
 //var canvassfcFig;    //local desenho programa
 //var contextsfcfig;
+var lArraySfc;
 
 //=====================================================================================
 //Inicializa Canvas
@@ -28,7 +29,7 @@ function draw_sfc_inicio() {
 function draw_sfc_fundo(tipo){
 	for (var iy = 0; iy <(cabvassfc.height); iy + 69) {
 		for (var ix = 0; ix <(cabvassfc.width); ix + 69){
-		   	contextsfc.drawImage(AISfc, 0, 0, 60, 60, ix, iy, 60, 60);
+		   	contextsfc.drawImage(AISfc, 0, 60*9, 60, 60, ix, iy, 60, 60);
 		}
 	}
 }
@@ -52,50 +53,40 @@ function editar_sfc() {
 	else {
 		if (lfuncaosfc >0) {
 			IFigura.style.display = "none";
-			larray[(posicaoy*8*9) + (posicaox*9) + 5] = 0;
-			larray[(posicaoy*8*9) + (posicaox*9) +3] = 0;
-			array[(posicaoy*8*9) + (posicaox*9) +1] = '';
-			larray[(posicaoy*8*9) + (posicaox*9) +2] = '';
-			larray[(posicaoy*8*9) + (posicaox*9) +4] = '';
-			larray[(posicaoy*8*9) + (posicaox*9) +7] = '';
-			larray[(posicaoy*8*9) + (posicaox*9) +8] = '';
-			context2.drawImage(AIVertical, (AIVertical.width/6)*5, 0, AIVertical.width/6, 56, 120+((posicaox)*60), ((posicaoy)*60)+42, 5, 56);
-			context2.drawImage(AILadder, (AILadder.width/7)*2, 60*13, 57, 60, 65+((posicaox)*60), (posicaoy)*60, 57, 60);			
+			lArraySfc[(posicaoy*8*9) + (posicaox*9) + 5] = 0;
+			lArraySfc[(posicaoy*8*9) + (posicaox*9) +3] = 0;
+			lArraySfc[(posicaoy*8*9) + (posicaox*9) +1] = '';
+			lArraySfc[(posicaoy*8*9) + (posicaox*9) +2] = '';
+			lArraySfc[(posicaoy*8*9) + (posicaox*9) +4] = '';
+			lArraySfc[(posicaoy*8*9) + (posicaox*9) +7] = '';
+			lArraySfc[(posicaoy*8*9) + (posicaox*9) +8] = '';
+			context2.drawImage(AISfc, (AISfc.width/7)*2, 60*13, 57, 60, 65+((posicaox)*60), (posicaoy)*60, 57, 60);			
 		}
 		//{ _id, nome, var_1, tipo, var_2, ver, R-W, tag2, funcao};
-		larray[(posicaoy*8*9) + (posicaox*9) +3] = lfuncao;
-		larray[(posicaoy*8*9) + (posicaox*9)] = posicaoy*10 + posicaox;
-		switch (lfuncao) {
+		lArraySfc[(posicaoy*8*9) + (posicaox*9) +3] = lfuncao;
+		lArraySfc[(posicaoy*8*9) + (posicaox*9)] = posicaoy*10 + posicaox;
+		switch (lfuncaosfc) {
 			case 1:
 			case 2:
 			case 9:
-				larray[(posicaoy*8*9) + (posicaox*9)+ 6] = 1;
-				larray[(posicaoy*8*9) + (posicaox*9)+ 4] = 0;
-				larray[(posicaoy*8*9) + (posicaox*9)+ 7] = 0;
-				larray[(posicaoy*8*9) + (posicaox*9)+ 8] = 0;
+				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 6] = 1;
+				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 4] = 0;
+				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 7] = 0;
+				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 8] = 0;
 			break;
 			case 11:
-				larray[(posicaoy*8*9) + (posicaox*9)+ 6] = 0;
-				larray[(posicaoy*8*9) + (posicaox*9)+ 4] = 0;
-				larray[(posicaoy*8*9) + (posicaox*9)+ 7] = 0;
-				larray[(posicaoy*8*9) + (posicaox*9)+ 8] = 0;
-				break;
-			case 8:
-			case 10:
-				larray[(posicaoy*8*9) + (posicaox*9)+ 6] = 1;
-				break;
-			case 6:
-			case 7:
-				larray[(posicaoy*8*9) + (posicaox*9)+ 6] = 2;
-				larray[(posicaoy*8*9) + (posicaox*9)+ 8] = 0;
+				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 6] = 0;
+				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 4] = 0;
+				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 7] = 0;
+				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 8] = 0;
 				break;
 			default:
-				larray[(posicaoy*8*9) + (posicaox*9)+ 6] = 2;
-				larray[(posicaoy*8*9) + (posicaox*9)+ 4] = 0;
-				larray[(posicaoy*8*9) + (posicaox*9)+ 7] = 0;
-				larray[(posicaoy*8*9) + (posicaox*9)+ 8] = 0;
+				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 6] = 2;
+				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 4] = 0;
+				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 7] = 0;
+				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 8] = 0;
 		}
-		var tipo_funcao = larray[(posicaoy*8*9) + (posicaox*9) + 3];
+		var tipo_funcao = lArraySfc[(posicaoy*8*9) + (posicaox*9) + 3];
 		if ( tipo_funcao > 0 && (tipo_funcao<11))
 		{
 			ICampo.style.display = "block";
@@ -106,11 +97,11 @@ function editar_sfc() {
 				case 8:
 				case 10:
 					document.getElementById("label_input").innerHTML = "Função:";
-					tag = larray[(posicaoy*8*9) + ((posicaox)*9)+8];
+					tag = lArraySfc[(posicaoy*8*9) + ((posicaox)*9)+8];
 					break;
 				default:
 					document.getElementById("label_input").innerHTML = "Endereço:";
-					tag = larray[(posicaoy*8*9) + ((posicaox)*9)+2];
+					tag = lArraySfc[(posicaoy*8*9) + ((posicaox)*9)+2];
 			}
 			if (tag != undefined && tag != "undefined")
 				document.getElementById('input_ladder').value = tag;
@@ -147,7 +138,7 @@ function mouse_move_sfc(){
 	var IFigura = document.getElementById('Fig');
 	var yTop = window.event.clientY + document.body.scrollTop - 20;
 	lfuncaosfc = 0;
-	emEdicao = 0;
+	//emEdicao = 0;
 	if (window.event.clientX >650 && emEdicao==0) {
 		
 		for (var i=11; i<21; i++) {
