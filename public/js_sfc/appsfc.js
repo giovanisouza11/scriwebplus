@@ -147,7 +147,7 @@ function mouse_move_sfc(){
 	var IFigura = document.getElementById('Fig');
 	var yTop = window.event.clientY + document.body.scrollTop - 20;
 	lfuncaosfc = 0;
-	alert("ola");
+	emEdicao = 0;
 	if (window.event.clientX >650 && emEdicao==0) {
 		
 		for (var i=11; i<21; i++) {
