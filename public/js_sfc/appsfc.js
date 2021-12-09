@@ -27,8 +27,8 @@ function draw_sfc_inicio() {
 //Desenha area de trabalho em branco
 //=====================================================================================
 function draw_sfc_fundo(tipo){
-	for (var iy = 0; iy <(cabvassfc.height); iy + 69) {
-		for (var ix = 0; ix <(cabvassfc.width); ix + 69){
+	for (var iy = 0; iy <(canvassfc.height); iy + 69) {
+		for (var ix = 0; ix <(canvassfc.width); ix + 69){
 		   	contextsfc.drawImage(AISfc, 0, 60*9, 60, 60, ix, iy, 60, 60);
 		}
 	}
