@@ -151,7 +151,7 @@ function mouse_move_sfc(){
 	if (window.event.clientX >650 && emEdicao==0) {
 		
 		for (var i=11; i<21; i++) {
-			if ( valor_chave[i] ==1) {
+			if ( valor_chave_sfc[i] ==1) {
 				lfuncaosfc = i - 10;
 				context3.drawImage(AISfc, 60*4, 60*(i-11), 60, 60, 0, 0, 60, 60);
 				ICampo.style.display = "none";
