@@ -29,7 +29,7 @@ function draw_sfc_inicio() {
 function draw_sfc_fundo(tipo){
 	for (var iy = 0; iy <(canvassfc.height); iy + 60) {
 		for (var ix = 0; ix <(canvassfc.width); ix + 60){
-		   	contextsfc.drawImage(AISfc, 60*tipo, 60*8, 60, 60, ix, iy, 60, 60);
+		   	contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, ix, iy, 60, 60);
 		}
 	}
 }
@@ -53,55 +53,55 @@ function editar_sfc() {
 	else {
 		if (lfuncaosfc >0) {
 			IFigura.style.display = "none";
-			lArraySfc[(posicaoy*8*9) + (posicaox*9) + 5] = 0;
-			lArraySfc[(posicaoy*8*9) + (posicaox*9) +3] = 0;
-			lArraySfc[(posicaoy*8*9) + (posicaox*9) +1] = '';
-			lArraySfc[(posicaoy*8*9) + (posicaox*9) +2] = '';
-			lArraySfc[(posicaoy*8*9) + (posicaox*9) +4] = '';
-			lArraySfc[(posicaoy*8*9) + (posicaox*9) +7] = '';
-			lArraySfc[(posicaoy*8*9) + (posicaox*9) +8] = '';
-			contextsfc.drawImage(AISfc, (AISfc.width/7)*2, 60*13, 57, 60, 65+((posicaox)*60), (posicaoy)*60, 57, 60);			
+			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) + 5] = 0;
+			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +3] = 0;
+			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +1] = '';
+			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +2] = '';
+			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +4] = '';
+			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +7] = '';
+			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +8] = '';
+			contextsfc.drawImage(AISfc, (AISfc.width/7)*2, 60*13, 57, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 57, 60);			
 		}
 		//{ _id, nome, var_1, tipo, var_2, ver, R-W, tag2, funcao};
-		lArraySfc[(posicaoy*8*9) + (posicaox*9) +3] = lfuncao;
-		lArraySfc[(posicaoy*8*9) + (posicaox*9)] = posicaoy*10 + posicaox;
+		lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +3] = lfuncaosfc;
+		lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)] = posicaoysfc*10 + posicaoxsfc;
 		switch (lfuncaosfc) {
 			case 1:
 			case 2:
 			case 9:
-				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 6] = 1;
-				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 4] = 0;
-				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 7] = 0;
-				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 8] = 0;
+				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 6] = 1;
+				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 4] = 0;
+				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 7] = 0;
+				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 8] = 0;
 			break;
 			case 11:
-				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 6] = 0;
-				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 4] = 0;
-				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 7] = 0;
-				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 8] = 0;
+				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 6] = 0;
+				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 4] = 0;
+				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 7] = 0;
+				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 8] = 0;
 				break;
 			default:
-				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 6] = 2;
-				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 4] = 0;
-				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 7] = 0;
-				lArraySfc[(posicaoy*8*9) + (posicaox*9)+ 8] = 0;
+				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 6] = 2;
+				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 4] = 0;
+				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 7] = 0;
+				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 8] = 0;
 		}
-		var tipo_funcao = lArraySfc[(posicaoy*8*9) + (posicaox*9) + 3];
+		var tipo_funcao = lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) + 3];
 		if ( tipo_funcao > 0 && (tipo_funcao<11))
 		{
 			ICampo.style.display = "block";
-			ICampo.style.left = " "+(700 +(posicaox*60)) + "px";
-			ICampo.style.top = " "+(05+(posicaoy*60))  + "px";
+			ICampo.style.left = " "+(700 +(posicaoxsfc*60)) + "px";
+			ICampo.style.top = " "+(05+(posicaoysfc*60))  + "px";
 			var tag;
 			switch (tipo_funcao) {
 				case 8:
 				case 10:
 					document.getElementById("label_input").innerHTML = "Função:";
-					tag = lArraySfc[(posicaoy*8*9) + ((posicaox)*9)+8];
+					tag = lArraySfc[(posicaoysfc*8*9) + ((posicaoxsfc)*9)+8];
 					break;
 				default:
 					document.getElementById("label_input").innerHTML = "Endereço:";
-					tag = lArraySfc[(posicaoy*8*9) + ((posicaox)*9)+2];
+					tag = lArraySfc[(posicaoysfc*8*9) + ((posicaoxsfc)*9)+2];
 			}
 			if (tag != undefined && tag != "undefined")
 				document.getElementById('input_ladder').value = tag;
