@@ -27,9 +27,9 @@ function draw_sfc_inicio() {
 function draw_sfc_fundo(tipo) {
 	//for (var iy = 0; iy <(canvassfc.height); iy + 60) {
 	//	for (var ix = 0; ix <(canvassfc.width); ix + 60){
-		   	var ix = 0;
-			var iy = 0;
-			contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, ix, iy, 60, 60);
+		   	var i_x = 0;
+			var i_y = 0;
+			contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, i_x, i_y, 60, 60);
 	//	}
 	//}
 }
