@@ -6,8 +6,6 @@ AISfc.src = "/img_sfc/sfc.png";
 var lfuncaosfc=0;
 var canvassfc;    //local desenho programa
 var contextsfc;
-//var canvassfcFig;    //local desenho programa
-//var contextsfcfig;
 var lArraySfc;
 
 //=====================================================================================
@@ -26,12 +24,12 @@ function draw_sfc_inicio() {
 //=====================================================================================
 //Desenha area de trabalho em branco
 //=====================================================================================
-function draw_sfc_fundo(tipo){
-	/*for (var iy = 0; iy <(canvassfc.height); iy + 60) {
+function draw_sfc_fundo(tipo) {
+	for (var iy = 0; iy <(canvassfc.height); iy + 60) {
 		for (var ix = 0; ix <(canvassfc.width); ix + 60){
 		   	contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, ix, iy, 60, 60);
 		}
-	}*?
+	}
 }
 
 //=====================================================================================
@@ -128,7 +126,6 @@ function draw_sfc(fileArr) {
 //=====================================================================================
 // verifica movimento do mouse
 //=====================================================================================
-//com problema
 function mouse_move_sfc(){
 	//canvas3 = document.getElementById("tela4");
 	//context3 = canvas3.getContext("2d");
