@@ -139,10 +139,10 @@ function draw_sfc(fileArr) {
 //=====================================================================================
 //com problema
 function mouse_move_sfc(){
-	canvas3 = document.getElementById("tela4");
-	context3 = canvas3.getContext("2d");
-	canvas3.width = 60;
-	canvas3.height = 60;
+	//canvas3 = document.getElementById("tela4");
+	//context3 = canvas3.getContext("2d");
+	//canvas3.width = 60;
+	//canvas3.height = 60;
     	var ICampo = document.getElementById('Campo');
 	var IFigura = document.getElementById('Fig');
 	var yTop = window.event.clientY + document.body.scrollTop - 20;
