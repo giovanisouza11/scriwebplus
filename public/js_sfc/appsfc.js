@@ -25,17 +25,16 @@ function draw_sfc_inicio() {
 //Desenha area de trabalho em branco
 //=====================================================================================
 function draw_sfc_fundo(tipo) {
-	//for (var iy = 0; iy <(canvassfc.height); iy + 60) {
-	//	for (var ix = 0; ix <(canvassfc.width); ix + 60){
+	for (var iy = 0; iy <(canvassfc.height-59); iy + 60) {
+		for (var ix = 0; ix <(canvassfc.width-59); ix + 60){
 		   	//var i_x = 100;
 			//var i_y = 100;
-			//contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, i_x, i_y, 60, 60);
-			contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, 0, 0, 60, 60);
-			contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, 100, 100, 60, 60);
-			contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, 300, 500, 60, 60);
-				
-	//	}
-	//}
+			contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, ix, iy, 60, 60);
+			//contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, 0, 0, 60, 60);
+			//contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, 100, 100, 60, 60);
+			//contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, 300, 500, 60, 60);
+		}
+	}
 }
 
 //=====================================================================================
@@ -45,9 +44,9 @@ function editar_sfc() {
 	var yScrollsfc = document.body.scrollTop;
 	var posicaoxsfc = parseInt((window.event.clientX-700)/60);
 	var posicaoysfc = parseInt(((window.event.clientY+yScrollsfc)-5)/60);
-	var ICampo = document.getElementById('Campo');
-	var CInput = document.getElementById('input_ladder');
-	var IFigura = document.getElementById('Fig');
+	//var ICampo = document.getElementById('Campo');
+	//var CInput = document.getElementById('input_ladder');
+	//var IFigura = document.getElementById('Fig');
 
 	if ((window.event.clientX < 650) || (window.event.clientX > 1400)) {
 		ICampo.style.display = "none";
