@@ -234,6 +234,8 @@ function mouse_move(){
 	context3 = canvas3.getContext("2d");
 	canvas3.width = 60;
 	canvas3.height = 60;
+	var ICampo = document.getElementById('Campo');
+	var IFigura = document.getElementById('Fig');
 	if (Tela_Eletrico_Simulador == 2)
 		mouse_move_sfc();
 	else
@@ -244,8 +246,8 @@ function mouse_move_ladder(){
 	//context3 = canvas3.getContext("2d");
 	//canvas3.width = 60;
 	//canvas3.height = 60;
-    var ICampo = document.getElementById('Campo');
-	var IFigura = document.getElementById('Fig');
+    	//var ICampo = document.getElementById('Campo');
+	//var IFigura = document.getElementById('Fig');
 	var yTop = window.event.clientY + document.body.scrollTop - 20;
 	lfuncao = 0;
 	if (window.event.clientX >650 && emEdicao==0) {
