@@ -110,7 +110,8 @@ body {
 	background:palegreen;
 }
 .divColuna3 {
-	position: absolute;
+	display: block;
+	position: fixed;
         left: 651px;
         width: 600px; 
         height: 2000px;
@@ -119,7 +120,7 @@ body {
 }
 .divColuna8 {
 	display: none;
-	position: absolute;
+	position: fixed;
         left: 651px;
         width: 600px; 
         height: 2000px;
