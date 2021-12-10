@@ -44,9 +44,9 @@ function editar_sfc() {
 	var yScrollsfc = document.body.scrollTop;
 	var posicaoxsfc = parseInt((window.event.clientX-700)/60);
 	var posicaoysfc = parseInt(((window.event.clientY+yScrollsfc)-5)/60);
-	//var ICampo = document.getElementById('Campo');
-	//var CInput = document.getElementById('input_ladder');
-	//var IFigura = document.getElementById('Fig');
+	var ICampo = document.getElementById('Campo');
+	var CInput = document.getElementById('input_ladder');
+	var IFigura = document.getElementById('Fig');
 
 	if ((window.event.clientX < 650) || (window.event.clientX > 1400)) {
 		ICampo.style.display = "none";
@@ -136,8 +136,8 @@ function mouse_move_sfc(){
 	//context3 = canvas3.getContext("2d");
 	//canvas3.width = 60;
 	//canvas3.height = 60;
-    	var ICampo = document.getElementById('Campo');
-	var IFigura = document.getElementById('Fig');
+    	//var ICampo = document.getElementById('Campo');
+	//var IFigura = document.getElementById('Fig');
 	var yTop = window.event.clientY + document.body.scrollTop - 20;
 	lfuncaosfc = 0;
 	//emEdicao = 0;
