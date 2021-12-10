@@ -15,7 +15,7 @@ function draw_inicio() {
 	draw_eletrico();
     	draw_botoes();
 	draw_ladder_inicio();	
-	draw_sfc_inicio();
+	//draw_sfc_inicio();
 	//config(num_clp);
 	//onLoad();
 	
