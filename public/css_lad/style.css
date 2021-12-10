@@ -111,7 +111,7 @@ body {
 }
 .divColuna3 {
 	display: block;
-	position: fixed;
+	position: absolute;
         left: 651px;
         width: 600px; 
         height: 2000px;
@@ -120,7 +120,7 @@ body {
 }
 .divColuna8 {
 	display: none;
-	position: fixed;
+	position: absolute;
         left: 651px;
         width: 600px; 
         height: 2000px;
