@@ -18,7 +18,7 @@ function draw_sfc_inicio() {
 	canvassfc.width = 600;
 	canvassfc.height = 60 * Num_Linhas;
 	draw_sfc_fundo(0);
-	inicializa_array();
+	inicializa_array_sfc();
 }
 
 //=====================================================================================
@@ -178,6 +178,7 @@ function mouse_move_sfc(){
 // Inicializa o array
 //=====================================================================================
 function inicializa_array_sfc(){
+	lArraySfc.length = 0;
 }
 
 //=====================================================================================
@@ -186,6 +187,7 @@ function inicializa_array_sfc(){
 // Para entrada TAG e ENDERECO
 //=====================================================================================
 function entrada_input_sfc(event){
+	lArraySfc.length = 0;
 }
 
 //=====================================================================================
@@ -193,5 +195,5 @@ function entrada_input_sfc(event){
 // Apos RUN e STOP do CLP
 //=====================================================================================
 function monitora_sfc() {
-	
+	lArraySfc.length = 0;
 }
