@@ -16,9 +16,9 @@ function draw_sfc_inicio() {
 	canvassfc = document.getElementById("tela_sfc");
 	contextsfc = canvassfc.getContext("2d");
 	canvassfc.width = 600;
-	canvassfc.height = 60 * 1000; // Num_Linhas;
+	canvassfc.height = 60 * Num_Linhas;
 	draw_sfc_fundo(0);
-	//inicializa_array();
+	inicializa_array();
 }
 
 //=====================================================================================
@@ -125,7 +125,7 @@ function editar_sfc() {
 // Apos leitura do arquivo
 //=====================================================================================
 function draw_sfc(fileArr) {
-	
+	lArraySfc= {};
 }
 
 //=====================================================================================
