@@ -58,7 +58,7 @@ function editar_sfc() {
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +4] = '';
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +7] = '';
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +8] = '';
-			contextsfc.drawImage(AISfc, (AISfc.width/7)*2, 60*(lfuncaosfc-1), 57, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 57, 60);			
+			contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(lfuncaosfc-1), 60, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
 		}
 		//{ _id, nome, var_1, tipo, var_2, ver, R-W, tag2, funcao};
 		lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +3] = lfuncaosfc;
