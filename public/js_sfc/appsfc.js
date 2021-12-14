@@ -1,10 +1,10 @@
 //=====================================================================================
 //Inicializa variaveis
 //=====================================================================================
-var AISfc = new Image();    //objetos de programacao Ladder
+var AISfc = new Image();  
 AISfc.src = "/img_sfc/sfc.png";
 var lfuncaosfc=0;
-var canvassfc;    //local desenho programa
+var canvassfc;    
 var contextsfc;
 var lArraySfc;
 
