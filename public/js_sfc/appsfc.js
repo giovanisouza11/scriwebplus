@@ -49,6 +49,7 @@ function editar_sfc() {
 		emEdicao = 0;
 	}
 	else {
+                lfuncaosfc =1;
 		if (lfuncaosfc >0) {
 			IFigura.style.display = "none";
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) + 5] = 0;
@@ -161,6 +162,7 @@ function mouse_move_sfc(){
 	if ((emEdicao > 0)  && ((ICampox != posicaox) || (ICampoy != posicaoy))){
 		ICampo.style.display = "none";
 		ICampo.style.top = "680px";
+
 		ICampo.style.left = "100px";
 		var CInput = document.getElementById('input_ladder');
 		document.getElementById('input_ladder').value = "";
