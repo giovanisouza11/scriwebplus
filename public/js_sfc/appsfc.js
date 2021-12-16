@@ -42,7 +42,7 @@ function editar_sfc() {
 	var ICampo = document.getElementById('Campo');
 	var CInput = document.getElementById('input_ladder');
 	var IFigura = document.getElementById('Fig');
-        contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(0), 60, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
+        //contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(0), 60, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
 		
 	if ((window.event.clientX < 650) || (window.event.clientX > 1400)) {
 		ICampo.style.display = "none";
@@ -50,7 +50,7 @@ function editar_sfc() {
 		emEdicao = 0;
 	}
 	else {
-                lfuncaosfc =1;
+                //lfuncaosfc =1;
 		if (lfuncaosfc >0) {
 			IFigura.style.display = "none";
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) + 5] = 0;
@@ -60,7 +60,7 @@ function editar_sfc() {
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +4] = '';
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +7] = '';
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +8] = '';
-			contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(lfuncaosfc-1), 60, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
+			contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(lfuncaosfc-1), 60, 60, ((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
 		}
 		//{ _id, nome, var_1, tipo, var_2, ver, R-W, tag2, funcao};
 		lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +3] = lfuncaosfc;
