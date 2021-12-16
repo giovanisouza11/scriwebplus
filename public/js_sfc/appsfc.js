@@ -237,6 +237,7 @@ function draw_transicao(contexto, pos_X, pos_Y,pos_X0, pos_Y0, cor) {
 	contexto.lineTo(pos_X*60+22,pos_Y*60-5);
  	contexto.lineTo(pos_X*60+20,pos_Y*60);
  	contexto.stroke();
+	estadox_anterior = X;
 }
 //=====================================================================================
 // verifica movimento do mouse
