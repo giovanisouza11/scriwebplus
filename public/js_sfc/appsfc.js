@@ -127,22 +127,25 @@ function editar_sfc() {
 function draw_sfc(fileArr) {
 	lArraySfc.length = 0;
 }
+//=====================================================================================
+//Desenho 
+//=====================================================================================
 function draw_desenho(contexto, pos_X, pos_Y, texto,entrada) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = "green"; // Green path
 	contexto.beginPath();
   	contexto.moveTo(pos_X*60,pos_Y*60);
 	contexto.lineTo(pos_X*60 +55 ,pos_Y*60);
-  	contexto.arcTo(pos_X*60 +55 ,pos_Y*60, pos_X*60 +60 ,pos_Y*60+5,10);
+  	contexto.arcTo(pos_X*60+55 ,pos_Y*60, pos_X*60+60 ,pos_Y*60+5,6);
   	contexto.lineTo(pos_X*60+60,pos_Y*60+55);
-  	contexto.arcTo(pos_X*60+60,pos_Y*60+55, pos_X*60 +55 ,pos_Y*60+60, 10);
+  	contexto.arcTo(pos_X*60+60,pos_Y*60+55, pos_X*60 +55 ,pos_Y*60+60, 6);
   	contexto.lineTo(pos_X*60+5,pos_Y*60+60);
-  	contexto.arcTo(pos_X*60+5,pos_Y*60+60,pos_X*60,pos_Y*60+55,10);
+  	contexto.arcTo(pos_X*60+5,pos_Y*60+60,pos_X*60,pos_Y*60+55,6);
   	contexto.lineTo(pos_X*60,pos_Y*60);
   	contexto.stroke();
 	contexto.beginPath();
   	contexto.moveTo(pos_X*60,pos_Y*60+15);
-	contexto.arcTo(pos_X*60,pos_Y*60+15, pos_X*60+15,pos_Y*60, 10);
+	contexto.arcTo(pos_X*60,pos_Y*60+15, pos_X*60+15,pos_Y*60, 15);
   	contexto.stroke();
 	contexto.fillStyle = 'black';
 	contexto.fillText(texto, pos_X*60 + 10 , pos_Y*60);	
