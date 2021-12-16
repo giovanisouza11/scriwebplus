@@ -61,7 +61,8 @@ function editar_sfc() {
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +4] = '';
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +7] = '';
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +8] = '';
-			contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(lfuncaosfc-1), 60, 60, ((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
+			draw_desenho(contextsfc, posicaoxsfc, posicaoysfc, "0",50);
+			//contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(lfuncaosfc-1), 60, 60, ((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
 		}
 		//contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(0), 60, 60, ((posicaoxsfc)*60), 65+(posicaoysfc)*60, 60, 60);			
 		//{ _id, nome, var_1, tipo, var_2, ver, R-W, tag2, funcao};
@@ -126,7 +127,14 @@ function editar_sfc() {
 function draw_sfc(fileArr) {
 	lArraySfc.length = 0;
 }
-function draw_desenho(contexto, pos_X, pos_Y, entrada) {
+function draw_desenho(contexto, pos_X, pos_Y, texto,entrada) {
+	//contexto.font = ArrayObjStatic[ij*20+10]+'pt Arial';
+	contexto.fillStyle = 'brack ';
+	contexto.fillRect(pos_X ,pos_Y, 60, 60);
+  	contexto.fillRect(pos_X ,pos_Y, 10, 10);
+  	contexto.fillStyle = 'black';
+	contexto.fillText(texto, pos_X + 10 , pos_Y);
+		
 	contexto.drawImage(AISfc, (AISfc.width/7), 60*(lfuncaosfc-1), 60, 60, ((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
 }
 //=====================================================================================
