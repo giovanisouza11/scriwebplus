@@ -126,7 +126,9 @@ function editar_sfc() {
 function draw_sfc(fileArr) {
 	lArraySfc.length = 0;
 }
-
+function draw_desenho(contexto, pos_X, pos_Y, entrada) {
+	contexto.drawImage(AISfc, (AISfc.width/7), 60*(lfuncaosfc-1), 60, 60, ((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
+}
 //=====================================================================================
 // verifica movimento do mouse
 //=====================================================================================
