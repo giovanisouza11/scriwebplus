@@ -130,7 +130,7 @@ function draw_sfc(fileArr) {
 function draw_desenho(contexto, pos_X, pos_Y, texto,entrada) {
 	//contexto.font = ArrayObjStatic[ij*20+10]+'pt Arial';
 	contexto.fillStyle = 'brack ';
-	contexto.fillRect(pos_X ,pos_Y, 60, 60);
+	contexto.rect(pos_X ,pos_Y, 60, 60);
   	contexto.fillRect(pos_X ,pos_Y, 10, 10);
   	contexto.fillStyle = 'black';
 	contexto.fillText(texto, pos_X + 10 , pos_Y);
