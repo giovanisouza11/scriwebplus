@@ -129,16 +129,17 @@ function draw_sfc(fileArr) {
 }
 function draw_desenho(contexto, pos_X, pos_Y, texto,entrada) {
 	//contexto.font = ArrayObjStatic[ij*20+10]+'pt Arial';
-	contexto.fillStyle = 'brack ';
-	contexto.beginPath(pos_X *60 ,pos_Y*60);
-  	contexto.moveTo(pos_X*60 +60 ,pos_Y*60);
+	contexto.lineWidth = "2";
+	contexto.strokeStyle = "green"; // Green path
+	contexto.beginPath();
+  	contexto.moveTo(pos_X*60,pos_Y*60);
+	contexto.lineTo(pos_X*60 +60 ,pos_Y*60);
   	contexto.lineTo(pos_X*60,pos_Y*60+60);
-  	contexto.moveTo(pos_X*60 +60 ,pos_Y*60);
-  	contexto.closePath();
-  	contexto.fillStyle = 'black';
-	contexto.fillText(texto, pos_X*60 + 10 , pos_Y*60);
-		
-	contexto.drawImage(AISfc, (AISfc.width/7), 60*(lfuncaosfc-1), 60, 60, ((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
+  	contexto.lineTo(pos_X*60 +60 ,pos_Y*60);
+  	contexto.lineTo(pos_X*60,pos_Y*60);
+  	contexto.stroke();
+	contexto.fillStyle = 'black';
+	contexto.fillText(texto, pos_X*60 + 10 , pos_Y*60);	
 }
 //=====================================================================================
 // verifica movimento do mouse
