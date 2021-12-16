@@ -135,8 +135,8 @@ function draw_desenho(contexto, pos_X, pos_Y, texto,entrada) {
 	contexto.strokeStyle = "green";
 	contexto.beginPath();
   	contexto.moveTo(pos_X*60,pos_Y*60);
-	contexto.lineTo(pos_X*60 +55 ,pos_Y*60);
-  	contexto.arcTo(pos_X*60 ,pos_Y*60, pos_X*60+60 ,pos_Y*60+5,10);
+	contexto.lineTo(pos_X*60+55 ,pos_Y*60);
+  	contexto.arcTo(pos_X*60+60,pos_Y*60, pos_X*60+60 ,pos_Y*60+5,10);
   	contexto.lineTo(pos_X*60+60,pos_Y*60+55);
   	contexto.arcTo(pos_X*60+60,pos_Y*60+60, pos_X*60 +55 ,pos_Y*60+60, 10);
   	contexto.lineTo(pos_X*60+5,pos_Y*60+60);
@@ -148,7 +148,7 @@ function draw_desenho(contexto, pos_X, pos_Y, texto,entrada) {
 	contexto.arcTo(pos_X*60+15,pos_Y*60+15, pos_X*60+15,pos_Y*60, 15);
   	contexto.stroke();
 	contexto.fillStyle = 'black';
-	contexto.fillText(texto, pos_X*60 + 10 , pos_Y*60);	
+	contexto.fillText(texto, pos_X*60+2 , pos_Y*60+12);	
 }
 //=====================================================================================
 // verifica movimento do mouse
