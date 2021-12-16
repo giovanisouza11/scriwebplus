@@ -56,7 +56,7 @@ function editar_sfc() {
 	 	//contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(0), 60, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);	
 		if (lfuncaosfc >0 && lfuncaosfc<3) {
 			IFigura.style.display = "none";
-			if (estadox_anterior = X){
+			if (estadox_anterior == X){
 				estadox_anterior = posicaoxsfc;
 				estadoy_anterior = posicaoysfc;
 			}
@@ -224,6 +224,9 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor) {
   	contexto.stroke();
 	contexto.fillStyle = 'black';
 	contexto.fillText(texto, pos_X*60+2 , pos_Y*60+12);	
+	
+	
+	estadox_anterior = X;
 }
 //=====================================================================================
 //Desenho 
