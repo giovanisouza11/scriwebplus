@@ -7,6 +7,8 @@ var lfuncaosfc=0;
 var canvassfc;    
 var contextsfc;
 var lArraySfc = new Array();
+var estadox_anterior = X;
+var estadoy_anterior;
 
 //=====================================================================================
 //Inicializa Canvas
@@ -52,7 +54,17 @@ function editar_sfc() {
 	else {
                 //lfuncaosfc = 1;
 	 	//contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(0), 60, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);	
-		if (lfuncaosfc >0) {
+		if (lfuncaosfc >0 && lfuncaosfc<3) {
+			IFigura.style.display = "none";
+			if (estadox_anterior = X){
+				estadox_anterior = posicaoxsfc;
+				estadoy_anterior = posicaoysfc;
+			}
+			else
+				draw_transicao(contextsfc, posicaoxsfc, posicaoysfc,estadox_anterior,estadoy_anterior,'black');
+			//contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(lfuncaosfc-1), 60, 60, ((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
+		}
+		if (lfuncaosfc >2 && lfuncaosfc<5) {
 			IFigura.style.display = "none";
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) + 5] = 0;
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +3] = 0;
@@ -212,6 +224,19 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor) {
   	contexto.stroke();
 	contexto.fillStyle = 'black';
 	contexto.fillText(texto, pos_X*60+2 , pos_Y*60+12);	
+}
+//=====================================================================================
+//Desenho 
+//=====================================================================================
+function draw_transicao(contexto, pos_X, pos_Y,pos_X0, pos_Y0, cor) {
+	contexto.lineWidth = "2";
+	contexto.strokeStyle = cor;
+	contexto.beginPath();
+  	contexto.moveTo(pos_X0*60+30 ,pos_Y0*60+60);
+	contexto.lineTo(pos_X*60+20,pos_Y*60-5);
+	contexto.lineTo(pos_X*60+22,pos_Y*60-5);
+ 	contexto.lineTo(pos_X*60+20,pos_Y*60);
+ 	contexto.stroke();
 }
 //=====================================================================================
 // verifica movimento do mouse
