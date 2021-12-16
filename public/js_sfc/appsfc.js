@@ -37,12 +37,13 @@ function draw_sfc_fundo(tipo) {
 //=====================================================================================
 function editar_sfc() {
 	var yScrollsfc = document.body.scrollTop;
-	var posicaoxsfc = parseInt((window.event.clientX-700)/60);
+	var posicaoxsfc = parseInt((window.event.clientX-650)/60);
 	var posicaoysfc = parseInt(((window.event.clientY+yScrollsfc)-5)/60);
 	var ICampo = document.getElementById('Campo');
 	var CInput = document.getElementById('input_ladder');
 	var IFigura = document.getElementById('Fig');
-
+        contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(0), 60, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
+		
 	if ((window.event.clientX < 650) || (window.event.clientX > 1400)) {
 		ICampo.style.display = "none";
 		IFigura.style.display = "none";
