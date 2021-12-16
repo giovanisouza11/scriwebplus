@@ -50,9 +50,9 @@ function editar_sfc() {
 		emEdicao = 0;
 	}
 	else {
-                lfuncaosfc =1;
+                lfuncaosfc = 1;
 	 	//contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(0), 60, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
-		if (lfuncaosfc >0) {
+		if (lfuncaosfc > 0) {
 			IFigura.style.display = "none";
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) + 5] = 0;
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +3] = 0;
