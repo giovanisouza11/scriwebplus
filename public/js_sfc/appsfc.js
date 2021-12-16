@@ -61,7 +61,7 @@ function editar_sfc() {
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +4] = '';
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +7] = '';
 			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +8] = '';
-			draw_estado(contextsfc, posicaoxsfc, posicaoysfc, "0");
+			draw_estado(contextsfc, posicaoxsfc, posicaoysfc, "0",'black');
 			//contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(lfuncaosfc-1), 60, 60, ((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
 		}
 		//contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(0), 60, 60, ((posicaoxsfc)*60), 65+(posicaoysfc)*60, 60, 60);			
@@ -130,25 +130,48 @@ function draw_sfc(fileArr) {
 //=====================================================================================
 //Desenho 
 //=====================================================================================
-function draw_estado(contexto, pos_X, pos_Y, texto) {
+function draw_estado(contexto, pos_X, pos_Y, texto,cor) {
 	contexto.lineWidth = "2";
-	contexto.strokeStyle = "green";
+	contexto.strokeStyle = cor;
 	contexto.beginPath();
   	contexto.moveTo(pos_X*60,pos_Y*60);
 	contexto.lineTo(pos_X*60+55 ,pos_Y*60);
   	contexto.arcTo(pos_X*60+60,pos_Y*60, pos_X*60+60 ,pos_Y*60+5,10);
-  	contexto.lineTo(pos_X*60+60,pos_Y*60+20);
-  	contexto.arcTo(pos_X*60+57,pos_Y*60+20, pos_X*60+57 ,pos_Y*60+23, 10);
-  	contexto.arcTo(pos_X*60+57,pos_Y*60+26, pos_X*60+60 ,pos_Y*60+26, 10);
-  	contexto.lineTo(pos_X*60+60,pos_Y*60+35);
-  	contexto.arcTo(pos_X*60+57,pos_Y*60+35, pos_X*60+57 ,pos_Y*60+38, 10);
-  	contexto.arcTo(pos_X*60+57,pos_Y*60+41, pos_X*60+57 ,pos_Y*60+41, 10);
   	contexto.lineTo(pos_X*60+60,pos_Y*60+55);
   	contexto.arcTo(pos_X*60+60,pos_Y*60+60, pos_X*60 +55 ,pos_Y*60+60, 10);
   	contexto.lineTo(pos_X*60+5,pos_Y*60+60);
   	contexto.arcTo(pos_X*60,pos_Y*60+60,pos_X*60,pos_Y*60+55,10);
   	contexto.lineTo(pos_X*60,pos_Y*60);
   	contexto.stroke();
+	contexto.beginPath();
+  	contexto.moveTo(pos_X*60-5,pos_Y*60+30);
+	contexto.lineTo(pos_X*60 ,pos_Y*60+30);
+  	contexto.stroke();
+	contexto.beginPath();
+  	contexto.moveTo(pos_X*60-5,pos_Y*60+40);
+	contexto.lineTo(pos_X*60 ,pos_Y*60+40);
+  	contexto.stroke();
+	contexto.beginPath();
+  	contexto.moveTo(pos_X*60+60,pos_Y*60+30);
+	contexto.lineTo(pos_X*60+5 ,pos_Y*60+30);
+  	contexto.stroke();
+	contexto.beginPath();
+  	contexto.moveTo(pos_X*60+60,pos_Y*60+40);
+	contexto.lineTo(pos_X*60+5 ,pos_Y*60+40);
+  	contexto.stroke();
+	contexto.beginPath();
+  	contexto.moveTo(pos_X*60+20,pos_Y*60+60);
+	contexto.lineTo(pos_X*60+20 ,pos_Y*60+65);
+  	contexto.stroke();
+	contexto.beginPath();
+  	contexto.moveTo(pos_X*60+30,pos_Y*60+60);
+	contexto.lineTo(pos_X*60+30 ,pos_Y*60+65);
+  	contexto.stroke();
+	contexto.beginPath();
+  	contexto.moveTo(pos_X*60+40,pos_Y*60+60);
+	contexto.lineTo(pos_X*60+40 ,pos_Y*60+65);
+  	contexto.stroke();
+			
 	contexto.beginPath();
   	contexto.moveTo(pos_X*60,pos_Y*60+15);
 	contexto.arcTo(pos_X*60+15,pos_Y*60+15, pos_X*60+15,pos_Y*60, 15);
