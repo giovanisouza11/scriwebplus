@@ -128,14 +128,13 @@ function draw_sfc(fileArr) {
 	lArraySfc.length = 0;
 }
 function draw_desenho(contexto, pos_X, pos_Y, texto,entrada) {
-	//contexto.font = ArrayObjStatic[ij*20+10]+'pt Arial';
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = "green"; // Green path
 	contexto.beginPath();
   	contexto.moveTo(pos_X*60,pos_Y*60);
 	contexto.lineTo(pos_X*60 +60 ,pos_Y*60);
+  	contexto.lineTo(pos_X*60+60,pos_Y*60+60);
   	contexto.lineTo(pos_X*60,pos_Y*60+60);
-  	contexto.lineTo(pos_X*60 +60 ,pos_Y*60);
   	contexto.lineTo(pos_X*60,pos_Y*60);
   	contexto.stroke();
 	contexto.fillStyle = 'black';
