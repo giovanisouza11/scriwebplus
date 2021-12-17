@@ -7,7 +7,7 @@ var lfuncaosfc=0;
 var canvassfc;    
 var contextsfc;
 var lArraySfc = new Array();
-var estadoX0 = X;
+var estadoX0 = 'SEM';
 var estadoY0;
 
 //=====================================================================================
@@ -55,7 +55,7 @@ function editar_sfc() {
                 // desenha  a transição
 		if (lfuncaosfc >0 && lfuncaosfc<3) {
 			IFigura.style.display = "none";
-			if (estadoX0 == X){
+			if (estadoX0 == 'SEM'){
 				estadoX0 = posicaoxsfc;
 				estadoY0 = posicaoysfc;
 			}
@@ -219,9 +219,9 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor) {
 	contexto.arcTo(pos_X*60+15,pos_Y*60+15, pos_X*60+15,pos_Y*60, 15);
   	contexto.stroke();
 	contexto.fillStyle = 'black';
-	contexto.fillText(texto, pos_X*60+2 , pos_Y*60+12);	
+	contexto.fillText(texto, pos_X*60+1 , pos_Y*60+10);	
 		
-	estadoX0 = X;
+	estadoX0 ='SEM';
 }
 //=====================================================================================
 //Desenho transição 
@@ -235,7 +235,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.lineTo(pos_X*60+22,pos_Y*60-5);
  	contexto.lineTo(pos_X*60+20,pos_Y*60);
  	contexto.stroke();
-	estadoX0 = X;
+	estadoX0 = 'SEM';
 }
 //=====================================================================================
 // verifica movimento do mouse
