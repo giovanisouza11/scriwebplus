@@ -74,38 +74,33 @@ function editar_sfc() {
 			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +8] = '';
 			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, lFuncaoSfc,'black');
 		}
-		lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +3] = lFuncaoSfc;
-		lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9)] = posicaoYSfc*10 + posicaoXSfc;
-		switch (lFuncaoSfc) {
-			case 1:
-			case 2:
-			case 9:
-				lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9)+ 6] = 1;
-			break;
-			case 11:
-				lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9)+ 6] = 0;
-				lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9)+ 4] = 0;
-				break;
-			default:
-				lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9)+ 6] = 2;
-				lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9)+ 4] = 0;
-		}
-		if ( lFuncaoSfc > 2 && (tipo_funcao<5))
+		if ( lFuncaoSfc > 2 && (lFuncaoSfc<5))
 		{
 			ICampo.style.display = "block";
 			ICampo.style.left = " "+(700 +(posicaoXSfc*60)) + "px";
 			ICampo.style.top = " "+(05+(posicaoYSfc*60))  + "px";
 			var tag;
-			switch (lFuncaoSfc) {
-				case 8:
-				case 10:
-					document.getElementById("label_input").innerHTML = "Função:";
-					tag = lArraySfc[(posicaoysfc*8*9) + ((posicaoxsfc)*9)+8];
-					break;
-				default:
-					document.getElementById("label_input").innerHTML = "Endereço:";
-					tag = lArraySfc[(posicaoysfc*8*9) + ((posicaoxsfc)*9)+2];
-			}
+			document.getElementById("label_input").innerHTML = "Ação 1:";
+			tag = lArraySfc[(posicaoysfc*8*9) + ((posicaoxsfc)*9)+8];
+			if (tag != undefined && tag != "undefined")
+				document.getElementById('input_ladder').value = tag;
+			else
+				document.getElementById('input_ladder').value = "";
+			CInput.focus();
+			emEdicao = 1;
+		}
+		else {
+			ICampo.style.display = "none";
+			emEdicao = 0;
+		}
+		if ( lFuncaoSfc > 0 && (lFuncaoSfc<3) && sfcTipo == 0)
+		{
+			ICampo.style.display = "block";
+			ICampo.style.left = " "+(700 +(posicaoXSfc*60)) + "px";
+			ICampo.style.top = " "+(05+(posicaoYSfc*60))  + "px";
+			var tag;
+			document.getElementById("label_input").innerHTML = "Condição 1:";
+			tag = lArraySfc[(posicaoysfc*8*9) + ((posicaoxsfc)*9)+8];
 			if (tag != undefined && tag != "undefined")
 				document.getElementById('input_ladder').value = tag;
 			else
