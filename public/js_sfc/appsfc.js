@@ -216,7 +216,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.strokeStyle = cor;
 	if (pos_Y < (estadoY0+2)) {
 		contexto.beginPath();
-  		if (pos_X < estadoX0) {
+  		if (pos_X > estadoX0) {
 			contexto.moveTo(estadoX0*60+60 ,estadoY0*60+30);
 			contexto.lineTo(estadoX0*60+75,estadoY0*60+30);
 			contexto.lineTo(pos_X*60-20,pos_Y*60+30);
