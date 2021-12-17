@@ -226,13 +226,22 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
  			contexto.lineTo(pos_X*60-10,pos_Y*60+28);
 		}
 		else {
- 			contexto.moveTo(estadoX0*60 ,estadoY0*60+30);
+			contexto.moveTo(estadoX0*60 ,estadoY0*60+30);
 			contexto.lineTo(estadoX0*60-15,estadoY0*60+30);
-			contexto.lineTo(pos_X*60+80,pos_Y*60+30);
-			contexto.lineTo(pos_X*60+70,pos_Y*60+30);
-			contexto.lineTo(pos_X*60+70,pos_Y*60+32);
- 			contexto.lineTo(pos_X*60+60,pos_Y*60+30);
- 			contexto.lineTo(pos_X*60+70,pos_Y*60+28);
+			if (pos_X == estadoX0) {
+				contexto.lineTo(pos_X*60-20,pos_Y*60+30);
+				contexto.lineTo(pos_X*60-10,pos_Y*60+30);
+				contexto.lineTo(pos_X*60-10,pos_Y*60+32);
+ 				contexto.lineTo(pos_X*60,pos_Y*60+30);
+ 				contexto.lineTo(pos_X*60-10,pos_Y*60+28);
+			}
+			else {
+				contexto.lineTo(pos_X*60+80,pos_Y*60+30);
+				contexto.lineTo(pos_X*60+70,pos_Y*60+30);
+				contexto.lineTo(pos_X*60+70,pos_Y*60+32);
+ 				contexto.lineTo(pos_X*60+60,pos_Y*60+30);
+ 				contexto.lineTo(pos_X*60+70,pos_Y*60+28);
+			}
 		}
 		contexto.stroke();
 	}
