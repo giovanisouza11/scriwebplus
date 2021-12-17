@@ -216,9 +216,12 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.strokeStyle = cor;
 	contexto.beginPath();
   	contexto.moveTo(estadoX0*60+30 ,estadoY0*60+60);
+	contexto.lineTo(estadoX0*60+30,estadoY0*60+70);
+	contexto.lineTo(pos_X*60+20,pos_Y*60-10);
 	contexto.lineTo(pos_X*60+20,pos_Y*60-5);
-	contexto.lineTo(pos_X*60+22,pos_Y*60-5);
+	contexto.lineTo(pos_X*60+25,pos_Y*60-5);
  	contexto.lineTo(pos_X*60+20,pos_Y*60);
+ 	contexto.lineTo(pos_X*60+15,pos_Y*60-5);
  	contexto.stroke();
 	sfcTipo = 0;
 }
