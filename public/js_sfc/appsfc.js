@@ -214,15 +214,28 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor) {
 function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
-	contexto.beginPath();
-  	contexto.moveTo(estadoX0*60+30 ,estadoY0*60+60);
-	contexto.lineTo(estadoX0*60+30,estadoY0*60+75);
-	contexto.lineTo(pos_X*60+20,pos_Y*60-15);
-	contexto.lineTo(pos_X*60+20,pos_Y*60-10);
-	contexto.lineTo(pos_X*60+23,pos_Y*60-10);
- 	contexto.lineTo(pos_X*60+20,pos_Y*60);
- 	contexto.lineTo(pos_X*60+17,pos_Y*60-10);
- 	contexto.stroke();
+	if (pos_Y > (estadoY0+120)) {
+		contexto.beginPath();
+  		contexto.moveTo(estadoX0*60+60 ,estadoY0*60+30);
+		contexto.lineTo(estadoX0*60+75,estadoY0*60+30);
+		contexto.lineTo(pos_X*60-20,pos_Y*60+30);
+		contexto.lineTo(pos_X*60-10,pos_Y*60+30);
+		contexto.lineTo(pos_X*60-10,pos_Y*60+32);
+ 		contexto.lineTo(pos_X*60,pos_Y*60+30);
+ 		contexto.lineTo(pos_X*60-10,pos_Y*60+28);
+ 		contexto.stroke();
+	}
+	if (pos_Y < (estadoY0+60)) {
+		contexto.beginPath();
+  		contexto.moveTo(estadoX0*60+30 ,estadoY0*60+60);
+		contexto.lineTo(estadoX0*60+30,estadoY0*60+75);
+		contexto.lineTo(pos_X*60+20,pos_Y*60-15);
+		contexto.lineTo(pos_X*60+20,pos_Y*60-10);
+		contexto.lineTo(pos_X*60+23,pos_Y*60-10);
+ 		contexto.lineTo(pos_X*60+20,pos_Y*60);
+ 		contexto.lineTo(pos_X*60+17,pos_Y*60-10);
+ 		contexto.stroke();
+	}
 	sfcTipo = 0;
 }
 //=====================================================================================
