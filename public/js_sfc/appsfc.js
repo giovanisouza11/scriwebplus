@@ -7,7 +7,7 @@ var lfuncaosfc=0;
 var canvassfc;    
 var contextsfc;
 var lArraySfc = new Array();
-var estadoX0 = 'SEM';
+var estadoX0;
 var estadoY0;
 
 //=====================================================================================
@@ -55,9 +55,10 @@ function editar_sfc() {
                 // desenha  a transição
 		if (lfuncaosfc >0 && lfuncaosfc<3) {
 			IFigura.style.display = "none";
-			if (estadoX0 == 'SEM'){
+			if (sfcTipo == 0){
 				estadoX0 = posicaoxsfc;
 				estadoY0 = posicaoysfc;
+				sfcTipo = 1;
 			}
 			else
 				draw_transicao(contextsfc, posicaoxsfc, posicaoysfc,'black');
@@ -220,8 +221,6 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor) {
   	contexto.stroke();
 	contexto.fillStyle = 'black';
 	contexto.fillText(texto, pos_X*60+1 , pos_Y*60+10);	
-		
-	estadoX0 ='SEM';
 }
 //=====================================================================================
 //Desenho transição 
@@ -235,7 +234,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.lineTo(pos_X*60+22,pos_Y*60-5);
  	contexto.lineTo(pos_X*60+20,pos_Y*60);
  	contexto.stroke();
-	estadoX0 = 'SEM';
+	sfcTipo = 0;
 }
 //=====================================================================================
 // verifica movimento do mouse
@@ -255,7 +254,7 @@ function mouse_move_sfc(){
 		for (var i=11; i<21; i++) {
 			if ( valor_chave_sfc[i] ==1) {
 				lfuncaosfc = i - 10;
-				context3.drawImage(AISfc, 0, 60*(i-11), 60, 60, 0, 0, 60, 60);
+				context3.drawImage(AISfc, 60*sfcTipo, 60*(i-11), 60, 60, 0, 0, 60, 60);
 				ICampo.style.display = "none";
 				IFigura.style.display = "block";
 				IFigura.style.left = " "+(window.event.clientX-30) + "px";
