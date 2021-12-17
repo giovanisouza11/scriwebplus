@@ -3,9 +3,9 @@
 //=====================================================================================
 var AISfc = new Image();  
 AISfc.src = "/img_sfc/sfc.png";
-var lfuncaosfc=0;
-var canvassfc;    
-var contextsfc;
+var lFuncaoSfc=0;
+var canvasSfc;    
+var contextSfc;
 var lArraySfc = new Array();
 var estadoX0;
 var estadoY0;
@@ -15,10 +15,10 @@ var estadoY0;
 //Desenha area de trabalho em branco
 //=====================================================================================
 function draw_sfc_inicio() {
-	canvassfc = document.getElementById("tela_sfc");
-	contextsfc = canvassfc.getContext("2d");
-	canvassfc.width = 600;
-	canvassfc.height = 60 * Num_Linhas;
+	canvasSfc = document.getElementById("tela_sfc");
+	contextSfc = canvasSfc.getContext("2d");
+	canvasSfc.width = 600;
+	canvasSfc.height = 60 * Num_Linhas;
 	draw_sfc_fundo(0);
 	inicializa_array_sfc();
 }
@@ -27,9 +27,9 @@ function draw_sfc_inicio() {
 //Desenha area de trabalho em branco
 //=====================================================================================
 function draw_sfc_fundo(tipo) {
-	for (var iy = 0; iy <(canvassfc.height-59); iy=iy+60) {
-		for (var ix = 0; ix <(canvassfc.width-59); ix=ix+60){
-		   	contextsfc.drawImage(AISfc, 60*tipo, 540, 60, 60, ix, iy, 60, 60);
+	for (var iy = 0; iy <(canvasSfc.height-59); iy=iy+60) {
+		for (var ix = 0; ix <(canvasSfc.width-59); ix=ix+60){
+		   	contextSfc.drawImage(AISfc, 60*tipo, 540, 60, 60, ix, iy, 60, 60);
 		}
 	}
 }
@@ -39,13 +39,12 @@ function draw_sfc_fundo(tipo) {
 //=====================================================================================
 function editar_sfc() {
 	var yScrollsfc = document.body.scrollTop;
-	var posicaoxsfc = parseInt((window.event.clientX-650)/60);
-	var posicaoysfc = parseInt(((window.event.clientY+yScrollsfc)-5)/60);
+	var posicaoXSfc = parseInt((window.event.clientX-650)/60);
+	var posicaoYSfc = parseInt(((window.event.clientY+yScrollsfc)-5)/60);
 	var ICampo = document.getElementById('Campo');
 	var CInput = document.getElementById('input_ladder');
 	var IFigura = document.getElementById('Fig');
-        //contextsfc.drawImage(AISfc, (AISfc.width/7), 60*(0), 60, 60, 65+((posicaoxsfc)*60), (posicaoysfc)*60, 60, 60);			
-		
+        	
 	if ((window.event.clientX < 650) || (window.event.clientX > 1400)) {
 		ICampo.style.display = "none";
 		IFigura.style.display = "none";
@@ -53,59 +52,51 @@ function editar_sfc() {
 	}
 	else {
                 // desenha  a transição
-		if (lfuncaosfc >0 && lfuncaosfc<3) {
+		if (lFuncaoSfc >0 && lFuncaoSfc<3) {
 			IFigura.style.display = "none";
 			if (sfcTipo == 0){
-				estadoX0 = posicaoxsfc;
-				estadoY0 = posicaoysfc;
+				estadoX0 = posicaoXSfc;
+				estadoY0 = posicaoYSfc;
 				sfcTipo = 1;
 			}
 			else
-				draw_transicao(contextsfc, posicaoxsfc, posicaoysfc,'black');
+				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
 		}
 		// desenha o estado
-		if (lfuncaosfc >2 && lfuncaosfc<5) {
+		if (lDuncaoSfc >2 && lFuncaoSfc<5) {
 			IFigura.style.display = "none";
-			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) + 5] = 0;
-			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +3] = 0;
-			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +1] = '';
-			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +2] = '';
-			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +4] = '';
-			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +7] = '';
-			lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +8] = '';
-			draw_estado(contextsfc, posicaoxsfc, posicaoysfc, lfuncaosfc,'black');
+			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) + 5] = 0;
+			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +3] = 0;
+			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +1] = '';
+			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +2] = '';
+			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +4] = '';
+			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +7] = '';
+			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +8] = '';
+			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, lFuncaoSfc,'black');
 		}
-		lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) +3] = lfuncaosfc;
-		lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)] = posicaoysfc*10 + posicaoxsfc;
-		switch (lfuncaosfc) {
+		lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +3] = lFuncaoSfc;
+		lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9)] = posicaoYSfc*10 + posicaoXSfc;
+		switch (lFuncaoSfc) {
 			case 1:
 			case 2:
 			case 9:
-				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 6] = 1;
-				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 4] = 0;
-				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 7] = 0;
-				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 8] = 0;
+				lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9)+ 6] = 1;
 			break;
 			case 11:
-				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 6] = 0;
-				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 4] = 0;
-				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 7] = 0;
-				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 8] = 0;
+				lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9)+ 6] = 0;
+				lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9)+ 4] = 0;
 				break;
 			default:
-				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 6] = 2;
-				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 4] = 0;
-				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 7] = 0;
-				lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9)+ 8] = 0;
+				lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9)+ 6] = 2;
+				lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9)+ 4] = 0;
 		}
-		var tipo_funcao = lArraySfc[(posicaoysfc*8*9) + (posicaoxsfc*9) + 3];
-		if ( tipo_funcao > 0 && (tipo_funcao<11))
+		if ( lFuncaoSfc > 2 && (tipo_funcao<5))
 		{
 			ICampo.style.display = "block";
-			ICampo.style.left = " "+(700 +(posicaoxsfc*60)) + "px";
-			ICampo.style.top = " "+(05+(posicaoysfc*60))  + "px";
+			ICampo.style.left = " "+(700 +(posicaoXSfc*60)) + "px";
+			ICampo.style.top = " "+(05+(posicaoYSfc*60))  + "px";
 			var tag;
-			switch (tipo_funcao) {
+			switch (lFuncaoSfc) {
 				case 8:
 				case 10:
 					document.getElementById("label_input").innerHTML = "Função:";
@@ -247,13 +238,13 @@ function mouse_move_sfc(){
     	var ICampo = document.getElementById('Campo');
 	var IFigura = document.getElementById('Fig');
 	var yTop = window.event.clientY + document.body.scrollTop - 20;
-	lfuncaosfc = 0;
+	lFuncaoSfc = 0;
 	//emEdicao = 0;
 	if (window.event.clientX >650 && emEdicao==0) {
 		
 		for (var i=11; i<21; i++) {
 			if ( valor_chave_sfc[i] ==1) {
-				lfuncaosfc = i - 10;
+				lFuncaoSfc = i - 10;
 				context3.drawImage(AISfc, 60*sfcTipo, 60*(i-11), 60, 60, 0, 0, 60, 60);
 				ICampo.style.display = "none";
 				IFigura.style.display = "block";
@@ -266,12 +257,12 @@ function mouse_move_sfc(){
 	else {
 		IFigura.style.display = "none";
 	}
-	var posicaoxsfc = parseInt((window.event.clientX-700));
-    	var posicaoysfc = parseInt((yTop+15));
+	var posicaoXSfc = parseInt((window.event.clientX-700));
+    	var posicaoYSfc = parseInt((yTop+15));
     	ICampo.style.display = "block";
 	var ICampox = parseInt((parseInt(ICampo.style.left)-700));
 	var ICampoy = parseInt((parseInt(ICampo.style.top)-5));
-	if ((emEdicao > 0)  && ((ICampox != posicaox) || (ICampoy != posicaoy))){
+	if ((emEdicao > 0)  && ((ICampox != posicaoXSfc) || (ICampoy != posicaoYSfc))){
 		ICampo.style.display = "none";
 		ICampo.style.top = "680px";
 
