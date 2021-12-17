@@ -4,6 +4,7 @@ var canvasSfc1;
 var contextSfc1;
 var valor_chave_sfc = new Array(21);
 let titulo_sfc = 'ScriSfc';
+var sfcTipo = 0;
 
 //desenha os botoes
 function draw_botoes_sfc() {
@@ -29,6 +30,7 @@ function draw_botoes_sfc() {
 function trocar_botao_sfc() {
 	var posicaoysfc = parseInt((window.event.clientY-1)/47);
 	var posicaoxsfc = parseInt((window.event.clientX-460)/72);
+	sfcTipo = 0;
 	if (posicaoxsfc == 1)
 		posicaoysfc = posicaoysfc + 10;
 	if ((posicaoysfc >=0) && (posicaoysfc < 21))
