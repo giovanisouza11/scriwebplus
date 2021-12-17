@@ -219,6 +219,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
   		if (pos_X > estadoX0) {
 			contexto.moveTo(estadoX0*60+60 ,estadoY0*60+30);
 			contexto.lineTo(estadoX0*60+75,estadoY0*60+30);
+			contexto.lineTo(estadoX0*60+75,pos_Y*60+30);
 			contexto.lineTo(pos_X*60-20,pos_Y*60+30);
 			contexto.lineTo(pos_X*60-10,pos_Y*60+30);
 			contexto.lineTo(pos_X*60-10,pos_Y*60+32);
@@ -236,6 +237,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
  				contexto.lineTo(pos_X*60-10,pos_Y*60+28);
 			}
 			else {
+				contexto.lineTo(estadoX0*60-15,pos_Y*60+30);
 				contexto.lineTo(pos_X*60+80,pos_Y*60+30);
 				contexto.lineTo(pos_X*60+70,pos_Y*60+30);
 				contexto.lineTo(pos_X*60+70,pos_Y*60+32);
@@ -249,6 +251,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 		contexto.beginPath();
   		contexto.moveTo(estadoX0*60+30 ,estadoY0*60+60);
 		contexto.lineTo(estadoX0*60+30,estadoY0*60+75);
+		contexto.lineTo(pos_X*60+20,estadoY0*60+75);
 		contexto.lineTo(pos_X*60+20,pos_Y*60-15);
 		contexto.lineTo(pos_X*60+20,pos_Y*60-10);
 		contexto.lineTo(pos_X*60+23,pos_Y*60-10);
