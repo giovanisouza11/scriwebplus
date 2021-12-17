@@ -63,7 +63,7 @@ function editar_sfc() {
 				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
 		}
 		// desenha o estado
-		if (lDuncaoSfc >2 && lFuncaoSfc<5) {
+		if (lFuncaoSfc >2 && lFuncaoSfc<5) {
 			IFigura.style.display = "none";
 			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) + 5] = 0;
 			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +3] = 0;
