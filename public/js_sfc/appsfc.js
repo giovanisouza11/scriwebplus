@@ -12,7 +12,7 @@ var lArraySfc = new Array();
 var lArrayTransicao = new Array();
 var estadoX0;
 var estadoY0;
-var numeroEstado, numeroEstadoOrigem, indexEstado;
+var numeroEstado, numeroEstadoOrigem, indexEstado = 0;
 //=====================================================================================
 //Inicializa Canvas
 //Desenha area de trabalho em branco
@@ -63,16 +63,16 @@ function editar_sfc() {
 				sfcTipo = 1;
 			}
 			else{
-				var indexEstado = 0;
+				var linhaEstado = 0;
 				do {
 					NumeroEstado = lArrayEstado[indexEstado+1];
-					indexEstado = indexEstado + 26;
-				}while ( (ArrayEstado != posicaoYSfc + posicaoXSfc) && ArrayEstado.length > indexEstado);
-				indexEstado = 0;
+					linhaEstado += 26;
+				}while ( (ArrayEstado != posicaoYSfc + posicaoXSfc) && ArrayEstado.length > linhaEstado);
+				linhaEstado = 0;
 				do {
 					NumeroEstadoOrigem = lArrayEstado[indexEstado+1];
-					indexEstado = indexEstado + 26;
-				}while ( lArrayEstado != estadoY0 + estadoX0  && ArrayEstado.length > indexEstado);
+					linhaEstado += 26;
+				}while ( lArrayEstado != estadoY0 + estadoX0  && ArrayEstado.length > linhaEstado);
 				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
 		}
 		// desenha o estado
