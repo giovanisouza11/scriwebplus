@@ -6,9 +6,11 @@ AISfc.src = "/img_sfc/sfc.png";
 var lFuncaoSfc=0;
 var canvasSfc;    
 var contextSfc;
-// lArrayEstado = (LinhaColuna, NUM_ESTADO,Memoria, Estado de chegada1,..,..,..,..,Estado de chegada5,Estado_Destino 1,..,..,..,..,..,..,Estado_DEstino8,Ação1,..,..,..,..,..,..,Ação 8, se estado 0 númerodememórias
+// lArrayEstado = (LinhaColuna, 1-NUM_ESTADO,2-Memoria,3-Estado de chegada1,..,..,..,..,8-Estado de chegada5,
+//                 9-Estado_Destino 1,..,..,..,..,..,..,16-Estado_DEstino8,
+//                 17-Ação1,..,..,..,..,..,..,24-Ação 8,25-se estado 0 númerodememórias
 var lArrayEstado = new Array();
-// lArrayTransiçao = (Estado origem, estado destino,  Condoção 1,..,..,..,..,..,Condição 7,ponto1,ponto2,ponto3´ponto4,ponto5,ponto6)
+// lArrayTransiçao = (Estado origem, 1-estado destino, 2-Condoção 1,..,..,..,..,..,8-Condição 7,9-ponto1,10-ponto2,11-ponto3,12-ponto4,13-ponto5,14ponto6)
 var lArrayTransicao = new Array();
 var estadoX0;
 var estadoY0;
