@@ -16,8 +16,8 @@ var estadoX0;
 var estadoY0;
 var numeroEstado;
 var numeroEstadoOrigem;
-var indexEstado = 1;
-var indexTransicao = 1;
+var indexEstado = 0;
+var indexTransicao = 0;
 //=====================================================================================
 //Inicializa Canvas
 //Desenha area de trabalho em branco
@@ -89,7 +89,7 @@ function editar_sfc() {
 		// desenha o estado
 		if (lFuncaoSfc >2 && lFuncaoSfc<5) {
 			IFigura.style.display = "none";
-			lArrayEstado[indexEstado*26] = ' '+ posicaoYSfc + posicaoXSfc ;
+			lArrayEstado[indexEstado*26] = toString(posicaoYSfc + posicaoXSfc) ;
 			lArrayEstado[indexEstado*26+1] =  indexEstado;
 			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, indexEstado,'black');
 			indexEstado++;
