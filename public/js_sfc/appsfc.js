@@ -8,7 +8,7 @@ var canvasSfc;
 var contextSfc;
 // lArrayEstado = (LinhaColuna, NUM_ESTADO,Memoria, Estado de chegada1,..,..,..,..,Estado de chegada5,Estado_Destino 1,..,..,..,..,..,..,Estado_DEstino8,Ação1,..,..,..,..,..,..,Ação 8, se estado 0 númerodememórias
 var lArraySfc = new Array();
-// lArrayTransiçao = (Estado origem, estado destino,  Condoção 1,..,..,..,..,..,Condição 7
+// lArrayTransiçao = (Estado origem, estado destino,  Condoção 1,..,..,..,..,..,Condição 7,ponto1,ponto2,ponto3´ponto4,ponto5,ponto6)
 var lArrayTransicao = new Array();
 var estadoX0;
 var estadoY0;
@@ -131,7 +131,8 @@ function editar_sfc() {
 // Apos leitura do arquivo
 //=====================================================================================
 function draw_sfc(fileArr) {
-	lArraySfc.length = 0;
+	lArrayEstado.length = 0;
+	lArrayTransicao.length = 0;
 }
 //=====================================================================================
 //Desenho 
@@ -323,7 +324,8 @@ function mouse_move_sfc(){
 // Inicializa o array
 //=====================================================================================
 function inicializa_array_sfc(){
-	lArraySfc.length = 0;
+	lArrayEstado.length = 0;
+	lArrayTransicao.length = 0;
 }
 
 //=====================================================================================
@@ -332,7 +334,8 @@ function inicializa_array_sfc(){
 // Para entrada TAG e ENDERECO
 //=====================================================================================
 function entrada_input_sfc(event){
-	lArraySfc.length = 0;
+	lArrayEstado.length = 0;
+	lArrayTransicao.length = 0;
 }
 
 //=====================================================================================
@@ -340,5 +343,6 @@ function entrada_input_sfc(event){
 // Apos RUN e STOP do CLP
 //=====================================================================================
 function monitora_sfc() {
-	lArraySfc.length = 0;
+	lArrayEstado.length = 0;
+	lArrayTransicao.length = 0;
 }
