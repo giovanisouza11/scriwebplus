@@ -6,10 +6,13 @@ AISfc.src = "/img_sfc/sfc.png";
 var lFuncaoSfc=0;
 var canvasSfc;    
 var contextSfc;
+// lArrayEstado = (LinhaColuna, NUM_ESTADO,Memoria, Estado de chegada1,..,..,..,..,Estado de chegada5,Estado_Destino 1,..,..,..,..,..,..,Estado_DEstino8,Ação1,..,..,..,..,..,..,Ação 8, se estado 0 númerodememórias
 var lArraySfc = new Array();
+// lArrayTransiçao = (Estado origem, estado destino,  Condoção 1,..,..,..,..,..,Condição 7
+var lArrayTransicao = new Array();
 var estadoX0;
 var estadoY0;
-
+var numeroEstado, numeroEstadoOrigem, indexEstado=0;
 //=====================================================================================
 //Inicializa Canvas
 //Desenha area de trabalho em branco
@@ -59,20 +62,26 @@ function editar_sfc() {
 				estadoY0 = posicaoYSfc;
 				sfcTipo = 1;
 			}
-			else
+			else{
+				var indexEstado = 0;
+				do {
+					NumeroEstado = lArrayEstado[indexEstado+1];
+					indexEstado = indexEstado + 26;
+				}while ( (ArrayEstado != posicaoYSfc + posicaoXSfc) && ArrayEstado.length > indexEstado);
+				indexEstado = 0;
+				do {
+					NumeroEstadoOrigem = lArrayEstado[indexEstado+1];
+					indexEstado = indexEstado + 26;
+				}while ( lArrayEstado != estadoY0 + estadoX0  && ArrayEstado.length > indexEstado);
 				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
 		}
 		// desenha o estado
 		if (lFuncaoSfc >2 && lFuncaoSfc<5) {
 			IFigura.style.display = "none";
-			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) + 5] = 0;
-			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +3] = 0;
-			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +1] = '';
-			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +2] = '';
-			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +4] = '';
-			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +7] = '';
-			lArraySfc[(posicaoYSfc*8*9) + (posicaoXSfc*9) +8] = '';
-			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, lFuncaoSfc,'black');
+			lArrayEstado[(posicaoYSfc*8*9) + (posicaoXSfc*9)] =  posicaoYSfc + posicaoXSfc ;
+			lArrayEstado[(posicaoYSfc*8*9) + (posicaoXSfc*9)+1] =  indexEstado;
+			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, indexEstado,'black');
+			indexEstado++;
 		}
 		if ( lFuncaoSfc > 2 && (lFuncaoSfc<5))
 		{
