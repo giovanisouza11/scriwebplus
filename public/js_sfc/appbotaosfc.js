@@ -109,13 +109,18 @@ function trocar_botao_sfc() {
 	}
 	if (valor_chave_sfc[2]==1){
 	    	let texto = '_id, numero, acao1, acao2, acao3, acao4, acao6, acao6, acao7, acao8, acao9, acao10, transicao1, transicao2, transicao3, transicao4, tnasicao,5,transicao6,transicao7, transicao8, memoria, posicaoX,posicaoY' + '\n';
-	    	for (var i=0; i<(larray.length/9); i++) {
-			for (var j=0; j<9; j++)
-			    texto += larray[(i*9)+j]+',';
+	    	for (var i=0; i<(lArrayEstado.length/26); i++) {
+			for (var j=0; j<26; j++)
+			    texto += lArrayEstado[(i*26)+j]+',';
 			texto += '\n';
 		}
 	 	texto = texto+'_id, numero, condicao1, condicao2, condicao3, condicao4, condicao6, condicao6, condicao7, ponto1, ponto2,ponto3,ponto4,ponto5,ponto6,ponto7,ponto8' + '\n';
-		compila_sfc();
+		for (var i=0; i<(lArrayTransicao.length/14); i++) {
+			for (var j=0; j<14; j++)
+			    texto += lArrayTransicao[(i*14)+j]+',';
+			texto += '\n';
+		}
+		//compila_sfc();
 		//texto += '\n\n';
 		//for (var i=0; i<(booleano.length); i++) {
 			//for (var j=0; j<2; j++)
