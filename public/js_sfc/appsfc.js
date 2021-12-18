@@ -7,7 +7,7 @@ var lFuncaoSfc=0;
 var canvasSfc;    
 var contextSfc;
 // lArrayEstado = (LinhaColuna, NUM_ESTADO,Memoria, Estado de chegada1,..,..,..,..,Estado de chegada5,Estado_Destino 1,..,..,..,..,..,..,Estado_DEstino8,Ação1,..,..,..,..,..,..,Ação 8, se estado 0 númerodememórias
-var lArraySfc = new Array();
+var lArrayEstado = new Array();
 // lArrayTransiçao = (Estado origem, estado destino,  Condoção 1,..,..,..,..,..,Condição 7,ponto1,ponto2,ponto3´ponto4,ponto5,ponto6)
 var lArrayTransicao = new Array();
 var estadoX0;
