@@ -12,7 +12,9 @@ var lArraySfc = new Array();
 var lArrayTransicao = new Array();
 var estadoX0;
 var estadoY0;
-var numeroEstado, numeroEstadoOrigem, indexEstado = 0;
+var numeroEstado;
+var numeroEstadoOrigem;
+var indexEstado = 0;
 //=====================================================================================
 //Inicializa Canvas
 //Desenha area de trabalho em branco
