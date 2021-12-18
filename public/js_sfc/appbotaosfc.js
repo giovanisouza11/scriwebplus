@@ -108,13 +108,14 @@ function trocar_botao_sfc() {
 		valor_chave_sfc[7]==1;
 	}
 	if (valor_chave_sfc[2]==1){
-	    	let texto = '_id, numero, acao1, acao2, acao3, acao4, acao6, acao6, acao7, acao8, acao9, acao10, transicao1, transicao2, transicao3, transicao4, tnasicao,5,transicao6,transicao7, transicao8, memoria, posicaoX,posicaoY' + '\n';
+
+	    	let texto = 'LinhaColuna, 1-NUM_ESTADO,2-Memoria,3-EstadoINICIAL1,..,..,..,..,8-EstadoiNICIAL5,9-EstadoFIM1,..,..,..,..,..,..,16-EstadoFIM8,17-Ação1,..,..,..,..,..,..,24-Ação 8,25-NumMem' + '\n';
 	    	for (var i=0; i<(lArrayEstado.length/26); i++) {
 			for (var j=0; j<26; j++)
 			    texto += lArrayEstado[(i*26)+j]+',';
 			texto += '\n';
 		}
-	 	texto = texto+'_id, numero, condicao1, condicao2, condicao3, condicao4, condicao6, condicao6, condicao7, ponto1, ponto2,ponto3,ponto4,ponto5,ponto6,ponto7,ponto8' + '\n';
+	 	texto = texto+'EstadoInicial, 1-estadoFim, 2-Condição1,..,..,..,..,..,8-Condição7,9-ponto1,10-ponto2,11-ponto3,12-ponto4,13-ponto5,14ponto6' + '\n';
 		for (var i=0; i<(lArrayTransicao.length/14); i++) {
 			for (var j=0; j<14; j++)
 			    texto += lArrayTransicao[(i*14)+j]+',';
