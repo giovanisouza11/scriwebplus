@@ -67,14 +67,14 @@ function editar_sfc() {
 			else{
 				var linhaEstado = 0;
 				do {
-					NumeroEstado = lArrayEstado[linhaEstado+1];
+					numeroEstado = lArrayEstado[linhaEstado+1];
 					linhaEstado += 26;
-				}while ( (lArrayEstado[linhaEstado] != (posicaoYSfc + posicaoXSfc)) && lArrayEstado.length > linhaEstado);
+				}while ( (lArrayEstado[linhaEstado] != (posicaoYSfc + posicaoXSfc)) && (lArrayEstado.length > linhaEstado));
 				linhaEstado = 0;
 				do {
-					NumeroEstadoOrigem = lArrayEstado[linhaEstado+1];
+					numeroEstadoOrigem = lArrayEstado[linhaEstado+1];
 					linhaEstado += 26;
-				}while ( (lArrayEstado[linhaEstado] != (estadoY0 + estadoX0 )) && ArrayEstado.length > linhaEstado);
+				}while ( (lArrayEstado[linhaEstado] != (estadoY0 + estadoX0 )) && (ArrayEstado.length > linhaEstado));
 				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
 		}
 		// desenha o estado
