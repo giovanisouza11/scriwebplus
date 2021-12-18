@@ -80,8 +80,8 @@ function editar_sfc() {
 				}while ( (lArrayEstado[linhaEstado] != (estadoY0 + estadoX0 )) && (lArrayEstado.length > linhaEstado));
 				lArrayEstado[numeroEstado*26+3] =  indexTransicao;
 				lArrayEstado[numeroEstadoOrigem*26+9] =  indexTransicao;
-				lArrayTransicao[numeroTransicao*14] =  numeroEstadoOrigem;
-				lArrayTransicao[numeroTransicao*14+1] =  numeroEstado;
+				lArrayTransicao[indexTransicao*14] =  numeroEstadoOrigem;
+				lArrayTransicao[indexTransicao*14+1] =  numeroEstado;
 				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
 				indexTransicao++;
 			}
