@@ -89,7 +89,7 @@ function editar_sfc() {
 		// desenha o estado
 		if (lFuncaoSfc >2 && lFuncaoSfc<5) {
 			IFigura.style.display = "none";
-			lArrayEstado[indexEstado*26] = string(posicaoYSfc) + posicaoXSfc ;
+			lArrayEstado[indexEstado*26] = posicaoYSfc +' '+ posicaoXSfc ;
 			lArrayEstado[indexEstado*26+1] =  indexEstado;
 			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, indexEstado,'black');
 			indexEstado++;
