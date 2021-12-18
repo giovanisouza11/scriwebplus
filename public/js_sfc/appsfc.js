@@ -66,7 +66,7 @@ function editar_sfc() {
 			}
 			else{
 				var linhaEstado = 0;
-				/*do {
+				do {
 					numeroEstado = lArrayEstado[linhaEstado+1];
 					linhaEstado += 26;
 				}while ( (lArrayEstado[linhaEstado] != (posicaoYSfc + posicaoXSfc)) && (lArrayEstado.length > linhaEstado));
@@ -74,8 +74,9 @@ function editar_sfc() {
 				do {
 					numeroEstadoOrigem = lArrayEstado[linhaEstado+1];
 					linhaEstado += 26;
-				}while ( (lArrayEstado[linhaEstado] != (estadoY0 + estadoX0 )) && (lArrayEstado.length > linhaEstado));*/
+				}while ( (lArrayEstado[linhaEstado] != (estadoY0 + estadoX0 )) && (lArrayEstado.length > linhaEstado));
 				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
+			}
 		}
 		// desenha o estado
 		if (lFuncaoSfc >2 && lFuncaoSfc<5) {
