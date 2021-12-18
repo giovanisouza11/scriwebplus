@@ -74,7 +74,7 @@ function editar_sfc() {
 				do {
 					numeroEstadoOrigem = lArrayEstado[linhaEstado+1];
 					linhaEstado += 26;
-				}while ( (lArrayEstado[linhaEstado] != (estadoY0 + estadoX0 )) && (ArrayEstado.length > linhaEstado));
+				}while ( (lArrayEstado[linhaEstado] != (estadoY0 + estadoX0 )) && (lArrayEstado.length > linhaEstado));
 				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
 		}
 		// desenha o estado
