@@ -67,21 +67,21 @@ function editar_sfc() {
 			else{
 				var linhaEstado = 0;
 				do {
-					NumeroEstado = lArrayEstado[indexEstado+1];
+					NumeroEstado = lArrayEstado[linhaEstado+1];
 					linhaEstado += 26;
-				}while ( (ArrayEstado != posicaoYSfc + posicaoXSfc) && ArrayEstado.length > linhaEstado);
+				}while ( (lArrayEstado[linhaEstado] != (posicaoYSfc + posicaoXSfc)) && lArrayEstado.length > linhaEstado);
 				linhaEstado = 0;
 				do {
-					NumeroEstadoOrigem = lArrayEstado[indexEstado+1];
+					NumeroEstadoOrigem = lArrayEstado[linhaEstado+1];
 					linhaEstado += 26;
-				}while ( lArrayEstado != estadoY0 + estadoX0  && ArrayEstado.length > linhaEstado);
+				}while ( (lArrayEstado[linhaEstado] != (estadoY0 + estadoX0 )) && ArrayEstado.length > linhaEstado);
 				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
 		}
 		// desenha o estado
 		if (lFuncaoSfc >2 && lFuncaoSfc<5) {
 			IFigura.style.display = "none";
-			lArrayEstado[(posicaoYSfc*8*9) + (posicaoXSfc*9)] =  posicaoYSfc + posicaoXSfc ;
-			lArrayEstado[(posicaoYSfc*8*9) + (posicaoXSfc*9)+1] =  indexEstado;
+			lArrayEstado[(posicaoYSfc*8*26) + (posicaoXSfc*26)] =  posicaoYSfc + posicaoXSfc ;
+			lArrayEstado[(posicaoYSfc*8*26) + (posicaoXSfc*26)+1] =  indexEstado;
 			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, indexEstado,'black');
 			indexEstado++;
 		}
@@ -92,7 +92,7 @@ function editar_sfc() {
 			ICampo.style.top = " "+(05+(posicaoYSfc*60))  + "px";
 			var tag;
 			document.getElementById("label_input").innerHTML = "Ação 1:";
-			tag = lArraySfc[(posicaoysfc*8*9) + ((posicaoxsfc)*9)+8];
+			tag = lArraySfc[(posicaoysfc*8*26) + ((posicaoxsfc)*26)+1];
 			if (tag != undefined && tag != "undefined")
 				document.getElementById('input_ladder').value = tag;
 			else
