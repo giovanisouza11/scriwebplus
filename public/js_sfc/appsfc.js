@@ -80,8 +80,8 @@ function editar_sfc() {
 				}while ( (lArrayEstado[linhaEstado] != (estadoY0 + estadoX0 )) && (lArrayEstado.length > linhaEstado));
 				lArrayEstado[numeroEstado*26+3] =  indexTransicao;
 				lArrayEstado[numeroEstadoOrigem*26+9] =  indexTransicao;
-				lArrayTransicao[numeroTransicao*14] =  NueroEstadoOrigem;
-				lArrayTransicao[numeroTransicao*14+1] =  NueroEstado;
+				lArrayTransicao[numeroTransicao*14] =  numeroEstadoOrigem;
+				lArrayTransicao[numeroTransicao*14+1] =  numeroEstado;
 				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
 				indexTransicao++;
 			}
@@ -89,7 +89,7 @@ function editar_sfc() {
 		// desenha o estado
 		if (lFuncaoSfc >2 && lFuncaoSfc<5) {
 			IFigura.style.display = "none";
-			lArrayEstado[indexEstado*26] =  posicaoYSfc + posicaoXSfc ;
+			lArrayEstado[indexEstado*26] = ' '+ posicaoYSfc + posicaoXSfc ;
 			lArrayEstado[indexEstado*26+1] =  indexEstado;
 			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, indexEstado,'black');
 			indexEstado++;
