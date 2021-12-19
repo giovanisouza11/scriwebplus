@@ -72,12 +72,12 @@ function editar_sfc() {
 				do {
 					numeroEstado = lArrayEstado[linhaEstado+1];
 					linhaEstado += 26;
-				}while ( (lArrayEstado[linhaEstado] != (posicaoYSfc +' '+ posicaoXSfc)) || (lArrayEstado.length >= linhaEstado));
+				}while ( (lArrayEstado[linhaEstado] != (posicaoYSfc +' '+ posicaoXSfc)) && (lArrayEstado.length > linhaEstado));
 				linhaEstado = 0;
 				do {
 					numeroEstadoOrigem = lArrayEstado[linhaEstado+1];
 					linhaEstado += 26;
-				}while ( (lArrayEstado[linhaEstado] != (estadoY0 +' '+ estadoX0 )) || (lArrayEstado.length >= linhaEstado));
+				}while ( (lArrayEstado[linhaEstado] != (estadoY0 +' '+ estadoX0 )) && (lArrayEstado.length > linhaEstado));
 				lArrayEstado[numeroEstado*26+3] =  indexTransicao;
 				lArrayEstado[numeroEstadoOrigem*26+9] =  indexTransicao;
 				lArrayTransicao[indexTransicao*14] =  numeroEstadoOrigem;
