@@ -357,7 +357,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	var i =0;
-	while (lArrayEstado[Numero Estado*26 + 3 + i] != indexTransicao && i<5) {
+	while (lArrayEstado[numeroEstado*26 + 3 + i] != indexTransicao && i<5) {
 		i ++;
 	}
 	switch (i) {
