@@ -313,22 +313,27 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor) {
 	contexto.lineTo(pos_X*60+45 ,pos_Y*60+65);
   	contexto.stroke();
 	contexto.beginPath();
-  	contexto.moveTo(pos_X*60+18,pos_Y*60);
-	contexto.lineTo(pos_X*60+18,pos_Y*60-5);
-  	contexto.lineTo(pos_X*60+20,pos_Y*60-5);
-  	contexto.lineTo(pos_X*60+20,pos_Y*60);
+  	contexto.moveTo(pos_X*60+15,pos_Y*60);
+	contexto.lineTo(pos_X*60+15,pos_Y*60-5);
+  	contexto.lineTo(pos_X*60+13,pos_Y*60-5);
+  	contexto.lineTo(pos_X*60+13,pos_Y*60);
   	contexto.stroke();
 	contexto.beginPath();
-  	contexto.moveTo(pos_X*60+28,pos_Y*60);
-	contexto.lineTo(pos_X*60+28,pos_Y*60-5);
-  	contexto.lineTo(pos_X*60+30,pos_Y*60-5);
-  	contexto.lineTo(pos_X*60+30,pos_Y*60);
+  	contexto.moveTo(pos_X*60+24,pos_Y*60);
+	contexto.lineTo(pos_X*60+24,pos_Y*60-5);
+  	contexto.lineTo(pos_X*60+26,pos_Y*60-5);
+  	contexto.lineTo(pos_X*60+26,pos_Y*60);
   	contexto.stroke();
 	contexto.beginPath();
-  	contexto.moveTo(pos_X*60+40,pos_Y*60);
-	contexto.lineTo(pos_X*60+40,pos_Y*60-5);
-  	contexto.lineTo(pos_X*60+42,pos_Y*60-5);
-  	contexto.lineTo(pos_X*60+42,pos_Y*60);
+  	contexto.moveTo(pos_X*60+34,pos_Y*60);
+	contexto.lineTo(pos_X*60+34,pos_Y*60-5);
+  	contexto.lineTo(pos_X*60+36,pos_Y*60-5);
+  	contexto.lineTo(pos_X*60+36,pos_Y*60);
+  	contexto.stroke();
+	contexto.moveTo(pos_X*60+45,pos_Y*60);
+	contexto.lineTo(pos_X*60+45,pos_Y*60-5);
+  	contexto.lineTo(pos_X*60+47,pos_Y*60-5);
+  	contexto.lineTo(pos_X*60+47,pos_Y*60);
   	contexto.stroke();
 	contexto.beginPath();
   	contexto.moveTo(pos_X*60,pos_Y*60+10);
@@ -362,30 +367,28 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	}
 	switch (i) {
 		case 0:
-			contexto.moveTo(estadoX0*60 ,estadoY0*60+30);
-			contexto.lineTo(estadoX0*60-15,estadoY0*60+30);
+			contexto.moveTo(estadoX0*60 ,estadoY0*60+45);
+			contexto.lineTo(estadoX0*60-15,estadoY0*60+45);
 			break;
 		case 1:
-			contexto.moveTo(estadoX0*60 ,estadoY0*60+30);
-			contexto.lineTo(estadoX0*60-15,estadoY0*60+30);
-			contexto.lineTo(estadoX0*60-15,pos_Y*60+30);
+			contexto.moveTo(estadoX0*60+15 ,estadoY0*60+60);
+			contexto.lineTo(estadoX0*60+15,estadoY0*60+75);
 			break;
 		case 2:
-	               	contexto.moveTo(estadoX0*60 ,estadoY0*60+30);
-			contexto.lineTo(estadoX0*60-15,estadoY0*60+30);
+	               	contexto.moveTo(estadoX0*60+25 ,estadoY0*60+60);
+			contexto.lineTo(estadoX0*60+25,estadoY0*6075);
 			break;
 		case 3:
-			contexto.moveTo(estadoX0*60 ,estadoY0*60+30);
-			contexto.lineTo(estadoX0*60-15,estadoY0*60+30);
+			contexto.moveTo(estadoX0*60+35 ,estadoY0*60+60);
+			contexto.lineTo(estadoX0*60+35,estadoY0*60+75);
 			break;
 		case 4:
-			contexto.moveTo(estadoX0*60 ,estadoY0*60+30);
-			contexto.lineTo(estadoX0*60-15,estadoY0*60+30);
+			contexto.moveTo(estadoX0*60+45 ,estadoY0*60+60);
+			contexto.lineTo(estadoX0*60+45,estadoY0*60+75);
 			break;
 		case 5:
-			contexto.moveTo(estadoX0*60+60,estadoY0*60+30);
-			contexto.lineTo(estadoX0*60+75,estadoY0*60+30);
-			contexto.lineTo(estadoX0*60+75,pos_Y*60+30);
+			contexto.moveTo(estadoX0*60+60,estadoY0*60+45);
+			contexto.lineTo(estadoX0*60+75,estadoY0*60+45);
 			break
 	}
 	i =0;
@@ -401,54 +404,54 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
  			contexto.lineTo(pos_X*60-10,pos_Y*60+28);
 			break;
 		case 1:
-			contexto.lineTo(pos_X*60+80,pos_Y*60+30);
+			contexto.lineTo(pos_X*60-20,pos_Y*60+20);
+			contexto.lineTo(pos_X*60-10,pos_Y*60+20);
+			contexto.lineTo(pos_X*60-10,pos_Y*60+18);
+ 			contexto.lineTo(pos_X*60,pos_Y*60+20);
+ 			contexto.lineTo(pos_X*60-10,pos_Y*60+22);
+			break;
+		case 2:
+	               	contexto.lineTo(pos_X*60+15,pos_Y*60-20);
+			contexto.lineTo(pos_X*60+15,pos_Y*60-10);
+			contexto.lineTo(pos_X*60+10,pos_Y*60-10);
+ 			contexto.lineTo(pos_X*60+15,pos_Y*60);
+ 			contexto.lineTo(pos_X*60+10,pos_Y*60-10);
+			break;
+		case 3:
+	               	contexto.lineTo(pos_X*60+25,pos_Y*60-20);
+			contexto.lineTo(pos_X*60+25,pos_Y*60-10);
+			contexto.lineTo(pos_X*60+20,pos_Y*60-10);
+ 			contexto.lineTo(pos_X*60+25,pos_Y*60);
+ 			contexto.lineTo(pos_X*60+20,pos_Y*60-10);
+			break;
+		case 4:
+	               	contexto.lineTo(pos_X*60+35,pos_Y*60-20);
+			contexto.lineTo(pos_X*60+35,pos_Y*60-10);
+			contexto.lineTo(pos_X*60+30,pos_Y*60-10);
+ 			contexto.lineTo(pos_X*60+35,pos_Y*60);
+ 			contexto.lineTo(pos_X*60+30,pos_Y*60-10);
+			break;
+		case 5:
+	               	contexto.lineTo(pos_X*60+45,pos_Y*60-20);
+			contexto.lineTo(pos_X*60+45,pos_Y*60-10);
+			contexto.lineTo(pos_X*60+40,pos_Y*60-10);
+ 			contexto.lineTo(pos_X*60+45,pos_Y*60);
+ 			contexto.lineTo(pos_X*60+40,pos_Y*60-10);
+			break;
+		case 6:
+			contexto.lineTo(pos_X*60+75,pos_Y*60+30);
 			contexto.lineTo(pos_X*60+70,pos_Y*60+30);
 			contexto.lineTo(pos_X*60+70,pos_Y*60+32);
  			contexto.lineTo(pos_X*60+60,pos_Y*60+30);
  			contexto.lineTo(pos_X*60+70,pos_Y*60+28);
 			break;
-		case 2:
-	               	contexto.lineTo(pos_X*60-20,pos_Y*60+30);
-			contexto.lineTo(pos_X*60-10,pos_Y*60+30);
-			contexto.lineTo(pos_X*60-10,pos_Y*60+32);
- 			contexto.lineTo(pos_X*60,pos_Y*60+30);
- 			contexto.lineTo(pos_X*60-10,pos_Y*60+28);
-			break;
-		case 3:
-			contexto.lineTo(pos_X*60-20,pos_Y*60+30);
-			contexto.lineTo(pos_X*60-10,pos_Y*60+30);
-			contexto.lineTo(pos_X*60-10,pos_Y*60+32);
- 			contexto.lineTo(pos_X*60,pos_Y*60+30);
- 			contexto.lineTo(pos_X*60-10,pos_Y*60+28);
-			break;
-		case 4:
-			contexto.lineTo(pos_X*60-20,pos_Y*60+30);
-			contexto.lineTo(pos_X*60-10,pos_Y*60+30);
-			contexto.lineTo(pos_X*60-10,pos_Y*60+32);
- 			contexto.lineTo(pos_X*60,pos_Y*60+30);
- 			contexto.lineTo(pos_X*60-10,pos_Y*60+28);
-			break;
-		case 5:
-			contexto.lineTo(pos_X*60-20,pos_Y*60+30);
-			contexto.lineTo(pos_X*60-10,pos_Y*60+30);
-			contexto.lineTo(pos_X*60-10,pos_Y*60+32);
- 			contexto.lineTo(pos_X*60,pos_Y*60+30);
- 			contexto.lineTo(pos_X*60-10,pos_Y*60+28);
-			break
-		case 6:
-			contexto.lineTo(pos_X*60-20,pos_Y*60+30);
-			contexto.lineTo(pos_X*60-10,pos_Y*60+30);
-			contexto.lineTo(pos_X*60-10,pos_Y*60+32);
- 			contexto.lineTo(pos_X*60,pos_Y*60+30);
- 			contexto.lineTo(pos_X*60-10,pos_Y*60+28);
-			break;
 		case 7:
-			contexto.lineTo(pos_X*60-20,pos_Y*60+30);
-			contexto.lineTo(pos_X*60-10,pos_Y*60+30);
-			contexto.lineTo(pos_X*60-10,pos_Y*60+32);
- 			contexto.lineTo(pos_X*60,pos_Y*60+30);
- 			contexto.lineTo(pos_X*60-10,pos_Y*60+28);
-			break
+			contexto.lineTo(pos_X*60+75,pos_Y*60+45);
+			contexto.lineTo(pos_X*60+70,pos_Y*60+45);
+			contexto.lineTo(pos_X*60+70,pos_Y*60+47);
+ 			contexto.lineTo(pos_X*60+60,pos_Y*60+45);
+ 			contexto.lineTo(pos_X*60+70,pos_Y*60+43);
+			break;
 	}
 	contexto.stroke();
 	/*if (pos_Y < (estadoY0+2)) {
