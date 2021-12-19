@@ -18,6 +18,8 @@ var numeroEstado;
 var numeroEstadoOrigem;
 var indexEstado = 0;
 var indexTransicao = 0;
+var saida_sfc;
+var entrada_sfc;
 //=====================================================================================
 //Inicializa Canvas
 //Desenha area de trabalho em branco
@@ -78,6 +80,7 @@ function editar_sfc() {
 					numeroEstadoOrigem = lArrayEstado[linhaEstado+1];
 					linhaEstado += 26;
 				}while ( (lArrayEstado[linhaEstado] != (estadoY0 +' '+ estadoX0 )) && (lArrayEstado.length > linhaEstado));
+				ver_posicao_estado( posicaoXSfc, posicaoYSfc);
 				if (lArrayEstado[numeroEstado*26+3] == "undefined") 
 					lArrayEstado[numeroEstado*26+3] =  indexTransicao;
 				else
@@ -140,7 +143,31 @@ function editar_sfc() {
 		}
 	}	
 }
-
+//=====================================================================================
+//funcao chamada ao dar um click na area do ladder
+//=====================================================================================
+function ver_posicao_estado(pos_X, pos_Y) {
+	if (pos_Y < (estadoY0+2)) {
+  		if (pos_X > estadoX0) {
+			saida_sfc = 'esquerda';
+			entrada_sfc = 'direita';
+		}
+		else {
+			if (pos_X == estadoX0) {
+				saida_sfc = 'esquerda';
+				entrada_sfc = 'esquerda';
+			}
+			else {
+				saida_sfc = 'direita';
+				entrada_sfc = 'esquerda';
+			}
+		}
+	}
+	else{
+		saida_sfc = 'baixo';
+		entrada_sfc = 'cima';
+	}
+}
 //=====================================================================================
 //Desenho o circuito ladder apartir de uma matriz
 // Apos leitura do arquivo
