@@ -78,11 +78,11 @@ function editar_sfc() {
 					numeroEstadoOrigem = lArrayEstado[linhaEstado+1];
 					linhaEstado += 26;
 				}while ( (lArrayEstado[linhaEstado] != (estadoY0 +' '+ estadoX0 )) && (lArrayEstado.length > linhaEstado));
-				if (lArrayEstado[numeroEstado*26+3] != undefined) 
+				if (lArrayEstado[numeroEstado*26+3] != "undefined") 
 					lArrayEstado[numeroEstado*26+3] =  indexTransicao;
 				else
 					lArrayEstado[numeroEstado*26+4] =  indexTransicao;
-				if (lArrayEstado[numeroEstadoOrigem*26+9] != undefined)
+				if (lArrayEstado[numeroEstadoOrigem*26+9] != "undefined")
 					lArrayEstado[numeroEstadoOrigem*26+9] =  indexTransicao;
 				else
 					lArrayEstado[numeroEstadoOrigem*26+10] =  indexTransicao;
