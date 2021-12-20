@@ -388,17 +388,20 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			contexto.lineTo(estadoX0*60+75,estadoY0*60+45);
 			break
 	}
+	var j =0;
+	while (lArrayEstado[numeroEstado*26 + 9 + j] != indexTransicao && j<8) {
+		j ++;
+	}
 	if (i>0 && i<5){
-		if (pos_X == estadoX0 && pos_Y < estadoY0) {
-			contexto.lineTo(estadoX0*60-30,estadoY0*60-80);
-			contexto.lineTo(estadoX0*60-30,pos_Y*60+80);
+		if (pos_X == estadoX0 && pos_Y < estadoY0){ 
+			contexto.lineTo(estadoX0*60-30,estadoY0*60+80);
+			if (j<3)
+				contexto.lineTo(estadoX0*60-30,pos_Y*60+30);
+			if (j>2)
+				contexto.lineTo(estadoX0*60-30,pos_Y*60-30);
 		}
 	}
-	i =0;
-	while (lArrayEstado[numeroEstado*26 + 9 + i] != indexTransicao && i<8) {
-		i ++;
-	}
-	switch (i) {
+	switch (j) {
 		case 0:
 			contexto.lineTo(pos_X*60-25,pos_Y*60+30);
 			contexto.lineTo(pos_X*60-10,pos_Y*60+30);
