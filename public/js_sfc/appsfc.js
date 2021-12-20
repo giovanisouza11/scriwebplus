@@ -524,10 +524,55 @@ function inicializa_array_sfc(){
 // Para entrada TAG e ENDERECO
 //=====================================================================================
 function entrada_input_sfc(event){
-	lArrayEstado.length = 0;
-	lArrayTransicao.length = 0;
+	if (event.keyCode == 13) { //Tecla enter
+		var ICampo = document.getElementById('Campo');
+		var posicaoSfcX = parseInt((parseInt(ICampo.style.left)-700)/60);
+		var posicaoSfcY = parseInt((parseInt(ICampo.style.top)-5)/60);
+		contextSfc.font = '9pt Arial';
+		var CInput = document.getElementById('input_ladder');
+		var tag = CInput.value.toUpperCase();
+                
+		if (emEdicao == 10)
+                        eInputS(event);
+		if (lFuncaoSfc < 2)
+			if (emEdicao == 7) {
+				
+				emEdicao = 0;
+			}
+			if (emEdicao == 6) {
+				emEdicao = 7;
+			}
+			if (emEdicao == 5) {
+				emEdicao = 6;
+			}
+			if (emEdicao == 4) {
+				emEdicao = 5;
+			}
+			if (emEdicao == 3) {
+				emEdicao = 4;
+			}
+			if (emEdicao == 2) {
+				emEdicao = 3;
+			}
+			//{ _id, nome, var_1, tipo, var_2, ver, R-W, tag2, funcao};
+			if (emEdicao == 1) {
+				larray[(posicaoSfcY*8*9) + (posicaoSfcX*9) + 2] = tag;
+				contextSfc.fillStyle = 'white';
+				contextSfc.rect(90+(posicaoSfcX*60), (25+(posicaoSfcY)*60), 20, 12);
+				contextSfc.fillStyle = 'black';
+				contextSfc.fillText(tag, 90+(posicaoSfcX*60), (37+(posicaoSfcY)*60));
+				document.getElementById("label_input").innerHTML = "Tag1:";
+				document.getElementById('input_ladder').value = lArrayEstado[(posicaoSfcY*8*9) + (posicaoSfcX*9) + 1];
+				if (lArrayEstado[(posicaoSfcY*8*9) + (posicaoSfcX*9) + 1] == undefined  || larray[(posicaoSfcY*8*9) + (posicaoSfcX*9) + 1] == "undefined")
+					document.getElementById('input_ladder').value ="";
+				break;
+				emEdicao = 2;
+			}
+		}
+		else {
+		}
+	}
 }
-
 //=====================================================================================
 //Desenho o circuito ladder apartir de uma matriz
 // Apos RUN e STOP do CLP
