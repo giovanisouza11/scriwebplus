@@ -393,7 +393,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			contexto.lineTo(estadoX0*60-30,estadoY0*60-80);
 			contexto.lineTo(estadoX0*60-30,posY*60+80);
 		}
-	}
+	
 	i =0;
 	while (lArrayEstado[numeroEstado*26 + 9 + i] != indexTransicao && i<8) {
 		i ++;
