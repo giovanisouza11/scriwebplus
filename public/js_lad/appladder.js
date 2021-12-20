@@ -319,6 +319,13 @@ function inicializa_array(){
 // Para entrada TAG e ENDERECO
 //=====================================================================================
 function entrada_input(event){
+	if (Tela_Eletrico_Simulador == 2)
+		entrada_input_sfc(event);
+	else
+		entrada_input_ladder(event);
+}
+
+function entrada_input_ladder(event){
 	if (event.keyCode == 13) { //Tecla enter
 		var ICampo = document.getElementById('Campo');
 		var posicaox = parseInt((parseInt(ICampo.style.left)-700)/60);
