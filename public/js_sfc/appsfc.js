@@ -367,7 +367,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	var i =0;
-	while (lArrayEstado[numeroEstadoOrigem*26 + 3 + i] != indexTransicao && i<5) {
+	while (lArrayEstado[numeroEstadoOrigem*26 + 3 + i] != indexTransicao && i<6) {
 		i ++;
 	}
 	switch (i) {
@@ -381,7 +381,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			break;
 		case 2:
 	               	contexto.moveTo(estadoX0*60+25 ,estadoY0*60+60);
-			contexto.lineTo(estadoX0*60+25,estadoY0*6075);
+			contexto.lineTo(estadoX0*60+25,estadoY0*60+75);
 			break;
 		case 3:
 			contexto.moveTo(estadoX0*60+35 ,estadoY0*60+60);
@@ -397,7 +397,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			break
 	}
 	i =0;
-	while (lArrayEstado[numeroEstado*26 + 3 + i] != indexTransicao && i<5) {
+	while (lArrayEstado[numeroEstado*26 + 3 + i] != indexTransicao && i<8) {
 		i ++;
 	}
 	switch (i) {
@@ -451,11 +451,11 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
  			contexto.lineTo(pos_X*60+70,pos_Y*60+28);
 			break;
 		case 7:
-			contexto.lineTo(pos_X*60+75,pos_Y*60+45);
-			contexto.lineTo(pos_X*60+70,pos_Y*60+45);
-			contexto.lineTo(pos_X*60+70,pos_Y*60+47);
- 			contexto.lineTo(pos_X*60+60,pos_Y*60+45);
- 			contexto.lineTo(pos_X*60+70,pos_Y*60+43);
+			contexto.lineTo(pos_X*60+75,pos_Y*60+20);
+			contexto.lineTo(pos_X*60+70,pos_Y*60+20);
+			contexto.lineTo(pos_X*60+70,pos_Y*60+18);
+ 			contexto.lineTo(pos_X*60+60,pos_Y*60+20);
+ 			contexto.lineTo(pos_X*60+70,pos_Y*60+22);
 			break;
 	}
 	contexto.stroke();
