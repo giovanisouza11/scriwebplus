@@ -389,7 +389,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			break
 	}
 	i =0;
-	while (lArrayEstado[numeroEstado*26 + 3 + i] != indexTransicao && i<8) {
+	while (lArrayEstado[numeroEstado*26 + 9 + i] != indexTransicao && i<8) {
 		i ++;
 	}
 	switch (i) {
