@@ -127,11 +127,11 @@ function editar_sfc() {
 				}
 				switch (entrada_sfc) {
 					case 'cima':
-						if (lArrayEstado[numeroEstado*26+13] == undefined) 
-							lArrayEstado[numeroEstado*26+13] =  indexTransicao;
+						if (lArrayEstado[numeroEstado*26+12] == undefined) 
+							lArrayEstado[numeroEstado*26+12] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstado*26+12] == undefined)
-							 	lArrayEstado[numeroEstado*26+12] =  indexTransicao;
+							if (lArrayEstado[numeroEstado*26+13] == undefined)
+							 	lArrayEstado[numeroEstado*26+13] =  indexTransicao;
 							else {
 	      							if (lArrayEstado[numeroEstado*26+11] == undefined)
 							 		lArrayEstado[numeroEstado*26+11] =  indexTransicao;
@@ -388,11 +388,12 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			contexto.lineTo(estadoX0*60+75,estadoY0*60+45);
 			break
 	}
-	if (i>0 && i<8){
+	if (i>0 && i<5){
 		if (posX == estadoX0) {
-			contexto.lineTo(estadoX0*60-30,estadoY0*60+75);
-			contexto.lineTo(estadoX0*60-30,posY *60+75);
+			contexto.lineTo(estadoX0*60-30,estadoY0*60-80);
+			contexto.lineTo(estadoX0*60-30,posY*60+80);
 		}
+	}
 	i =0;
 	while (lArrayEstado[numeroEstado*26 + 9 + i] != indexTransicao && i<8) {
 		i ++;
