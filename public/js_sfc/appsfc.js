@@ -83,7 +83,7 @@ function editar_sfc() {
 				ver_posicao_estado(posicaoXSfc, posicaoYSfc);
 				switch (saida_sfc) {
 					case 'baixo':
-						if (lArrayEstado[numeroEstadoOrigem*26+5] == undefined) {
+						if (lArrayEstado[numeroEstadoOrigem*26+5] == undefined)
 							lArrayEstado[numeroEstadoOrigem*26+5] =  indexTransicao;
 						else {
 							if (lArrayEstado[numeroEstadoOrigem*26+6] == undefined)
