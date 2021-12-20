@@ -205,8 +205,8 @@ function editar_sfc() {
 		if ( lFuncaoSfc > 0 && (lFuncaoSfc<3) && sfcTipo == 0)
 		{
 			ICampo.style.display = "block";
-			ICampo.style.left = " "+(700 +((estadoX0+((posicaoXSfc-estadoX0)/2)*60))) + "px";
-			ICampo.style.top = " "+(05+((estadoY0 +((posicaoYSfc-estadoY0)/2)*60)))  + "px";
+			ICampo.style.left = " "+(700 +((estadoX0+((posicaoXSfc-estadoX0)/2))*60)) + "px";
+			ICampo.style.top = " "+(05+((estadoY0 +((posicaoYSfc-estadoY0)/2))*60))  + "px";
 			var tag;
 			document.getElementById("label_input").innerHTML = "Condição 1:";
 			tag = lArrayTransicao[indexTransicao*14+8];
