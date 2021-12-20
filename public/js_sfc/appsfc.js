@@ -373,11 +373,11 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			break;
 		case 2:
 	               	contexto.moveTo(estadoX0*60+25 ,estadoY0*60+60);
-			contexto.lineTo(estadoX0*60+25,estadoY0*60+75);
+			contexto.lineTo(estadoX0*60+25,estadoY0*60+80);
 			break;
 		case 3:
 			contexto.moveTo(estadoX0*60+35 ,estadoY0*60+60);
-			contexto.lineTo(estadoX0*60+35,estadoY0*60+75);
+			contexto.lineTo(estadoX0*60+35,estadoY0*60+80);
 			break;
 		case 4:
 			contexto.moveTo(estadoX0*60+45 ,estadoY0*60+60);
@@ -388,13 +388,18 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			contexto.lineTo(estadoX0*60+75,estadoY0*60+45);
 			break
 	}
+	if (i>0 && i<8){
+		if (posX == estadoX0) {
+			contexto.lineTo(estadoX0*60-30,estadoY0*60+75);
+			contexto.lineTo(estadoX0*60-30,posY *60+75);
+		}
 	i =0;
 	while (lArrayEstado[numeroEstado*26 + 9 + i] != indexTransicao && i<8) {
 		i ++;
 	}
 	switch (i) {
 		case 0:
-			contexto.lineTo(pos_X*60-20,pos_Y*60+30);
+			contexto.lineTo(pos_X*60-25,pos_Y*60+30);
 			contexto.lineTo(pos_X*60-10,pos_Y*60+30);
 			contexto.lineTo(pos_X*60-10,pos_Y*60+32);
  			contexto.lineTo(pos_X*60,pos_Y*60+30);
@@ -415,14 +420,14 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
  			contexto.lineTo(pos_X*60+10,pos_Y*60-10);
 			break;
 		case 3:
-	               	contexto.lineTo(pos_X*60+25,pos_Y*60-20);
+	               	contexto.lineTo(pos_X*60+25,pos_Y*60-25);
 			contexto.lineTo(pos_X*60+25,pos_Y*60-10);
 			contexto.lineTo(pos_X*60+20,pos_Y*60-10);
  			contexto.lineTo(pos_X*60+25,pos_Y*60);
  			contexto.lineTo(pos_X*60+20,pos_Y*60-10);
 			break;
 		case 4:
-	               	contexto.lineTo(pos_X*60+35,pos_Y*60-20);
+	               	contexto.lineTo(pos_X*60+35,pos_Y*60-25);
 			contexto.lineTo(pos_X*60+35,pos_Y*60-10);
 			contexto.lineTo(pos_X*60+30,pos_Y*60-10);
  			contexto.lineTo(pos_X*60+35,pos_Y*60);
@@ -436,7 +441,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
  			contexto.lineTo(pos_X*60+40,pos_Y*60-10);
 			break;
 		case 6:
-			contexto.lineTo(pos_X*60+75,pos_Y*60+30);
+			contexto.lineTo(pos_X*60+80,pos_Y*60+30);
 			contexto.lineTo(pos_X*60+70,pos_Y*60+30);
 			contexto.lineTo(pos_X*60+70,pos_Y*60+32);
  			contexto.lineTo(pos_X*60+60,pos_Y*60+30);
