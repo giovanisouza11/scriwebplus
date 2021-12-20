@@ -496,7 +496,7 @@ function mouse_move_sfc(){
     	ICampo.style.display = "block";
 	var ICampox = parseInt((parseInt(ICampo.style.left)-700));
 	var ICampoy = parseInt((parseInt(ICampo.style.top)-5));
-	if ((emEdicao > 0)) {    //  && ((ICampox != posicaoXSfc) || (ICampoy != posicaoYSfc))){
+	if ((emEdicao == 0)) {    //  && ((ICampox != posicaoXSfc) || (ICampoy != posicaoYSfc))){
 		ICampo.style.display = "none";
 		ICampo.style.top = "680px";
 
