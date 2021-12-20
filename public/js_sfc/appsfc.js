@@ -395,9 +395,9 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	if (i>0 && i<5){
 		if (pos_X == estadoX0 && pos_Y < estadoY0){ 
 			contexto.lineTo(estadoX0*60-30,estadoY0*60+80);
-			if (j<3)
-				contexto.lineTo(estadoX0*60-30,pos_Y*60+30);
-			if (j>2)
+			if (j<2)
+				contexto.lineTo(estadoX0*60-30,pos_Y*60+25);
+			if (j>1)
 				contexto.lineTo(estadoX0*60-30,pos_Y*60-30);
 		}
 	}
