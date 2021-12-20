@@ -534,7 +534,7 @@ function entrada_input_sfc(event){
                 
 		if (emEdicao == 10)
                         eInputS(event);
-		if (lFuncaoSfc < 2)
+		if (lFuncaoSfc < 2) {
 			if (emEdicao == 7) {
 				
 				emEdicao = 0;
