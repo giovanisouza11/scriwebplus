@@ -199,27 +199,25 @@ function editar_sfc() {
 			emEdicao = 1;
 		}
 		else {
-			ICampo.style.display = "none";
-			emEdicao = 0;
-		}
-		if ( lFuncaoSfc > 0 && (lFuncaoSfc<3) && sfcTipo == 0)
-		{
-			ICampo.style.display = "block";
-			ICampo.style.left = " "+(700 +((estadoX0+((posicaoXSfc-estadoX0)/2))*60)) + "px";
-			ICampo.style.top = " "+(05+((estadoY0 +((posicaoYSfc-estadoY0)/2))*60))  + "px";
-			var tag;
-			document.getElementById("label_input").innerHTML = "Condição 1:";
-			tag = lArrayTransicao[indexTransicao*14+8];
-			if (tag != undefined && tag != "undefined")
-				document.getElementById('input_ladder').value = tag;
-			else
-				document.getElementById('input_ladder').value = "";
-			CInput.focus();
-			emEdicao = 1;
-		}
-		else {
-			ICampo.style.display = "none";
-			emEdicao = 0;
+			if ( lFuncaoSfc > 0 && (lFuncaoSfc<3) && sfcTipo == 0)
+			{
+				ICampo.style.display = "block";
+				ICampo.style.left = " "+(700 +((estadoX0+((posicaoXSfc-estadoX0)/2))*60)) + "px";
+				ICampo.style.top = " "+(05+((estadoY0 +((posicaoYSfc-estadoY0)/2))*60))  + "px";
+				var tag;
+				document.getElementById("label_input").innerHTML = "Condição 1:";
+				tag = lArrayTransicao[indexTransicao*14+8];
+				if (tag != undefined && tag != "undefined")
+					document.getElementById('input_ladder').value = tag;
+				else
+					document.getElementById('input_ladder').value = "";
+				CInput.focus();
+				emEdicao = 1;
+			}
+			else {
+				ICampo.style.display = "none";
+				emEdicao = 0;
+			}
 		}
 	}	
 }
