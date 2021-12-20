@@ -563,9 +563,8 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag, 90+(posicaoSfcX*60), (37+(posicaoSfcY)*60));
 				document.getElementById("label_input").innerHTML = "Tag1:";
 				document.getElementById('input_ladder').value = lArrayEstado[(posicaoSfcY*8*9) + (posicaoSfcX*9) + 1];
-				if (lArrayEstado[(posicaoSfcY*8*9) + (posicaoSfcX*9) + 1] == undefined  || larray[(posicaoSfcY*8*9) + (posicaoSfcX*9) + 1] == "undefined")
+				if (lArrayEstado[(posicaoSfcY*8*9) + (posicaoSfcX*9) + 1] == undefined  || lArrayEstado[(posicaoSfcY*8*9) + (posicaoSfcX*9) + 1] == "undefined")
 					document.getElementById('input_ladder').value ="";
-				break;
 				emEdicao = 2;
 			}
 		}
