@@ -190,7 +190,7 @@ function editar_sfc() {
 			ICampo.style.top = " "+(05+(posicaoYSfc*60))  + "px";
 			var tag;
 			document.getElementById("label_input").innerHTML = "Ação 1:";
-			tag = lArraySfc[(posicaoysfc*8*26) + ((posicaoxsfc)*26)+1];
+			tag = lArrayEstado[(indexEstado*26+17)];
 			if (tag != undefined && tag != "undefined")
 				document.getElementById('input_ladder').value = tag;
 			else
@@ -205,11 +205,11 @@ function editar_sfc() {
 		if ( lFuncaoSfc > 0 && (lFuncaoSfc<3) && sfcTipo == 0)
 		{
 			ICampo.style.display = "block";
-			ICampo.style.left = " "+(700 +(posicaoXSfc*60)) + "px";
-			ICampo.style.top = " "+(05+(posicaoYSfc*60))  + "px";
+			ICampo.style.left = " "+(700 +((posicaoXSfc-estadoX0)*60)) + "px";
+			ICampo.style.top = " "+(05+((posicaoYSfc-estadoY0)*60))  + "px";
 			var tag;
 			document.getElementById("label_input").innerHTML = "Condição 1:";
-			tag = lArraySfc[(posicaoysfc*8*9) + ((posicaoxsfc)*9)+8];
+			tag = lArrayTransicao[indexTransica*14+8];
 			if (tag != undefined && tag != "undefined")
 				document.getElementById('input_ladder').value = tag;
 			else
