@@ -83,44 +83,44 @@ function editar_sfc() {
 				ver_posicao_estado(posicaoXSfc, posicaoYSfc);
 				switch (saida_sfc) {
 					case 'baixo':
-						if (lArrayEstado[numeroEstado*26+5] == undefined) 
-							lArrayEstado[numeroEstado*26+5] =  indexTransicao;
+						if (lArrayEstado[numeroEstadoOrigem*26+5] == undefined) {
+							lArrayEstado[numeroEstadoOrigem*26+5] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstado*26+6] == undefined)
-							 	lArrayEstado[numeroEstado*26+6] =  indexTransicao;
+							if (lArrayEstado[numeroEstadoOrigem*26+6] == undefined)
+							 	lArrayEstado[numeroEstadoOrigem*26+6] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstado*26+4] == undefined)
-							 		lArrayEstado[numeroEstado*26+4] =  indexTransicao;
+	      							if (lArrayEstado[numeroEstadoOrigem*26+4] == undefined)
+							 		lArrayEstado[numeroEstadoOrigem*26+4] =  indexTransicao;
 								else
-									lArrayEstado[numeroEstado*26+7] =  indexTransicao;
+									lArrayEstado[numeroEstadoOrigem*26+7] =  indexTransicao;
 							}
 						}
 					        break;
 					case 'esquerda':
-						if (lArrayEstado[numeroEstado*26+3] == undefined) 
-							lArrayEstado[numeroEstado*26+3] =  indexTransicao;
+						if (lArrayEstado[numeroEstadoOrigem*26+3] == undefined) 
+							lArrayEstado[numeroEstadoOrigem*26+3] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstado*26+4] == undefined)
-							 	lArrayEstado[numeroEstado*26+4] =  indexTransicao;
+							if (lArrayEstado[numeroEstadoOrigem*26+4] == undefined)
+							 	lArrayEstado[numeroEstadoOrigem*26+4] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstado*26+5] == undefined)
-							 		lArrayEstado[numeroEstado*26+5] =  indexTransicao;
+	      							if (lArrayEstado[numeroEstadoOrigem*26+5] == undefined)
+							 		lArrayEstado[numeroEstadoOrigem*26+5] =  indexTransicao;
 								else
-									lArrayEstado[numeroEstado*26+6] =  indexTransicao;
+									lArrayEstado[numeroEstadoOrigem*26+6] =  indexTransicao;
 							}
 						}
 						break;
 					case 'direita':
-						if (lArrayEstado[numeroEstado*26+8] == undefined) 
-							lArrayEstado[numeroEstado*26+8] =  indexTransicao;
+						if (lArrayEstado[numeroEstadoOrigem*26+8] == undefined) 
+							lArrayEstado[numeroEstadoOrigem*26+8] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstado*26+7] == undefined)
-							 	lArrayEstado[numeroEstado*26+7] =  indexTransicao;
+							if (lArrayEstado[numeroEstadoOrigem*26+7] == undefined)
+							 	lArrayEstado[numeroEstadoOrigem*26+7] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstado*26+6] == undefined)
-							 		lArrayEstado[numeroEstado*26+6] =  indexTransicao;
+	      							if (lArrayEstado[numeroEstadoOrigem*26+6] == undefined)
+							 		lArrayEstado[numeroEstadoOrigem*26+6] =  indexTransicao;
 								else
-									lArrayEstado[numeroEstado*26+5] =  indexTransicao;
+									lArrayEstado[numeroEstadoOrigem*26+5] =  indexTransicao;
 							}
 						}
 						break;
@@ -169,14 +169,6 @@ function editar_sfc() {
 						}
 					        break;
 				}
-				/*if (lArrayEstado[numeroEstado*26+3] == undefined) 
-					lArrayEstado[numeroEstado*26+3] =  indexTransicao;
-				else
-					lArrayEstado[numeroEstado*26+4] =  indexTransicao;
-				if (lArrayEstado[numeroEstadoOrigem*26+9] == undefined)
-					lArrayEstado[numeroEstadoOrigem*26+9] =  indexTransicao;
-				else
-					lArrayEstado[numeroEstadoOrigem*26+10] =  indexTransicao;*/
 				lArrayTransicao[indexTransicao*14] =  numeroEstadoOrigem;
 				lArrayTransicao[indexTransicao*14+1] =  numeroEstado;
 				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
