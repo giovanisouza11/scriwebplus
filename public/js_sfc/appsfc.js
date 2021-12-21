@@ -483,7 +483,7 @@ function mouse_move_sfc(){
 				ICampo.style.display = "none";
 				IFigura.style.display = "block";
 				IFigura.style.left = " "+(window.event.clientX-30) + "px";
-				IFigura.style.top = " "+(yTop)  + "px";
+				IFigura.style.top = 30+(yTop)  + "px";
 			}
 
 		}
