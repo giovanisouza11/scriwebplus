@@ -533,7 +533,7 @@ function entrada_input_sfc(event){
 		if (emEdicao == 10)
                         eInputS(event);
 		if (lFuncaoSfc < 2) {
-			if (emEdicao == 7) {
+	/*		if (emEdicao == 7) {
 				lArrayTrasicao[indexTransicao*14+8] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+30, 30, 12);
@@ -708,7 +708,7 @@ function entrada_input_sfc(event){
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 2;
 			}
-		}
+		}  */
 	}
 }
 //=====================================================================================
