@@ -708,7 +708,7 @@ function entrada_input_sfc(event){
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 2;
 			}
-		}  */
+  */		}  
 	}
 }
 //=====================================================================================
