@@ -693,7 +693,7 @@ function entrada_input_sfc(event){
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 4;
 			}
-			if (emEdicao == 2) {
+			if (emEdicao == '2') {
 				lArrayEstado[indexEstado*26+18] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+5, 20, 12);
@@ -706,7 +706,7 @@ function entrada_input_sfc(event){
 				emEdicao = 3;
 			}
 			//{ _id, nome, var_1, tipo, var_2, ver, R-W, tag2, funcao};
-			if (emEdicao == 1) {
+			if (emEdicao == '1') {
 				lArrayEstado[indexEstado*26+17] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60, 20, 12);
