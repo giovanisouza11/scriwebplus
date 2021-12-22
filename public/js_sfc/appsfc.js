@@ -621,7 +621,7 @@ function entrada_input_sfc(event){
 		}
 		else {
 			alert(emEdicao);
-			if (emEdicao == 8) {
+			if (emEdicao == '8') {
 				lArrayEstado[indexEstado*26+24] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+35, 20, 12);
@@ -633,7 +633,7 @@ function entrada_input_sfc(event){
 				CInput.blur();
 				emEdicao = 0;
 			}
-			if (emEdicao == 7) {
+			if (emEdicao == '7') {
 				lArrayEstado[indexEstado*26+23] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+30, 20, 12);
@@ -645,7 +645,7 @@ function entrada_input_sfc(event){
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 8;
 			}
-			if (emEdicao == 6) {
+			if (emEdicao == '6') {
 				lArrayEstado[indexEstado*26+22] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+25, 20, 12);
@@ -657,7 +657,7 @@ function entrada_input_sfc(event){
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 7;
 			}
-			if (emEdicao == 5) {
+			if (emEdicao == '5') {
 				lArrayEstado[indexEstado*26+21] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+20, 20, 12);
@@ -669,7 +669,7 @@ function entrada_input_sfc(event){
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 6;
 			}
-			if (emEdicao == 4) {
+			if (emEdicao == '4') {
 				lArrayEstado[indexEstado*26+20] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+15, 20, 12);
@@ -681,7 +681,7 @@ function entrada_input_sfc(event){
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 5;
 			}
-			if (emEdicao == 3) {
+			if (emEdicao == '3') {
 				lArrayEstado[indexEstado*26+19] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+10, 20, 12);
