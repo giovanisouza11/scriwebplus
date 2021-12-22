@@ -8,7 +8,7 @@ var canvasSfc;
 var contextSfc;
 // lArrayEstado = (LinhaColuna, 1-NUM_ESTADO,2-Memoria,3-Estado de chegada1,..,..,..,..,8-Estado de chegada5,
 //                 9-Estado_Destino 1,..,..,..,..,..,..,16-Estado_DEstino8,
-//                 17-Ação1,..,..,..,..,..,..,24-Ação 8,25-se estado 0 númerodememórias
+//                 17-Ação1,..,..,..,..,..,..,24-Ação 8,25-se estado 0 númerodememórias, 26-TAMANHO
 var lArrayEstado = new Array();
 // lArrayTransiçao = (Estado origem, 1-estado destino, 2-Condoção 1,..,..,..,..,..,8-Condição 7,9-ponto1,10-ponto2,11-ponto3,12-ponto4,13-ponto5,14ponto6)
 var lArrayTransicao = new Array();
@@ -73,113 +73,114 @@ function editar_sfc() {
 				var linhaEstado = 0;
 				do {
 					numeroEstado = lArrayEstado[linhaEstado+1];
-					linhaEstado += 26;
+					linhaEstado += 27;
 				}while ( (lArrayEstado[linhaEstado] != (posicaoYSfc +' '+ posicaoXSfc)) && (lArrayEstado.length > linhaEstado));
 				linhaEstado = 0;
 				do {
 					numeroEstadoOrigem = lArrayEstado[linhaEstado+1];
-					linhaEstado += 26;
+					linhaEstado += 27;
 				}while ( (lArrayEstado[linhaEstado] != (estadoY0 +' '+ estadoX0 )) && (lArrayEstado.length > linhaEstado));
 				ver_posicao_estado(posicaoXSfc, posicaoYSfc);
 				switch (saida_sfc) {
 					case 'baixo':
-						if (lArrayEstado[numeroEstadoOrigem*26+5] == undefined)
-							lArrayEstado[numeroEstadoOrigem*26+5] =  indexTransicao;
+						if (lArrayEstado[numeroEstadoOrigem*27+5] == undefined)
+							lArrayEstado[numeroEstadoOrigem*27+5] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstadoOrigem*26+6] == undefined)
-							 	lArrayEstado[numeroEstadoOrigem*26+6] =  indexTransicao;
+							if (lArrayEstado[numeroEstadoOrigem*27+6] == undefined)
+							 	lArrayEstado[numeroEstadoOrigem*27+6] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstadoOrigem*26+4] == undefined)
-							 		lArrayEstado[numeroEstadoOrigem*26+4] =  indexTransicao;
+	      							if (lArrayEstado[numeroEstadoOrigem*27+4] == undefined)
+							 		lArrayEstado[numeroEstadoOrigem*27+4] =  indexTransicao;
 								else
-									lArrayEstado[numeroEstadoOrigem*26+7] =  indexTransicao;
+									lArrayEstado[numeroEstadoOrigem*27+7] =  indexTransicao;
 							}
 						}
 					        break;
 					case 'esquerda':
-						if (lArrayEstado[numeroEstadoOrigem*26+3] == undefined) 
-							lArrayEstado[numeroEstadoOrigem*26+3] =  indexTransicao;
+						if (lArrayEstado[numeroEstadoOrigem*27+3] == undefined) 
+							lArrayEstado[numeroEstadoOrigem*27+3] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstadoOrigem*26+4] == undefined)
-							 	lArrayEstado[numeroEstadoOrigem*26+4] =  indexTransicao;
+							if (lArrayEstado[numeroEstadoOrigem*27+4] == undefined)
+							 	lArrayEstado[numeroEstadoOrigem*27+4] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstadoOrigem*26+5] == undefined)
-							 		lArrayEstado[numeroEstadoOrigem*26+5] =  indexTransicao;
+	      							if (lArrayEstado[numeroEstadoOrigem*27+5] == undefined)
+							 		lArrayEstado[numeroEstadoOrigem*27+5] =  indexTransicao;
 								else
-									lArrayEstado[numeroEstadoOrigem*26+6] =  indexTransicao;
+									lArrayEstado[numeroEstadoOrigem*27+6] =  indexTransicao;
 							}
 						}
 						break;
 					case 'direita':
-						if (lArrayEstado[numeroEstadoOrigem*26+8] == undefined) 
-							lArrayEstado[numeroEstadoOrigem*26+8] =  indexTransicao;
+						if (lArrayEstado[numeroEstadoOrigem*27+8] == undefined) 
+							lArrayEstado[numeroEstadoOrigem*27+8] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstadoOrigem*26+7] == undefined)
-							 	lArrayEstado[numeroEstadoOrigem*26+7] =  indexTransicao;
+							if (lArrayEstado[numeroEstadoOrigem*27+7] == undefined)
+							 	lArrayEstado[numeroEstadoOrigem*27+7] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstadoOrigem*26+6] == undefined)
-							 		lArrayEstado[numeroEstadoOrigem*26+6] =  indexTransicao;
+	      							if (lArrayEstado[numeroEstadoOrigem*27+6] == undefined)
+							 		lArrayEstado[numeroEstadoOrigem*27+6] =  indexTransicao;
 								else
-									lArrayEstado[numeroEstadoOrigem*26+5] =  indexTransicao;
+									lArrayEstado[numeroEstadoOrigem*27+5] =  indexTransicao;
 							}
 						}
 						break;
 				}
 				switch (entrada_sfc) {
 					case 'cima':
-						if (lArrayEstado[numeroEstado*26+12] == undefined) 
-							lArrayEstado[numeroEstado*26+12] =  indexTransicao;
+						if (lArrayEstado[numeroEstado*27+12] == undefined) 
+							lArrayEstado[numeroEstado*27+12] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstado*26+13] == undefined)
-							 	lArrayEstado[numeroEstado*26+13] =  indexTransicao;
+							if (lArrayEstado[numeroEstado*27+13] == undefined)
+							 	lArrayEstado[numeroEstado*27+13] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstado*26+11] == undefined)
-							 		lArrayEstado[numeroEstado*26+11] =  indexTransicao;
+	      							if (lArrayEstado[numeroEstado*27+11] == undefined)
+							 		lArrayEstado[numeroEstado*27+11] =  indexTransicao;
 								else
-									lArrayEstado[numeroEstado*26+14] =  indexTransicao;
+									lArrayEstado[numeroEstado*27+14] =  indexTransicao;
 							}
 						}
 					        break;
 					case 'esquerda':
-						if (lArrayEstado[numeroEstado*26+9] == undefined) 
-							lArrayEstado[numeroEstado*26+9] =  indexTransicao;
+						if (lArrayEstado[numeroEstado*27+9] == undefined) 
+							lArrayEstado[numeroEstado*27+9] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstado*26+10] == undefined)
-							 	lArrayEstado[numeroEstado*26+10] =  indexTransicao;
+							if (lArrayEstado[numeroEstado*27+10] == undefined)
+							 	lArrayEstado[numeroEstado*27+10] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstado*26+11] == undefined)
-							 		lArrayEstado[numeroEstado*26+11] =  indexTransicao;
+	      							if (lArrayEstado[numeroEstado*27+11] == undefined)
+							 		lArrayEstado[numeroEstado*27+11] =  indexTransicao;
 								else
-									lArrayEstado[numeroEstado*26+12] =  indexTransicao;
+									lArrayEstado[numeroEstado*27+12] =  indexTransicao;
 							}
 						}
 					        break;
 					case 'direita':
-						if (lArrayEstado[numeroEstado*26+16] == undefined) 
-							lArrayEstado[numeroEstado*26+16] =  indexTransicao;
+						if (lArrayEstado[numeroEstado*27+16] == undefined) 
+							lArrayEstado[numeroEstado*27+16] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstado*26+15] == undefined)
-							 	lArrayEstado[numeroEstado*26+15] =  indexTransicao;
+							if (lArrayEstado[numeroEstado*27+15] == undefined)
+							 	lArrayEstado[numeroEstado*27+15] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstado*26+14] == undefined)
-							 		lArrayEstado[numeroEstado*26+14] =  indexTransicao;
+	      							if (lArrayEstado[numeroEstado*27+14] == undefined)
+							 		lArrayEstado[numeroEstado*27+14] =  indexTransicao;
 								else
-									lArrayEstado[numeroEstado*26+13] =  indexTransicao;
+									lArrayEstado[numeroEstado*27+13] =  indexTransicao;
 							}
 						}
 					        break;
 				}
 				lArrayTransicao[indexTransicao*14] =  numeroEstadoOrigem;
 				lArrayTransicao[indexTransicao*14+1] =  numeroEstado;
-				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black',60);
+				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
 				indexTransicao++;
 			}
 		}
 		// desenha o estado
 		if (lFuncaoSfc >2 && lFuncaoSfc<5) {
 			IFigura.style.display = "none";
-			lArrayEstado[indexEstado*26] = posicaoYSfc +' '+ posicaoXSfc ;
-			lArrayEstado[indexEstado*26+1] =  indexEstado;
+			lArrayEstado[indexEstado*27] = posicaoYSfc +' '+ posicaoXSfc ;
+			lArrayEstado[indexEstado*27+1] =  indexEstado;
+			lArrayEstado[indexEstado*27+26] =  60;
 			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, indexEstado,'black',60);
 			indexEstado++;
 		}
@@ -353,13 +354,14 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor,tamanho) {
 //=====================================================================================
 //Desenho transição 
 //=====================================================================================
-function draw_transicao(contexto, pos_X, pos_Y, cor,tamanho) {
+function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	var i =0;
-	while (lArrayEstado[numeroEstadoOrigem*26 + 3 + i] != indexTransicao && i<6) {
+	while (lArrayEstado[numeroEstadoOrigem*27 + 3 + i] != indexTransicao && i<6) {
 		i ++;
 	}
+	var tamanho = lArrayEstado[numeroEstadoOrigem*27 + 26]; 
 	switch (i) {
 		case 0:
 			contexto.moveTo(estadoX0*60 ,estadoY0*60+45);
@@ -387,9 +389,10 @@ function draw_transicao(contexto, pos_X, pos_Y, cor,tamanho) {
 			break
 	}
 	var j =0;
-	while (lArrayEstado[numeroEstado*26 + 9 + j] != indexTransicao && j<8) {
+	while (lArrayEstado[numeroEstado*27 + 9 + j] != indexTransicao && j<8) {
 		j ++;
 	}
+	tamanho = lArrayEstado[numeroEstado*27 + 26];
 	if (i>0 && i<5){
 		if (pos_X == estadoX0 && pos_Y < estadoY0){ 
 			contexto.lineTo(estadoX0*60-30,estadoY0*60+80);
@@ -625,7 +628,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+35, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*120+10, posicaoYSfc*60+48);
+				contextSfc.fillText(tag,posicaoXSfc*60+70, posicaoYSfc*60+48);
 				ICampo.style.display = "none";
 				ICampo.style.top = "680px";
 				ICampo.style.left = "100px";
@@ -637,7 +640,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+30, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*120+10, posicaoYSfc*60+36);
+				contextSfc.fillText(tag,posicaoXSfc*60+70, posicaoYSfc*60+36);
 				document.getElementById("label_input").innerHTML = "Ação 8:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+24];
 				if (lArrayEstado[indexEstado*26+24] == undefined )
@@ -649,7 +652,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+25, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*120+10, posicaoYSfc*60+24);
+				contextSfc.fillText(tag,posicaoXSfc*60+70, posicaoYSfc*60+24);
 				document.getElementById("label_input").innerHTML = "Ação 7:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+23];
 				if (lArrayEstado[indexEstado*26+23] == undefined )
@@ -661,11 +664,12 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+20, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*120+10, posicaoYSfc*60+12);
+				contextSfc.fillText(tag,posicaoXSfc*60+70, posicaoYSfc*60+12);
 				document.getElementById("label_input").innerHTML = "Ação 6:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+22];
 				if (lArrayEstado[indexEstado*26+22] == undefined )
 					document.getElementById('input_ladder').value ="";
+				lArrayEstado[indexEstado*27+26] =  120;
 				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, indexEstado,'black',120);
 				emEdicao = 6;
 			}
@@ -698,7 +702,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+5, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+17);
+				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+24);
 				document.getElementById("label_input").innerHTML = "Ação 3:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+24];
 				if (lArrayEstado[indexEstado*26+19] == undefined )
