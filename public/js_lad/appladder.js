@@ -321,7 +321,6 @@ function inicializa_array(){
 function entrada_input(event){
 	if (Tela_Eletrico_Simulador == 2){
 		entrada_input_sfc(event);
-		alert("entrou no SFC");	
 	}
 	else
 		entrada_input_ladder(event);
