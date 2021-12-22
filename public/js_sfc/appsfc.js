@@ -523,6 +523,7 @@ function inicializa_array_sfc(){
 //=====================================================================================
 function entrada_input_sfc(event){
 	if (event.keyCode == 13) { //Tecla enter
+		alert("ENTER");
 		var ICampo = document.getElementById('Campo');
 		var posicaoSfcX = parseInt((parseInt(ICampo.style.left)-700)/60);
 		var posicaoSfcY = parseInt((parseInt(ICampo.style.top)-5)/60);
