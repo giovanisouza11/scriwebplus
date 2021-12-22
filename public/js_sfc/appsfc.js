@@ -529,7 +529,7 @@ function entrada_input_sfc(event){
 		contextSfc.font = '9pt Arial';
 		var CInput = document.getElementById('input_ladder');
 		var tag = CInput.value.toUpperCase();
-                
+                alert(lFuncaoSfc);
 		if (emEdicao == 10)
                         eInputS(event);
 		if (lFuncaoSfc < 2) {
