@@ -620,13 +620,12 @@ function entrada_input_sfc(event){
 			}
 		}
 		else {
-			alert(emEdicao);
 			if (emEdicao == 8) {
 				lArrayEstado[indexEstado*26+24] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+35, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60, posicaoYSfc*60+35);
+				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+59);
 				ICampo.style.display = "none";
 				ICampo.style.top = "680px";
 				ICampo.style.left = "100px";
@@ -638,7 +637,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+30, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60, posicaoYSfc*60+30);
+				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+52);
 				document.getElementById("label_input").innerHTML = "Ação 2:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+24];
 				if (lArrayEstado[indexEstado*26+24] == undefined )
@@ -650,7 +649,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+25, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60, posicaoYSfc*60+25);
+				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+45);
 				document.getElementById("label_input").innerHTML = "Ação 7:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+23];
 				if (lArrayEstado[indexEstado*26+23] == undefined )
@@ -662,7 +661,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+20, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60, posicaoYSfc*60+20);
+				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+38);
 				document.getElementById("label_input").innerHTML = "Ação 6:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+22];
 				if (lArrayEstado[indexEstado*26+22] == undefined )
@@ -674,7 +673,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+15, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60, posicaoYSfc*60+15);
+				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+31);
 				document.getElementById("label_input").innerHTML = "Ação 5:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+21];
 				if (lArrayEstado[indexEstado*26+21] == undefined )
@@ -686,7 +685,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+10, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60, posicaoYSfc*60+10);
+				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+24);
 				document.getElementById("label_input").innerHTML = "Ação 4:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+20];
 				if (lArrayEstado[indexEstado*26+20] == undefined )
@@ -698,7 +697,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+5, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60, posicaoYSfc*60+5);
+				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+17);
 				document.getElementById("label_input").innerHTML = "Ação 3:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+19];
 				if (lArrayEstado[indexEstado*26+19] == undefined )
@@ -709,9 +708,9 @@ function entrada_input_sfc(event){
 			if (emEdicao == 1) {
 				lArrayEstado[indexEstado*26+17] = tag;
 				contextSfc.fillStyle = 'white';
-				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60, 20, 12);
+				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60, 20, 10);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60, posicaoYSfc*60);
+				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+12);
 				document.getElementById("label_input").innerHTML = "Ação 2:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+18];
 				if (lArrayEstado[indexEstado*26+18] == undefined )
