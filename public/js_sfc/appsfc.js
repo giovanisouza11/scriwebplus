@@ -472,7 +472,7 @@ function mouse_move_sfc(){
     	var ICampo = document.getElementById('Campo');
 	var IFigura = document.getElementById('Fig');
 	var yTop = window.event.clientY + document.body.scrollTop - 20;
-	lFuncaoSfc = 0;
+	//lFuncaoSfc = 0;
 	//emEdicao = 0;
 	if (window.event.clientX >650 && emEdicao==0) {
 		
@@ -523,7 +523,6 @@ function inicializa_array_sfc(){
 //=====================================================================================
 function entrada_input_sfc(event){
 	if (event.keyCode == 13) { //Tecla enter
-		alert("ENTER");
 		var ICampo = document.getElementById('Campo');
 		var posicaoSfcX = parseInt((parseInt(ICampo.style.left)-700)/60);
 		var posicaoSfcY = parseInt((parseInt(ICampo.style.top)-5)/60);
