@@ -529,11 +529,10 @@ function entrada_input_sfc(event){
 		contextSfc.font = '9pt Arial';
 		var CInput = document.getElementById('input_ladder');
 		var tag = CInput.value.toUpperCase();
-                alert(lFuncaoSfc);
+                //alert(lFuncaoSfc);
 		if (emEdicao == 10)
                         eInputS(event);
 		if (lFuncaoSfc < 2) {
-			alert(emEdicao);
 			if (emEdicao == 7) {
 				lArrayTrasicao[indexTransicao*14+8] = tag;
 				contextSfc.fillStyle = 'white';
@@ -621,6 +620,7 @@ function entrada_input_sfc(event){
 			}
 		}
 		else {
+			alert(emEdicao);
 			if (emEdicao == 8) {
 				lArrayEstado[indexEstado*26+24] = tag;
 				contextSfc.fillStyle = 'white';
