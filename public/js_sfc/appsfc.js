@@ -533,12 +533,17 @@ function entrada_input_sfc(event){
 		if (emEdicao == 10)
                         eInputS(event);
 		if (lFuncaoSfc < 2) {
+			alert(emEdicao);
 			if (emEdicao == 7) {
 				lArrayTrasicao[indexTransicao*14+8] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+30, 30, 12);
 				contextSfc.fillStyle = 'black';
 				contextSfc.fillText(tag,(estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+30);
+				ICampo.style.display = "none";
+				ICampo.style.top = "680px";
+				ICampo.style.left = "100px";
+				CInput.blur();
 				emEdicao = 0;
 			}
 			if (emEdicao == 6) {
@@ -622,6 +627,11 @@ function entrada_input_sfc(event){
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+35, 20, 12);
 				contextSfc.fillStyle = 'black';
 				contextSfc.fillText(tag,posicaoXSfc*60, posicaoYSfc*60+35);
+				ICampo.style.display = "none";
+				ICampo.style.top = "680px";
+				ICampo.style.left = "100px";
+				CInput.blur();
+				emEdicao = 0;
 			}
 			if (emEdicao == 7) {
 				lArrayEstado[indexEstado*26+23] = tag;
