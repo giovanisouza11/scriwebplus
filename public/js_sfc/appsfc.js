@@ -171,7 +171,7 @@ function editar_sfc() {
 				}
 				lArrayTransicao[indexTransicao*14] =  numeroEstadoOrigem;
 				lArrayTransicao[indexTransicao*14+1] =  numeroEstado;
-				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
+				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black',60);
 				indexTransicao++;
 			}
 		}
@@ -180,7 +180,7 @@ function editar_sfc() {
 			IFigura.style.display = "none";
 			lArrayEstado[indexEstado*26] = posicaoYSfc +' '+ posicaoXSfc ;
 			lArrayEstado[indexEstado*26+1] =  indexEstado;
-			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, indexEstado,'black');
+			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, indexEstado,'black',60);
 			indexEstado++;
 		}
 		if ( lFuncaoSfc > 2 && (lFuncaoSfc<5))
@@ -257,15 +257,15 @@ function draw_sfc(fileArr) {
 //=====================================================================================
 //Desenho 
 //=====================================================================================
-function draw_estado(contexto, pos_X, pos_Y, texto,cor) {
+function draw_estado(contexto, pos_X, pos_Y, texto,cor,tamanho) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	contexto.beginPath();
   	contexto.moveTo(pos_X*60,pos_Y*60);
-	contexto.lineTo(pos_X*60+55 ,pos_Y*60);
-  	contexto.arcTo(pos_X*60+60,pos_Y*60, pos_X*60+60 ,pos_Y*60+5,10);
-  	contexto.lineTo(pos_X*60+60,pos_Y*60+55);
-  	contexto.arcTo(pos_X*60+60,pos_Y*60+60, pos_X*60 +55 ,pos_Y*60+60, 10);
+	contexto.lineTo(pos_X*60+tamanho-5 ,pos_Y*60);
+  	contexto.arcTo(pos_X*60+tamanho,pos_Y*60, pos_X*60+tamanho ,pos_Y*60+5,10);
+  	contexto.lineTo(pos_X*60+tamanho,pos_Y*60+55);
+  	contexto.arcTo(pos_X*60+tamanho,pos_Y*60+60, pos_X*60+tamanho-5 ,pos_Y*60+60, 10);
   	contexto.lineTo(pos_X*60+5,pos_Y*60+60);
   	contexto.arcTo(pos_X*60,pos_Y*60+60,pos_X*60,pos_Y*60+55,10);
   	contexto.lineTo(pos_X*60,pos_Y*60);
@@ -276,8 +276,8 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor) {
 	contexto.lineTo(pos_X*60 ,pos_Y*60+45);
   	contexto.stroke();
 	contexto.beginPath();
-  	contexto.moveTo(pos_X*60+60,pos_Y*60+45);
-	contexto.lineTo(pos_X*60+65 ,pos_Y*60+45);
+  	contexto.moveTo(pos_X*60+tamanho,pos_Y*60+45);
+	contexto.lineTo(pos_X*60+tamanho+5 ,pos_Y*60+45);
   	contexto.stroke();
 	contexto.beginPath();
   	contexto.moveTo(pos_X*60+15,pos_Y*60+60);
@@ -325,10 +325,10 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor) {
   	contexto.lineTo(pos_X*60,pos_Y*60+13);
   	contexto.stroke();
 	contexto.beginPath();
-  	contexto.moveTo(pos_X*60+60,pos_Y*60+15);
-	contexto.lineTo(pos_X*60+65,pos_Y*60+15);
-  	contexto.lineTo(pos_X*60+65,pos_Y*60+13);
-  	contexto.lineTo(pos_X*60+60,pos_Y*60+13);
+  	contexto.moveTo(pos_X*60+tamanho,pos_Y*60+15);
+	contexto.lineTo(pos_X*60+tamanho+5,pos_Y*60+15);
+  	contexto.lineTo(pos_X*60+tamanho+5,pos_Y*60+13);
+  	contexto.lineTo(pos_X*60+tamanho,pos_Y*60+13);
   	contexto.stroke();
 	contexto.beginPath();
   	contexto.moveTo(pos_X*60,pos_Y*60+30);
@@ -337,10 +337,10 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor) {
   	contexto.lineTo(pos_X*60 ,pos_Y*60+28);
   	contexto.stroke();
 	contexto.beginPath();
-  	contexto.moveTo(pos_X*60+60,pos_Y*60+30);
-	contexto.moveTo(pos_X*60+65,pos_Y*60+30);
-	contexto.lineTo(pos_X*60+65 ,pos_Y*60+28);
-  	contexto.lineTo(pos_X*60+60 ,pos_Y*60+28);
+  	contexto.moveTo(pos_X*60+tamanho,pos_Y*60+30);
+	contexto.moveTo(pos_X*60+tamanho+5,pos_Y*60+30);
+	contexto.lineTo(pos_X*60+tamanho+5 ,pos_Y*60+28);
+  	contexto.lineTo(pos_X*60+tamanho ,pos_Y*60+28);
   	contexto.stroke();
 	
 	contexto.beginPath();
@@ -353,7 +353,7 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor) {
 //=====================================================================================
 //Desenho transição 
 //=====================================================================================
-function draw_transicao(contexto, pos_X, pos_Y, cor) {
+function draw_transicao(contexto, pos_X, pos_Y, cor,tamanho) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	var i =0;
@@ -382,8 +382,8 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			contexto.lineTo(estadoX0*60+45,estadoY0*60+75);
 			break;
 		case 5:
-			contexto.moveTo(estadoX0*60+60,estadoY0*60+45);
-			contexto.lineTo(estadoX0*60+75,estadoY0*60+45);
+			contexto.moveTo(estadoX0*60+tamanho,estadoY0*60+45);
+			contexto.lineTo(estadoX0*60+tamanho+15,estadoY0*60+45);
 			break
 	}
 	var j =0;
@@ -443,18 +443,18 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
  			contexto.lineTo(pos_X*60+40,pos_Y*60-10);
 			break;
 		case 6:
-			contexto.lineTo(pos_X*60+80,pos_Y*60+30);
-			contexto.lineTo(pos_X*60+70,pos_Y*60+30);
-			contexto.lineTo(pos_X*60+70,pos_Y*60+32);
- 			contexto.lineTo(pos_X*60+60,pos_Y*60+30);
- 			contexto.lineTo(pos_X*60+70,pos_Y*60+28);
+			contexto.lineTo(pos_X*60+tamanho+20,pos_Y*60+30);
+			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+30);
+			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+32);
+ 			contexto.lineTo(pos_X*60+tamanho,pos_Y*60+30);
+ 			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+28);
 			break;
 		case 7:
-			contexto.lineTo(pos_X*60+75,pos_Y*60+20);
-			contexto.lineTo(pos_X*60+70,pos_Y*60+20);
-			contexto.lineTo(pos_X*60+70,pos_Y*60+18);
- 			contexto.lineTo(pos_X*60+60,pos_Y*60+20);
- 			contexto.lineTo(pos_X*60+70,pos_Y*60+22);
+			contexto.lineTo(pos_X*60+tamango+15,pos_Y*60+20);
+			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+20);
+			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+18);
+ 			contexto.lineTo(pos_X*60+tamanho,pos_Y*60+20);
+ 			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+22);
 			break;
 	}
 	contexto.stroke();
@@ -526,7 +526,7 @@ function entrada_input_sfc(event){
 		var ICampo = document.getElementById('Campo');
 		var posicaoXSfc = parseInt((parseInt(ICampo.style.left)-700)/60);
 		var posicaoYSfc = parseInt((parseInt(ICampo.style.top)-5)/60);
-		contextSfc.font = '7pt Arial';
+		contextSfc.font = '9pt Arial';
 		var CInput = document.getElementById('input_ladder');
 		var tag = CInput.value.toUpperCase();
                 //alert(lFuncaoSfc);
@@ -537,7 +537,7 @@ function entrada_input_sfc(event){
 				lArrayTrasicao[indexTransicao*14+8] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+30, 30, 12);
-				contextSfc.fillStyle = 'blue';
+				contextSfc.fillStyle = 'cyan';
 				contextSfc.fillText(tag,(estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+30);
 				ICampo.style.display = "none";
 				ICampo.style.top = "680px";
@@ -549,7 +549,7 @@ function entrada_input_sfc(event){
 				lArrayTrasicao[indexTransicao*14+7] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+25, 20, 12);
-				contextSfc.fillStyle = 'blue';
+				contextSfc.fillStyle = 'cyan';
 				contextSfc.fillText(tag,(estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+25);
 				document.getElementById("label_input").innerHTML = "Condição 7:";
 				document.getElementById('input_ladder').value = lArrayTransicao[indexTransicao*14+8];
@@ -561,7 +561,7 @@ function entrada_input_sfc(event){
 				lArrayTrasicao[indexTransicao*14+6] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+20, 20, 12);
-				contextSfc.fillStyle = 'blue';
+				contextSfc.fillStyle = 'cyan';
 				contextSfc.fillText(tag,(estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+20);
 				document.getElementById("label_input").innerHTML = "Condição 6:";
 				document.getElementById('input_ladder').value = lArrayTransicao[indexTransicao*14+7];
@@ -573,7 +573,7 @@ function entrada_input_sfc(event){
 				lArrayTrasicao[indexTransicao*14+5] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+15, 20, 12);
-				contextSfc.fillStyle = 'blue';
+				contextSfc.fillStyle = 'cyan';
 				contextSfc.fillText(tag,(estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+15);
 				document.getElementById("label_input").innerHTML = "Condição 5:";
 				document.getElementById('input_ladder').value = lArrayTransicao[indexTransicao*14+6];
@@ -585,7 +585,7 @@ function entrada_input_sfc(event){
 				lArrayTrasicao[indexTransicao*14+4] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+10, 20, 12);
-				contextSfc.fillStyle = 'blue';
+				contextSfc.fillStyle = 'cyan';
 				contextSfc.fillText(tag,(estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+10);
 				document.getElementById("label_input").innerHTML = "Condição 4:";
 				document.getElementById('input_ladder').value = lArrayTransicao[indexTransicao*14+5];
@@ -597,7 +597,7 @@ function entrada_input_sfc(event){
 				lArrayTrasicao[indexTransicao*14+3] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+5, 20, 12);
-				contextSfc.fillStyle = 'blue';
+				contextSfc.fillStyle = 'cyan';
 				contextSfc.fillText(tag,(estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+5);
 				document.getElementById("label_input").innerHTML = "Condição 3:";
 				document.getElementById('input_ladder').value = lArrayTransicao[indexTransicao*14+4];
@@ -610,7 +610,7 @@ function entrada_input_sfc(event){
 				lArrayTrasicao[indexTransicao*14+2] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60, 20, 12);
-				contextSfc.fillStyle = 'blue';
+				contextSfc.fillStyle = 'cyan';
 				contextSfc.fillText(tag,(estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60);
 				document.getElementById("label_input").innerHTML = "Condição 2:";
 				document.getElementById('input_ladder').value = lArrayTransicao[indexTransicao*14+3];
@@ -625,7 +625,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+35, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+59);
+				contextSfc.fillText(tag,posicaoXSfc*120+10, posicaoYSfc*60+48);
 				ICampo.style.display = "none";
 				ICampo.style.top = "680px";
 				ICampo.style.left = "100px";
@@ -637,8 +637,8 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+30, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+52);
-				document.getElementById("label_input").innerHTML = "Ação 2:";
+				contextSfc.fillText(tag,posicaoXSfc*120+10, posicaoYSfc*60+36);
+				document.getElementById("label_input").innerHTML = "Ação 8:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+24];
 				if (lArrayEstado[indexEstado*26+24] == undefined )
 					document.getElementById('input_ladder').value ="";
@@ -649,7 +649,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+25, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+45);
+				contextSfc.fillText(tag,posicaoXSfc*120+10, posicaoYSfc*60+24);
 				document.getElementById("label_input").innerHTML = "Ação 7:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+23];
 				if (lArrayEstado[indexEstado*26+23] == undefined )
@@ -661,11 +661,12 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+20, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+38);
+				contextSfc.fillText(tag,posicaoXSfc*120+10, posicaoYSfc*60+12);
 				document.getElementById("label_input").innerHTML = "Ação 6:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+22];
 				if (lArrayEstado[indexEstado*26+22] == undefined )
 					document.getElementById('input_ladder').value ="";
+				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, indexEstado,'black',120);
 				emEdicao = 6;
 			}
 			if (emEdicao == 4) {
@@ -673,7 +674,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+15, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+31);
+				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+48);
 				document.getElementById("label_input").innerHTML = "Ação 5:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+21];
 				if (lArrayEstado[indexEstado*26+21] == undefined )
@@ -685,7 +686,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect(posicaoXSfc*60, posicaoYSfc*60+10, 20, 12);
 				contextSfc.fillStyle = 'black';
-				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+24);
+				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+36);
 				document.getElementById("label_input").innerHTML = "Ação 4:";
 				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+20];
 				if (lArrayEstado[indexEstado*26+20] == undefined )
@@ -699,7 +700,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'black';
 				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+17);
 				document.getElementById("label_input").innerHTML = "Ação 3:";
-				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+19];
+				document.getElementById('input_ladder').value = lArrayEstado[indexEstado*26+24];
 				if (lArrayEstado[indexEstado*26+19] == undefined )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 3;
