@@ -535,7 +535,7 @@ function entrada_input_sfc(event){
                 //alert(lFuncaoSfc);
 		if (emEdicao == 10)
                         eInputS(event);
-		if (lFuncaoSfc < 2) {
+		if (lFuncaoSfc < 3) {
 			if (emEdicao == 7) {
 				lArrayTrasicao[indexTransicao*14+8] = tag;
 				contextSfc.fillStyle = 'white';
