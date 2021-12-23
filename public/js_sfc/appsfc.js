@@ -477,6 +477,7 @@ function mouse_move_sfc(){
 	var yTop = window.event.clientY + document.body.scrollTop - 20;
 	//lFuncaoSfc = 0;
 	//emEdicao = 0;
+	
 	if (window.event.clientX >650 && emEdicao==0) {
 		
 		for (var i=11; i<21; i++) {
@@ -530,6 +531,7 @@ function entrada_input_sfc(event){
 		var posicaoXSfc = parseInt((parseInt(ICampo.style.left)-700)/60);
 		var posicaoYSfc = parseInt((parseInt(ICampo.style.top)-5)/60);
 		contextSfc.font = '9pt Arial';
+		contextSfc.lineWidth = "1";
 		var CInput = document.getElementById('input_ladder');
 		var tag = CInput.value.toUpperCase();
                 //alert(lFuncaoSfc);
