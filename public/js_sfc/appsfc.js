@@ -537,7 +537,7 @@ function entrada_input_sfc(event){
                         eInputS(event);
 		if (lFuncaoSfc < 3) {
 			if (emEdicao == 7) {
-				lArrayTrasicao[indexTransicao*14+8] = tag;
+				lArrayTransicao[indexTransicao*14+8] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+30, 30, 12);
 				contextSfc.fillStyle = 'cyan';
@@ -549,7 +549,7 @@ function entrada_input_sfc(event){
 				emEdicao = 0;
 			}
 			if (emEdicao == 6) {
-				lArrayTrasicao[indexTransicao*14+7] = tag;
+				lArrayTransicao[indexTransicao*14+7] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+25, 20, 12);
 				contextSfc.fillStyle = 'cyan';
@@ -561,7 +561,7 @@ function entrada_input_sfc(event){
 				emEdicao = 7;
 			}
 			if (emEdicao == 5) {
-				lArrayTrasicao[indexTransicao*14+6] = tag;
+				lArrayTransicao[indexTransicao*14+6] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+20, 20, 12);
 				contextSfc.fillStyle = 'cyan';
@@ -573,7 +573,7 @@ function entrada_input_sfc(event){
 				emEdicao = 6;
 			}
 			if (emEdicao == 4) {
-				lArrayTrasicao[indexTransicao*14+5] = tag;
+				lArrayTransicao[indexTransicao*14+5] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+15, 20, 12);
 				contextSfc.fillStyle = 'cyan';
@@ -585,7 +585,7 @@ function entrada_input_sfc(event){
 				emEdicao = 5;
 			}
 			if (emEdicao == 3) {
-				lArrayTrasicao[indexTransicao*14+4] = tag;
+				lArrayTransicao[indexTransicao*14+4] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+10, 20, 12);
 				contextSfc.fillStyle = 'cyan';
@@ -597,7 +597,7 @@ function entrada_input_sfc(event){
 				emEdicao = 4;
 			}
 			if (emEdicao == 2) {
-				lArrayTrasicao[indexTransicao*14+3] = tag;
+				lArrayTransicao[indexTransicao*14+3] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60+5, 20, 12);
 				contextSfc.fillStyle = 'cyan';
@@ -610,7 +610,7 @@ function entrada_input_sfc(event){
 			}
 			//{ _id, nome, var_1, tipo, var_2, ver, R-W, tag2, funcao};
 			if (emEdicao == 1) {
-				lArrayTrasicao[indexTransicao*14+2] = tag;
+				lArrayTransicao[indexTransicao*14+2] = tag;
 				contextSfc.fillStyle = 'white';
 				contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2))*60, (estadoY0+((posicaoYSfc-estadoY0)/2))*60, 20, 12);
 				contextSfc.fillStyle = 'cyan';
