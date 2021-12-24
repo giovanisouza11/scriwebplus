@@ -372,7 +372,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	var i =0;
-	while (i<6) {
+	while (i>6) {
 		i ++;
 		if (lArrayEstado[numeroEstadoOrigem*30 + 2 + i] != indexTransicao)
 			break;
@@ -406,7 +406,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			break
 	}
 	var j =0;
-	while (j<8) {
+	while (j>8) {
 		j ++;
 		if (lArrayEstado[numeroEstado*30 + 8 + j] != indexTransicao)
 			break;
