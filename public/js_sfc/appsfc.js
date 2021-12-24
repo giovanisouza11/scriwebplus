@@ -228,20 +228,20 @@ function editar_sfc() {
 //funcao ver local de saida entrada no estado
 //=====================================================================================
 function ver_posicao_estado(pos_X, pos_Y) {
-	if (estadoY0 < (pos_Y+1)) {
-  		saida_sfc = 'baixo';
-		entrada_sfc = 'cima';
+	if (estadoY0 == (pos_Y)) {
+  		if (pos_X > estadoX0) {
+			saida_sfc = 'esquerda';
+			entrada_sfc = 'direita';
+		}
+		else {
+			saida_sfc = 'direita';
+			entrada_sfc = 'esquerda';
+		}
 	}
 	else{
-		if (estadoY0 == (pos_Y)) {
-  			if (pos_X > estadoX0) {
-				saida_sfc = 'esquerda';
-				entrada_sfc = 'direita';
-			}
-			else {
-				saida_sfc = 'direita';
-				entrada_sfc = 'esquerda';
-			}
+		if (estadoY0 < (pos_Y+1)) {
+  			saida_sfc = 'baixo';
+			entrada_sfc = 'cima';
 		}
 		else {
 			if (pos_X > estadoX0) {
