@@ -72,7 +72,7 @@ function editar_sfc() {
 			else{
 				var linhaEstado = 0;
 				while ( (lArrayEstado.length > linhaEstado)) {
-					if (lArrayEstado[linhaEstado] != (posicaoYSfc +' '+ posicaoXSfc))
+					if (lArrayEstado[linhaEstado] == (posicaoYSfc +' '+ posicaoXSfc))
 						numeroEstado = lArrayEstado[linhaEstado+1];
 					linhaEstado += 30;
 				};
