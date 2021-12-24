@@ -68,15 +68,15 @@ function editar_sfc() {
 			if (sfcTipo == 0){
 				linhaEstado = 0;
 				numeroEstadoOrigem = -1;
-			 	while ((lArrayEstado.length > linhaEstado)) {
+			 	estadoX0 = posicaoXSfc;
+				estadoY0 = posicaoYSfc;
+				while ((lArrayEstado.length > linhaEstado)) {
 					if  (lArrayEstado[linhaEstado] == (estadoY0 +' '+ estadoX0 )) 
 						numeroEstadoOrigem = lArrayEstado[linhaEstado+1];
 					linhaEstado += 30;
 				};
 
 				if ((lFuncaoSfc ==1 &&  numeroEstadoOrigem == -1) || (lFuncaoSfc ==2 && numeroEstadoOrigem > -1)) {
-					estadoX0 = posicaoXSfc;
-					estadoY0 = posicaoYSfc;
 					sfcTipo = 1;
 				}
 			}
