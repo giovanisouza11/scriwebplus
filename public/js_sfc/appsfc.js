@@ -360,101 +360,105 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	var i =0;
-	while (lArrayEstado[numeroEstadoOrigem*30 + 3 + i] != indexTransicao && i<6) {
+	while (i<6) {
 		i ++;
+		if (lArrayEstado[numeroEstadoOrigem*30 + 2 + i] != indexTransicao)
+			break;
 	}
 	var tamanho = lArrayEstado[numeroEstadoOrigem*30 + 26]; 
 	switch (i) {
-		case 0:
+		case 1:
 			contexto.moveTo(estadoX0*60 ,estadoY0*60+45);
 			contexto.lineTo(estadoX0*60-15,estadoY0*60+45);
 			break;
-		case 1:
+		case 2:
 			contexto.moveTo(estadoX0*60+15 ,estadoY0*60+60);
 			contexto.lineTo(estadoX0*60+15,estadoY0*60+75);
 			break;
-		case 2:
+		case 3:
 	               	contexto.moveTo(estadoX0*60+25 ,estadoY0*60+60);
 			contexto.lineTo(estadoX0*60+25,estadoY0*60+80);
 			break;
-		case 3:
+		case 4:
 			contexto.moveTo(estadoX0*60+35 ,estadoY0*60+60);
 			contexto.lineTo(estadoX0*60+35,estadoY0*60+80);
 			break;
-		case 4:
+		case 5:
 			contexto.moveTo(estadoX0*60+45 ,estadoY0*60+60);
 			contexto.lineTo(estadoX0*60+45,estadoY0*60+75);
 			break;
-		case 5:
+		case 6:
 			contexto.moveTo(estadoX0*60+tamanho,estadoY0*60+45);
 			contexto.lineTo(estadoX0*60+tamanho+15,estadoY0*60+45);
 			break
 	}
 	var j =0;
-	while (lArrayEstado[numeroEstado*30 + 9 + j] != indexTransicao && j<8) {
+	while (j<8) {
 		j ++;
+		if (lArrayEstado[numeroEstado*30 + 8 + j] != indexTransicao)
+			break;
 	}
 	tamanho = lArrayEstado[numeroEstado*30 + 26];
-	if (i>0 && i<5){
+	if (i>1 && i<6){
 		if (pos_X == estadoX0 && pos_Y < estadoY0){ 
 			contexto.lineTo(estadoX0*60-30,estadoY0*60+80);
-			if (j<2)
+			if (j<3)
 				contexto.lineTo(estadoX0*60-30,pos_Y*60+25);
-			if (j>1)
+			if (j>2)
 				contexto.lineTo(estadoX0*60-30,pos_Y*60-30);
 		}
 	}
 	switch (j) {
-		case 0:
+		case 1:
 			contexto.lineTo(pos_X*60-25,pos_Y*60+30);
 			contexto.lineTo(pos_X*60-10,pos_Y*60+30);
 			contexto.lineTo(pos_X*60-10,pos_Y*60+32);
  			contexto.lineTo(pos_X*60,pos_Y*60+30);
  			contexto.lineTo(pos_X*60-10,pos_Y*60+28);
 			break;
-		case 1:
+		case 2:
 			contexto.lineTo(pos_X*60-20,pos_Y*60+20);
 			contexto.lineTo(pos_X*60-10,pos_Y*60+20);
 			contexto.lineTo(pos_X*60-10,pos_Y*60+18);
  			contexto.lineTo(pos_X*60,pos_Y*60+20);
  			contexto.lineTo(pos_X*60-10,pos_Y*60+22);
 			break;
-		case 2:
+		case 3:
 	               	contexto.lineTo(pos_X*60+15,pos_Y*60-20);
 			contexto.lineTo(pos_X*60+15,pos_Y*60-10);
 			contexto.lineTo(pos_X*60+10,pos_Y*60-10);
  			contexto.lineTo(pos_X*60+15,pos_Y*60);
  			contexto.lineTo(pos_X*60+10,pos_Y*60-10);
 			break;
-		case 3:
+		case 4:
 	               	contexto.lineTo(pos_X*60+25,pos_Y*60-25);
 			contexto.lineTo(pos_X*60+25,pos_Y*60-10);
 			contexto.lineTo(pos_X*60+20,pos_Y*60-10);
  			contexto.lineTo(pos_X*60+25,pos_Y*60);
  			contexto.lineTo(pos_X*60+20,pos_Y*60-10);
 			break;
-		case 4:
+		case 5:
 	               	contexto.lineTo(pos_X*60+35,pos_Y*60-25);
 			contexto.lineTo(pos_X*60+35,pos_Y*60-10);
 			contexto.lineTo(pos_X*60+30,pos_Y*60-10);
  			contexto.lineTo(pos_X*60+35,pos_Y*60);
  			contexto.lineTo(pos_X*60+30,pos_Y*60-10);
 			break;
-		case 5:
+		case 6:
 	               	contexto.lineTo(pos_X*60+45,pos_Y*60-20);
 			contexto.lineTo(pos_X*60+45,pos_Y*60-10);
 			contexto.lineTo(pos_X*60+40,pos_Y*60-10);
  			contexto.lineTo(pos_X*60+45,pos_Y*60);
  			contexto.lineTo(pos_X*60+40,pos_Y*60-10);
 			break;
-		case 6:
+		case 7:
 			contexto.lineTo(pos_X*60+tamanho+20,pos_Y*60+30);
 			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+30);
 			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+32);
  			contexto.lineTo(pos_X*60+tamanho,pos_Y*60+30);
  			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+28);
 			break;
-		case 7:
+		case 8:
 			contexto.lineTo(pos_X*60+tamango+15,pos_Y*60+20);
 			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+20);
 			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+18);
