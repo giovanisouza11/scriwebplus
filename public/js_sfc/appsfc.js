@@ -372,12 +372,12 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	var i =0;
-	while (i>6) {
+	while (i<6) {
 		i ++;
-		if (lArrayEstado[numeroEstadoOrigem*30 + 2 + i] != indexTransicao)
+		if (lArrayEstado[numeroEstadoOrigem*30 + 2 + i] == indexTransicao)
 			break;
 	}
-	//alert("estado origem "+ i);
+	alert("estado origem "+ i);
 	var tamanho = lArrayEstado[numeroEstadoOrigem*30 + 26]; 
 	switch (i) {
 		case 1:
@@ -406,12 +406,12 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			break
 	}
 	var j =0;
-	while (j>8) {
+	while (j<8) {
 		j ++;
-		if (lArrayEstado[numeroEstado*30 + 8 + j] != indexTransicao)
+		if (lArrayEstado[numeroEstado*30 + 8 + j] == indexTransicao)
 			break;
 	}
-	//alert("estado destino "+ j);
+	alert("estado destino "+ j);
 	tamanho = lArrayEstado[numeroEstado*30 + 26];
 	if (i>1 && i<6){
 		if (pos_X == estadoX0 && pos_Y < estadoY0){ 
