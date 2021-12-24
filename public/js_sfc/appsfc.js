@@ -207,7 +207,7 @@ function editar_sfc() {
 			emEdicao = 1;
 		}
 		else {
-			if ( lFuncaoSfc > 0 && (lFuncaoSfc<3) && sfcTipo == 0)
+			if ( lFuncaoSfc > 0 && (lFuncaoSfc<3) && sfcTipo == 1)
 			{
 				ICampo.style.display = "block";
 				ICampo.style.left = " "+(700 +((estadoX0+((posicaoXSfc-estadoX0)/2))*60)) + "px";
@@ -221,6 +221,7 @@ function editar_sfc() {
 					document.getElementById('input_ladder').value = "";
 				CInput.focus();
 				emEdicao = 1;
+				sfcTipo = 0;
 			}
 			else {
 				ICampo.style.display = "none";
@@ -486,8 +487,6 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			break;
 	}
 	contexto.stroke();
-	
-	sfcTipo = 0;
 }
 //=====================================================================================
 // verifica movimento do mouse
