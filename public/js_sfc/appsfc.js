@@ -229,7 +229,7 @@ function editar_sfc() {
 //=====================================================================================
 function ver_posicao_estado(pos_X, pos_Y) {
 	if (estadoY0 == (pos_Y)) {
-  		if (pos_X > estadoX0) {
+  		if (pos_X < estadoX0) {
 			saida_sfc = 'esquerda';
 			entrada_sfc = 'direita';
 		}
