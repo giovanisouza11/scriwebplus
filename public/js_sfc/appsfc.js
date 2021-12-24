@@ -233,18 +233,30 @@ function ver_posicao_estado(pos_X, pos_Y) {
 		entrada_sfc = 'cima';
 	}
 	else{
-		if (pos_X > estadoX0) {
-			saida_sfc = 'esquerda';
-			entrada_sfc = 'direita';
-		}
-		else {
-			if (pos_X == estadoX0) {
+		if (estadoY0 == (pos_Y)) {
+  			if (pos_X > estadoX0) {
 				saida_sfc = 'esquerda';
-				entrada_sfc = 'esquerda';
+				entrada_sfc = 'direita';
 			}
 			else {
 				saida_sfc = 'direita';
 				entrada_sfc = 'esquerda';
+			}
+		}
+		else {
+			if (pos_X > estadoX0) {
+				saida_sfc = 'esquerda';
+				entrada_sfc = 'direita';
+			}
+			else {
+				if (pos_X == estadoX0) {
+					saida_sfc = 'esquerda';
+					entrada_sfc = 'esquerda';
+				}
+				else {
+					saida_sfc = 'direita';
+					entrada_sfc = 'esquerda';
+				}
 			}
 		}
 	}
