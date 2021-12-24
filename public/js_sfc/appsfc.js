@@ -74,7 +74,7 @@ function editar_sfc() {
 					linhaEstado += 30;
 				};
 
-				if (lFuncaoSfc ==1 || (lFuncaoSfc ==2 && numeroEstadoOrigem > -1)) {
+				if ((lFuncaoSfc ==1 &&  numeroEstadoOrigem == -1) || (lFuncaoSfc ==2 && numeroEstadoOrigem > -1)) {
 					estadoX0 = posicaoXSfc;
 					estadoY0 = posicaoYSfc;
 					sfcTipo = 1;
