@@ -539,7 +539,7 @@ function entrada_input_sfc(event){
                 //alert(lFuncaoSfc);
 		if (emEdicao == 10)
                         eInputS(event);
-		var auxIndexTransicao = indextransicao - 1;
+		var auxIndexTransicao = indexTransicao - 1;
 		var auxIndexEstado = indexEstado -1;
 		if (lFuncaoSfc < 3) {
 			if (emEdicao == 7) {
