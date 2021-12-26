@@ -567,7 +567,7 @@ function entrada_input_sfc(event){
 		var auxIndexEstado = indexEstado -1;
 		if (lFuncaoSfc < 3) {
 			//alert(auxIndexTransicao);
-			posicao_sfc(auxIndexTransicao);
+			//posicao_sfc(auxIndexTransicao);
 			if (emEdicao == 7) {
 				lArrayTransicao[auxIndexTransicao*20+8] = tag;
 				contextSfc.fillStyle = 'white';
