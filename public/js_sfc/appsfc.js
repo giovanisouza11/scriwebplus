@@ -376,7 +376,7 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor,tamanho) {
 //Desenho transição 
 //=====================================================================================
 function draw_transicao(contexto, pos_X, pos_Y, cor) {
-	contexto.lineWidth = "2";
+	/*contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	var i =0;
 	while (i<6) {
@@ -487,7 +487,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
  			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+22);
 			break;
 	}
-	contexto.stroke();
+	contexto.stroke();*/
 }
 //=====================================================================================
 // verifica movimento do mouse
