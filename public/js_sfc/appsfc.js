@@ -20,6 +20,7 @@ var indexEstado = 0;
 var indexTransicao = 0;
 var saida_sfc;
 var entrada_sfc;
+var resultado= [0,0,0,0];
 //=====================================================================================
 //Inicializa Canvas
 //Desenha area de trabalho em branco
@@ -566,7 +567,7 @@ function entrada_input_sfc(event){
 		var auxIndexEstado = indexEstado -1;
 		if (lFuncaoSfc < 3) {
 			//alert(auxIndexTransicao);
-			var resultado1 = posicao_sfc(auxIndexTransicao);
+			posicao_sfc(auxIndexTransicao);
 			if (emEdicao == 7) {
 				lArrayTransicao[auxIndexTransicao*20+8] = tag;
 				contextSfc.fillStyle = 'white';
@@ -762,7 +763,7 @@ function entrada_input_sfc(event){
 //=====================================================================================
 function posicao_sfc(transicao) {
 	var i =0;
-	var resultado= [0,0,0,0];
+	//var resultado= [0,0,0,0];
 	var posSfcX = [0,15,25,35,45,0];
 	var posSfcY =[45,0,0,0,0,45];
 	while (i<6) {
@@ -784,7 +785,7 @@ function posicao_sfc(transicao) {
 	resultado[2] = lArrayEstado[lArrayTransicao[transicao]*30].substring(indexSfcString, tamanhoSfcString)*60 + posSfcX[i];
 	resultado[3] = lArrayEstado[lArrayTransicao[transicao]*30].substring(indexSfcString, tamanhoSfcString)*60 + posSfcY[i];
 	alert(resultado);
-	return resultado[0];
+	//return resultado[0];
 }
 //=====================================================================================
 //Desenho o circuito ladder apartir de uma matriz
