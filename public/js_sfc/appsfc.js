@@ -755,7 +755,7 @@ function entrada_input_sfc(event){
 			}
   		}  
 	
-	//posicao_sfc(0);
+	posicao_sfc(0);
 	}
 }
 //=====================================================================================
@@ -774,8 +774,8 @@ function posicao_sfc(transicao) {
 	}
 	var indexSfcString = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ');
 	var tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao]*30].length();
-	resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substring(0, indexSfcString-1)*60 + posSfcX[i];
-	resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substring(indexSfcString, tamanhoSfcString)*60 + posSfcY[i];
+	resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(0, indexSfcString-1)*60 + posSfcX[i];
+	resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i];
 	posSfcX = [0,0,15,25,35,45,0,0];
 	posSfcY =[30,15,0,0,0,0,15,30];
 	i = 0;
@@ -786,8 +786,8 @@ function posicao_sfc(transicao) {
 	}
 	indexSfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30].indexOf(' ');
 	tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30].length();
-	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(0, indexSfcString-1)*60 + posSfcX[i];
-	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(indexSfcString, tamanhoSfcString)*60 + posSfcY[i];
+	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString-1)*60 + posSfcX[i];
+	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i];
 	alert(resultado[0]);
 	//return resultado[0];
 }
