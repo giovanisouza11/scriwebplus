@@ -567,7 +567,7 @@ function entrada_input_sfc(event){
 		var auxIndexEstado = indexEstado -1;
 		if (lFuncaoSfc < 3) {
 			//alert(auxIndexTransicao);
-			//posicao_sfc(auxIndexTransicao);
+			posicao_sfc(auxIndexTransicao);
 			if (emEdicao == 7) {
 				lArrayTransicao[auxIndexTransicao*20+8] = tag;
 				contextSfc.fillStyle = 'white';
@@ -784,7 +784,7 @@ function posicao_sfc(transicao) {
 	}
 	resultado[2] = lArrayEstado[lArrayTransicao[transicao]*30].substring(indexSfcString, tamanhoSfcString)*60 + posSfcX[i];
 	resultado[3] = lArrayEstado[lArrayTransicao[transicao]*30].substring(indexSfcString, tamanhoSfcString)*60 + posSfcY[i];
-	alert(resultado);
+	alert(resultado[0]);
 	//return resultado[0];
 }
 //=====================================================================================
