@@ -376,7 +376,7 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor,tamanho) {
 //Desenho transição 
 //=====================================================================================
 function draw_transicao(contexto, pos_X, pos_Y, cor) {
-	/*contexto.lineWidth = "2";
+	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	var i =0;
 	while (i<6) {
@@ -487,7 +487,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
  			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+22);
 			break;
 	}
-	contexto.stroke();*/
+	contexto.stroke();
 }
 //=====================================================================================
 // verifica movimento do mouse
@@ -758,7 +758,7 @@ function entrada_input_sfc(event){
 //Ve a posicao inicial e final da Transicao
 // Retorna [x-ini, yini, xFim, yFim]
 //=====================================================================================
-/*function posicao_sfc(transicao) {
+function posicao_sfc(transicao) {
 	var i =0;
 	var resultado= [0,0,0,0];
 	var posSfcX = [0,15,25,35,45,0];
@@ -780,7 +780,7 @@ function entrada_input_sfc(event){
 	resutado[2] = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ')*60 + posSfcX[i];
 	resutado[3] = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ')*60 + posSfcY[i];
 	return resultado;
-}*/	
+}
 //=====================================================================================
 //Desenho o circuito ladder apartir de uma matriz
 // Apos RUN e STOP do CLP
