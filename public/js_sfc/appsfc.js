@@ -753,7 +753,7 @@ function entrada_input_sfc(event){
 			}
   		}  
 	}
-
+}
 //=====================================================================================
 //Ve a posicao inicial e final da Transicao
 // Retorna [x-ini, yini, xFim, yFim]
