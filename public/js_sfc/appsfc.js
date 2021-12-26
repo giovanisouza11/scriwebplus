@@ -784,7 +784,7 @@ function posicao_sfc(transicao) {
 	resultado[2] = lArrayEstado[lArrayTransicao[transicao]*30].substring(indexSfcString, tamanhoSfcString)*60 + posSfcX[i];
 	resultado[3] = lArrayEstado[lArrayTransicao[transicao]*30].substring(indexSfcString, tamanhoSfcString)*60 + posSfcY[i];
 	alert(resultado);
-	return resultado;
+	return resultado[0];
 }
 //=====================================================================================
 //Desenho o circuito ladder apartir de uma matriz
