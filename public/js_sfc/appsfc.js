@@ -771,7 +771,7 @@ function posicao_sfc(transicao) {
 			break;
 	}
 	var indexSfcString = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ');
-	var tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao]*30].length(' ');
+	var tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao]*30].length();
 	resultado[0] = lArrayEstado[lArrayTransicao[transicao]*30].substring(0, indexSfcString-1)*60 + posSfcX[i];
 	resultado[1] = lArrayEstado[lArrayTransicao[transicao]*30].substring(0, indexSfcString-1)*60 + posSfcY[i];
 	posSfcX = [0,0,15,25,35,45,0,0];
