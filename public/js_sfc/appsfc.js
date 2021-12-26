@@ -565,6 +565,7 @@ function entrada_input_sfc(event){
 		var auxIndexTransicao = indexTransicao - 1;
 		var auxIndexEstado = indexEstado -1;
 		if (lFuncaoSfc < 3) {
+			posicao_sfc(auxIndexTransicao);
 			if (emEdicao == 7) {
 				lArrayTransicao[auxIndexTransicao*20+8] = tag;
 				contextSfc.fillStyle = 'white';
@@ -762,23 +763,26 @@ function posicao_sfc(transicao) {
 	var i =0;
 	var resultado= [0,0,0,0];
 	var posSfcX = [0,15,25,35,45,0];
-	var posSfcY =[15,0,0,0,0,15];
+	var posSfcY =[45,0,0,0,0,45];
 	while (i<6) {
 		i ++;
 		if (lArrayEstado[lArrayTransicao[transicao]*30 + 2 + i] == transicao)
 			break;
 	}
-	resutado[0] = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ')*60 + posSfcX[i];
-	resutado[1] = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ')*60 + posSfcY[i];
+	var indexSfcString = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ');
+	var tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao]*30].length(' ');
+	resutado[0] = lArrayEstado[lArrayTransicao[transicao]*30].substring(0, indexSfcString-1)*60 + posSfcX[i];
+	resutado[1] = lArrayEstado[lArrayTransicao[transicao]*30].substring(0, indexSfcString-1)*60 + posSfcY[i];
 	posSfcX = [0,0,15,25,35,45,0,0];
-	posSfcY =[30,45,0,0,0,0,30,45];
+	posSfcY =[30,15,0,0,0,0,15,30];
 	while (i<8) {
 		i ++;
 		if (lArrayEstado[lArrayTransicao[transicao+1]*30+8+i] == transicao)
 			break;
 	}
-	resutado[2] = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ')*60 + posSfcX[i];
-	resutado[3] = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ')*60 + posSfcY[i];
+	resutado[2] = lArrayEstado[lArrayTransicao[transicao]*30].substring(indexSfcString, tamanhoSfcString)*60 + posSfcX[i];
+	resutado[3] = lArrayEstado[lArrayTransicao[transicao]*30].substring(indexSfcString, tamanhoSfcString)*60 + posSfcY[i];
+	alert(resultado);
 	return resultado;
 }
 //=====================================================================================
