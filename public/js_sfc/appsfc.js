@@ -384,7 +384,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 		if (lArrayEstado[numeroEstadoOrigem*30 + 2 + i] == indexTransicao)
 			break;
 	}
-	alert("estado origem "+ i);
+	//alert("estado origem "+ i);
 	var tamanho = lArrayEstado[numeroEstadoOrigem*30 + 26]; 
 	switch (i) {
 		case 1:
@@ -418,7 +418,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 		if (lArrayEstado[numeroEstado*30 + 8 + j] == indexTransicao)
 			break;
 	}
-	alert("estado destino "+ j);
+	//alert("estado destino "+ j);
 	tamanho = lArrayEstado[numeroEstado*30 + 26];
 	if (i>1 && i<6){
 		if (pos_X == estadoX0 && pos_Y < estadoY0){ 
@@ -753,7 +753,24 @@ function entrada_input_sfc(event){
 			}
   		}  
 	}
-}
+
+//=====================================================================================
+//Ve a posicao inicial e final da Transicao
+// Retorna [x-ini, yini, xFim, yFim]
+//=====================================================================================
+function posicao_sfc(transicao) {
+	var i =0;
+	var resultado= [0,0,0,0];
+	var posSfcX = [0,15,25,35,45,0];
+	var posSfcY -[15,0,0,0,0,15];
+	while (i<6) {
+		i ++;
+		if (lArrayEstado[lArrayTransicao[transicao]*30 + 2 + i] == transicao)
+			break;
+	}
+	resutado[0] = lArrayEstado[lArrayTransicao[transicao]*30]*60 + posSfcX[i];
+	resutado[1] = lArrayEstado[lArrayTransicao[transicao]*30]*60 + posSfcY[i];
+}	
 //=====================================================================================
 //Desenho o circuito ladder apartir de uma matriz
 // Apos RUN e STOP do CLP
