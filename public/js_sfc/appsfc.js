@@ -768,8 +768,18 @@ function posicao_sfc(transicao) {
 		if (lArrayEstado[lArrayTransicao[transicao]*30 + 2 + i] == transicao)
 			break;
 	}
-	resutado[0] = lArrayEstado[lArrayTransicao[transicao]*30]*60 + posSfcX[i];
-	resutado[1] = lArrayEstado[lArrayTransicao[transicao]*30]*60 + posSfcY[i];
+	resutado[0] = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ')*60 + posSfcX[i];
+	resutado[1] = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ')*60 + posSfcY[i];
+	posSfcX = [0,0,15,25,35,45,0,0];
+	posSfcY -[30,45,0,0,0,0,30,45];
+	while (i<8) {
+		i ++;
+		if (lArrayEstado[lArrayTransicao[transicao+1]*30+8+i] == transicao)
+			break;
+	}
+	resutado[2] = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ')*60 + posSfcX[i];
+	resutado[3] = lArrayEstado[lArrayTransicao[transicao]*30].indexOf(' ')*60 + posSfcY[i];
+	return resultado;
 }	
 //=====================================================================================
 //Desenho o circuito ladder apartir de uma matriz
