@@ -205,6 +205,7 @@ function editar_sfc() {
 			}
 		}
 		// desenha o estado
+		var tag;
 		if (lFuncaoSfc==4) {
 			IFigura.style.display = "none";
 			lArrayEstado[indexEstado*30] = posicaoYSfc +' '+ posicaoXSfc ;
@@ -215,7 +216,7 @@ function editar_sfc() {
 			ICampo.style.display = "block";
 			ICampo.style.left = " "+(700 +(posicaoXSfc*60)) + "px";
 			ICampo.style.top = " "+(05+(posicaoYSfc*60))  + "px";
-			var tag;
+
 			document.getElementById("label_input").innerHTML = "Memória:";
 			tag = lArrayEstado[(indexEstado-1)*30+2];
 			if (tag != undefined && tag != "undefined")
@@ -225,7 +226,7 @@ function editar_sfc() {
 			CInput.focus();
 			emEdicao = 1;
 		}
-		if (lFuncaoSfc==3) {
+		/*if (lFuncaoSfc==3) {
 			IFigura.style.display = "none";
 			lArrayEstado[indexEstado*30] = posicaoYSfc +' '+ posicaoXSfc ;
 			lArrayEstado[indexEstado*30+1] =  indexEstado;
@@ -235,7 +236,6 @@ function editar_sfc() {
 			ICampo.style.display = "block";
 			ICampo.style.left = " "+(700 +(posicaoXSfc*60)) + "px";
 			ICampo.style.top = " "+(05+(posicaoYSfc*60))  + "px";
-			var tag;
 			document.getElementById("label_input").innerHTML = "NumEstados:";
 			tag = lArrayEstado[(indexEstado-1)*30+25];
 			if (tag != undefined && tag != "undefined")
@@ -243,8 +243,8 @@ function editar_sfc() {
 			else
 				document.getElementById('input_ladder').value = "";
 			CInput.focus();
-			emEdicao = 1;
-		}
+			emEdicao = 1A;
+		}¨*/
 	}	
 }
 //=====================================================================================
