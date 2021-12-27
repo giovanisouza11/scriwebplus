@@ -309,7 +309,7 @@ function draw_sfc(fileArr) {
 			tamanhoSfcString = sfcString.length;
 			posicaoYSfc = sfcString.substr(0, indexSfcString);
 			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
-			if (fileLine[25] != undefined || fileLine[25] == '')
+			if (fileLine[25] != "undefined" || fileLine[25] == '')
 				draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',fileLine[26]);
 			else	
 				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',fileLine[26]);
