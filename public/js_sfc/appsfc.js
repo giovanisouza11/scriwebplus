@@ -772,7 +772,7 @@ function posicao_sfc(transicao) {
 		if (lArrayEstado[lArrayTransicao[transicao*20]*30 + 2 + i] == transicao)
 			break;
 	}
-	var indexSfcString = 1;// lArrayEstado[lArrayTransicao[transicao*20]*30].indexOf(' ');
+	var indexSfcString =  lArrayEstado[lArrayTransicao[transicao*20]*30].indexOf(" ");
 	var tamanhoSfcString = 3; //lArrayEstado[lArrayTransicao[transicao"20]*30].length;
 	resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
 	resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
