@@ -799,12 +799,8 @@ function entrada_input_sfc(event){
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 2;
 			}
-			if (emEdicao == 1A) {
+			if (emEdicao == 1) {
 				lArrayEstado[auxIndexEstado*30+25] = tag;
-				//contextSfc.fillStyle = 'white';
-				//contextSfc.rect(posicaoXSfc*60+2, posicaoYSfc*60+58, 20, 10);
-				//contextSfc.fillStyle = 'black';
-				//contextSfc.fillText(tag,posicaoXSfc*60+2, posicaoYSfc*60+58);
 				document.getElementById("label_input").innerHTML = "Memória:";
 				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+2];
 				if (lArrayEstado[auxIndexEstado*30+2] == undefined )
