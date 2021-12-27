@@ -153,11 +153,11 @@ function trocar_botao() {
 	}
 
 	if (valor_chave[10]==1){
-        window.open("About", "SCriWeb");//, "height=600,width=600");
+        window.open("About", "SCriWeb", "height=600,width=600");
 	    valor_chave[10]=0;
 	}
 	if (valor_chave[9]==1){
-        window.open("Help", "SCriWeb");//, "height=800,width=1000");
+        window.open("Help", "SCriWeb", "height=800,width=1000");
 	    valor_chave[9]=0;
 	}
 	if (valor_chave[8]==1){
