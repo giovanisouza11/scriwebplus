@@ -294,14 +294,19 @@ function draw_sfc(fileArr) {
 	contextSfc.font = '9pt Arial';
 	var posicaoXSfc;
 	var posicaoYSfc
+	indexTransicao = 0;
+	var sfcString;
+	var indexSfcString;
+	var tamanhoSfcString;
+
 	for (var i=1; i<fileArr.length; i++) {
 		var fileLine = fileArr[i].split(',');
 		var tamanho_array_sfc= fileLine.length;
 		//alert(tamanho_array_sfc);
 		if (tamanho_array_sfc ==31){
-			var sfcString = fileLine[0];
-			var indexSfcString =  sfcString.indexOf(" ");
-			var tamanhoSfcString = sfcString.length;
+			sfcString = fileLine[0];
+			indexSfcString =  sfcString.indexOf(" ");
+			tamanhoSfcString = sfcString.length;
 			posicaoYSfc = sfcString.substr(0, indexSfcString);
 			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
 			if (fileLine[25] != undefined || fileLine[25] == '')
@@ -311,9 +316,9 @@ function draw_sfc(fileArr) {
 			for(var j=0; j<tamanho_array_sfc; j++)
 				lArrayEstado[fileLine[1]*30+j] = fileLine[j];
 			for(var j=0; j<4; j++){
-				if (fileLine[17+j] != undefined)
+				if (fileLine[17+j] != "undefined")
 					contextSfc.fillText(fileLine[17+j],posicaoXSfc*60+10, posicaoYSfc*60+12+j*10);
-				if ( fileLine[20+j] != undefined)
+				if (fileLine[20+j] != "undefined")
 					contextSfc.fillText(fileLine[20+j],posicaoXSfc*60+70, posicaoYSfc*60+12+j*10);
 
 			}
@@ -321,7 +326,24 @@ function draw_sfc(fileArr) {
 			contextSfc.fillText(fileLine[2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 		}
 		if (tamanho_array_sfc ==21) {
+			sfcString = lArrayEstado[fileLine[0]*30];
+			indexSfcString = sfcString.indexOf(" ");
+			tamanhoSfcString = sfcString.length;
+			estadoY0 = sfcString.substr(0, indexSfcString);
+			estadoX0 = sfcString.substr(indexSfcString, tamanhoSfcString);
+			sfcString = lArrayEstado[fileLine[1]*30];
+			indexSfcString = sfcString.indexOf(" ");
+			tamanhoSfcString = sfcString.length;
+			posicaoYSfc = sfcString.substr(0, indexSfcString);
+			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
 			
+			draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, "black")
+			for(var j=0; j<tamanho_array_sfc; j++)
+				lArrayTransicao[indexTransicao*20+j] = fileLine[j];
+			for(var j=0; j<6; j++)
+				if (fileLine[2+j] != "undefined")
+					contextSfc.fillText(fileLine[2+j],posicaoXSfc*60+10, posicaoYSfc*60+12+j*10);
+			indextransicao++;
 		}
 	}	
 }
