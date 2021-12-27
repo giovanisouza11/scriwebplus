@@ -772,10 +772,10 @@ function posicao_sfc(transicao) {
 		if (lArrayEstado[lArrayTransicao[transicao*20]*30 + 2 + i] == transicao)
 			break;
 	}
-	//var indexSfcString = lArrayEstado[lArrayTransicao[transicao*20]*30].indexOf(' ');
-	//var tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao"20]*30].length;
-	//resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
-	//resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
+	var indexSfcString = lArrayEstado[lArrayTransicao[transicao*20]*30];//.indexOf(' ');
+	var tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao"20]*30].length;
+	resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
+	resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
 	posSfcX = [0,0,15,25,35,45,0,0];
 	posSfcY = [30,15,0,0,0,0,15,30];
 	i = 0;
@@ -784,10 +784,10 @@ function posicao_sfc(transicao) {
 		if (lArrayEstado[lArrayTransicao[transicao*20+1]*30+8+i] == transicao)
 			break;
 	}
-	//indexSfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30].indexOf(' ');
-	//tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30].length;
-	//resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
-	//resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
+	indexSfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30];//.indexOf(' ');
+	tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30].length;
+	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
+	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
 	alert(resultado[0]);
 	//return resultado[0];
 }
