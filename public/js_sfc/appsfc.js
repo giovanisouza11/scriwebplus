@@ -326,16 +326,19 @@ function draw_sfc(fileArr) {
 			contextSfc.fillText(fileLine[2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 		}
 		if (tamanho_array_sfc ==21) {
-			numeroEstadoOrigem = lArrayEstado[fileLine[0]*30];
-			indexSfcString = numeroEstadoOrigem.indexOf(" ");
-			tamanhoSfcString = numeroEstadoOrigem.length;
-			estadoY0 = numeroEstadoOrigem.substr(0, indexSfcString);
-			estadoX0 = numeroEstadoOrigem.substr(indexSfcString, tamanhoSfcString);
-			numeroEstado = lArrayEstado[fileLine[1]*30];
-			indexSfcString = numeroEstado.indexOf(" ");
-			tamanhoSfcString = numeroEstado.length;
-			posicaoYSfc = numeroEstado.substr(0, indexSfcString);
-			posicaoXSfc = numeroEstado.substr(indexSfcString, tamanhoSfcString);
+			alert(tamanho_array_sfc);
+			numeroEstadoOrigem = fileLine[0];
+			sfcString = lArrayEstado[numeroEstadoOrigem*30];
+			indexSfcString = sfcString.indexOf(" ");
+			tamanhoSfcString = sfcString.length;
+			estadoY0 = sfcString.substr(0, indexSfcString);
+			estadoX0 = sfcString.substr(indexSfcString, tamanhoSfcString);
+			numeroEstado = fileLine[1];
+			sfcString = lArrayEstado[numeroEstado*30];
+			indexSfcString = sfcString.indexOf(" ");
+			tamanhoSfcString = sfcString.length;
+			posicaoYSfc = sfcString.substr(0, indexSfcString);
+			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
 			
 			draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, "black")
 			for(var j=0; j<tamanho_array_sfc; j++)
