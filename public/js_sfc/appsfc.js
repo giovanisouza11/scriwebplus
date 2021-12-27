@@ -323,7 +323,8 @@ function draw_sfc(fileArr) {
 
 			}
 			indexEstado = fileLine[1];
-			contextSfc.fillText(fileLine[2],posicaoXSfc*60+2, posicaoYSfc*60+50);
+			if (fileLine[2] != "undefined")
+				contextSfc.fillText(fileLine[2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 		}
 		if (tamanho_array_sfc ==21) {
 			alert(tamanho_array_sfc);
@@ -344,8 +345,10 @@ function draw_sfc(fileArr) {
 			for(var j=0; j<tamanho_array_sfc; j++)
 				lArrayTransicao[indexTransicao*20+j] = fileLine[j];
 			for(var j=0; j<6; j++)
-				if (fileLine[2+j] != "undefined")
-					contextSfc.fillText(fileLine[2+j],posicaoXSfc*60+10, posicaoYSfc*60+12+j*10);
+				if (fileLine[2+j] != "undefined") {
+					posicao_sfc(indexTransicao);
+					contextSfc.fillText(fileLine[2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
+				}
 			indexTransicao++;
 		}
 	}	
