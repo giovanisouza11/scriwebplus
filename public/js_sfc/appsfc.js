@@ -755,7 +755,7 @@ function entrada_input_sfc(event){
 			}
   		}  
 	
-	//posicao_sfc(0);
+	posicao_sfc(0);
 	}
 }
 //=====================================================================================
@@ -788,7 +788,7 @@ function posicao_sfc(transicao) {
 	tamanhoSfcString = 3; //lArrayEstado[lArrayTransicao[transicao*20+1]*30].length;
 	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
 	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
-	alert(resultado[0]);
+	alert(resultado[0]+ '  '+resultado[1]);
 	//return resultado[0];
 }
 //=====================================================================================
