@@ -402,8 +402,8 @@ function draw_estado_zero(contexto, pos_X, pos_Y, texto,cor,tamanho) {
   	contexto.lineTo(pos_X*60-2+tamanho,pos_Y*60+53);
   	contexto.arcTo(pos_X*60-2+tamanho,pos_Y*60+58, pos_X*60+tamanho-3 ,pos_Y*60+58, 10);
   	contexto.lineTo(pos_X*60+7,pos_Y*60+58);
-  	contexto.arcTo(pos_X*60-2,pos_Y*60+58,pos_X*60-2,pos_Y*60+53,10);
-  	contexto.lineTo(pos_X*60-2,pos_Y*60-2);
+  	contexto.arcTo(pos_X*60+2,pos_Y*60+58,pos_X*60+2,pos_Y*60+53,10);
+  	contexto.lineTo(pos_X*60+2,pos_Y*60-2);
   	contexto.stroke();
 }
 //=====================================================================================
