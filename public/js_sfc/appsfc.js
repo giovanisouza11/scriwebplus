@@ -773,7 +773,7 @@ function posicao_sfc(transicao) {
 			break;
 	}
 	var indexSfcString = lArrayEstado[lArrayTransicao[transicao*20]*30];//.indexOf(' ');
-	var tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao"20]*30].length;
+	var tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao"20]*30].length();
 	resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
 	resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
 	posSfcX = [0,0,15,25,35,45,0,0];
@@ -785,7 +785,7 @@ function posicao_sfc(transicao) {
 			break;
 	}
 	indexSfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30];//.indexOf(' ');
-	tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30].length;
+	tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30].length();
 	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
 	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
 	alert(resultado[0]);
