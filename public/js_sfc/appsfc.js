@@ -566,6 +566,7 @@ function entrada_input_sfc(event){
 		var auxIndexTransicao = indexTransicao - 1;
 		var auxIndexEstado = indexEstado -1;
 		if (lFuncaoSfc < 3) {
+			posicao_sfc(auxIndexTransicao);
 			//alert(auxIndexTransicao);
 			if (emEdicao == 7) {
 				lArrayTransicao[auxIndexTransicao*20+8] = tag;
@@ -755,7 +756,6 @@ function entrada_input_sfc(event){
 			}
   		}  
 	
-	posicao_sfc(0);
 	}
 }
 //=====================================================================================
@@ -775,8 +775,8 @@ function posicao_sfc(transicao) {
 	var sfcString = lArrayEstado[lArrayTransicao[transicao*20]*30];
 	var indexSfcString =  sfcString.indexOf(" ");
 	var tamanhoSfcString = sfcString.length;
-	resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
-	resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
+	resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
+	resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
 	posSfcX = [0,0,15,25,35,45,0,0];
 	posSfcY = [30,15,0,0,0,0,15,30];
 	i = 0;
@@ -788,9 +788,9 @@ function posicao_sfc(transicao) {
 	sfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30];
 	indexSfcString = sfcString.indexOf(" ");
 	tamanhoSfcString = sfcString.length;
-	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
-	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
-	alert(sfcString+" "+indexSfcString+ '  '+tamanhoSfcString+ '  '+ resultado[0]+ '  '+resultado[1]);
+	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
+	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
+	alert(resultado[0]+ '  '+resultado[1]+" "+resultado[2]+ '  '+resultado[3]);
 	//return resultado[0];
 }
 //=====================================================================================
