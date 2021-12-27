@@ -396,14 +396,14 @@ function draw_estado_zero(contexto, pos_X, pos_Y, texto,cor,tamanho) {
 	contexto.lineWidth = "1";
 	contexto.strokeStyle = cor;
 	contexto.beginPath();
-  	contexto.moveTo(pos_X*60+10,pos_Y*60+3);
+  	contexto.moveTo(pos_X*60+15,pos_Y*60+3);
 	contexto.lineTo(pos_X*60+tamanho-8 ,pos_Y*60+3);
   	contexto.arcTo(pos_X*60-3+tamanho,pos_Y*60+3, pos_X*60-3+tamanho ,pos_Y*60+8,9);
   	contexto.lineTo(pos_X*60-3+tamanho,pos_Y*60+52);
   	contexto.arcTo(pos_X*60-3+tamanho,pos_Y*60+57, pos_X*60+tamanho-8 ,pos_Y*60+57, 9);
   	contexto.lineTo(pos_X*60+8,pos_Y*60+57);
   	contexto.arcTo(pos_X*60+3,pos_Y*60+57,pos_X*60+3,pos_Y*60+52,9);
-  	contexto.lineTo(pos_X*60+3,pos_Y*60-10);
+  	contexto.lineTo(pos_X*60+3,pos_Y*60+15);
   	contexto.stroke();
 }
 //=====================================================================================
