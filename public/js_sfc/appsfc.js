@@ -297,6 +297,7 @@ function draw_sfc(fileArr) {
 	for (var i=1; i<fileArr.length; i++) {
 		var fileLine = fileArr[i].split(',');
 		var tamanho_array_sfc= fileLine.length;
+		alert(tamanho_array_sfc);
 		if (tamanho_array_sfc ==30){
 			var sfcString = fileLine[0];
 			var indexSfcString =  sfcString.indexOf(" ");
