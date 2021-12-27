@@ -391,7 +391,7 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor,tamanho) {
 //=====================================================================================
 //Desenho estado zero
 //=====================================================================================
-function draw_estado_zero(contexto, pos_X, pos_Y, texto,cor,tamanho) {
+/*function draw_estado_zero(contexto, pos_X, pos_Y, texto,cor,tamanho) {
 	draw_estado(contexto, pos_X, pos_Y, texto,cor,tamanho);
 	contexto.lineWidth = "1";
 	contexto.strokeStyle = cor;
@@ -405,7 +405,7 @@ function draw_estado_zero(contexto, pos_X, pos_Y, texto,cor,tamanho) {
   	contexto.arcTo(pos_X*60-2,pos_Y*60+58,pos_X*60-2,pos_Y*60+53,10);
   	contexto.lineTo(pos_X*60-2,pos_Y*60-2);
   	contexto.stroke();
-}
+}*/
 //=====================================================================================
 //Desenho transição 
 //=====================================================================================
@@ -799,7 +799,7 @@ function entrada_input_sfc(event){
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 2;
 			}
-			if (emEdicao == 1A) {
+		/*	if (emEdicao == 1A) {
 				lArrayEstado[auxIndexEstado*30+25] = tag;
 				//contextSfc.fillStyle = 'white';
 				//contextSfc.rect(posicaoXSfc*60+2, posicaoYSfc*60+58, 20, 10);
@@ -810,7 +810,7 @@ function entrada_input_sfc(event){
 				if (lArrayEstado[auxIndexEstado*30+2] == undefined )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 1;
-			}
+			}*/
   		}  
 	
 	}
