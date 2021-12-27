@@ -29,7 +29,7 @@ body {
 .divRow2 {
         position: fixed;
         left: 3%;
-       	botton: 10px;
+        bottom: 20px;
         display:block;
         width: 94%;
         height: 24px;
@@ -40,8 +40,8 @@ body {
 }
 .rodape {
         position: fixed;
-	left: 3%;
-        botton: 0px;
+    	left: 3%;
+        bottom: 0px;
         width: 94%;
 	height: 18px;
 	margin: 0 auto;
