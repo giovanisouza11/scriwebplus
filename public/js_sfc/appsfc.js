@@ -294,9 +294,8 @@ function draw_sfc(fileArr) {
 	contextSfc.font = '9pt Arial';
 	var posicaoXSfc;
 	var posicaoYSfc
-	for (var i=0; i<fileArr.length; i++) {
+	for (var i=1; i<fileArr.length; i++) {
 		var fileLine = fileArr[i].split(',');
-		//var tipo = 0;
 		var tamanho_array_sfc= fileLine.length;
 		if (tamanho_array_sfc ==30){
 			var sfcString = fileLine[0];
@@ -304,10 +303,10 @@ function draw_sfc(fileArr) {
 			var tamanhoSfcString = sfcString.length;
 			posicaoYSfc = sfcString.substr(0, indexSfcString);
 			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
-			if (fileLine[25] != undefined || fileLIne[25] == '')
-				draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, fileLIne[1],'black',fileLIne[26]);
+			if (fileLine[25] != undefined || fileLine[25] == '')
+				draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',fileLine[26]);
 			else	
-				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, fileLIne[1],'black',fileLIne[26]);
+				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',fileLine[26]);
 			for(var j=0; j<tamanho_array_sfc; j++)
 				lArrayEstado[fileLine[1]*30+j] = fileLine[j];
 			contextSfc.fillText(fileLine[17],posicaoXSfc*60+10, posicaoYSfc*60+12);
