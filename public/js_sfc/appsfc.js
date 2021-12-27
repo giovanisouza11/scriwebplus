@@ -763,10 +763,10 @@ function entrada_input_sfc(event){
 // Retorna [x-ini, yini, xFim, yFim]
 //=====================================================================================
 function posicao_sfc(transicao) {
-	/*var i =0;
+	var i =0;
 	//var resultado= [0,0,0,0];
 	var posSfcX = [0,15,25,35,45,0];
-	var posSfcY =[45,0,0,0,0,45];
+	var posSfcY = [45,0,0,0,0,45];
 	while (i<6) {
 		i ++;
 		if (lArrayEstado[lArrayTransicao[transicao*20]*30 + 2 + i] == transicao)
@@ -774,10 +774,10 @@ function posicao_sfc(transicao) {
 	}
 	var indexSfcString = lArrayEstado[lArrayTransicao[transicao*20]*30].indexOf(' ');
 	var tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao"20]*30].length();
-	resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
-	resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
+	//resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
+	//resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
 	posSfcX = [0,0,15,25,35,45,0,0];
-	posSfcY =[30,15,0,0,0,0,15,30];
+	posSfcY = [30,15,0,0,0,0,15,30];
 	i = 0;
 	while (i<8) {
 		i ++;
@@ -786,10 +786,10 @@ function posicao_sfc(transicao) {
 	}
 	indexSfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30].indexOf(' ');
 	tamanhoSfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30].length();
-	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
-	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
+	//resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
+	//resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
 	alert(resultado[0]);
-	//return resultado[0];*/
+	//return resultado[0];
 }
 //=====================================================================================
 //Desenho o circuito ladder apartir de uma matriz
