@@ -346,7 +346,7 @@ function draw_sfc(fileArr) {
 			for(var j=0; j<6; j++)
 				if (fileLine[2+j] != "undefined")
 					contextSfc.fillText(fileLine[2+j],posicaoXSfc*60+10, posicaoYSfc*60+12+j*10);
-			indextransicao++;
+			indexTransicao++;
 		}
 	}	
 }
