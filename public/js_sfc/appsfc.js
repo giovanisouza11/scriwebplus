@@ -291,6 +291,8 @@ function ver_posicao_estado(pos_X, pos_Y) {
 function draw_sfc(fileArr) {
 	lArrayEstado.length = 0;
 	lArrayTransicao.length = 0;
+	
+	
 }
 //=====================================================================================
 //Desenho 
