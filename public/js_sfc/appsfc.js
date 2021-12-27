@@ -298,7 +298,7 @@ function draw_sfc(fileArr) {
 		var fileLine = fileArr[i].split(',');
 		var tamanho_array_sfc= fileLine.length;
 		alert(tamanho_array_sfc);
-		if (tamanho_array_sfc ==30){
+		if (tamanho_array_sfc ==31){
 			var sfcString = fileLine[0];
 			var indexSfcString =  sfcString.indexOf(" ");
 			var tamanhoSfcString = sfcString.length;
@@ -320,7 +320,7 @@ function draw_sfc(fileArr) {
 			contextSfc.fillText(fileLine[24],posicaoXSfc*60+40, posicaoYSfc*60+72);
 			contextSfc.fillText(fileLine[2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 		}
-		else {
+		if (tamanho_array_sfc ==21) {
 			
 		}
 	}	
