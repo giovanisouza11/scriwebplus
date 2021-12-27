@@ -292,6 +292,8 @@ function draw_sfc(fileArr) {
 	inicializa_array_sfc();
 	draw_ladder_fundo(1);
 	contextSfc.font = '9pt Arial';
+	var posicaoXSfc;
+	var posicaoYSfc
 	for (var i=0; i<fileArr.length; i++) {
 		var fileLine = fileArr[i].split(',');
 		//var tipo = 0;
