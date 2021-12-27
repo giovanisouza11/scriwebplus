@@ -243,7 +243,7 @@ function editar_sfc() {
 			else
 				document.getElementById('input_ladder').value = "";
 			CInput.focus();
-			emEdicao = 1A;
+			emEdicao = 1;
 		}
 	}	
 }
