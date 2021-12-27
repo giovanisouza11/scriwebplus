@@ -205,16 +205,13 @@ function editar_sfc() {
 			}
 		}
 		// desenha o estado
-		if (lFuncaoSfc >2 && lFuncaoSfc<5) {
+		if (lFuncaoSfc==4) {
 			IFigura.style.display = "none";
 			lArrayEstado[indexEstado*30] = posicaoYSfc +' '+ posicaoXSfc ;
 			lArrayEstado[indexEstado*30+1] =  indexEstado;
 			lArrayEstado[indexEstado*30+26] =  60;
 			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, indexEstado,'black',60);
 			indexEstado++;
-		}
-		if ( lFuncaoSfc > 2 && (lFuncaoSfc<5))
-		{
 			ICampo.style.display = "block";
 			ICampo.style.left = " "+(700 +(posicaoXSfc*60)) + "px";
 			ICampo.style.top = " "+(05+(posicaoYSfc*60))  + "px";
@@ -228,7 +225,25 @@ function editar_sfc() {
 			CInput.focus();
 			emEdicao = 1;
 		}
-		else {
+		if (lFuncaoSfc==3) {
+			IFigura.style.display = "none";
+			lArrayEstado[indexEstado*30] = posicaoYSfc +' '+ posicaoXSfc ;
+			lArrayEstado[indexEstado*30+1] =  indexEstado;
+			lArrayEstado[indexEstado*30+26] =  60;
+			draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, indexEstado,'black',60);
+			indexEstado++;
+			ICampo.style.display = "block";
+			ICampo.style.left = " "+(700 +(posicaoXSfc*60)) + "px";
+			ICampo.style.top = " "+(05+(posicaoYSfc*60))  + "px";
+			var tag;
+			document.getElementById("label_input").innerHTML = "NumEstados:";
+			tag = lArrayEstado[(indexEstado-1)*30+25];
+			if (tag != undefined && tag != "undefined")
+				document.getElementById('input_ladder').value = tag;
+			else
+				document.getElementById('input_ladder').value = "";
+			CInput.focus();
+			emEdicao = 1A;
 		}
 	}	
 }
@@ -372,6 +387,24 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor,tamanho) {
   	contexto.stroke();
 	contexto.fillStyle = 'black';
 	contexto.fillText(texto, pos_X*60+1 , pos_Y*60+10);	
+}
+//=====================================================================================
+//Desenho estado zero
+//=====================================================================================
+function draw_estado_zero(contexto, pos_X, pos_Y, texto,cor,tamanho) {
+	draw_estado(contexto, pos_X, pos_Y, texto,cor,tamanho);
+	contexto.lineWidth = "1";
+	contexto.strokeStyle = cor;
+	contexto.beginPath();
+  	contexto.moveTo(pos_X*60+2,pos_Y*60+2);
+	contexto.lineTo(pos_X*60-2+tamanho-5 ,pos_Y*60+2);
+  	contexto.arcTo(pos_X*60-2+tamanho,pos_Y*60+2, pos_X*60-2+tamanho ,pos_Y*60+7,10);
+  	contexto.lineTo(pos_X*60-2+tamanho,pos_Y*60+53);
+  	contexto.arcTo(pos_X*60-2+tamanho,pos_Y*60+58, pos_X*60+tamanho-3 ,pos_Y*60+58, 10);
+  	contexto.lineTo(pos_X*60+7,pos_Y*60+58);
+  	contexto.arcTo(pos_X*60-2,pos_Y*60+58,pos_X*60-2,pos_Y*60+53,10);
+  	contexto.lineTo(pos_X*60-2,pos_Y*60-2);
+  	contexto.stroke();
 }
 //=====================================================================================
 //Desenho transição 
@@ -765,6 +798,18 @@ function entrada_input_sfc(event){
 				if (lArrayEstado[auxIndexEstado*30+17] == undefined )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 2;
+			}
+			if (emEdicao == 1A) {
+				lArrayEstado[auxIndexEstado*30+25] = tag;
+				//contextSfc.fillStyle = 'white';
+				//contextSfc.rect(posicaoXSfc*60+2, posicaoYSfc*60+58, 20, 10);
+				//contextSfc.fillStyle = 'black';
+				//contextSfc.fillText(tag,posicaoXSfc*60+2, posicaoYSfc*60+58);
+				document.getElementById("label_input").innerHTML = "Memória:";
+				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+2];
+				if (lArrayEstado[auxIndexEstado*30+2] == undefined )
+					document.getElementById('input_ladder').value ="";
+				emEdicao = 1;
 			}
   		}  
 	
