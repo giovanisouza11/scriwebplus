@@ -763,7 +763,7 @@ function entrada_input_sfc(event){
 // Retorna [x-ini, yini, xFim, yFim]
 //=====================================================================================
 function posicao_sfc(transicao) {
-	var i =0;
+	/*var i =0;
 	//var resultado= [0,0,0,0];
 	var posSfcX = [0,15,25,35,45,0];
 	var posSfcY =[45,0,0,0,0,45];
@@ -789,7 +789,7 @@ function posicao_sfc(transicao) {
 	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcX[i-1];
 	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcY[i-1];
 	alert(resultado[0]);
-	//return resultado[0];
+	//return resultado[0];*/
 }
 //=====================================================================================
 //Desenho o circuito ladder apartir de uma matriz
