@@ -799,7 +799,7 @@ function entrada_input_sfc(event){
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 2;
 			}
-		/*	if (emEdicao == 1A) {
+			if (emEdicao == 1A) {
 				lArrayEstado[auxIndexEstado*30+25] = tag;
 				//contextSfc.fillStyle = 'white';
 				//contextSfc.rect(posicaoXSfc*60+2, posicaoYSfc*60+58, 20, 10);
@@ -810,7 +810,7 @@ function entrada_input_sfc(event){
 				if (lArrayEstado[auxIndexEstado*30+2] == undefined )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 1;
-			}*/
+			}
   		}  
 	
 	}
