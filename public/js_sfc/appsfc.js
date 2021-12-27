@@ -290,7 +290,7 @@ function ver_posicao_estado(pos_X, pos_Y) {
 //=====================================================================================
 function draw_sfc(fileArr) {
 	inicializa_array_sfc();
-	draw_ladder_fundo(1);
+	draw_sfc_fundo(1);
 	contextSfc.font = '9pt Arial';
 	var posicaoXSfc;
 	var posicaoYSfc
