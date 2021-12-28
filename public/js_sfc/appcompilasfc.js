@@ -16,7 +16,7 @@ function compila_sfc(){
 	//var booleano = new Array();
 	var index_str = 0;
 	alert('ola mendo');
-	while( si < (lArrayEstado.lenght /30)) {
+	while( si < (lArrayEstado.length /30)) {
 		for (int sj=0; sj<8; sj++){
 			if(lArrayEstado[si*30+17+sj] != "undefined"){
 				if ( lArrayTransicao[lArrayEstado[si*30+17+sj]] != (-1)) {
@@ -48,7 +48,7 @@ function compila_sfc(){
 			        booleano[booleano.length] = lArrayEstado[si*30+17+sz];
 			}
 		}
-							
+		si++;					
 	}
 		
 }
