@@ -310,10 +310,11 @@ function draw_sfc(fileArr) {
 			posicaoYSfc = sfcString.substr(0, indexSfcString);
 			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
 			indexEstado = fileLine[1];
+			var tamanho = fileLine[26];
 			if (fileLine[25] != "undefined" || fileLine[25] == '')
-				draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',fileLine[26]);
+				draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',tamanho);
 			else	
-				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',fileLine[26]);
+				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',tamanho);
                         //alert(fileLine[26]);
 
 			for(var j=0; j<tamanho_array_sfc; j++)
@@ -363,7 +364,7 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor,tamanho) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	contexto.beginPath();
-	tamanho = 60;
+	//tamanho = 60;
   	contexto.moveTo(pos_X*60,pos_Y*60);
 	contexto.lineTo((pos_X*60)+tamanho-5 ,pos_Y*60);
   	contexto.arcTo((pos_X*60)+tamanho,pos_Y*60, (pos_X*60)+tamanho ,pos_Y*60+5,10);
