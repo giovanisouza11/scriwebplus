@@ -17,7 +17,7 @@ function compila_sfc(){
 	//var booleano = new Array();
 	var index_str = 0;
 	while( si < (lArrayEstado.length/30)) {
-		/*for (int sj=0; sj<8; sj++){
+		for (var sj=0; sj<8; sj++){
 			if(lArrayEstado[si*30+17+sj] != "undefined"){
 				if ( lArrayTransicao[lArrayEstado[si*30+17+sj]] != (-1)) {
 					booleano[booleano.length] = "LD";
@@ -47,7 +47,7 @@ function compila_sfc(){
 				booleano[booleano.length] = "RST";
 			        booleano[booleano.length] = lArrayEstado[lArrayTransicao[lArrayEstado[si*30+17+sz]*20]+2];
 			}
-		}*/
+		}
 		si++;					
 	}
 }
