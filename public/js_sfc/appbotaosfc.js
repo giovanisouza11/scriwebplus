@@ -37,8 +37,8 @@ function trocar_botao_sfc() {
 	{
 		for(var i=11; i<21; i++)
 			valor_chave_sfc[i] = 0;
-		if((posicaoysfc >=3) && (posicaoysfc < 8))
-			for(var i=2; i<8; i++)
+		//if((posicaoysfc >0) && (posicaoysfc < 8))
+			for(var i=1; i<8; i++)
 				valor_chave_sfc[i] = 0;
 
 		valor_chave_sfc[posicaoysfc]=1;
