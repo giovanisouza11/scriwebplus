@@ -364,10 +364,10 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor,tamanho) {
 	contexto.strokeStyle = cor;
 	contexto.beginPath();
   	contexto.moveTo(pos_X*60,pos_Y*60);
-	contexto.lineTo(pos_X*60+tamanho-5 ,pos_Y*60);
-  	contexto.arcTo(pos_X*60+tamanho,pos_Y*60, pos_X*60+tamanho ,pos_Y*60+5,10);
-  	contexto.lineTo(pos_X*60+tamanho,pos_Y*60+55);
-  	contexto.arcTo(pos_X*60+tamanho,pos_Y*60+60, pos_X*60+tamanho-5 ,pos_Y*60+60, 10);
+	contexto.lineTo((pos_X*60)+tamanho-5 ,pos_Y*60);
+  	contexto.arcTo((pos_X*60)+tamanho,pos_Y*60, (pos_X*60)+tamanho ,pos_Y*60+5,10);
+  	contexto.lineTo((pos_X*60)+tamanho,pos_Y*60+55);
+  	contexto.arcTo((pos_X*60)+tamanho,pos_Y*60+60, (pos_X*60)+tamanho-5 ,pos_Y*60+60, 10);
   	contexto.lineTo(pos_X*60+5,pos_Y*60+60);
   	contexto.arcTo(pos_X*60,pos_Y*60+60,pos_X*60,pos_Y*60+55,10);
   	contexto.lineTo(pos_X*60,pos_Y*60);
