@@ -134,12 +134,12 @@ function trocar_botao_sfc() {
 	}
 	if (valor_chave_sfc[3]==1){
 		compila_sfc();
-		//let texto = '';
-		//for (var i=0; i<(booleano.length); i++) {
-			//for (var j=0; j<2; j++)
-		//	texto += booleano[i]+',';
-		//}
-
+		let texto = '';
+		for (var i=0; i<(booleano.length); i++) {
+			for (var j=0; j<2; j++)
+			      texto += booleano[i]+',';
+		}
+		alert(texto);
                 //socket.emit('programax', texto+','+num_clp); 
 		clp_programa = booleano;
 		clp_cria_memoria();
