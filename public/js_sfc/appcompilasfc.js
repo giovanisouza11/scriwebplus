@@ -45,7 +45,7 @@ function compila_sfc(){
 		for(var sz=0; sz<6; z++){
 			if ( lArrayEstado[si*30+17+sz] != (-1)) { 
 				booleano[booleano.length] = "RST";
-			        booleano[booleano.length] = lArrayEstado[lArrayransicao[lArrayEstado[si*30+17+sz]*20]+2];
+			        booleano[booleano.length] = lArrayEstado[lArrayTransicao[lArrayEstado[si*30+17+sz]*20]+2];
 			}
 		}
 		si++;					
