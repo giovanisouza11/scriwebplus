@@ -15,17 +15,21 @@ function compila_sfc(){
 	//alert("ola mendo");
 	var si = 0;
 	//var booleano = new Array();
-	//var index_str = 0;
-	while( si < (lArrayEstado.length/30)) {
+	var index_bool = 0;
+	wahile( si < (lArrayEstado.length/30)) {
 		for (var sj=0; sj<8; sj++){
 			if(lArrayEstado[si*30+17+sj] != "undefined"){
 				if ( lArrayTransicao[lArrayEstado[si*30+17+sj]] != (-1)) {
-					booleano[booleano.length] = "LD";
-					booleano[booleano.length] = lArrayEstado[lArrayTransicao[lArrayEstado[si*30+17+sj]]+2];
+					booleano[index_bool] = "LD";
+	index_bool++;				
+booleano[index_bool] = lArrayEstado[lArrayTransicao[lArrayEstado[si*30+17+sj]]+2];
+index_bool++ ;
 				}
 				else {
-					booleano[booleano.length] = "LD";
-					booleano[booleano.length] = 1;
+					booleano[index_bool] = "LD";
+index_bool++;
+					booleano[index_bool] = 1;
+index_bool++;
 				}
 					
 				for(var sz=0; sz<6; sz++){
