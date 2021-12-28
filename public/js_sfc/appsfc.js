@@ -342,7 +342,7 @@ function draw_sfc(fileArr) {
 			sfcString = lArrayEstado[numeroEstado*30];
 			indexSfcString = sfcString.indexOf(" ");
 			tamanhoSfcString = sfcString.length;
-			posicaoYSfc = sfcString.substr(0, indexSfcString);
+			posicaoYSfc = parseInt(sfcString.substr(0, indexSfcString));
 			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
 			if (numeroEstadoOrigem == (-1)){
 				estadoX0 = posicaoXSfc;
