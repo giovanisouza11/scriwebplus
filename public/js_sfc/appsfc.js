@@ -309,11 +309,12 @@ function draw_sfc(fileArr) {
 			tamanhoSfcString = sfcString.length;
 			posicaoYSfc = sfcString.substr(0, indexSfcString);
 			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
+			indexEstado = fileLine[1];
 			if (fileLine[25] != "undefined" || fileLine[25] == '')
 				draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',fileLine[26]);
 			else	
 				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',fileLine[26]);
-alert(fileLine[26]);
+                        //alert(fileLine[26]);
 
 			for(var j=0; j<tamanho_array_sfc; j++)
 				lArrayEstado[fileLine[1]*30+j] = fileLine[j];
@@ -324,7 +325,7 @@ alert(fileLine[26]);
 					contextSfc.fillText(fileLine[20+j],posicaoXSfc*60+70, posicaoYSfc*60+12+j*10);
 
 			}
-			indexEstado = fileLine[1];
+			indexEstado++;
 			if (fileLine[2] != "undefined")
 				contextSfc.fillText(fileLine[2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 		}
