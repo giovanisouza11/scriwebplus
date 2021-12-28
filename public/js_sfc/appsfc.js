@@ -344,7 +344,10 @@ function draw_sfc(fileArr) {
 			tamanhoSfcString = sfcString.length;
 			posicaoYSfc = sfcString.substr(0, indexSfcString);
 			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
-			
+			if (numeroEstadoOrigem == -1){
+				estadoX0 = posicaoXSfc;
+				estadoY0 = posicaoYSfc - 1;
+			}
 			draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, "black");
 			for(var j=0; j<tamanho_array_sfc; j++)
 				lArrayTransicao[indexTransicao*20+j] = fileLine[j];
