@@ -34,22 +34,22 @@ index_bool++;
 					
 				for(var sz=0; sz<6; sz++){
 					if ( lArrayTransicao[lArrayEstado[si*30+17+sj]+2+sz] != "undefined") { 
-						booleano[booleano.length] = "AND";
-					        booleano[booleano.length] = lArrayTransicao[lArrayEstado[si*30+17+sj]+2+sz];
+						booleano[index_bool] = "AND";
+					        booleano[index_bool] = lArrayTransicao[lArrayEstado[si*30+17+sj]+2+sz];
 					}
 				}
-				booleano[booleano.length] = "SET";
-				booleano[booleano.length] = "R" + si;
+				booleano[index_bool] = "SET";
+				booleano[index_bool] = "R" + si;
 			}
 		}
-	        booleano[booleano.length] = "LD";
-		booleano[booleano.length] = "R"+si;
-		booleano[booleano.length] = "SET";
-		booleano[booleano.length] = lArrayEstado[si*30+2];
+	        booleano[index_bool] = "LD";
+		booleano[index_bool] = "R"+si;
+		booleano[index_bool] = "SET";
+		booleano[index_bool] = lArrayEstado[si*30+2];
 		for(var sz=0; sz<6; z++){
 			if ( lArrayEstado[si*30+17+sz] != "undefined") { 
-				booleano[booleano.length] = "RST";
-			        booleano[booleano.length] = lArrayEstado[lArrayTransicao[lArrayEstado[si*30+17+sz]*20]+2];
+				booleano[index_bool] = "RST";
+			        booleano[index_bool] = lArrayEstado[lArrayTransicao[lArrayEstado[si*30+17+sz]*20]+2];
 			}
 		}
 		si++;					
