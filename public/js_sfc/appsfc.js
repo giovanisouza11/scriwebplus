@@ -894,16 +894,19 @@ function posicao_sfc(transicao) {
 	//var resultado= [0,0,0,0];
 	var posSfcX = [0,15,25,35,45,0];
 	var posSfcY = [45,60,60,60,60,45];
-	while (i<6) {
-		i ++;
-		if (lArrayEstado[lArrayTransicao[transicao*20]*30 + 2 + i] == transicao)
-			break;
+	if (lArrayTransicao[transicao*20]>-1){
+		while (i<6) {
+			i ++;
+			if (lArrayEstado[lArrayTransicao[transicao*20]*30 + 2 + i] == transicao)
+				break;
+		}
+		var sfcString = lArrayEstado[lArrayTransicao[transicao*20]*30];
+		var indexSfcString =  sfcString.indexOf(" ");
+		var tamanhoSfcString = sfcString.length;
+		resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(0, indexSfcString)*60 + posSfcY[i-1];
+		resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcX[i-1];
 	}
-	var sfcString = lArrayEstado[lArrayTransicao[transicao*20]*30];
-	var indexSfcString =  sfcString.indexOf(" ");
-	var tamanhoSfcString = sfcString.length;
-	resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(0, indexSfcString)*60 + posSfcY[i-1];
-	resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcX[i-1];
+	
 	posSfcX = [0,0,15,25,35,45,0,0];
 	posSfcY = [30,15,0,0,0,0,15,30];
 	i = 0;
@@ -917,6 +920,10 @@ function posicao_sfc(transicao) {
 	tamanhoSfcString = sfcString.length;
 	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcY[i-1];
 	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcX[i-1];
+	if (lArrayTransicao[transicao*20]==-1){
+		resultado[1] = lArrayEstado[(lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)-1)*60 + posSfcY[i-1];
+		resultado[0] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcX[i-1];
+	}
 	//alert(resultado[0]+ '  '+resultado[1]+" "+resultado[2]+ '  '+resultado[3]);
 	//return resultado[0];
 }
