@@ -13,7 +13,7 @@
 //======================================================================================
 function compila_sfc(){
 	int si = 0
-	var booleano = new Array();
+	//var booleano = new Array();
 	var index_str = 0;
 	while( si < (lArrayEstado.lenght /30)) {
 		for (int sj=0; sj<8; sj++){
