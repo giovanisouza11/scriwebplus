@@ -13,7 +13,7 @@
 //======================================================================================
 function compila_sfc(){
 	alert("ola mendo");
-	var si = 0;
+/*	var si = 0;
 	//var booleano = new Array();
 	var index_str = 0;
 	while( si < (lArrayEstado.length /30)) {
@@ -50,7 +50,7 @@ function compila_sfc(){
 		}
 		si++;					
 	}
-		
+*/		
 }
 
 //--------------------------------------------------
