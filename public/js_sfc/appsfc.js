@@ -921,7 +921,7 @@ function posicao_sfc(transicao) {
 	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcY[i-1];
 	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcX[i-1];
 	if (lArrayTransicao[transicao*20]==-1){
-		resultado[1] = (lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)-1)*60 + posSfcY[i-1];
+		resultado[1] = (lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)-1)*60 + 10;
 		resultado[0] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcX[i-1];
 	}
 	//alert(resultado[0]+ '  '+resultado[1]+" "+resultado[2]+ '  '+resultado[3]);
