@@ -13,10 +13,10 @@
 //======================================================================================
 function compila_sfc(){
 	alert("ola mendo");
-/*	var si = 0;
+	var si = 0;
 	//var booleano = new Array();
 	var index_str = 0;
-	while( si < (lArrayEstado.length /30)) {
+	while( si < (lArrayEstado.length/30)) {
 		for (int sj=0; sj<8; sj++){
 			if(lArrayEstado[si*30+17+sj] != "undefined"){
 				if ( lArrayTransicao[lArrayEstado[si*30+17+sj]] != (-1)) {
@@ -28,7 +28,7 @@ function compila_sfc(){
 					booleano[booleano.length] = 1;
 				}
 					
-				for(var sz=0; sz<6; z++){
+				for(var sz=0; sz<6; sz++){
 					if ( lArrayTransicao[lArrayEstado[si*30+17+sj]+2+sz] != (-1)) { 
 						booleano[booleano.length] = 'ÁND';
 					        booleano[booleano.length] = lArrayTransicao[lArrayEstado[si*30+17+sj]+2+sz];
@@ -50,7 +50,6 @@ function compila_sfc(){
 		}
 		si++;					
 	}
-*/		
 }
 
 //--------------------------------------------------
