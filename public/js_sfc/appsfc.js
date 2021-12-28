@@ -333,11 +333,13 @@ function draw_sfc(fileArr) {
 		if (tamanho_array_sfc ==21) {
 			//alert(tamanho_array_sfc);
 			numeroEstadoOrigem = fileLine[0];
-			sfcString = lArrayEstado[numeroEstadoOrigem*30];
-			indexSfcString = sfcString.indexOf(" ");
-			tamanhoSfcString = sfcString.length;
-			estadoY0 = sfcString.substr(0, indexSfcString);
-			estadoX0 = sfcString.substr(indexSfcString, tamanhoSfcString);
+			if (numeroEstadoOrigem >-1) {
+				sfcString = lArrayEstado[numeroEstadoOrigem*30];
+				indexSfcString = sfcString.indexOf(" ");
+				tamanhoSfcString = sfcString.length;
+				estadoY0 = sfcString.substr(0, indexSfcString);
+				estadoX0 = sfcString.substr(indexSfcString, tamanhoSfcString);
+			}
 			numeroEstado = fileLine[1];
 			sfcString = lArrayEstado[numeroEstado*30];
 			indexSfcString = sfcString.indexOf(" ");
@@ -479,14 +481,15 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	var i =0;
-	while (i<6) {
-		i ++;
-		if (lArrayEstado[numeroEstadoOrigem*30 + 2 + i] == indexTransicao)
-			break;
-	}
-	//alert("estado origem "+ i);
-	var tamanho = lArrayEstado[numeroEstadoOrigem*30 + 26]; 
+	var tamanho;
 	if (numeroEstadoOrigem > -1){
+		while (i<6) {
+			i ++;
+			if (lArrayEstado[numeroEstadoOrigem*30 + 2 + i] == indexTransicao)
+				break;
+		}
+		//alert("estado origem "+ i);
+		tamanho = lArrayEstado[numeroEstadoOrigem*30 + 26]; 
 		switch (i) {
 			case 1:
 				contexto.moveTo(estadoX0*60 ,estadoY0*60+45);
@@ -515,7 +518,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 		}
 	}
 	else {
-		contexto.moveTo(pos_X*60+25,pos_Y*60);
+		contexto.moveTo(pos_X*60+25,(pos_Y-1)*60);
 	}
 	var j =0;
 	while (j<8) {
