@@ -330,7 +330,7 @@ function draw_sfc(fileArr) {
 				contextSfc.fillText(fileLine[2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 		}
 		if (tamanho_array_sfc ==21) {
-			alert(tamanho_array_sfc);
+			//alert(tamanho_array_sfc);
 			numeroEstadoOrigem = fileLine[0];
 			sfcString = lArrayEstado[numeroEstadoOrigem*30];
 			indexSfcString = sfcString.indexOf(" ");
@@ -363,6 +363,7 @@ function draw_estado(contexto, pos_X, pos_Y, texto,cor,tamanho) {
 	contexto.lineWidth = "2";
 	contexto.strokeStyle = cor;
 	contexto.beginPath();
+	tamanho = 60;
   	contexto.moveTo(pos_X*60,pos_Y*60);
 	contexto.lineTo((pos_X*60)+tamanho-5 ,pos_Y*60);
   	contexto.arcTo((pos_X*60)+tamanho,pos_Y*60, (pos_X*60)+tamanho ,pos_Y*60+5,10);
