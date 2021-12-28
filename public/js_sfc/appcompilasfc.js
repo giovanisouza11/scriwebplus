@@ -12,7 +12,7 @@
 // Na primeira liga��o horizontal da linha, tamb�m coloco fun��o SET, despreza as outras
 //======================================================================================
 function compila_sfc(){
-	int si = 0
+	int si = 0;
 	//var booleano = new Array();
 	var index_str = 0;
 	alert('ola mendo');
