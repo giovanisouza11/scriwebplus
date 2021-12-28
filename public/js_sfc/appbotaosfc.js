@@ -133,6 +133,7 @@ function trocar_botao_sfc() {
         	valor_chave_sfc[2]=0;
 	}
 	if (valor_chave_sfc[3]==1){
+		alert('compilando');
 		compila_sfc();
 		let texto = '';
 		for (var i=0; i<(booleano.length); i++) {
