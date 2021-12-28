@@ -182,26 +182,26 @@ function editar_sfc() {
 				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc,'black');
 				indexTransicao++;
 
-			if ( lFuncaoSfc > 0 && (lFuncaoSfc<3) && sfcTipo == 1)
-			{
-				ICampo.style.display = "block";
-				ICampo.style.left = " "+(700 +((estadoX0+((posicaoXSfc-estadoX0)/2))*60)) + "px";
-				ICampo.style.top = " "+(05+((estadoY0 +((posicaoYSfc-estadoY0)/2))*60))  + "px";
-				var tag;
-				document.getElementById("label_input").innerHTML = "Condição 1:";
-				tag = lArrayTransicao[(indexTransicao-1)*20+8];
-				if (tag != undefined && tag != "undefined")
-					document.getElementById('input_ladder').value = tag;
-				else
-					document.getElementById('input_ladder').value = "";
-				CInput.focus();
-				emEdicao = 1;
-				sfcTipo = 0;
-			}
-			else {
-				ICampo.style.display = "none";
-				emEdicao = 0;
-			}
+				if ( lFuncaoSfc > 0 && (lFuncaoSfc<3) && sfcTipo == 1)
+				{
+					ICampo.style.display = "block";
+					ICampo.style.left = " "+(700 +((estadoX0+((posicaoXSfc-estadoX0)/2))*60)) + "px";
+					ICampo.style.top = " "+(05+((estadoY0 +((posicaoYSfc-estadoY0)/2))*60))  + "px";
+					var tag;
+					document.getElementById("label_input").innerHTML = "Condição 1:";
+					tag = lArrayTransicao[(indexTransicao-1)*20+8];
+					if (tag != undefined && tag != "undefined")
+						document.getElementById('input_ladder').value = tag;
+					else
+						document.getElementById('input_ladder').value = "";
+					CInput.focus();
+					emEdicao = 1;
+					sfcTipo = 0;
+				}
+				else {
+					ICampo.style.display = "none";
+					emEdicao = 0;
+				}
 			}
 		}
 		// desenha o estado
@@ -921,7 +921,7 @@ function posicao_sfc(transicao) {
 	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcY[i-1];
 	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcX[i-1];
 	if (lArrayTransicao[transicao*20]==-1){
-		resultado[1] = lArrayEstado[(lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)-1)*60 + posSfcY[i-1];
+		resultado[1] = (lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)-1)*60 + posSfcY[i-1];
 		resultado[0] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcX[i-1];
 	}
 	//alert(resultado[0]+ '  '+resultado[1]+" "+resultado[2]+ '  '+resultado[3]);
