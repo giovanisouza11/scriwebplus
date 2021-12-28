@@ -344,10 +344,7 @@ function draw_sfc(fileArr) {
 			tamanhoSfcString = sfcString.length;
 			posicaoYSfc = parseInt(sfcString.substr(0, indexSfcString));
 			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
-			if (numeroEstadoOrigem == (-1)){
-				estadoX0 = posicaoXSfc;
-				estadoY0 = posicaoYSfc - 1;
-			}
+			
 			draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, "black");
 			for(var j=0; j<tamanho_array_sfc; j++)
 				lArrayTransicao[indexTransicao*20+j] = fileLine[j];
@@ -489,31 +486,36 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	}
 	//alert("estado origem "+ i);
 	var tamanho = lArrayEstado[numeroEstadoOrigem*30 + 26]; 
-	switch (i) {
-		case 1:
-			contexto.moveTo(estadoX0*60 ,estadoY0*60+45);
-			contexto.lineTo(estadoX0*60-15,estadoY0*60+45);
-			break;
-		case 2:
-			contexto.moveTo(estadoX0*60+15 ,estadoY0*60+60);
-			contexto.lineTo(estadoX0*60+15,estadoY0*60+75);
-			break;
-		case 3:
-	               	contexto.moveTo(estadoX0*60+25 ,estadoY0*60+60);
-			contexto.lineTo(estadoX0*60+25,estadoY0*60+80);
-			break;
-		case 4:
-			contexto.moveTo(estadoX0*60+35 ,estadoY0*60+60);
-			contexto.lineTo(estadoX0*60+35,estadoY0*60+80);
-			break;
-		case 5:
-			contexto.moveTo(estadoX0*60+45 ,estadoY0*60+60);
-			contexto.lineTo(estadoX0*60+45,estadoY0*60+75);
-			break;
-		case 6:
-			contexto.moveTo(estadoX0*60+tamanho,estadoY0*60+45);
-			contexto.lineTo(estadoX0*60+tamanho+15,estadoY0*60+45);
-			break
+	if (numeroEstadoOrigem > -1){
+		switch (i) {
+			case 1:
+				contexto.moveTo(estadoX0*60 ,estadoY0*60+45);
+				contexto.lineTo(estadoX0*60-15,estadoY0*60+45);
+				break;
+			case 2:
+				contexto.moveTo(estadoX0*60+15 ,estadoY0*60+60);
+				contexto.lineTo(estadoX0*60+15,estadoY0*60+75);
+				break;
+			case 3:
+	               		contexto.moveTo(estadoX0*60+25 ,estadoY0*60+60);
+				contexto.lineTo(estadoX0*60+25,estadoY0*60+80);
+				break;
+			case 4:
+				contexto.moveTo(estadoX0*60+35 ,estadoY0*60+60);
+				contexto.lineTo(estadoX0*60+35,estadoY0*60+80);
+				break;
+			case 5:
+				contexto.moveTo(estadoX0*60+45 ,estadoY0*60+60);
+				contexto.lineTo(estadoX0*60+45,estadoY0*60+75);
+				break;
+			case 6:
+				contexto.moveTo(estadoX0*60+tamanho,estadoY0*60+45);
+				contexto.lineTo(estadoX0*60+tamanho+15,estadoY0*60+45);
+				break
+		}
+	}
+	else {
+		contexto.moveTo(pos_X*60+25,pos_Y*60);
 	}
 	var j =0;
 	while (j<8) {
