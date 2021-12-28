@@ -12,7 +12,44 @@
 // Na primeira liga��o horizontal da linha, tamb�m coloco fun��o SET, despreza as outras
 //======================================================================================
 function compila_sfc(){
-	
+	int si = 0
+	var booleano = new Array();
+	var index_str = 0;
+	while( si < (lArrayEstado.lenght /30)) {
+		for (int sj=0; sj<8; sj++){
+			if(lArrayEstado[si*30+17+sj] != "undefined"){
+				if ( lArrayTransicao[lArrayEstado[si*30+17+sj]] != (-1)) {
+					booleano[booleano.length] = 'LD';
+					booleano[booleano.length] = lArrayEstado[lArrayTransicao[lArrayEstado[si*30+17+sj]]=2];
+				}
+				else {
+					booleano[booleano.length] = 'LD';
+					booleano[booleano.length] = 1;
+				}
+					
+				for(var sz=0; sz<6; z++){
+					if ( lArrayTransicao[lArrayEstado[si*30+17+sj]+2+sz] != (-1)) { 
+						booleano[booleano.length] = 'ÁND';
+					        booleano[booleano.length] = lArrayTransicao[lArrayEstado[si*30+17+sj]+2+sz];
+					}
+				}
+				booleano[booleano.length] = 'SET';
+				booleano[booleano.length] = 'R' + index_str;
+			}
+		}
+	        booleano[booleano.length] = 'LD';
+		booleano[booleano.length] = 'R'+index_str;
+		booleano[booleano.length] = 'SET';
+		booleano[booleano.length] = lArrayEstado[si*30+2];
+		for(var sz=0; sz<6; z++){
+			if ( lArrayEstado[si*30+17+sz] != (-1)) { 
+				booleano[booleano.length] = 'RST';
+			        booleano[booleano.length] = lArrayEstado[si*30+17+sz];
+			}
+		}
+							
+	}
+		
 }
 
 //--------------------------------------------------
