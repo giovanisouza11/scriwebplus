@@ -651,6 +651,8 @@ function mouse_move_sfc(){
 function inicializa_array_sfc(){
 	lArrayEstado.length = 0;
 	lArrayTransicao.length = 0;
+	indexEstado = 0;
+	indexTransicao = 0;
 }
 
 //=====================================================================================
