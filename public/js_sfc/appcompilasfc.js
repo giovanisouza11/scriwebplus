@@ -84,11 +84,60 @@ function compila_sfc(){
 // .funcao = nome funcao genérica se tipo igual 8, (MOV,<,>,=,<= e >=).
 function converte_sfc_ladder(){
 	inicializa_array();
+	var linha = 0;
+	var coluna = 0;
+	var linhaAnterior = 0;
+	var maximoColuna = 0;
 	for( var csl=0; csl<booleano.length; csl++){
 	      switch (booleano[csl]){
-		      case ld:
-			      
-		
+		      case "LD":
+			     if (booleano[csl+1].atChar(0) == "R"){
+
+			     }
+			     else {
+			     	larray[larray.length *12] = coluna + linha*10;
+			     	larray[larray.length *12 + 1] = "";
+			     	larray[larray.length *12+2] = booleano[csl+1];
+			     	larray[larray.length *12+3] = 1,
+			     	larray[larray.length *12+4] = "",
+			     	larray[larray.length *12+5] = 0;
+			     	larray[larray.length *12+6] = 0;
+			     	larray[larray.length *12+7] = "",
+			     	larray[larray.length *12+8] = "",
+			     	csl = csl +2;
+			     }
+			     break;			
+		      case "AND":
+			     larray[larray.length *12] = coluna + linha*10;
+			     larray[larray.length *12 + 1] = "";
+			     larray[larray.length *12+2] = booleano[csl+1];
+			     larray[larray.length *12+3] = 1,
+			     larray[larray.length *12+4] = "",
+			     larray[larray.length *12+5] = 0;
+			     larray[larray.length *12+6] = 0;
+			     larray[larray.length *12+7] = "",
+			     larray[larray.length *12+8] = "",
+			     csl = csl +2;
+			     break;			
+			case "ANDN":
+			     larray[larray.length *12] = coluna + linha*10;
+			     larray[larray.length *12 + 1] = "";
+			     larray[larray.length *12+2] = booleano[csl+1];
+			     larray[larray.length *12+3] = 2,
+			     larray[larray.length *12+4] = "",
+			     larray[larray.length *12+5] = 0;
+			     larray[larray.length *12+6] = 0;
+			     larray[larray.length *12+7] = "",
+			     larray[larray.length *12+8] = "",
+			     csl = csl +2;
+			     break;
+		      case "SET":
+			      linha++;
+			      if (coluna > maximoColuna)
+			      		maximoColuna = coluna;
+			      break
+	      }	     
+	      coluna++;		      
 	}
 	monitora_ladder();
 }
