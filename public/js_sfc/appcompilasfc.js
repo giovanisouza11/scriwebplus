@@ -19,11 +19,12 @@ function compila_sfc(){
 	while( si < (lArrayEstado.length/30)) {
 		for (var sj=0; sj<8; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+17+sj];
-			//alert("ola mendo");
+			alert("ola mendo");
 			if( transicaoLocalSfc != undefined){
 				if ( lArrayTransicao[transicaoLocalSfc*20] != (-1)) {
 					booleano[index_bool] = 'LD';
-					index_bool++;				
+					index_bool++;			
+	alert("1ld");
 					booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
 					index_bool++ ;
 				}
@@ -31,13 +32,15 @@ function compila_sfc(){
 					booleano[index_bool] = 'LD';
 					index_bool++;
 					booleano[index_bool] = 1;
+alert("1ld sem");
 					index_bool++;
 				}
 					
 				for(var sz=0; sz<6; sz++){
 					if ( lArrayTransicao[transicaoLocalSfc*20+2+sz] != undefined) { 
 						booleano[index_bool] = 'AND';
-					        index_bool++ ;
+
+	alert("and");				        index_bool++ ;
 						booleano[index_bool] = lArrayTransicao[transicaoLocalSfc*20+2+sz];
 						index_bool++ ;
 					}
@@ -49,6 +52,7 @@ function compila_sfc(){
 			}
 		}
 	        booleano[index_bool] = 'LD';
+alert("Ld final");
 		index_bool++ ;
 		booleano[index_bool] = 'R'+si;
 		index_bool++ ;
@@ -60,13 +64,14 @@ function compila_sfc(){
 			transicaoLocalSfc = lArrayEstado[si*30+17+sj];
 			if ( transicaoLocalSfc != undefined) { 
 				booleano[index_bool] = 'RST';
+alert("rst");
 				index_bool++ ;
 			        booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
 				index_bool++ ;
 			}
 		}
-		si++;					
-	}
+		si++;		
+alert("linha");	}
 	// falta colocar os estados as acoes dos estados
 }
 
