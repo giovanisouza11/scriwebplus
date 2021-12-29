@@ -88,50 +88,59 @@ function converte_sfc_ladder(){
 	var coluna = 0;
 	var linhaAnterior = 0;
 	var maximoColuna = 0;
+	var maximoLinha=0;
 	for( var csl=0; csl<booleano.length; csl++){
 	      switch (booleano[csl]){
 		      case "LD":
-			     if (booleano[csl+1].atChar(0) == "R"){
-
+			     if (booleano[csl+1].charAt(0) == "R"){
+				     for(var csl1=linhaAnterior; csl1 < linha; cls1++)
+					larray[csl1*8*9+maximoColuna*9+5] = 1;
+				     maximoLinha = linha;
+				     linha = linhaAnterior;
+				     if (coluna <7)
+					     for(var csl1=maximoColuna, csl1<8, csl1++)
+						     larray[linha*8*9+csl1*9+3] = 11;
+				     maximoColuna= 0;
 			     }
 			     else {
-			     	larray[larray.length *12] = coluna + linha*10;
-			     	larray[larray.length *12 + 1] = "";
-			     	larray[larray.length *12+2] = booleano[csl+1];
-			     	larray[larray.length *12+3] = 1,
-			     	larray[larray.length *12+4] = "",
-			     	larray[larray.length *12+5] = 0;
-			     	larray[larray.length *12+6] = 0;
-			     	larray[larray.length *12+7] = "",
-			     	larray[larray.length *12+8] = "",
+			     	larray[linha*8*9+coluna*9] = coluna + linha*10;
+			     	larray[linha*8*9+coluna*9+ 1] = "";
+			     	larray[linha*8*9+coluna*9+2] = booleano[csl+1];
+			     	larray[linha*8*9+coluna*9+3] = 1,
+			     	larray[linha*8*9+coluna*9+4] = "",
+			     	larray[linha*8*9+coluna*9+5] = 0;
+			     	larray[linha*8*9+coluna*9+6] = 0;
+			     	larray[linha*8*9+coluna*9+7] = "",
+			     	larray[linha*8*9+coluna*9+8] = "",
 			     	csl = csl +2;
 			     }
 			     break;			
 		      case "AND":
-			     larray[larray.length *12] = coluna + linha*10;
-			     larray[larray.length *12 + 1] = "";
-			     larray[larray.length *12+2] = booleano[csl+1];
-			     larray[larray.length *12+3] = 1,
-			     larray[larray.length *12+4] = "",
-			     larray[larray.length *12+5] = 0;
-			     larray[larray.length *12+6] = 0;
-			     larray[larray.length *12+7] = "",
-			     larray[larray.length *12+8] = "",
+			     larray[linha*8*9+coluna*9] = coluna + linha*10;
+			     larray[linha*8*9+coluna*9+ 1] = "";
+			     larray[linha*8*9+coluna*9+2] = booleano[csl+1];
+			     larray[linha*8*9+coluna*9+3] = 1,
+			     larray[linha*8*9+coluna*9+4] = "",
+			     larray[linha*8*9+coluna*9+5] = 0;
+			     larray[linha*8*9+coluna*9+6] = 0;
+			     larray[linha*8*9+coluna*9+7] = "",
+			     larray[linha*8*9+coluna*9+8] = "",
 			     csl = csl +2;
 			     break;			
 			case "ANDN":
-			     larray[larray.length *12] = coluna + linha*10;
-			     larray[larray.length *12 + 1] = "";
-			     larray[larray.length *12+2] = booleano[csl+1];
-			     larray[larray.length *12+3] = 2,
-			     larray[larray.length *12+4] = "",
-			     larray[larray.length *12+5] = 0;
-			     larray[larray.length *12+6] = 0;
-			     larray[larray.length *12+7] = "",
-			     larray[larray.length *12+8] = "",
+			     larray[linha*8*9+coluna*9] = coluna + linha*10;
+			     larray[linha*8*9+coluna*9+ 1] = "";
+			     larray[linha*8*9+coluna*9+2] = booleano[csl+1];
+			     larray[linha*8*9+coluna*9+3] = 2,
+			     larray[linha*8*9+coluna*9+4] = "",
+			     larray[linha*8*9+coluna*9+5] = 0;
+			     larray[linha*8*9+coluna*9+6] = 0;
+			     larray[linha*8*9+coluna*9+7] = "",
+			     larray[linha*8*9+coluna*9+8] = "",
 			     csl = csl +2;
 			     break;
 		      case "SET":
+			      //tem que finalizar c
 			      linha++;
 			      if (coluna > maximoColuna)
 			      		maximoColuna = coluna;
