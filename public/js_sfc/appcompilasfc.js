@@ -22,13 +22,13 @@ function compila_sfc(){
 			//alert("ola mendo");
 			if( transicaoLocalSfc != undefined){
 				if ( lArrayTransicao[transicaoLocalSfc*20] != (-1)) {
-					booleano[index_bool] = "LD";
+					booleano[index_bool] = 'LD';
 					index_bool++;				
 					booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
 					index_bool++ ;
 				}
 				else {
-					booleano[index_bool] = "LD";
+					booleano[index_bool] = 'LD';
 					index_bool++;
 					booleano[index_bool] = 1;
 					index_bool++;
@@ -36,30 +36,30 @@ function compila_sfc(){
 					
 				for(var sz=0; sz<6; sz++){
 					if ( lArrayTransicao[transicaoLocalSfc*20+2+sz] != undefined) { 
-						booleano[index_bool] = "AND";
+						booleano[index_bool] = 'AND';
 					        index_bool++ ;
 						booleano[index_bool] = lArrayTransicao[transicaoLocalSfc*20+2+sz];
 						index_bool++ ;
 					}
 				}
-				booleano[index_bool] = "SET";
+				booleano[index_bool] = 'SET';
 				index_bool++ ;
-				booleano[index_bool] = "R" + si;
+				booleano[index_bool] = 'R' + si;
 				index_bool++ ;
 			}
 		}
-	        booleano[index_bool] = "LD";
+	        booleano[index_bool] = 'LD';
 		index_bool++ ;
-		booleano[index_bool] = "R"+si;
+		booleano[index_bool] = 'R'+si;
 		index_bool++ ;
-		booleano[index_bool] = "SET";
+		booleano[index_bool] = 'SET';
 		index_bool++ ;
 		booleano[index_bool] = lArrayEstado[si*30+2];
 		index_bool++ ;
 		for(var sj=0; sj<6; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+17+sj];
 			if ( transicaoLocalSfc != undefined) { 
-				booleano[index_bool] = "RST";
+				booleano[index_bool] = 'RST';
 				index_bool++ ;
 			        booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
 				index_bool++ ;
@@ -93,7 +93,7 @@ function converte_sfc_ladder(){
 	for( var csl=0; csl<booleano.length; csl++){
 	      switch (booleano[csl]){
 		      case "LD":
-			     if (booleano[csl+1].charAt(0) == "R"){
+			     if (booleano[csl+1].charAt(0) == 'R'){
 				     for(var csl1=linhaAnterior; csl1 < linha; csl1++)
 					larray[csl1*8*9+maximoColuna*9+5] = 1;
 				     maximoLinha = linha;
@@ -118,7 +118,7 @@ function converte_sfc_ladder(){
 			     	csl = csl +2;
 			     }
 			     break;			
-		      case "AND":
+		      case 'AND':
 			     larray[linha*8*9+coluna*9] = coluna + linha*10;
 			     larray[linha*8*9+coluna*9+ 1] = "";
 			     larray[linha*8*9+coluna*9+2] = booleano[csl+1];
@@ -130,7 +130,7 @@ function converte_sfc_ladder(){
 			     larray[linha*8*9+coluna*9+8] = "",
 			     csl = csl +2;
 			     break;			
-			case "ANDN":
+			case 'ANDN':
 			     larray[linha*8*9+coluna*9] = coluna + linha*10;
 			     larray[linha*8*9+coluna*9+ 1] = "";
 			     larray[linha*8*9+coluna*9+2] = booleano[csl+1];
@@ -142,7 +142,7 @@ function converte_sfc_ladder(){
 			     larray[linha*8*9+coluna*9+8] = "",
 			     csl = csl +2;
 			     break;
-		      case "SET":
+		      case 'SET':
 			      if(maximoLinha > linha) {
 				larray[linha*8*9+7*9] = coluna + linha*10;
 			     	larray[linha*8*9+7*9+ 1] = "";
@@ -165,5 +165,5 @@ function converte_sfc_ladder(){
 	      }	     
 	      coluna++;		      
 	}
-	//monitora_ladder();
+	monitora_ladder();
 }
