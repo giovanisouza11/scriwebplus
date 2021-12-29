@@ -143,15 +143,15 @@ function converte_sfc_ladder(){
 			     break;
 		      case "SET":
 			      if(maximoLinha > linha) {
-				larray[linha*8*9+8*9] = coluna + linha*10;
-			     	larray[linha*8*9+8*9+ 1] = "";
-			     	larray[linha*8*9+8*9+2] = booleano[csl+1];
-			     	larray[linha*8*9+8*9+3] = 4,
-			     	larray[linha*8*9+8*9+4] = "",
-			     	larray[linha*8*9+8*9+5] = 0;
-			     	larray[linha*8*9+8*9+6] = 0;
-			     	larray[linha*8*9+8*9+7] = "",
-			     	larray[linha*8*9+8*9+8] = "",
+				larray[linha*8*9+7*9] = coluna + linha*10;
+			     	larray[linha*8*9+7*9+ 1] = "";
+			     	larray[linha*8*9+7*9+2] = booleano[csl+1];
+			     	larray[linha*8*9+7*9+3] = 4,
+			     	larray[linha*8*9+7*9+4] = "",
+			     	larray[linha*8*9+7*9+5] = 0;
+			     	larray[linha*8*9+7*9+6] = 0;
+			     	larray[linha*8*9+7*9+7] = "",
+			     	larray[linha*8*9+7*9+8] = "",
 			     	csl = csl +2;
 				      linha ++;
 			      }
