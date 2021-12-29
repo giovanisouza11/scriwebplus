@@ -156,27 +156,17 @@ function trocar_botao_sfc() {
 		clp_comandos = 1;
 	}
 	if (valor_chave_sfc[5]==1){
-		run_CLP();
-		comandos = 2;
-		clp_comandos = 2;
-		//valor_chave[5]=0;
-	}
-	if (valor_chave_sfc[6]==1){
-		run_CLP();
-		if (comandos == 3)
-			clp_comandos = 4;
-		else {
-			comandos = 3;
-			clp_comandos = 3;
-		}
-		//valor_chave[6]=0;
-	}
-	if (valor_chave_sfc[7]==1){
 		comandos = 0;
 		stop_CLP();
 		monitora_ladder(larray);
 		clp_comandos = 0;
 		//socket.emit('comandosx', 0+ ','+  num_clp);
+	}
+	if (valor_chave_sfc[6]==1){
+		converte_sfc_ladder();
+	}
+	if (valor_chave_sfc[7]==1){
+		
 	}
 }
 
