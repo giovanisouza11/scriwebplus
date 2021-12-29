@@ -139,6 +139,7 @@ function trocar_botao_sfc() {
 		for (var i=0; i<(booleano.length); i++) {
 			for (var j=0; j<2; j++)
 			      texto += booleano[i]+',';
+			texto += '\n';
 		}
 		alert(texto);
                 //socket.emit('programax', texto+','+num_clp); 
@@ -147,7 +148,6 @@ function trocar_botao_sfc() {
 		//alert(clp_programa);
 		I = clpI;
 		valor_chave_sfc[3]=0;
-		valor_chave_sfc[7]=1;
 	}
 
 	if (valor_chave_sfc[4]==1){
