@@ -56,7 +56,7 @@ function compila_sfc(){
 		index_bool++ ;
 		booleano[index_bool] = lArrayEstado[si*30+2];
 		index_bool++ ;
-		for(var sj=0; sj<6; j++){
+		for(var sj=0; sj<6; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+17+sj];
 			if ( transicaoLocalSfc != undefined) { 
 				booleano[index_bool] = "RST";
@@ -67,6 +67,7 @@ function compila_sfc(){
 		}
 		si++;					
 	}
+	// falta colocar os estados as acoes dos estados
 }
 
 //--------------------------------------------------
