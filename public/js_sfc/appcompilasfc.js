@@ -19,7 +19,7 @@ function compila_sfc(){
 	while( si < (lArrayEstado.length/30)) {
 		for (var sj=0; sj<8; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+17+sj];
-			alert("ola mendo");
+			//alert("ola mendo");
 			if( transicaoLocalSfc != "undefined"){
 				if ( lArrayTransicao[transicaoLocalSfc*20] != (-1)) {
 					booleano[index_bool] = "LD";
