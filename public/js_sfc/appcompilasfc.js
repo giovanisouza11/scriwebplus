@@ -73,4 +73,11 @@ function compila_sfc(){
 // funcao compila e pre-compila logicas ladder
 //----------------------------------------------
 function converte_sfc_ladder(){
+	for( var csl=0; csl<booleano.length; csl++){
+	      switch (booleano[csl]){
+		      case ld:
+			      
+		
 	}
+	monitora_ladder();
+}
