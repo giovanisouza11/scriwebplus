@@ -20,7 +20,7 @@ function compila_sfc(){
 		for (var sj=0; sj<8; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+17+sj];
 			//alert("ola mendo");
-			if( transicaoLocalSfc != "undefined"){
+			if( transicaoLocalSfc != undefined){
 				if ( lArrayTransicao[transicaoLocalSfc*20] != (-1)) {
 					booleano[index_bool] = "LD";
 					index_bool++;				
@@ -35,7 +35,7 @@ function compila_sfc(){
 				}
 					
 				for(var sz=0; sz<6; sz++){
-					if ( lArrayTransicao[transicaoLocalSfc*20+2+sz] != "undefined") { 
+					if ( lArrayTransicao[transicaoLocalSfc*20+2+sz] != undefined) { 
 						booleano[index_bool] = "AND";
 					        index_bool++ ;
 						booleano[index_bool] = lArrayTransicao[transicaoLocalSfc*20+2+sz];
@@ -58,7 +58,7 @@ function compila_sfc(){
 		index_bool++ ;
 		for(var sj=0; sj<6; j++){
 			transicaoLocalSfc = lArrayEstado[si*30+17+sj];
-			if ( transicaoLocalSfc != "undefined") { 
+			if ( transicaoLocalSfc != undefined) { 
 				booleano[index_bool] = "RST";
 				index_bool++ ;
 			        booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
