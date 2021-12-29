@@ -16,6 +16,8 @@ function compila_sfc(){
 	//var booleano = new Array();
 	var index_bool = 0;
 	var transicaoLocalSfc;
+
+alert("antes while");
 	while( si < (lArrayEstado.length/30)) {
 		for (var sj=0; sj<8; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+17+sj];
