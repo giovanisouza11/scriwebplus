@@ -94,7 +94,7 @@ function converte_sfc_ladder(){
 	      switch (booleano[csl]){
 		      case "LD":
 			     if (booleano[csl+1].charAt(0) == "R"){
-				     for(var csl1=linhaAnterior; csl1 < linha; cls1++)
+				     for(var csl1=linhaAnterior; csl1 < linha; csl1++)
 					larray[csl1*8*9+maximoColuna*9+5] = 1;
 				     maximoLinha = linha;
 				     linha = linhaAnterior;
@@ -165,5 +165,5 @@ function converte_sfc_ladder(){
 	      }	     
 	      coluna++;		      
 	}
-	monitora_ladder();
+	//monitora_ladder();
 }
