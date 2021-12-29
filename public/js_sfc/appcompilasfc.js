@@ -72,7 +72,18 @@ function compila_sfc(){
 //--------------------------------------------------
 // funcao compila e pre-compila logicas ladder
 //----------------------------------------------
+//{ _id, tag1, var_1, tipo, var_2, ver, R-W, tag2, funcao};
+// ._id = Identificado XXY, onde XX=linha e Y=coluna
+// .nome = nome do tag
+// .var_1 = variavel principal.
+// .tipo = 0:nao usado, 1:NA, 2:NF, 3-Bobina, 4:Set, 5:Reset, 6:Timer, 7:Counter,8-funcao,9-pulso, 10-compaacao, 11-Horizontal,
+// .var2 = vari�vel secund�rio, no timer e counter o valor de preset
+// .ver = liga��o vertical, 0:false, 1: true. Na derivacao 10-90: numero do TR (derivacao), multiplicado por 10, colocando durante a compilacao.
+// .R-W = Leitura(1) ou Escrita(2)
+// .tag2 = nome da variavel 2
+// .funcao = nome funcao genérica se tipo igual 8, (MOV,<,>,=,<= e >=).
 function converte_sfc_ladder(){
+	inicializa_array();
 	for( var csl=0; csl<booleano.length; csl++){
 	      switch (booleano[csl]){
 		      case ld:
