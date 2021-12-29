@@ -24,7 +24,7 @@ function compila_sfc(){
 				if ( lArrayTransicao[transicaoLocalSfc*20] != (-1)) {
 					booleano[index_bool] = "LD";
 					index_bool++;				
-					booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]+2];
+					booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
 					index_bool++ ;
 				}
 				else {
@@ -61,7 +61,7 @@ function compila_sfc(){
 			if ( transicaoLocalSfc != "undefined") { 
 				booleano[index_bool] = "RST";
 				index_bool++ ;
-			        booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]+2];
+			        booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
 				index_bool++ ;
 			}
 		}
