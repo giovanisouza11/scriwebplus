@@ -17,19 +17,19 @@ function compila_sfc(){
 	var index_bool = 0;
 	var transicaoLocalSfc;
 
- 	alert('antes while'); 
+ 	//alert('antes while'); 
 	
 	while( si < (lArrayEstado.length/30)) {
 		
-		for (var sj=0; sj<8; sj++){
-			transicaoLocalSfc = lArrayEstado[si*30+17+sj];
-			alert('dentro do while e for');
+		for (var sj=0; sj<6; sj++){
+			transicaoLocalSfc = lArrayEstado[si*30+3+sj];
+			//alert('dentro do while e for');
 			if( transicaoLocalSfc != undefined){
 				//o estado anterior
 				if ( lArrayTransicao[transicaoLocalSfc*20] != (-1)) {
 					booleano[index_bool] = 'LD';
 					index_bool++;			
-					alert('1° ld');
+					//alert('1° ld');
 					booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
 					index_bool++ ;
 				}
@@ -37,14 +37,14 @@ function compila_sfc(){
 					booleano[index_bool] = 'LD';
 					index_bool++;
 					booleano[index_bool] = 1;
-					alert('1° ld sem');
+					//alert('1° ld sem');
 					index_bool++;
 				}
 				//condicoes da transicao	
 				for(var sz=0; sz<6; sz++){
 					if ( lArrayTransicao[transicaoLocalSfc*20+2+sz] != undefined) { 
 						booleano[index_bool] = 'AND';
-						alert('and');
+						//alert('and');
 						index_bool++ ;
 						booleano[index_bool] = lArrayTransicao[transicaoLocalSfc*20+2+sz];
 						index_bool++ ;
@@ -55,12 +55,12 @@ function compila_sfc(){
 				index_bool++ ;
 				booleano[index_bool] = 'R' + si;
 				index_bool++ ;
-				alert('Set FIM de linha');		
+				//alert('Set FIM de linha');		
 			}
 		}
 	        //set o atual e resetase os anteriores
 		booleano[index_bool] = 'LD';
-		alert('Ld final todas as treansicoes');
+		//alert('Ld final todas as treansicoes');
 		index_bool++ ;
 		booleano[index_bool] = 'R'+si;
 		index_bool++ ;
@@ -69,10 +69,10 @@ function compila_sfc(){
 		booleano[index_bool] = lArrayEstado[si*30+2];
 		index_bool++ ;
 		for(var sj=0; sj<6; sj++){
-			transicaoLocalSfc = lArrayEstado[si*30+17+sj];
+			transicaoLocalSfc = lArrayEstado[si*30+3+sj];
 			if ( transicaoLocalSfc != undefined) { 
 				booleano[index_bool] = 'RST';
-				alert('rst final de linha');
+				//alert('rst final de linha');
 				index_bool++ ;
 			        booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
 				index_bool++ ;
@@ -82,7 +82,7 @@ function compila_sfc(){
 		
 		//procura um novo estado
 		si++;		
-		alert('Novo Estado');
+		//alert('Novo Estado');
 	}
 }
 
