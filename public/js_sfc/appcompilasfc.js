@@ -100,7 +100,7 @@ function compila_sfc(){
 // .tag2 = nome da variavel 2
 // .funcao = nome funcao genérica se tipo igual 8, (MOV,<,>,=,<= e >=).
 function converte_sfc_ladder(){
-	inicializa_array();
+/*	inicializa_array();
 	var linha = 0;
 	var coluna = 0;
 	var linhaAnterior = 0;
@@ -183,5 +183,5 @@ function converte_sfc_ladder(){
 	      }	     
 	      coluna++;		      
 	}
-	monitora_ladder();
+	monitora_ladder();*/
 }
