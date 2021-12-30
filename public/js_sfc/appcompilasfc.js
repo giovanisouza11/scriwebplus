@@ -19,7 +19,7 @@ function compila_sfc(){
 
  	//alert('antes while'); 
 	
-	while( si < (lArrayEstado.length/30)) {
+	while( si < ((lArrayEstado.length/30)-1)) {
 		
 		for (var sj=0; sj<6; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+3+sj];
