@@ -43,7 +43,11 @@ function compila_sfc(){
 				//condicoes da transicao	
 				for(var sz=0; sz<6; sz++){
 					if ( lArrayTransicao[transicaoLocalSfc*20+2+sz] != 'undefined'  && lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
-						booleano[index_bool] = 'AND';
+						var substring = lArrayTransicao[transicaoLocalSfc*20+2+sz].substr(lArrayTransicao[transicaoLocalSfc*20+2+sz].length-2);
+						if (substring == '0')
+							booleano[index_bool] = 'ANDN';
+						else
+							booleano[index_bool] = 'AND';
 						//alert('and');
 						index_bool++ ;
 						booleano[index_bool] = lArrayTransicao[transicaoLocalSfc*20+2+sz];
@@ -86,7 +90,11 @@ function compila_sfc(){
 		for(var sj=0; sj<8; sj++){
 			lArrayEstado[si*30+9+sj];
 			if ( lArrayEstado[si*30+17+sj] != 'undefined' && lArrayEstado[si*30+17+sj] != '') { 
-				booleano[index_bool] = '=RST';
+				var substring = lArrayTransicao[transicaoLocalSfc*20+2+sz].substr(lArrayTransicao[transicaoLocalSfc*20+2+sz].length-2);
+				if (substring == '0')
+					booleano[index_bool] = 'RST';
+				else
+					booleano[index_bool] = 'SET';
 				index_bool++ ;
 			        booleano[index_bool] = lArrayEstado[si*30+17+sj];
 				index_bool++ ;
