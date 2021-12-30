@@ -13,16 +13,19 @@
 //======================================================================================
 function compila_sfc(){
 	var si = 0;
-	//var booleano = new Array();
+	booleano.length = 0;
 	var index_bool = 0;
 	var transicaoLocalSfc;
 
- 	alert('antes while');
+ 	alert('antes while'); 
+	
 	while( si < (lArrayEstado.length/30)) {
+		
 		for (var sj=0; sj<8; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+17+sj];
 			alert('dentro do while e for');
 			if( transicaoLocalSfc != undefined){
+				//o estado anterior
 				if ( lArrayTransicao[transicaoLocalSfc*20] != (-1)) {
 					booleano[index_bool] = 'LD';
 					index_bool++;			
@@ -37,7 +40,7 @@ function compila_sfc(){
 					alert('1° ld sem');
 					index_bool++;
 				}
-					
+				//condicoes da transicao	
 				for(var sz=0; sz<6; sz++){
 					if ( lArrayTransicao[transicaoLocalSfc*20+2+sz] != undefined) { 
 						booleano[index_bool] = 'AND';
@@ -47,15 +50,16 @@ function compila_sfc(){
 						index_bool++ ;
 					}
 				}
+				//encerra a transicao
 				booleano[index_bool] = 'SET';
 				index_bool++ ;
 				booleano[index_bool] = 'R' + si;
 				index_bool++ ;
-				alert('Set FIM de linha');
-						
+				alert('Set FIM de linha');		
 			}
 		}
-	        booleano[index_bool] = 'LD';
+	        //set o atual e resetase os anteriores
+		booleano[index_bool] = 'LD';
 		alert('Ld final todas as treansicoes');
 		index_bool++ ;
 		booleano[index_bool] = 'R'+si;
@@ -74,10 +78,12 @@ function compila_sfc(){
 				index_bool++ ;
 			}
 		}
+	// falta colocar os estados as acoes dos estados
+		
+		//procura um novo estado
 		si++;		
 		alert('Novo Estado');
 	}
-	// falta colocar os estados as acoes dos estados
 }
 
 //--------------------------------------------------
@@ -100,9 +106,11 @@ function converte_sfc_ladder(){
 	var linhaAnterior = 0;
 	var maximoColuna = 0;
 	var maximoLinha=0;
+	//varre toda o array BOOLEANO
 	for( var csl=0; csl<booleano.length; csl++){
 	      switch (booleano[csl]){
-		      case "LD":
+		      case "LD": 
+			      // caso ser LD é um inicio de linha ou um fim de o operando "R"
 			     if (booleano[csl+1].charAt(0) == 'R'){
 				     for(var csl1=linhaAnterior; csl1 < linha; csl1++)
 					larray[csl1*8*9+maximoColuna*9+5] = 1;
@@ -167,11 +175,11 @@ function converte_sfc_ladder(){
 				      linha ++;
 			      }
 			      else {
-			      linha++;
-			      if (coluna > maximoColuna)
+			      	linha++;
+			      	if (coluna > maximoColuna)
 			      		maximoColuna = coluna;
-			      }
-			      break
+			      	}
+			      break;
 	      }	     
 	      coluna++;		      
 	}
