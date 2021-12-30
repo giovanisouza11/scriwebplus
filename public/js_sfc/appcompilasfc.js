@@ -26,7 +26,7 @@ function compila_sfc(){
 			//alert('dentro do while e for');
 			if( transicaoLocalSfc != 'undefined'){
 				//o estado anterior
-				if ( lArrayTransicao[transicaoLocalSfc*20] != (-1)) {
+				if ( lArrayTransicao[transicaoLocalSfc*20] != '-1') {
 					booleano[index_bool] = 'LD';
 					index_bool++;			
 					//alert('1° ld');
