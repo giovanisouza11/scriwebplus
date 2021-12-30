@@ -24,7 +24,7 @@ function compila_sfc(){
 		for (var sj=0; sj<6; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+3+sj];
 			//alert('dentro do while e for');
-			if( transicaoLocalSfc != undefined){
+			if( transicaoLocalSfc != 'undefined'){
 				//o estado anterior
 				if ( lArrayTransicao[transicaoLocalSfc*20] != (-1)) {
 					booleano[index_bool] = 'LD';
