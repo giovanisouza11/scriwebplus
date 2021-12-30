@@ -70,7 +70,7 @@ function compila_sfc(){
 		index_bool++ ;
 		for(var sj=0; sj<6; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+9+sj];
-			if ( transicaoLocalSfc != 'undefined') { 
+			if ( transicaoLocalSfc != 'undefined' && transicaoLocalSfc != '-1' ) { 
 				booleano[index_bool] = 'RST';
 				//alert('rst final de linha');
 				index_bool++ ;
@@ -78,7 +78,20 @@ function compila_sfc(){
 				index_bool++ ;
 			}
 		}
-	// falta colocar os estados as acoes dos estados
+	        //Acoes dos estados
+		booleano[index_bool] = 'LD';
+		index_bool++;
+		booleano[index_bool] = lArrayEstado[si*30 +2];
+		index_bool++;
+		for(var sj=0; sj<8; sj++){
+			lArrayEstado[si*30+9+sj];
+			if ( lArrayEstado[si*30+17+sj] != 'undefined') { 
+				booleano[index_bool] = '=RST';
+				index_bool++ ;
+			        booleano[index_bool] = lArrayEstado[si*30+17+sj];
+				index_bool++ ;
+			}
+		}
 		
 		//procura um novo estado
 		si++;		
