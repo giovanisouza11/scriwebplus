@@ -22,7 +22,7 @@ function compila_sfc(){
 	while( si < ((lArrayEstado.length/30)-1)) {
 		
 		for (var sj=0; sj<6; sj++){
-			transicaoLocalSfc = lArrayEstado[si*30+3+sj];
+			transicaoLocalSfc = lArrayEstado[si*30+9+sj];
 			//alert('dentro do while e for');
 			if( transicaoLocalSfc != 'undefined'){
 				//o estado anterior
@@ -69,7 +69,7 @@ function compila_sfc(){
 		booleano[index_bool] = lArrayEstado[si*30+2];
 		index_bool++ ;
 		for(var sj=0; sj<6; sj++){
-			transicaoLocalSfc = lArrayEstado[si*30+3+sj];
+			transicaoLocalSfc = lArrayEstado[si*30+9+sj];
 			if ( transicaoLocalSfc != 'undefined') { 
 				booleano[index_bool] = 'RST';
 				//alert('rst final de linha');
