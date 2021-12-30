@@ -137,9 +137,9 @@ function trocar_botao_sfc() {
 		compila_sfc();
 		let texto = '';
 		for (var i=0; i<(booleano.length); i++) {
-			for (var j=0; j<2; j++)
-			      texto += booleano[i]+',';
+			texto += booleano[i]+','+booleano[i+1]+',';
 			texto += '\n';
+			i++;
 		}
 		alert(texto);
                 //socket.emit('programax', texto+','+num_clp); 
