@@ -89,7 +89,6 @@ function compila_sfc(){
 		booleano[index_bool] = lArrayEstado[si*30 +2];
 		index_bool++;
 		for(var sj=0; sj<8; sj++){
-			lArrayEstado[si*30+9+sj];
 			if ( lArrayEstado[si*30+17+sj] != 'undefined' && lArrayEstado[si*30+17+sj] != '') { 
 				var strinx = lArrayEstado[si*30+17+sj];
 				var substring = strinx.substr(strinx.length-2);
