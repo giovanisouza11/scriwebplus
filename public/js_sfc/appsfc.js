@@ -223,7 +223,7 @@ function editar_sfc() {
 
 			document.getElementById("label_input").innerHTML = "Memória:";
 			tag = lArrayEstado[(indexEstado-1)*30+2];
-			if (tag != undefined && tag != "undefined")
+			if (tag != '') //undefined && tag != "undefined")
 				document.getElementById('input_ladder').value = tag;
 			else
 				document.getElementById('input_ladder').value = "";
@@ -244,7 +244,7 @@ function editar_sfc() {
 			ICampo.style.top = " "+(05+(posicaoYSfc*60))  + "px";
 			document.getElementById("label_input").innerHTML = "NumEstados:";
 			tag = lArrayEstado[(indexEstado-1)*30+25];
-			if (tag != undefined && tag != "undefined")
+			if (tag != '') //undefined && tag != "undefined")
 				document.getElementById('input_ladder').value = tag;
 			else
 				document.getElementById('input_ladder').value = "";
@@ -703,7 +703,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,(resultado[0]+resultado[2])/2+10, (resultado[1]+resultado[3])/2+20);
 				document.getElementById("label_input").innerHTML = "Condição 7:";
 				document.getElementById('input_ladder').value = lArrayTransicao[auxIndexTransicao*20+8];
-				if (lArrayTransicao[auxIndexTransicao*20+8] == undefined )
+				if (lArrayTransicao[auxIndexTransicao*20+8] == '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 7;
 			}
@@ -715,7 +715,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,(resultado[0]+resultado[2])/2+10, (resultado[1]+resultado[3])/2+10);
 				document.getElementById("label_input").innerHTML = "Condição 6:";
 				document.getElementById('input_ladder').value = lArrayTransicao[auxIndexTransicao*20+7];
-				if (lArrayTransicao[auxIndexTransicao*20+7] == undefined )
+				if (lArrayTransicao[auxIndexTransicao*20+7] == '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 6;
 			}
@@ -727,7 +727,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,(resultado[0]+resultado[2])/2+10, (resultado[1]+resultado[3])/2);
 				document.getElementById("label_input").innerHTML = "Condição 5:";
 				document.getElementById('input_ladder').value = lArrayTransicao[auxIndexTransicao*20+6];
-				if (lArrayTransicao[auxIndexTransicao*20+6] ==  undefined )
+				if (lArrayTransicao[auxIndexTransicao*20+6] == '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 5;
 			}
@@ -739,7 +739,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,(resultado[0]+resultado[2])/2+10, (resultado[1]+resultado[3])/2-10);
 				document.getElementById("label_input").innerHTML = "Condição 4:";
 				document.getElementById('input_ladder').value = lArrayTransicao[auxIndexTransicao*20+5];
-				if (lArrayTransicao[auxIndexTransicao*20+5] ==  undefined )
+				if (lArrayTransicao[auxIndexTransicao*20+5] ==  '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 4;
 			}
@@ -751,7 +751,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,(resultado[0]+resultado[2])/2+10, (resultado[1]+resultado[3])/2-20);
 				document.getElementById("label_input").innerHTML = "Condição 3:";
 				document.getElementById('input_ladder').value = lArrayTransicao[auxIndexTransicao*20+4];
-				if (lArrayTransicao[auxIndexTransicao*20+4] ==  undefined )
+				if (lArrayTransicao[auxIndexTransicao*20+4] == '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 3;
 			}
@@ -764,7 +764,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,(resultado[0]+resultado[2])/2+10, (resultado[1]+resultado[3])/2-30);
 				document.getElementById("label_input").innerHTML = "Condição 2:";
 				document.getElementById('input_ladder').value = lArrayTransicao[auxIndexTransicao*20+3];
-				if (lArrayTransicao[auxIndexTransicao*20+3] ==  undefined )
+				if (lArrayTransicao[auxIndexTransicao*20+3] == '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 2;
 			}
@@ -790,7 +790,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,posicaoXSfc*60+70, posicaoYSfc*60+36);
 				document.getElementById("label_input").innerHTML = "Ação 8:";
 				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+24];
-				if (lArrayEstado[auxIndexEstado*30+24] == undefined )
+				if (lArrayEstado[auxIndexEstado*30+24] == '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 9;
 			}
@@ -802,7 +802,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,posicaoXSfc*60+70, posicaoYSfc*60+24);
 				document.getElementById("label_input").innerHTML = "Ação 7:";
 				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+23];
-				if (lArrayEstado[auxIndexEstado*30+23] == undefined )
+				if (lArrayEstado[auxIndexEstado*30+23] =='' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 8;
 			}
@@ -814,7 +814,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,posicaoXSfc*60+70, posicaoYSfc*60+12);
 				document.getElementById("label_input").innerHTML = "Ação 6:";
 				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+22];
-				if (lArrayEstado[auxIndexEstado*30+22] == undefined )
+				if (lArrayEstado[auxIndexEstado*30+22] == '' )
 					document.getElementById('input_ladder').value ="";
 				lArrayEstado[auxIndexEstado*30+26] =  120;
 				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, auxIndexEstado,'black',120);
@@ -828,7 +828,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+48);
 				document.getElementById("label_input").innerHTML = "Ação 5:";
 				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+21];
-				if (lArrayEstado[auxIndexEstado*30+21] ==  undefined )
+				if (lArrayEstado[auxIndexEstado*30+21] ==  '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 6;
 			}
@@ -840,7 +840,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+36);
 				document.getElementById("label_input").innerHTML = "Ação 4:";
 				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+20];
-				if (lArrayEstado[auxIndexEstado*30+20] == undefined )
+				if (lArrayEstado[auxIndexEstado*30+20] =='' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 5;
 			}
@@ -852,7 +852,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+24);
 				document.getElementById("label_input").innerHTML = "Ação 3:";
 				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+24];
-				if (lArrayEstado[auxIndexEstado*30+19] ==  undefined )
+				if (lArrayEstado[auxIndexEstado*30+19] == '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 4;
 			}
@@ -865,7 +865,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+12);
 				document.getElementById("label_input").innerHTML = "Ação 2:";
 				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+18];
-				if (lArrayEstado[auxIndexEstado*30+18] ==  undefined )
+				if (lArrayEstado[auxIndexEstado*30+18] ==  '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 3;
 			}
@@ -877,7 +877,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillText(tag,posicaoXSfc*60+2, posicaoYSfc*60+58);
 				document.getElementById("label_input").innerHTML = "Ação 1:";
 				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+17];
-				if (lArrayEstado[auxIndexEstado*30+17] ==  undefined )
+				if (lArrayEstado[auxIndexEstado*30+17] ==  '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 2;
 			}
@@ -885,7 +885,7 @@ function entrada_input_sfc(event){
 				lArrayEstado[auxIndexEstado*30+25] = tag;
 				document.getElementById("label_input").innerHTML = "Memória:";
 				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+2];
-				if (lArrayEstado[auxIndexEstado*30+2] == undefined )
+				if (lArrayEstado[auxIndexEstado*30+2] == '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 1;
 			}
