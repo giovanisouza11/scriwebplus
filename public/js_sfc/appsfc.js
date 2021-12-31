@@ -192,7 +192,7 @@ function editar_sfc() {
 					var tag;
 					document.getElementById("label_input").innerHTML = "Condição 1:";
 					tag = lArrayTransicao[(indexTransicao-1)*20+8];
-					if (tag != undefined && tag != "undefined")
+					if (tag != '' ) //undefined && tag != "undefined")
 						document.getElementById('input_ladder').value = tag;
 					else
 						document.getElementById('input_ladder').value = "";
