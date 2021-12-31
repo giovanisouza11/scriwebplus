@@ -232,6 +232,8 @@ function editar_sfc() {
 		}
 		if (lFuncaoSfc==3) {
 			IFigura.style.display = "none";
+			for(var i=0; i<30; i++)
+				lArrayEstado[indexEstado*20+i] = '';
 			lArrayEstado[indexEstado*30] = posicaoYSfc +' '+ posicaoXSfc ;
 			lArrayEstado[indexEstado*30+1] =  indexEstado;
 			lArrayEstado[indexEstado*30+26] =  60;
