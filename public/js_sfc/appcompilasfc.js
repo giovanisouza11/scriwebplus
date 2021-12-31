@@ -24,7 +24,7 @@ function compila_sfc(){
 		for (var sj=0; sj<6; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+9+sj];
 			//alert('dentro do while e for');
-			if( transicaoLocalSfc != 'undefined' && transicaoLocalSfc != ''){
+			if( transicaoLocalSfc != ''){
 				//o estado anterior
 				if ( lArrayTransicao[transicaoLocalSfc*20] != '-1') {
 					booleano[index_bool] = 'LD';
@@ -42,7 +42,7 @@ function compila_sfc(){
 				}
 				//condicoes da transicao	
 				for(var sz=0; sz<6; sz++){
-					if ( lArrayTransicao[transicaoLocalSfc*20+2+sz] != 'undefined'  && lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
+					if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
 						var  strinx = lArrayTransicao[transicaoLocalSfc*20+2+sz];
 						var substring = strinx.substr(strinx.length-1);
 						if (substring == '0')
@@ -75,7 +75,7 @@ function compila_sfc(){
 		index_bool++ ;
 		for(var sj=0; sj<6; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+9+sj];
-			if ( transicaoLocalSfc != 'undefined' && transicaoLocalSfc != '-1' && transicaoLocalSfc != '' ) { 
+			if (transicaoLocalSfc != '-1' && transicaoLocalSfc != '' ) { 
 				booleano[index_bool] = 'RST';
 				//alert('rst final de linha');
 				index_bool++ ;
@@ -89,7 +89,7 @@ function compila_sfc(){
 		booleano[index_bool] = lArrayEstado[si*30 +2];
 		index_bool++;
 		for(var sj=0; sj<8; sj++){
-			if ( lArrayEstado[si*30+17+sj] != 'undefined' && lArrayEstado[si*30+17+sj] != '') { 
+			if ( lArrayEstado[si*30+17+sj] != '') { 
 				var strinx = lArrayEstado[si*30+17+sj];
 				var substring = strinx.substr(strinx.length-1);
 				if (substring == '0')
@@ -122,7 +122,7 @@ function compila_sfc(){
 // .tag2 = nome da variavel 2
 // .funcao = nome funcao genérica se tipo igual 8, (MOV,<,>,=,<= e >=).
 function converte_sfc_ladder(){
-inicializa_array();
+	inicializa_array();
 	var linha = 0;
 	var coluna = 0;
 	var linhaAnterior = 0;
@@ -205,5 +205,6 @@ inicializa_array();
 	      }	     
 	      coluna++;		      
 	}
+	alerta('monitora');
 	monitora_ladder();
 }
