@@ -91,13 +91,13 @@ function editar_sfc() {
 				ver_posicao_estado(posicaoXSfc, posicaoYSfc);
 				switch (saida_sfc) {
 					case 'baixo':
-						if (lArrayEstado[numeroEstadoOrigem*30+5] == 'undefined')
+						if (lArrayEstado[numeroEstadoOrigem*30+5] == '')
 							lArrayEstado[numeroEstadoOrigem*30+5] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstadoOrigem*30+6] == 'undefined')
+							if (lArrayEstado[numeroEstadoOrigem*30+6] == '')
 							 	lArrayEstado[numeroEstadoOrigem*30+6] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstadoOrigem*30+4] == 'undefined')
+	      							if (lArrayEstado[numeroEstadoOrigem*30+4] == '')
 							 		lArrayEstado[numeroEstadoOrigem*30+4] =  indexTransicao;
 								else
 									lArrayEstado[numeroEstadoOrigem*30+7] =  indexTransicao;
@@ -105,13 +105,13 @@ function editar_sfc() {
 						}
 					        break;
 					case 'esquerda':
-						if (lArrayEstado[numeroEstadoOrigem*30+3] == 'undefined') 
+						if (lArrayEstado[numeroEstadoOrigem*30+3] == '') 
 							lArrayEstado[numeroEstadoOrigem*30+3] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstadoOrigem*30+4] == 'undefined')
+							if (lArrayEstado[numeroEstadoOrigem*30+4] == '')
 							 	lArrayEstado[numeroEstadoOrigem*30+4] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstadoOrigem*30+5] == 'undefined')
+	      							if (lArrayEstado[numeroEstadoOrigem*30+5] == '')
 							 		lArrayEstado[numeroEstadoOrigem*30+5] =  indexTransicao;
 								else
 									lArrayEstado[numeroEstadoOrigem*30+6] =  indexTransicao;
@@ -119,13 +119,13 @@ function editar_sfc() {
 						}
 						break;
 					case 'direita':
-						if (lArrayEstado[numeroEstadoOrigem*30+8] == 'undefined') 
+						if (lArrayEstado[numeroEstadoOrigem*30+8] == '') 
 							lArrayEstado[numeroEstadoOrigem*30+8] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstadoOrigem*30+7] == 'undefined')
+							if (lArrayEstado[numeroEstadoOrigem*30+7] == '')
 							 	lArrayEstado[numeroEstadoOrigem*30+7] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstadoOrigem*30+6] == 'undefined')
+	      							if (lArrayEstado[numeroEstadoOrigem*30+6] == '')
 							 		lArrayEstado[numeroEstadoOrigem*30+6] =  indexTransicao;
 								else
 									lArrayEstado[numeroEstadoOrigem*30+5] =  indexTransicao;
@@ -135,13 +135,13 @@ function editar_sfc() {
 				}
 				switch (entrada_sfc) {
 					case 'cima':
-						if (lArrayEstado[numeroEstado*30+12] == 'undefined') 
+						if (lArrayEstado[numeroEstado*30+12] == '') 
 							lArrayEstado[numeroEstado*30+12] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstado*30+13] == 'undefined')
+							if (lArrayEstado[numeroEstado*30+13] == '')
 							 	lArrayEstado[numeroEstado*30+13] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstado*30+11] == 'undefined')
+	      							if (lArrayEstado[numeroEstado*30+11] == '')
 							 		lArrayEstado[numeroEstado*30+11] =  indexTransicao;
 								else
 									lArrayEstado[numeroEstado*30+14] =  indexTransicao;
@@ -149,13 +149,13 @@ function editar_sfc() {
 						}
 					        break;
 					case 'esquerda':
-						if (lArrayEstado[numeroEstado*30+9] == 'undefined') 
+						if (lArrayEstado[numeroEstado*30+9] == '') 
 							lArrayEstado[numeroEstado*30+9] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstado*30+10] == 'undefined')
+							if (lArrayEstado[numeroEstado*30+10] == '')
 							 	lArrayEstado[numeroEstado*30+10] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstado*30+11] == 'undefined')
+	      							if (lArrayEstado[numeroEstado*30+11] == '')
 							 		lArrayEstado[numeroEstado*30+11] =  indexTransicao;
 								else
 									lArrayEstado[numeroEstado*30+12] =  indexTransicao;
@@ -163,13 +163,13 @@ function editar_sfc() {
 						}
 					        break;
 					case 'direita':
-						if (lArrayEstado[numeroEstado*30+16] == 'undefined') 
+						if (lArrayEstado[numeroEstado*30+16] == '') 
 							lArrayEstado[numeroEstado*30+16] =  indexTransicao;
 						else {
-							if (lArrayEstado[numeroEstado*30+15] == 'undefined')
+							if (lArrayEstado[numeroEstado*30+15] == '')
 							 	lArrayEstado[numeroEstado*30+15] =  indexTransicao;
 							else {
-	      							if (lArrayEstado[numeroEstado*30+14] == 'undefined')
+	      							if (lArrayEstado[numeroEstado*30+14] == '')
 							 		lArrayEstado[numeroEstado*30+14] =  indexTransicao;
 								else
 									lArrayEstado[numeroEstado*30+13] =  indexTransicao;
