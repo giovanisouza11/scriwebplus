@@ -177,7 +177,7 @@ function editar_sfc() {
 						}
 					        break;
 				}
-				for(var i=0; i<20, i++)
+				for(var i=0; i<20; i++)
 					lArrayTransicao[indexTransicao*20+i] = '';
 				lArrayTransicao[indexTransicao*20] =  numeroEstadoOrigem;
 				lArrayTransicao[indexTransicao*20+1] =  numeroEstado;
@@ -210,7 +210,7 @@ function editar_sfc() {
 		var tag;
 		if (lFuncaoSfc==4) {
 			IFigura.style.display = "none";
-			for(var i=0; i<30, i++)
+			for(var i=0; i<30; i++)
 				lArrayEstado[indexEstado*20+i] = '';
 			lArrayEstado[indexEstado*30] = posicaoYSfc +' '+ posicaoXSfc ;
 			lArrayEstado[indexEstado*30+1] =  indexEstado;
