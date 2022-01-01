@@ -308,7 +308,7 @@ function draw_sfc(fileArr) {
 	for (var i=1; i<fileArr.length; i++) {
 		var fileLine = fileArr[i].split(',');
 		var tamanho_array_sfc= fileLine.length;
-		alert(fileArr.length);
+		//alert(fileArr.length);
 		if (tamanho_array_sfc ==31){
 			sfcString = fileLine[0];
 			indexSfcString =  sfcString.indexOf(" ");
@@ -317,7 +317,7 @@ function draw_sfc(fileArr) {
 			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
 			indexEstado = fileLine[1];
 			var tamanho = parseInt(fileLine[26]);
-			if (fileLine[25] != '' ) // "undefined" || fileLine[25] == '')
+			if (fileLine[25] != '' ) 
 				draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',tamanho);
 			else	
 				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',tamanho);
@@ -326,14 +326,14 @@ function draw_sfc(fileArr) {
 			for(var j=0; j<tamanho_array_sfc; j++)
 				lArrayEstado[fileLine[1]*30+j] = fileLine[j];
 			for(var j=0; j<4; j++){
-				if (fileLine[17+j] != '') // "undefined")
+				if (fileLine[17+j] != '') 
 					contextSfc.fillText(fileLine[17+j],posicaoXSfc*60+10, posicaoYSfc*60+12+j*10);
-				if (fileLine[20+j] != '') //"undefined")
+				if (fileLine[20+j] != '') 
 					contextSfc.fillText(fileLine[20+j],posicaoXSfc*60+70, posicaoYSfc*60+12+j*10);
 
 			}
 			indexEstado++;
-			if (fileLine[2] != '')// "undefined")
+			if (fileLine[2] != '')
 				contextSfc.fillText(fileLine[2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 		}
 		if (tamanho_array_sfc ==21) {
