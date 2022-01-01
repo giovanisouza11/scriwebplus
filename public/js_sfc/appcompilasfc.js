@@ -208,5 +208,5 @@ function converte_sfc_ladder(){
 	      coluna++;		      
 	}
 	//alerta('monitora');
-	monitora_ladder();*/
+	monitora_ladder();
 }
