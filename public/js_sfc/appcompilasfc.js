@@ -123,7 +123,7 @@ function compila_sfc(){
 // .funcao = nome funcao genérica se tipo igual 8, (MOV,<,>,=,<= e >=).
 function converte_sfc_ladder(){
 	//inicializa_array();
-/*	var linha = 0;
+	var linha = 0;
 	var coluna = 0;
 	var linhaAnteriorSfc = 0;
 	var maximoColuna = 0;
@@ -141,7 +141,7 @@ function converte_sfc_ladder(){
 				     maximoLinha = linha;
 				     linha = linhaAnteriorSfc;
 				     if (coluna <7)
-					     for(var csl1=maximoColuna, csl1<8, csl1++)
+					     for(var csl1=maximoColuna; csl1<8; csl1++)
 						     larray[linha*8*9+csl1*9+3] = 11;
 				     maximoColuna= 0;
 			     }
