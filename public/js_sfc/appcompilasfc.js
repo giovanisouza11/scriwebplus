@@ -17,7 +17,7 @@ function compila_sfc(){
 	var index_bool = 0;
 	var transicaoLocalSfc;
 
- 	//alert('antes while'); 
+ 	alert('antes while'); 
 	
 	while( si < ((lArrayEstado.length/30)-1)) {
 		
