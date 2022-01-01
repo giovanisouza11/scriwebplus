@@ -25,7 +25,7 @@ function compila_sfc(){
 			transicaoLocalSfc = lArrayEstado[si*30+9+sj];
 			alert('dentro do while e for');
 			if( transicaoLocalSfc != ''){
-				o estado anterior
+				//o estado anterior
 				if ( lArrayTransicao[transicaoLocalSfc*20] != '-1') {
 					booleano[index_bool] = 'LD';
 					index_bool++;			
@@ -208,5 +208,5 @@ function converte_sfc_ladder(){
 	      coluna++;		      
 	}
 	//alerta('monitora');
-	//monitora_ladder();
+	monitora_ladder();
 }
