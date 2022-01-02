@@ -136,7 +136,9 @@ function converte_sfc_ladder(){
 		switch (booleano[csl]){
 		      case 'LD': 
 			      // caso ser LD é um inicio de linha ou um fim de o operando "R"
-			     if (booleano[csl+1].charAt(0) == 'R'){
+			      alert('LD');
+	
+				if (booleano[csl+1].charAt(0) == 'R'){
 				     for(var csl1=linhaAnteriorSfc; csl1 < linha; csl1++)
 					larray[csl1*8*9+maximoColuna*9+5] = 1;
 				     maximoLinha = linha;
@@ -162,6 +164,7 @@ function converte_sfc_ladder(){
 			     }
 			     break;			
 		      case 'AND':
+			     alert('AND');
 			     larray[linha*8*9+coluna*9] = coluna + linha*10;
 			     larray[linha*8*9+coluna*9+ 1] = '';
 			     larray[linha*8*9+coluna*9+2] = booleano[csl+1];
@@ -174,6 +177,7 @@ function converte_sfc_ladder(){
 			     csl++;
 			     break;			
 			case 'ANDN':
+		              alert('ANDN');
 			     larray[linha*8*9+coluna*9] = coluna + linha*10;
 			     larray[linha*8*9+coluna*9+ 1] = '';
 			     larray[linha*8*9+coluna*9+2] = booleano[csl+1];
@@ -186,6 +190,7 @@ function converte_sfc_ladder(){
 			     csl++;
 			     break;
 		      case 'SET':
+			      alert('SET');
 			      if(maximoLinha > linha) {
 				larray[linha*8*9+7*9] = coluna + linha*10;
 			     	larray[linha*8*9+7*9+ 1] = '';
