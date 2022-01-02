@@ -203,7 +203,6 @@ function converte_sfc_ladder(){
 			     		larray[linha*8*9+7*9+6] = 0;
 			     		larray[linha*8*9+7*9+7] = '';
 			     		larray[linha*8*9+7*9+8] = '';
-			     		csl++;
 					linha ++;
 				}
 			    	else {
@@ -218,7 +217,7 @@ function converte_sfc_ladder(){
 				csl++;
 		}	     
 	    	coluna++;	
-		alert(larray);
+		//alert(larray);
 	}
 	//alerta('monitora');
 	//alert('COLUNA' + coluna);
