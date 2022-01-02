@@ -132,7 +132,7 @@ function converte_sfc_ladder(){
 	//alert('entrou');
 	//varre toda o array BOOLEANO
 	for( var csl=0; csl<booleano.length; csl++){
-	      	alert(booleano[csl]);
+	      	//alert(booleano[csl]);
 		switch (booleano[csl]){
 		      case 'LD': 
 			      // caso ser LD é um inicio de linha ou um fim de o operando "R"
@@ -216,6 +216,6 @@ function converte_sfc_ladder(){
 		    texto += larray[(i*9)+j]+',';
 		texto += '\n';
 	}
-	monitora_ladder();
+	//monitora_ladder();
 	
 }
