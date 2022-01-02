@@ -129,10 +129,10 @@ function converte_sfc_ladder(){
 	var linhaAnteriorSfc = 0;
 	var maximoColuna = 0;
 	var maximoLinha=0;
-	alert('entrou');
+	//alert('entrou');
 	//varre toda o array BOOLEANO
 	for( var csl=0; csl<booleano.length; csl++){
-	      alert(booleano[csl]);
+	      	alert(booleano[csl]);
 		switch (booleano[csl]){
 		      case 'LD': 
 			      // caso ser LD é um inicio de linha ou um fim de o operando "R"
@@ -209,6 +209,7 @@ function converte_sfc_ladder(){
 	      coluna++;		      
 	}
 	//alerta('monitora');
+	alert('saiu');
 	for (var i=0; i<(larray.length/9); i++) {
 		for (var j=0; j<9; j++)
 		    texto += larray[(i*9)+j]+',';
