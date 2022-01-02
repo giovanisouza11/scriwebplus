@@ -213,22 +213,22 @@ function converte_sfc_ladder(){
 			    	}
 				csl++;
 			    	break;
-			default:
+			/*default:
 				larray[linha*8*9+coluna*9]= 'ERRO';
-				csl++;
+				csl++;*/
 		}	     
 	    	coluna++;	
 		alert(larray);
 	}
 	//alerta('monitora');
-	alert('COLUNA' + coluna);
-	alert('saiu ' + larray.length);
-/*	var texto = '';
+	//alert('COLUNA' + coluna);
+	//alert('saiu ' + larray.length);
+	var texto = '';
 	for (var i=0; i<(larray.length/9); i++) {
 		for (var j=0; j<9; j++)
 		    texto += larray[(i*9)+j]+',';
 		texto += '\n';
-	} */
-	//monitora_ladder();
+	} 
+	monitora_ladder();
 	
 }
