@@ -148,6 +148,7 @@ function converte_sfc_ladder(){
 					     for(var csl1=maximoColuna; csl1<8; csl1++)
 						     larray[linha*8*9+csl1*9+3] = 11;
 				     	maximoColuna= 0;
+					csl++;
 			    	}
 			    	else {
 			     		coluna = 0;
@@ -210,9 +211,11 @@ function converte_sfc_ladder(){
 			      		if (coluna > maximoColuna)
 			      			maximoColuna = coluna;
 			    	}
+				csl++;
 			    	break;
 			default:
 				larray[linha*8*9+coluna*9]= 'ERRO';
+				csl++;
 		}	     
 	    	coluna++;	
 		alert(larray);
