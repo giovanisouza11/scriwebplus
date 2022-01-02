@@ -131,7 +131,7 @@ function converte_sfc_ladder(){
 	var maximoLinha=0;
 	//alert('entrou');
 	//varre toda o array BOOLEANO
-	for( var csl=0; csl<booleano.length; csl++){
+	for( var csl=0; csl<booleano.length; csl++) {
 	      	//alert(booleano[csl]);
 		switch (booleano[csl]){
 		      case 'LD': 
@@ -205,6 +205,8 @@ function converte_sfc_ladder(){
 			      		maximoColuna = coluna;
 			      	}
 			      break;
+			default:
+				larray[linha*8*9+coluna*9]= 'ERRO';
 	      }	     
 	      coluna++;		      
 	}
