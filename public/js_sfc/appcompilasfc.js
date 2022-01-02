@@ -217,6 +217,7 @@ function converte_sfc_ladder(){
 		alert('coluna' + coluna);
 	}
 	//alerta('monitora');
+	alert('COLUNA' + coluna);
 	alert('saiu ' + larray.length);
 /*	var texto = '';
 	for (var i=0; i<(larray.length/9); i++) {
