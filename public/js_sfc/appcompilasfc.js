@@ -214,7 +214,7 @@ function converte_sfc_ladder(){
 				larray[linha*8*9+coluna*9]= 'ERRO';
 		}	     
 	    	coluna++;	
-		alert('coluna' + coluna);
+		alert('csl ' + csl);
 	}
 	//alerta('monitora');
 	alert('COLUNA' + coluna);
