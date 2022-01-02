@@ -17,7 +17,7 @@ function compila_sfc(){
 	var index_bool = 0;
 	var transicaoLocalSfc;
 
- 	alert('antes while'); 
+ 	//alert('antes while'); 
 	
 	while( si < ((lArrayEstado.length/30)-1)) {
 		
@@ -123,6 +123,7 @@ function compila_sfc(){
 // .funcao = nome funcao genérica se tipo igual 8, (MOV,<,>,=,<= e >=).
 function converte_sfc_ladder(){
 	inicializa_array();
+	compila_sfc();
 	var linha = 0;
 	var coluna = 0;
 	var linhaAnteriorSfc = 0;
@@ -131,7 +132,7 @@ function converte_sfc_ladder(){
 	alert('entrou');
 	//varre toda o array BOOLEANO
 	for( var csl=0; csl<booleano.length; csl++){
-	      //alert('entrou for');
+	      alert(booleano[csl]);
 		switch (booleano[csl]){
 		      case 'LD': 
 			      // caso ser LD é um inicio de linha ou um fim de o operando "R"
