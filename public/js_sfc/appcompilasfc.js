@@ -153,6 +153,7 @@ function converte_sfc_ladder(){
 			    	else {
 			     		coluna = 0;
 					linha  = maximoLinha;
+					alert('coluna '+coluna+' Linha '+linha);
 					larray[linha*8*9+coluna*9] = coluna + linha*10;
 			    		larray[linha*8*9+coluna*9+ 1] = '';
 			    		larray[linha*8*9+coluna*9+2] = booleano[csl+1];
@@ -167,6 +168,8 @@ function converte_sfc_ladder(){
 			    	break;			
 		   	case 'AND':
 			    	//alert('AND');
+				
+				alert('coluna '+coluna+' Linha '+linha);
 			    	larray[linha*8*9+coluna*9] = coluna + linha*10;
 			   	larray[linha*8*9+coluna*9+ 1] = '';
 			    	larray[linha*8*9+coluna*9+2] = booleano[csl+1];
@@ -180,7 +183,9 @@ function converte_sfc_ladder(){
 			    	break;			
 			case 'ANDN':
 		        	//alert('ANDN');
-			    	larray[linha*8*9+coluna*9] = coluna + linha*10;
+			    	
+				alert('coluna '+coluna+' Linha '+linha);
+				larray[linha*8*9+coluna*9] = coluna + linha*10;
 			    	larray[linha*8*9+coluna*9+ 1] = '';
 			    	larray[linha*8*9+coluna*9+2] = booleano[csl+1];
 			    	larray[linha*8*9+coluna*9+3] = 2;
@@ -193,7 +198,9 @@ function converte_sfc_ladder(){
 			    	break;
 		    	case 'SET':
 			    	//alert('SET');
-			   	if(maximoLinha > linha) {
+			   	
+				alert('coluna '+coluna+' Linha '+linha);
+				if(maximoLinha > linha) {
 					larray[linha*8*9+7*9] = coluna + linha*10;
 			     		larray[linha*8*9+7*9+ 1] = '';
 			     		larray[linha*8*9+7*9+2] = booleano[csl+1];
@@ -214,6 +221,8 @@ function converte_sfc_ladder(){
 			    	break;
 			default:
 				//larray[linha*8*9+coluna*9]= 'ERRO';
+				
+				alert('ERRO');
 				csl++;
 		}	     
 	    	coluna++;	
