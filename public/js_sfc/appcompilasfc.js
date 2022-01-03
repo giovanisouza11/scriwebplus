@@ -165,6 +165,7 @@ function converte_sfc_ladder(){
 			    		larray[linha*8*9+coluna*9+7] = '';
 			    		larray[linha*8*9+coluna*9+8] = '';
 			    		csl++;
+					coluna++;
 			    	}
 			    	break;			
 		   	case 'AND':
@@ -181,6 +182,7 @@ function converte_sfc_ladder(){
 			    	larray[linha*8*9+coluna*9+7] = '';
 			    	larray[linha*8*9+coluna*9+8] = '';
 			    	csl++;
+				coluna++;
 			    	break;			
 			case 'ANDN':
 		        	//alert('ANDN');
@@ -196,6 +198,7 @@ function converte_sfc_ladder(){
 			    	larray[linha*8*9+coluna*9+7] = '';
 			    	larray[linha*8*9+coluna*9+8] = '';
 			    	csl++;
+				coluna++;
 			    	break;
 		    	case 'SET':
 			    	//alert('SET');
@@ -215,7 +218,7 @@ function converte_sfc_ladder(){
 				}
 			    	else {
 			      		linha++;
-			      		if (coluna > maximoColuna)
+					if (coluna > maximoColuna)
 			      			maximoColuna = coluna;
 			    	}
 				csl++;
@@ -228,7 +231,7 @@ function converte_sfc_ladder(){
 					larray[linha*8*9+7*9] = coluna + linha*10;
 			     		larray[linha*8*9+7*9+ 1] = '';
 			     		larray[linha*8*9+7*9+2] = booleano[csl+1];
-			     		larray[linha*8*9+7*9+3] = 4;
+			     		larray[linha*8*9+7*9+3] = 5;
 			     		larray[linha*8*9+7*9+4] = '';
 			     		larray[linha*8*9+7*9+5] = 0;
 			     		larray[linha*8*9+7*9+6] = 0;
@@ -245,11 +248,10 @@ function converte_sfc_ladder(){
 			    	break;
 			default:
 				//larray[linha*8*9+coluna*9]= 'ERRO';
-				
 				alert('ERRO');
 				csl++;
 		}	     
-	    	coluna++;	
+	    	//coluna++;	
 		//alert(larray);
 	}
 	//alerta('monitora');
