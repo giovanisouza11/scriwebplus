@@ -948,7 +948,7 @@ function monitora_sfc() {
 	var sfcString;
 	var indexSfcString;
 	var tamanhoSfcString;
-
+	draw_sfc_fundo(0);
 	for(var i=0; i < ((lArrayEstado.length/30)-1); i++) {
 		sfcString = fileLine[0];
 		indexSfcString =  sfcString.indexOf(" ");
