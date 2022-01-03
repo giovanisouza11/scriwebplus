@@ -171,7 +171,7 @@ function converte_sfc_ladder(){
 		   	case 'AND':
 			    	//alert('AND');
 				
-				alert('coluna '+coluna+' Linha '+linha);
+				//alert('coluna '+coluna+' Linha '+linha);
 			    	larray[linha*8*9+coluna*9] = coluna + linha*10;
 			   	larray[linha*8*9+coluna*9+ 1] = '';
 			    	larray[linha*8*9+coluna*9+2] = booleano[csl+1];
@@ -187,7 +187,7 @@ function converte_sfc_ladder(){
 			case 'ANDN':
 		        	//alert('ANDN');
 			    	
-				alert('coluna '+coluna+' Linha '+linha);
+				//alert('coluna '+coluna+' Linha '+linha);
 				larray[linha*8*9+coluna*9] = coluna + linha*10;
 			    	larray[linha*8*9+coluna*9+ 1] = '';
 			    	larray[linha*8*9+coluna*9+2] = booleano[csl+1];
