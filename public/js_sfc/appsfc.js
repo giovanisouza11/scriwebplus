@@ -963,7 +963,7 @@ function monitora_sfc() {
         	for(var j=0; j<4; j++){
 			if (lArrayEstado[30*i+17+j] != '') 
 				contextSfc.fillText(lArrayEstado[30*i+17+j],posicaoXSfc*60+10, posicaoYSfc*60+12+j*10);
-			if (fileLine[20+j] != '') 
+			if (lArrayEstado[30*i+20+j] != '') 
 				contextSfc.fillText(lArrayEstado[30*i+20+j],posicaoXSfc*60+70, posicaoYSfc*60+12+j*10);
 
 		}
@@ -983,7 +983,7 @@ function monitora_sfc() {
 			estadoY0 = sfcString.substr(0, indexSfcString);
 			estadoX0 = sfcString.substr(indexSfcString, tamanhoSfcString);
 		}
-		numeroEstado = lArrayTransicao[20*i];
+		numeroEstado = lArrayTransicao[20*i+1];
 		sfcString = lArrayEstado[numeroEstado*30];
 		indexSfcString = sfcString.indexOf(" ");
 		tamanhoSfcString = sfcString.length;
