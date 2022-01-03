@@ -948,7 +948,7 @@ function monitora_sfc() {
 	var indexSfcString;
 	var tamanhoSfcString;
 	draw_sfc_fundo(0);
-	for(var i=0; i < ((lArrayEstado.length/30)); i++) {
+	for(var i=0; i < ((lArrayEstado.length/30)-1); i++) {
 		sfcString = lArrayEstado[30*i];
 		indexSfcString =  sfcString.indexOf(" ");
 		tamanhoSfcString = sfcString.length;
@@ -972,7 +972,7 @@ function monitora_sfc() {
 
 	}
 	localSfc = 0;
-	for(var i; i < ((lArrayTransicao.length/20)); i++) {
+	for(var i; i < ((lArrayTransicao.length/20)-1); i++) {
 		//verificaTransicao(si);
 		//desenhaTransicao();
 		numeroEstadoOrigem = lArrayTransicao[20*i];
