@@ -204,7 +204,7 @@ function converte_sfc_ladder(){
 			    	//alert('SET');
 			   	
 				alert('coluna '+coluna+' Linha '+linha);
-				if(maximoLinha > linha) {
+				if(coluna == 6) {
 					larray[linha*8*9+7*9] = coluna + linha*10;
 			     		larray[linha*8*9+7*9+ 1] = '';
 			     		larray[linha*8*9+7*9+2] = booleano[csl+1];
