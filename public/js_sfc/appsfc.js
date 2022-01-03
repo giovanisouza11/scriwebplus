@@ -943,7 +943,7 @@ function monitora_sfc() {
 	var localSfc;
 	contextSfc.font = '9pt Arial';
 	var posicaoXSfc;
-	var posicaoYSfc
+	var posicaoYSfc;
 	var indexTransicaoLocal = 0;
 	var sfcString;
 	var indexSfcString;
@@ -991,7 +991,7 @@ function monitora_sfc() {
 		posicaoYSfc = parseInt(sfcString.substr(0, indexSfcString));
 		posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
 			
-		draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, "red");
+		draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, 'red');
 		for(var j=0; j<6; j++)
 			if (lArrayTransicao[20*i+2+j] != '') {
 				posicao_sfc(localSfc);
