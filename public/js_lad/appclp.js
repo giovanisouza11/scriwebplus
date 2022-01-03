@@ -67,6 +67,7 @@ function clp_AtualizaPorTempo() {
 			liga_led_CLP();
 			if (comandos != 0) {
 				monitora_ladder();
+				monitora_sfc();
 			};
 		}
 	}
