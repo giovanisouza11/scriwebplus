@@ -944,23 +944,22 @@ function monitora_sfc() {
 	contextSfc.font = '9pt Arial';
 	var posicaoXSfc;
 	var posicaoYSfc;
-	var indexTransicaoLocal = 0;
 	var sfcString;
 	var indexSfcString;
 	var tamanhoSfcString;
 	draw_sfc_fundo(0);
 	for(var i=0; i < ((lArrayEstado.length/30)-1); i++) {
-		sfcString = fileLine[0];
+		sfcString = lArrayEstado[30*i];
 		indexSfcString =  sfcString.indexOf(" ");
 		tamanhoSfcString = sfcString.length;
 		posicaoYSfc = sfcString.substr(0, indexSfcString);
 		posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
-		localSfc = lArrayEstado[30*i];
+		localSfc = lArrayEstado[30*i+1];
 		var tamanho = parseInt(lArrayEstado[30*i+26]);
 		if (lArrayEstado[30*i+25] != '' ) 
-			draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i],'red',tamanho);
+			draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i+1],'red',tamanho);
 		else	
-			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i],'red',tamanho);
+			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i+1],'red',tamanho);
         	for(var j=0; j<4; j++){
 			if (lArrayEstado[30*i+17+j] != '') 
 				contextSfc.fillText(lArrayEstado[30*i+17+j],posicaoXSfc*60+10, posicaoYSfc*60+12+j*10);
