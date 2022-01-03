@@ -994,7 +994,7 @@ function monitora_sfc() {
 		for(var j=0; j<6; j++)
 			if (lArrayTransicao[20*i+2+j] != '') {
 				posicao_sfc(localSfc);
-				contextSfc.fillText(fileLine[2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
+				contextSfc.fillText(lArrayTransicao[20*i+2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
 			}
 		localSfc++;
 	}
