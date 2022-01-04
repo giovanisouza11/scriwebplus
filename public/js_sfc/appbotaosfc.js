@@ -142,17 +142,19 @@ function trocar_botao_sfc() {
 		//alert(clp_programa);
 		I = clpI;
 		valor_chave_sfc[3]=0;
+		monitora_sfc();
 	}
 
 	if (valor_chave_sfc[4]==1){
 		comandos = 1;
 		run_CLP();
 		clp_comandos = 1;
+		monitora_sfc();
 	}
 	if (valor_chave_sfc[5]==1){
 		comandos = 0;
 		stop_CLP();
-		monitora_ladder(larray);
+		monitora_sfc();
 		clp_comandos = 0;
 		//socket.emit('comandosx', 0+ ','+  num_clp);
 	}
