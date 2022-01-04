@@ -10,7 +10,7 @@ var contextSfc;
 //                 9-Estado_Destino 1,..,..,..,..,..,..,16-Estado_DEstino8,
 //                 17-Ação1,..,..,..,..,..,..,24-Ação 8,25-se estado 0 númerodememórias, 26-TAMANHO,27-Reserva,28-Reserva,29-Reserva
 var lArrayEstado = new Array();
-// lArrayTransiçao = (Estado origem, 1-estado destino, 2-Condoção 1,..,..,..,..,..,8-Condição 7,9-ponto1,10-ponto2,11-ponto3,12-ponto4,13-ponto5,14ponto6,15-Res,16-Res,17-Res,18-Res,19-res)
+// lArrayTransiçao = (Estado origem, 1-estado destino, 2-Condoção 1,..,..,..,..,7-Condicao 6,..,9-ponto1,10-ponto2,11-ponto3,12-ponto4,13-ponto5,14ponto6,15-Res,16-Res,17-Res,18-Res,19-res)
 var lArrayTransicao = new Array();
 var estadoX0;
 var estadoY0;
@@ -21,7 +21,7 @@ var indexTransicao = 0;
 var saida_sfc;
 var entrada_sfc;
 var resultado= [0,0,0,0];
-var auxiliar_sfc = [0,1,2,3,4,0,1,2,3];
+var auxiliar_sfc = [0,0,0,0,0,0,0,0,0,0];
 //=====================================================================================
 //Inicializa Canvas
 //Desenha area de trabalho em branco
@@ -684,7 +684,7 @@ function entrada_input_sfc(event){
 		if (lFuncaoSfc < 3) {
 			posicao_sfc(auxIndexTransicao);
 			//alert(auxIndexTransicao);
-			if (emEdicao == 7) {
+			/*if (emEdicao == 7) {
 				lArrayTransicao[auxIndexTransicao*20+8] = tag;
 				contextSfc.fillStyle = 'white';
 				//contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2)+1)*60, (estadoY0+((posicaoYSfc-estadoY0)/2)+1)*60+50, 20, 10);
@@ -695,18 +695,23 @@ function entrada_input_sfc(event){
 				ICampo.style.left = "100px";
 				CInput.blur();
 				emEdicao = 0;
-			}
+			}*/
 			if (emEdicao == 6) {
 				lArrayTransicao[auxIndexTransicao*20+7] = tag;
 				contextSfc.fillStyle = 'white';
 				//contextSfc.rect((estadoX0+((posicaoXSfc-estadoX0)/2)+1)*60, (estadoY0+((posicaoYSfc-estadoY0)/2)+1)*60+42, 20, 10);
 				contextSfc.fillStyle = 'red';
 				contextSfc.fillText(tag,(resultado[0]+resultado[2])/2+10, (resultado[1]+resultado[3])/2+20);
-				document.getElementById("label_input").innerHTML = "Condição 7:";
-				document.getElementById('input_ladder').value = lArrayTransicao[auxIndexTransicao*20+8];
-				if (lArrayTransicao[auxIndexTransicao*20+8] == '' )
-					document.getElementById('input_ladder').value ="";
-				emEdicao = 7;
+				//document.getElementById("label_input").innerHTML = "Condição 7:";
+				//document.getElementById('input_ladder').value = lArrayTransicao[auxIndexTransicao*20+8];
+				//if (lArrayTransicao[auxIndexTransicao*20+8] == '' )
+				//	document.getElementById('input_ladder').value ="";
+				//emEdicao = 7;
+				ICampo.style.display = "none";
+				ICampo.style.top = "680px";
+				ICampo.style.left = "100px";
+				CInput.blur();
+				emEdicao = 0;
 			}
 			if (emEdicao == 5) {
 				lArrayTransicao[auxIndexTransicao*20+6] = tag;
@@ -973,7 +978,7 @@ function monitora_sfc() {
 			}
 		}
 		if (lArrayEstado[30*i+2] != ''){
-			contextSfc.fillStyle = cor_sfc[auxiliar_sfc[9]];
+			contextSfc.fillStyle = cor_sfc[auxiliar_sfc[0]];
 			contextSfc.fillText(lArrayEstado[30*i+2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 		}
 	}
