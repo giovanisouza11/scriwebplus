@@ -1016,7 +1016,12 @@ function monitora_sfc() {
 function verificaEstado(apontEstado){
 	auxiliar_sfc[0] =  endereço(lArrayEstado[apontEstado]);
 	for (var i=0; i<8; i++) {
-      		auxiliar_sfc[i] = ;
+		var auxData = lArrayEstado[apontEstado*30 + 17 + i];
+		var igual = auxData.indexOf('=');
+		if (ponto == -1)
+			auxiliar_sfc[i] = endereco(auxData);
+		else
+			auxiliar_sfc[i] = endereco(auxData.charAt(igual-1));
 	}
 }
 function verificaTransicao(apontTransicao){
