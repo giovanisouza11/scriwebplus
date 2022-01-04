@@ -21,6 +21,7 @@ var indexTransicao = 0;
 var saida_sfc;
 var entrada_sfc;
 var resultado= [0,0,0,0];
+var auxiliar_sfc = [0,1,2,3,4,0,1,2,3];
 //=====================================================================================
 //Inicializa Canvas
 //Desenha area de trabalho em branco
@@ -947,6 +948,7 @@ function monitora_sfc() {
 	var sfcString;
 	var indexSfcString;
 	var tamanhoSfcString;
+	var cor_sfc = ['silver', 'black','green','red','yellow'];
 	draw_sfc_fundo(0);
 	for(var i=0; i < ((lArrayEstado.length/30)-1); i++) {
 		sfcString = lArrayEstado[30*i];
@@ -957,19 +959,23 @@ function monitora_sfc() {
 		localSfc = lArrayEstado[30*i+1];
 		var tamanho = parseInt(lArrayEstado[30*i+26]);
 		if (lArrayEstado[30*i+25] != '' ) 
-			draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i+1],'red',tamanho);
+			draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i+1],cor_sfc[auxiliar_sfc[0]],tamanho);
 		else	
-			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i+1],'red',tamanho);
+			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i+1],cor_sfc[auxiliar_sfc[0]],tamanho);
         	for(var j=0; j<4; j++){
-			if (lArrayEstado[30*i+17+j] != '') 
+			if (lArrayEstado[30*i+17+j] != ''){ 
+				contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+1]];
 				contextSfc.fillText(lArrayEstado[30*i+17+j],posicaoXSfc*60+10, posicaoYSfc*60+12+j*10);
-			if (lArrayEstado[30*i+20+j] != '') 
+			}
+			if (lArrayEstado[30*i+20+j] != ''){ 
+				contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+4]];
 				contextSfc.fillText(lArrayEstado[30*i+20+j],posicaoXSfc*60+70, posicaoYSfc*60+12+j*10);
-
+			}
 		}
-		if (lArrayEstado[30*i+2] != '')
+		if (lArrayEstado[30*i+2] != ''){
+			contextSfc.fillStyle = cor_sfc[auxiliar_sfc[9]];
 			contextSfc.fillText(lArrayEstado[30*i+2],posicaoXSfc*60+2, posicaoYSfc*60+50);
-
+		}
 	}
 	localSfc = 0;
 	for(var i; i < ((lArrayTransicao.length/20)-1); i++) {
@@ -990,10 +996,11 @@ function monitora_sfc() {
 		posicaoYSfc = parseInt(sfcString.substr(0, indexSfcString));
 		posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
 			
-		draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, 'red');
+		draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, cor_sfc[auxiliar_sfc[0]]);
 		for(var j=0; j<6; j++)
 			if (lArrayTransicao[20*i+2+j] != '') {
 				posicao_sfc(localSfc);
+				contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+1]];
 				contextSfc.fillText(lArrayTransicao[20*i+2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
 			}
 		localSfc++;
