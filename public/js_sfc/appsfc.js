@@ -1025,6 +1025,7 @@ function verificaEstado(apontEstado){
 		else
 			auxiliar_sfc[i] = endereco(auxData.charAt(igual-1));
 		texto2 += ` ` + lArrayEstado[apontEstado*30+17+i] +` ` + auxiliar_sfc[i];
+		alert(texto2);
 	}
 }
 function verificaTransicao(apontTransicao){
