@@ -1014,7 +1014,10 @@ function monitora_sfc() {
 }	
 
 function verificaEstado(apontEstado){
-      auxiliar_sfc = [3,3,3,3,3,3,3,3,3,3];	
+	auxiliar_sfc[0] =  endereço(lArrayEstado[apontEstado]);
+	for (var i=0; i<8; i++) {
+      		auxiliar_sfc[i] = ;
+	}
 }
 function verificaTransicao(apontTransicao){
       auxiliar_sfc = [2,2,2,2,2,2,2];	
