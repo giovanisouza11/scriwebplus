@@ -265,5 +265,4 @@ function converte_sfc_ladder(){
 	} 
 	alert('saiu ' + texto);
 	monitora_ladder();
-	
 }
