@@ -1023,11 +1023,11 @@ function verificaEstado(apontEstado){
 		var auxData = lArrayEstado[apontEstado*30 + 17 + i];
 		var igual = auxData.indexOf('=');
 		if (igual == -1){
-			auxiliar_sfc[i] = endereco(auxData);
+			auxiliar_sfc[i+1] = endereco(auxData);
 			//texto2 += ' ' + auxData +' ' + auxiliar_sfc[i];
 		}
 		else {
-			auxiliar_sfc[i] = endereco(auxData.substring(0,igual));
+			auxiliar_sfc[i+1] = endereco(auxData.substring(0,igual));
 			//texto2 += ' ' + auxData.substring(0,igual) +' ' + auxiliar_sfc[i];
 		}
 		
@@ -1045,12 +1045,12 @@ function verificaTransicao(apontTransicao){
 		var auxData = lArrayTransicao[apontTransicao*20 + 2 + i];
 		var igual = auxData.indexOf('=');
 		if (igual == -1){
-			auxiliar_sfc[i] = endereco(auxData);
-			texto2 += ' ' + auxData +' ' + auxiliar_sfc[i];
+			auxiliar_sfc[i+1] = endereco(auxData);
+			texto2 += ' ' + auxData +' ' + auxiliar_sfc[i+1];
 		}
 		else {
-			auxiliar_sfc[i] = endereco(auxData.substring(0,igual));
-			texto2 += ' ' + auxData.substring(0,igual) +' ' + auxiliar_sfc[i];
+			auxiliar_sfc[i+1] = endereco(auxData.substring(0,igual));
+			texto2 += ' ' + auxData.substring(0,igual) +' ' + auxiliar_sfc[i+1];
 		}
 		
 	}
