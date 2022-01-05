@@ -1025,8 +1025,8 @@ function verificaEstado(apontEstado){
 			texto2 += ' ' + auxData +' ' + auxiliar_sfc[i];
 		}
 		else {
-			auxiliar_sfc[i] = endereco(auxData.charAt(igual-1));
-			texto2 += ' ' + auxData.charAt(igual-1) +' ' + auxiliar_sfc[i];
+			auxiliar_sfc[i] = endereco(auxData.substring(0,igual-1));
+			texto2 += ' ' + auxData.substring(0,igual-1) +' ' + auxiliar_sfc[i];
 		}
 		
 	}
