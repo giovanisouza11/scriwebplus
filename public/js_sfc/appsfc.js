@@ -1020,11 +1020,13 @@ function verificaEstado(apontEstado){
 	for (var i=0; i<8; i++) {
 		var auxData = lArrayEstado[apontEstado*30 + 17 + i];
 		var igual = auxData.indexOf('=');
-		if (igual == -1)
+		if (igual == -1){
 			auxiliar_sfc[i] = endereco(auxData);
-		else
+			texto2 += ' ' + auxData +' ' + auxiliar_sfc[i];
+		}
+		else {
 			auxiliar_sfc[i] = endereco(auxData.charAt(igual-1));
-		texto2 += ' ' + lArrayEstado[apontEstado*30+17+i] +' ' + auxiliar_sfc[i];
+			texto2 += ' ' + auxData.charAt(igual-1) +' ' + auxiliar_sfc[i];
 		
 	}
 	alert(texto2);
