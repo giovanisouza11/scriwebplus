@@ -1003,12 +1003,14 @@ function monitora_sfc() {
 		posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
 		verificaTransicao(i);	
 		draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, cor_sfc[auxiliar_sfc[0]]);
-		for(var j=0; j<6; j++)
+		for(var j=0; j<6; j++){
+posicao_sfc(i);
 			if (lArrayTransicao[20*i+2+j] != '') {
-				posicao_sfc(localSfc);
+				//posicao_sfc(localSfc);
 				contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+1]];
 				contextSfc.fillText(lArrayTransicao[20*i+2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
 			}
+}
 		localSfc++;
 	}
 }	
