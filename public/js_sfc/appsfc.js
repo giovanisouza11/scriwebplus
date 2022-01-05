@@ -963,7 +963,7 @@ function monitora_sfc() {
 		posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
 		localSfc = lArrayEstado[30*i+1];
 		var tamanho = parseInt(lArrayEstado[30*i+26]);
-		verificaEstado(lArrayEstado[30*i+1]);
+		verificaEstado(i);
 		if (lArrayEstado[30*i+25] != '' ) 
 			draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i+1],cor_sfc[auxiliar_sfc[0]],tamanho);
 		else	
@@ -984,7 +984,7 @@ function monitora_sfc() {
 		}
 	}
 	localSfc = 0;
-	for(var i; i < ((lArrayTransicao.length/20)-1); i++) {
+	for(var i=0; i < ((lArrayTransicao.length/20)-1); i++) {
 		//verificaTransicao(si);
 		//desenhaTransicao();
 		numeroEstadoOrigem = lArrayTransicao[20*i];
@@ -1001,7 +1001,7 @@ function monitora_sfc() {
 		tamanhoSfcString = sfcString.length;
 		posicaoYSfc = parseInt(sfcString.substr(0, indexSfcString));
 		posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
-		verificaTransicao(localSfc);	
+		verificaTransicao(i);	
 		draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, cor_sfc[auxiliar_sfc[0]]);
 		for(var j=0; j<6; j++)
 			if (lArrayTransicao[20*i+2+j] != '') {
@@ -1015,8 +1015,8 @@ function monitora_sfc() {
 
 function verificaEstado(apontEstado){
 	var texto2 = 'Estado '+ apontEstado;
-	auxiliar_sfc[0] =  endereço(lArrayEstado[apontEstado]);
-	texto2 += lArrayEstado[apontEstado]+' ' + auxiliar_sc[0];
+	auxiliar_sfc[0] =  endereco(lArrayEstado[apontEstado]);
+	texto2 += lArrayEstado[apontEstado]+' ' + auxiliar_sfc[0];
 	for (var i=0; i<8; i++) {
 		var auxData = lArrayEstado[apontEstado*30 + 17 + i];
 		var igual = auxData.indexOf('=');
