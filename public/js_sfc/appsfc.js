@@ -953,7 +953,7 @@ function monitora_sfc() {
 	var sfcString;
 	var indexSfcString;
 	var tamanhoSfcString;
-	var cor_sfc = ['black','green','red','yellow'];
+	var cor_sfc = ['silver', 'black','green','red','yellow'];
 	draw_sfc_fundo(0);
 	for(var i=0; i < ((lArrayEstado.length/30)-1); i++) {
 		sfcString = lArrayEstado[30*i];
@@ -1014,11 +1014,33 @@ function monitora_sfc() {
 }	
 
 function verificaEstado(apontEstado){
-	var texto2 = 'Estado '+ apontEstado;
+	//var texto2 = 'Estado '+ apontEstado;
 	auxiliar_sfc[0] =  endereco(lArrayEstado[apontEstado*30+2]);
-	texto2 += lArrayEstado[apontEstado*30+2]+' ' + auxiliar_sfc[0];
+	//texto2 += lArrayEstado[apontEstado*30+2]+' ' + auxiliar_sfc[0];
 	for (var i=0; i<8; i++) {
 		var auxData = lArrayEstado[apontEstado*30 + 17 + i];
+		var igual = auxData.indexOf('=');
+		if (igual == -1){
+			auxiliar_sfc[i] = endereco(auxData);
+			//texto2 += ' ' + auxData +' ' + auxiliar_sfc[i];
+		}
+		else {
+			auxiliar_sfc[i] = endereco(auxData.substring(0,igual));
+			//texto2 += ' ' + auxData.substring(0,igual) +' ' + auxiliar_sfc[i];
+		}
+		
+	}
+	//alert(texto2);
+}
+function verificaTransicao(apontTransicao){
+	var texto2 = 'Transicao '+ apontTransicao;
+	if (lArrayTransicao[apontTransicao*20] > -1)
+		auxiliar_sfc[0] =  endereco(lArrayEstado[lArrayTransicao[apontTransicao*20]+2]);
+	else
+		auxiliar_sfc[0] = 2;
+	texto2 += ' ' + auxiliar_sfc[0];
+	for (var i=0; i<6; i++) {
+		var auxData = lArrayTransicao[apontTransicao*20 + 2 + i];
 		var igual = auxData.indexOf('=');
 		if (igual == -1){
 			auxiliar_sfc[i] = endereco(auxData);
@@ -1031,9 +1053,7 @@ function verificaEstado(apontEstado){
 		
 	}
 	alert(texto2);
-}
-function verificaTransicao(apontTransicao){
-      auxiliar_sfc = [2,2,2,2,2,2,2];	
+      //auxiliar_sfc = [2,2,2,2,2,2,2];	
 }
 
 
