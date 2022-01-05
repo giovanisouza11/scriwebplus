@@ -990,14 +990,14 @@ function monitora_sfc() {
 		numeroEstadoOrigem = lArrayTransicao[20*i];
 		if (numeroEstadoOrigem >(-1)) {
 			sfcString = lArrayEstado[numeroEstadoOrigem*30];
-			indexSfcString = sfcString.indexOf(" ");
+			indexSfcString = sfcString.indexOf(' ');
 			tamanhoSfcString = sfcString.length;
 			estadoY0 = sfcString.substr(0, indexSfcString);
 			estadoX0 = sfcString.substr(indexSfcString, tamanhoSfcString);
 		}
 		numeroEstado = lArrayTransicao[20*i+1];
 		sfcString = lArrayEstado[numeroEstado*30];
-		indexSfcString = sfcString.indexOf(" ");
+		indexSfcString = sfcString.indexOf(' ');
 		tamanhoSfcString = sfcString.length;
 		posicaoYSfc = parseInt(sfcString.substr(0, indexSfcString));
 		posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
