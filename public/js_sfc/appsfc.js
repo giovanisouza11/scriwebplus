@@ -946,7 +946,7 @@ function posicao_sfc(transicao) {
 // Apos RUN e STOP do CLP
 //=====================================================================================
 function monitora_sfc() {
-	var localSfc;
+	//var localSfc;
 	contextSfc.font = '9pt Arial';
 	var posicaoXSfc;
 	var posicaoYSfc;
@@ -961,7 +961,7 @@ function monitora_sfc() {
 		tamanhoSfcString = sfcString.length;
 		posicaoYSfc = sfcString.substr(0, indexSfcString);
 		posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
-		localSfc = lArrayEstado[30*i+1];
+		//localSfc = lArrayEstado[30*i+1];
 		var tamanho = parseInt(lArrayEstado[30*i+26]);
 		verificaEstado(i);
 		if (lArrayEstado[30*i+25] != '' ) 
@@ -983,7 +983,7 @@ function monitora_sfc() {
 			contextSfc.fillText(lArrayEstado[30*i+2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 		}
 	}
-	localSfc = 0;
+	//localSfc = 0;
 	for(var i=0; i < ((lArrayTransicao.length/20)-1); i++) {
 		//verificaTransicao(si);
 		//desenhaTransicao();
@@ -1004,14 +1004,14 @@ function monitora_sfc() {
 		verificaTransicao(i);	
 		draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, cor_sfc[auxiliar_sfc[0]]);
 		for(var j=0; j<6; j++){
-posicao_sfc(i);
+			posicao_sfc(i);
 			if (lArrayTransicao[20*i+2+j] != '') {
 				//posicao_sfc(localSfc);
 				contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+1]];
 				contextSfc.fillText(lArrayTransicao[20*i+2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
 			}
-}
-		localSfc++;
+		}
+		//localSfc++;
 	}
 }	
 
