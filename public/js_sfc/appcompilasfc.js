@@ -46,13 +46,20 @@ function compila_sfc(){
 						var  strinx = lArrayTransicao[transicaoLocalSfc*20+2+sz];
 						var igual = strinx.indexOf('=');
 						var substring = strinx.substring(igual+1,strinx.length-1);
-						if (substring == '0')
-							booleano[index_bool] = 'ANDN';
-						else
+						if (igual > (-1)){
+							if (substring == '0')
+								booleano[index_bool] = 'ANDN';
+							else
+								booleano[index_bool] = 'AND';
+							index_bool++ ;
+							booleano[index_bool] = strinx.substring(0, igual);
+						}
+						else {
 							booleano[index_bool] = 'AND';
-						//alert('and');
-						index_bool++ ;
-						booleano[index_bool] = strinx.substring(0, igual);
+							//alert('and');
+							index_bool++ ;
+							booleano[index_bool] = strinx;
+						}
 						index_bool++ ;
 					}
 				}
@@ -94,12 +101,19 @@ function compila_sfc(){
 				var strinx = lArrayEstado[si*30+17+sj];
 				var igual = strinx.indexOf('=');
 				var substring = strinx.substring(igual+1,strinx.length-1);
-				if (substring == '0')
-					booleano[index_bool] = 'RST';
-				else
+				if (igual > (-1)) {
+					if (substring == '0')
+						booleano[index_bool] = 'RST';
+					else
+						booleano[index_bool] = 'SET';
+					index_bool++ ;
+		        		booleano[index_bool] = strinx.substring(0, igual);
+				}
+				else {
 					booleano[index_bool] = 'SET';
-				index_bool++ ;
-		        	booleano[index_bool] = strinx.substring(0, igual);
+					index_bool++ ;
+		        		booleano[index_bool] = strinx;
+				}	
 				index_bool++ ;
 			}
 		}
