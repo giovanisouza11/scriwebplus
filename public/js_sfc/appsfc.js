@@ -1015,12 +1015,12 @@ function monitora_sfc() {
 
 function verificaEstado(apontEstado){
 	var texto2 = 'Estado '+ apontEstado;
-	auxiliar_sfc[0] =  endereco(lArrayEstado[apontEstado]);
-	texto2 += lArrayEstado[apontEstado]+' ' + auxiliar_sfc[0];
+	auxiliar_sfc[0] =  endereco(lArrayEstado[apontEstado*30+2]);
+	texto2 += lArrayEstado[apontEstado*30+2]+' ' + auxiliar_sfc[0];
 	for (var i=0; i<8; i++) {
 		var auxData = lArrayEstado[apontEstado*30 + 17 + i];
 		var igual = auxData.indexOf('=');
-		if (ponto == -1)
+		if (igual == -1)
 			auxiliar_sfc[i] = endereco(auxData);
 		else
 			auxiliar_sfc[i] = endereco(auxData.charAt(igual-1));
