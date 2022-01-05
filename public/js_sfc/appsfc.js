@@ -988,7 +988,7 @@ function monitora_sfc() {
 		//verificaTransicao(si);
 		//desenhaTransicao();
 		numeroEstadoOrigem = lArrayTransicao[20*i];
-		if (numeroEstadoOrigem >-1) {
+		if (numeroEstadoOrigem >(-1)) {
 			sfcString = lArrayEstado[numeroEstadoOrigem*30];
 			indexSfcString = sfcString.indexOf(" ");
 			tamanhoSfcString = sfcString.length;
