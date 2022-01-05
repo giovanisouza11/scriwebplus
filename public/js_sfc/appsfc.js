@@ -953,7 +953,7 @@ function monitora_sfc() {
 	var sfcString;
 	var indexSfcString;
 	var tamanhoSfcString;
-	var cor_sfc = ['silver', 'black','green','red','yellow'];
+	var cor_sfc = ['black','green','red','yellow'];
 	draw_sfc_fundo(0);
 	for(var i=0; i < ((lArrayEstado.length/30)-1); i++) {
 		sfcString = lArrayEstado[30*i];
