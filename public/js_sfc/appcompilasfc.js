@@ -44,14 +44,15 @@ function compila_sfc(){
 				for(var sz=0; sz<6; sz++){
 					if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
 						var  strinx = lArrayTransicao[transicaoLocalSfc*20+2+sz];
-						var substring = strinx.substr(strinx.length-1);
+						var igual = strinx.indexOf('=');
+						var substring = strinx.substring(igual+1,strinx.length-1);
 						if (substring == '0')
 							booleano[index_bool] = 'ANDN';
 						else
 							booleano[index_bool] = 'AND';
 						//alert('and');
 						index_bool++ ;
-						booleano[index_bool] = lArrayTransicao[transicaoLocalSfc*20+2+sz];
+						booleano[index_bool] = strinx.substring(0, igual);
 						index_bool++ ;
 					}
 				}
@@ -91,13 +92,14 @@ function compila_sfc(){
 		for(var sj=0; sj<8; sj++){
 			if ( lArrayEstado[si*30+17+sj] != '') { 
 				var strinx = lArrayEstado[si*30+17+sj];
-				var substring = strinx.substr(strinx.length-1);
+				var igual = strinx.indexOf('=');
+				var substring = strinx.substring(igual+1,strinx.length-1);
 				if (substring == '0')
 					booleano[index_bool] = 'RST';
 				else
 					booleano[index_bool] = 'SET';
 				index_bool++ ;
-		        booleano[index_bool] = lArrayEstado[si*30+17+sj];
+		        	booleano[index_bool] = strinx.substring(0, igual);
 				index_bool++ ;
 			}
 		}
