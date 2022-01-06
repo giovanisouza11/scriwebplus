@@ -994,6 +994,8 @@ function monitora_sfc() {
 			tamanhoSfcString = sfcString.length;
 			estadoY0 = sfcString.substring(0, indexSfcString);
 			estadoX0 = sfcString.substring(indexSfcString+1, tamanhoSfcString);
+			
+			alert( estadoY0 +' '+ estadoX0);
 		}
 		numeroEstado = lArrayTransicao[20*i+1];
 		sfcString = lArrayEstado[numeroEstado*30];
