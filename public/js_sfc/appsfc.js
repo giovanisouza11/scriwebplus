@@ -903,7 +903,6 @@ function entrada_input_sfc(event){
 //=====================================================================================
 function posicao_sfc(transicao) {
 	var i =0;
-	//var resultado= [0,0,0,0];
 	var posSfcX = [0,15,25,35,45,0];
 	var posSfcY = [45,60,60,60,60,45];
 	if (lArrayTransicao[transicao*20]>-1){
@@ -944,7 +943,6 @@ function posicao_sfc(transicao) {
 // Apos RUN e STOP do CLP
 //=====================================================================================
 function monitora_sfc() {
-	//var localSfc;
 	contextSfc.font = '9pt Arial';
 	var posicaoXSfc;
 	var posicaoYSfc;
@@ -959,7 +957,6 @@ function monitora_sfc() {
 		tamanhoSfcString = sfcString.length;
 		posicaoYSfc = sfcString.substring(0, indexSfcString);
 		posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
-		//localSfc = lArrayEstado[30*i+1];
 		var tamanho = parseInt(lArrayEstado[30*i+26]);
 		verificaEstado(i);
 		if (lArrayEstado[30*i+25] != '' ) 
@@ -981,10 +978,7 @@ function monitora_sfc() {
 			contextSfc.fillText(lArrayEstado[30*i+2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 		}
 	}
-	//localSfc = 0;
 	for(var i=0; i < ((lArrayTransicao.length/20)-1); i++) {
-		//verificaTransicao(si);
-		//desenhaTransicao();
 		numeroEstadoOrigem = lArrayTransicao[20*i];
 		if (numeroEstadoOrigem >(-1)) {
 			sfcString = lArrayEstado[numeroEstadoOrigem*30];
@@ -992,8 +986,6 @@ function monitora_sfc() {
 			tamanhoSfcString = sfcString.length;
 			estadoY0 = sfcString.substring(0, indexSfcString);
 			estadoX0 = sfcString.substring(indexSfcString+1, tamanhoSfcString);
-			
-			alert( estadoY0 +' '+ estadoX0);
 		}
 		numeroEstado = lArrayTransicao[20*i+1];
 		sfcString = lArrayEstado[numeroEstado*30];
@@ -1006,12 +998,10 @@ function monitora_sfc() {
 		for(var j=0; j<6; j++){
 			posicao_sfc(i);
 			if (lArrayTransicao[20*i+2+j] != '') {
-				//posicao_sfc(localSfc);
 				contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+1]];
 				contextSfc.fillText(lArrayTransicao[20*i+2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
 			}
 		}
-		//localSfc++;
 	}
 }	
 
@@ -1054,8 +1044,7 @@ function verificaTransicao(apontTransicao){
 		}
 		
 	}
-	alert(texto2);
-      //auxiliar_sfc = [2,2,2,2,2,2,2];	
+	alert(texto2);	
 }
 
 
