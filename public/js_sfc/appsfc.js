@@ -952,7 +952,7 @@ function monitora_sfc() {
 	var tamanhoSfcString;
 	var cor_sfc = ['silver', 'black','green','red','yellow'];
 	draw_sfc_fundo(0);
-	for(var i=0; i < ((lArrayEstado.length/30)-1); i++) {
+	for(var i=0; i < ((lArrayEstado.length/30)); i++) {
 		sfcString = lArrayEstado[30*i];
 		indexSfcString =  sfcString.indexOf(' ');
 		tamanhoSfcString = sfcString.length;
@@ -979,7 +979,7 @@ function monitora_sfc() {
 			contextSfc.fillText(lArrayEstado[30*i+2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 		}
 	}
-	for(var i=0; i < ((lArrayTransicao.length/20)-1); i++) {
+	for(var i=0; i < ((lArrayTransicao.length/20)); i++) {
 		numeroEstadoOrigem = lArrayTransicao[20*i];
 		if (numeroEstadoOrigem >(-1)) {
 			sfcString = lArrayEstado[numeroEstadoOrigem*30];
