@@ -309,7 +309,6 @@ function draw_sfc(fileArr) {
 	for (var i=1; i<fileArr.length; i++) {
 		var fileLine = fileArr[i].split(',');
 		var tamanho_array_sfc= fileLine.length;
-		//alert(fileArr.length);
 		if (tamanho_array_sfc ==31){
 			sfcString = fileLine[0];
 			indexSfcString =  sfcString.indexOf(' ');
@@ -322,9 +321,8 @@ function draw_sfc(fileArr) {
 				draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',tamanho);
 			else	
 				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',tamanho);
-                        //alert(fileLine[26]);
-
-			for(var j=0; j<tamanho_array_sfc; j++)
+                
+			for(var j=0; j<30; j++)
 				lArrayEstado[fileLine[1]*30+j] = fileLine[j];
 			for(var j=0; j<4; j++){
 				if (fileLine[17+j] != '') 
@@ -355,7 +353,7 @@ function draw_sfc(fileArr) {
 			posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
 			
 			draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, "black");
-			for(var j=0; j<tamanho_array_sfc; j++)
+			for(var j=0; j<20; j++)
 				lArrayTransicao[indexTransicao*20+j] = fileLine[j];
 			for(var j=0; j<6; j++)
 				if (fileLine[2+j] != '') {
