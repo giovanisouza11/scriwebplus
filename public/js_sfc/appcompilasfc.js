@@ -17,19 +17,15 @@ function compila_sfc(){
 	var index_bool = 0;
 	var transicaoLocalSfc;
 
- 	//alert('antes while'); 
-	
-	while( si < ((lArrayEstado.length/30)-1)) {
+ 	while( si < ((lArrayEstado.length/30)-1)) {
 		
 		for (var sj=0; sj<6; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+9+sj];
-			//alert('dentro do while e for');
 			if( transicaoLocalSfc != ''){
 				//o estado anterior
 				if ( lArrayTransicao[transicaoLocalSfc*20] != '-1') {
 					booleano[index_bool] = 'LD';
 					index_bool++;			
-					//alert('1° ld');
 					booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
 					index_bool++ ;
 				}
@@ -37,7 +33,6 @@ function compila_sfc(){
 					booleano[index_bool] = 'LD';
 					index_bool++;
 					booleano[index_bool] = 1;
-					//alert('1° ld sem');
 					index_bool++;
 				}
 				//condicoes da transicao	
@@ -56,7 +51,6 @@ function compila_sfc(){
 						}
 						else {
 							booleano[index_bool] = 'AND';
-							//alert('and');
 							index_bool++ ;
 							booleano[index_bool] = strinx;
 						}
@@ -68,12 +62,10 @@ function compila_sfc(){
 				index_bool++ ;
 				booleano[index_bool] = 'R' + si;
 				index_bool++ ;
-				//alert('Set FIM de linha');		
 			}
 		}
 	    //set o atual e resetase os anteriores
 		booleano[index_bool] = 'LD';
-		//alert('Ld final todas as treansicoes');
 		index_bool++ ;
 		booleano[index_bool] = 'R'+si;
 		index_bool++ ;
@@ -85,9 +77,8 @@ function compila_sfc(){
 			transicaoLocalSfc = lArrayEstado[si*30+9+sj];
 			if (transicaoLocalSfc != '-1' && transicaoLocalSfc != '' ) { 
 				booleano[index_bool] = 'RST';
-				//alert('rst final de linha');
 				index_bool++ ;
-			    booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
+			    	booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
 				index_bool++ ;
 			}
 		}
@@ -120,12 +111,11 @@ function compila_sfc(){
 		
 		//procura um novo estado
 		si++;		
-		//alert('Novo Estado');
 	}
 }
 
 //--------------------------------------------------
-// funcao compila e pre-compila logicas ladder
+// funcao cONVERTE  DIAGRAMA DE ESTADO PARA LADDER
 //----------------------------------------------
 //{ _id, tag1, var_1, tipo, var_2, ver, R-W, tag2, funcao};
 // ._id = Identificado XXY, onde XX=linha e Y=coluna
@@ -146,14 +136,11 @@ function converte_sfc_ladder(){
 	var linhaAnteriorSfc = 0;
 	var maximoColuna = 0;
 	var maximoLinha=0;
-	//alert('entrou');
 	//varre toda o array BOOLEANO
 	for( var csl=0; csl<booleano.length; csl++) {
-	    	//alert(booleano[csl]);
 		switch (booleano[csl]){
 			case 'LD': 
 			    	// caso ser LD é um inicio de linha ou um fim de o operando "R"
-			    	//alert('LD');
 	
 				if (booleano[csl+1].charAt(0) == 'R' || booleano[csl+2] == 'SET' ){
 					 for(var csl1=linhaAnteriorSfc; csl1 < linha; csl1++)
@@ -186,8 +173,6 @@ function converte_sfc_ladder(){
 			    	break;			
 		   	case 'AND':
 			    	//alert('AND');
-				
-				//alert('coluna '+coluna+' Linha '+linha);
 			    	larray[linha*8*9+coluna*9] = coluna + linha*10;
 			   	larray[linha*8*9+coluna*9+ 1] = '';
 			    	larray[linha*8*9+coluna*9+2] = booleano[csl+1];
@@ -202,8 +187,6 @@ function converte_sfc_ladder(){
 			    	break;			
 			case 'ANDN':
 		        	//alert('ANDN');
-			    	
-				//alert('coluna '+coluna+' Linha '+linha);
 				larray[linha*8*9+coluna*9] = coluna + linha*10;
 			    	larray[linha*8*9+coluna*9+ 1] = '';
 			    	larray[linha*8*9+coluna*9+2] = booleano[csl+1];
@@ -267,12 +250,8 @@ function converte_sfc_ladder(){
 				alert('ERRO');
 				csl++;
 		}	     
-	    	//coluna++;	
-		//alert(larray);
 	}
 	//alerta('monitora');
-	//alert('COLUNA' + coluna);
-	//alert('saiu ' + larray.length);
 	var texto = '';
 	for (var i=0; i<(larray.length/9); i++) {
 		for (var j=0; j<9; j++)
