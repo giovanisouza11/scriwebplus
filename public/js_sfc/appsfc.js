@@ -312,10 +312,10 @@ function draw_sfc(fileArr) {
 		//alert(fileArr.length);
 		if (tamanho_array_sfc ==31){
 			sfcString = fileLine[0];
-			indexSfcString =  sfcString.indexOf(" ");
+			indexSfcString =  sfcString.indexOf(' ');
 			tamanhoSfcString = sfcString.length;
-			posicaoYSfc = sfcString.substr(0, indexSfcString);
-			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
+			posicaoYSfc = sfcString.substring(0, indexSfcString);
+			posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
 			indexEstado = fileLine[1];
 			var tamanho = parseInt(fileLine[26]);
 			if (fileLine[25] != '' ) 
@@ -342,17 +342,17 @@ function draw_sfc(fileArr) {
 			numeroEstadoOrigem = fileLine[0];
 			if (numeroEstadoOrigem >-1) {
 				sfcString = lArrayEstado[numeroEstadoOrigem*30];
-				indexSfcString = sfcString.indexOf(" ");
+				indexSfcString = sfcString.indexOf(' ');
 				tamanhoSfcString = sfcString.length;
-				estadoY0 = sfcString.substr(0, indexSfcString);
-				estadoX0 = sfcString.substr(indexSfcString, tamanhoSfcString);
+				estadoY0 = sfcString.substring(0, indexSfcString);
+				estadoX0 = sfcString.substring(indexSfcString+1, tamanhoSfcString);
 			}
 			numeroEstado = fileLine[1];
 			sfcString = lArrayEstado[numeroEstado*30];
-			indexSfcString = sfcString.indexOf(" ");
+			indexSfcString = sfcString.indexOf(' ');
 			tamanhoSfcString = sfcString.length;
-			posicaoYSfc = parseInt(sfcString.substr(0, indexSfcString));
-			posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
+			posicaoYSfc = parseInt(sfcString.substring(0, indexSfcString));
+			posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
 			
 			draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, "black");
 			for(var j=0; j<tamanho_array_sfc; j++)
@@ -915,10 +915,10 @@ function posicao_sfc(transicao) {
 				break;
 		}
 		var sfcString = lArrayEstado[lArrayTransicao[transicao*20]*30];
-		var indexSfcString =  sfcString.indexOf(" ");
+		var indexSfcString =  sfcString.indexOf(' ');
 		var tamanhoSfcString = sfcString.length;
-		resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(0, indexSfcString)*60 + posSfcY[i-1];
-		resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcX[i-1];
+		resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substring(0, indexSfcString)*60 + posSfcY[i-1];
+		resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substring(indexSfcString+1, tamanhoSfcString)*60 + posSfcX[i-1];
 	}
 	
 	posSfcX = [0,0,15,25,35,45,0,0];
@@ -930,13 +930,13 @@ function posicao_sfc(transicao) {
 			break;
 	}
 	sfcString = lArrayEstado[lArrayTransicao[transicao*20+1]*30];
-	indexSfcString = sfcString.indexOf(" ");
+	indexSfcString = sfcString.indexOf(' ');
 	tamanhoSfcString = sfcString.length;
-	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)*60 + posSfcY[i-1];
-	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcX[i-1];
+	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(0, indexSfcString)*60 + posSfcY[i-1];
+	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(indexSfcString+1, tamanhoSfcString)*60 + posSfcX[i-1];
 	if (lArrayTransicao[transicao*20]==-1){
-		resultado[1] = (lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(0, indexSfcString)-1)*60 + 20;
-		resultado[0] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substr(indexSfcString, tamanhoSfcString)*60 + posSfcX[i-1];
+		resultado[1] = (lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(0, indexSfcString)-1)*60 + 20;
+		resultado[0] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(indexSfcString+1, tamanhoSfcString)*60 + posSfcX[i-1];
 	}
 	//alert(resultado[0]+ '  '+resultado[1]+" "+resultado[2]+ '  '+resultado[3]);
 	//return resultado[0];
@@ -957,10 +957,10 @@ function monitora_sfc() {
 	draw_sfc_fundo(0);
 	for(var i=0; i < ((lArrayEstado.length/30)-1); i++) {
 		sfcString = lArrayEstado[30*i];
-		indexSfcString =  sfcString.indexOf(" ");
+		indexSfcString =  sfcString.indexOf(' ');
 		tamanhoSfcString = sfcString.length;
-		posicaoYSfc = sfcString.substr(0, indexSfcString);
-		posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
+		posicaoYSfc = sfcString.substring(0, indexSfcString);
+		posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
 		//localSfc = lArrayEstado[30*i+1];
 		var tamanho = parseInt(lArrayEstado[30*i+26]);
 		verificaEstado(i);
@@ -992,15 +992,15 @@ function monitora_sfc() {
 			sfcString = lArrayEstado[numeroEstadoOrigem*30];
 			indexSfcString = sfcString.indexOf(' ');
 			tamanhoSfcString = sfcString.length;
-			estadoY0 = sfcString.substr(0, indexSfcString);
-			estadoX0 = sfcString.substr(indexSfcString, tamanhoSfcString);
+			estadoY0 = sfcString.substring(0, indexSfcString);
+			estadoX0 = sfcString.substring(indexSfcString+1, tamanhoSfcString);
 		}
 		numeroEstado = lArrayTransicao[20*i+1];
 		sfcString = lArrayEstado[numeroEstado*30];
 		indexSfcString = sfcString.indexOf(' ');
 		tamanhoSfcString = sfcString.length;
-		posicaoYSfc = parseInt(sfcString.substr(0, indexSfcString));
-		posicaoXSfc = sfcString.substr(indexSfcString, tamanhoSfcString);
+		posicaoYSfc = parseInt(sfcString.substring(0, indexSfcString));
+		posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
 		verificaTransicao(i);	
 		draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, cor_sfc[auxiliar_sfc[0]]);
 		for(var j=0; j<6; j++){
