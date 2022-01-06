@@ -365,7 +365,7 @@ function draw_sfc(fileArr) {
 	}	
 }
 //=====================================================================================
-//Desenho 
+//Desenho ESTADO
 //=====================================================================================
 function draw_estado(contexto, pos_X, pos_Y, texto,cor,tamanho) {
 	contexto.lineWidth = "2";
@@ -939,7 +939,8 @@ function posicao_sfc(transicao) {
 	//return resultado[0];
 }
 //=====================================================================================
-//Desenho o circuito ladder apartir de uma matriz
+//Desenho o DIAGRMA SFC a partir de uma matriz, COM CORES DIFERENTE
+//SENDO: PRETO:off, VERDE:ON, VERMELHO: ERRO, AMARELO: VARIAVEL ERRADA
 // Apos RUN e STOP do CLP
 //=====================================================================================
 function monitora_sfc() {
@@ -1004,7 +1005,10 @@ function monitora_sfc() {
 		}
 	}
 }	
-
+//------------------------------------------------------------------------
+//VERIFICA ESTADO
+//RETORNA  [ ESTADO, ACAO1, ACAO2, ACAO3,ACAO4,ACAO5, ACAO6, ACAO7, ACAO8]
+//------------------------------------------------------------------------
 function verificaEstado(apontEstado){
 	//var texto2 = 'Estado '+ apontEstado;
 	auxiliar_sfc[0] =  endereco(lArrayEstado[apontEstado*30+2]);
@@ -1024,6 +1028,10 @@ function verificaEstado(apontEstado){
 	}
 	//alert(texto2);
 }
+//------------------------------------------------------------------------------------------
+//VERIFICA TRANSICAO
+//RETORNA  [ ESTADO QUE HABILITA  TRANSICAO, CONDICAO1, COND2, COND3,COND4,COND5, CONDICAO6]
+//------------------------------------------------------------------------------------------
 function verificaTransicao(apontTransicao){
 	var texto2 = 'Transicao '+ apontTransicao;
 	if (lArrayTransicao[apontTransicao*20] > -1)
