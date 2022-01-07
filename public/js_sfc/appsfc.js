@@ -487,6 +487,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	contexto.strokeStyle = cor;
 	var i =0;
 	var tamanho;
+	contexto.beginPath();
 	if (numeroEstadoOrigem > -1){
 		while (i<6) {
 			i ++;
