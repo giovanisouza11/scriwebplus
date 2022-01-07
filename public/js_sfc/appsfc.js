@@ -1034,12 +1034,12 @@ function verificaEstado(apontEstado){
 //RETORNA  [ ESTADO QUE HABILITA  TRANSICAO, CONDICAO1, COND2, COND3,COND4,COND5, CONDICAO6]
 //------------------------------------------------------------------------------------------
 function verificaTransicao(apontTransicao){
-	//var texto2 = 'Transicao '+ apontTransicao;
+	var texto2 = 'Transicao '+ apontTransicao;
 	if (lArrayTransicao[apontTransicao*20] > -1)
 		auxiliar_sfc[0] =  endereco(lArrayEstado[lArrayTransicao[apontTransicao*20]+2]);
 	else
 		auxiliar_sfc[0] = 2;
-	//texto2 += ' ' + auxiliar_sfc[0];
+	texto2 += ' ' + auxiliar_sfc[0];
 	for (var i=0; i<6; i++) {
 		var auxData = lArrayTransicao[apontTransicao*20 + 2 + i];
 		var igual = auxData.indexOf('=');
@@ -1053,7 +1053,7 @@ function verificaTransicao(apontTransicao){
 		}
 		
 	}
-	//alert(texto2);	
+	alert(texto2);	
 }
 
 
