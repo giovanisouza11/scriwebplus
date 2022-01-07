@@ -593,7 +593,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
  			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+28);
 			break;
 		case 8:
-			contexto.lineTo(pos_X*60+tamango+15,pos_Y*60+20);
+			contexto.lineTo(pos_X*60+tamanho+15,pos_Y*60+20);
 			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+20);
 			contexto.lineTo(pos_X*60+tamanho+10,pos_Y*60+18);
  			contexto.lineTo(pos_X*60+tamanho,pos_Y*60+20);
@@ -995,6 +995,7 @@ function monitora_sfc() {
 		posicaoYSfc = parseInt(sfcString.substring(0, indexSfcString));
 		posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
 		verificaTransicao(i);	
+		indexTransicao = i;
 		draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, cor_sfc[auxiliar_sfc[0]]);
 		for(var j=0; j<6; j++){
 			posicao_sfc(i);
