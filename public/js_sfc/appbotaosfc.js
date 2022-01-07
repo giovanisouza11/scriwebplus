@@ -142,7 +142,7 @@ function trocar_botao_sfc() {
 		//alert(clp_programa);
 		I = clpI;
 		valor_chave_sfc[3]=0;
-		monitora_sfc();
+		//monitora_sfc();
 	}
 
 	if (valor_chave_sfc[4]==1){
