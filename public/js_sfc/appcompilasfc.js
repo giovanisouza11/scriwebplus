@@ -259,5 +259,5 @@ function converte_sfc_ladder(){
 		texto += '\n';
 	} 
 	alert('saiu ' + texto);
-	monitora_ladder();
+	//monitora_ladder();
 }
