@@ -89,11 +89,11 @@ function compila_sfc(){
 			var igual = strinx.indexOf('.');
 			var substring = strinx.substring(0, igual);
 			for (var is = 0; is< lArrayEstado[si*30+25]; i++) {
-				booleano[booleano.length] = 'MOV';
-				booleano[booleano.length] = substring;
-				index_bool += 2;
+				booleano[index_bool] = 'MOV';
+				index_bool++;
+				booleano[index_bool] = substring;
+				index_bool++;
 			}
-			booleano[booleano.length] = substring;
 			booleano[index_bool] = 'SET';
 			index_bool++ ;
 			booleano[index_bool] = lArrayEstado[si*30+2];
