@@ -40,7 +40,7 @@ function compila_sfc(){
 					if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
 						var  strinx = lArrayTransicao[transicaoLocalSfc*20+2+sz];
 						var igual = strinx.indexOf('=');
-						var substring = strinx.substring(igual+1,strinx.length-1);
+						var substring = strinx.substring(igual+1,strinx.length);
 						if (igual > (-1)){
 							if (substring == '0')
 								booleano[index_bool] = 'ANDN';
@@ -91,7 +91,7 @@ function compila_sfc(){
 			if ( lArrayEstado[si*30+17+sj] != '') { 
 				var strinx = lArrayEstado[si*30+17+sj];
 				var igual = strinx.indexOf('=');
-				var substring = strinx.substring(igual+1,strinx.length-1);
+				var substring = strinx.substring(igual+1,strinx.length);
 				if (igual > (-1)) {
 					if (substring == '0')
 						booleano[index_bool] = 'RST';
