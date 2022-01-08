@@ -69,7 +69,7 @@ function compila_sfc(){
 		index_bool++ ;
 		booleano[index_bool] = 'R'+si;
 		index_bool++ ;
-		if (lArrayEstado[si*30+25]> 1) {
+		if (lArrayEstado[si*30+25]> 0) {
 			var  strinx = lArrayEstado[si*30+2];
 			var igual = strinx.indexOf('.');
 			var substring = strinx.substring(0, igual);
