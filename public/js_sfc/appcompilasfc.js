@@ -70,13 +70,14 @@ function compila_sfc(){
 		booleano[index_bool] = 'R'+si;
 		index_bool++ ;
 		if (lArrayEstado[si*30+25]> 0) {
-			var  strinx = lArrayEstado[si*30+2];
+			var strinx = lArrayEstado[si*30+2];
 			var igual = strinx.indexOf('.');
-			var substring = strinx.substring(0, igual);
-			for (var is = 0; is< lArrayEstado[si*30+25]; i++) {
+			var substring1= strinx.substring(1, igual);
+			var substring2= strinx.substring(0, 1);
+			for (var is = 0; is < lArrayEstado[si*30+25]; is++) {
 				booleano[index_bool] = 'MOV';
 				index_bool++;
-				booleano[index_bool] = substring;
+				booleano[index_bool] = substring2 + (substring1 + is);
 				index_bool++;
 			}
 			booleano[index_bool] = 'SET';
