@@ -79,6 +79,9 @@ function compila_sfc(){
 				index_bool++;
 				booleano[index_bool] = substring2 + (parseInt(substring1) + is);
 				index_bool++;
+				booleano[index_bool] = '0';
+				index_bool++;
+				
 			}
 			booleano[index_bool] = 'SET';
 			index_bool++ ;
@@ -101,7 +104,7 @@ function compila_sfc(){
 				}
 			}	
 		}
-	    //Acoes dos estados
+	    	//Acoes dos estados
 		booleano[index_bool] = 'LD';
 		index_bool++;
 		booleano[index_bool] = lArrayEstado[si*30 +2];
