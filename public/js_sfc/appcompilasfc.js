@@ -77,7 +77,7 @@ function compila_sfc(){
 			for (var is = 0; is < lArrayEstado[si*30+25]; is++) {
 				booleano[index_bool] = 'MOV';
 				index_bool++;
-				booleano[index_bool] = substring2 + (substring1 + is);
+				booleano[index_bool] = substring2 + parseInt(substring1 + is);
 				index_bool++;
 			}
 			booleano[index_bool] = 'SET';
