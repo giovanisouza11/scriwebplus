@@ -69,7 +69,7 @@ function compila_sfc(){
 		index_bool++ ;
 		booleano[index_bool] = 'R'+si;
 		index_bool++ ;
-		if (lArrayEstado[si*30+25]>0) {
+		if (lArrayEstado[si*30+25]==0) {
 			booleano[index_bool] = 'SET';
 			index_bool++ ;
 			booleano[index_bool] = lArrayEstado[si*30+2];
