@@ -69,22 +69,7 @@ function compila_sfc(){
 		index_bool++ ;
 		booleano[index_bool] = 'R'+si;
 		index_bool++ ;
-		if (lArrayEstado[si*30+25]==0) {
-			booleano[index_bool] = 'SET';
-			index_bool++ ;
-			booleano[index_bool] = lArrayEstado[si*30+2];
-			index_bool++ ;
-			for(var sj=0; sj<6; sj++){
-				transicaoLocalSfc = lArrayEstado[si*30+9+sj];
-				if (transicaoLocalSfc != '-1' && transicaoLocalSfc != '' ) { 
-					booleano[index_bool] = 'RST';
-					index_bool++ ;
-			    		booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
-					index_bool++ ;
-				}
-			}
-		}
-		else {
+		if (lArrayEstado[si*30+25]> 1) {
 			var  strinx = lArrayEstado[si*30+2];
 			var igual = strinx.indexOf('.');
 			var substring = strinx.substring(0, igual);
@@ -97,7 +82,23 @@ function compila_sfc(){
 			booleano[index_bool] = 'SET';
 			index_bool++ ;
 			booleano[index_bool] = lArrayEstado[si*30+2];
-			index_bool++ ;	
+			index_bool++ ;
+			
+		}
+		else {
+			booleano[index_bool] = 'SET';
+			index_bool++ ;
+			booleano[index_bool] = lArrayEstado[si*30+2];
+			index_bool++ ;
+			for(var sj=0; sj<6; sj++){
+				transicaoLocalSfc = lArrayEstado[si*30+9+sj];
+				if (transicaoLocalSfc != '-1' && transicaoLocalSfc != '' ) { 
+					booleano[index_bool] = 'RST';
+					index_bool++ ;
+			    		booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
+					index_bool++ ;
+				}
+			}	
 		}
 	    //Acoes dos estados
 		booleano[index_bool] = 'LD';
