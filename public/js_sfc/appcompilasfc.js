@@ -149,7 +149,7 @@ function verificaAcao(apontAcao){
 	var menos = apontAcao.indexOf('-');
 	if (ponto > -1) {
 		if (igual > (-1)) {
-			if (apontAcao.substring(igual+1,apontAcao.length) == '0') {
+			if (apontAcao.substring(igual+1,apontAcao.length) == '0')
 				resultado[0] = 'RST';
 			else
 				resultado[0] = 'SET';
