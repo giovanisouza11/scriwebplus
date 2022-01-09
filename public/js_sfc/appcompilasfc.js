@@ -136,6 +136,99 @@ function compila_sfc(){
 	}
 }
 
+//=====================================================================================
+// Verifica Acao
+// 
+// 
+//======================================================================================
+function verificaAcao(apontAcao){
+	var igual = apontAcao.indexOf('=');
+	var ponto = apontAcao.indexOf('.');
+	var espaco = apontAcao.indexOf(' ');
+	var mais = apontAcao.indexOf('+');
+	var menos = apontAcao.indexOf('-');
+	if (ponto > -1) {
+		if (igual > (-1)) {
+			if (apontAcao.substring(igual+1,apontAcao.length) == '0') {
+				resultado[0] = 'RST';
+			else
+				resultado[0] = 'SET';
+			resultado[1] = apontAcao.substring(0, igual);
+		}
+		else {
+			resultado[0] = 'SET';
+			resultado[1] = apontAcao;
+		}
+	}
+	else {
+		if (igual > (-1) && mais == -1 && menos == -1) {
+			if ( apontAcao.charAt(0) == 'T') {
+				resultado[0] = 'TMR';
+				resultado[1] = apontAcao.substring(0, igual);
+				resultado[2] = apontAcao.substring(igual+1, apontAcao.length);
+			}
+			else {
+				if ( apontAcao.charAt(0) == 'C') {
+					resultado[0] = 'CNT';
+					resultado[1] = apontAcao.substring(0, igual);
+					resultado[2] = apontAcao.substring(igual+1, apontAcao.length);
+				}
+				else {
+					resultado[0] = 'MOV';
+					resultado[1] = apontAcao.substring(0, igual);
+					resultado[2] = apontAcao.substring(igual+1, apontAcao.length);
+				}
+			}
+		}
+		if (igual == (-1) && espaco > -1 && mais == -1 && menos == -1) {
+			if ( apontAcao.charAt(0) == 'T') {
+				resultado[0] = 'TMR';
+				resultado[1] = apontAcao.substring(0, espaco);
+				resultado[2] = apontAcao.substring(espaco+1, apontAcao.length);
+			}
+			else {
+				if ( apontAcao.charAt(0) == 'C') {
+					resultado[0] = 'CNT';
+					resultado[1] = apontAcao.substring(0, espaco);
+					resultado[2] = apontAcao.substring(espaco+1, apontAcao.length);
+				}
+				else {
+					resultado[0] = 'MOV';
+					resultado[1] = apontAcao.substring(0, espaco);
+					resultado[2] = apontAcao.substring(espaco+1, apontAcao.length);
+				}
+			}
+		}
+		if (igual > (-1) && mais > -1) {
+			resultado[0] = '+';
+			if (igual < mais) {
+				resultado[1] = apontAcao.substring(0, igual);
+				resultado[2] = apontAcao.substring(mais+1, apontAcao.length);
+			}
+			else{
+				resultado[1] = apontAcao.substring(0, mais);
+				resultado[2] = apontAcao.substring(igual+1, apontAcao.length);
+			}
+		}
+		if (igual > (-1) && menos > -1) {
+			resultado[0] = '-';
+			if (igual < menos) {
+				resultado[1] = apontAcao.substring(0, igual);
+				resultado[2] = apontAcao.substring(menos+1, apontAcao.length);
+			}
+			else{
+				resultado[1] = apontAcao.substring(0, menos);
+				resultado[2] = apontAcao.substring(igual+1, apontAcao.length);
+			}
+		}
+		if (igual == -1) {
+			resultado[0] = 'SET';
+			resultado[1] = apontAcao;
+		}
+	} 
+		
+}
+
 //--------------------------------------------------
 // funcao cONVERTE  DIAGRAMA DE ESTADO PARA LADDER
 //----------------------------------------------
