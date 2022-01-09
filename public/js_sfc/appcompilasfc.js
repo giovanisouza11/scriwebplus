@@ -37,7 +37,7 @@ function compila_sfc(){
 				}
 				//condicoes da transicao	
 				for(var sz=0; sz<6; sz++){
-					if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
+					/*if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
 						apontAcao = lArrayTransicao[transicaoLocalSfc*20+2+sz];
 						for (var szi = 0; szi<4; szi++) {
 							if (resultado[szi] != ''){
@@ -45,8 +45,8 @@ function compila_sfc(){
 								index_bool++;
 							}
 						}
-								
-					/*	var  strinx = lArrayTransicao[transicaoLocalSfc*20+2+sz];
+					*/			
+						var  strinx = lArrayTransicao[transicaoLocalSfc*20+2+sz];
 						var igual = strinx.indexOf('=');
 						var substring = strinx.substring(igual+1,strinx.length);
 						if (igual > (-1)){
@@ -62,7 +62,7 @@ function compila_sfc(){
 							index_bool++ ;
 							booleano[index_bool] = strinx;
 						}
-						index_bool++ ; */
+						index_bool++ ; 
 					}
 				}
 				//encerra a transicao
@@ -118,8 +118,16 @@ function compila_sfc(){
 		booleano[index_bool] = lArrayEstado[si*30 +2];
 		index_bool++;
 		for(var sj=0; sj<8; sj++){
-			if ( lArrayEstado[si*30+17+sj] != '') { 
-				var strinx = lArrayEstado[si*30+17+sj];
+			if ( lArrayEstado[si*30+17+sj] != '') {
+				apontAcao = lArrayEstado[si*30+17+sj];
+				for (var szi = 0; szi<4; szi++) {
+					if (resultado[szi] != ''){
+						booleano[index_bool] = resultado[szi];
+						index_bool++;
+					}
+				}
+				
+				/*var strinx = lArrayEstado[si*30+17+sj];
 				var igual = strinx.indexOf('=');
 				var substring = strinx.substring(igual+1,strinx.length);
 				if (igual > (-1)) {
@@ -135,7 +143,7 @@ function compila_sfc(){
 					index_bool++ ;
 		        		booleano[index_bool] = strinx;
 				}	
-				index_bool++ ;
+				index_bool++ ;*/
 			}
 		}
 		
