@@ -38,15 +38,15 @@ function compila_sfc(){
 				//condicoes da transicao	
 				for(var sz=0; sz<6; sz++){
 					if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
-					/*	verificaCondicao(lArrayTransicao[transicaoLocalSfc*20+2+sz]);
+						verificaCondicao(lArrayTransicao[transicaoLocalSfc*20+2+sz]);
 						for (var szi = 0; szi<4; szi++) {
 							if (resultado[szi] != ''){
 								booleano[index_bool] = resultado[szi];
 								index_bool++;
 							}
 						}
-					*/			
-						var  strinx = lArrayTransicao[transicaoLocalSfc*20+2+sz];
+								
+					/*	var  strinx = lArrayTransicao[transicaoLocalSfc*20+2+sz];
 						var igual = strinx.indexOf('=');
 						var substring = strinx.substring(igual+1,strinx.length);
 						if (igual > (-1)){
@@ -62,7 +62,7 @@ function compila_sfc(){
 							index_bool++ ;
 							booleano[index_bool] = strinx;
 						}
-						index_bool++ ; 
+						index_bool++ ; */
 					}
 				}
 				//encerra a transicao
@@ -245,6 +245,81 @@ function verificaAcao(apontAcao){
 	} 
 		
 }
+
+//=====================================================================================
+// Verifica Condicao
+// 
+// 
+//======================================================================================
+function verificaCondicao(apontCondicao){
+	var igual = apontCondicao.indexOf('=');
+	var ponto = apontCondicao.indexOf('.');
+	var maior = apontCondicao.indexOf('>');
+	var menor = apontCondicao.indexOf('<');
+	resultado = ['','','',''];
+	if (ponto > -1) {
+		if (igual > (-1)) {
+			if (apontCondicao.substring(igual+1,apontCondicao.length) == '0')
+				resultado[0] = 'ANDN';
+			else
+				resultado[0] = 'AND';
+			resultado[1] = apontCondicao.substring(0, igual);
+		}
+		else {
+			resultado[0] = 'AND';
+			resultado[1] = apontCondicao;
+		}
+	}
+	else {
+		if (igual > (-1) && maior == -1 && menor == -1) {
+			if ( apontCondicao.charAt(0) == 'T' || apontCondicao.charAt(0) == 'C') {
+				if (apontCondicao.substring(igual+1,apontCondicao.length) == '0')
+					resultado[0] = 'ANDN';
+				else
+					resultado[0] = 'AND';
+				resultado[1] = apontCondicao.substring(0, igual);
+			}
+			else{
+				resultado[0] = '=';
+				resultado[1] = apontCondicao.substring(0, igual);
+				resultado[2] = apontCondicao.substring(igual+1, apontCondicao.length);
+			}
+		}
+		if (menor > (-1) && maior > -1) {
+			resultado[0] = '<>';
+			resultado[1] = apontCondicao.substring(0, menor);
+			resultado[2] = apontCondicao.substring(maior+1, apontCondicao.length);
+		}
+		else {
+			if (igual == (-1) && maior > -1) {
+				resultado[0] = '>';
+				resultado[1] = apontCondicao.substring(0, maior);
+				resultado[2] = apontCondicao.substring(maior+1, apontCondicao.length);
+			}
+			if (igual > (-1) && maior > -1) {
+				resultado[0] = '>=';
+				resultado[1] = apontCondicao.substring(0, maior);
+				resultado[2] = apontCondicao.substring(igual+1, apontCondicao.length);
+			}
+			if (igual == (-1) && menor > -1) {
+				resultado[0] = '<';
+				resultado[1] = apontCondicao.substring(0, menor);
+				resultado[2] = apontCondicao.substring(menor+1, apontCondicao.length);
+			}
+			if (igual > (-1) && menor > -1) {
+				resultado[0] = '<=';
+				resultado[1] = apontCondicao.substring(0, menor);
+				resultado[2] = apontCondicao.substring(igual+1, apontCondicao.length);
+			}
+		}
+		if (igual == -1 && maior ==-1 && menor == -1) {
+			resultado[0] = 'AND';
+			resultado[1] = apontCondicao;
+		}
+	} 
+		
+}
+
 
 //--------------------------------------------------
 // funcao cONVERTE  DIAGRAMA DE ESTADO PARA LADDER
