@@ -37,8 +37,8 @@ function compila_sfc(){
 				}
 				//condicoes da transicao	
 				for(var sz=0; sz<6; sz++){
-					/*if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
-						apontAcao = lArrayTransicao[transicaoLocalSfc*20+2+sz];
+					if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
+					/*	apontAcao = lArrayTransicao[transicaoLocalSfc*20+2+sz];
 						for (var szi = 0; szi<4; szi++) {
 							if (resultado[szi] != ''){
 								booleano[index_bool] = resultado[szi];
