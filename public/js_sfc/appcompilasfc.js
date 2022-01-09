@@ -474,6 +474,6 @@ function converte_sfc_ladder(){
 		    texto += larray[(i*9)+j]+',';
 		texto += '\n';
 	} 
-	alert('saiu ' + texto);
+	alert(texto);
 	//monitora_ladder();
 }
