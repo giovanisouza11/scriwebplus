@@ -41,7 +41,7 @@ function compila_sfc(){
 						apontAcao = lArrayTransicao[transicaoLocalSfc*20+2+sz];
 						for (var szi = 0; szi<4. szi++) {
 							if (resultado[szi] != ''){
-								booleano.push(resultado[szi]);
+								booleano[index_bool] = resultado[szi];
 								index_bool++;
 							}
 						}
