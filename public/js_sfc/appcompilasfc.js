@@ -353,11 +353,20 @@ function converte_sfc_ladder(){
 					 for(var csl1=linhaAnteriorSfc; csl1 < linha; csl1++)
 						larray[csl1*8*9+maximoColuna*9+5] = 1;
 				     	maximoLinha = linha+1;
-				     	linha = linhaAnteriorSfc;
-				     	if (coluna <6)
+				     	
+				     	if (maxiColuna <6)
 					     for(var csl1=maximoColuna; csl1<7; csl1++)
 						     larray[linha*8*9+csl1*9+3] = 11;
-				     	maximoColuna= 0;
+					for(var csl1=linhaAnteriorSfc; csl1<linha; csl1++){
+						let maximoColunaAuxiliar = maximoColuna;
+						while (larray[csl1*8*9+maximoColunaAuxiliar*9+3] < 1 && larray[csl1*8*9+maximoColunaAuxiliar*9+3] > 11) {
+							larray[csl1*8*9+maximoColunaAuxiliar*9+3] = 11;
+							maximoColunaAuxiliar--;
+						}
+					}
+							
+				     	linha = linhaAnteriorSfc;
+					maximoColuna= 0;
 					coluna = 7;
 					csl++;
 			    	}
