@@ -38,7 +38,7 @@ function compila_sfc(){
 				//condicoes da transicao	
 				for(var sz=0; sz<6; sz++){
 					if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
-					/*	apontAcao = lArrayTransicao[transicaoLocalSfc*20+2+sz];
+					/*	verificaCondicao(lArrayTransicao[transicaoLocalSfc*20+2+sz]);
 						for (var szi = 0; szi<4; szi++) {
 							if (resultado[szi] != ''){
 								booleano[index_bool] = resultado[szi];
@@ -119,7 +119,7 @@ function compila_sfc(){
 		index_bool++;
 		for(var sj=0; sj<8; sj++){
 			if ( lArrayEstado[si*30+17+sj] != '') {
-				apontAcao = lArrayEstado[si*30+17+sj];
+				verificaAcao(lArrayEstado[si*30+17+sj]);
 				for (var szi = 0; szi<4; szi++) {
 					if (resultado[szi] != ''){
 						booleano[index_bool] = resultado[szi];
