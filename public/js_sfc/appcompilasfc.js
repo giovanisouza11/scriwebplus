@@ -354,7 +354,7 @@ function converte_sfc_ladder(){
 						larray[csl1*8*9+maximoColuna*9+5] = 1;
 				     	maximoLinha = linha+1;
 				     	
-				     	if (maxiColuna <6)
+				     	if (maximoColuna <6)
 					     for(var csl1=maximoColuna; csl1<7; csl1++)
 						     larray[linha*8*9+csl1*9+3] = 11;
 					for(var csl1=linhaAnteriorSfc; csl1<linha; csl1++){
