@@ -461,6 +461,25 @@ function converte_sfc_ladder(){
 			    	}
 				csl++;
 			    	break;
+			case 'MOV':
+			    	//alert('RST');
+			   	
+				alert('Mov coluna '+coluna+' Linha '+linha);
+				if(coluna== 7) {
+					larray[linha*8*9+7*9] = coluna + linha*10;
+			     		larray[linha*8*9+7*9+ 1] = '';
+			     		larray[linha*8*9+7*9+2] = booleano[csl+1];
+			     		larray[linha*8*9+7*9+3] = 10;
+			     		larray[linha*8*9+7*9+4] = '';
+			     		larray[linha*8*9+7*9+5] = 0;
+			     		larray[linha*8*9+7*9+6] = 0;
+			     		larray[linha*8*9+7*9+7] = '';
+			     		larray[linha*8*9+7*9+8] = '';
+					linha ++;
+				}
+			    	csl = csl + 2;
+			    	break;
+			
 			default:
 				//larray[linha*8*9+coluna*9]= 'ERRO';
 				alert('ERRO');
