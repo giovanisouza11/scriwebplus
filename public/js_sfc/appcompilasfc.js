@@ -38,7 +38,15 @@ function compila_sfc(){
 				//condicoes da transicao	
 				for(var sz=0; sz<6; sz++){
 					if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
-						var  strinx = lArrayTransicao[transicaoLocalSfc*20+2+sz];
+						apontAcao = lArrayTransicao[transicaoLocalSfc*20+2+sz];
+						for (var szi = 0; szi<4. szi++) {
+							if (resultado[szi] != ''){
+								booleano.push(resultado[szi]);
+								index_bool++;
+							}
+						}
+								
+					/*	var  strinx = lArrayTransicao[transicaoLocalSfc*20+2+sz];
 						var igual = strinx.indexOf('=');
 						var substring = strinx.substring(igual+1,strinx.length);
 						if (igual > (-1)){
@@ -54,7 +62,7 @@ function compila_sfc(){
 							index_bool++ ;
 							booleano[index_bool] = strinx;
 						}
-						index_bool++ ;
+						index_bool++ ; */
 					}
 				}
 				//encerra a transicao
@@ -147,6 +155,7 @@ function verificaAcao(apontAcao){
 	var espaco = apontAcao.indexOf(' ');
 	var mais = apontAcao.indexOf('+');
 	var menos = apontAcao.indexOf('-');
+	resultado = ['','','',''];
 	if (ponto > -1) {
 		if (igual > (-1)) {
 			if (apontAcao.substring(igual+1,apontAcao.length) == '0')
