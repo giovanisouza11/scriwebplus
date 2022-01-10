@@ -486,6 +486,7 @@ function converte_sfc_ladder(){
 				alert('ERRO');
 				csl++;
 		}	     
+		alert('MaxLinha '+maximoLinha + ' MaxColunas '+maximoColuna);
 	}
 	//alerta('monitora');
 	var texto = '';
