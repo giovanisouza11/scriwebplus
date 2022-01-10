@@ -360,7 +360,7 @@ function converte_sfc_ladder(){
 						     larray[linhaAnteriorSfc*8*9+csl1*9+3] = 11;
 					for(var csl1=linhaAnteriorSfc; csl1<linha; csl1++){
 						var maximoColunaAuxiliar = maximoColuna;
-						while ((larray[csl1*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[csl1*8*9+maximoColunaAuxiliar*9+3] > 11)) {
+						while ((larray[csl1*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[csl1*8*9+maximoColunaAuxiliar*9+3] > 11) && maximoColunaAuxiliar > 0) {
 							larray[csl1*8*9+maximoColunaAuxiliar*9+3] = 11;
 							maximoColunaAuxiliar--;
 						}
