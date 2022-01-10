@@ -348,8 +348,7 @@ function converte_sfc_ladder(){
 	for( var csl=0; csl<booleano.length; csl++) {
 		switch (booleano[csl]){
 			case 'LD': 
-			    	// caso ser LD é um inicio de linha ou um fim de o operando "R"
-	
+			    	// caso ser LD é um inicio de linha ou um fim de o opando "R"
 				if (booleano[csl+1].charAt(0) == 'R' || booleano[csl+2] == 'SET' ){
 					flag = 1;
 					coluna = maximoColuna;
@@ -474,12 +473,12 @@ function converte_sfc_ladder(){
 					larray[linha*8*9+7*9] = coluna + linha*10;
 			     		larray[linha*8*9+7*9+ 1] = '';
 			     		larray[linha*8*9+7*9+2] = booleano[csl+1];
-			     		larray[linha*8*9+7*9+3] = 10;
+			     		larray[linha*8*9+7*9+3] = 8;
 			     		larray[linha*8*9+7*9+4] = '';
-			     		larray[linha*8*9+7*9+5] = 0;
+			     		larray[linha*8*9+7*9+5] = booleano[csl+2];
 			     		larray[linha*8*9+7*9+6] = 0;
 			     		larray[linha*8*9+7*9+7] = '';
-			     		larray[linha*8*9+7*9+8] = '';
+			     		larray[linha*8*9+7*9+8] = 'MOV';
 					linha ++;
 				}
 			    	csl = csl + 2;
