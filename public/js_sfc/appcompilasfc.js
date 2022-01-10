@@ -350,7 +350,8 @@ function converte_sfc_ladder(){
 			    	// caso ser LD é um inicio de linha ou um fim de o operando "R"
 	
 				if (booleano[csl+1].charAt(0) == 'R' || booleano[csl+2] == 'SET' ){
-					 for(var csl1=linhaAnteriorSfc; csl1 < linha; csl1++)
+					coluna = maximoColuna;
+					for(var csl1=linhaAnteriorSfc; csl1 < linha; csl1++)
 						larray[csl1*8*9+maximoColuna*9+5] = 1;
 				     	maximoLinha = linha+1;
 				     	
