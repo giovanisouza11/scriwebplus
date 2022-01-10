@@ -343,6 +343,7 @@ function converte_sfc_ladder(){
 	var linhaAnteriorSfc = 0;
 	var maximoColuna = 0;
 	var maximoLinha=0;
+	var flag = 1;
 	//varre toda o array BOOLEANO
 	for( var csl=0; csl<booleano.length; csl++) {
 		switch (booleano[csl]){
@@ -350,6 +351,7 @@ function converte_sfc_ladder(){
 			    	// caso ser LD é um inicio de linha ou um fim de o operando "R"
 	
 				if (booleano[csl+1].charAt(0) == 'R' || booleano[csl+2] == 'SET' ){
+					flag = 1;
 					coluna = maximoColuna;
 					for(var csl1=linhaAnteriorSfc; csl1 < linha; csl1++)
 						larray[csl1*8*9+maximoColuna*9+5] = 1;
@@ -372,8 +374,12 @@ function converte_sfc_ladder(){
 					csl++;
 			    	}
 			    	else {
+					if (flag ==1) {
+						linhaAnteriorSfc = linha;
+						flag = 0;
+					}
 			     		coluna = 0;
-					linha  = maximoLinha;
+					//linha  = maximoLinha;
 					//alert('coluna '+coluna+' Linha '+linha);
 					larray[linha*8*9+coluna*9] = coluna + linha*10;
 			    		larray[linha*8*9+coluna*9+ 1] = '';
@@ -418,8 +424,7 @@ function converte_sfc_ladder(){
 			    	break;
 		    	case 'SET':
 			    	//alert('SET');
-			   	
-				alert('SET coluna '+coluna+' Linha '+linha);
+			   	//alert('SET coluna '+coluna+' Linha '+linha);
 				if(coluna == 7) {
 					larray[linha*8*9+7*9] = coluna + linha*10;
 			     		larray[linha*8*9+7*9+ 1] = '';
@@ -441,8 +446,7 @@ function converte_sfc_ladder(){
 			    	break;
 		    	case 'RST':
 			    	//alert('RST');
-			   	
-				alert('RST coluna '+coluna+' Linha '+linha);
+			   	//alert('RST coluna '+coluna+' Linha '+linha);
 				if(coluna== 7) {
 					larray[linha*8*9+7*9] = coluna + linha*10;
 			     		larray[linha*8*9+7*9+ 1] = '';
