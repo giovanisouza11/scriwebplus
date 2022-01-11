@@ -478,14 +478,14 @@ function converte_sfc_ladder(){
 			     		larray[linha*8*9+7*9+8] = 'MOV';
 		*/			linha ++;
 		//		}
-			    	csl = csl + 2;
+			    	csl += 2;
 			    	break;
 			default:
 				//larray[linha*8*9+coluna*9]= 'ERRO';
 				alert('ERRO');
 				csl++;
 		}	     
-		alert('MaxLinha '+maximoLinha + ' MaxColunas '+maximoColuna);
+		//alert('MaxLinha '+maximoLinha + ' MaxColunas '+maximoColuna);
 	}
 	var texto = '';
 	for (var i=0; i<(larray.length/9); i++) {
