@@ -372,8 +372,8 @@ function converte_sfc_ladder(){
 			    	}
 			    	else {
 					if (flag ==1) {
-						if (maximoLinha > linha)
-							linha = maximoLinha;
+						//if (maximoLinha > linha)
+						//	linha = maximoLinha;
 						linhaAnteriorSfc = linha;
 						flag = 0;
 					}
