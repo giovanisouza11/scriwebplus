@@ -349,9 +349,9 @@ function converte_sfc_ladder(){
 		switch (booleano[csl]){
 			case 'LD': 
 			    	// caso ser LD é um inicio de linha ou um fim de o opando "R"
-				if ((booleano[csl+1].charAt(0) == 'R') || (booleano[csl+2] == 'SET') ){
+				if ((booleano[csl+1].charAt(0) == 'R') && ((booleano[csl+2] == 'SET') || (booleano[csl+2] == 'MOV') ){
 					flag = 1;
-			/*		coluna = maximoColuna;
+					coluna = maximoColuna;
 					for(var csl1=linhaAnteriorSfc; csl1 < (linha-1); csl1++)
 						larray[csl1*8*9+maximoColuna*9+5] = 1;
 				     	maximoLinha = linha;
@@ -367,13 +367,13 @@ function converte_sfc_ladder(){
 					}
 					linha = linhaAnteriorSfc;
 					maximoColuna= 0;
-			*/		coluna = 7;
+					coluna = 7;
 					csl++;
 			    	}
 			    	else {
 					if (flag ==1) {
-						//if (maximoLinha > linha)
-						//	linha = maximoLinha;
+						if (maximoLinha > linha)
+							linha = maximoLinha;
 						linhaAnteriorSfc = linha;
 						flag = 0;
 					}
@@ -422,7 +422,7 @@ function converte_sfc_ladder(){
 		    	case 'SET':
 			    	//alert('SET');
 			   	//alert('SET coluna '+coluna+' Linha '+linha);
-			/*	if(coluna == 7) {
+				if(coluna == 7) {
 					larray[linha*8*9+7*9] = coluna + linha*10;
 			     		larray[linha*8*9+7*9+1] = '';
 			     		larray[linha*8*9+7*9+2] = booleano[csl+1];
@@ -435,16 +435,16 @@ function converte_sfc_ladder(){
 					linha ++;
 				}
 			   	else {
-			 */    		linha++;
+			     		linha++;
 					if (coluna > maximoColuna)
 			      			maximoColuna = coluna;
-			    //	}
+			    	}
 				csl++;
 			    	break;
 		    	case 'RST':
 			    	//alert('RST');
 			   	//alert('RST coluna '+coluna+' Linha '+linha);
-			/*	if(coluna== 7) {
+				if(coluna== 7) {
 					larray[linha*8*9+7*9] = coluna + linha*10;
 			     		larray[linha*8*9+7*9+1] = '';
 			     		larray[linha*8*9+7*9+2] = booleano[csl+1];
@@ -457,15 +457,15 @@ function converte_sfc_ladder(){
 					linha ++;
 				}
 			    	else {
-			    */  		linha++;
+			      		linha++;
 			      		if (coluna > maximoColuna)
 			      			maximoColuna = coluna;
-			    //	}
+			    	}
 				csl++;
 			    	break;
 			case 'MOV':
 			    	//alert('RST');
-		/*		alert('Mov coluna '+coluna+' Linha '+linha);
+				alert('Mov coluna '+coluna+' Linha '+linha);
 				if(coluna== 7) {
 					larray[linha*8*9+7*9] = coluna + linha*10;
 			     		larray[linha*8*9+7*9+1] = '';
@@ -476,8 +476,8 @@ function converte_sfc_ladder(){
 			     		larray[linha*8*9+7*9+6] = 0;
 			     		larray[linha*8*9+7*9+7] = '';
 			     		larray[linha*8*9+7*9+8] = 'MOV';
-		*/			linha ++;
-		//		}
+					linha ++;
+				}
 			    	csl += 2;
 			    	break;
 			default:
