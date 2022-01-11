@@ -367,9 +367,9 @@ function converte_sfc_ladder(){
 					}
 					linha = linhaAnteriorSfc;
 					maximoColuna= 0;
-					coluna = 7;
+			*/		coluna = 7;
 					csl++;
-			  */  	}
+			    	}
 			    	else {
 					if (flag ==1) {
 						if (maximoLinha > linha)
@@ -434,8 +434,8 @@ function converte_sfc_ladder(){
 			     		larray[linha*8*9+7*9+8] = '';
 					linha ++;
 				}
-			    	else {
-			  */   		linha++;
+			   	else {
+			 */    		linha++;
 					if (coluna > maximoColuna)
 			      			maximoColuna = coluna;
 			    //	}
@@ -465,7 +465,7 @@ function converte_sfc_ladder(){
 			    	break;
 			case 'MOV':
 			    	//alert('RST');
-				alert('Mov coluna '+coluna+' Linha '+linha);
+		/*		alert('Mov coluna '+coluna+' Linha '+linha);
 				if(coluna== 7) {
 					larray[linha*8*9+7*9] = coluna + linha*10;
 			     		larray[linha*8*9+7*9+1] = '';
@@ -476,8 +476,8 @@ function converte_sfc_ladder(){
 			     		larray[linha*8*9+7*9+6] = 0;
 			     		larray[linha*8*9+7*9+7] = '';
 			     		larray[linha*8*9+7*9+8] = 'MOV';
-					linha ++;
-				}
+		*/			linha ++;
+		//		}
 			    	csl = csl + 2;
 			    	break;
 			default:
