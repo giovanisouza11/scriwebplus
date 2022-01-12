@@ -427,21 +427,28 @@ function converte_sfc_ladder(){
 		    	case 'SET':
 			    	//alert('SET');
 			   	//alert('SET coluna '+coluna+' Linha '+linha);
-				//if(coluna == 7) {
-					larray[linha*8*9+7*9] = coluna + linha*10;
-			     		larray[linha*8*9+7*9+1] = '';
-			     		larray[linha*8*9+7*9+2] = booleano[csl+1];
-			     		larray[linha*8*9+7*9+3] = 4;
-			     		larray[linha*8*9+7*9+4] = '';
-			     		larray[linha*8*9+7*9+5] = 0;
-			     		larray[linha*8*9+7*9+6] = 0;
-			     		larray[linha*8*9+7*9+7] = '';
-			     		larray[linha*8*9+7*9+8] = '';
+				if(coluna < 7) {
+					var maximoColunaAuxiliar = 6;
+					while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
+						larray[csl1*8*9+maximoColunaAuxiliar*9+3] = 11;
+						maximoColunaAuxiliar--;
+						coluna ==7;
+					}
+				]
+				larray[linha*8*9+7*9] = coluna + linha*10;
+			     	larray[linha*8*9+7*9+1] = '';
+			     	larray[linha*8*9+7*9+2] = booleano[csl+1];
+			     	larray[linha*8*9+7*9+3] = 4;
+			     	larray[linha*8*9+7*9+4] = '';
+			     	larray[linha*8*9+7*9+5] = 0;
+			     	larray[linha*8*9+7*9+6] = 0;
+			     	larray[linha*8*9+7*9+7] = '';
+			     	larray[linha*8*9+7*9+8] = '';
 					
-					if (larray[linha*8*9+6*9+2] != 11) // && larray[(linha-1)*8*9+6*9+5] == 1) 
-						larray[(linha-1)*8*9+6*9+5] = 1;  
+				if (larray[linha*8*9+6*9+2] != 11) // && larray[(linha-1)*8*9+6*9+5] == 1) 
+					larray[(linha-1)*8*9+6*9+5] = 1;  
 					
-					linha ++;
+				linha ++;
 				//}
 			   	//else {
 			     	//	linha++;
@@ -453,7 +460,14 @@ function converte_sfc_ladder(){
 		    	case 'RST':
 			    	//alert('RST');
 			   	//alert('RST coluna '+coluna+' Linha '+linha);
-				//if(coluna== 7) {
+				if(coluna < 7) {
+					var maximoColunaAuxiliar = 6;
+					while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
+						larray[csl1*8*9+maximoColunaAuxiliar*9+3] = 11;
+						maximoColunaAuxiliar--;
+						coluna ==7;
+					}
+				]	
 					larray[linha*8*9+7*9] = coluna + linha*10;
 			     		larray[linha*8*9+7*9+1] = '';
 			     		larray[linha*8*9+7*9+2] = booleano[csl+1];
@@ -479,7 +493,14 @@ function converte_sfc_ladder(){
 			case 'MOV':
 			    	//alert('RST');
 				//alert('Mov coluna '+coluna+' Linha '+linha);
-				//if(coluna== 7) {
+				if(coluna < 7) {
+					var maximoColunaAuxiliar = 6;
+					while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
+						larray[csl1*8*9+maximoColunaAuxiliar*9+3] = 11;
+						maximoColunaAuxiliar--;
+						coluna ==7;
+					}
+				]
 					larray[linha*8*9+7*9] = coluna + linha*10;
 			     		larray[linha*8*9+7*9+1] = '';
 			     		larray[linha*8*9+7*9+2] = booleano[csl+1];
@@ -490,10 +511,10 @@ function converte_sfc_ladder(){
 			     		larray[linha*8*9+7*9+7] = '';
 			     		larray[linha*8*9+7*9+8] = 'MOV';
 					
-				//	if (larray[linha*8*9+6*9+2] != 11) // && larray[(linha-1)*8*9+6*9+5] == 1) 
-				//		larray[(linha-1)*8*9+6*9+5] = 1;  
-				//	
-				//	linha ++;
+					if (larray[linha*8*9+6*9+2] != 11) // && larray[(linha-1)*8*9+6*9+5] == 1) 
+						larray[(linha-1)*8*9+6*9+5] = 1;  
+					
+					linha ++;
 				//}
 			    	csl += 2;
 			    	break;
