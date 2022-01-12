@@ -353,7 +353,7 @@ function converte_sfc_ladder(){
 					if ((booleano[csl+2] == 'SET') || (booleano[csl+2] == 'MOV') ){
 						flag = 1;
 						coluna = maximoColuna;
-						for(var csl1=linhaAnteriorSfc; csl1 < (linha); csl1++)
+						for(var csl1=linhaAnteriorSfc; csl1 < (linha-1); csl1++)
 							larray[csl1*8*9+(maximoColuna-1)*9+5] = 1;
 				     		maximoLinha = linha;
 				 		if (maximoColuna <6)
@@ -434,6 +434,10 @@ function converte_sfc_ladder(){
 			     		larray[linha*8*9+7*9+6] = 0;
 			     		larray[linha*8*9+7*9+7] = '';
 			     		larray[linha*8*9+7*9+8] = '';
+					
+					if (larray[linha*8*9+6*9+2] != 11 && larray[(linha-1)*8*9+6*9+5] == 1) 
+						larray[linha*8*9+6*9+5] = 1;  
+					
 					linha ++;
 				}
 			   	else {
@@ -456,6 +460,10 @@ function converte_sfc_ladder(){
 			     		larray[linha*8*9+7*9+6] = 0;
 			     		larray[linha*8*9+7*9+7] = '';
 			     		larray[linha*8*9+7*9+8] = '';
+					
+					if (larray[linha*8*9+6*9+2] != 11 && larray[(linha-1)*8*9+6*9+5] == 1) 
+						larray[linha*8*9+6*9+5] = 1;  
+					
 					linha ++;
 				}
 			    	else {
@@ -478,6 +486,10 @@ function converte_sfc_ladder(){
 			     		larray[linha*8*9+7*9+6] = 0;
 			     		larray[linha*8*9+7*9+7] = '';
 			     		larray[linha*8*9+7*9+8] = 'MOV';
+					
+					if (larray[linha*8*9+6*9+2] != 11 && larray[(linha-1)*8*9+6*9+5] == 1) 
+						larray[linha*8*9+6*9+5] = 1;  
+					
 					linha ++;
 				}
 			    	csl += 2;
