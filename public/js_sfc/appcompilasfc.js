@@ -436,7 +436,7 @@ function converte_sfc_ladder(){
 			     		larray[linha*8*9+7*9+8] = '';
 					
 					if (larray[linha*8*9+6*9+2] != 11) // && larray[(linha-1)*8*9+6*9+5] == 1) 
-						larray[linha*8*9+6*9+5] = 1;  
+						larray[(linha-1)*8*9+6*9+5] = 1;  
 					
 					linha ++;
 				}
@@ -462,7 +462,7 @@ function converte_sfc_ladder(){
 			     		larray[linha*8*9+7*9+8] = '';
 					
 					if (larray[linha*8*9+6*9+2] != 11) // && larray[(linha-1)*8*9+6*9+5] == 1) 
-						larray[linha*8*9+6*9+5] = 1;  
+						larray[(linha-1)*8*9+6*9+5] = 1;  
 					
 					linha ++;
 				}
@@ -488,7 +488,7 @@ function converte_sfc_ladder(){
 			     		larray[linha*8*9+7*9+8] = 'MOV';
 					
 					if (larray[linha*8*9+6*9+2] != 11) // && larray[(linha-1)*8*9+6*9+5] == 1) 
-						larray[linha*8*9+6*9+5] = 1;  
+						larray[(linha-1)*8*9+6*9+5] = 1;  
 					
 					linha ++;
 				}
