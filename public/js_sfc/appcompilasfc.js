@@ -439,7 +439,7 @@ function converte_sfc_ladder(){
 			   	else {
 			     		linha++;
 					if (coluna > maximoColuna)
-			      			maximoColuna = coluna;
+			      			maximoColuna = coluna-1;
 			    	}
 				csl++;
 			    	break;
@@ -461,7 +461,7 @@ function converte_sfc_ladder(){
 			    	else {
 			      		linha++;
 			      		if (coluna > maximoColuna)
-			      			maximoColuna = coluna;
+			      			maximoColuna = coluna-1;
 			    	}
 				csl++;
 			    	break;
