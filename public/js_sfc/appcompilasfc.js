@@ -368,9 +368,9 @@ function converte_sfc_ladder(){
 							}
 						}
 						linha = linhaAnteriorSfc;
-						maximoColuna= 0;
-						if (coluna > maximoColuna)
-			      				maximoColuna = coluna;
+						//maximoColuna= 0;
+						//if (coluna > maximoColuna)
+			      			//	maximoColuna = coluna;
 						//coluna = 7;
 						if(coluna < 7) {
 							maximoColunaAuxiliar = 6;
@@ -378,9 +378,10 @@ function converte_sfc_ladder(){
 								larray[csl1*8*9+maximoColunaAuxiliar*9+3] = 11;
 								maximoColunaAuxiliar--;
 							}
-							coluna ==7;
 						}
+						coluna =7;
 					}
+					maximoColuna= 0;
 					linha++;
 					csl ++;
 			    	}
