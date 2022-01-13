@@ -349,8 +349,8 @@ function converte_sfc_ladder(){
 		switch (booleano[csl]){
 			case 'LD': 
 			    	// caso ser LD é um inicio de linha ou um fim de o opando "R"
-				if ((booleano[csl+1].charAt(0) == 'R')) { 
-					if ((booleano[csl+2] == 'SET')){
+				if (booleano[csl+1].charAt(0) == 'R') { 
+					if (booleano[csl+2] == 'SET'){
 						flag = 1;
 						coluna = maximoColuna;
 						for(var csl1=linhaAnteriorSfc; csl1 < (linha-1); csl1++)
