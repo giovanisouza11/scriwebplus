@@ -428,7 +428,7 @@ function converte_sfc_ladder(){
 			      			maximoColuna = coluna;
 			    	}
 				else {
-					//if(coluna < 7) {
+					if(coluna < 7) {
 						var maximoColunaAuxiliar = 6;
 						while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
 							larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
@@ -436,7 +436,7 @@ function converte_sfc_ladder(){
 							alert('SET');
 			   			}
 						coluna ==7;
-					//}
+					}
 					//if (coluna == 7) {
 					alert('SET1');
 					larray[linha*8*9+7*9] = coluna + linha*10;
