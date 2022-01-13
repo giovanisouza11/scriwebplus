@@ -438,6 +438,7 @@ function converte_sfc_ladder(){
 						coluna ==7;
 					}
 					//if (coluna == 7) {
+					alert('SET1');
 					larray[linha*8*9+7*9] = coluna + linha*10;
 				     	larray[linha*8*9+7*9+1] = '';
 				     	larray[linha*8*9+7*9+2] = booleano[csl+1];
