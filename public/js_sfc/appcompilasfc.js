@@ -368,21 +368,8 @@ function converte_sfc_ladder(){
 							}
 						}
 						linha = linhaAnteriorSfc;
-						//maximoColuna= 0;
-						//if (coluna > maximoColuna)
-			      			//	maximoColuna = coluna;
-						//coluna = 7;
-						if(coluna < 7) {
-							maximoColunaAuxiliar = 6;
-							while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
-								larray[csl1*8*9+maximoColunaAuxiliar*9+3] = 11;
-								maximoColunaAuxiliar--;
-							}
-						}
-						coluna =7;
 					}
 					maximoColuna= 0;
-					linha++;
 					csl ++;
 			    	}
 			    	else {
@@ -437,82 +424,75 @@ function converte_sfc_ladder(){
 		    	case 'SET':
 			    	//alert('SET');
 			   	//alert('SET coluna '+coluna+' Linha '+linha);
-				/*if(coluna < 7) {
-					var maximoColunaAuxiliar = 6;
-					while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
-						larray[csl1*8*9+maximoColunaAuxiliar*9+3] = 11;
-						maximoColunaAuxiliar--;
-						coluna ==7;
+				if (booleano[csl+1].charAt(0) == 'R'){
+					linha++;
+					if (coluna > maximoColuna)
+			      			maximoColuna = coluna;
+			    		csl++;
+				}
+				else {
+					if(coluna < 7) {
+						var maximoColunaAuxiliar = 6;
+						while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
+							larray[csl1*8*9+maximoColunaAuxiliar*9+3] = 11;
+							maximoColunaAuxiliar--;
+							coluna ==7;
+						}
 					}
-				}*/
-				if (coluna == 7) {
+					//if (coluna == 7) {
 					larray[linha*8*9+7*9] = coluna + linha*10;
-			     		larray[linha*8*9+7*9+1] = '';
-			     		larray[linha*8*9+7*9+2] = booleano[csl+1];
+				     	larray[linha*8*9+7*9+1] = '';
+				     	larray[linha*8*9+7*9+2] = booleano[csl+1];
 			     		larray[linha*8*9+7*9+3] = 4;
 			     		larray[linha*8*9+7*9+4] = '';
-			     		larray[linha*8*9+7*9+5] = 0;
-			     		larray[linha*8*9+7*9+6] = 0;
-			     		larray[linha*8*9+7*9+7] = '';
-			     		larray[linha*8*9+7*9+8] = '';
+				     	larray[linha*8*9+7*9+5] = 0;
+				     	larray[linha*8*9+7*9+6] = 0;
+				     	larray[linha*8*9+7*9+7] = '';
+				     	larray[linha*8*9+7*9+8] = '';
 					
-					if (larray[linha*8*9+6*9+2] != 11) // && larray[(linha-1)*8*9+6*9+5] == 1) 
+					if (larray[linha*8*9+6*9+2] != 11) 
 						larray[(linha-1)*8*9+6*9+5] = 1;  
 					
 					linha ++;
+					csl++;
 				}
-			   	else {
-			     		linha++;
-					if (coluna > maximoColuna)
-			      			maximoColuna = coluna;
-			    	}
-				csl++;
 			    	break;
 		    	case 'RST':
 			    	//alert('RST');
 			   	//alert('RST coluna '+coluna+' Linha '+linha);
-				/*if(coluna < 7) {
+				if(coluna < 7) {
 					var maximoColunaAuxiliar = 6;
 					while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
 						larray[csl1*8*9+maximoColunaAuxiliar*9+3] = 11;
 						maximoColunaAuxiliar--;
 						coluna ==7;
 					}
-				}*/	
-				if (coluna==7) {
-					larray[linha*8*9+7*9] = coluna + linha*10;
-			     		larray[linha*8*9+7*9+1] = '';
-			     		larray[linha*8*9+7*9+2] = booleano[csl+1];
-			     		larray[linha*8*9+7*9+3] = 5;
-			     		larray[linha*8*9+7*9+4] = '';
-			     		larray[linha*8*9+7*9+5] = 0;
-			     		larray[linha*8*9+7*9+6] = 0;
-			     		larray[linha*8*9+7*9+7] = '';
-			     		larray[linha*8*9+7*9+8] = '';
-					
-					if (larray[linha*8*9+6*9+2] != 11) // && larray[(linha-1)*8*9+6*9+5] == 1) 
-						larray[(linha-1)*8*9+6*9+5] = 1;  
-					
-					linha ++;
-				}
-			    	else {
-			      		linha++;
-			      		if (coluna > maximoColuna)
-			      			maximoColuna = coluna;
-			    	}
+				}	
+				larray[linha*8*9+7*9] = coluna + linha*10;
+			     	larray[linha*8*9+7*9+1] = '';
+			     	larray[linha*8*9+7*9+2] = booleano[csl+1];
+			     	larray[linha*8*9+7*9+3] = 5;
+			     	larray[linha*8*9+7*9+4] = '';
+			     	larray[linha*8*9+7*9+5] = 0;
+			     	larray[linha*8*9+7*9+6] = 0;
+			     	larray[linha*8*9+7*9+7] = '';
+			     	larray[linha*8*9+7*9+8] = '';
+				if (larray[linha*8*9+6*9+2] != 11)
+					larray[(linha-1)*8*9+6*9+5] = 1;  
+				linha ++;
 				csl++;
 			    	break;
 			case 'MOV':
 			    	//alert('RST');
 				//alert('Mov coluna '+coluna+' Linha '+linha);
-				/*if(coluna < 7) {
+				if(coluna < 7) {
 					var maximoColunaAuxiliar = 6;
 					while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
 						larray[csl1*8*9+maximoColunaAuxiliar*9+3] = 11;
 						maximoColunaAuxiliar--;
 						coluna ==7;
 					}
-				]*/
+				}
 				larray[linha*8*9+7*9] = coluna + linha*10;
 			     	larray[linha*8*9+7*9+1] = '';
 			     	larray[linha*8*9+7*9+2] = booleano[csl+1];
@@ -523,12 +503,11 @@ function converte_sfc_ladder(){
 			     	larray[linha*8*9+7*9+7] = '';
 			     	larray[linha*8*9+7*9+8] = 'MOV';
 					
-				if (larray[linha*8*9+6*9+2] != 11) // && larray[(linha-1)*8*9+6*9+5] == 1) 
+				if (larray[linha*8*9+6*9+2] != 11) 
 					larray[(linha-1)*8*9+6*9+5] = 1;  
 					
 				linha ++;
-				//}
-			    	csl += 2;
+				csl += 2;
 			    	break;
 			default:
 				//larray[linha*8*9+coluna*9]= 'ERRO';
