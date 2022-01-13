@@ -422,8 +422,7 @@ function converte_sfc_ladder(){
 				coluna++;
 			    	break;
 		    	case 'SET':
-			    	//alert('SET');
-			   	//alert('SET coluna '+coluna+' Linha '+linha);
+			    	//alert('SET coluna '+coluna+' Linha '+linha);
 				if (booleano[csl+1].charAt(0) == 'R'){
 					if (coluna > maximoColuna)
 			      			maximoColuna = coluna;
@@ -434,8 +433,9 @@ function converte_sfc_ladder(){
 						while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
 							larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
 							maximoColunaAuxiliar--;
-							coluna ==7;
-						}
+							alert('SET');
+			   			}
+						coluna ==7;
 					}
 					//if (coluna == 7) {
 					larray[linha*8*9+7*9] = coluna + linha*10;
