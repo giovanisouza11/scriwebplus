@@ -373,7 +373,7 @@ function converte_sfc_ladder(){
 						//coluna = 7;
 					}
 					linha++;
-					csl +=3;
+					csl ++;
 			    	}
 			    	else {
 					if (flag ==1) {
