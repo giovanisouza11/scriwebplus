@@ -432,8 +432,8 @@ function converte_sfc_ladder(){
 						var maximoColunaAuxiliar = 6;
 						while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
 							larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
-							maximoColunaAuxiliar--;
-			   				alert('SET');
+							maximoColunaAuxiliar=5;
+			   				//alert('SET');
 						}
 						coluna = 7;
 					}
