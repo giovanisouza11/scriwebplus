@@ -28,41 +28,44 @@ function compila_sfc(){
 					index_bool++;			
 					booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
 					index_bool++ ;
+					for(var sz=0; sz<6; sz++){
+						if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
+							verificaCondicao(lArrayTransicao[transicaoLocalSfc*20+2+sz]);
+							for (var szi = 0; szi<4; szi++) {
+								if (resultado[szi] != ''){
+									booleano[index_bool] = resultado[szi];
+									index_bool++;
+								}
+							}
+						}
 				}
 				else {
-					booleano[index_bool] = 'LD';
+					if (lArrayTransicao[transicaoLocalSfc*20+2] != '') { 
+						verificaCondicao(lArrayTransicao[transicaoLocalSfc*20+2]);
+						if (resultado[0] == 'AND')
+							booleano[index_bool] = 'LD';
+						if (resultado[0] == 'ANDN')
+							booleano[index_bool] = 'LDN';
+						index_bool++;
+						booleano[index_bool] = resultado[1];
+						index_bool++
+					}
+					/*booleano[index_bool] = 'LD';
 					index_bool++;
 					booleano[index_bool] = '1';
 					index_bool++;
-				}
-				//condicoes da transicao	
-				for(var sz=0; sz<6; sz++){
-					if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
-						verificaCondicao(lArrayTransicao[transicaoLocalSfc*20+2+sz]);
-						for (var szi = 0; szi<4; szi++) {
-							if (resultado[szi] != ''){
-								booleano[index_bool] = resultado[szi];
-								index_bool++;
+				*/
+					//condicoes da transicao	
+					for(var sz=1; sz<6; sz++){
+						if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
+							verificaCondicao(lArrayTransicao[transicaoLocalSfc*20+2+sz]);
+							for (var szi = 0; szi<4; szi++) {
+								if (resultado[szi] != ''){
+									booleano[index_bool] = resultado[szi];
+									index_bool++;
+								}
 							}
 						}
-								
-					/*	var  strinx = lArrayTransicao[transicaoLocalSfc*20+2+sz];
-						var igual = strinx.indexOf('=');
-						var substring = strinx.substring(igual+1,strinx.length);
-						if (igual > (-1)){
-							if (substring == '0')
-								booleano[index_bool] = 'ANDN';
-							else
-								booleano[index_bool] = 'AND';
-							index_bool++ ;
-							booleano[index_bool] = strinx.substring(0, igual);
-						}
-						else {
-							booleano[index_bool] = 'AND';
-							index_bool++ ;
-							booleano[index_bool] = strinx;
-						}
-						index_bool++ ; */
 					}
 				}
 				//encerra a transicao
@@ -126,24 +129,6 @@ function compila_sfc(){
 						index_bool++;
 					}
 				}
-				
-				/*var strinx = lArrayEstado[si*30+17+sj];
-				var igual = strinx.indexOf('=');
-				var substring = strinx.substring(igual+1,strinx.length);
-				if (igual > (-1)) {
-					if (substring == '0')
-						booleano[index_bool] = 'RST';
-					else
-						booleano[index_bool] = 'SET';
-					index_bool++ ;
-		        		booleano[index_bool] = strinx.substring(0, igual);
-				}
-				else {
-					booleano[index_bool] = 'SET';
-					index_bool++ ;
-		        		booleano[index_bool] = strinx;
-				}	
-				index_bool++ ;*/
 			}
 		}
 		
