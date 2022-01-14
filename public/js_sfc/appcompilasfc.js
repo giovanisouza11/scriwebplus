@@ -32,7 +32,7 @@ function compila_sfc(){
 				else {
 					booleano[index_bool] = 'LD';
 					index_bool++;
-					booleano[index_bool] = 1;
+					booleano[index_bool] = '1';
 					index_bool++;
 				}
 				//condicoes da transicao	
