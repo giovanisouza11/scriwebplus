@@ -381,7 +381,7 @@ function converte_sfc_ladder(){
 					}
 			     		coluna = 0;
 					larray[linha*8*9+coluna*9] = coluna + linha*10;
-			    		larray[linha*8*9+coluna*9+ 1] = '';
+			    		larray[linha*8*9+coluna*9+1] = '';
 			    		larray[linha*8*9+coluna*9+2] = booleano[csl+1];
 			    		larray[linha*8*9+coluna*9+3] = 1;
 			    		larray[linha*8*9+coluna*9+4] = '';
@@ -396,7 +396,7 @@ function converte_sfc_ladder(){
 		   	case 'AND':
 			    	//alert('AND');
 			    	larray[linha*8*9+coluna*9] = coluna + linha*10;
-			   	larray[linha*8*9+coluna*9+ 1] = '';
+			   	larray[linha*8*9+coluna*9+1] = '';
 			    	larray[linha*8*9+coluna*9+2] = booleano[csl+1];
 			    	larray[linha*8*9+coluna*9+3] = 1;
 			    	larray[linha*8*9+coluna*9+4] = '';
@@ -433,12 +433,11 @@ function converte_sfc_ladder(){
 						while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
 							larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
 							maximoColunaAuxiliar--;
-							alert('SET');
+							//alert('SET');
 			   			}
-						coluna ==7;
+						coluna = 7;
 					}
-					//if (coluna == 7) {
-					alert('SET1');
+					//alert('SET1');
 					larray[linha*8*9+7*9] = coluna + linha*10;
 				     	larray[linha*8*9+7*9+1] = '';
 				     	larray[linha*8*9+7*9+2] = booleano[csl+1];
@@ -448,7 +447,6 @@ function converte_sfc_ladder(){
 				     	larray[linha*8*9+7*9+6] = 0;
 				     	larray[linha*8*9+7*9+7] = '';
 				     	larray[linha*8*9+7*9+8] = '';
-					
 					if (larray[linha*8*9+6*9+3] != 11) 
 						larray[(linha-1)*8*9+6*9+5] = 1;  
 				}
@@ -463,7 +461,7 @@ function converte_sfc_ladder(){
 					while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
 						larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
 						maximoColunaAuxiliar--;
-						coluna ==7;
+						coluna =7;
 					}
 				}	
 				larray[linha*8*9+7*9] = coluna + linha*10;
@@ -488,7 +486,7 @@ function converte_sfc_ladder(){
 					while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
 						larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
 						maximoColunaAuxiliar--;
-						coluna ==7;
+						coluna = 7;
 					}
 				}
 				larray[linha*8*9+7*9] = coluna + linha*10;
@@ -500,19 +498,15 @@ function converte_sfc_ladder(){
 			     	larray[linha*8*9+7*9+6] = 0;
 			     	larray[linha*8*9+7*9+7] = '';
 			     	larray[linha*8*9+7*9+8] = 'MOV';
-					
 				if (larray[linha*8*9+6*9+2] != 11) 
 					larray[(linha-1)*8*9+6*9+5] = 1;  
-					
 				linha ++;
 				csl += 2;
 			    	break;
 			default:
-				//larray[linha*8*9+coluna*9]= 'ERRO';
 				alert('ERRO');
 				csl++;
 		}	     
-		//alert('MaxLinha '+maximoLinha + ' MaxColunas '+maximoColuna);
 	}
 	var texto = '';
 	for (var i=0; i<(larray.length/9); i++) {
