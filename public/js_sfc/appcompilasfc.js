@@ -430,7 +430,7 @@ function converte_sfc_ladder(){
 				else {
 					if(coluna < 7) {
 						var mCAuxiliar = 6;
-						while ((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0)) {
+						while ((larray[linha*8*9+mCAuxiliar*9+3] == null) ||((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0))) {
 							larray[linha*8*9+mCAuxiliar*9+3] = 11;
 							mCAuxiliar --;
 			   				alert('SET');
