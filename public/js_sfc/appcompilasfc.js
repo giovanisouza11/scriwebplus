@@ -351,7 +351,7 @@ function converte_sfc_ladder(){
 			    	// caso ser LD é um inicio de linha ou um fim de o opando "R"
 				if (booleano[csl+1].charAt(0) == 'R') { 
 					if (booleano[csl+2] == 'SET'){
-						flag = 1;
+						//flag = 1;
 						coluna = maximoColuna;
 						for(var csl1=linhaAnteriorSfc; csl1 < (linha-1); csl1++)
 							larray[csl1*8*9+(maximoColuna-1)*9+5] = 1;
@@ -433,8 +433,8 @@ function converte_sfc_ladder(){
 						while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
 							larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
 							maximoColunaAuxiliar--;
-							//alert('SET');
 			   			}
+						alert('SET');
 						coluna = 7;
 					}
 					//alert('SET1');
@@ -452,6 +452,7 @@ function converte_sfc_ladder(){
 				}
 				linha ++;
 				csl++;
+				flag =1;
 			    	break;
 		    	case 'RST':
 			    	//alert('RST');
@@ -477,6 +478,7 @@ function converte_sfc_ladder(){
 					larray[(linha-1)*8*9+6*9+5] = 1;  
 				linha ++;
 				csl++;
+				flag =1;
 			    	break;
 			case 'MOV':
 			    	//alert('RST');
@@ -502,6 +504,7 @@ function converte_sfc_ladder(){
 					larray[(linha-1)*8*9+6*9+5] = 1;  
 				linha ++;
 				csl += 2;
+				flag =1;
 			    	break;
 			default:
 				alert('ERRO');
