@@ -429,10 +429,10 @@ function converte_sfc_ladder(){
 			    	}
 				else {
 					if(coluna < 7) {
-						var maximoColunaAuxiliar = 6;
-						while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
-							larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
-							maximoColunaAuxiliar --;
+						var mCAuxiliar = 6;
+						while ((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0)) {
+							larray[linha*8*9+mCAuxiliar*9+3] = 11;
+							mCAuxiliar --;
 			   				alert('SET');
 						}
 						alert('SET1');
