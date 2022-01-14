@@ -430,10 +430,10 @@ function converte_sfc_ladder(){
 				else {
 					if(coluna < 7) {
 						var maximoColunaAuxiliar = 6;
-						while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
+						while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (maximoColunaAuxiliar > 0)) {
 							larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
-							maximoColunaAuxiliar=5;
-			   				//alert('SET');
+							maximoColunaAuxiliar --;
+			   				alert('SET');
 						}
 						coluna = 7;
 					}
