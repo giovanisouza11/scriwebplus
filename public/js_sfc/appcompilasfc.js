@@ -377,6 +377,7 @@ function converte_sfc_ladder(){
 						if (maximoLinha > linha)
 							linha = maximoLinha;
 						linhaAnteriorSfc = linha;
+						alert(linha +' '+ linhaAnteriorSfc);
 						flag = 0;
 					}
 			     		coluna = 0;
@@ -433,9 +434,8 @@ function converte_sfc_ladder(){
 						while ((larray[linha*8*9+mCAuxiliar*9+3] == null) ||((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0))) {
 							larray[linha*8*9+mCAuxiliar*9+3] = 11;
 							mCAuxiliar --;
-			   				alert('SET');
-						}
-						alert('SET1');
+			   			}
+						//alert('SET1');
 						coluna = 7;
 					}
 					larray[linha*8*9+7*9] = coluna + linha*10;
@@ -458,12 +458,12 @@ function converte_sfc_ladder(){
 			    	//alert('RST');
 			   	//alert('RST coluna '+coluna+' Linha '+linha);
 				if(coluna < 7) {
-					var maximoColunaAuxiliar = 6;
-					while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
-						larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
-						maximoColunaAuxiliar--;
-						coluna =7;
-					}
+					var mCAuxiliar = 6;
+					while ((larray[linha*8*9+mCAuxiliar*9+3] == null) ||((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0))) {
+						larray[linha*8*9+mCAuxiliar*9+3] = 11;
+						mCAuxiliar --;
+		   			}
+					coluna = 7;
 				}	
 				larray[linha*8*9+7*9] = coluna + linha*10;
 			     	larray[linha*8*9+7*9+1] = '';
@@ -484,12 +484,13 @@ function converte_sfc_ladder(){
 			    	//alert('RST');
 				//alert('Mov coluna '+coluna+' Linha '+linha);
 				if(coluna < 7) {
-					var maximoColunaAuxiliar = 6;
-					while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
-						larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
-						maximoColunaAuxiliar--;
-						coluna = 7;
-					}
+					var mCAuxiliar = 6;
+					while ((larray[linha*8*9+mCAuxiliar*9+3] == null) ||((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0))) {
+						larray[linha*8*9+mCAuxiliar*9+3] = 11;
+						mCAuxiliar --;
+			   		}
+					//alert('SET1');
+					coluna = 7;
 				}
 				larray[linha*8*9+7*9] = coluna + linha*10;
 			     	larray[linha*8*9+7*9+1] = '';
