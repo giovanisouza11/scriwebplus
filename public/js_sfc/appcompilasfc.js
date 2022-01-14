@@ -38,6 +38,7 @@ function compila_sfc(){
 								}
 							}
 						}
+					}
 				}
 				else {
 					if (lArrayTransicao[transicaoLocalSfc*20+2] != '') { 
