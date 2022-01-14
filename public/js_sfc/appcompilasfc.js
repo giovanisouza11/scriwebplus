@@ -433,8 +433,8 @@ function converte_sfc_ladder(){
 						while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
 							larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
 							maximoColunaAuxiliar--;
-			   			}
-						alert('SET');
+			   				alert('SET');
+						}
 						coluna = 7;
 					}
 					//alert('SET1');
