@@ -346,7 +346,7 @@ function converte_sfc_ladder(){
 	var flag = 1;
 	//varre toda o array BOOLEANO
 	for( var csl=0; csl<booleano.length; csl++) {
-		//alert(booleano[csl]);
+		alert(booleano[csl]+' '+booleano[csl+1]);
 		switch (booleano[csl]){
 			case 'LD': 
 			    	// caso ser LD é um inicio de linha ou um fim de o opando "R"
