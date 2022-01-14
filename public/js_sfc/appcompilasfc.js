@@ -430,14 +430,14 @@ function converte_sfc_ladder(){
 				else {
 					if(coluna < 7) {
 						var maximoColunaAuxiliar = 6;
-						while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 11) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 1) && (maximoColunaAuxiliar > 0)) {
+						while ((larray[linha*8*9+maximoColunaAuxiliar*9+3] < 1) && (larray[linha*8*9+maximoColunaAuxiliar*9+3] > 11) && (maximoColunaAuxiliar > 0)) {
 							larray[linha*8*9+maximoColunaAuxiliar*9+3] = 11;
 							maximoColunaAuxiliar --;
 			   				alert('SET');
 						}
+						alert('SET1');
 						coluna = 7;
 					}
-					//alert('SET1');
 					larray[linha*8*9+7*9] = coluna + linha*10;
 				     	larray[linha*8*9+7*9+1] = '';
 				     	larray[linha*8*9+7*9+2] = booleano[csl+1];
