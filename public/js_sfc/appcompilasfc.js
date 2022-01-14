@@ -346,7 +346,7 @@ function converte_sfc_ladder(){
 	var flag = 1;
 	//varre toda o array BOOLEANO
 	for( var csl=0; csl<booleano.length; csl++) {
-		alert(booleano[csl]+' '+booleano[csl+1]);
+		//alert(booleano[csl]+' '+booleano[csl+1]);
 		switch (booleano[csl]){
 			case 'LD': 
 			    	// caso ser LD é um inicio de linha ou um fim de o opando "R"
@@ -490,7 +490,7 @@ function converte_sfc_ladder(){
 						larray[linha*8*9+mCAuxiliar*9+3] = 11;
 						mCAuxiliar --;
 			   		}
-					//alert('SET1');
+					alert('SET1');
 					coluna = 7;
 				}
 				larray[linha*8*9+7*9] = coluna + linha*10;
