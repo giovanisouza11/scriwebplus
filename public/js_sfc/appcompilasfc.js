@@ -416,105 +416,27 @@ function converte_sfc_ladder(){
 			      			maximoColuna = coluna;
 			    	}
 				else {
-					ladderAcao(linha, coluna, 4, booleano[csl+1], 0);
-					/*if(coluna < 7) {
-						var mCAuxiliar = 6;
-						while ((larray[linha*8*9+mCAuxiliar*9+3] == null) ||((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0))) {
-							larray[linha*8*9+mCAuxiliar*9+3] = 11;
-							mCAuxiliar --;
-			   			}
-						//alert('SET1');
-						coluna = 7;
-					}
-					larray[linha*8*9+7*9] = coluna + linha*10;
-				     	larray[linha*8*9+7*9+1] = '';
-				     	larray[linha*8*9+7*9+2] = booleano[csl+1];
-			     		larray[linha*8*9+7*9+3] = 4;
-			     		larray[linha*8*9+7*9+4] = '';
-				     	larray[linha*8*9+7*9+5] = 0;
-				     	larray[linha*8*9+7*9+6] = 0;
-				     	larray[linha*8*9+7*9+7] = '';
-				     	larray[linha*8*9+7*9+8] = '';
-					if (larray[linha*8*9+6*9+3] != 11) 
-						larray[(linha-1)*8*9+6*9+5] = 1;  */
+					ladderAcao(linha, coluna, 4, booleano[csl+1], 0,'');
+			
 				}
 				linha ++;
 				csl++;
 				flag =1;
 			    	break;
 		    	case 'RST':
-			    	//alert('RST');
-			   	//alert('RST coluna '+coluna+' Linha '+linha);
-				if(coluna < 7) {
-					var mCAuxiliar = 6;
-					while ((larray[linha*8*9+mCAuxiliar*9+3] == null) ||((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0))) {
-						larray[linha*8*9+mCAuxiliar*9+3] = 11;
-						mCAuxiliar --;
-		   			}
-					coluna = 7;
-				}	
-				larray[linha*8*9+7*9] = coluna + linha*10;
-			     	larray[linha*8*9+7*9+1] = '';
-			     	larray[linha*8*9+7*9+2] = booleano[csl+1];
-			     	larray[linha*8*9+7*9+3] = 5;
-			     	larray[linha*8*9+7*9+4] = '';
-			     	larray[linha*8*9+7*9+5] = 0;
-			     	larray[linha*8*9+7*9+6] = 0;
-			     	larray[linha*8*9+7*9+7] = '';
-			     	larray[linha*8*9+7*9+8] = '';
-				if (larray[linha*8*9+6*9+3] != 11)
-					larray[(linha-1)*8*9+6*9+5] = 1;  
+			    	ladderAcao(linha, coluna, 5, booleano[csl+1], 0,'');
 				linha ++;
 				csl++;
 				flag =1;
 			    	break;
 			case 'MOV':
-			    	//alert('RST');
-				//alert('Mov coluna '+coluna+' Linha '+linha);
-				if(coluna < 7) {
-					var mCAuxiliar = 6;
-					while ((larray[linha*8*9+mCAuxiliar*9+3] == null) ||((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0))) {
-						larray[linha*8*9+mCAuxiliar*9+3] = 11;
-						mCAuxiliar --;
-			   		}
-					//alert('SET1');
-					coluna = 7;
-				}
-				larray[linha*8*9+7*9] = coluna + linha*10;
-			     	larray[linha*8*9+7*9+1] = '';
-			     	larray[linha*8*9+7*9+2] = booleano[csl+1];
-			     	larray[linha*8*9+7*9+3] = 8;
-			     	larray[linha*8*9+7*9+4] = '';
-			     	larray[linha*8*9+7*9+5] = '0';
-			     	larray[linha*8*9+7*9+6] = booleano[csl+2];
-			     	larray[linha*8*9+7*9+7] = '';
-			     	larray[linha*8*9+7*9+8] = 'MOV';
-				if (larray[linha*8*9+6*9+3] != 11) 
-					larray[(linha-1)*8*9+6*9+5] = 1;  
+			    	ladderAcao(linha, coluna, 8, booleano[csl+1], booleano[csl+2],'MOV');
 				linha ++;
 				csl += 2;
 				flag =1;
 			    	break;
 			case 'TMR':
-			    	if(coluna < 7) {
-					var mCAuxiliar = 6;
-					while ((larray[linha*8*9+mCAuxiliar*9+3] == null) ||((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0))) {
-						larray[linha*8*9+mCAuxiliar*9+3] = 11;
-						mCAuxiliar --;
-			   		}
-					coluna = 7;
-				}
-				larray[linha*8*9+7*9] = coluna + linha*10;
-			     	larray[linha*8*9+7*9+1] = '';
-			     	larray[linha*8*9+7*9+2] = booleano[csl+1];
-			     	larray[linha*8*9+7*9+3] = 8;
-			     	larray[linha*8*9+7*9+4] = '';
-			     	larray[linha*8*9+7*9+5] = '0';
-			     	larray[linha*8*9+7*9+6] = booleano[csl+2];
-			     	larray[linha*8*9+7*9+7] = '';
-			     	larray[linha*8*9+7*9+8] = 'TMR';
-				if (larray[linha*8*9+6*9+3] != 11) 
-					larray[(linha-1)*8*9+6*9+5] = 1;  
+			    	ladderAcao(linha, coluna, 6, booleano[csl+1], booleano[csl+2],'TMR');
 				linha ++;
 				csl += 2;
 				flag =1;
@@ -560,7 +482,7 @@ function converte_sfc_ladder(){
 //---------------------------------------------------------
 //Transforma a ACAO em LADDER
 //--------------------------------------------------------
-function ladderAcao(linha, coluna, funcao, operando1, operando2) {
+function ladderAcao(linha, coluna, funcao, operando1, operando2, funcao2) {
 	if(coluna < 7) {
 		var mCAuxiliar = 6;
 		while ((larray[linha*8*9+mCAuxiliar*9+3] == null) ||((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0))) {
@@ -577,7 +499,7 @@ function ladderAcao(linha, coluna, funcao, operando1, operando2) {
 	larray[linha*8*9+7*9+5] = 0;
 	larray[linha*8*9+7*9+6] = operando2;
 	larray[linha*8*9+7*9+7] = '';
-	larray[linha*8*9+7*9+8] = '';
+	larray[linha*8*9+7*9+8] = funcao2;
 	if (larray[linha*8*9+6*9+3] != 11) 
 		larray[(linha-1)*8*9+6*9+5] = 1;  
 }
