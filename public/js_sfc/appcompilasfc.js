@@ -51,11 +51,7 @@ function compila_sfc(){
 						booleano[index_bool] = resultado[1];
 						index_bool++
 					}
-					/*booleano[index_bool] = 'LD';
-					index_bool++;
-					booleano[index_bool] = '1';
-					index_bool++;
-				*/
+					
 					//condicoes da transicao	
 					for(var sz=1; sz<6; sz++){
 						if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
@@ -89,9 +85,9 @@ function compila_sfc(){
 			for (var is = 0; is < lArrayEstado[si*30+25]; is++) {
 				booleano[index_bool] = 'MOV';
 				index_bool++;
-				booleano[index_bool] = substring2 + (parseInt(substring1) + is);
-				index_bool++;
 				booleano[index_bool] = '0';
+				index_bool++;
+				booleano[index_bool] = substring2 + (parseInt(substring1) + is);
 				index_bool++;
 				
 			}
@@ -364,7 +360,6 @@ function converte_sfc_ladder(){
 						if (maximoLinha > linha)
 							linha = maximoLinha;
 						linhaAnteriorSfc = linha;
-						//alert(linha +' '+ linhaAnteriorSfc);
 						flag = 0;
 					}
 			     		coluna = 0;
