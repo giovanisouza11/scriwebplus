@@ -416,7 +416,7 @@ function converte_sfc_ladder(){
 			      			maximoColuna = coluna;
 			    	}
 				else {
-					ladderAcao(linha, coluna, 4, booleano[csl+1], 0,'');
+					ladderAcao(4, booleano[csl+1], 0,'');
 			
 				}
 				linha ++;
@@ -424,19 +424,19 @@ function converte_sfc_ladder(){
 				flag =1;
 			    	break;
 		    	case 'RST':
-			    	ladderAcao(linha, coluna, 5, booleano[csl+1], 0,'');
+			    	ladderAcao(5, booleano[csl+1], 0,'');
 				linha ++;
 				csl++;
 				flag =1;
 			    	break;
 			case 'MOV':
-			    	ladderAcao(linha, coluna, 8, booleano[csl+1], booleano[csl+2],'MOV');
+			    	ladderAcao(8, booleano[csl+1], booleano[csl+2],'MOV');
 				linha ++;
 				csl += 2;
 				flag =1;
 			    	break;
 			case 'TMR':
-			    	ladderAcao(linha, coluna, 6, booleano[csl+1], booleano[csl+2],'TMR');
+			    	ladderAcao(6, booleano[csl+1], booleano[csl+2],'TMR');
 				linha ++;
 				csl += 2;
 				flag =1;
@@ -482,7 +482,7 @@ function converte_sfc_ladder(){
 //---------------------------------------------------------
 //Transforma a ACAO em LADDER
 //--------------------------------------------------------
-function ladderAcao(linha, coluna, funcao, operando1, operando2, funcao2) {
+function ladderAcao(funcao, operando1, operando2, funcao2) {
 	if(coluna < 7) {
 		var mCAuxiliar = 6;
 		while ((larray[linha*8*9+mCAuxiliar*9+3] == null) ||((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0))) {
