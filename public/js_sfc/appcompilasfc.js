@@ -382,31 +382,18 @@ function converte_sfc_ladder(){
 			    	}
 			    	break;			
 		   	case 'AND':
-			    	//alert('AND');
-			    	larray[linha*8*9+coluna*9] = coluna + linha*10;
-			   	larray[linha*8*9+coluna*9+1] = '';
-			    	larray[linha*8*9+coluna*9+2] = booleano[csl+1];
-			    	larray[linha*8*9+coluna*9+3] = 1;
-			    	larray[linha*8*9+coluna*9+4] = '';
-			    	larray[linha*8*9+coluna*9+5] = 0;
-			    	larray[linha*8*9+coluna*9+6] = 0;
-			    	larray[linha*8*9+coluna*9+7] = '';
-			    	larray[linha*8*9+coluna*9+8] = '';
-			    	csl++;
+			    	ladderCondicao(linha, coluna, 1, '', booleano[csl+1], '');
+				csl++;
 				coluna++;
 			    	break;			
 			case 'ANDN':
-		        	//alert('ANDN');
-				larray[linha*8*9+coluna*9] = coluna + linha*10;
-			    	larray[linha*8*9+coluna*9+1] = '';
-			    	larray[linha*8*9+coluna*9+2] = booleano[csl+1];
-			    	larray[linha*8*9+coluna*9+3] = 2;
-			    	larray[linha*8*9+coluna*9+4] = '';
-			    	larray[linha*8*9+coluna*9+5] = 0;
-			    	larray[linha*8*9+coluna*9+6] = 0;
-			    	larray[linha*8*9+coluna*9+7] = '';
-			    	larray[linha*8*9+coluna*9+8] = '';
-			    	csl++;
+		        	ladderCondicao(linha, coluna, 2, '', booleano[csl+1], '');
+				csl++;
+				coluna++;
+			    	break;
+		    	case '=':
+		        	ladderCondicao(linha, coluna, 9, '=', booleano[csl+1], booleano[csl+2]);
+				csl++;
 				coluna++;
 			    	break;
 		    	case 'SET':
@@ -442,26 +429,20 @@ function converte_sfc_ladder(){
 				flag =1;
 			    	break;
 			case 'CNT':
-			    	if(coluna < 7) {
-					var mCAuxiliar = 6;
-					while ((larray[linha*8*9+mCAuxiliar*9+3] == null) ||((larray[linha*8*9+mCAuxiliar*9+3] < 1) && (larray[linha*8*9+mCAuxiliar*9+3] > 11) && (mCAuxiliar > 0))) {
-						larray[linha*8*9+mCAuxiliar*9+3] = 11;
-						mCAuxiliar --;
-			   		}
-					coluna = 7;
-				}
-				larray[linha*8*9+7*9] = coluna + linha*10;
-			     	larray[linha*8*9+7*9+1] = '';
-			     	larray[linha*8*9+7*9+2] = booleano[csl+1];
-			     	larray[linha*8*9+7*9+3] = 8;
-			     	larray[linha*8*9+7*9+4] = '';
-			     	larray[linha*8*9+7*9+5] = '0';
-			     	larray[linha*8*9+7*9+6] = booleano[csl+2];
-			     	larray[linha*8*9+7*9+7] = '';
-			     	larray[linha*8*9+7*9+8] = 'CNT';
-				if (larray[linha*8*9+6*9+3] != 11) 
-					larray[(linha-1)*8*9+6*9+5] = 1;  
-				linha ++;
+				coluna = ladderAcao(coluna,linha,7, booleano[csl+1], booleano[csl+2],'CNT');
+			    	linha ++;
+				csl += 2;
+				flag =1;
+			    	break;
+			case '+':
+				coluna = ladderAcao(coluna,linha,8, booleano[csl+1], booleano[csl+2],'+');
+			    	linha ++;
+				csl += 2;
+				flag =1;
+			    	break;
+			case '-':
+				coluna = ladderAcao(coluna,linha,8, booleano[csl+1], booleano[csl+2],'-');
+			    	linha ++;
 				csl += 2;
 				flag =1;
 			    	break;
@@ -470,14 +451,13 @@ function converte_sfc_ladder(){
 				csl++;
 		}	     
 	}
-	var texto = '';
+	/*var texto = '';
 	for (var i=0; i<(larray.length/9); i++) {
 		for (var j=0; j<9; j++)
 		    texto += larray[(i*9)+j]+',';
 		texto += '\n';
 	} 
-	alert(texto);
-	//monitora_ladder();
+	alert(texto);*/
 }
 //---------------------------------------------------------
 //Transforma a ACAO em LADDER
@@ -504,4 +484,19 @@ function ladderAcao(coluna,linha,funcao, operando1, operando2, funcao2) {
 		larray[(linha-1)*8*9+6*9+5] = 1;
 	return coluna;
 }
-
+//---------------------------------------------------------
+//Transforma a CONDICAO em LADDER
+//--------------------------------------------------------
+function ladderCondicao(linha, coluna, funcao1, funcao2, operando1, operando2) {
+	larray[linha*8*9+coluna*9] = coluna + linha*10;
+	larray[linha*8*9+coluna*9+1] = '';
+	larray[linha*8*9+coluna*9+2] = operando1;
+	larray[linha*8*9+coluna*9+3] = funcao1;
+	larray[linha*8*9+coluna*9+4] = '';
+	larray[linha*8*9+coluna*9+5] = 0;
+	larray[linha*8*9+coluna*9+6] = operando2;
+	larray[linha*8*9+coluna*9+7] = '';
+	larray[linha*8*9+coluna*9+8] = funcao2;
+}    
+	
+	
