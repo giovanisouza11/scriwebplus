@@ -392,11 +392,36 @@ function converte_sfc_ladder(){
 				coluna++;
 			    	break;
 		    	case '=':
-		        	ladderCondicao(linha, coluna, 9, '=', booleano[csl+1], booleano[csl+2]);
+		        	ladderCondicao(linha, coluna, 10, '=', booleano[csl+1], booleano[csl+2]);
 				csl++;
 				coluna++;
 			    	break;
-		    	case 'SET':
+		    	case '<':
+		        	ladderCondicao(linha, coluna, 10, '<', booleano[csl+1], booleano[csl+2]);
+				csl++;
+				coluna++;
+			    	break;
+			case '<=':
+		        	ladderCondicao(linha, coluna, 10, '<=', booleano[csl+1], booleano[csl+2]);
+				csl++;
+				coluna++;
+			    	break;
+			case '>':
+		        	ladderCondicao(linha, coluna, 10, '>', booleano[csl+1], booleano[csl+2]);
+				csl++;
+				coluna++;
+			    	break;
+			case '>=':
+		        	ladderCondicao(linha, coluna, 10, '>=', booleano[csl+1], booleano[csl+2]);
+				csl++;
+				coluna++;
+			    	break;
+			case '<>':
+		        	ladderCondicao(linha, coluna, 10, '<>', booleano[csl+1], booleano[csl+2]);
+				csl++;
+				coluna++;
+			    	break;
+			case 'SET':
 			    	//alert('SET coluna '+coluna+' Linha '+linha);
 				if (booleano[csl+1].charAt(0) == 'R'){
 					if (coluna > maximoColuna)
@@ -475,9 +500,9 @@ function ladderAcao(coluna,linha,funcao, operando1, operando2, funcao2) {
 	larray[linha*8*9+7*9+1] = '';
 	larray[linha*8*9+7*9+2] = operando1;
 	larray[linha*8*9+7*9+3] = funcao;
-	larray[linha*8*9+7*9+4] = '';
+	larray[linha*8*9+7*9+6] = '';
 	larray[linha*8*9+7*9+5] = 0;
-	larray[linha*8*9+7*9+6] = operando2;
+	larray[linha*8*9+7*9+4] = operando2;
 	larray[linha*8*9+7*9+7] = '';
 	larray[linha*8*9+7*9+8] = funcao2;
 	if (larray[linha*8*9+6*9+3] != 11) 
@@ -492,9 +517,9 @@ function ladderCondicao(linha, coluna, funcao1, funcao2, operando1, operando2) {
 	larray[linha*8*9+coluna*9+1] = '';
 	larray[linha*8*9+coluna*9+2] = operando1;
 	larray[linha*8*9+coluna*9+3] = funcao1;
-	larray[linha*8*9+coluna*9+4] = '';
+	larray[linha*8*9+coluna*9+6] = '';
 	larray[linha*8*9+coluna*9+5] = 0;
-	larray[linha*8*9+coluna*9+6] = operando2;
+	larray[linha*8*9+coluna*9+4] = operando2;
 	larray[linha*8*9+coluna*9+7] = '';
 	larray[linha*8*9+coluna*9+8] = funcao2;
 }    
