@@ -50,6 +50,9 @@ function ladder_simulador(){
 				botoes.style.display = "block";
 			    	draw_botoes();
 			}
+			if (simul.style.display === "block"){
+				botoes.style.display = "none";
+			}
 			sfc.style.display = "none";
 			div3.style.display = "block";
 			div8.style.display = "none";
@@ -60,6 +63,9 @@ function ladder_simulador(){
 				sfc.style.display = "block";
 				ladder.style.display = "block";
 				draw_botoes_sfc();
+			}
+			if (simul.style.display === "block"){
+				sfc.style.display = "none";
 			}
 			div3.style.display = "none";
 			div8.style.display = "block";
