@@ -46,7 +46,7 @@ function ladder_simulador(){
 	lugarX = parseInt((window.event.clientX)/ 200);
     	if (lugarX > 1) {
 		if (div8.style.display === "block") {
-			if (simul.style.display === "none"){
+			if (ladder.style.display === "block" || Tela_Eletrico_Simulador == 0){
 				botoes.style.display = "block";
 			    	draw_botoes();
 			}
@@ -56,7 +56,7 @@ function ladder_simulador(){
 			Tela_Eletrico_Simulador = 0;
 		}
 		else {
-			if (simul.style.display === "none"){
+			if (ladder.style.display === "block" || Tela_Eletrico_Simulador == 0){
 				sfc.style.display = "block";
 				draw_botoes_sfc();
 			}
