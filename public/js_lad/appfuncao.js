@@ -48,15 +48,11 @@ function ladder_simulador(){
 		if (div8.style.display === "block") {
 			if (simul.style.display === "none){
 				botoes.style.display = "block";
-			    	draw_botoes();
+			    	//draw_botoes();
 			}
-			//simul.style.display = "none";
 			sfc.style.display = "none";
 			div3.style.display = "block";
 			div8.style.display = "none";
-			//draw_eletrico();
-    			
-			//Atualiza_Chaves();
 			Tela_Eletrico_Simulador = 0;
 		}
 		else {
@@ -64,13 +60,9 @@ function ladder_simulador(){
 				sfc.style.display = "block";
 				draw_botoes_sfc();
 			}
-			//ladder.style.display = "none";
-			//simul.style.display = "none";
-			//sfc.style.display = "block";
 			div3.style.display = "none";
 			div8.style.display = "block";
 			botoes.style.display = "none";
-			//draw_sfc_inicio();
 			Tela_Eletrico_Simulador = 2;
 		}
 	}
@@ -78,29 +70,22 @@ function ladder_simulador(){
 		if (simul.style.display === 'block') {
 			ladder.style.display = "block";
 			simul.style.display = "none";
-			//sfc.style.display = "block";
-			//div3.style.display = "none";
-			//div8.style.display = "block";
 			if (div3.style.display == 'block'){
 				botoes.style.display = "block";
 				Tela_Eletrico_Simulador = 0;
-				draw_botoes();
+				//draw_botoes();
 			}
 			else {
 				sfc.style.display = "block";
 				draw_botoes_sfc();
 				Tela_Eletrico_Simulador = 2;
 			}
-			//draw_sfc_inicio();
-			//draw_botoes_sfc();
 		}
 		else {
 			botoes.style.display = "none";
 			sfc.style.display = "none";
 			simul.style.display = "block";
 			Sim_Draw_Botoes();
-			//div3.style.display = "block";
-			//div8.style.display = "none";
 			Tela_Eletrico_Simulador = 1;
 		}
 	}
