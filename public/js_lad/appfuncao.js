@@ -7,6 +7,41 @@ function ladder_simulador(){
 	var botoes = document.getElementById('Botoes');
 	var div3 = document.getElementById('idCLP');
 	var div8 = document.getElementById('idSFC');
+	/*if (simul.style.display === "block") {
+		ladder.style.display = "block";
+		simul.style.display = "none";
+		sfc.style.display = "none";
+		botoes.style.display = "block";
+		div3.style.display = "block";
+		div8.style.display = "none";
+		//draw_eletrico();
+    		//draw_botoes();
+		Atualiza_Chaves();
+		Tela_Eletrico_Simulador = 0;
+	}
+	else {
+		if (sfc.style.display === "block") {
+			ladder.style.display = "none";
+			sfc.style.display = "none";
+			botoes.style.display = "none";
+			simul.style.display = "block";
+			Sim_Draw_Botoes();
+			div3.style.display = "block";
+			div8.style.display = "none";
+			Tela_Eletrico_Simulador = 1;
+		}
+		else{
+			ladder.style.display = "block";
+			simul.style.display = "none";
+			sfc.style.display = "block";
+			div3.style.display = "none";
+			div8.style.display = "block";
+			botoes.style.display = "none";
+			//draw_sfc_inicio();
+			draw_botoes_sfc();
+			Tela_Eletrico_Simulador = 2;
+		}
+	}*/
 	if (simul.style.display === "block") {
 		ladder.style.display = "block";
 		simul.style.display = "none";
