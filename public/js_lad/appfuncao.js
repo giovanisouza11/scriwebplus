@@ -58,6 +58,7 @@ function ladder_simulador(){
 		else {
 			if (ladder.style.display === "block" || Tela_Eletrico_Simulador == 0){
 				sfc.style.display = "block";
+				ladder.style.display = "block";
 				draw_botoes_sfc();
 			}
 			div3.style.display = "none";
