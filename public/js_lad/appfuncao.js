@@ -50,7 +50,7 @@ function ladder_simulador(){
 				botoes.style.display = "block";
 			}
 			//simul.style.display = "none";
-			//sfc.style.display = "none";
+			sfc.style.display = "none";
 			div3.style.display = "block";
 			div8.style.display = "none";
 			//draw_eletrico();
@@ -82,11 +82,11 @@ function ladder_simulador(){
 			//div8.style.display = "block";
 			if (div3.style.display == 'block'){
 				botoes.style.display = "block";
-				Tela_Eletrico_Simulador = 2;
+				Tela_Eletrico_Simulador = 0;
 			}
 			else {
 				sfc.style.display = "block";
-				Tela_Eletrico_Simulador = 0;
+				Tela_Eletrico_Simulador = 2;
 			}
 			//draw_sfc_inicio();
 			//draw_botoes_sfc();
