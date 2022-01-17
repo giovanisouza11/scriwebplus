@@ -43,9 +43,9 @@ function ladder_simulador(){
 		}
 	}*/
 	var lugarX;
-	lugarX = parseInt((window.event.clientX)/ 250);
+	lugarX = parseInt((window.event.clientX)/ 200);
     	if (lugarX > 1) {
-		if (div3.style.display === "block") {
+		if (div8.style.display === "block") {
 			if (ladder.style.display === "block"){
 				botoes.style.display = "block";
 			}
@@ -59,8 +59,8 @@ function ladder_simulador(){
 			Tela_Eletrico_Simulador = 0;
 		}
 		else {
-			if (sfc.style.display === "block"){
-				botoes.style.display = "block";
+			if (ladder.style.display === "block"){
+				sfc.style.display = "block";
 			}
 			//ladder.style.display = "none";
 			//simul.style.display = "none";
@@ -77,13 +77,19 @@ function ladder_simulador(){
 		if (simul.style.display === 'block') {
 			ladder.style.display = "block";
 			simul.style.display = "none";
-			sfc.style.display = "block";
+			//sfc.style.display = "block";
 			//div3.style.display = "none";
 			//div8.style.display = "block";
-			botoes.style.display = "block";
+			if (div3.style.display == 'block'){
+				botoes.style.display = "block";
+				Tela_Eletrico_Simulador = 2;
+			}
+			else {
+				sfc.style.display = "block";
+				Tela_Eletrico_Simulador = 0;
+			}
 			//draw_sfc_inicio();
 			//draw_botoes_sfc();
-			Tela_Eletrico_Simulador = 0;
 		}
 		else {
 			botoes.style.display = "none";
