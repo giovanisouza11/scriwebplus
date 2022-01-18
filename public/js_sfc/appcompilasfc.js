@@ -424,11 +424,10 @@ function converte_sfc_ladder(){
 			    	}
 				else {
 					coluna = ladderAcao(coluna,linha,4, booleano[csl+1], 0,'');
-			
+					flag =1;
 				}
 				linha ++;
 				csl++;
-				flag =1;
 			    	break;
 		    	case 'RST':
 			    	coluna = ladderAcao(coluna,linha,5, booleano[csl+1], 0,'');
