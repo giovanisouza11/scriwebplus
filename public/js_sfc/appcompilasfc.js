@@ -20,7 +20,7 @@ function compila_sfc(){
  	while( si < ((lArrayEstado.length/30))) {
 		
 		for (var sj=0; sj<6; sj++){
-			transicaoLocalSfc = lArrayEstado[si*30+9+sj];
+			transicaoLocalSfc = lArrayEstado[si*30+3+sj];
 			if( transicaoLocalSfc != ''){
 				//o estado anterior
 				if ( lArrayTransicao[transicaoLocalSfc*20] != '-1') {
