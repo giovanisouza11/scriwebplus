@@ -168,7 +168,7 @@ function verificaAcao(apontAcao){
 			}
 			else {
 				if ( apontAcao.charAt(0) == 'C') {
-					resultado[0] = 'CNT';
+					resultado[0] = 'CNR';
 					resultado[1] = apontAcao.substring(0, igual);
 					resultado[2] = apontAcao.substring(igual+1, apontAcao.length);
 				}
@@ -187,7 +187,7 @@ function verificaAcao(apontAcao){
 			}
 			else {
 				if ( apontAcao.charAt(0) == 'C') {
-					resultado[0] = 'CNT';
+					resultado[0] = 'CNR';
 					resultado[1] = apontAcao.substring(0, espaco);
 					resultado[2] = apontAcao.substring(espaco+1, apontAcao.length);
 				}
@@ -447,8 +447,8 @@ function converte_sfc_ladder(){
 				csl += 2;
 				flag =1;
 			    	break;
-			case 'CNT':
-				coluna = ladderAcao(coluna,linha,7, booleano[csl+1], booleano[csl+2],'CNT');
+			case 'CNR':
+				coluna = ladderAcao(coluna,linha,7, booleano[csl+1], booleano[csl+2],'CNR');
 			    	linha ++;
 				csl += 2;
 				flag =1;
