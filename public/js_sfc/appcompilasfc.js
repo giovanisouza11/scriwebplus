@@ -128,10 +128,9 @@ function compila_sfc(){
 					}
 				}
 			}
-		
-			//procura um novo estado
-			si++;		
 		}
+		//procura um novo estado
+		si++;		
 	}
 	//alert(booleano);
 }
