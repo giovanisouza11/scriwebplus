@@ -16,7 +16,7 @@ function compila_sfc(){
 	booleano.length = 0;
 	var index_bool = 0;
 	var transicaoLocalSfc;
-	//alert(lArrayEstado);
+	alert(lArrayEstado);
 	//alert(lArrayTransicao);
  	while( si < ((lArrayEstado.length/30))) {
 		
