@@ -497,7 +497,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 				break;
 		}
 		//alert("estado origem "+ i);
-		tamanho = lArrayEstado[numeroEstadoOrigem*30 + 26]; 
+		tamanho = parseInt(lArrayEstado[numeroEstadoOrigem*30 + 26]); 
 		switch (i) {
 			case 1:
 				contexto.moveTo(estadoX0*60 ,estadoY0*60+45);
@@ -535,7 +535,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 			break;
 	}
 	//alert("estado destino "+ j);
-	tamanho = lArrayEstado[numeroEstado*30 + 26];
+	tamanho = parseInt(lArrayEstado[numeroEstado*30 + 26]);
 	if (i>1 && i<6){
 		if (pos_X == estadoX0 && pos_Y < estadoY0){ 
 			contexto.lineTo(estadoX0*60-30,estadoY0*60+80);
