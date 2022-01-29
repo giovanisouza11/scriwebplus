@@ -22,7 +22,7 @@ function compila_sfc(){
 		
 		for (var sj=0; sj<8; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+9+sj];
-			alert(transicaoLocalSfc);
+			//alert(transicaoLocalSfc);
 			if( transicaoLocalSfc != '' && transicaoLocalSfc != null){
 				//o estado anterior
 				if ( lArrayTransicao[transicaoLocalSfc*20] != '-1') {
@@ -134,7 +134,7 @@ function compila_sfc(){
 		//procura um novo estado
 		si++;		
 	}
-	alert(booleano);
+	//alert(booleano);
 }
 
 //=====================================================================================
