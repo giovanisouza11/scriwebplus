@@ -307,61 +307,62 @@ function draw_sfc(fileArr) {
 	var tamanhoSfcString;
 
 	for (var i=1; i<fileArr.length; i++) {
-		alert(fileArr[i]);
+		//alert(fileArr[i]);
 		var fileLine = fileArr[i].split(',');
-		var tamanho_array_sfc= fileLine.length;
-		if (tamanho_array_sfc ==31){
-			sfcString = fileLine[0];
-			indexSfcString =  sfcString.indexOf(' ');
-			tamanhoSfcString = sfcString.length;
-			posicaoYSfc = sfcString.substring(0, indexSfcString);
-			posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
-			indexEstado = fileLine[1];
-			var tamanho = parseInt(fileLine[26]);
-			if (fileLine[25] != '' ) 
-				draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',tamanho);
-			else	
-				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',tamanho);
+		if (fileLine[1] != null) {
+			var tamanho_array_sfc= fileLine.length;
+			if (tamanho_array_sfc ==31){
+				sfcString = fileLine[0];
+				indexSfcString =  sfcString.indexOf(' ');
+				tamanhoSfcString = sfcString.length;
+				posicaoYSfc = sfcString.substring(0, indexSfcString);
+				posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
+				indexEstado = fileLine[1];
+				var tamanho = parseInt(fileLine[26]);
+				if (fileLine[25] != '' ) 
+					draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',tamanho);
+				else	
+					draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, fileLine[1],'black',tamanho);
                 
-			for(var j=0; j<30; j++)
-				lArrayEstado[fileLine[1]*30+j] = fileLine[j];
-			for(var j=0; j<4; j++){
-				if (fileLine[17+j] != '') 
-					contextSfc.fillText(fileLine[17+j],posicaoXSfc*60+10, posicaoYSfc*60+12+j*10);
-				if (fileLine[20+j] != '') 
-					contextSfc.fillText(fileLine[20+j],posicaoXSfc*60+70, posicaoYSfc*60+12+j*10);
-
+				for(var j=0; j<30; j++)
+					lArrayEstado[fileLine[1]*30+j] = fileLine[j];
+				for(var j=0; j<4; j++){
+					if (fileLine[17+j] != '') 
+						contextSfc.fillText(fileLine[17+j],posicaoXSfc*60+10, posicaoYSfc*60+12+j*10);
+					if (fileLine[20+j] != '') 
+						contextSfc.fillText(fileLine[20+j],posicaoXSfc*60+70, posicaoYSfc*60+12+j*10);
+				}
+				indexEstado++;
+				if (fileLine[2] != '')
+					contextSfc.fillText(fileLine[2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 			}
-			indexEstado++;
-			if (fileLine[2] != '')
-				contextSfc.fillText(fileLine[2],posicaoXSfc*60+2, posicaoYSfc*60+50);
-		}
-		if (tamanho_array_sfc ==21) {
-			//alert(tamanho_array_sfc);
-			numeroEstadoOrigem = fileLine[0];
-			if (numeroEstadoOrigem >-1) {
-				sfcString = lArrayEstado[numeroEstadoOrigem*30];
+			if (tamanho_array_sfc ==21) {
+				//alert(tamanho_array_sfc);
+				numeroEstadoOrigem = fileLine[0];
+				if (numeroEstadoOrigem >-1) {
+					sfcString = lArrayEstado[numeroEstadoOrigem*30];
+					indexSfcString = sfcString.indexOf(' ');
+					tamanhoSfcString = sfcString.length;
+					estadoY0 = sfcString.substring(0, indexSfcString);
+					estadoX0 = sfcString.substring(indexSfcString+1, tamanhoSfcString);
+				}
+				numeroEstado = fileLine[1];
+				sfcString = lArrayEstado[numeroEstado*30];
 				indexSfcString = sfcString.indexOf(' ');
 				tamanhoSfcString = sfcString.length;
-				estadoY0 = sfcString.substring(0, indexSfcString);
-				estadoX0 = sfcString.substring(indexSfcString+1, tamanhoSfcString);
-			}
-			numeroEstado = fileLine[1];
-			sfcString = lArrayEstado[numeroEstado*30];
-			indexSfcString = sfcString.indexOf(' ');
-			tamanhoSfcString = sfcString.length;
-			posicaoYSfc = parseInt(sfcString.substring(0, indexSfcString));
-			posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
+				posicaoYSfc = parseInt(sfcString.substring(0, indexSfcString));
+				posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
 			
-			draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, "black");
-			for(var j=0; j<20; j++)
-				lArrayTransicao[indexTransicao*20+j] = fileLine[j];
-			for(var j=0; j<6; j++)
-				if (fileLine[2+j] != '') {
-					posicao_sfc(indexTransicao);
-					contextSfc.fillText(fileLine[2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
-				}
-			indexTransicao++;
+				draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, "black");
+				for(var j=0; j<20; j++)
+					lArrayTransicao[indexTransicao*20+j] = fileLine[j];
+				for(var j=0; j<6; j++)
+					if (fileLine[2+j] != '') {
+						posicao_sfc(indexTransicao);
+						contextSfc.fillText(fileLine[2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
+					}
+				indexTransicao++;
+			}
 		}
 	}	
 }
@@ -956,54 +957,56 @@ function monitora_sfc() {
 	draw_sfc_fundo(0);
 	for(var i=0; i < ((lArrayEstado.length/30)); i++) {
 		sfcString = lArrayEstado[30*i];
-		indexSfcString =  sfcString.indexOf(' ');
-		tamanhoSfcString = sfcString.length;
-		posicaoYSfc = sfcString.substring(0, indexSfcString);
-		posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
-		var tamanho = parseInt(lArrayEstado[30*i+26]);
-		verificaEstado(i);
-		if (lArrayEstado[30*i+25] != '' ) 
-			draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i+1],cor_sfc[auxiliar_sfc[0]],tamanho);
-		else	
-			draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i+1],cor_sfc[auxiliar_sfc[0]],tamanho);
-        	for(var j=0; j<4; j++){
-			if (lArrayEstado[30*i+17+j] != ''){ 
-				contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+1]];
-				contextSfc.fillText(lArrayEstado[30*i+17+j],posicaoXSfc*60+10, posicaoYSfc*60+12+j*10);
+		if (sfcString != null) {
+			indexSfcString =  sfcString.indexOf(' ');
+			tamanhoSfcString = sfcString.length;
+			posicaoYSfc = sfcString.substring(0, indexSfcString);
+			posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
+			var tamanho = parseInt(lArrayEstado[30*i+26]);
+			verificaEstado(i);
+			if (lArrayEstado[30*i+25] != '' ) 
+				draw_estado_zero(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i+1],cor_sfc[auxiliar_sfc[0]],tamanho);
+			else	
+				draw_estado(contextSfc, posicaoXSfc, posicaoYSfc, lArrayEstado[30*i+1],cor_sfc[auxiliar_sfc[0]],tamanho);
+        		for(var j=0; j<4; j++){
+				if (lArrayEstado[30*i+17+j] != ''){ 
+					contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+1]];
+					contextSfc.fillText(lArrayEstado[30*i+17+j],posicaoXSfc*60+10, posicaoYSfc*60+12+j*10);
+				}
+				if (lArrayEstado[30*i+21+j] != ''){ 
+					contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+4]];
+					contextSfc.fillText(lArrayEstado[30*i+21+j],posicaoXSfc*60+70, posicaoYSfc*60+12+j*10);
+				}
 			}
-			if (lArrayEstado[30*i+21+j] != ''){ 
-				contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+4]];
-				contextSfc.fillText(lArrayEstado[30*i+21+j],posicaoXSfc*60+70, posicaoYSfc*60+12+j*10);
+			if (lArrayEstado[30*i+2] != ''){
+				contextSfc.fillStyle = cor_sfc[auxiliar_sfc[0]];
+				contextSfc.fillText(lArrayEstado[30*i+2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 			}
 		}
-		if (lArrayEstado[30*i+2] != ''){
-			contextSfc.fillStyle = cor_sfc[auxiliar_sfc[0]];
-			contextSfc.fillText(lArrayEstado[30*i+2],posicaoXSfc*60+2, posicaoYSfc*60+50);
-		}
-	}
-	for(var i=0; i < ((lArrayTransicao.length/20)); i++) {
-		numeroEstadoOrigem = lArrayTransicao[20*i];
-		if (numeroEstadoOrigem >(-1)) {
-			sfcString = lArrayEstado[numeroEstadoOrigem*30];
+		for(var i=0; i < ((lArrayTransicao.length/20)); i++) {
+			numeroEstadoOrigem = lArrayTransicao[20*i];
+			if (numeroEstadoOrigem >(-1)) {
+				sfcString = lArrayEstado[numeroEstadoOrigem*30];
+				indexSfcString = sfcString.indexOf(' ');
+				tamanhoSfcString = sfcString.length;
+				estadoY0 = sfcString.substring(0, indexSfcString);
+				estadoX0 = sfcString.substring(indexSfcString+1, tamanhoSfcString);
+			}
+			numeroEstado = lArrayTransicao[20*i+1];
+			sfcString = lArrayEstado[numeroEstado*30];
 			indexSfcString = sfcString.indexOf(' ');
 			tamanhoSfcString = sfcString.length;
-			estadoY0 = sfcString.substring(0, indexSfcString);
-			estadoX0 = sfcString.substring(indexSfcString+1, tamanhoSfcString);
-		}
-		numeroEstado = lArrayTransicao[20*i+1];
-		sfcString = lArrayEstado[numeroEstado*30];
-		indexSfcString = sfcString.indexOf(' ');
-		tamanhoSfcString = sfcString.length;
-		posicaoYSfc = parseInt(sfcString.substring(0, indexSfcString));
-		posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
-		verificaTransicao(i);	
-		indexTransicao = i;
-		draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, cor_sfc[auxiliar_sfc[0]]);
-		for(var j=0; j<6; j++){
-			posicao_sfc(i);
-			if (lArrayTransicao[20*i+2+j] != '') {
-				contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+1]];
-				contextSfc.fillText(lArrayTransicao[20*i+2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
+			posicaoYSfc = parseInt(sfcString.substring(0, indexSfcString));
+			posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
+			verificaTransicao(i);	
+			indexTransicao = i;
+			draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, cor_sfc[auxiliar_sfc[0]]);
+			for(var j=0; j<6; j++){
+				posicao_sfc(i);
+				if (lArrayTransicao[20*i+2+j] != '') {
+					contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+1]];
+					contextSfc.fillText(lArrayTransicao[20*i+2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
+				}
 			}
 		}
 	}
