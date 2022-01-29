@@ -16,12 +16,13 @@ function compila_sfc(){
 	booleano.length = 0;
 	var index_bool = 0;
 	var transicaoLocalSfc;
-	alert(lArrayEstado);
-	alert(lArrayTransicao);
+	//alert(lArrayEstado);
+	//alert(lArrayTransicao);
  	while( si < ((lArrayEstado.length/30))) {
 		
 		for (var sj=0; sj<8; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+9+sj];
+			alert(transicaoLocalSfc);
 			if( transicaoLocalSfc != ''){
 				//o estado anterior
 				if ( lArrayTransicao[transicaoLocalSfc*20] != '-1') {
