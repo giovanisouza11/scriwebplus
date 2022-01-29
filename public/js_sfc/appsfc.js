@@ -955,7 +955,7 @@ function monitora_sfc() {
 	var tamanhoSfcString;
 	var cor_sfc = ['silver', 'black','green','red','yellow'];
 	draw_sfc_fundo(0);
-	for(var i=0; i < ((lArrayEstado.length/30)); i++) {
+	for(var i=0; i < (lArrayEstado.length/30); i++) {
 		sfcString = lArrayEstado[30*i];
 		if (sfcString != null) {
 			indexSfcString =  sfcString.indexOf(' ');
@@ -983,30 +983,30 @@ function monitora_sfc() {
 				contextSfc.fillText(lArrayEstado[30*i+2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 			}
 		}
-		for(var i=0; i < ((lArrayTransicao.length/20)); i++) {
-			numeroEstadoOrigem = lArrayTransicao[20*i];
-			if (numeroEstadoOrigem >(-1)) {
-				sfcString = lArrayEstado[numeroEstadoOrigem*30];
-				indexSfcString = sfcString.indexOf(' ');
-				tamanhoSfcString = sfcString.length;
-				estadoY0 = sfcString.substring(0, indexSfcString);
-				estadoX0 = sfcString.substring(indexSfcString+1, tamanhoSfcString);
-			}
-			numeroEstado = lArrayTransicao[20*i+1];
-			sfcString = lArrayEstado[numeroEstado*30];
+	}
+	for(var i=0; i < (lArrayTransicao.length/20); i++) {
+		numeroEstadoOrigem = lArrayTransicao[20*i];
+		if (numeroEstadoOrigem >(-1)) {
+			sfcString = lArrayEstado[numeroEstadoOrigem*30];
 			indexSfcString = sfcString.indexOf(' ');
 			tamanhoSfcString = sfcString.length;
-			posicaoYSfc = parseInt(sfcString.substring(0, indexSfcString));
-			posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
-			verificaTransicao(i);	
-			indexTransicao = i;
-			draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, cor_sfc[auxiliar_sfc[0]]);
-			for(var j=0; j<6; j++){
-				posicao_sfc(i);
-				if (lArrayTransicao[20*i+2+j] != '') {
-					contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+1]];
-					contextSfc.fillText(lArrayTransicao[20*i+2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
-				}
+			estadoY0 = sfcString.substring(0, indexSfcString);
+			estadoX0 = sfcString.substring(indexSfcString+1, tamanhoSfcString);
+		}
+		numeroEstado = lArrayTransicao[20*i+1];
+		sfcString = lArrayEstado[numeroEstado*30];
+		indexSfcString = sfcString.indexOf(' ');
+		tamanhoSfcString = sfcString.length;
+		posicaoYSfc = parseInt(sfcString.substring(0, indexSfcString));
+		posicaoXSfc = sfcString.substring(indexSfcString+1, tamanhoSfcString);
+		verificaTransicao(i);	
+		indexTransicao = i;
+		draw_transicao(contextSfc, posicaoXSfc, posicaoYSfc, cor_sfc[auxiliar_sfc[0]]);
+		for(var j=0; j<6; j++){
+			posicao_sfc(i);
+			if (lArrayTransicao[20*i+2+j] != '') {
+				contextSfc.fillStyle = cor_sfc[auxiliar_sfc[j+1]];
+				contextSfc.fillText(lArrayTransicao[20*i+2+j],(resultado[0]+resultado[2])/2+5, (resultado[1]+resultado[3])/2-30+j*10);
 			}
 		}
 	}
