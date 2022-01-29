@@ -51,7 +51,7 @@ function compila_sfc(){
 								booleano[index_bool] = 'LDN';
 							index_bool++;
 							booleano[index_bool] = resultado[1];
-							index_bool++
+							index_bool++;
 						}
 					
 						//condicoes da transicao	
