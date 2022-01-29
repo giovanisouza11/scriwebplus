@@ -23,7 +23,7 @@ function compila_sfc(){
 		for (var sj=0; sj<8; sj++){
 			transicaoLocalSfc = lArrayEstado[si*30+9+sj];
 			alert(transicaoLocalSfc);
-			if( transicaoLocalSfc != ''){
+			if( transicaoLocalSfc != '' && transicaoLocalSfc != null){
 				//o estado anterior
 				if ( lArrayTransicao[transicaoLocalSfc*20] != '-1') {
 					booleano[index_bool] = 'LD';
@@ -43,7 +43,7 @@ function compila_sfc(){
 					}
 				}
 				else {
-					if (lArrayTransicao[transicaoLocalSfc*20+2] != '') { 
+					if (lArrayTransicao[transicaoLocalSfc*20+2] != '' && lArrayTransicao[transicaoLocalSfc*20+2] != null) { 
 						verificaCondicao(lArrayTransicao[transicaoLocalSfc*20+2]);
 						if (resultado[0] == 'AND')
 							booleano[index_bool] = 'LD';
@@ -56,7 +56,7 @@ function compila_sfc(){
 					
 					//condicoes da transicao	
 					for(var sz=1; sz<6; sz++){
-						if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
+						if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '' && lArrayTransicao[transicaoLocalSfc*20+2+sz] != null) { 
 							verificaCondicao(lArrayTransicao[transicaoLocalSfc*20+2+sz]);
 							for (var szi = 0; szi<4; szi++) {
 								if (resultado[szi] != ''){
@@ -106,7 +106,7 @@ function compila_sfc(){
 			index_bool++ ;
 			for(var sj=0; sj<6; sj++){
 				transicaoLocalSfc = lArrayEstado[si*30+9+sj];
-				if (transicaoLocalSfc != '-1' && transicaoLocalSfc != '' ) { 
+				if (transicaoLocalSfc != '-1' && transicaoLocalSfc != ''  && transicaoLocalSfc != null) { 
 					booleano[index_bool] = 'RST';
 					index_bool++ ;
 			    		booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
@@ -120,7 +120,7 @@ function compila_sfc(){
 		booleano[index_bool] = lArrayEstado[si*30 +2];
 		index_bool++;
 		for(var sj=0; sj<8; sj++){
-			if ( lArrayEstado[si*30+17+sj] != '') {
+			if ( lArrayEstado[si*30+17+sj] != '' && lArrayEstado[si*30+17+sj] != null) {
 				verificaAcao(lArrayEstado[si*30+17+sj]);
 				for (var szi = 0; szi<4; szi++) {
 					if (resultado[szi] != ''){
