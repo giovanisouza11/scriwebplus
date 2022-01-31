@@ -108,7 +108,7 @@ function trocar_botao_sfc() {
 		valor_chave_sfc[7]==1;
 	}
 	if (valor_chave_sfc[2]==1){
-                alert(lArrayEstado + lArrayTransicao);
+                //alert(lArrayEstado + lArrayTransicao);
 	    	let texto = 'LinhaColuna, 1-NUM_ESTADO,2-Memoria,3-EstadoINICIAL1,..,..,..,..,8-EstadoiNICIAL5,9-EstadoFIM1,..,..,..,..,..,..,16-EstadoFIM8,17-Ação1,..,..,..,..,..,..,24-Ação 8,25-NumMem,26-TAMANHO,27-Reserva,28-Reserva,29-Reserva' + '\n';
 	    	for (var i=0; i<(lArrayEstado.length/30); i++) {
 			for (var j=0; j<30; j++)
