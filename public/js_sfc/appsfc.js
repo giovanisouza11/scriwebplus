@@ -309,7 +309,7 @@ function draw_sfc(fileArr) {
 	for (var i=1; i<fileArr.length; i++) {
 		//alert(fileArr[i]);
 		var fileLine = fileArr[i].split(',');
-		if (fileLine[1] != null) {
+		if (fileLine[0] != null) {
 			var tamanho_array_sfc= fileLine.length;
 			if (tamanho_array_sfc ==31){
 				sfcString = fileLine[0];
