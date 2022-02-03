@@ -109,13 +109,13 @@ function trocar_botao_sfc() {
 	}
 	if (valor_chave_sfc[2]==1){
                 //alert(lArrayEstado + lArrayTransicao);
-	    	let texto = 'LinhaColuna, 1-NUM_ESTADO,2-Memoria,3-EstadoINICIAL1,..,..,..,..,8-EstadoiNICIAL5,9-EstadoFIM1,..,..,..,..,..,..,16-EstadoFIM8,17-Ação1,..,..,..,..,..,..,24-Ação 8,25-NumMem,26-TAMANHO,27-Reserva,28-Reserva,29-Reserva' + '\n';
+	    	let texto = 'LinCol, 1-NESTADO,2-Mem,3-EINICIAL1,EI2,EI3,EI4,4I5,8-EiNICIAL5,9-EFIM1,EF2,2F3,EF4,EF5,EF6,EF7,16-EFIM8,17-ACAO1,A2,A3,A4,A5,A6,A7,24-ACAO8,25-NumMem,26-TAMANHO,27-Res,28-Res,29-Res' + '\n';
 	    	for (var i=0; i<(lArrayEstado.length/30); i++) {
 			for (var j=0; j<30; j++)
 			    texto += lArrayEstado[(i*30)+j]+',';
 			texto += '\n';
 		}
-	 	texto = texto+'EstadoInicial, 1-estadoFim, 2-Condição1,..,..,..,..,..,8-Condição7,9-ponto1,10-ponto2,11-ponto3,12-ponto4,13-ponto5,14ponto6,15PosIni,16PosFim,17res,18Res,19Res' + '\n';
+	 	texto = texto+'EInicial, 1-eFim, 2-Condição1,C2,C3,C4,C5,C6,8-Condição7,9-pon1,10-pon2,11-pon3,12-pon4,13-pon5,14pon6,15PosIni,16PosFim,17res,18Res,19Res' + '\n';
 		for (var i=0; i<(lArrayTransicao.length/20); i++) {
 			for (var j=0; j<20; j++)
 			    texto += lArrayTransicao[(i*20)+j]+',';
