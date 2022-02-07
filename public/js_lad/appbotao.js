@@ -235,11 +235,13 @@ function trocar_botao() {
 	}
 	if (valor_chave[3]==1){
 		compila_ladder();
-		//let texto = '';
-		//for (var i=0; i<(booleano.length); i++) {
-			//for (var j=0; j<2; j++)
-		//	texto += booleano[i]+',';
-		//}
+		let texto = '';
+		for (var i=0; i<(booleano.length); i++) {
+			for (var j=0; j<2; j++)
+				texto += booleano[i]+',';
+			texto += '/n';
+		}
+		alert(texto);
 
                 //socket.emit('programax', texto+','+num_clp); 
 		clp_programa = booleano;
