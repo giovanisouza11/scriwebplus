@@ -152,6 +152,7 @@ function trocar_botao_sfc() {
 	}
 	if (valor_chave_sfc[6]==1){
 		converte_sfc_ladder();
+		botaoCompilaLadder();
 	}
 	if (valor_chave_sfc[7]==1){
 		
