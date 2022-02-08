@@ -37,19 +37,18 @@ function trocar_botao_sfc() {
 	{
 		for(var i=11; i<21; i++)
 			valor_chave_sfc[i] = 0;
-		//if((posicaoysfc >0) && (posicaoysfc < 8))
-			for(var i=1; i<8; i++)
-				valor_chave_sfc[i] = 0;
+		for(var i=1; i<8; i++)
+			valor_chave_sfc[i] = 0;
 
 		valor_chave_sfc[posicaoysfc]=1;
 		draw_botoes_sfc();
 	}
 	if (valor_chave_sfc[10]==1){
-        	window.open("About", "SCriWeb");//, "height=600,width=600");
+        	window.open("About", "SCriWeb");
 	    	valor_chave_sfc[10]=0;
 	}
 	if (valor_chave_sfc[9]==1){
-        	window.open("Help", "SCriWeb");//, "height=800,width=1000");
+        	window.open("Help", "SCriWeb");
 	    	valor_chave_sfc[9]=0;
 	}
 	if (valor_chave_sfc[8]==1){
@@ -69,7 +68,6 @@ function trocar_botao_sfc() {
 		btn.setAttribute('type','button')
 		btn.appendChild(document.createTextNode('OK'));
 		btn.onclick = function() {
-			//config(document.getElementById('input1').value);
 			localStorage.setItem("num_clp", document.getElementById('input1').value);
 			localStorage.setItem("tempo_scan", document.getElementById('input2').value);
 			localStorage.setItem("tempo_atualizacao", document.getElementById('input3').value);
@@ -87,8 +85,7 @@ function trocar_botao_sfc() {
 				modal.style.display = "none";
 			}
 		}
-	
-	   valor_chave_sfc[8]=0;
+		valor_chave_sfc[8]=0;
 	}
 	if (valor_chave_sfc[1]==1){
         	var inputCSV = document.createElement('input');
@@ -96,7 +93,6 @@ function trocar_botao_sfc() {
 		inputCSV.accept = '.CSV';
 	    	inputCSV.click();
 		inputCSV.onchange = function() {
-			//inputCSV.setPropertie('accept', '.csv');
 			var file = this.files[0];
 		    	leitorDeSfc.readAsText(file);
 			titulo_sfc = file.name.slice(0,file.name.length -4);
@@ -108,7 +104,6 @@ function trocar_botao_sfc() {
 		valor_chave_sfc[7]==1;
 	}
 	if (valor_chave_sfc[2]==1){
-                //alert(lArrayEstado + lArrayTransicao);
 	    	let texto = 'LinCol, 1-NESTADO,2-Mem,3-EINICIAL1,EI2,EI3,EI4,4I5,8-EiNICIAL5,9-EFIM1,EF2,2F3,EF4,EF5,EF6,EF7,16-EFIM8,17-ACAO1,A2,A3,A4,A5,A6,A7,24-ACAO8,25-NumMem,26-TAMANHO,27-Res,28-Res,29-Res' + '\n';
 	    	for (var i=0; i<(lArrayEstado.length/30); i++) {
 			for (var j=0; j<30; j++)
@@ -121,7 +116,6 @@ function trocar_botao_sfc() {
 			    texto += lArrayTransicao[(i*20)+j]+',';
 			texto += '\n';
 		}
-		
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
         	saveAs(blob, titulo_sfc + ".csv");
         	valor_chave_sfc[2]=0;
@@ -129,15 +123,14 @@ function trocar_botao_sfc() {
 	if (valor_chave_sfc[3]==1){
 		//alert('compilando');
 		compila_sfc();
-		let texto = '';
-		for (var i=0; i<(booleano.length); i++) {
-			texto += booleano[i]+','+booleano[i+1]+',';
-			texto += '\n';
-			i++;
-		}
-		alert(texto);
-                //socket.emit('programax', texto+','+num_clp); 
-		clp_programa = booleano;
+		//let texto = '';
+		//for (var i=0; i<(booleano.length); i++) {
+		//	texto += booleano[i]+','+booleano[i+1]+',';
+		//	texto += '\n';
+		//	i++;
+		//}
+		//alert(texto);
+                clp_programa = booleano;
 		clp_cria_memoria();
 		//alert(clp_programa);
 		I = clpI;
@@ -156,7 +149,6 @@ function trocar_botao_sfc() {
 		stop_CLP();
 		monitora_sfc();
 		clp_comandos = 0;
-		//socket.emit('comandosx', 0+ ','+  num_clp);
 	}
 	if (valor_chave_sfc[6]==1){
 		converte_sfc_ladder();
@@ -171,7 +163,6 @@ function trocar_botao_sfc() {
 //Fonte https://tableless.com.br/file-api-trabalhando-com-arquivos-locais-usando-javascript/
 var leitorDeSfc = new FileReader();
 leitorDeSfc.addEventListener('load', leSfc);
-
 
 function pegaSfc(inputFile) {
 	var file = inputFile.files[0];
