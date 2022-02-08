@@ -378,11 +378,10 @@ function converte_sfc_ladder(){
 			    	}
 			    	break;			
 		   	case 'LDN': 
-			    		coluna = 0;
-					ladderCondicao(linha, coluna, 2, '', booleano[csl+1], '');
-					csl++;
-					coluna++;
-			    	}
+			    	coluna = 0;
+				ladderCondicao(linha, coluna, 2, '', booleano[csl+1], '');
+				csl++;
+				coluna++;
 			    	break;			
 			case 'AND':
 			    	ladderCondicao(linha, coluna, 1, '', booleano[csl+1], '');
