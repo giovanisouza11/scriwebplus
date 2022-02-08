@@ -241,7 +241,7 @@ function trocar_botao() {
 		//		texto += booleano[i]+',';
 		//	texto += '/n';
 		//}
-		alert(booleano);
+		//alert(booleano);
 
                 //socket.emit('programax', texto+','+num_clp); 
 		clp_programa = booleano;
