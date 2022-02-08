@@ -123,13 +123,13 @@ function trocar_botao_sfc() {
 	if (valor_chave_sfc[3]==1){
 		//alert('compilando');
 		compila_sfc();
-		//let texto = '';
-		//for (var i=0; i<(booleano.length); i++) {
-		//	texto += booleano[i]+','+booleano[i+1]+',';
-		//	texto += '\n';
-		//	i++;
-		//}
-		//alert(texto);
+		let texto = '';
+		for (var i=0; i<(booleano.length); i++) {
+			texto += booleano[i]+','+booleano[i+1]+',';
+			texto += '\n';
+			i++;
+		}
+		alert(texto);
                 clp_programa = booleano;
 		clp_cria_memoria();
 		//alert(clp_programa);
