@@ -236,13 +236,13 @@ function trocar_botao() {
 	if (valor_chave[3]==1){
 		botaoCompilaLadder();
 		//compila_ladder();
-		//let texto = '';
-		//for (var i=0; i<(booleano.length); i++) {
-		//	for (var j=0; j<2; j++)
-		//		texto += booleano[i]+',';
-		//	texto += '/n';
-		//}
-		//alert(booleano);
+		let texto = '';
+		for (var i=0; i<(booleano.length); i++) {
+			for (var j=0; j<2; j++)
+				texto += booleano[i]+',';
+			texto += '/n';
+		}
+		alert(booleano);
 
                 //socket.emit('programax', texto+','+num_clp); 
 		//clp_programa = booleano;
