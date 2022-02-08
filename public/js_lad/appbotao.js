@@ -234,7 +234,8 @@ function trocar_botao() {
         valor_chave[2]=0;
 	}
 	if (valor_chave[3]==1){
-		compila_ladder();
+		botaoCompilaLadder();
+		//compila_ladder();
 		//let texto = '';
 		//for (var i=0; i<(booleano.length); i++) {
 		//	for (var j=0; j<2; j++)
@@ -244,12 +245,12 @@ function trocar_botao() {
 		//alert(booleano);
 
                 //socket.emit('programax', texto+','+num_clp); 
-		clp_programa = booleano;
-		clp_cria_memoria();
+		//clp_programa = booleano;
+		//clp_cria_memoria();
 		//alert(clp_programa);
-		I = clpI;
-		valor_chave[3]=0;
-		valor_chave[7]=1;
+		//I = clpI;
+		//valor_chave[3]=0;
+		//valor_chave[7]=1;
 	}
 
 	if (valor_chave[4]==1){
@@ -307,7 +308,23 @@ function trocar_botao() {
         //    } 
  	}
 }
-
+function botaoCompilaLadder() {
+	compila_ladder();
+	//let texto = '';
+	//for (var i=0; i<(booleano.length); i++) {
+	//	for (var j=0; j<2; j++)
+	//		texto += booleano[i]+',';
+	//	texto += '/n';
+	//}
+	//alert(booleano);
+        //socket.emit('programax', texto+','+num_clp); 
+	clp_programa = booleano;
+	clp_cria_memoria();
+	//alert(clp_programa);
+	I = clpI;
+	valor_chave[3]=0;
+	valor_chave[7]=1;
+}
 
 //leitura de arquivos
 //Fonte https://tableless.com.br/file-api-trabalhando-com-arquivos-locais-usando-javascript/
