@@ -480,7 +480,7 @@ function converte_sfc_ladder(){
 	var texto = '';
 	for (var i=0; i<(larray.length/27); i++) {
 		for (var j=0; j<27; j++)
-		    texto += larray[(i*9)+j]+',';
+		    texto += larray[(i*27)+j]+',';
 		texto += '\n';
 	} 
 	alert(texto);
