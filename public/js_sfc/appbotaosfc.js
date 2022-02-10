@@ -126,7 +126,7 @@ function trocar_botao_sfc() {
 		let texto = '';
 		for (var i=0; i<(booleano.length); i++) {
 			texto += booleano[i]+','+booleano[i+1]+',';
-			texto += '\n';
+			texto += ' - ';
 			i++;
 		}
 		alert(texto);
