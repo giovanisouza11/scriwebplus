@@ -477,13 +477,13 @@ function converte_sfc_ladder(){
 				csl++;
 		}	     
 	}
-	/*var texto = '';
+	var texto = '';
 	for (var i=0; i<(larray.length/9); i++) {
 		for (var j=0; j<9; j++)
 		    texto += larray[(i*9)+j]+',';
 		texto += '\n';
 	} 
-	alert(texto);*/
+	alert(texto);
 }
 //---------------------------------------------------------
 //Transforma a ACAO em LADDER
