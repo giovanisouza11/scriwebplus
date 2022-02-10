@@ -234,8 +234,6 @@ function clp_cria_memoria(){
 				}
 			}
 		}
-		alert(tipo_memoria[funcao] +' ' +ultimo_endereco);
-	
 		for (var i=0; i<(ultimo_endereco+1); i++) {
 			switch (tipo_memoria[funcao]) {
 				case 'Q':
@@ -453,6 +451,8 @@ function clp_escreve_enderecoCT(Aux_data, valor, index1)
 			clpQ[index+15] = valor;
 			break;
 		case 'M':
+			alert('M' + index+ '='+valor);
+		
 			for (var ia=0; ia<=14; ia++) {
 				var auxiliar = valor %2;
 				clpM[index+ ia] = auxiliar;
