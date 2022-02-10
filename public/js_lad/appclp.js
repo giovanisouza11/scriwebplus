@@ -451,8 +451,6 @@ function clp_escreve_enderecoCT(Aux_data, valor, index1)
 			clpQ[index+15] = valor;
 			break;
 		case 'M':
-			alert('M' + index+ '='+valor);
-		
 			for (var ia=0; ia<=14; ia++) {
 				var auxiliar = valor %2;
 				clpM[index+ ia] = auxiliar;
