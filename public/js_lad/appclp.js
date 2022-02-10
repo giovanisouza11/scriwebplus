@@ -234,6 +234,8 @@ function clp_cria_memoria(){
 				}
 			}
 		}
+		alert(tipo_memoria[funcao] +' ' +ultimo_endereco);
+	
 		for (var i=0; i<(ultimo_endereco+1); i++) {
 			switch (tipo_memoria[funcao]) {
 				case 'Q':
@@ -286,7 +288,6 @@ function procura_max_endereco(Operando, Aux_data)
 		else
 			index = 0;
 	}
-	alert(Operando +' ' +index);
 	return index;
 }
 
