@@ -483,7 +483,7 @@ function converte_sfc_ladder(){
 		    texto += larray[(i*9)+j]+',';
 		texto += '\n';
 	} 
-	alert(texto);
+	alert(larray);
 }
 //---------------------------------------------------------
 //Transforma a ACAO em LADDER
