@@ -1,6 +1,6 @@
 ﻿var AImage1 = new Image();
 AImage1.src = "/img_lad/eletrico.png";
-var real_I = new Array(7);
+var real_I = new Array(12);
 var M = new Array();
 var I = new Array();
 var R = new Array();
