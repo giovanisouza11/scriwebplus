@@ -455,8 +455,10 @@ function clp_escreve_enderecoCT(Aux_data, valor, index1)
 				var auxiliar = valor %2;
 				clpM[index+ ia] = auxiliar;
 				valor = parseInt(valor / 2);
+				alert('M['+(index+ia) +'] = ' + auxiliar);
 			}
 			clpM[index+15] = valor;
+			alert('M['+(index+15) +'] = ' + valor);
 			break;
 		case 'T':
 			clpT[3*index+index1] = valor;
