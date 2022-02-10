@@ -286,6 +286,7 @@ function procura_max_endereco(Operando, Aux_data)
 		else
 			index = 0;
 	}
+	alert(Operando +' ' +index);
 	return index;
 }
 
