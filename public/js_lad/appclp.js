@@ -219,8 +219,8 @@ function clp_cria_memoria(){
 	var tipo_memoria = ['I','Q','M','R','C','T'];
 	var ultimo_endereco;
 	var auxiliar;
-	var mxx= 'M11.1';
-	alert(mxx.substr(1,mxx.indexOf('.')-1));
+	//var mxx= 'M11.1';
+	//alert(mxx.substr(1,mxx.indexOf('.')-1));
 	for (var funcao=0;funcao<6; funcao++) {
 		ultimo_endereco = 0;
 		for (var passo=0; passo<(clp_programa.length)-1; passo = passo+2){
@@ -279,7 +279,7 @@ function procura_max_endereco(Operando, Aux_data)
 				if (ponto == -1)
 					index = (parseInt(Aux_data.substr(1))+1) *16;
 				else
-					index = (parseInt(Aux_data.charAt(ponto-1)) *16)+ parseInt(Aux_data.substr(ponto+1));
+					index = (parseInt(Aux_data.substr(1,ponto-1)) *16)+ parseInt(Aux_data.substr(ponto+1));
 			}
 			else {
 				index = parseInt(Aux_data.substr(1));
