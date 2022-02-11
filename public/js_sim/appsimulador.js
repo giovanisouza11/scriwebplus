@@ -434,7 +434,7 @@ function Sim_Endereco(Aux_data) {
 		var ponto = Aux_data.indexOf('.');
 		if (primeiro_char =='N') {
 			primeiro_char = Aux_data.charAt(1);
-			index = (parseInt(Aux_data.charAt(ponto-1)) *16)+ parseInt(Aux_data.substr(ponto+1));
+			index = (parseInt(Aux_data.substr(1,ponto-1)) *16)+ parseInt(Aux_data.substr(ponto+1));
 			negacao = 1;
 		}
 		else{
