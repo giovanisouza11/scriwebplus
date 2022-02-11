@@ -378,7 +378,13 @@ function converte_sfc_ladder(){
 			    	}
 			    	break;			
 		   	case 'LDN': 
-			    	coluna = 0;
+			    	if (flag ==1) {
+					if (maximoLinha > linha)
+						linha = maximoLinha;
+					linhaAnteriorSfc = linha;
+					flag = 0;
+				}
+				coluna = 0;
 				ladderCondicao(linha, coluna, 2, '', booleano[csl+1], '');
 				csl++;
 				coluna++;
