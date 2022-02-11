@@ -449,13 +449,13 @@ function converte_sfc_ladder(){
 				flag =1;
 			    	break;
 			case 'TMR':
-			    	coluna = ladderAcao(coluna,linha,6, booleano[csl+1], booleano[csl+2],'TMR');
+			    	coluna = ladderAcao(coluna,linha,6, booleano[csl+1], booleano[csl+2],'');
 				linha ++;
 				csl += 2;
 				flag =1;
 			    	break;
 			case 'CNR':
-				coluna = ladderAcao(coluna,linha,7, booleano[csl+1], booleano[csl+2],'CNR');
+				coluna = ladderAcao(coluna,linha,7, booleano[csl+1], booleano[csl+2],'');
 			    	linha ++;
 				csl += 2;
 				flag =1;
