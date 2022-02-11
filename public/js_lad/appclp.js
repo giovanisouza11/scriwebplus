@@ -301,7 +301,7 @@ function clp_le_endereco(Aux_data)
 		if (ponto == -1)
 			index = parseInt(Aux_data.substr(1)) *16;
 		else
-			index = (parseInt(Aux_data.charAt(ponto-1)) *16)+ parseInt(Aux_data.substr(ponto+1));
+			index = (parseInt(Aux_data.substr(1,ponto-1)) *16)+ parseInt(Aux_data.substr(ponto+1));
 	}
 	else {
 		index = parseInt(Aux_data.substr(1));
@@ -342,7 +342,7 @@ function clp_le_enderecoCT(Aux_data, index1)
 		if (ponto == -1)
 			index = parseInt(Aux_data.substr(1)) *16;
 		else
-			index = (parseInt(Aux_data.charAt(ponto-1)) *16);
+			index = (parseInt(Aux_data.substr(1,ponto-1)) *16);
 	}
 	else {
 		index = parseInt(Aux_data.substr(1));
@@ -429,7 +429,7 @@ function clp_escreve_enderecoCT(Aux_data, valor, index1)
 		if (ponto == -1)
 			index = parseInt(Aux_data.substr(1)) *16;
 		else
-			index = (parseInt(Aux_data.charAt(ponto-1)) *16);
+			index = (parseInt(Aux_data.subst(1,ponto-1)) *16);
 	}
 	else {
 		index = parseInt(Aux_data.substr(1));
