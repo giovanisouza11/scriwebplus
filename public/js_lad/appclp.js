@@ -220,7 +220,7 @@ function clp_cria_memoria(){
 	var ultimo_endereco;
 	var auxiliar;
 	var mxx= 'M11.1';
-	alert(mxx.substr(1,3);
+	alert(mxx.substr(1,3));
 	for (var funcao=0;funcao<6; funcao++) {
 		ultimo_endereco = 0;
 		for (var passo=0; passo<(clp_programa.length)-1; passo = passo+2){
