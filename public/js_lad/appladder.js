@@ -690,7 +690,7 @@ function endereco(Aux_data){
 		if (ponto == -1)
 			index = parseInt(Aux_data.substr(1)) *16;
 		else
-			index = (parseInt(Aux_data.charAt(ponto-1)) *16)+ parseInt(Aux_data.substr(ponto+1));
+			index = (parseInt(Aux_data.substr(1,ponto-1)) *16)+ parseInt(Aux_data.substr(ponto+1));
 	}
 	else
 		index = parseInt(Aux_data.substr(1));
