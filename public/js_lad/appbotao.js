@@ -201,10 +201,10 @@ function trocar_botao() {
 	if (valor_chave[1]==1){
         	var inputCSV = document.createElement('input');
 		inputCSV.type = 'file';
-		inputCSV.accept = '.CSV';
+		inputCSV.accept = '.LAD';
 	    	inputCSV.click();
 		inputCSV.onchange = function() {
-			//inputCSV.setPropertie('accept', '.csv');
+			//inputCSV.setPropertie('accept', '.lad');
 			var file = this.files[0];
 		    	leitorDeCSV1.readAsText(file);
 			titulo_lad = file.name.slice(0,file.name.length -4);
@@ -230,7 +230,7 @@ function trocar_botao() {
 		//}
         //let titulo ='scriweb';
         var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
-        saveAs(blob, titulo_lad + ".csv");
+        saveAs(blob, titulo_lad + ".lad");
         valor_chave[2]=0;
 	}
 	if (valor_chave[3]==1){
