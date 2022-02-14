@@ -908,13 +908,13 @@ function posicao_sfc(transicao) {
 	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(indexSfcString+1, tamanhoSfcString)*60 + posSfcX[i-1];
 	if ( (resultado[2]-resultado[0]) < (resultado[3]-resultado[1])) {
 	    	if (resultado[2] > resultado[0])
-			resultado[2] += 60;
+			resultado[2] -= 30;
 		if (resultado[2] < resultado[0])
-			resultado[2] -=60;
+			resultado[2] +=30;
 	}
 	else {
 		if (resultado[3] > resultado[1])
-			resultado[3] += 60;
+			resultado[3] += 30;
     	}
 	    
 	if (lArrayTransicao[transicao*20]==-1){
