@@ -906,7 +906,7 @@ function posicao_sfc(transicao) {
 	tamanhoSfcString = sfcString.length;
 	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(0, indexSfcString)*60 + posSfcY[i-1];
 	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(indexSfcString+1, tamanhoSfcString)*60 + posSfcX[i-1];
-	if ( (resultado[2]-resultado[0]) < (resultado[3]-resultado[1])) {
+	if ( diferenca(resultado[2],resultado[0]) < diferenca(resultado[3],resultado[1])) {
 	    	if (resultado[2] > resultado[0])
 			resultado[2] -= 30;
 		if (resultado[2] < resultado[0])
@@ -921,6 +921,14 @@ function posicao_sfc(transicao) {
 		resultado[1] = (lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(0, indexSfcString)-1)*60 + 20;
 		resultado[0] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(indexSfcString+1, tamanhoSfcString)*60 + posSfcX[i-1];
 	}
+}
+function diferenca(op1, op2) {
+	var res;
+	if (op1 > op2)
+		res = op1 - op2;
+	else
+		res = op2 - op1;
+	ret res;
 }
 //=====================================================================================
 //Desenho o DIAGRMA SFC a partir de uma matriz, COM CORES DIFERENTE
