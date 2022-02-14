@@ -928,7 +928,7 @@ function diferenca(op1, op2) {
 		res = op1 - op2;
 	else
 		res = op2 - op1;
-	ret res;
+	return res;
 }
 //=====================================================================================
 //Desenho o DIAGRMA SFC a partir de uma matriz, COM CORES DIFERENTE
