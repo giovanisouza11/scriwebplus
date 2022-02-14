@@ -906,6 +906,17 @@ function posicao_sfc(transicao) {
 	tamanhoSfcString = sfcString.length;
 	resultado[3] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(0, indexSfcString)*60 + posSfcY[i-1];
 	resultado[2] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(indexSfcString+1, tamanhoSfcString)*60 + posSfcX[i-1];
+	if ( (resultado[2]-resultado[0]) < (resultado[3]-resultado[1]) {
+	    	if (resultado[3] > resultado[1])
+			resultado[3] += 60;
+	}
+	else {
+		if (resultado[2] > resultado[0])
+			resultado[2] += 60;
+		if (resultado[2] < resultado[0])
+			resultado[2] -=60;
+    	}
+	    
 	if (lArrayTransicao[transicao*20]==-1){
 		resultado[1] = (lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(0, indexSfcString)-1)*60 + 20;
 		resultado[0] = lArrayEstado[lArrayTransicao[transicao*20+1]*30].substring(indexSfcString+1, tamanhoSfcString)*60 + posSfcX[i-1];
