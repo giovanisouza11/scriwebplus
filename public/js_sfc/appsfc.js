@@ -893,8 +893,8 @@ function posicao_sfc(transicao) {
 		resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substring(indexSfcString+1, tamanhoSfcString)*60 + posSfcX[i-1];
 	}
 	tamanho = parseInt(lArrayEstado[lArrayTransicao[transicao*20+1]*30  + 26]);
-	posSfcX = [-15,-15,15,25,35,45,tamanho+15,tamanho+15];
-	posSfcY = [30,15,-25,-25,-25,-25,15,30];
+	posSfcX = [-5,-5,15,25,35,45,tamanho+5,tamanho+5];
+	posSfcY = [30,15,-5,-5,-5,-5,15,30];
 	i = 0;
 	while (i<8) {
 		i ++;
