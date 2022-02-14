@@ -50,8 +50,8 @@ function Sim_Botao_Click() {
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[2]==1){
         	var inputCSV = document.createElement('input');
 	 	inputCSV.type = 'file';
-		inputCSV.accept = '.CSV';
-		//inputCSV.value = 'scriweb/semaforo/semaforo.csv';
+		inputCSV.accept = '.SIM';
+		//inputCSV.value = 'scriweb/semaforo/semaforo.sim';
 		inputCSV.click();
 		inputCSV.onchange = function() {
 	    		var file = this.files[0];
@@ -84,7 +84,7 @@ function Sim_Botao_Click() {
 
         	//let titulo ='SimScriWeb';
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
-		saveAs(blob, titulo + ".csv");
+		saveAs(blob, titulo + ".sim");
    	   	Sim_Botao_Funcao[3]=0;
 		/*var zip = new JSZip();
 		var img = zip.folder(titulo);*/
@@ -226,8 +226,8 @@ function Sim_Le_Arquivo(evt) {
 function Sim_Le_Arquivo_Nuvem(inputfile) {
 	/*var inputCSV = document.createElement('input');
 	inputCSV.type = 'file';
-	inputCSV.accept = '.CSV';
-	inputCSV.value = 'http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.csv';
+	inputCSV.accept = '.SIM';
+	inputCSV.value = 'http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.sim';
 	inputCSV.click();
 	inputCSV.onchange = function() { */
 		var file = inputfile[0];
@@ -238,9 +238,9 @@ function Sim_Le_Arquivo_Nuvem(inputfile) {
 	/*};
 	var arquivo = 'Alarme';
 	//var file = this.files[0];
-	var file = 'http://scriwebplus.herokuapp.com/ftp/'+arquivo+'/'+arquivo+'.csv';
+	var file = 'http://scriwebplus.herokuapp.com/ftp/'+arquivo+'/'+arquivo+'.sim';
 	alert(arquivo);
-    	//var file = arquivo+'.csv';
+    	//var file = arquivo+'.sim';
 	Sim_Leitor_Arquivo.readAsText(file);
 	alert(arquivo);
 	Sim_Path = Sim_PathInicial + file.name.slice(0,file.name.length -4) + '/';
