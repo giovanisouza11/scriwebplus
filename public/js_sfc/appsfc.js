@@ -877,8 +877,9 @@ function entrada_input_sfc(event){
 //=====================================================================================
 function posicao_sfc(transicao) {
 	var i =0;
-	var posSfcX = [-10,15,25,35,45,70];
-	var posSfcY = [45,70,70,70,70,45];
+	var tamanho = parseInt(lArrayEstado[lArrayTransicao[transicao*20]*30  + 26]);
+	var posSfcX = [-15,15,25,35,45,tamanho+15];
+	var posSfcY = [45,75,75,75,75,45];
 	if (lArrayTransicao[transicao*20]>-1){
 		while (i<6) {
 			i ++;
@@ -891,9 +892,9 @@ function posicao_sfc(transicao) {
 		resultado[1] = lArrayEstado[lArrayTransicao[transicao*20]*30].substring(0, indexSfcString)*60 + posSfcY[i-1];
 		resultado[0] = lArrayEstado[lArrayTransicao[transicao*20]*30].substring(indexSfcString+1, tamanhoSfcString)*60 + posSfcX[i-1];
 	}
-	
-	posSfcX = [-10,-10,15,25,35,45,70,70];
-	posSfcY = [30,15,-10,-10,-10,-10,15,30];
+	tamanho = parseInt(lArrayEstado[lArrayTransicao[transicao*20+1]*30  + 26]);
+	posSfcX = [-15,-15,15,25,35,45,tamanho+15,tamanho+15];
+	posSfcY = [30,15,-15,-15,-15,-15,15,30];
 	i = 0;
 	while (i<8) {
 		i ++;
