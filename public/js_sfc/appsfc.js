@@ -878,8 +878,8 @@ function entrada_input_sfc(event){
 function posicao_sfc(transicao) {
 	var i =0;
 	var tamanho = parseInt(lArrayEstado[lArrayTransicao[transicao*20]*30  + 26]);
-	var posSfcX = [-15,15,25,35,45,tamanho+15];
-	var posSfcY = [45,75,75,75,75,45];
+	var posSfcX = [-25,15,25,35,45,tamanho+25];
+	var posSfcY = [45,85,85,85,85,45];
 	if (lArrayTransicao[transicao*20]>-1){
 		while (i<6) {
 			i ++;
