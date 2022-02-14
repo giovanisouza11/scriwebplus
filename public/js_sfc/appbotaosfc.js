@@ -90,7 +90,7 @@ function trocar_botao_sfc() {
 	if (valor_chave_sfc[1]==1){
         	var inputCSV = document.createElement('input');
 		inputCSV.type = 'file';
-		inputCSV.accept = '.CSV';
+		inputCSV.accept = '.SFC';
 	    	inputCSV.click();
 		inputCSV.onchange = function() {
 			var file = this.files[0];
@@ -117,7 +117,7 @@ function trocar_botao_sfc() {
 			texto += '\n';
 		}
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
-        	saveAs(blob, titulo_sfc + ".csv");
+        	saveAs(blob, titulo_sfc + ".sfc");
         	valor_chave_sfc[2]=0;
 	}
 	if (valor_chave_sfc[3]==1){
