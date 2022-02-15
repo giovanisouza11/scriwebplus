@@ -64,7 +64,7 @@ function ladder_simulador(){
 			simul.style.display = "block";
 			Sim_Draw_Botoes();
 			Tela_Eletrico_Simulador = 1;
-			Tela_Funcao_Dispositivo = 1;
+			//Tela_Funcao_Dispositivo = 1;
 		}
 	}
 }
