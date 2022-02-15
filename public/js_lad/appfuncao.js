@@ -74,18 +74,19 @@ function ladder_simulador(){
 		}
 	}
 	else {
+		Tela_Eletrico_Simulador = 1;
 		if (simul.style.display === 'block') {
 			ladder.style.display = "block";
 			simul.style.display = "none";
 			if (div3.style.display == 'block'){
 				botoes.style.display = "block";
-				Tela_Eletrico_Simulador = 0;
+				//Tela_Eletrico_Simulador = 0;
 				draw_botoes();
 			}
 			else {
 				sfc.style.display = "block";
 				draw_botoes_sfc();
-				Tela_Eletrico_Simulador = 2;
+				//Tela_Eletrico_Simulador = 2;
 			}
 		}
 		else {
@@ -93,7 +94,7 @@ function ladder_simulador(){
 			sfc.style.display = "none";
 			simul.style.display = "block";
 			Sim_Draw_Botoes();
-			Tela_Eletrico_Simulador = 1;
+			//Tela_Eletrico_Simulador = 1;
 		}
 	}
 }
