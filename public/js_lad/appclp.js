@@ -66,7 +66,7 @@ function clp_AtualizaPorTempo() {
 			localizacao = clp_localizacao_prog;
 			liga_led_CLP();
 			if (comandos != 0) {
-				if (Tela_Eletrico_Simulador == 2)
+				if (Tela_Funcao_Dispositivo == 2)
 					monitora_sfc();
 				else
 					monitora_ladder();
