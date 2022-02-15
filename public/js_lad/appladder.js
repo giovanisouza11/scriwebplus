@@ -234,7 +234,7 @@ function mouse_move(){
 	context3 = canvas3.getContext("2d");
 	canvas3.width = 60;
 	canvas3.height = 60;
-	if (Tela_Eletrico_Simulador == 2)
+	if (Tela_Funcao_Dispositivo == 2)
 		mouse_move_sfc();
 	else
 		mouse_move_ladder();
@@ -319,7 +319,7 @@ function inicializa_array(){
 // Para entrada TAG e ENDERECO
 //=====================================================================================
 function entrada_input(event){
-	if (Tela_Eletrico_Simulador == 2){
+	if (Tela_Funcao_Dispositivo == 2){
 		entrada_input_sfc(event);
 	}
 	else
