@@ -121,7 +121,7 @@ function Sim_Botao_Click() {
 		//modalb1.innerHTML += "<script> $(t_modal).ready(function() {$('input[type="file"]').change(function(e) {var geekss = e.target.files[0].name;alert('arquivo'); }); }); </script>";
 		//modalb1.innerHTML += "<p><output id='list'></output></p>";
 		//modalb1.innerHTML += "<p><a href='javascript:Sim_Le_Arquivo_Nuvem();'>Alarmes</a></p>"
-		modalb1.innerHTML = "<p><a href='http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.csv'>Alarmes</a></p>";
+		modalb1.innerHTML = "<p><a href='http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.sim'>Alarmes</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Caldeira/Caldeira.sim'>Caldeira</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Cascata/Cascata.sim'>Cascata de Motores</a></p>";
 		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Classificacao/Classificacao.sim'>Classificação</a></p>";
