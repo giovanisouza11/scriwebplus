@@ -104,7 +104,7 @@ function trocar_botao_sfc() {
 		valor_chave_sfc[7]==1;
 	}
 	if (valor_chave_sfc[2]==1){
-	    	let texto = 'LinCol, 1-NESTADO,2-Mem,3-EINICIAL1,EI2,EI3,EI4,4I5,8-EiNICIAL5,9-EFIM1,EF2,2F3,EF4,EF5,EF6,EF7,16-EFIM8,17-ACAO1,A2,A3,A4,A5,A6,A7,24-ACAO8,25-NumMem,26-TAMANHO,27-Res,28-Res,29-Res' + '\n';
+	    	let texto = 'LinCol, 1-NESTADO,2-Mem,3-NumMem,4-TAMANHO,5-Res1,6-Res2,7-Res3,8-Res4,9-EFIM1,EF2,2F3,EF4,EF5,EF6,EF7,16-EFIM8,17-ACAO1,A2,A3,A4,A5,A6,A7,24-ACAO8,25-EINICIAL1,EI2,EI3,EI4,EI5,Ei6,Ei7,32-EiNICIAL8,' + '\n';
 	    	for (var i=0; i<(lArrayEstado.length/30); i++) {
 			for (var j=0; j<30; j++)
 			    texto += lArrayEstado[(i*30)+j]+',';
