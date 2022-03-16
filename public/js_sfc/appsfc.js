@@ -233,7 +233,7 @@ function editar_sfc() {
 		}
 		if (lFuncaoSfc==3) {
 			IFigura.style.display = "none";
-			for(var i=0; i<30; i++)
+			for(var i=0; i<33; i++)
 				lArrayEstado[indexEstado*33+i] = '';
 			lArrayEstado[indexEstado*33] = posicaoYSfc +' '+ posicaoXSfc ;
 			lArrayEstado[indexEstado*33+1] =  indexEstado;
@@ -785,7 +785,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'black';
 				contextSfc.fillText(tag,posicaoXSfc*60+70, posicaoYSfc*60+36);
 				document.getElementById("label_input").innerHTML = "Ação 8:";
-				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+24];
+				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*33+24];
 				if (lArrayEstado[auxIndexEstado*33+24] == '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 9;
@@ -797,7 +797,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'black';
 				contextSfc.fillText(tag,posicaoXSfc*60+70, posicaoYSfc*60+24);
 				document.getElementById("label_input").innerHTML = "Ação 7:";
-				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+23];
+				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*33+23];
 				if (lArrayEstado[auxIndexEstado*33+23] =='' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 8;
@@ -809,7 +809,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'black';
 				contextSfc.fillText(tag,posicaoXSfc*60+70, posicaoYSfc*60+12);
 				document.getElementById("label_input").innerHTML = "Ação 6:";
-				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+22];
+				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*33+22];
 				if (lArrayEstado[auxIndexEstado*33+22] == '' )
 					document.getElementById('input_ladder').value ="";
 				lArrayEstado[auxIndexEstado*33+4] =  120;
@@ -823,7 +823,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'black';
 				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+48);
 				document.getElementById("label_input").innerHTML = "Ação 5:";
-				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+21];
+				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*33+21];
 				if (lArrayEstado[auxIndexEstado*33+21] ==  '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 6;
@@ -835,7 +835,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'black';
 				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+36);
 				document.getElementById("label_input").innerHTML = "Ação 4:";
-				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+20];
+				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*33+20];
 				if (lArrayEstado[auxIndexEstado*33+20] =='' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 5;
@@ -847,7 +847,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'black';
 				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+24);
 				document.getElementById("label_input").innerHTML = "Ação 3:";
-				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+24];
+				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*33+24];
 				if (lArrayEstado[auxIndexEstado*33+19] == '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 4;
@@ -860,7 +860,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'black';
 				contextSfc.fillText(tag,posicaoXSfc*60+10, posicaoYSfc*60+12);
 				document.getElementById("label_input").innerHTML = "Ação 2:";
-				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+18];
+				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*33+18];
 				if (lArrayEstado[auxIndexEstado*33+18] ==  '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 3;
@@ -872,7 +872,7 @@ function entrada_input_sfc(event){
 				contextSfc.fillStyle = 'black';
 				contextSfc.fillText(tag,posicaoXSfc*60+2, posicaoYSfc*60+58);
 				document.getElementById("label_input").innerHTML = "Ação 1:";
-				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+17];
+				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*33+17];
 				if (lArrayEstado[auxIndexEstado*33+17] ==  '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 2;
@@ -880,7 +880,7 @@ function entrada_input_sfc(event){
 			if (emEdicao == 11) {
 				lArrayEstado[auxIndexEstado*33+3] = tag;
 				document.getElementById("label_input").innerHTML = "Memória:";
-				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*30+2];
+				document.getElementById('input_ladder').value = lArrayEstado[auxIndexEstado*33+2];
 				if (lArrayEstado[auxIndexEstado*33+2] == '' )
 					document.getElementById('input_ladder').value ="";
 				emEdicao = 1;
