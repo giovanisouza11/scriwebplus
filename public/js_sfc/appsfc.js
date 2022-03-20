@@ -211,7 +211,7 @@ function editar_sfc() {
 		var tag;
 		if (lFuncaoSfc==4) {
 			IFigura.style.display = "none";
-			for(var i=0; i<30; i++)
+			for(var i=0; i<33; i++)
 				lArrayEstado[indexEstado*33+i] = '';
 			lArrayEstado[indexEstado*33] = posicaoYSfc +' '+ posicaoXSfc ;
 			lArrayEstado[indexEstado*33+1] =  indexEstado;
@@ -310,7 +310,7 @@ function draw_sfc(fileArr) {
 		var fileLine = fileArr[i].split(',');
 		if (fileLine[0] != null) {
 			var tamanho_array_sfc= fileLine.length;
-			if (tamanho_array_sfc ==31){
+			if (tamanho_array_sfc ==34){
 				sfcString = fileLine[0];
 				indexSfcString =  sfcString.indexOf(' ');
 				tamanhoSfcString = sfcString.length;
