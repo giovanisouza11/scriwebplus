@@ -18,17 +18,17 @@ function compila_sfc(){
 	var transicaoLocalSfc;
 	//alert(lArrayEstado);
 	//alert(lArrayTransicao);
- 	while( si < ((lArrayEstado.length/32))) {
+ 	while( si < ((lArrayEstado.length/33))) {
 		if (lArrayEstado[si*32] != null) {
 			for (var sj=0; sj<8; sj++){
-				transicaoLocalSfc = lArrayEstado[si*32+9+sj];
+				transicaoLocalSfc = lArrayEstado[si*33+9+sj];
 				//alert(transicaoLocalSfc);
 				if( transicaoLocalSfc != '' && transicaoLocalSfc != null){
 					//o estado anterior
 					if ( lArrayTransicao[transicaoLocalSfc*20] != '-1') {
 						booleano[index_bool] = 'LD';
 						index_bool++;			
-						booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*32+24];
+						booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*33+24];
 						index_bool++ ;
 						for(var sz=0; sz<6; sz++){
 							if (lArrayTransicao[transicaoLocalSfc*20+2+sz] != '') { 
@@ -79,12 +79,12 @@ function compila_sfc(){
 			index_bool++ ;
 			booleano[index_bool] = 'R'+si;
 			index_bool++ ;
-			if (lArrayEstado[si*32+2]> 0) {
-				var strinx = lArrayEstado[si*32+2];
+			if (lArrayEstado[si*33+2]> 0) {
+				var strinx = lArrayEstado[si*33+2];
 				var igual = strinx.indexOf('.');
 				var substring1= strinx.substring(1, igual);
 				var substring2= strinx.substring(0, 1);
-				for (var is = 0; is < lArrayEstado[si*32+3]; is++) {
+				for (var is = 0; is < lArrayEstado[si*33+3]; is++) {
 					booleano[index_bool] = 'MOV';
 					index_bool++;
 					booleano[index_bool] = '0';
@@ -94,21 +94,21 @@ function compila_sfc(){
 				}
 				booleano[index_bool] = 'SET';
 				index_bool++ ;
-				booleano[index_bool] = lArrayEstado[si*32+2];
+				booleano[index_bool] = lArrayEstado[si*33+2];
 				index_bool++ ;
 			}
 			else {
 				booleano[index_bool] = 'SET';
 				index_bool++ ;
-				booleano[index_bool] = lArrayEstado[si*32+2];
+				booleano[index_bool] = lArrayEstado[si*33+2];
 				index_bool++ ;
 				//verver ver ver
 				for(var sj=0; sj<8; sj++){
-					transicaoLocalSfc = lArrayEstado[si*32+9+sj];
+					transicaoLocalSfc = lArrayEstado[si*33+9+sj];
 					if (transicaoLocalSfc != '-1' && transicaoLocalSfc != ''  && transicaoLocalSfc != null) { 
 						booleano[index_bool] = 'RST';
 						index_bool++ ;
-			    			booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*30+2];
+			    			booleano[index_bool] = lArrayEstado[lArrayTransicao[transicaoLocalSfc*20]*33+2];
 						index_bool++ ;
 					}
 				}	
@@ -116,11 +116,11 @@ function compila_sfc(){
 	    		//Acoes dos estados
 			booleano[index_bool] = 'LD';
 			index_bool++;
-			booleano[index_bool] = lArrayEstado[si*32 +2];
+			booleano[index_bool] = lArrayEstado[si*33 +2];
 			index_bool++;
 			for(var sj=0; sj<8; sj++){
-				if ( lArrayEstado[si*32+17+sj] != '' && lArrayEstado[si*32+17+sj] != null) {
-					verificaAcao(lArrayEstado[si*32+17+sj]);
+				if ( lArrayEstado[si*33+17+sj] != '' && lArrayEstado[si*33+17+sj] != null) {
+					verificaAcao(lArrayEstado[si*33+17+sj]);
 					for (var szi = 0; szi<4; szi++) {
 						if (resultado[szi] != ''){
 							booleano[index_bool] = resultado[szi];
