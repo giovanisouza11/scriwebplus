@@ -8,7 +8,8 @@ var canvasSfc;
 var contextSfc;
 // lArrayEstado = (LinhaColuna, 1-NUM_ESTADO,2-Memoria,3-se estado 0 númerodememórias, 4-TAMANHO,5-Reserva,6-Reserva,7-Reserva,8-Reserva,
 //                 9-Estado_Destino 1,..,..,..,..,..,..,16-Estado_DEstino8,
-//                 17-Ação1,..,..,..,..,..,..,24-Ação 8,25-Estado de chegada1,..,..,..,..,32-Estado de chegada8
+//                 17-Ação1,..,..,..,..,..,..,24-Ação 8,
+//                 25-Estado Partida 1,..,..,..,..,32-Estado Partida 8
 var lArrayEstado = new Array();
 // lArrayTransiçao = (Estado origem, 1-estado destino, 2-Condoção 1,..,..,..,..,7-Condicao 6,..,9-ponto1,10-ponto2,11-ponto3,12-ponto4,13-ponto5,14ponto6,15-Res,16-Res,17-Res,18-Res,19-res)
 var lArrayTransicao = new Array();
@@ -501,7 +502,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	if (numeroEstadoOrigem > -1){
 		while (i<8) {
 			i ++;
-			if (lArrayEstado[numeroEstadoOrigem*33 + 2 + i] == indexTransicao)
+			if (lArrayEstado[numeroEstadoOrigem*33 + 24 + i] == indexTransicao)
 				break;
 		}
 		//alert("estado origem "+ i);
@@ -550,7 +551,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 		if (lArrayEstado[numeroEstado*33 + 8 + j] == indexTransicao)
 			break;
 	}
-	tamanho = parseInt(lArrayEstado[numeroEstado*33 + 26]);
+	tamanho = parseInt(lArrayEstado[numeroEstado*33 + 4]);
 	if (i>1 && i<6){
 		if (pos_X == estadoX0 && pos_Y < estadoY0){ 
 			contexto.lineTo(estadoX0*60-30,estadoY0*60+80);
@@ -962,7 +963,7 @@ function monitora_sfc() {
 	var tamanhoSfcString;
 	var cor_sfc = ['silver', 'black','green','red','yellow'];
 	draw_sfc_fundo(2);
-	for(var i=0; i < (lArrayEstado.length/30); i++) {
+	for(var i=0; i < (lArrayEstado.length/33); i++) {
 		sfcString = lArrayEstado[33*i];
 		if (sfcString != null) {
 			indexSfcString =  sfcString.indexOf(' ');
