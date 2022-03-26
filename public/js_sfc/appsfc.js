@@ -502,10 +502,10 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	if (numeroEstadoOrigem > -1){
 		while (i<8) {
 			i ++;
-			if (lArrayEstado[numeroEstadoOrigem*33 + 24 + i] == indexTransicao)
+			if (lArrayEstado[numeroEstadoOrigem*33 + 24 + i] === indexTransicao)
 				break;
 		}
-		alert("estado origem "+ numeroEstadoOrigem +" i "+ i +" indexTransicao "+ indexTransicao );
+		//alert("estado origem "+ numeroEstadoOrigem +" i "+ i +" indexTransicao "+ indexTransicao );
 		tamanho = parseInt(lArrayEstado[numeroEstadoOrigem*33 + 4]); 
 		switch (i) {
 			case 1:
