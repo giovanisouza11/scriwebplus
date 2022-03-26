@@ -309,7 +309,7 @@ function draw_sfc(fileArr) {
 
 	for (var i=1; i<fileArr.length; i++) {
 		var fileLine = fileArr[i].split(',');
-		if (fileLine[0] != null) {
+		if (fileLine[0] != null && fileLine[0] !== 'EInicial' && fileLine[0] !== 'LinCol') {
 			var tamanho_array_sfc= fileLine.length;
 			if (tamanho_array_sfc ==34){
 				sfcString = fileLine[0];
@@ -336,7 +336,7 @@ function draw_sfc(fileArr) {
 				if (fileLine[2] != '')
 					contextSfc.fillText(fileLine[2],posicaoXSfc*60+2, posicaoYSfc*60+50);
 			}
-			if (tamanho_array_sfc ==21) {
+			if (tamanho_array_sfc == 21) {
 				//alert(tamanho_array_sfc);
 				numeroEstadoOrigem = fileLine[0];
 				if (numeroEstadoOrigem >-1) {
@@ -502,7 +502,7 @@ function draw_transicao(contexto, pos_X, pos_Y, cor) {
 	if (numeroEstadoOrigem > -1){
 		while (i<8) {
 			i ++;
-			if (lArrayEstado[numeroEstadoOrigem*33 + 25 + i]  == indexTransicao)
+			if (lArrayEstado[numeroEstadoOrigem*33 + 24 + i]  == indexTransicao)
 				break;
 		}
 		//alert("estado origem "+ numeroEstadoOrigem +" i "+ i +" indexTransicao "+ indexTransicao );
