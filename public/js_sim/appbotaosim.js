@@ -86,6 +86,7 @@ function Sim_Botao_Click() {
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
 		saveAs(blob, titulo + ".sim");
    	   	Sim_Botao_Funcao[3]=0;
+		downloadFiles(texto, "abobrinha", ".csv");
 		/*var zip = new JSZip();
 		var img = zip.folder(titulo);*/
 		/*zip.folder(".").forEach(function (relativePath, file){
@@ -143,6 +144,7 @@ function Sim_Botao_Click() {
 		btn.appendChild(document.createTextNode('OK'));
 		btn.onclick = function() {
 			modal1.style.display = "none";
+			//downloadFiles(data, file_name, file_type);
 		};
 		modalb1.appendChild(btn);
 		
@@ -204,6 +206,23 @@ function Sim_Botao_Click() {
 	Sim_Draw_Botoes();		
 }
 
+function downloadFiles(data, file_name, file_type) {
+    var file = new Blob([data], {type: file_type});
+    if (window.navigator.msSaveOrOpenBlob) 
+        window.navigator.msSaveOrOpenBlob(file, file_name);
+    else { 
+        var a = document.createElement("a"),
+                url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = file_name;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);  
+        }, 0); 
+    }
+}
 
 //leitura de arquivos
 //Fonte https://tableless.com.br/file-api-trabalhando-com-arquivos-locais-usando-javascript/
