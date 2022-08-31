@@ -86,7 +86,7 @@ function Sim_Botao_Click() {
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
 		saveAs(blob, titulo + ".sim");
    	   	Sim_Botao_Funcao[3]=0;
-		downloadFiles(texto, "abobrinha", "text/plain;charset=utf-8");
+		//downloadFiles(texto, "abobrinha", "text/plain;charset=utf-8");
 		/*var zip = new JSZip();
 		var img = zip.folder(titulo);*/
 		/*zip.folder(".").forEach(function (relativePath, file){
@@ -144,6 +144,8 @@ function Sim_Botao_Click() {
 		btn.appendChild(document.createTextNode('OK'));
 		btn.onclick = function() {
 			modal1.style.display = "none";
+			//var fileArr = file_texto.split('\n');
+			//Sim_Draw_Processo(fileArr);	
 			//downloadFiles(data, file_name, file_type);
 		};
 		modalb1.appendChild(btn);
