@@ -86,7 +86,7 @@ function Sim_Botao_Click() {
         	var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
 		saveAs(blob, titulo + ".sim");
    	   	Sim_Botao_Funcao[3]=0;
-		//downloadFiles(texto, "abobrinha", ".csv");
+		downloadFiles(texto, "abobrinha", "text/plain;charset=utf-8");
 		/*var zip = new JSZip();
 		var img = zip.folder(titulo);*/
 		/*zip.folder(".").forEach(function (relativePath, file){
