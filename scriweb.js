@@ -20,7 +20,7 @@
   		//console.log(files);
 	//});
     	app.use(express.static(__dirname + '/public'));
-	app.use('/ftp', express.static(__dirname + '/scriweb/simulacao'));
+	app.use('/ftp', express.static(__dirname + '/scriweb'));
     	app.get('/', function(req, res) {
         	res.sendFile(__dirname + '/scriweb.html');
     	});
