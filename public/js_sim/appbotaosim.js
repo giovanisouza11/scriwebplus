@@ -122,19 +122,19 @@ function Sim_Botao_Click() {
 		//modalb1.innerHTML += "<script> $(t_modal).ready(function() {$('input[type="file"]').change(function(e) {var geekss = e.target.files[0].name;alert('arquivo'); }); }); </script>";
 		//modalb1.innerHTML += "<p><output id='list'></output></p>";
 		//modalb1.innerHTML += "<p><a href='javascript:Sim_Le_Arquivo_Nuvem();'>Alarmes</a></p>"
-		modalb1.innerHTML = "<p><a href='http://scriwebplus.herokuapp.com/ftp/Alarme/Alarme.sim'>Alarmes</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Caldeira/Caldeira.sim'>Caldeira</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Cascata/Cascata.sim'>Cascata de Motores</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Classificacao/Classificacao.sim'>Classificação</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Corte_Vinco/Corte_Vinco.sim'>Corte e Vinco</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Dosagem/Dosagem.sim'>Dosagem</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Desbobinador/Desbobinador.sim'>Desbobinador</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Elevador/Elevador.sim'>Elevador(3 andares)</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Elevador5/Elevador5.sim'>Elevador(5 andares)</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Envase/Envase.sim'>Envase</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Expedicao/Expedicao.sim'>Expedição</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Semaforo/Semaforo.sim'>Semáforo</a></p>";
-		modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Tanque/Tanque.sim'>Tanque</a></p>";
+		modalb1.innerHTML = "<p><a href='http://github.com/giovanisouza11/public/scriweb/scriweb.zip'>Exemplos</a></p>";
+		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Caldeira/Caldeira.sim'>Caldeira</a></p>";
+		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Cascata/Cascata.sim'>Cascata de Motores</a></p>";
+		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Classificacao/Classificacao.sim'>Classificação</a></p>";
+		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Corte_Vinco/Corte_Vinco.sim'>Corte e Vinco</a></p>";
+		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Dosagem/Dosagem.sim'>Dosagem</a></p>";
+		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Desbobinador/Desbobinador.sim'>Desbobinador</a></p>";
+		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Elevador/Elevador.sim'>Elevador(3 andares)</a></p>";
+		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Elevador5/Elevador5.sim'>Elevador(5 andares)</a></p>";
+		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Envase/Envase.sim'>Envase</a></p>";
+		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Expedicao/Expedicao.sim'>Expedição</a></p>";
+		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Semaforo/Semaforo.sim'>Semáforo</a></p>";
+		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Tanque/Tanque.sim'>Tanque</a></p>";
 		//modalb1.innerHTML += "<script>document.getElementById('files').addEventListener('change', Sim_Le_Arquivo_Nuvem, false);</script>";
 
 		
