@@ -11,7 +11,14 @@
     	var router = express.Router();
     	var server = require('http').Server(app);
     	//var io = require('socket.io')(server);
-
+	const recursiveReaddir = require('recursive-readdir');
+	recursiveReaddir('./scriweb/simulacao', (err, files) => {
+  		if (err) {
+    			console.error(err);
+    			return;
+  		}
+  		//console.log(files);
+	});
     	app.use(express.static(__dirname + '/public'));
 	app.use('/ftp', express.static(__dirname + '/scriweb/simulacao'));
     	app.get('/', function(req, res) {
