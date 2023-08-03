@@ -113,7 +113,7 @@ function Sim_Botao_Click() {
 		Sim_Botao_Funcao[6]=0;
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[4]==1){
-		var modal1 = document.getElementById("myModal1");
+	/*	var modal1 = document.getElementById("myModal1");
 		var t_modal = modal1.getElementsByTagName("h2");
 		t_modal[0].innerHTML = "Download";	
 		var modalb1 = document.getElementById("myBody1");
@@ -136,7 +136,7 @@ function Sim_Botao_Click() {
 		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Semaforo/Semaforo.sim'>Semáforo</a></p>";
 		//modalb1.innerHTML += "<p><a href='http://scriwebplus.herokuapp.com/ftp/Tanque/Tanque.sim'>Tanque</a></p>";
 		modalb1.innerHTML += "<script>document.getElementById('files').addEventListener('change', Sim_Le_Arquivo_Nuvem, false);</script>";
-
+   
 		
 		// Create <OK> element that closes the modal
 		var btn = document.createElement('button');
@@ -162,7 +162,8 @@ function Sim_Botao_Click() {
 			if (event.target == modal1) {
 				modal1.style.display = "none";
 			}
-		}
+		} */
+		window.open("/ftp", "FTP SCriWeb", "height=200,width=100");
 		Sim_Botao_Funcao[4]=0;
 	}
 	if (Sim_Edicao==0 && Sim_Botao_Funcao[1]==1){
